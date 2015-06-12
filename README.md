@@ -16,3 +16,13 @@ Download the source code and run file /install.php from your browser.
 
 ## Demo
 Coming soon.
+
+## Technical details
+
+We use the following:
+1. PHP
+2. MySQL as database server
+3. Apache Web server is recommended
+4. Yii framework 1.1.14
+5. Bootstrap
+6. JQuery
