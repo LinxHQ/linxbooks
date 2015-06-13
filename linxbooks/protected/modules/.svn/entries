@@ -1,0 +1,79 @@
+10
+
+dir
+385
+https://lssvn.svn.beanstalkapp.com/linxbooks/protected/modules
+https://lssvn.svn.beanstalkapp.com/linxbooks
+
+
+
+2015-06-06T07:27:49.222634Z
+385
+thongnv
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3280bbb4-0d0c-4a70-9f1d-73aae74160a0
+
+lbBankAccount
+dir
+
+lbComment
+dir
+
+lbContract
+dir
+
+lbCustomer
+dir
+
+lbCustomerAddress
+dir
+
+lbCustomerContact
+dir
+
+lbDocument
+dir
+
+lbExpenses
+dir
+
+lbInvoice
+dir
+
+lbPayment
+dir
+
+lbQuotation
+dir
+
+lbReport
+dir
+
+lbVendor
+dir
+
+paypal
+dir
+
+permission
+dir
+
+process_checklist
+dir
+
+task_progress
+dir
+

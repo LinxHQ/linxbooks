@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="paypal-rest-sdk-php" basedir="." default="all">
+
+	<property name="basedir" value="." />
+	<property name="release.dir" value="${basedir}/release" />
+	<property name="output.dir" value="${basedir}/build" />
+	<property name="phplint.out" value="${output.dir}/phplint.txt" />
+	<property name="phploc.out" value="${output.dir}/phploc.xml" />
+	<property name="coverage.dir" value="${output.dir}/coverage" />
+	<property name="coverage.out" value="${coverage.dir}/junit.xml" />
+	<property name="clover.out" value="${coverage.dir}/clover.xml" />
+	<property name="test.dir" value="${output.dir}/test" />
+	
+	<fileset id="src.files" dir="${basedir}/lib" includes="**/*.php" />
+		
+	<target name="composer-init" description="Downloads composer.phar if not available locally">
+		<if>
+			<available file="composer.phar" />
+			<then>
+				<echo>Composer is installed</echo>
+			</then>
+			<else>
+				<echo message="Installing composer" />
+				<exec command="curl -s http://getcomposer.org/installer | php"  />
+				<exec command="php composer.phar install --dev"  />
+			</else>
+		</if>
+	</target>
+
+	<target name="phplint">		
+		<delete file="${phplint.out}"/>
+		<apply executable="php" failonerror="true" output="${phplint.out}" append="true">
+			<arg value="-l" />
+			<fileset refid="src.files" />
+		</apply>
+	</target>
+
+	<target name="phploc">
+		<exec command="phploc --log-xml ${phploc.out} ." dir="${basedir}/lib"  />
+	</target>
+
+	<target name="coverage">
+		<mkdir dir="${output.dir}/coverage"/>
+		<exec command="phpunit --coverage-html=${coverage.dir} --coverage-clover=${clover.out} --log-junit=${coverage.out} --exclude-group=PayPal\\Api\\*" />
+	</target>
+
+	<target name="clean" description="Deletes build artifacts">
+		<delete dir="${output.dir}"/>
+		<mkdir dir="${output.dir}"/>
+	</target>
+	
+	<target name="test" description="Runs test cases">
+		<exec command="phpunit --testdox-html=${test.dir}/testdox.html --log-junit=${test.dir}/junit.xml"/>
+	</target>
+
+	<!-- Requires phing -->	
+	<target name="convert-test-report" >
+		<mkdir dir="build/test/report"/>
+		<phpunitreport infile="${coverage.out}" 
+			format="frames" 
+			todir="build/test/report" />
+	</target>
+	
+	<target name="build" depends="test" description="Builds SDK" />
+	<target name="report" depends="phplint, coverage, phploc" description="Runs code checks and coverage reports" />
+	<target name="all" depends="clean, test, build, report" description="Do everything" />
+</project>

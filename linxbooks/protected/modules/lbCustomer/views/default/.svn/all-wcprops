@@ -1,0 +1,71 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/linxbooks/!svn/ver/307/protected/modules/lbCustomer/views/default
+END
+_view.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/linxbooks/!svn/ver/4/protected/modules/lbCustomer/views/default/_view.php
+END
+view.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/linxbooks/!svn/ver/301/protected/modules/lbCustomer/views/default/view.php
+END
+_customer_addresses.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/linxbooks/!svn/ver/173/protected/modules/lbCustomer/views/default/_customer_addresses.php
+END
+_customer_contacts.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/linxbooks/!svn/ver/160/protected/modules/lbCustomer/views/default/_customer_contacts.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/linxbooks/!svn/ver/160/protected/modules/lbCustomer/views/default/_form.php
+END
+update.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/linxbooks/!svn/ver/160/protected/modules/lbCustomer/views/default/update.php
+END
+create.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/linxbooks/!svn/ver/301/protected/modules/lbCustomer/views/default/create.php
+END
+_search.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/linxbooks/!svn/ver/4/protected/modules/lbCustomer/views/default/_search.php
+END
+_view_invoice_customer.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/linxbooks/!svn/ver/223/protected/modules/lbCustomer/views/default/_view_invoice_customer.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/linxbooks/!svn/ver/3/protected/modules/lbCustomer/views/default/index.php
+END
+admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/linxbooks/!svn/ver/307/protected/modules/lbCustomer/views/default/admin.php
+END

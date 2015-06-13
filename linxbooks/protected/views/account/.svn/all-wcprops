@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/linxbooks/!svn/ver/182/protected/views/account
+END
+_view.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/linxbooks/!svn/ver/1/protected/views/account/_view.php
+END
+_form_changepassword.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/linxbooks/!svn/ver/1/protected/views/account/_form_changepassword.php
+END
+view.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/linxbooks/!svn/ver/182/protected/views/account/view.php
+END
+activation.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/linxbooks/!svn/ver/1/protected/views/account/activation.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/linxbooks/!svn/ver/1/protected/views/account/_form.php
+END
+update.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/linxbooks/!svn/ver/1/protected/views/account/update.php
+END
+create.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/linxbooks/!svn/ver/1/protected/views/account/create.php
+END
+_search.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/linxbooks/!svn/ver/1/protected/views/account/_search.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/linxbooks/!svn/ver/1/protected/views/account/index.php
+END
+admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/linxbooks/!svn/ver/1/protected/views/account/admin.php
+END

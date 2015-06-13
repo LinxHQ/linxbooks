@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport
+END
+SendmailTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/SendmailTransport.php
+END
+SimpleMailInvoker.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/SimpleMailInvoker.php
+END
+MailTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/MailTransport.php
+END
+MailInvoker.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/MailInvoker.php
+END
+IoBuffer.php
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/IoBuffer.php
+END
+SmtpAgent.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/SmtpAgent.php
+END
+AbstractSmtpTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/AbstractSmtpTransport.php
+END
+FailoverTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/FailoverTransport.php
+END
+EsmtpTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/EsmtpTransport.php
+END
+StreamBuffer.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/StreamBuffer.php
+END
+EsmtpHandler.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/EsmtpHandler.php
+END
+LoadBalancedTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/LoadBalancedTransport.php
+END

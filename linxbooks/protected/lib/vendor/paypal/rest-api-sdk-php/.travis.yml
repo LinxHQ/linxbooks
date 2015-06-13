@@ -1,0 +1,15 @@
+language: php
+php:
+  - 5.4
+  - 5.3
+before_script:
+  - composer install --dev
+  - composer update satooshi/php-coveralls --dev
+script:
+    - ant coverage
+after_script:
+    - php vendor/bin/coveralls -v -c .coveralls.yml
+notifications:
+  recipients:
+    - DL-PP-Platform-PHP-SDK@ebay.com
+  on_success: change

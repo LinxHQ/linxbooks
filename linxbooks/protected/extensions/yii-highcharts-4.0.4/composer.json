@@ -1,0 +1,15 @@
+{
+	"name": "miloschuman/yii-highcharts",
+	"description": "Highcharts adapter for the Yii Framework",
+	"keywords": [
+		"yii",
+		"highcharts",
+		"highstock"
+	],
+	"license": "MIT",
+	"authors": [
+		{
+			"name": "Milo Schuman"
+		}
+	]
+}

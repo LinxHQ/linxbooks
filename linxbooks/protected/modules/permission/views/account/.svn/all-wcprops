@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/linxbooks/!svn/ver/173/protected/modules/permission/views/account
+END
+form_permission.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/linxbooks/!svn/ver/173/protected/modules/permission/views/account/form_permission.php
+END
+_form_account_role.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/linxbooks/!svn/ver/173/protected/modules/permission/views/account/_form_account_role.php
+END
+_form_define_permission_account.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/linxbooks/!svn/ver/173/protected/modules/permission/views/account/_form_define_permission_account.php
+END
+form_role.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/linxbooks/!svn/ver/173/protected/modules/permission/views/account/form_role.php
+END
+_form_basic_permission_account.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/linxbooks/!svn/ver/173/protected/modules/permission/views/account/_form_basic_permission_account.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/linxbooks/!svn/ver/173/protected/modules/permission/views/account/index.php
+END

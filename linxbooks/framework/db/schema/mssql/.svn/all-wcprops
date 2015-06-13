@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/linxbooks/!svn/ver/1/framework/db/schema/mssql
+END
+CMssqlTableSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/linxbooks/!svn/ver/1/framework/db/schema/mssql/CMssqlTableSchema.php
+END
+CMssqlColumnSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/linxbooks/!svn/ver/1/framework/db/schema/mssql/CMssqlColumnSchema.php
+END
+CMssqlSqlsrvPdoAdapter.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/linxbooks/!svn/ver/1/framework/db/schema/mssql/CMssqlSqlsrvPdoAdapter.php
+END
+CMssqlSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/linxbooks/!svn/ver/1/framework/db/schema/mssql/CMssqlSchema.php
+END
+CMssqlPdoAdapter.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/linxbooks/!svn/ver/1/framework/db/schema/mssql/CMssqlPdoAdapter.php
+END
+CMssqlCommandBuilder.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/linxbooks/!svn/ver/1/framework/db/schema/mssql/CMssqlCommandBuilder.php
+END

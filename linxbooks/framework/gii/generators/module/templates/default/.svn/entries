@@ -1,0 +1,77 @@
+9
+
+dir
+385
+https://lssvn.svn.beanstalkapp.com/linxbooks/framework/gii/generators/module/templates/default
+https://lssvn.svn.beanstalkapp.com/linxbooks
+
+
+
+2013-10-09T04:25:46.172186Z
+1
+josephpnc
+
+
+svn:special svn:externals svn:needs-lock
+
+
+
+
+
+
+
+
+
+
+
+3280bbb4-0d0c-4a70-9f1d-73aae74160a0
+
+models
+dir
+
+components
+dir
+
+controllers
+dir
+
+messages
+dir
+
+module.php
+file
+
+
+
+
+2015-06-08T02:04:34.143479Z
+bc12cddc675b1908d484eba5838e4941
+2013-10-09T04:25:46.172186Z
+1
+josephpnc
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+725
+
+views
+dir
+

@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/linxbooks/!svn/ver/1/protected/tests
+END
+WebTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/linxbooks/!svn/ver/1/protected/tests/WebTestCase.php
+END
+bootstrap.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/linxbooks/!svn/ver/1/protected/tests/bootstrap.php
+END
+phpunit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 49
+/linxbooks/!svn/ver/1/protected/tests/phpunit.xml
+END

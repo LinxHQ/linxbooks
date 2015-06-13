@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 34
+/linxbooks/!svn/ver/34/js/autosize
+END
+package.json
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/linxbooks/!svn/ver/34/js/autosize/package.json
+END
+bower.json
+K 25
+svn:wc:ra_dav:version-url
+V 45
+/linxbooks/!svn/ver/34/js/autosize/bower.json
+END
+autosize.jquery.json
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/linxbooks/!svn/ver/34/js/autosize/autosize.jquery.json
+END
+jquery.autosize.js
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/linxbooks/!svn/ver/34/js/autosize/jquery.autosize.js
+END
+readme.md
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/linxbooks/!svn/ver/34/js/autosize/readme.md
+END
+jquery.autosize.min.js
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/linxbooks/!svn/ver/34/js/autosize/jquery.autosize.min.js
+END

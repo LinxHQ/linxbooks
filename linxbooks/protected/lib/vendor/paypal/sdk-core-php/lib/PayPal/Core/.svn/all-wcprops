@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core
+END
+PPAPIService.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPAPIService.php
+END
+PPConnectionManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPConnectionManager.php
+END
+PPBaseService.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPBaseService.php
+END
+cacert.pem
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/cacert.pem
+END
+PPConstants.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPConstants.php
+END
+PPHttpConnection.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPHttpConnection.php
+END
+PPConfigManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPConfigManager.php
+END
+PPUtils.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPUtils.php
+END
+PPLoggingManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPLoggingManager.php
+END
+PPMessage.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPMessage.php
+END
+PPCredentialManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 104
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPCredentialManager.php
+END
+PPHttpConfig.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPHttpConfig.php
+END
+PPXmlMessage.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPXmlMessage.php
+END
+PPRequest.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/lib/PayPal/Core/PPRequest.php
+END

@@ -1,0 +1,47 @@
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/linxbooks/!svn/ver/1/framework/caching/dependencies
+END
+CDirectoryCacheDependency.php
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/linxbooks/!svn/ver/1/framework/caching/dependencies/CDirectoryCacheDependency.php
+END
+CDbCacheDependency.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/linxbooks/!svn/ver/1/framework/caching/dependencies/CDbCacheDependency.php
+END
+CChainedCacheDependency.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/linxbooks/!svn/ver/1/framework/caching/dependencies/CChainedCacheDependency.php
+END
+CExpressionDependency.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/linxbooks/!svn/ver/1/framework/caching/dependencies/CExpressionDependency.php
+END
+CCacheDependency.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/linxbooks/!svn/ver/1/framework/caching/dependencies/CCacheDependency.php
+END
+CFileCacheDependency.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/linxbooks/!svn/ver/1/framework/caching/dependencies/CFileCacheDependency.php
+END
+CGlobalStateCacheDependency.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/linxbooks/!svn/ver/1/framework/caching/dependencies/CGlobalStateCacheDependency.php
+END

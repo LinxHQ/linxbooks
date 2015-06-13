@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 40
+/linxbooks/!svn/ver/1/framework/views/bg
+END
+error.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/linxbooks/!svn/ver/1/framework/views/bg/error.php
+END
+profile-summary.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/linxbooks/!svn/ver/1/framework/views/bg/profile-summary.php
+END
+profile-summary-firebug.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/linxbooks/!svn/ver/1/framework/views/bg/profile-summary-firebug.php
+END
+error400.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/linxbooks/!svn/ver/1/framework/views/bg/error400.php
+END
+error500.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/linxbooks/!svn/ver/1/framework/views/bg/error500.php
+END
+profile-callstack.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/linxbooks/!svn/ver/1/framework/views/bg/profile-callstack.php
+END
+error403.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/linxbooks/!svn/ver/1/framework/views/bg/error403.php
+END
+profile-callstack-firebug.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/linxbooks/!svn/ver/1/framework/views/bg/profile-callstack-firebug.php
+END
+error404.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/linxbooks/!svn/ver/1/framework/views/bg/error404.php
+END
+error503.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/linxbooks/!svn/ver/1/framework/views/bg/error503.php
+END
+log.php
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/linxbooks/!svn/ver/1/framework/views/bg/log.php
+END
+log-firebug.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/linxbooks/!svn/ver/1/framework/views/bg/log-firebug.php
+END

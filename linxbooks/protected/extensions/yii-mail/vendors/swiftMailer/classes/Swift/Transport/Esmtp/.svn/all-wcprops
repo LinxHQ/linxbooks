@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/Esmtp
+END
+Authenticator.php
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/Esmtp/Authenticator.php
+END
+AuthHandler.php
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Transport/Esmtp/AuthHandler.php
+END

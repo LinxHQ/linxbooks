@@ -1,0 +1,185 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events
+END
+Swift_Events_TransportExceptionEvent.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_TransportExceptionEvent.html
+END
+_vendors---swiftMailer---classes---Swift---Events---SendListener.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---SendListener.php.html
+END
+_vendors---swiftMailer---classes---Swift---Events---ResponseEvent.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---ResponseEvent.php.html
+END
+Swift_Events_CommandEvent.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_CommandEvent.html
+END
+Swift_Events_Event.html
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_Event.html
+END
+Swift_Events_TransportExceptionListener.html
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_TransportExceptionListener.html
+END
+_vendors---swiftMailer---classes---Swift---Events---SimpleEventDispatcher.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 151
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---SimpleEventDispatcher.php.html
+END
+_vendors---swiftMailer---classes---Swift---Events---TransportChangeEvent.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 150
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---TransportChangeEvent.php.html
+END
+_vendors---swiftMailer---classes---Swift---Events---ResponseListener.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 146
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---ResponseListener.php.html
+END
+Swift_Events_CommandListener.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_CommandListener.html
+END
+Swift_Events_EventListener.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_EventListener.html
+END
+_vendors---swiftMailer---classes---Swift---Events---TransportChangeListener.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---TransportChangeListener.php.html
+END
+_vendors---swiftMailer---classes---Swift---Events---EventObject.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 141
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---EventObject.php.html
+END
+Swift_Events_EventDispatcher.html
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_EventDispatcher.html
+END
+Swift_Events_SendEvent.html
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_SendEvent.html
+END
+_vendors---swiftMailer---classes---Swift---Events---TransportExceptionEvent.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 153
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---TransportExceptionEvent.php.html
+END
+Swift_Events_SendListener.html
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_SendListener.html
+END
+Swift_Events_ResponseEvent.html
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_ResponseEvent.html
+END
+_vendors---swiftMailer---classes---Swift---Events---CommandEvent.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 142
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---CommandEvent.php.html
+END
+_vendors---swiftMailer---classes---Swift---Events---TransportExceptionListener.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 156
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---TransportExceptionListener.php.html
+END
+_vendors---swiftMailer---classes---Swift---Events---Event.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 135
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---Event.php.html
+END
+Swift_Events_SimpleEventDispatcher.html
+K 25
+svn:wc:ra_dav:version-url
+V 108
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_SimpleEventDispatcher.html
+END
+_vendors---swiftMailer---classes---Swift---Events---CommandListener.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---CommandListener.php.html
+END
+Swift_Events_ResponseListener.html
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_ResponseListener.html
+END
+Swift_Events_TransportChangeEvent.html
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_TransportChangeEvent.html
+END
+_vendors---swiftMailer---classes---Swift---Events---EventListener.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 143
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---EventListener.php.html
+END
+_vendors---swiftMailer---classes---Swift---Events---EventDispatcher.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 145
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---EventDispatcher.php.html
+END
+Swift_Events_EventObject.html
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_EventObject.html
+END
+Swift_Events_TransportChangeListener.html
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/Swift_Events_TransportChangeListener.html
+END
+_vendors---swiftMailer---classes---Swift---Events---SendEvent.php.html
+K 25
+svn:wc:ra_dav:version-url
+V 139
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/doc/Swift/Events/_vendors---swiftMailer---classes---Swift---Events---SendEvent.php.html
+END

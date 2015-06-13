@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php
+END
+composer.json
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/composer.json
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/LICENSE.txt
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/.gitignore
+END
+CHANGELOG.md
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/CHANGELOG.md
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/README.md
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/sdk-core-php/build.xml
+END

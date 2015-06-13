@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/linxbooks/!svn/ver/345/protected/modules/lbVendor/models
+END
+LbPaymentVendor.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/linxbooks/!svn/ver/319/protected/modules/lbVendor/models/LbPaymentVendor.php
+END
+LbVendorItem.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/linxbooks/!svn/ver/251/protected/modules/lbVendor/models/LbVendorItem.php
+END
+LbVendor.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/linxbooks/!svn/ver/345/protected/modules/lbVendor/models/LbVendor.php
+END
+LbVendorTotal.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/linxbooks/!svn/ver/313/protected/modules/lbVendor/models/LbVendorTotal.php
+END
+LbVendorDiscount.php
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/linxbooks/!svn/ver/251/protected/modules/lbVendor/models/LbVendorDiscount.php
+END
+LbPaymentVendorInvoice.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/linxbooks/!svn/ver/313/protected/modules/lbVendor/models/LbPaymentVendorInvoice.php
+END
+LbVendorInvoice.php
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/linxbooks/!svn/ver/345/protected/modules/lbVendor/models/LbVendorInvoice.php
+END
+LbVendorTax.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/linxbooks/!svn/ver/256/protected/modules/lbVendor/models/LbVendorTax.php
+END

@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 47
+/linxbooks/!svn/ver/1/framework/db/schema/pgsql
+END
+CPgsqlSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 64
+/linxbooks/!svn/ver/1/framework/db/schema/pgsql/CPgsqlSchema.php
+END
+CPgsqlCommandBuilder.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/linxbooks/!svn/ver/1/framework/db/schema/pgsql/CPgsqlCommandBuilder.php
+END
+CPgsqlTableSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/linxbooks/!svn/ver/1/framework/db/schema/pgsql/CPgsqlTableSchema.php
+END
+CPgsqlColumnSchema.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/linxbooks/!svn/ver/1/framework/db/schema/pgsql/CPgsqlColumnSchema.php
+END

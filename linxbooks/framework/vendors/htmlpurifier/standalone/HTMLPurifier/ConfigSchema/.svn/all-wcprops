@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/linxbooks/!svn/ver/1/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema
+END
+Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/linxbooks/!svn/ver/1/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Exception.php
+END
+InterchangeBuilder.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/linxbooks/!svn/ver/1/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/InterchangeBuilder.php
+END
+schema.ser
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/linxbooks/!svn/ver/1/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema.ser
+END
+Validator.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/linxbooks/!svn/ver/1/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Validator.php
+END
+ValidatorAtom.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/linxbooks/!svn/ver/1/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/ValidatorAtom.php
+END
+Interchange.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/linxbooks/!svn/ver/1/framework/vendors/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange.php
+END

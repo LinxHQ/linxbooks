@@ -1,0 +1,105 @@
+
+/* Gridster styles */
+.demo {
+    margin: 3em 0;
+    padding: 7.5em 0 5.5em;
+    background: #004756;
+}
+
+.demo:hover .gridster {
+    opacity: 1;
+}
+
+.gridster ul, ol {
+    list-style: none;
+}
+
+.gridster {
+    width: 1000px;
+    margin: 0 auto;
+
+    /**opacity: .8;**/
+
+    -webkit-transition: opacity .6s;
+    -moz-transition: opacity .6s;
+    -o-transition: opacity .6s;
+    -ms-transition: opacity .6s;
+    transition: opacity .6s;
+}
+
+.gridster .gs_w {
+    background: #FFFFFF;
+    /**cursor: pointer;**/
+    -webkit-box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    box-shadow: 0 0 5px rgba(0,0,0,0.3);
+    border-radius: 20px 20px 100px;
+    border: 10px solid #E6C92E;
+}
+
+.gridster .player {
+    -webkit-box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+    box-shadow: 3px 3px 5px rgba(0,0,0,0.3);
+}
+
+
+.gridster .gs_w.try {
+    background-image: url(../img/sprite.png);
+    background-repeat: no-repeat;
+    background-position: 37px -169px;
+
+}
+
+.gridster .preview-holder {
+    border: none!important;
+    border-radius: 0!important;
+    background: rgba(255,255,255)!important;
+}
+
+
+article,
+.m_doc_method {
+    background: #FFF;
+}
+
+article:not(:last-child),
+.m_doc_method:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+
+.m_doc_method > h3 {
+    background-color: #E5E5E5;
+    padding: 1.4em 2em;
+    color: #333333;
+    font-size: 1.8em;
+}
+
+
+.m_doc_method .heading-m {
+    color: #333333;
+}
+
+
+
+
+#intro  {
+    overflow: hidden;
+}
+
+#intro  .i_download {
+    margin-top: 100px;
+}
+
+#intro > div{
+    width: 65%;
+    float: left;
+}
+
+#intro {
+    padding-right: 0;
+}
+
+#intro > div:last-child{
+    width: 32%;
+    float: right;
+}

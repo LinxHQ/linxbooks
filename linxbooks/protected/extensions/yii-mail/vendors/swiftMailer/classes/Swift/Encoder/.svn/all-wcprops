@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Encoder
+END
+QpEncoder.php
+K 25
+svn:wc:ra_dav:version-url
+V 107
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Encoder/QpEncoder.php
+END
+Rfc2231Encoder.php
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Encoder/Rfc2231Encoder.php
+END
+Base64Encoder.php
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/classes/Swift/Encoder/Base64Encoder.php
+END

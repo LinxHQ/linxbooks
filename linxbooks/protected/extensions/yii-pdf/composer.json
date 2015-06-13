@@ -1,0 +1,18 @@
+{
+	"name": "borales/yii-pdf",
+	"description": "Yii-wrapper for PHP-PDF libraries (mPDF, HTML2PDF)",
+	"keywords": ["yii", "pdf"],
+	"license": "New BSD License",
+	"type": "yii-extension",
+	"authors": [
+		{
+			"name": "Borales (Alexandr Bordun)",
+			"email": "bordun.alexandr@gmail.com"
+		}
+	],
+	"require": {
+		"yiisoft/yii": ">=1.1.13",
+		"mpdf/mpdf": "dev-master",
+		"ensepar/html2pdf": "dev-master"
+	}
+}

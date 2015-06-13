@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 44
+/linxbooks/!svn/ver/1/framework/i18n/gettext
+END
+CGettextMoFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/linxbooks/!svn/ver/1/framework/i18n/gettext/CGettextMoFile.php
+END
+CGettextPoFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/linxbooks/!svn/ver/1/framework/i18n/gettext/CGettextPoFile.php
+END
+CGettextFile.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/linxbooks/!svn/ver/1/framework/i18n/gettext/CGettextFile.php
+END

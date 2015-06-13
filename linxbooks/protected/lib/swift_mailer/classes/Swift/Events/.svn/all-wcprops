@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events
+END
+SendEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/SendEvent.php
+END
+SendListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/SendListener.php
+END
+ResponseEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/ResponseEvent.php
+END
+SimpleEventDispatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/SimpleEventDispatcher.php
+END
+TransportChangeEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/TransportChangeEvent.php
+END
+ResponseListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/ResponseListener.php
+END
+TransportChangeListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/TransportChangeListener.php
+END
+EventObject.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/EventObject.php
+END
+TransportExceptionEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/TransportExceptionEvent.php
+END
+CommandEvent.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/CommandEvent.php
+END
+TransportExceptionListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/TransportExceptionListener.php
+END
+Event.php
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/Event.php
+END
+CommandListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/CommandListener.php
+END
+EventListener.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/EventListener.php
+END
+EventDispatcher.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Events/EventDispatcher.php
+END

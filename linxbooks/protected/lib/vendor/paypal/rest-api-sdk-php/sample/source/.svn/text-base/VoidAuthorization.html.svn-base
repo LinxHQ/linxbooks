@@ -1,0 +1,82 @@
+<!DOCTYPE html><html lang="en"><head><title>VoidAuthorization</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="VoidAuthorization"><meta name="groc-project-path" content="VoidAuthorization.php"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><body></body></html><a href="../">Back<div id="document"><div class="segment"><a id="segment-0" name="segment-0" class="section_anchor"></a><div class="code"><div class="wrapper"><span class="cp">&lt;?php</span></div></div></div><div class="segment"><a id="segment-1" name="segment-1" class="section_anchor"></a><div class="comments"><div class="pilwrap"><a href="#segment-1" class="pilcrow">¶</a></div><div class="wrapper"><h1 id="voidauthorization">VoidAuthorization</h1>
+
+<p>This sample code demonstrate how you can void an authorized payment
+API used: /v1/payments/authorization/&lt;{authorizationid}>/void"</p></div></div><div class="code"><div class="wrapper"><span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/../bootstrap.php&#39;</span><span class="p">;</span>
+
+<span class="k">use</span> <span class="nx">PayPal\Api\Authorization</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PayPal\Api\Address</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PayPal\Api\Amount</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PayPal\Api\CreditCard</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PayPal\Api\Payer</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PayPal\Api\Payment</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PayPal\Api\FundingInstrument</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PayPal\Api\Transaction</span><span class="p">;</span></div></div></div><div class="segment"><a id="segment-2" name="segment-2" class="section_anchor"></a><div class="comments"><div class="pilwrap"><a href="#segment-2" class="pilcrow">¶</a></div><div class="wrapper"><p>create payment to get authorization Id</p></div></div><div class="code"><div class="wrapper"><span class="nv">$authId</span> <span class="o">=</span> <span class="nx">createAuthorization</span><span class="p">(</span><span class="nv">$apiContext</span><span class="p">);</span>
+
+<span class="nv">$authorization</span> <span class="o">=</span> <span class="nx">Authorization</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="nv">$authId</span><span class="p">,</span> <span class="nv">$apiContext</span><span class="p">);</span></div></div></div><div class="segment"><a id="segment-3" name="segment-3" class="section_anchor"></a><div class="comments"><div class="pilwrap"><a href="#segment-3" class="pilcrow">¶</a></div><div class="wrapper"><h3 id="voidauthorization">VoidAuthorization</h3>
+
+<p>VoidAuthorization by posting to the APIService
+using a valid ApiContext (See bootstrap.php for more on <code>ApiContext</code>)
+The return object contains the status;</p></div></div><div class="code"><div class="wrapper"><span class="k">try</span> <span class="p">{</span>
+  <span class="nv">$void</span> <span class="o">=</span> <span class="nv">$authorization</span><span class="o">-&gt;</span><span class="na">void</span><span class="p">(</span><span class="nv">$apiContext</span><span class="p">);</span>
+<span class="p">}</span> <span class="k">catch</span> <span class="p">(</span><span class="nx">\PPConnectionException</span> <span class="nv">$ex</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">echo</span> <span class="s2">&quot;Exception: &quot;</span> <span class="o">.</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+  <span class="k">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">  &lt;div&gt;</span>
+<span class="x">    Void Authorization:</span>
+<span class="x">  &lt;/div&gt;</span>
+<span class="x">  &lt;pre&gt;</span><span class="cp">&lt;?php</span> <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$void</span><span class="o">-&gt;</span><span class="na">toArray</span><span class="p">());</span><span class="cp">?&gt;</span><span class="x">&lt;/pre&gt;</span>
+<span class="x">  &lt;a href=&#39;../index.html&#39;&gt;Back&lt;/a&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span>
+<span class="cp">&lt;?php</span> 
+<span class="k">function</span> <span class="nf">createAuthorization</span><span class="p">(</span><span class="nv">$apiContext</span><span class="p">)</span>
+<span class="p">{</span>
+  <span class="nv">$addr</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Address</span><span class="p">();</span>
+  <span class="nv">$addr</span><span class="o">-&gt;</span><span class="na">setLine1</span><span class="p">(</span><span class="s2">&quot;3909 Witmer Road&quot;</span><span class="p">);</span>
+  <span class="nv">$addr</span><span class="o">-&gt;</span><span class="na">setLine2</span><span class="p">(</span><span class="s2">&quot;Niagara Falls&quot;</span><span class="p">);</span>
+  <span class="nv">$addr</span><span class="o">-&gt;</span><span class="na">setCity</span><span class="p">(</span><span class="s2">&quot;Niagara Falls&quot;</span><span class="p">);</span>
+  <span class="nv">$addr</span><span class="o">-&gt;</span><span class="na">setState</span><span class="p">(</span><span class="s2">&quot;NY&quot;</span><span class="p">);</span>
+  <span class="nv">$addr</span><span class="o">-&gt;</span><span class="na">setPostal_code</span><span class="p">(</span><span class="s2">&quot;14305&quot;</span><span class="p">);</span>
+  <span class="nv">$addr</span><span class="o">-&gt;</span><span class="na">setCountry_code</span><span class="p">(</span><span class="s2">&quot;US&quot;</span><span class="p">);</span>
+  <span class="nv">$addr</span><span class="o">-&gt;</span><span class="na">setPhone</span><span class="p">(</span><span class="s2">&quot;716-298-1822&quot;</span><span class="p">);</span>
+  
+  <span class="nv">$card</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CreditCard</span><span class="p">();</span>
+  <span class="nv">$card</span><span class="o">-&gt;</span><span class="na">setType</span><span class="p">(</span><span class="s2">&quot;visa&quot;</span><span class="p">);</span>
+  <span class="nv">$card</span><span class="o">-&gt;</span><span class="na">setNumber</span><span class="p">(</span><span class="s2">&quot;4417119669820331&quot;</span><span class="p">);</span>
+  <span class="nv">$card</span><span class="o">-&gt;</span><span class="na">setExpire_month</span><span class="p">(</span><span class="s2">&quot;11&quot;</span><span class="p">);</span>
+  <span class="nv">$card</span><span class="o">-&gt;</span><span class="na">setExpire_year</span><span class="p">(</span><span class="s2">&quot;2019&quot;</span><span class="p">);</span>
+  <span class="nv">$card</span><span class="o">-&gt;</span><span class="na">setCvv2</span><span class="p">(</span><span class="s2">&quot;012&quot;</span><span class="p">);</span>
+  <span class="nv">$card</span><span class="o">-&gt;</span><span class="na">setFirst_name</span><span class="p">(</span><span class="s2">&quot;Joe&quot;</span><span class="p">);</span>
+  <span class="nv">$card</span><span class="o">-&gt;</span><span class="na">setLast_name</span><span class="p">(</span><span class="s2">&quot;Shopper&quot;</span><span class="p">);</span>
+  <span class="nv">$card</span><span class="o">-&gt;</span><span class="na">setBilling_address</span><span class="p">(</span><span class="nv">$addr</span><span class="p">);</span>
+  
+  <span class="nv">$fi</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">FundingInstrument</span><span class="p">();</span>
+  <span class="nv">$fi</span><span class="o">-&gt;</span><span class="na">setCredit_card</span><span class="p">(</span><span class="nv">$card</span><span class="p">);</span>
+  
+  <span class="nv">$payer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Payer</span><span class="p">();</span>
+  <span class="nv">$payer</span><span class="o">-&gt;</span><span class="na">setPayment_method</span><span class="p">(</span><span class="s2">&quot;credit_card&quot;</span><span class="p">);</span>
+  <span class="nv">$payer</span><span class="o">-&gt;</span><span class="na">setFunding_instruments</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$fi</span><span class="p">));</span>
+  
+  <span class="nv">$amount</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Amount</span><span class="p">();</span>
+  <span class="nv">$amount</span><span class="o">-&gt;</span><span class="na">setCurrency</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">);</span>
+  <span class="nv">$amount</span><span class="o">-&gt;</span><span class="na">setTotal</span><span class="p">(</span><span class="s2">&quot;1.00&quot;</span><span class="p">);</span>
+  
+  <span class="nv">$transaction</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Transaction</span><span class="p">();</span>
+  <span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">setAmount</span><span class="p">(</span><span class="nv">$amount</span><span class="p">);</span>
+  <span class="nv">$transaction</span><span class="o">-&gt;</span><span class="na">setDescription</span><span class="p">(</span><span class="s2">&quot;This is the payment description.&quot;</span><span class="p">);</span>
+  
+  <span class="nv">$payment</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Payment</span><span class="p">();</span>
+  <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">setIntent</span><span class="p">(</span><span class="s2">&quot;authorize&quot;</span><span class="p">);</span>
+  <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">setPayer</span><span class="p">(</span><span class="nv">$payer</span><span class="p">);</span>
+  <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">setTransactions</span><span class="p">(</span><span class="k">array</span><span class="p">(</span><span class="nv">$transaction</span><span class="p">));</span>
+  
+  <span class="nv">$paymnt</span> <span class="o">=</span> <span class="nv">$payment</span><span class="o">-&gt;</span><span class="na">create</span><span class="p">(</span><span class="nv">$apiContext</span><span class="p">);</span>
+  <span class="nv">$resArray</span> <span class="o">=</span> <span class="nv">$paymnt</span><span class="o">-&gt;</span><span class="na">toArray</span><span class="p">();</span>
+  
+  <span class="k">return</span> <span class="nv">$authId</span> <span class="o">=</span> <span class="nv">$resArray</span><span class="p">[</span><span class="s1">&#39;transactions&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;related_resources&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;authorization&#39;</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">];</span>
+<span class="p">}</span></div></div></div><div class="segment"><div class="comments"><a href="../">Back</a></div></div></div><script type="text/javascript" src="assets/jquery.min.js"></script><script type="text/javascript" src="assets/docs.js"></script></a>

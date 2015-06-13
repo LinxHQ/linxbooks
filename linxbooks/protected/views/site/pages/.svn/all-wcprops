@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/linxbooks/!svn/ver/1/protected/views/site/pages
+END
+about.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/linxbooks/!svn/ver/1/protected/views/site/pages/about.php
+END
+account_activated.php
+K 25
+svn:wc:ra_dav:version-url
+V 70
+/linxbooks/!svn/ver/1/protected/views/site/pages/account_activated.php
+END
+must_log_out.php
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/linxbooks/!svn/ver/1/protected/views/site/pages/must_log_out.php
+END

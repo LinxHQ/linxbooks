@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/dependency_maps
+END
+cache_deps.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/dependency_maps/cache_deps.php
+END
+mime_deps.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/dependency_maps/mime_deps.php
+END
+transport_deps.php
+K 25
+svn:wc:ra_dav:version-url
+V 106
+/linxbooks/!svn/ver/1/protected/extensions/yii-mail/vendors/swiftMailer/dependency_maps/transport_deps.php
+END

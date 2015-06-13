@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 36
+/linxbooks/!svn/ver/1/framework/test
+END
+CDbFixtureManager.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/linxbooks/!svn/ver/1/framework/test/CDbFixtureManager.php
+END
+CWebTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/linxbooks/!svn/ver/1/framework/test/CWebTestCase.php
+END
+CTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 50
+/linxbooks/!svn/ver/1/framework/test/CTestCase.php
+END
+CDbTestCase.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/linxbooks/!svn/ver/1/framework/test/CDbTestCase.php
+END

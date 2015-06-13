@@ -1,0 +1,163 @@
+#contactable-inner {
+	background-image:url(images/contact.png);
+	color:#FFFFFF;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	font-size: 16px;
+	line-height: 18px;
+	background-color:#333333;
+	cursor:pointer;
+	height:102px;
+	left:0;
+	margin-left:-5px; 
+	*margin-left:-5px; 
+	overflow:hidden;
+	position:fixed;
+	*position:absolute;
+	text-indent:-100000px;
+	top:102px;
+	*margin-top:10px;
+	width:44px;
+	z-index:100000;
+}
+
+#contactable-contactForm {
+	background-color:#333333;
+	border:2px solid #FFFFFF;
+	color:#FFFFFF;
+	height:450px;
+	left:0;
+	margin-left:-400px;
+	*margin-left:-434px;
+	margin-top:-160px;
+	overflow:hidden;
+	padding-left:30px;
+	position:fixed;
+	top:200px;
+	width:360px;
+	*width:394px;
+	z-index:99;
+}
+
+form#contactable-contactForm input,
+form#contactable-contactForm textarea,
+form#contactable-contactForm select {
+	background:#FFFFFF none repeat scroll 0 0;
+	outline-style:none;
+	outline-width:medium;
+	width:325px;
+	padding:5px;
+	border:1px solid #dfdfdf;
+	font-size:1em;
+	font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+	margin-bottom:10px;
+}
+
+form#contactable-contactForm select {
+	width:335px;
+}
+
+form#contactable-contactForm p {
+	width:325px;
+	font-size:0.9em;
+}
+
+form#contactable-contactForm .contactable-disclaimer {
+	*margin-left:20px;
+}
+
+#contactable-contactForm .contactable-green {
+	color:	#76b347;
+}
+
+#contactable-overlay {
+	background-color:#666666;
+	display:none;
+	height:100%;
+	left:0;
+	margin:0;
+	padding:0;
+	position:absolute;
+	top:0;
+	width:100%;
+	z-index:0;
+} 
+.contactable-invalid { background-color: #EDBE9C; }
+#contactable-name.contactable-invalid { background-color: #EDBE9C; } 
+#contactable-email.contactable-invalid { background-color: #EDBE9C; }
+#contactable-message.contactable-invalid { background-color: #EDBE9C; }
+
+form#contactable-contactForm label{
+	*margin-left:20px;
+	line-height:150%;
+}
+
+form#contactable-contactForm #contactable-loading {
+	background: url(images/ajax-loader.gif) no-repeat;
+	width:66px;
+	height:66px;
+	margin: 80px auto;
+	display:none;
+}
+
+#contactable-callback {
+	font-size:1.1em;
+	color: #FFF;
+	width:325px;
+	margin: 100px auto;	
+	display:none;
+}
+
+.contactable-holder {
+	margin:0 auto;
+	*margin-left:20px;
+	padding-top:20px;	
+}	
+
+/* Submit button */
+form#contactable-contactForm .contactable-submit {
+  background-color: #7fbf4d;
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #7fbf4d), color-stop(100%, #63a62f));
+  background-image: -webkit-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -moz-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -ms-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: -o-linear-gradient(top, #7fbf4d, #63a62f);
+  background-image: linear-gradient(top, #7fbf4d, #63a62f);
+  border: 1px solid #63a62f;
+  border-bottom: 1px solid #5b992b;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+  -webkit-box-shadow: inset 0 1px 0 0 #96ca6d;
+  -moz-box-shadow: inset 0 1px 0 0 #96ca6d;
+  box-shadow: inset 0 1px 0 0 #96ca6d;
+  color: #fff;
+  font: bold 11px "Lucida Grande", "Lucida Sans Unicode", "Lucida Sans", Geneva, Verdana, sans-serif;
+  line-height: 1;
+  padding: 7px 0 8px 0;
+  text-align: center;
+  text-shadow: 0 -1px 0 #4c9021;
+  width: 338px; }
+
+form#contactable-contactForm .contactable-submit:hover {
+    background-color: #76b347;
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #76b347), color-stop(100%, #5e9e2e));
+    background-image: -webkit-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -moz-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -ms-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: -o-linear-gradient(top, #76b347, #5e9e2e);
+    background-image: linear-gradient(top, #76b347, #5e9e2e);
+    -webkit-box-shadow: inset 0 1px 0 0 #8dbf67;
+    -moz-box-shadow: inset 0 1px 0 0 #8dbf67;
+    box-shadow: inset 0 1px 0 0 #8dbf67;
+    cursor: pointer; }
+
+button.contactable-cupid-green:active {
+    border: 1px solid #5b992b;
+    border-bottom: 1px solid #538c27;
+    -webkit-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+    -moz-box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee;
+    box-shadow: inset 0 0 8px 4px #548c29, 0 1px 0 0 #eeeeee; }
+
+form#contactable-contactForm label {
+    display: inline
+}

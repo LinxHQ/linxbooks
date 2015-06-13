@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/linxbooks/!svn/ver/1/framework/cli/views/webapp/protected/tests/fixtures
+END
+hg-hgkeep
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/linxbooks/!svn/ver/1/framework/cli/views/webapp/protected/tests/fixtures/hg-hgkeep
+END
+git-gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/linxbooks/!svn/ver/1/framework/cli/views/webapp/protected/tests/fixtures/git-gitkeep
+END

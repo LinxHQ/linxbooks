@@ -1,0 +1,742 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.9.2
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Nov 11, 2013 at 11:34 PM
+-- Server version: 5.5.9
+-- PHP Version: 5.3.6
+
+SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: `linxbooks`
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_core_entities`
+--
+
+CREATE TABLE `lb_core_entities` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_entity_type` char(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'INVOICE, QUOTATION, CUSTOMER,...',
+  `lb_entity_primary_key` int(11) NOT NULL,
+  `lb_created_by` int(11) NOT NULL,
+  `lb_created_date` datetime NOT NULL,
+  `lb_last_updated_by` int(11) NOT NULL,
+  `lb_last_update` datetime NOT NULL,
+  `lb_subscription_id` int(11) NOT NULL,
+  `lb_locked_from_deletion` tinyint(1) NOT NULL COMMENT 'e.g. already paid or written-off invoices',
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='attributes that almost all important models should have' AUTO_INCREMENT=277 ;
+
+--
+-- Dumping data for table `lb_core_entities`
+--
+
+INSERT INTO `lb_core_entities` VALUES(2, 'lbCustomer', 3, 40, '2013-10-10 17:08:34', 40, '2013-10-10 17:18:43', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(3, 'lbCustomer', 1, 40, '2013-10-10 17:44:21', 40, '2013-10-10 17:44:21', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(4, 'lbCustomer', 4, 40, '2013-10-10 22:23:23', 40, '2013-10-10 22:23:23', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(5, 'lbCustomerAddress', 1, 40, '2013-10-10 22:23:24', 40, '2013-10-16 16:07:40', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(6, 'lbCustomerContact', 1, 40, '2013-10-10 22:23:24', 40, '2013-10-10 22:23:24', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(7, 'lbCustomerAddressContact', 1, 40, '2013-10-10 22:23:24', 40, '2013-10-10 22:23:24', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(8, 'lbCustomer', 5, 40, '2013-10-11 11:59:31', 40, '2013-10-11 11:59:31', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(9, 'lbCustomerAddress', 2, 40, '2013-10-11 11:59:31', 40, '2013-10-11 11:59:31', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(10, 'lbCustomerContact', 2, 40, '2013-10-11 11:59:32', 40, '2013-10-11 11:59:32', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(11, 'lbCustomerAddressContact', 2, 40, '2013-10-11 11:59:32', 40, '2013-10-11 11:59:32', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(123, 'lbNextId', 1, 40, '2013-10-15 14:51:35', 40, '2013-11-07 23:11:04', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(222, 'lbInvoice', 7, 40, '2013-10-24 13:00:16', 40, '2013-11-02 23:51:22', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(225, 'lbInvoiceTotal', 2, 40, '2013-10-24 13:00:16', 40, '2013-10-24 23:37:29', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(234, 'lbInvoiceItem', 24, 40, '2013-10-24 23:16:28', 40, '2013-10-24 23:16:38', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(235, 'lbInvoiceItem', 25, 40, '2013-10-24 23:19:23', 40, '2013-10-24 23:20:28', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(236, 'lbInvoiceItem', 26, 40, '2013-10-24 23:37:29', 40, '2013-10-24 23:37:29', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(237, 'lbInvoice', 8, 40, '2013-11-02 23:51:57', 40, '2013-11-03 22:10:14', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(238, 'lbInvoiceItem', 27, 40, '2013-11-02 23:51:57', 40, '2013-11-03 21:52:07', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(239, 'lbInvoiceItem', 28, 40, '2013-11-02 23:51:57', 40, '2013-11-07 14:51:01', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(240, 'lbInvoiceTotal', 3, 40, '2013-11-02 23:51:57', 40, '2013-11-07 14:51:01', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(241, 'lbInvoice', 9, 40, '2013-11-03 21:52:19', 40, '2013-11-07 22:49:33', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(242, 'lbInvoiceItem', 29, 40, '2013-11-03 21:52:19', 40, '2013-11-07 22:50:52', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(244, 'lbInvoiceTotal', 4, 40, '2013-11-03 21:52:19', 40, '2013-11-07 22:54:40', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(259, 'lbInvoiceItem', 45, 40, '2013-11-07 14:51:01', 40, '2013-11-07 14:51:01', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(262, 'lbInvoice', 10, 40, '2013-11-07 22:57:15', 40, '2013-11-07 22:57:15', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(263, 'lbInvoiceItem', 48, 40, '2013-11-07 22:57:15', 40, '2013-11-07 22:57:15', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(264, 'lbInvoiceItem', 49, 40, '2013-11-07 22:57:15', 40, '2013-11-07 22:57:15', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(265, 'lbInvoiceTotal', 5, 40, '2013-11-07 22:57:15', 40, '2013-11-07 22:57:15', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(266, 'lbInvoice', 11, 40, '2013-11-07 23:02:27', 40, '2013-11-07 23:11:04', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(267, 'lbInvoiceItem', 50, 40, '2013-11-07 23:02:27', 40, '2013-11-07 23:02:27', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(268, 'lbInvoiceItem', 51, 40, '2013-11-07 23:02:27', 40, '2013-11-07 23:02:27', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(269, 'lbInvoiceTotal', 6, 40, '2013-11-07 23:02:27', 40, '2013-11-07 23:02:27', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(270, 'lbInvoice', 12, 40, '2013-11-11 16:56:48', 40, '2013-11-11 21:45:22', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(271, 'lbInvoiceItem', 52, 40, '2013-11-11 16:56:49', 40, '2013-11-11 23:10:07', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(272, 'lbInvoiceItem', 53, 40, '2013-11-11 16:56:49', 40, '2013-11-11 23:10:07', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(273, 'lbInvoiceTotal', 7, 40, '2013-11-11 16:56:49', 40, '2013-11-11 23:10:07', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(274, 'lbInvoiceItemTemplate', 1, 40, '2013-11-11 21:55:37', 40, '2013-11-11 21:55:37', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(275, 'lbInvoiceItem', 54, 40, '2013-11-11 23:09:07', 40, '2013-11-11 23:10:07', 12, 0);
+INSERT INTO `lb_core_entities` VALUES(276, 'lbInvoiceItem', 55, 40, '2013-11-11 23:10:00', 40, '2013-11-11 23:10:07', 12, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_customers`
+--
+
+CREATE TABLE `lb_customers` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_customer_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `lb_customer_registration` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_tax_id` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_website_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_is_own_company` tinyint(1) NOT NULL COMMENT 'only allow ONE per subscription',
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
+
+--
+-- Dumping data for table `lb_customers`
+--
+
+INSERT INTO `lb_customers` VALUES(1, 'Lion and Lamb Soft test', 'registration number', 'tax code', 'http://lionandlambsoft.com.sg', 0);
+INSERT INTO `lb_customers` VALUES(2, 'Another customer ', '1231', '1231', 'weqweqw.com', 0);
+INSERT INTO `lb_customers` VALUES(3, 'New', 'test updated', '', '', 0);
+INSERT INTO `lb_customers` VALUES(4, 'LSS Vietnam', '', '234324', 'lss.com', 0);
+INSERT INTO `lb_customers` VALUES(5, 'Customer with address and contact', 'reg', NULL, 'http://lionandlambsoft.com.sg	', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_customer_addresses`
+--
+
+CREATE TABLE `lb_customer_addresses` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_customer_id` int(11) NOT NULL,
+  `lb_customer_address_line_1` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `lb_customer_address_line_2` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_city` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_state` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_country` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_postal_code` varchar(20) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_website_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_phone_1` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_phone_2` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_fax` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_email` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_note` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_address_is_active` tinyint(1) NOT NULL,
+  `lb_customer_address_is_billing` tinyint(1) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `lb_customer_addresses`
+--
+
+INSERT INTO `lb_customer_addresses` VALUES(1, 4, 'Cau Giay Hanoi', '', 'Hanoi', 'Hanoi', 'VN', '123123', NULL, '8361924', NULL, '32423434', NULL, NULL, 1, 0);
+INSERT INTO `lb_customer_addresses` VALUES(2, 5, 'Somewhere over the rainbow', '', '', '', 'SG', '', NULL, NULL, NULL, NULL, NULL, NULL, 1, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_customer_address_contacts`
+--
+
+CREATE TABLE `lb_customer_address_contacts` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_customer_address_id` int(11) NOT NULL,
+  `lb_customer_contact_id` int(11) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `lb_customer_address_contacts`
+--
+
+INSERT INTO `lb_customer_address_contacts` VALUES(1, 1, 1);
+INSERT INTO `lb_customer_address_contacts` VALUES(2, 2, 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_customer_contacts`
+--
+
+CREATE TABLE `lb_customer_contacts` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_customer_id` int(11) DEFAULT NULL,
+  `lb_customer_contact_first_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `lb_customer_contact_last_name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `lb_customer_contact_office_phone` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_contact_office_fax` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_contact_mobile` varchar(50) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_contact_email_1` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_contact_email_2` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_contact_note` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_contact_is_active` tinyint(1) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `lb_customer_contacts`
+--
+
+INSERT INTO `lb_customer_contacts` VALUES(1, 4, 'JosepH', 'Pham', '', NULL, '', '', NULL, NULL, 1);
+INSERT INTO `lb_customer_contacts` VALUES(2, 5, 'Joseph', 'Pham', '', NULL, '', '', NULL, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_invoices`
+--
+
+CREATE TABLE `lb_invoices` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_invoice_group` char(60) COLLATE utf8_unicode_ci NOT NULL COMMENT 'INVOICE, QUOTATION',
+  `lb_generated_from_quotation_id` int(11) DEFAULT NULL,
+  `lb_invoice_no` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
+  `lb_invoice_date` date NOT NULL,
+  `lb_invoice_due_date` date DEFAULT NULL,
+  `lb_invoice_company_id` int(11) DEFAULT NULL COMMENT 'owner company',
+  `lb_invoice_company_address_id` int(11) DEFAULT NULL,
+  `lb_invoice_customer_id` int(11) DEFAULT NULL,
+  `lb_invoice_customer_address_id` int(11) DEFAULT NULL,
+  `lb_invoice_attention_contact_id` int(11) DEFAULT NULL,
+  `lb_invoice_subject` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_invoice_note` longtext COLLATE utf8_unicode_ci,
+  `lb_invoice_status_code` char(60) COLLATE utf8_unicode_ci DEFAULT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=13 ;
+
+--
+-- Dumping data for table `lb_invoices`
+--
+
+INSERT INTO `lb_invoices` VALUES(7, 'INVOICE', NULL, '1', '2013-10-24', '2013-10-24', 5, 2, 5, 2, 2, NULL, NULL, NULL);
+INSERT INTO `lb_invoices` VALUES(8, 'INVOICE', NULL, 'I-20130000001', '2013-11-02', '2013-11-02', 5, 2, 4, 1, 1, NULL, 'can I have a really lo', 'I_OPEN');
+INSERT INTO `lb_invoices` VALUES(9, 'INVOICE', NULL, 'I-20130000002', '2013-11-03', '2013-12-03', 5, 2, 5, 2, 2, NULL, NULL, 'I_OPEN');
+INSERT INTO `lb_invoices` VALUES(10, 'INVOICE', NULL, 'Draft', '2013-11-07', '2013-11-07', 5, 2, NULL, NULL, NULL, NULL, NULL, 'I_DRAFT');
+INSERT INTO `lb_invoices` VALUES(11, 'INVOICE', NULL, 'I-20130000003', '2013-11-07', '2013-11-07', 5, 2, 4, 1, 1, NULL, NULL, 'I_OPEN');
+INSERT INTO `lb_invoices` VALUES(12, 'INVOICE', NULL, 'Draft', '2013-11-11', '2013-11-11', 5, 2, 5, 2, 2, NULL, NULL, 'I_DRAFT');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_invoice_items`
+--
+
+CREATE TABLE `lb_invoice_items` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_invoice_id` int(11) NOT NULL,
+  `lb_invoice_item_type` char(60) COLLATE utf8_unicode_ci NOT NULL COMMENT 'LINE_ITEM, DISCOUNT, TAX',
+  `lb_invoice_item_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_invoice_item_quantity` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_item_value` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_item_total` decimal(10,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=56 ;
+
+--
+-- Dumping data for table `lb_invoice_items`
+--
+
+INSERT INTO `lb_invoice_items` VALUES(24, 7, 'LINE', 'a new item', 1.00, 120.00, 120.00);
+INSERT INTO `lb_invoice_items` VALUES(25, 7, 'DISCOUNT', 'Discount item', 1.00, 10.00, 10.00);
+INSERT INTO `lb_invoice_items` VALUES(26, 7, 'TAX', 'GST', 1.00, 7.00, 7.70);
+INSERT INTO `lb_invoice_items` VALUES(27, 8, 'LINE', '', 2.00, 10.00, 20.00);
+INSERT INTO `lb_invoice_items` VALUES(28, 8, 'TAX', '1', 1.00, 7.00, 1.40);
+INSERT INTO `lb_invoice_items` VALUES(29, 9, 'LINE', 'Well, something for this item at least', 1.00, 10.00, 10.00);
+INSERT INTO `lb_invoice_items` VALUES(45, 8, 'DISCOUNT', 'Discount', 1.00, 0.00, 0.00);
+INSERT INTO `lb_invoice_items` VALUES(48, 10, 'LINE', NULL, 1.00, 0.00, 0.00);
+INSERT INTO `lb_invoice_items` VALUES(49, 10, 'TAX', 'GST', 1.00, 7.00, 0.00);
+INSERT INTO `lb_invoice_items` VALUES(50, 11, 'LINE', NULL, 1.00, 0.00, 0.00);
+INSERT INTO `lb_invoice_items` VALUES(51, 11, 'TAX', 'GST', 1.00, 7.00, 0.00);
+INSERT INTO `lb_invoice_items` VALUES(52, 12, 'LINE', 'Test\r\nSome description about this item. It can be a really long description\r\nYet\r\nMultiple line allowed\r\nok', 1.00, 10.00, 10.00);
+INSERT INTO `lb_invoice_items` VALUES(53, 12, 'TAX', '1', 1.00, 7.00, 0.70);
+INSERT INTO `lb_invoice_items` VALUES(54, 12, 'LINE', 'Yet another item\r\nThat\r\nI think\r\n', 1.00, 0.00, 0.00);
+INSERT INTO `lb_invoice_items` VALUES(55, 12, 'LINE', 'a new item', 1.00, 0.00, 0.00);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_invoice_item_templates`
+--
+
+CREATE TABLE `lb_invoice_item_templates` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_item_title` varchar(255) DEFAULT NULL,
+  `lb_item_description` longtext NOT NULL,
+  `lb_item_unit_price` decimal(10,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `lb_invoice_item_templates`
+--
+
+INSERT INTO `lb_invoice_item_templates` VALUES(1, 'Test', 'Some description about this item. It can be a really long description\r\nYet\r\nMultiple line allowed\r\n', 10.00);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_invoice_totals`
+--
+
+CREATE TABLE `lb_invoice_totals` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_invoice_id` int(11) NOT NULL,
+  `lb_invoice_revision_id` int(11) NOT NULL COMMENT '0 for latest',
+  `lb_invoice_subtotal` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_total_after_discounts` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_total_after_taxes` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_total_paid` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_total_outstanding` decimal(10,2) NOT NULL DEFAULT '0.00',
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=8 ;
+
+--
+-- Dumping data for table `lb_invoice_totals`
+--
+
+INSERT INTO `lb_invoice_totals` VALUES(2, 7, 0, 120.00, 110.00, 117.70, 0.00, 0.00);
+INSERT INTO `lb_invoice_totals` VALUES(3, 8, 0, 20.00, 20.00, 21.40, 0.00, 0.00);
+INSERT INTO `lb_invoice_totals` VALUES(4, 9, 0, 10.00, 10.00, 10.00, 0.00, 0.00);
+INSERT INTO `lb_invoice_totals` VALUES(5, 10, 0, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `lb_invoice_totals` VALUES(6, 11, 0, 0.00, 0.00, 0.00, 0.00, 0.00);
+INSERT INTO `lb_invoice_totals` VALUES(7, 12, 0, 10.00, 10.00, 10.70, 0.00, 0.00);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_next_ids`
+--
+
+CREATE TABLE `lb_next_ids` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_next_invoice_number` int(11) NOT NULL,
+  `lb_next_quotation_number` int(11) NOT NULL,
+  `lb_next_payment_number` int(11) NOT NULL,
+  `lb_next_contract_number` int(11) NOT NULL,
+  `lb_next_expenses_number` int(11) NOT NULL,
+  `lb_next_po_number` int(11) NOT NULL DEFAULT '1',
+  `lb_next_supplier_invoice_number` int(11) NOT NULL DEFAULT '1',
+  `lb_next_supplier_payment_number` int(11) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `lb_next_ids`
+--
+
+INSERT INTO `lb_next_ids` VALUES(1, 4, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_sys_accounts`
+--
+
+CREATE TABLE `lb_sys_accounts` (
+  `account_id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_email` char(255) NOT NULL,
+  `account_password` char(255) NOT NULL,
+  `account_created_date` datetime NOT NULL,
+  `account_timezone` varchar(255) DEFAULT NULL,
+  `account_language` varchar(255) DEFAULT NULL,
+  `account_status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`account_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=213 ;
+
+--
+-- Dumping data for table `lb_sys_accounts`
+--
+
+INSERT INTO `lb_sys_accounts` VALUES(1, 'admin@localhost.com', '$2a$13$dHdblMAKAWn/k8b2UBOh3OUaWxj7iv5V/gYLppBMF5tjbgFkc2oY.', '2013-02-22 00:00:00', 'Asia/Singapore', '', 1);
+INSERT INTO `lb_sys_accounts` VALUES(3, 'local', '$2a$13$UbYSmlEDST0li8K0Z9WubOHRBk3p04jR4fso7LW0OvpFmRT.MqzKe', '0000-00-00 00:00:00', '', '', 0);
+INSERT INTO `lb_sys_accounts` VALUES(11, 'test@localhost.com', '$2a$13$YKD6c/dqBU1k59GfSAuzou6arWMo.x1EPQ8kgt8v2wLnhaVoeSH5W', '2013-02-23 22:51:00', '', '', 0);
+INSERT INTO `lb_sys_accounts` VALUES(12, 'test@localhost', '$2a$13$AGvvIKGya9HTVfQuDKjBH./Z/uqncVl9xw0obGTCxMwOYQjB5oEKq', '2013-02-23 22:52:00', '', '', 1);
+INSERT INTO `lb_sys_accounts` VALUES(29, 'joseph.pnc@lionsoftwaresolutions.com.sg', '$2a$13$gQasP69A82r7di64CMGEhelO5Ee0gPQDIjCEknQcTR0VgcXJRbXci', '2013-02-27 11:48:00', '', NULL, 0);
+INSERT INTO `lb_sys_accounts` VALUES(39, 'joseph.pnc@gmail.com.vn', '$2a$13$4aet9RLfTw27L/JqrlwMPOwXkyQeB4BtSlLn4YIwaC63OkF6z7aUi', '2013-02-27 12:47:00', '', NULL, 0);
+INSERT INTO `lb_sys_accounts` VALUES(40, 'joseph.pnc@lionsoftwaresolutions.com', '$2a$13$0VaCiDKxK1XbG4P5f12Wd.E8L0V6LBq0.g3mU7OkDlZomEPyCpVw2', '2013-03-12 00:06:00', NULL, NULL, 1);
+INSERT INTO `lb_sys_accounts` VALUES(41, 'contact@lionsoftwaresolutions.comrs', '$2a$13$1iEDs7LoVLrET/C9UNRMHeiBqMJbxFUIJ/ZAFjNx1HVxSxYfgPsCi', '2013-03-13 14:18:00', NULL, NULL, 0);
+INSERT INTO `lb_sys_accounts` VALUES(42, 'contact@7stepdesign.com.abc', '$2a$13$eiPAH/QrAcHoy0P8EpI2iOLRfQyM7oAck3CSy50BJVOS1/RZ2ilKS', '2013-03-13 14:21:00', NULL, NULL, 0);
+INSERT INTO `lb_sys_accounts` VALUES(45, 'contact@lionandlambsoft.comm', '$2a$13$oO6J7F8rChOEnIeBrRIbku5C64bTL.LPsvddTI549pe4iVhKzu.Qa', '2013-03-13 15:06:00', NULL, NULL, 1);
+INSERT INTO `lb_sys_accounts` VALUES(46, 'pncuong83@yahoo.comb', '$2a$13$GofBaTcsNNOvswQguMX3w.v.hCYs./OD.RVyZEansOmdfsJbQ3YMe', '2013-04-23 17:57:00', NULL, NULL, 1);
+INSERT INTO `lb_sys_accounts` VALUES(47, 'joseph.pnc@gmail.come', '$2a$13$1G9B.iPmgy5HRbnhtEXLMuIGcNcydba.g14Wr1UlfhD8CTkRy8b9.', '2013-06-25 17:45:00', NULL, NULL, 1);
+INSERT INTO `lb_sys_accounts` VALUES(48, 'contact@lionandlambsoft.com.bb', '$2a$13$0cQWxv2WkmU2V1eIZVYA7.qhEe9cb9TdaR9mbgCyi5oZYihskViee', '2013-07-01 19:17:00', NULL, NULL, 0);
+INSERT INTO `lb_sys_accounts` VALUES(54, 'contact@7stepdesign.com', '$2a$13$jiHs3YHF3zDhnwmZaGFA3O2E4vT819SitbdF7TVYcpLtb7F5n1n4S', '2013-07-01 21:41:00', NULL, NULL, 1);
+INSERT INTO `lb_sys_accounts` VALUES(55, 'contact@lionandlambsoft.com.eeeeee', '$2a$13$dHdblMAKAWn/k8b2UBOh3OUaWxj7iv5V/gYLppBMF5tjbgFkc2oY.', '2013-07-02 11:19:00', NULL, NULL, 1);
+INSERT INTO `lb_sys_accounts` VALUES(210, 'joseph.pnc@gmail.com.sgggggg', '$2a$13$LQZ2nIJxoeRkvKeRMmiHm.48hn8rQ77NmERcn8uZtksdMDw4cQXfa', '2013-07-24 17:15:00', NULL, NULL, 0);
+INSERT INTO `lb_sys_accounts` VALUES(211, 'joseph.pnc@gmail.comeeee', '$2a$13$oLlR13d6/9VeaWT9TfoLRuQuP39hwMS5Y6qBGuiaxP0jGb7djXIbC', '2013-08-06 23:36:00', NULL, NULL, 1);
+INSERT INTO `lb_sys_accounts` VALUES(212, 'joseph.pnc@gmail.com', '$2a$13$QMd0F5tyQsu3zPBEehcXVug.sFY.G6Ci.7gwX5eFJYutNnTr8tbly', '2013-08-06 23:43:00', NULL, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_sys_account_invitations`
+--
+
+CREATE TABLE `lb_sys_account_invitations` (
+  `account_invitation_id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_invitation_master_id` int(11) NOT NULL,
+  `account_invitation_to_email` char(255) NOT NULL,
+  `account_invitation_date` datetime NOT NULL,
+  `account_invitation_status` tinyint(4) NOT NULL,
+  `account_invitation_rand_key` char(100) NOT NULL,
+  `account_invitation_project` int(11) DEFAULT NULL,
+  `account_invitation_type` tinyint(1) NOT NULL COMMENT '0: team member, 1: customer',
+  PRIMARY KEY (`account_invitation_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=31 ;
+
+--
+-- Dumping data for table `lb_sys_account_invitations`
+--
+
+INSERT INTO `lb_sys_account_invitations` VALUES(18, 1, 'contact@lionandlambsoft.com', '2013-03-13 14:23:00', 1, '790fc4ca01d4f67d103a9aa87250b164', NULL, 0);
+INSERT INTO `lb_sys_account_invitations` VALUES(19, 1, 'joseph.pnc@lionsoftwaresolutions.com', '2013-03-13 14:25:00', 0, '3d22778a481dd47e36a32acf1caa609d', NULL, 0);
+INSERT INTO `lb_sys_account_invitations` VALUES(20, 1, 'test@localhost.com', '2013-06-07 16:21:00', 0, '3812458609f4835e2073aa0ca483f38f', 0, 1);
+INSERT INTO `lb_sys_account_invitations` VALUES(21, 1, 'test@localhost.com', '2013-06-07 16:24:00', 0, 'e019b010f88600ebe9067535aa1e8133', 0, 0);
+INSERT INTO `lb_sys_account_invitations` VALUES(22, 1, 'joseph.pnc@gmail.com', '2013-06-25 17:43:00', 1, '386417702a9954de086042a64bf0df40', 5, 1);
+INSERT INTO `lb_sys_account_invitations` VALUES(23, 40, 'contact@7stepdesign.com', '2013-07-01 19:30:00', 1, 'c6f84b72183d09dfae6c76b14641a82c', 13, 0);
+INSERT INTO `lb_sys_account_invitations` VALUES(24, 40, 'contact@lionandlambsoft.com', '2013-07-02 11:14:00', 1, '72bb68db0ccf2526c3b1fc36c14f07c1', 13, 1);
+INSERT INTO `lb_sys_account_invitations` VALUES(25, 55, 'joseph.pnc@lionsoftwaresolutions.com', '2013-07-23 14:38:00', 0, '3fbe2cef84a29ebe1ab791e198d670ff', 312, 0);
+INSERT INTO `lb_sys_account_invitations` VALUES(26, 55, 'joseph.pnc@lionsoftwaresolutions.com', '2013-07-23 14:39:00', 0, 'd9b738a8c3ae1c8a409a71250644857c', 312, 0);
+INSERT INTO `lb_sys_account_invitations` VALUES(27, 40, 'pncuong83@yahoo.com', '2013-07-23 14:45:00', 0, '17ae41e543b53efb903e85ecc6deccfb', 19, 0);
+INSERT INTO `lb_sys_account_invitations` VALUES(28, 40, 'pncuong83@yahoo.com', '2013-08-14 16:07:00', 0, '5ec18bde2663c14946da268c81656cb5', 313, 0);
+INSERT INTO `lb_sys_account_invitations` VALUES(29, 40, 'joseph.pnc@gmail.com', '2013-08-14 16:15:00', 0, '609384af54bdcdce5c7c693123c54c36', 13, 0);
+INSERT INTO `lb_sys_account_invitations` VALUES(30, 40, 'joseph.pnc@gmail.com', '2013-08-14 16:16:00', 0, 'f1edc77eb736c0cbe267df5d03833807', 13, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_sys_account_password_reset`
+--
+
+CREATE TABLE `lb_sys_account_password_reset` (
+  `account_password_reset_id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_id` int(11) NOT NULL,
+  `account_password_reset_rand_key` char(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `account_password_reset_rand_key_expiry` datetime NOT NULL,
+  PRIMARY KEY (`account_password_reset_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci AUTO_INCREMENT=4 ;
+
+--
+-- Dumping data for table `lb_sys_account_password_reset`
+--
+
+INSERT INTO `lb_sys_account_password_reset` VALUES(1, 55, 'b53b3a3d6ab90ce0268229151c9bde1113735292422013-07-02 11:19:00', '2013-07-12 15:54:02');
+INSERT INTO `lb_sys_account_password_reset` VALUES(2, 55, 'ce225214112d22616e12bfda3c75a163', '2013-07-12 16:35:21');
+INSERT INTO `lb_sys_account_password_reset` VALUES(3, 55, '18be35398ba896e681c0f5fef39f0d8a', '2013-07-12 16:41:18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_sys_account_profiles`
+--
+
+CREATE TABLE `lb_sys_account_profiles` (
+  `account_profile_id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_id` int(11) NOT NULL,
+  `account_profile_surname` varchar(255) NOT NULL,
+  `account_profile_given_name` varchar(255) NOT NULL,
+  `account_profile_preferred_display_name` varchar(255) NOT NULL,
+  `account_profile_company_name` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`account_profile_id`),
+  UNIQUE KEY `account_id` (`account_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `lb_sys_account_profiles`
+--
+
+INSERT INTO `lb_sys_account_profiles` VALUES(1, 41, 'Pham', 'Joseph', 'Joseph Pham', NULL);
+INSERT INTO `lb_sys_account_profiles` VALUES(2, 42, 'Desgi', '7step', '7step Desgi', '7StepDesign');
+INSERT INTO `lb_sys_account_profiles` VALUES(3, 45, 'Pham', 'Joseph', 'Joseph Pham', NULL);
+INSERT INTO `lb_sys_account_profiles` VALUES(4, 40, 'Pham', 'NC', 'NCuong', NULL);
+INSERT INTO `lb_sys_account_profiles` VALUES(5, 1, 'Admin', 'việt ', 'Administrator Man', 'LNLS');
+INSERT INTO `lb_sys_account_profiles` VALUES(6, 46, 'Junior Pham', 'Mike', 'Mike Junior Pham', 'Signup for Free Package');
+INSERT INTO `lb_sys_account_profiles` VALUES(7, 47, 'Gmail', 'Customer', 'Customer Gmail', NULL);
+INSERT INTO `lb_sys_account_profiles` VALUES(8, 48, 'Surname', 'Given Name', 'Given Name Surname', 'My Company');
+INSERT INTO `lb_sys_account_profiles` VALUES(14, 54, '7SD', '7SD2', '7SD2 7SD', NULL);
+INSERT INTO `lb_sys_account_profiles` VALUES(15, 55, 'Lee', 'Mike', 'Lee', 'Mike Lee Corp');
+INSERT INTO `lb_sys_account_profiles` VALUES(16, 210, 'Surname', 'Given Name', 'Given Name Surname', 'My Company');
+INSERT INTO `lb_sys_account_profiles` VALUES(17, 211, 'Surname', 'Given Name', 'Given Name Surname', 'My Company');
+INSERT INTO `lb_sys_account_profiles` VALUES(18, 212, 'Surname', 'Given Name', 'Given Name Surname', 'My Company');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_sys_account_subscriptions`
+--
+
+CREATE TABLE `lb_sys_account_subscriptions` (
+  `account_subscription_id` int(11) NOT NULL AUTO_INCREMENT,
+  `account_id` int(11) NOT NULL,
+  `account_subscription_package_id` tinyint(3) NOT NULL,
+  `account_subscription_start_date` datetime NOT NULL,
+  `account_subscription_end_date` datetime DEFAULT NULL,
+  `account_subscription_status_id` tinyint(1) NOT NULL,
+  PRIMARY KEY (`account_subscription_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=19 ;
+
+--
+-- Dumping data for table `lb_sys_account_subscriptions`
+--
+
+INSERT INTO `lb_sys_account_subscriptions` VALUES(1, 25, 1, '2013-02-26 14:51:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(2, 26, 1, '2013-02-26 14:52:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(3, 27, 1, '2013-02-26 14:55:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(4, 28, 2, '2013-02-26 15:13:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(5, 29, 2, '2013-02-27 11:48:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(6, 39, 2, '2013-02-27 12:47:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(7, 41, 1, '2013-03-13 14:18:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(8, 42, 2, '2013-03-13 14:21:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(9, 1, 2, '2013-03-01 00:00:00', '2030-03-31 00:00:00', 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(10, 46, 4, '2013-04-23 17:57:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(11, 40, 4, '2013-05-22 00:00:00', NULL, 0);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(12, 40, 4, '2013-05-22 00:00:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(13, 48, 4, '2013-07-01 19:17:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(15, 55, 4, '2013-07-22 18:20:08', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(16, 210, 4, '2013-07-24 17:15:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(17, 211, 4, '2013-08-06 23:36:00', NULL, 1);
+INSERT INTO `lb_sys_account_subscriptions` VALUES(18, 212, 4, '2013-08-06 23:43:00', NULL, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_sys_account_team_members`
+--
+
+CREATE TABLE `lb_sys_account_team_members` (
+  `account_team_member_id` int(11) NOT NULL AUTO_INCREMENT,
+  `member_account_id` int(11) NOT NULL,
+  `master_account_id` int(11) NOT NULL,
+  `is_customer` tinyint(1) DEFAULT NULL,
+  `is_active` tinyint(1) NOT NULL COMMENT '-1 deactivated; 1 active',
+  PRIMARY KEY (`account_team_member_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `lb_sys_account_team_members`
+--
+
+INSERT INTO `lb_sys_account_team_members` VALUES(3, 45, 1, 1, -1);
+INSERT INTO `lb_sys_account_team_members` VALUES(5, 40, 1, 0, 1);
+INSERT INTO `lb_sys_account_team_members` VALUES(7, 54, 40, 0, 1);
+INSERT INTO `lb_sys_account_team_members` VALUES(8, 55, 40, 1, 1);
+INSERT INTO `lb_sys_account_team_members` VALUES(9, 40, 55, 0, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_sys_lists`
+--
+
+CREATE TABLE `lb_sys_lists` (
+  `system_list_item_id` int(11) NOT NULL AUTO_INCREMENT,
+  `system_list_name` varchar(255) NOT NULL,
+  `system_list_code` char(100) NOT NULL,
+  `system_list_item_code` char(50) NOT NULL,
+  `system_list_item_name` varchar(255) NOT NULL,
+  `system_list_parent_item_id` int(11) DEFAULT NULL,
+  `system_list_item_order` int(4) DEFAULT NULL,
+  `system_list_item_active` tinyint(1) DEFAULT NULL,
+  PRIMARY KEY (`system_list_item_id`),
+  UNIQUE KEY `system_list_item_code` (`system_list_item_code`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=10 ;
+
+--
+-- Dumping data for table `lb_sys_lists`
+--
+
+INSERT INTO `lb_sys_lists` VALUES(1, 'Issue Priority', '', 'issue_priority_high', 'High', NULL, 1, 1);
+INSERT INTO `lb_sys_lists` VALUES(2, 'Issue Priority', '', 'issue_priority_normal', 'Normal', NULL, 2, 1);
+INSERT INTO `lb_sys_lists` VALUES(3, 'Issue Priority', '', 'issue_priority_low', 'Low', NULL, 3, 1);
+INSERT INTO `lb_sys_lists` VALUES(4, 'Issue Status', '', 'issue_status_open', 'Open', NULL, 1, 1);
+INSERT INTO `lb_sys_lists` VALUES(5, 'Issue Status', '', 'issue_status_closed', 'Closed', NULL, 2, 1);
+INSERT INTO `lb_sys_lists` VALUES(6, 'Implementation Status', '', 'implementation_status_pending', 'Pending', NULL, 1, 1);
+INSERT INTO `lb_sys_lists` VALUES(8, 'Implementation Status', '', 'implementation_status_done_with_success', 'Successful', NULL, 3, 1);
+INSERT INTO `lb_sys_lists` VALUES(9, 'Implementation Status', '', 'implementation_status_done_with_reversion', 'Failed', NULL, 4, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_sys_subscription_packages`
+--
+
+CREATE TABLE `lb_sys_subscription_packages` (
+  `subscription_package_id` int(11) NOT NULL AUTO_INCREMENT,
+  `subscription_package_name` varchar(255) NOT NULL,
+  `subscription_package_status` tinyint(1) NOT NULL,
+  PRIMARY KEY (`subscription_package_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=5 ;
+
+--
+-- Dumping data for table `lb_sys_subscription_packages`
+--
+
+INSERT INTO `lb_sys_subscription_packages` VALUES(1, 'Business', 1);
+INSERT INTO `lb_sys_subscription_packages` VALUES(2, 'Unlimited', 1);
+INSERT INTO `lb_sys_subscription_packages` VALUES(3, 'Deactivated', 0);
+INSERT INTO `lb_sys_subscription_packages` VALUES(4, 'Free', 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_taxes`
+--
+
+CREATE TABLE `lb_taxes` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_tax_name` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
+  `lb_tax_value` decimal(5,2) NOT NULL COMMENT 'percentage:7 for 7%',
+  `lb_tax_is_default` tinyint(1) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `lb_taxes`
+--
+
+INSERT INTO `lb_taxes` VALUES(1, 'GST', 7.00, 1);
+INSERT INTO `lb_taxes` VALUES(2, 'Service', 10.00, 0);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_vendor`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_vendor` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_vendor_company_id` int(11) NOT NULL,
+  `lb_vendor_company_address_id` int(11) NOT NULL,
+  `lb_vendor_supplier_id` int(11) NOT NULL,
+  `lb_vendor_supplier_address` int(11) NOT NULL,
+  `lb_vendor_supplier_attention_id` int(11) NOT NULL,
+  `lb_vendor_no` varchar(100) NOT NULL,
+  `lb_vendor_category` int(11) NOT NULL,
+  `lb_vendor_date` date NOT NULL,
+  `lb_vendor_due_date` date NOT NULL,
+  `lb_vendor_notes` longtext NOT NULL,
+  `lb_vendor_subject` longtext NOT NULL,
+  `lb_vendor_status` int(11) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_vendor_discount`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_vendor_discount` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_vendor_type` int(11) NOT NULL,
+  `lb_vendor_id` int(11) NOT NULL,
+  `lb_vendor_description` varchar(255) NOT NULL,
+  `lb_vendor_value` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_vendor_invoice`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_vendor_invoice` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_vd_invoice_supplier_id` int(11) NOT NULL,
+  `lb_vd_invoice_supplier_address_id` int(11) NOT NULL,
+  `lb_vd_invoice_supplier_attention_id` int(11) NOT NULL,
+  `lb_vd_invoice_no` varchar(100) DEFAULT NULL,
+  `lb_vd_invoice_category` int(11) NOT NULL,
+  `lb_vd_invoice_date` date DEFAULT NULL,
+  `lb_vd_invoice_notes` longtext,
+  `lb_vd_invoice_subject` longtext,
+  `lb_vd_invoice_due_date` date NOT NULL,
+  `lb_vd_invoice_company_id` int(11) NOT NULL,
+  `lb_vd_invoice_company_address_id` int(11) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_vendor_item`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_vendor_item` (
+  `lb_record_primary_key` int(11) NOT NULL DEFAULT '0',
+  `lb_vendor_type` varchar(100) NOT NULL,
+  `lb_vendor_id` int(11) NOT NULL,
+  `lb_vendor_item_description` longtext NOT NULL,
+  `lb_vendor_item_price` decimal(10,2) NOT NULL,
+  `lb_vendor_item_quantity` decimal(10,2) NOT NULL,
+  `lb_vendor_item_amount` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_vendor_tax`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_vendor_tax` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_vendor_id` int(11) NOT NULL,
+  `lb_vendor_tax_id` int(11) NOT NULL,
+  `lb_vendor_tax_value` decimal(10,2) NOT NULL,
+  `lb_vendor_tax_total` decimal(10,2) NOT NULL,
+  `lb_vendor_type` varchar(100) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_vendor_total`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_vendor_total` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_vendor_id` int(11) NOT NULL,
+  `lb_vendor_type` varchar(100) NOT NULL,
+  `lb_vendor_subtotal` decimal(10,2) NOT NULL,
+  `lb_vendor_total_last_discount` decimal(10,2) NOT NULL,
+  `lb_vendor_last_tax` decimal(10,2) NOT NULL,
+  `lb_vendor_last_paid` decimal(10,2) NOT NULL,
+  `lb_vendor_last_outstanding` decimal(10,2) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `YiiSession`
+--
+
+CREATE TABLE `YiiSession` (
+  `id` char(32) COLLATE utf8_unicode_ci NOT NULL,
+  `expire` int(11) DEFAULT NULL,
+  `data` longblob,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
+
+--
+-- Dumping data for table `YiiSession`
+--
+
+INSERT INTO `YiiSession` VALUES('04683fc3e0002fdae960c2fb7e224384', 1405783408, 0x30656630373036336637366164323261613333366234366132356333363337315f5f69647c733a323a223430223b30656630373036336637366164323261613333366234366132356333363337315f5f6e616d657c733a33363a226a6f736570682e706e63406c696f6e736f667477617265736f6c7574696f6e732e636f6d223b30656630373036336637366164323261613333366234366132356333363337316c696e785f6170705f73656c65637465645f737562736372697074696f6e7c693a31323b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f656d61696c7c733a33363a226a6f736570682e706e63406c696f6e736f667477617265736f6c7574696f6e732e636f6d223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f737562736372697074696f6e737c613a333a7b693a31323b733a363a224e43756f6e67223b693a393b733a343a224c4e4c53223b693a31353b733a31333a224d696b65204c656520436f7270223b7d306566303730363366373661643232616133333662343661323563333633373174696d657a6f6e657c733a31343a22417369612f53696e6761706f7265223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f7375726e616d657c733a343a225068616d223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f676976656e5f6e616d657c733a323a224e43223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f7072656665727265645f646973706c61795f6e616d657c733a363a224e43756f6e67223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f73686f72745f6e616d657c733a353a224e4320502e223b30656630373036336637366164323261613333366234366132356333363337315f5f7374617465737c613a383a7b733a33303a226c696e785f6170705f73656c65637465645f737562736372697074696f6e223b623a313b733a31333a226163636f756e745f656d61696c223b623a313b733a32313a226163636f756e745f737562736372697074696f6e73223b623a313b733a383a2274696d657a6f6e65223b623a313b733a32333a226163636f756e745f70726f66696c655f7375726e616d65223b623a313b733a32363a226163636f756e745f70726f66696c655f676976656e5f6e616d65223b623a313b733a33383a226163636f756e745f70726f66696c655f7072656665727265645f646973706c61795f6e616d65223b623a313b733a32363a226163636f756e745f70726f66696c655f73686f72745f6e616d65223b623a313b7d);
+INSERT INTO `YiiSession` VALUES('0on1gusguuuhp9qgckd4onre85', 1403410445, 0x33306532353764643162303034613031616631396337316332376164313265665f5f69647c733a323a223430223b33306532353764643162303034613031616631396337316332376164313265665f5f6e616d657c733a33363a226a6f736570682e706e63406c696f6e736f667477617265736f6c7574696f6e732e636f6d223b33306532353764643162303034613031616631396337316332376164313265666c696e785f6170705f73656c65637465645f737562736372697074696f6e7c733a323a223132223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f656d61696c7c733a33363a226a6f736570682e706e63406c696f6e736f667477617265736f6c7574696f6e732e636f6d223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f737562736372697074696f6e737c613a333a7b693a31323b733a363a224e43756f6e67223b693a393b733a343a224c4e4c53223b693a31353b733a31333a224d696b65204c656520436f7270223b7d333065323537646431623030346130316166313963373163323761643132656674696d657a6f6e657c733a31343a22417369612f53696e6761706f7265223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f70726f66696c655f7375726e616d657c733a343a225068616d223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f70726f66696c655f676976656e5f6e616d657c733a323a224e43223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f70726f66696c655f7072656665727265645f646973706c61795f6e616d657c733a363a224e43756f6e67223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f70726f66696c655f73686f72745f6e616d657c733a353a224e4320502e223b33306532353764643162303034613031616631396337316332376164313265665f5f7374617465737c613a383a7b733a33303a226c696e785f6170705f73656c65637465645f737562736372697074696f6e223b623a313b733a31333a226163636f756e745f656d61696c223b623a313b733a32313a226163636f756e745f737562736372697074696f6e73223b623a313b733a383a2274696d657a6f6e65223b623a313b733a32333a226163636f756e745f70726f66696c655f7375726e616d65223b623a313b733a32363a226163636f756e745f70726f66696c655f676976656e5f6e616d65223b623a313b733a33383a226163636f756e745f70726f66696c655f7072656665727265645f646973706c61795f6e616d65223b623a313b733a32363a226163636f756e745f70726f66696c655f73686f72745f6e616d65223b623a313b7d);
+INSERT INTO `YiiSession` VALUES('3b75a834712e9662d651167acf3ca615', 1406128207, 0x30656630373036336637366164323261613333366234366132356333363337315f5f72657475726e55726c7c733a35393a222f6c696e78626f6f6b732f31322f6c62496e766f6963652f392d437573746f6d65722d776974682d616464726573732d616e642d636f6e74616374223b30656630373036336637366164323261613333366234366132356333363337315f5f69647c733a323a223430223b30656630373036336637366164323261613333366234366132356333363337315f5f6e616d657c733a33363a226a6f736570682e706e63406c696f6e736f667477617265736f6c7574696f6e732e636f6d223b30656630373036336637366164323261613333366234366132356333363337316c696e785f6170705f73656c65637465645f737562736372697074696f6e7c693a31323b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f656d61696c7c733a33363a226a6f736570682e706e63406c696f6e736f667477617265736f6c7574696f6e732e636f6d223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f737562736372697074696f6e737c613a333a7b693a31323b733a363a224e43756f6e67223b693a393b733a343a224c4e4c53223b693a31353b733a31333a224d696b65204c656520436f7270223b7d306566303730363366373661643232616133333662343661323563333633373174696d657a6f6e657c733a31343a22417369612f53696e6761706f7265223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f7375726e616d657c733a343a225068616d223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f676976656e5f6e616d657c733a323a224e43223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f7072656665727265645f646973706c61795f6e616d657c733a363a224e43756f6e67223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f73686f72745f6e616d657c733a353a224e4320502e223b30656630373036336637366164323261613333366234366132356333363337315f5f7374617465737c613a383a7b733a33303a226c696e785f6170705f73656c65637465645f737562736372697074696f6e223b623a313b733a31333a226163636f756e745f656d61696c223b623a313b733a32313a226163636f756e745f737562736372697074696f6e73223b623a313b733a383a2274696d657a6f6e65223b623a313b733a32333a226163636f756e745f70726f66696c655f7375726e616d65223b623a313b733a32363a226163636f756e745f70726f66696c655f676976656e5f6e616d65223b623a313b733a33383a226163636f756e745f70726f66696c655f7072656665727265645f646973706c61795f6e616d65223b623a313b733a32363a226163636f756e745f70726f66696c655f73686f72745f6e616d65223b623a313b7d6769695f5f72657475726e55726c7c733a32343a222f6c696e78626f6f6b732f696e6465782e7068702f676969223b6769695f5f69647c733a353a227969696572223b6769695f5f6e616d657c733a353a227969696572223b6769695f5f7374617465737c613a303a7b7d);
+INSERT INTO `YiiSession` VALUES('a0514de90501eddf7755d344edfa32d4', 1406123122, 0x30656630373036336637366164323261613333366234366132356333363337315f5f69647c733a323a223430223b30656630373036336637366164323261613333366234366132356333363337315f5f6e616d657c733a33363a226a6f736570682e706e63406c696f6e736f667477617265736f6c7574696f6e732e636f6d223b30656630373036336637366164323261613333366234366132356333363337316c696e785f6170705f73656c65637465645f737562736372697074696f6e7c693a31323b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f656d61696c7c733a33363a226a6f736570682e706e63406c696f6e736f667477617265736f6c7574696f6e732e636f6d223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f737562736372697074696f6e737c613a333a7b693a31323b733a363a224e43756f6e67223b693a393b733a343a224c4e4c53223b693a31353b733a31333a224d696b65204c656520436f7270223b7d306566303730363366373661643232616133333662343661323563333633373174696d657a6f6e657c733a31343a22417369612f53696e6761706f7265223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f7375726e616d657c733a343a225068616d223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f676976656e5f6e616d657c733a323a224e43223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f7072656665727265645f646973706c61795f6e616d657c733a363a224e43756f6e67223b30656630373036336637366164323261613333366234366132356333363337316163636f756e745f70726f66696c655f73686f72745f6e616d657c733a353a224e4320502e223b30656630373036336637366164323261613333366234366132356333363337315f5f7374617465737c613a383a7b733a33303a226c696e785f6170705f73656c65637465645f737562736372697074696f6e223b623a313b733a31333a226163636f756e745f656d61696c223b623a313b733a32313a226163636f756e745f737562736372697074696f6e73223b623a313b733a383a2274696d657a6f6e65223b623a313b733a32333a226163636f756e745f70726f66696c655f7375726e616d65223b623a313b733a32363a226163636f756e745f70726f66696c655f676976656e5f6e616d65223b623a313b733a33383a226163636f756e745f70726f66696c655f7072656665727265645f646973706c61795f6e616d65223b623a313b733a32363a226163636f756e745f70726f66696c655f73686f72745f6e616d65223b623a313b7d);
+INSERT INTO `YiiSession` VALUES('juaofjaa79hd4nvpr1nhrpv751', 1404574821, 0x33306532353764643162303034613031616631396337316332376164313265665f5f72657475726e55726c7c733a36303a222f6c696e78626f6f6b732f31322f6c62437573746f6d65722f352d437573746f6d65722d776974682d616464726573732d616e642d636f6e74616374223b33306532353764643162303034613031616631396337316332376164313265665f5f69647c733a323a223430223b33306532353764643162303034613031616631396337316332376164313265665f5f6e616d657c733a33363a226a6f736570682e706e63406c696f6e736f667477617265736f6c7574696f6e732e636f6d223b33306532353764643162303034613031616631396337316332376164313265666c696e785f6170705f73656c65637465645f737562736372697074696f6e7c693a31323b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f656d61696c7c733a33363a226a6f736570682e706e63406c696f6e736f667477617265736f6c7574696f6e732e636f6d223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f737562736372697074696f6e737c613a333a7b693a31323b733a363a224e43756f6e67223b693a393b733a343a224c4e4c53223b693a31353b733a31333a224d696b65204c656520436f7270223b7d333065323537646431623030346130316166313963373163323761643132656674696d657a6f6e657c733a31343a22417369612f53696e6761706f7265223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f70726f66696c655f7375726e616d657c733a343a225068616d223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f70726f66696c655f676976656e5f6e616d657c733a323a224e43223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f70726f66696c655f7072656665727265645f646973706c61795f6e616d657c733a363a224e43756f6e67223b33306532353764643162303034613031616631396337316332376164313265666163636f756e745f70726f66696c655f73686f72745f6e616d657c733a353a224e4320502e223b33306532353764643162303034613031616631396337316332376164313265665f5f7374617465737c613a383a7b733a33303a226c696e785f6170705f73656c65637465645f737562736372697074696f6e223b623a313b733a31333a226163636f756e745f656d61696c223b623a313b733a32313a226163636f756e745f737562736372697074696f6e73223b623a313b733a383a2274696d657a6f6e65223b623a313b733a32333a226163636f756e745f70726f66696c655f7375726e616d65223b623a313b733a32363a226163636f756e745f70726f66696c655f676976656e5f6e616d65223b623a313b733a33383a226163636f756e745f70726f66696c655f7072656665727265645f646973706c61795f6e616d65223b623a313b733a32363a226163636f756e745f70726f66696c655f73686f72745f6e616d65223b623a313b7d);
+INSERT INTO `YiiSession` VALUES('qmnlnvsfqlrjessjdo14h1md54', 1404394048, 0x6769695f5f72657475726e55726c7c733a32343a222f6c696e78626f6f6b732f696e6465782e7068702f676969223b6769695f5f69647c733a353a227969696572223b6769695f5f6e616d657c733a353a227969696572223b6769695f5f7374617465737c613a303a7b7d);

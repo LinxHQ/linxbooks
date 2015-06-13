@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE project>
+<project name="PayPal_Core_SDK" default="build">
+
+	<property name="tests.dir" value="tests"/>
+	<property name="tests.out.dir" value="tests\reports"/>
+	
+	<condition property="PHPUNIT_BIN" value="phpunit.bat" else="phpunit">
+		<os family="windows" />
+	</condition>
+
+	<target name="clean">
+		<delete dir="${tests.out.dir}" />
+	</target>
+
+	<target name="test">
+		<mkdir dir="${tests.out.dir}" />
+		<exec dir="${basedir}" executable="${PHPUNIT_BIN}" failonerror="true">
+			<arg line="--testdox --bootstrap ${tests.dir}\PPBootStrap.php --log-junit ${tests.out.dir}\phpunit.xml ${tests.dir}" />
+		</exec>
+	</target>
+
+	<target name="build" depends="clean, test" />
+</project>

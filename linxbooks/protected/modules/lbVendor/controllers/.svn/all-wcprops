@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/linxbooks/!svn/ver/315/protected/modules/lbVendor/controllers
+END
+VendorController.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/linxbooks/!svn/ver/315/protected/modules/lbVendor/controllers/VendorController.php
+END
+SupplierController.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/linxbooks/!svn/ver/230/protected/modules/lbVendor/controllers/SupplierController.php
+END
+DefaultController.php
+K 25
+svn:wc:ra_dav:version-url
+V 84
+/linxbooks/!svn/ver/307/protected/modules/lbVendor/controllers/DefaultController.php
+END

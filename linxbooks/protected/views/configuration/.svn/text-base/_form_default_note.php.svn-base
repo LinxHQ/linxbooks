@@ -1,0 +1,35 @@
+<div style="width: 70%;" id="default-note-contentainer">
+<?php
+    $lastDefaultNote = LbDefaultNote::model()->getFullRecords();
+    if(count($lastDefaultNote)<=0)
+    {
+        // Buttons
+        echo '<div class="btn-toolbar">';
+            LBApplicationUI::submitButton('New Default Note', array(
+                'url'=> $this->createUrl('createDefaultNote'),
+                'buttonType'=>'ajaxSubmit',
+                'ajaxOptions'=>array(
+                    'success'=>'js:function(){loadDetailDefaultNote();}'
+                ),
+                'htmlOptions'=>array(
+                    'style'=>'margin-left: auto; margin-right: auto',
+                    'id'=>'ajax-btn-new-default-note',
+                    'live'=>false,
+                ),
+            ));
+        echo '</div>';
+    }
+    else
+    {
+        $this->renderPartial('_form_default_detail_note', array(
+            
+                ));
+    }
+?>
+</div>
+<script type="text/javascript">
+    function loadDetailDefaultNote()
+    {
+        $('#default-note-contentainer').load('<?php echo $this->createUrl("ajaxLoadDefaultNote"); ?>');
+    }
+</script>

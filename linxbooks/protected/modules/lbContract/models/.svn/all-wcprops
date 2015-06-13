@@ -1,0 +1,23 @@
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/linxbooks/!svn/ver/181/protected/modules/lbContract/models
+END
+LbContractDocument.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/linxbooks/!svn/ver/92/protected/modules/lbContract/models/LbContractDocument.php
+END
+LbContracts.php
+K 25
+svn:wc:ra_dav:version-url
+V 75
+/linxbooks/!svn/ver/181/protected/modules/lbContract/models/LbContracts.php
+END
+LbContractInvoice.php
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/linxbooks/!svn/ver/97/protected/modules/lbContract/models/LbContractInvoice.php
+END

@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/sample/sale
+END
+GetSale.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/sample/sale/GetSale.php
+END
+RefundSale.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/sample/sale/RefundSale.php
+END

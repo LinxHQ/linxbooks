@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php
+END
+composer.json
+K 25
+svn:wc:ra_dav:version-url
+V 82
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/composer.json
+END
+LICENSE.txt
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/LICENSE.txt
+END
+.gitignore
+K 25
+svn:wc:ra_dav:version-url
+V 79
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/.gitignore
+END
+.travis.yml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/.travis.yml
+END
+CHANGELOG.md
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/CHANGELOG.md
+END
+phpunit.xml
+K 25
+svn:wc:ra_dav:version-url
+V 80
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/phpunit.xml
+END
+.coveralls.yml
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/.coveralls.yml
+END
+README.md
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/README.md
+END
+build.xml
+K 25
+svn:wc:ra_dav:version-url
+V 78
+/linxbooks/!svn/ver/187/protected/lib/vendor/paypal/rest-api-sdk-php/build.xml
+END

@@ -1,0 +1,65 @@
+K 25
+svn:wc:ra_dav:version-url
+V 37
+/linxbooks/!svn/ver/1/framework/utils
+END
+CDateTimeParser.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/linxbooks/!svn/ver/1/framework/utils/CDateTimeParser.php
+END
+mimeTypes.php
+K 25
+svn:wc:ra_dav:version-url
+V 51
+/linxbooks/!svn/ver/1/framework/utils/mimeTypes.php
+END
+CLocalizedFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/linxbooks/!svn/ver/1/framework/utils/CLocalizedFormatter.php
+END
+CFileHelper.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/linxbooks/!svn/ver/1/framework/utils/CFileHelper.php
+END
+CMarkdownParser.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/linxbooks/!svn/ver/1/framework/utils/CMarkdownParser.php
+END
+CPropertyValue.php
+K 25
+svn:wc:ra_dav:version-url
+V 56
+/linxbooks/!svn/ver/1/framework/utils/CPropertyValue.php
+END
+CPasswordHelper.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/linxbooks/!svn/ver/1/framework/utils/CPasswordHelper.php
+END
+CFormatter.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/linxbooks/!svn/ver/1/framework/utils/CFormatter.php
+END
+CTimestamp.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/linxbooks/!svn/ver/1/framework/utils/CTimestamp.php
+END
+CVarDumper.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/linxbooks/!svn/ver/1/framework/utils/CVarDumper.php
+END

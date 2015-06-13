@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Plugins/Pop
+END
+Pop3Exception.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Plugins/Pop/Pop3Exception.php
+END
+Pop3Connection.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Plugins/Pop/Pop3Connection.php
+END

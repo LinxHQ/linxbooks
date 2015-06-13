@@ -1,0 +1,29 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/linxbooks/!svn/ver/301/protected/modules/paypal/models
+END
+CardForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/linxbooks/!svn/ver/301/protected/modules/paypal/models/CardForm.php
+END
+UserCreditCard.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/linxbooks/!svn/ver/186/protected/modules/paypal/models/UserCreditCard.php
+END
+UserSubscription.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/linxbooks/!svn/ver/186/protected/modules/paypal/models/UserSubscription.php
+END
+Subscription.php
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/linxbooks/!svn/ver/186/protected/modules/paypal/models/Subscription.php
+END

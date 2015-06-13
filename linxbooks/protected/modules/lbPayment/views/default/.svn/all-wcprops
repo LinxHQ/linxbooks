@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/linxbooks/!svn/ver/307/protected/modules/lbPayment/views/default
+END
+_form_view_payment.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/linxbooks/!svn/ver/181/protected/modules/lbPayment/views/default/_form_view_payment.php
+END
+pdf.php
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/linxbooks/!svn/ver/160/protected/modules/lbPayment/views/default/pdf.php
+END
+_form_tr_invoice_payment.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/linxbooks/!svn/ver/60/protected/modules/lbPayment/views/default/_form_tr_invoice_payment.php
+END
+create.php
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/linxbooks/!svn/ver/307/protected/modules/lbPayment/views/default/create.php
+END
+_pdf_footer.php
+K 25
+svn:wc:ra_dav:version-url
+V 81
+/linxbooks/!svn/ver/160/protected/modules/lbPayment/views/default/_pdf_footer.php
+END
+_view_payment.php
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/linxbooks/!svn/ver/160/protected/modules/lbPayment/views/default/_view_payment.php
+END
+_form_line_item.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/linxbooks/!svn/ver/160/protected/modules/lbPayment/views/default/_form_line_item.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 74
+/linxbooks/!svn/ver/60/protected/modules/lbPayment/views/default/index.php
+END

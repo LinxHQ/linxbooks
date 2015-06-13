@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 48
+/linxbooks/!svn/ver/1/protected/views/systemList
+END
+_view.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/linxbooks/!svn/ver/1/protected/views/systemList/_view.php
+END
+view.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/linxbooks/!svn/ver/1/protected/views/systemList/view.php
+END
+_form.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/linxbooks/!svn/ver/1/protected/views/systemList/_form.php
+END
+update.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/linxbooks/!svn/ver/1/protected/views/systemList/update.php
+END
+create.php
+K 25
+svn:wc:ra_dav:version-url
+V 59
+/linxbooks/!svn/ver/1/protected/views/systemList/create.php
+END
+_search.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/linxbooks/!svn/ver/1/protected/views/systemList/_search.php
+END
+index.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/linxbooks/!svn/ver/1/protected/views/systemList/index.php
+END
+admin.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/linxbooks/!svn/ver/1/protected/views/systemList/admin.php
+END

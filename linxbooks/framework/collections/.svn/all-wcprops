@@ -1,0 +1,77 @@
+K 25
+svn:wc:ra_dav:version-url
+V 43
+/linxbooks/!svn/ver/1/framework/collections
+END
+CConfiguration.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/linxbooks/!svn/ver/1/framework/collections/CConfiguration.php
+END
+CMapIterator.php
+K 25
+svn:wc:ra_dav:version-url
+V 60
+/linxbooks/!svn/ver/1/framework/collections/CMapIterator.php
+END
+CList.php
+K 25
+svn:wc:ra_dav:version-url
+V 53
+/linxbooks/!svn/ver/1/framework/collections/CList.php
+END
+CMap.php
+K 25
+svn:wc:ra_dav:version-url
+V 52
+/linxbooks/!svn/ver/1/framework/collections/CMap.php
+END
+CQueueIterator.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/linxbooks/!svn/ver/1/framework/collections/CQueueIterator.php
+END
+CAttributeCollection.php
+K 25
+svn:wc:ra_dav:version-url
+V 68
+/linxbooks/!svn/ver/1/framework/collections/CAttributeCollection.php
+END
+CStackIterator.php
+K 25
+svn:wc:ra_dav:version-url
+V 62
+/linxbooks/!svn/ver/1/framework/collections/CStackIterator.php
+END
+CTypedList.php
+K 25
+svn:wc:ra_dav:version-url
+V 58
+/linxbooks/!svn/ver/1/framework/collections/CTypedList.php
+END
+CTypedMap.php
+K 25
+svn:wc:ra_dav:version-url
+V 57
+/linxbooks/!svn/ver/1/framework/collections/CTypedMap.php
+END
+CQueue.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/linxbooks/!svn/ver/1/framework/collections/CQueue.php
+END
+CListIterator.php
+K 25
+svn:wc:ra_dav:version-url
+V 61
+/linxbooks/!svn/ver/1/framework/collections/CListIterator.php
+END
+CStack.php
+K 25
+svn:wc:ra_dav:version-url
+V 54
+/linxbooks/!svn/ver/1/framework/collections/CStack.php
+END

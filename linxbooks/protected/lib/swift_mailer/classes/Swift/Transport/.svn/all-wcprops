@@ -1,0 +1,89 @@
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport
+END
+SendmailTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/SendmailTransport.php
+END
+SpoolTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/SpoolTransport.php
+END
+SimpleMailInvoker.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/SimpleMailInvoker.php
+END
+MailTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/MailTransport.php
+END
+MailInvoker.php
+K 25
+svn:wc:ra_dav:version-url
+V 88
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/MailInvoker.php
+END
+IoBuffer.php
+K 25
+svn:wc:ra_dav:version-url
+V 85
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/IoBuffer.php
+END
+SmtpAgent.php
+K 25
+svn:wc:ra_dav:version-url
+V 86
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/SmtpAgent.php
+END
+AbstractSmtpTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/AbstractSmtpTransport.php
+END
+FailoverTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 94
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/FailoverTransport.php
+END
+EsmtpTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 91
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/EsmtpTransport.php
+END
+StreamBuffer.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/StreamBuffer.php
+END
+EsmtpHandler.php
+K 25
+svn:wc:ra_dav:version-url
+V 89
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/EsmtpHandler.php
+END
+LoadBalancedTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/LoadBalancedTransport.php
+END
+NullTransport.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/linxbooks/!svn/ver/1/protected/lib/swift_mailer/classes/Swift/Transport/NullTransport.php
+END

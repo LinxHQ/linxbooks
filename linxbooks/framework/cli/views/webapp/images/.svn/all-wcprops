@@ -1,0 +1,17 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/linxbooks/!svn/ver/1/framework/cli/views/webapp/images
+END
+hg-hgkeep
+K 25
+svn:wc:ra_dav:version-url
+V 65
+/linxbooks/!svn/ver/1/framework/cli/views/webapp/images/hg-hgkeep
+END
+git-gitkeep
+K 25
+svn:wc:ra_dav:version-url
+V 67
+/linxbooks/!svn/ver/1/framework/cli/views/webapp/images/git-gitkeep
+END

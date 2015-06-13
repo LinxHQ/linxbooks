@@ -1,0 +1,3 @@
+.sortable-clipboard {background: #F8F8F8; border-radius: 5px; text-align: center; color: #737373; padding: 0px; margin-top: 10px; margin-bottom: 10px; padding-top: 10px; border: 1px solid #F5F5F5; box-shadow: 0 0 5px #F5F5F5 inset;}
+.sortable-clipboard-area {background: #F8F8F8 !important;}
+.sortable-clipboard-area .button-column {display: none;}
