@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 10, 2015 at 10:29 AM
+-- Generation Time: Jun 15, 2015 at 04:17 AM
 -- Server version: 5.5.39
 -- PHP Version: 5.4.31
 
@@ -17,50 +17,6 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Database: `cdcol`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `cds`
---
-
-CREATE TABLE IF NOT EXISTS `cds` (
-  `titel` varchar(200) COLLATE latin1_general_ci DEFAULT NULL,
-  `interpret` varchar(200) COLLATE latin1_general_ci DEFAULT NULL,
-  `jahr` int(11) DEFAULT NULL,
-`id` bigint(20) unsigned NOT NULL
-) ENGINE=MyISAM  DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci AUTO_INCREMENT=7 ;
-
---
--- Dumping data for table `cds`
---
-
-INSERT INTO `cds` (`titel`, `interpret`, `jahr`, `id`) VALUES
-('Beauty', 'Ryuichi Sakamoto', 1990, 1),
-('Goodbye Country (Hello Nightclub)', 'Groove Armada', 2001, 4),
-('Glee', 'Bran Van 3000', 1997, 5);
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `cds`
---
-ALTER TABLE `cds`
- ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `cds`
---
-ALTER TABLE `cds`
-MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;--
 -- Database: `linxbooks`
 --
 
@@ -71,7 +27,7 @@ MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=7;--
 --
 
 CREATE TABLE IF NOT EXISTS `lb_account_basic_permission` (
-`lb_record_primary_key` int(11) NOT NULL,
+`account_basic_permission_id` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
   `module_id` int(11) NOT NULL,
   `basic_permission_id` int(11) NOT NULL,
@@ -85,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `lb_account_basic_permission` (
 --
 
 CREATE TABLE IF NOT EXISTS `lb_account_define_permission` (
-`lb_record_primary_key` int(11) NOT NULL,
+`account_define_permission_id` int(11) NOT NULL,
   `define_permission_id` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
   `module_id` int(11) NOT NULL
@@ -98,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `lb_account_define_permission` (
 --
 
 CREATE TABLE IF NOT EXISTS `lb_account_roles` (
-`lb_record_primary_key` int(11) NOT NULL,
+`account_role_id` int(11) NOT NULL,
   `accout_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -147,6 +103,27 @@ CREATE TABLE IF NOT EXISTS `lb_comment` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lb_contracts`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_contracts` (
+`lb_record_primary_key` int(11) NOT NULL,
+  `lb_customer_id` int(11) NOT NULL,
+  `lb_address_id` int(11) NOT NULL,
+  `lb_contact_id` int(11) NOT NULL,
+  `lb_contract_no` varchar(50) NOT NULL,
+  `lb_contract_notes` varchar(255) NOT NULL,
+  `lb_contract_date_start` date NOT NULL,
+  `lb_contract_date_end` date NOT NULL,
+  `lb_contract_type` varchar(100) NOT NULL,
+  `lb_contract_amount` decimal(10,2) NOT NULL,
+  `lb_contract_parent` int(11) NOT NULL,
+  `lb_contract_status` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lb_contract_document`
 --
 
@@ -173,27 +150,6 @@ CREATE TABLE IF NOT EXISTS `lb_contract_invoice` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lb_contracts`
---
-
-CREATE TABLE IF NOT EXISTS `lb_contracts` (
-`lb_record_primary_key` int(11) NOT NULL,
-  `lb_customer_id` int(11) NOT NULL,
-  `lb_address_id` int(11) NOT NULL,
-  `lb_contact_id` int(11) NOT NULL,
-  `lb_contract_no` varchar(50) NOT NULL,
-  `lb_contract_notes` varchar(255) NOT NULL,
-  `lb_contract_date_start` date NOT NULL,
-  `lb_contract_date_end` date NOT NULL,
-  `lb_contract_type` varchar(100) NOT NULL,
-  `lb_contract_amount` decimal(10,2) NOT NULL,
-  `lb_contract_parent` int(11) NOT NULL,
-  `lb_contract_status` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `lb_core_entities`
 --
 
@@ -214,29 +170,32 @@ CREATE TABLE IF NOT EXISTS `lb_core_entities` (
 --
 
 INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
-(1, 'lbGenera', 1, 1, '2015-06-10 09:02:59', 1, '2015-06-10 10:27:27', 1, 0),
-(2, 'lbNextId', 1, 1, '2015-06-10 09:03:07', 1, '2015-06-10 09:03:07', 1, 0),
-(3, 'lbDefaultNote', 1, 1, '2015-06-10 09:03:25', 1, '2015-06-10 09:03:25', 1, 0),
-(4, 'modules', 1, 1, '2015-06-10 09:04:38', 1, '2015-06-10 09:06:07', 1, 0),
-(5, 'modules', 2, 1, '2015-06-10 09:04:44', 1, '2015-06-10 09:06:23', 1, 0),
-(6, 'modules', 3, 1, '2015-06-10 09:04:51', 1, '2015-06-10 09:06:30', 1, 0),
-(7, 'modules', 4, 1, '2015-06-10 09:04:55', 1, '2015-06-10 09:07:03', 1, 0),
-(8, 'modules', 5, 1, '2015-06-10 09:05:00', 1, '2015-06-10 09:07:08', 1, 0),
-(9, 'modules', 6, 1, '2015-06-10 09:05:05', 1, '2015-06-10 09:07:12', 1, 0),
-(10, 'modules', 7, 1, '2015-06-10 09:05:09', 1, '2015-06-10 09:07:19', 1, 0),
-(11, 'modules', 8, 1, '2015-06-10 09:14:30', 1, '2015-06-10 09:15:06', 1, 0);
+(1, 'lbGenera', 1, 1, '2015-06-15 04:15:38', 1, '2015-06-15 04:15:38', 1, 0),
+(2, 'lbNextId', 1, 1, '2015-06-15 04:15:38', 1, '2015-06-15 04:15:38', 1, 0),
+(3, 'lbDefaultNote', 1, 1, '2015-06-15 04:15:38', 1, '2015-06-15 04:15:38', 1, 0),
+(4, 'modules', 1, 1, '2015-06-15 04:15:45', 1, '2015-06-15 04:16:36', 1, 0),
+(5, 'modules', 2, 1, '2015-06-15 04:15:49', 1, '2015-06-15 04:16:32', 1, 0),
+(6, 'modules', 3, 1, '2015-06-15 04:15:52', 1, '2015-06-15 04:16:29', 1, 0),
+(7, 'modules', 4, 1, '2015-06-15 04:15:55', 1, '2015-06-15 04:16:25', 1, 0),
+(8, 'modules', 5, 1, '2015-06-15 04:15:58', 1, '2015-06-15 04:16:22', 1, 0),
+(9, 'modules', 6, 1, '2015-06-15 04:16:01', 1, '2015-06-15 04:16:18', 1, 0),
+(10, 'modules', 7, 1, '2015-06-15 04:16:06', 1, '2015-06-15 04:16:15', 1, 0),
+(11, 'modules', 8, 1, '2015-06-15 04:16:09', 1, '2015-06-15 04:16:12', 1, 0);
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `lb_customer_address_contacts`
+-- Table structure for table `lb_customers`
 --
 
-CREATE TABLE IF NOT EXISTS `lb_customer_address_contacts` (
+CREATE TABLE IF NOT EXISTS `lb_customers` (
 `lb_record_primary_key` int(11) NOT NULL,
-  `lb_customer_address_id` int(11) NOT NULL,
-  `lb_customer_contact_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+  `lb_customer_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `lb_customer_registration` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_tax_id` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_website_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_customer_is_own_company` tinyint(1) NOT NULL COMMENT 'only allow ONE per subscription'
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -266,6 +225,18 @@ CREATE TABLE IF NOT EXISTS `lb_customer_addresses` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lb_customer_address_contacts`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_customer_address_contacts` (
+`lb_record_primary_key` int(11) NOT NULL,
+  `lb_customer_address_id` int(11) NOT NULL,
+  `lb_customer_contact_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lb_customer_contacts`
 --
 
@@ -282,21 +253,6 @@ CREATE TABLE IF NOT EXISTS `lb_customer_contacts` (
   `lb_customer_contact_note` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lb_customer_contact_is_active` tinyint(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lb_customers`
---
-
-CREATE TABLE IF NOT EXISTS `lb_customers` (
-`lb_record_primary_key` int(11) NOT NULL,
-  `lb_customer_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `lb_customer_registration` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lb_customer_tax_id` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lb_customer_website_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lb_customer_is_own_company` tinyint(1) NOT NULL COMMENT 'only allow ONE per subscription'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=6 ;
 
 -- --------------------------------------------------------
 
@@ -329,8 +285,7 @@ CREATE TABLE IF NOT EXISTS `lb_define_permission` (
   `define_permission_name` varchar(100) NOT NULL,
   `define_description` varchar(255) NOT NULL,
   `define_permission_hidden` int(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -421,53 +376,7 @@ CREATE TABLE IF NOT EXISTS `lb_genera` (
 --
 
 INSERT INTO `lb_genera` (`lb_record_primary_key`, `lb_genera_currency_symbol`, `lb_thousand_separator`, `lb_decimal_symbol`) VALUES
-(1, '$', ',', '.');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lb_invoice_item_templates`
---
-
-CREATE TABLE IF NOT EXISTS `lb_invoice_item_templates` (
-`lb_record_primary_key` int(11) NOT NULL,
-  `lb_item_title` varchar(255) DEFAULT NULL,
-  `lb_item_description` longtext NOT NULL,
-  `lb_item_unit_price` decimal(10,2) NOT NULL DEFAULT '0.00'
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lb_invoice_items`
---
-
-CREATE TABLE IF NOT EXISTS `lb_invoice_items` (
-`lb_record_primary_key` int(11) NOT NULL,
-  `lb_invoice_id` int(11) NOT NULL,
-  `lb_invoice_item_type` char(60) COLLATE utf8_unicode_ci NOT NULL COMMENT 'LINE_ITEM, DISCOUNT, TAX',
-  `lb_invoice_item_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lb_invoice_item_quantity` decimal(10,2) NOT NULL DEFAULT '0.00',
-  `lb_invoice_item_value` decimal(10,2) NOT NULL DEFAULT '0.00',
-  `lb_invoice_item_total` decimal(10,2) NOT NULL DEFAULT '0.00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lb_invoice_totals`
---
-
-CREATE TABLE IF NOT EXISTS `lb_invoice_totals` (
-`lb_record_primary_key` int(11) NOT NULL,
-  `lb_invoice_id` int(11) NOT NULL,
-  `lb_invoice_revision_id` int(11) NOT NULL COMMENT '0 for latest',
-  `lb_invoice_subtotal` decimal(10,2) NOT NULL DEFAULT '0.00',
-  `lb_invoice_total_after_discounts` decimal(10,2) NOT NULL DEFAULT '0.00',
-  `lb_invoice_total_after_taxes` decimal(10,2) NOT NULL DEFAULT '0.00',
-  `lb_invoice_total_paid` decimal(10,2) NOT NULL DEFAULT '0.00',
-  `lb_invoice_total_outstanding` decimal(10,2) NOT NULL DEFAULT '0.00'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+(1, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -498,6 +407,52 @@ CREATE TABLE IF NOT EXISTS `lb_invoices` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lb_invoice_items`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_invoice_items` (
+`lb_record_primary_key` int(11) NOT NULL,
+  `lb_invoice_id` int(11) NOT NULL,
+  `lb_invoice_item_type` char(60) COLLATE utf8_unicode_ci NOT NULL COMMENT 'LINE_ITEM, DISCOUNT, TAX',
+  `lb_invoice_item_description` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `lb_invoice_item_quantity` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_item_value` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_item_total` decimal(10,2) NOT NULL DEFAULT '0.00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_invoice_item_templates`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_invoice_item_templates` (
+`lb_record_primary_key` int(11) NOT NULL,
+  `lb_item_title` varchar(255) DEFAULT NULL,
+  `lb_item_description` longtext NOT NULL,
+  `lb_item_unit_price` decimal(10,2) NOT NULL DEFAULT '0.00'
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_invoice_totals`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_invoice_totals` (
+`lb_record_primary_key` int(11) NOT NULL,
+  `lb_invoice_id` int(11) NOT NULL,
+  `lb_invoice_revision_id` int(11) NOT NULL COMMENT '0 for latest',
+  `lb_invoice_subtotal` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_total_after_discounts` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_total_after_taxes` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_total_paid` decimal(10,2) NOT NULL DEFAULT '0.00',
+  `lb_invoice_total_outstanding` decimal(10,2) NOT NULL DEFAULT '0.00'
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lb_modules`
 --
 
@@ -516,14 +471,14 @@ CREATE TABLE IF NOT EXISTS `lb_modules` (
 --
 
 INSERT INTO `lb_modules` (`lb_record_primary_key`, `module_directory`, `module_name`, `module_text`, `modules_description`, `module_hidden`, `module_order`) VALUES
-(1, 'lbCustomer', 'Customers', 'CUSTOMERS', '', 1, 1),
-(2, 'lbExpenses', 'Expenses', 'EXPENSES', '', 1, 2),
-(3, 'lbInvoice', 'Invoices', 'INVOCIES', '', 1, 3),
-(4, 'lbPayment', 'Payments', 'PAYMENTS', '', 1, 4),
-(5, 'lbQuotation', 'Quotations', 'QUOTATIONS', '', 1, 5),
-(6, 'lbVendor', 'Vendor', 'VENDOR', '', 1, 6),
+(1, 'lbContract', 'Contracts', 'CONTRACTS', '', 1, 1),
+(2, 'lbCustomer', 'Customers', 'CUSTOMERS', '', 1, 2),
+(3, 'lbExpenses', 'Expenses', 'EXPENSES', '', 1, 3),
+(4, 'lbInvoice', 'Invoices', 'INVOCIES', '', 1, 4),
+(5, 'lbPayment', 'Payments', 'PAYMENTS', '', 1, 5),
+(6, 'lbQuotation', 'Quotations', 'QUOTATIONS', '', 1, 6),
 (7, 'lbReport', 'Reports', 'REPORTS', '', 1, 7),
-(8, 'lbContract', 'Contracts', 'CONTRACTS', '', 1, 8);
+(8, 'lbVendor', 'Vendor', 'VENDOR', '', 1, 8);
 
 -- --------------------------------------------------------
 
@@ -567,6 +522,20 @@ CREATE TABLE IF NOT EXISTS `lb_payment` (
   `lb_payment_notes` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lb_payment_total` decimal(10,2) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_payments`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_payments` (
+`id` int(11) NOT NULL,
+  `txn_id` varchar(200) NOT NULL,
+  `user_id` int(11) NOT NULL,
+  `paypal_id` varchar(250) NOT NULL,
+  `created_at` varchar(250) NOT NULL
+) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -628,20 +597,6 @@ CREATE TABLE IF NOT EXISTS `lb_payment_voucher` (
   `lb_pv_create_by` int(11) NOT NULL,
   `lb_pv_date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lb_payments`
---
-
-CREATE TABLE IF NOT EXISTS `lb_payments` (
-`id` int(11) NOT NULL,
-  `txn_id` varchar(200) NOT NULL,
-  `user_id` int(11) NOT NULL,
-  `paypal_id` varchar(250) NOT NULL,
-  `created_at` varchar(250) NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -762,22 +717,6 @@ CREATE TABLE IF NOT EXISTS `lb_roles_basic_permission` (
   `basic_permission_status` int(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
-
---
--- Dumping data for table `lb_basic_permission`
---
-
-INSERT INTO `lb_basic_permission` (`basic_permission_id`, `basic_permission_name`, `basic_permission_description`, `basic_permission_hidden`) VALUES
-(1, 'add', '', 0),
-(2, 'view own', '', 0),
-(3, 'view all', '', 0),
-(4, 'update own', '', 0),
-(5, 'update all', '', 0),
-(6, 'delete own', '', 0),
-(7, 'delete all', '', 0),
-(8, 'list own', '', 0),
-(9, 'list all', '', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -808,6 +747,29 @@ CREATE TABLE IF NOT EXISTS `lb_subscription` (
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `lb_sys_accounts`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_sys_accounts` (
+`account_id` int(11) NOT NULL,
+  `account_email` char(255) NOT NULL,
+  `account_password` char(255) NOT NULL,
+  `account_created_date` datetime NOT NULL,
+  `account_timezone` varchar(255) DEFAULT NULL,
+  `account_language` varchar(255) DEFAULT NULL,
+  `account_status` tinyint(1) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+
+--
+-- Dumping data for table `lb_sys_accounts`
+--
+
+INSERT INTO `lb_sys_accounts` (`account_id`, `account_email`, `account_password`, `account_created_date`, `account_timezone`, `account_language`, `account_status`) VALUES
+(1, 'thongnv@linxhq.com', '$2a$13$qpeEkJRJxEX9EKyWqQZHC.2IAoGyhhWlSWtnavgROUk98Tp0UPODy', '2015-06-15 04:15:17', NULL, NULL, 1);
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `lb_sys_account_invitations`
 --
 
@@ -819,8 +781,7 @@ CREATE TABLE IF NOT EXISTS `lb_sys_account_invitations` (
   `account_invitation_status` tinyint(4) NOT NULL,
   `account_invitation_rand_key` char(100) NOT NULL,
   `account_invitation_project` int(11) DEFAULT NULL,
-  `account_invitation_type` tinyint(1) NOT NULL COMMENT '0: team member, 1: customer',
-  `account_invitation_subscription_id` int(11) NOT NULL
+  `account_invitation_type` tinyint(1) NOT NULL COMMENT '0: team member, 1: customer'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
@@ -856,7 +817,7 @@ CREATE TABLE IF NOT EXISTS `lb_sys_account_profiles` (
 --
 
 INSERT INTO `lb_sys_account_profiles` (`account_profile_id`, `account_id`, `account_profile_surname`, `account_profile_given_name`, `account_profile_preferred_display_name`, `account_profile_company_name`) VALUES
-(1, 1, '', '', '', NULL);
+(1, 1, '', 'Admin', '', NULL);
 
 -- --------------------------------------------------------
 
@@ -879,7 +840,7 @@ CREATE TABLE IF NOT EXISTS `lb_sys_account_subscriptions` (
 --
 
 INSERT INTO `lb_sys_account_subscriptions` (`account_subscription_id`, `account_id`, `subscription_name`, `account_subscription_package_id`, `account_subscription_start_date`, `account_subscription_end_date`, `account_subscription_status_id`) VALUES
-(1, 1, 'My Company', 0, '2015-06-10 09:02:17', NULL, 1);
+(1, 1, 'My Company', 0, '2015-06-15 04:15:17', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -895,29 +856,6 @@ CREATE TABLE IF NOT EXISTS `lb_sys_account_team_members` (
   `is_customer` tinyint(1) DEFAULT NULL,
   `is_active` tinyint(1) NOT NULL COMMENT '-1 deactivated; 1 active'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `lb_sys_accounts`
---
-
-CREATE TABLE IF NOT EXISTS `lb_sys_accounts` (
-`account_id` int(11) NOT NULL,
-  `account_email` char(255) NOT NULL,
-  `account_password` char(255) NOT NULL,
-  `account_created_date` datetime NOT NULL,
-  `account_timezone` varchar(255) DEFAULT NULL,
-  `account_language` varchar(255) DEFAULT NULL,
-  `account_status` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `lb_sys_accounts`
---
-
-INSERT INTO `lb_sys_accounts` (`account_id`, `account_email`, `account_password`, `account_created_date`, `account_timezone`, `account_language`, `account_status`) VALUES
-(1, 'thongnv@linxhq.com', '$2a$13$Z4EL1U0Q9rKnSbLaI1XlheJXrb69Yml9dGtZ2Sgo0j5DPvw0zrk3C', '2015-06-10 09:02:17', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -1341,13 +1279,6 @@ CREATE TABLE IF NOT EXISTS `yiisession` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `yiisession`
---
-
-INSERT INTO `yiisession` (`id`, `expire`, `data`) VALUES
-('0ieq87v4667dmto96qnindaus5', 1455865354, '');
-
---
 -- Indexes for dumped tables
 --
 
@@ -1388,6 +1319,12 @@ ALTER TABLE `lb_comment`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
+-- Indexes for table `lb_contracts`
+--
+ALTER TABLE `lb_contracts`
+ ADD PRIMARY KEY (`lb_record_primary_key`);
+
+--
 -- Indexes for table `lb_contract_document`
 --
 ALTER TABLE `lb_contract_document`
@@ -1400,21 +1337,15 @@ ALTER TABLE `lb_contract_invoice`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
--- Indexes for table `lb_contracts`
---
-ALTER TABLE `lb_contracts`
- ADD PRIMARY KEY (`lb_record_primary_key`);
-
---
 -- Indexes for table `lb_core_entities`
 --
 ALTER TABLE `lb_core_entities`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
--- Indexes for table `lb_customer_address_contacts`
+-- Indexes for table `lb_customers`
 --
-ALTER TABLE `lb_customer_address_contacts`
+ALTER TABLE `lb_customers`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
@@ -1424,15 +1355,15 @@ ALTER TABLE `lb_customer_addresses`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
--- Indexes for table `lb_customer_contacts`
+-- Indexes for table `lb_customer_address_contacts`
 --
-ALTER TABLE `lb_customer_contacts`
+ALTER TABLE `lb_customer_address_contacts`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
--- Indexes for table `lb_customers`
+-- Indexes for table `lb_customer_contacts`
 --
-ALTER TABLE `lb_customers`
+ALTER TABLE `lb_customer_contacts`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
@@ -1484,9 +1415,9 @@ ALTER TABLE `lb_genera`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
--- Indexes for table `lb_invoice_item_templates`
+-- Indexes for table `lb_invoices`
 --
-ALTER TABLE `lb_invoice_item_templates`
+ALTER TABLE `lb_invoices`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
@@ -1496,15 +1427,15 @@ ALTER TABLE `lb_invoice_items`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
--- Indexes for table `lb_invoice_totals`
+-- Indexes for table `lb_invoice_item_templates`
 --
-ALTER TABLE `lb_invoice_totals`
+ALTER TABLE `lb_invoice_item_templates`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
--- Indexes for table `lb_invoices`
+-- Indexes for table `lb_invoice_totals`
 --
-ALTER TABLE `lb_invoices`
+ALTER TABLE `lb_invoice_totals`
  ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
@@ -1524,6 +1455,12 @@ ALTER TABLE `lb_next_ids`
 --
 ALTER TABLE `lb_payment`
  ADD PRIMARY KEY (`lb_record_primary_key`);
+
+--
+-- Indexes for table `lb_payments`
+--
+ALTER TABLE `lb_payments`
+ ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lb_payment_item`
@@ -1548,12 +1485,6 @@ ALTER TABLE `lb_payment_vendor_invoice`
 --
 ALTER TABLE `lb_payment_voucher`
  ADD PRIMARY KEY (`lb_record_primary_key`);
-
---
--- Indexes for table `lb_payments`
---
-ALTER TABLE `lb_payments`
- ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `lb_pv_expenses`
@@ -1616,6 +1547,12 @@ ALTER TABLE `lb_subscription`
  ADD PRIMARY KEY (`subscription_id`);
 
 --
+-- Indexes for table `lb_sys_accounts`
+--
+ALTER TABLE `lb_sys_accounts`
+ ADD PRIMARY KEY (`account_id`);
+
+--
 -- Indexes for table `lb_sys_account_invitations`
 --
 ALTER TABLE `lb_sys_account_invitations`
@@ -1644,12 +1581,6 @@ ALTER TABLE `lb_sys_account_subscriptions`
 --
 ALTER TABLE `lb_sys_account_team_members`
  ADD PRIMARY KEY (`account_team_member_id`);
-
---
--- Indexes for table `lb_sys_accounts`
---
-ALTER TABLE `lb_sys_accounts`
- ADD PRIMARY KEY (`account_id`);
 
 --
 -- Indexes for table `lb_sys_lists`
@@ -1794,6 +1725,11 @@ MODIFY `basic_permission_id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `lb_comment`
 MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `lb_contracts`
+--
+ALTER TABLE `lb_contracts`
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `lb_contract_document`
 --
 ALTER TABLE `lb_contract_document`
@@ -1804,35 +1740,30 @@ MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `lb_contract_invoice`
 MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `lb_contracts`
---
-ALTER TABLE `lb_contracts`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `lb_core_entities`
 --
 ALTER TABLE `lb_core_entities`
 MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=12;
 --
--- AUTO_INCREMENT for table `lb_customer_address_contacts`
+-- AUTO_INCREMENT for table `lb_customers`
 --
-ALTER TABLE `lb_customer_address_contacts`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
+ALTER TABLE `lb_customers`
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `lb_customer_addresses`
 --
 ALTER TABLE `lb_customer_addresses`
 MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `lb_customer_address_contacts`
+--
+ALTER TABLE `lb_customer_address_contacts`
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `lb_customer_contacts`
 --
 ALTER TABLE `lb_customer_contacts`
 MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `lb_customers`
---
-ALTER TABLE `lb_customers`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `lb_default_note`
 --
@@ -1842,7 +1773,7 @@ MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `lb_define_permission`
 --
 ALTER TABLE `lb_define_permission`
-MODIFY `define_permission_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+MODIFY `define_permission_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_documents`
 --
@@ -1874,9 +1805,9 @@ MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `lb_genera`
 MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
--- AUTO_INCREMENT for table `lb_invoice_item_templates`
+-- AUTO_INCREMENT for table `lb_invoices`
 --
-ALTER TABLE `lb_invoice_item_templates`
+ALTER TABLE `lb_invoices`
 MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_invoice_items`
@@ -1884,14 +1815,14 @@ MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `lb_invoice_items`
 MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `lb_invoice_item_templates`
+--
+ALTER TABLE `lb_invoice_item_templates`
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
+--
 -- AUTO_INCREMENT for table `lb_invoice_totals`
 --
 ALTER TABLE `lb_invoice_totals`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `lb_invoices`
---
-ALTER TABLE `lb_invoices`
 MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_modules`
@@ -1908,6 +1839,11 @@ MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 ALTER TABLE `lb_payment`
 MODIFY `lb_record_primary_key` int(11) unsigned NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `lb_payments`
+--
+ALTER TABLE `lb_payments`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_payment_item`
 --
@@ -1928,11 +1864,6 @@ MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `lb_payment_voucher`
 MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `lb_payments`
---
-ALTER TABLE `lb_payments`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_pv_expenses`
 --
@@ -1984,6 +1915,11 @@ MODIFY `role_define_permission_id` int(11) NOT NULL AUTO_INCREMENT;
 ALTER TABLE `lb_subscription`
 MODIFY `subscription_id` int(11) NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `lb_sys_accounts`
+--
+ALTER TABLE `lb_sys_accounts`
+MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+--
 -- AUTO_INCREMENT for table `lb_sys_account_invitations`
 --
 ALTER TABLE `lb_sys_account_invitations`
@@ -2008,11 +1944,6 @@ MODIFY `account_subscription_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=
 --
 ALTER TABLE `lb_sys_account_team_members`
 MODIFY `account_team_member_id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `lb_sys_accounts`
---
-ALTER TABLE `lb_sys_accounts`
-MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `lb_sys_lists`
 --
@@ -2097,425 +2028,7 @@ MODIFY `pcdi_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `process_checklist_item_rel`
 --
 ALTER TABLE `process_checklist_item_rel`
-MODIFY `pcir_id` int(11) NOT NULL AUTO_INCREMENT;--
--- Database: `phpmyadmin`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_bookmark`
---
-
-CREATE TABLE IF NOT EXISTS `pma_bookmark` (
-`id` int(11) NOT NULL,
-  `dbase` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `user` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `label` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `query` text COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Bookmarks' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_column_info`
---
-
-CREATE TABLE IF NOT EXISTS `pma_column_info` (
-`id` int(5) unsigned NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `column_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `comment` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `mimetype` varchar(255) CHARACTER SET utf8 NOT NULL DEFAULT '',
-  `transformation` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `transformation_options` varchar(255) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Column information for phpMyAdmin' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_designer_coords`
---
-
-CREATE TABLE IF NOT EXISTS `pma_designer_coords` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `x` int(11) DEFAULT NULL,
-  `y` int(11) DEFAULT NULL,
-  `v` tinyint(4) DEFAULT NULL,
-  `h` tinyint(4) DEFAULT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for Designer';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_history`
---
-
-CREATE TABLE IF NOT EXISTS `pma_history` (
-`id` bigint(20) unsigned NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `sqlquery` text COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='SQL history for phpMyAdmin' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_navigationhiding`
---
-
-CREATE TABLE IF NOT EXISTS `pma_navigationhiding` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `item_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `item_type` varchar(64) COLLATE utf8_bin NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Hidden items of navigation tree';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_pdf_pages`
---
-
-CREATE TABLE IF NOT EXISTS `pma_pdf_pages` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-`page_nr` int(10) unsigned NOT NULL,
-  `page_descr` varchar(50) CHARACTER SET utf8 NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='PDF relation pages for phpMyAdmin' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_recent`
---
-
-CREATE TABLE IF NOT EXISTS `pma_recent` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tables` text COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Recently accessed tables';
-
---
--- Dumping data for table `pma_recent`
---
-
-INSERT INTO `pma_recent` (`username`, `tables`) VALUES
-('root', '{"5":{"db":"phpmyadmin","table":"pma_column_info"},"6":{"db":"phpmyadmin","table":"pma_designer_coords"},"7":{"db":"phpmyadmin","table":"pma_history"},"8":{"db":"phpmyadmin","table":"pma_pdf_pages"},"9":{"db":"phpmyadmin","table":"pma_recent"}}');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_relation`
---
-
-CREATE TABLE IF NOT EXISTS `pma_relation` (
-  `master_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `master_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `master_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_db` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_table` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `foreign_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Relation table';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_savedsearches`
---
-
-CREATE TABLE IF NOT EXISTS `pma_savedsearches` (
-`id` int(5) unsigned NOT NULL,
-  `username` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `search_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `search_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Saved searches' AUTO_INCREMENT=1 ;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_table_coords`
---
-
-CREATE TABLE IF NOT EXISTS `pma_table_coords` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `pdf_page_number` int(11) NOT NULL DEFAULT '0',
-  `x` float unsigned NOT NULL DEFAULT '0',
-  `y` float unsigned NOT NULL DEFAULT '0'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table coordinates for phpMyAdmin PDF output';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_table_info`
---
-
-CREATE TABLE IF NOT EXISTS `pma_table_info` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT '',
-  `display_field` varchar(64) COLLATE utf8_bin NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Table information for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_table_uiprefs`
---
-
-CREATE TABLE IF NOT EXISTS `pma_table_uiprefs` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `prefs` text COLLATE utf8_bin NOT NULL,
-  `last_update` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Tables'' UI preferences';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_tracking`
---
-
-CREATE TABLE IF NOT EXISTS `pma_tracking` (
-  `db_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `table_name` varchar(64) COLLATE utf8_bin NOT NULL,
-  `version` int(10) unsigned NOT NULL,
-  `date_created` datetime NOT NULL,
-  `date_updated` datetime NOT NULL,
-  `schema_snapshot` text COLLATE utf8_bin NOT NULL,
-  `schema_sql` text COLLATE utf8_bin,
-  `data_sql` longtext COLLATE utf8_bin,
-  `tracking` set('UPDATE','REPLACE','INSERT','DELETE','TRUNCATE','CREATE DATABASE','ALTER DATABASE','DROP DATABASE','CREATE TABLE','ALTER TABLE','RENAME TABLE','DROP TABLE','CREATE INDEX','DROP INDEX','CREATE VIEW','ALTER VIEW','DROP VIEW') COLLATE utf8_bin DEFAULT NULL,
-  `tracking_active` int(1) unsigned NOT NULL DEFAULT '1'
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin ROW_FORMAT=COMPACT COMMENT='Database changes tracking for phpMyAdmin';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_userconfig`
---
-
-CREATE TABLE IF NOT EXISTS `pma_userconfig` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `timevalue` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-  `config_data` text COLLATE utf8_bin NOT NULL
-) ENGINE=MyISAM DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User preferences storage for phpMyAdmin';
-
---
--- Dumping data for table `pma_userconfig`
---
-
-INSERT INTO `pma_userconfig` (`username`, `timevalue`, `config_data`) VALUES
-('root', '2015-06-10 02:47:00', '{"collation_connection":"utf8mb4_general_ci"}');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_usergroups`
---
-
-CREATE TABLE IF NOT EXISTS `pma_usergroups` (
-  `usergroup` varchar(64) COLLATE utf8_bin NOT NULL,
-  `tab` varchar(64) COLLATE utf8_bin NOT NULL,
-  `allowed` enum('Y','N') COLLATE utf8_bin NOT NULL DEFAULT 'N'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='User groups with configured menu items';
-
--- --------------------------------------------------------
-
---
--- Table structure for table `pma_users`
---
-
-CREATE TABLE IF NOT EXISTS `pma_users` (
-  `username` varchar(64) COLLATE utf8_bin NOT NULL,
-  `usergroup` varchar(64) COLLATE utf8_bin NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin COMMENT='Users and their assignments to user groups';
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `pma_bookmark`
---
-ALTER TABLE `pma_bookmark`
- ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `pma_column_info`
---
-ALTER TABLE `pma_column_info`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `db_name` (`db_name`,`table_name`,`column_name`);
-
---
--- Indexes for table `pma_designer_coords`
---
-ALTER TABLE `pma_designer_coords`
- ADD PRIMARY KEY (`db_name`,`table_name`);
-
---
--- Indexes for table `pma_history`
---
-ALTER TABLE `pma_history`
- ADD PRIMARY KEY (`id`), ADD KEY `username` (`username`,`db`,`table`,`timevalue`);
-
---
--- Indexes for table `pma_navigationhiding`
---
-ALTER TABLE `pma_navigationhiding`
- ADD PRIMARY KEY (`username`,`item_name`,`item_type`,`db_name`,`table_name`);
-
---
--- Indexes for table `pma_pdf_pages`
---
-ALTER TABLE `pma_pdf_pages`
- ADD PRIMARY KEY (`page_nr`), ADD KEY `db_name` (`db_name`);
-
---
--- Indexes for table `pma_recent`
---
-ALTER TABLE `pma_recent`
- ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma_relation`
---
-ALTER TABLE `pma_relation`
- ADD PRIMARY KEY (`master_db`,`master_table`,`master_field`), ADD KEY `foreign_field` (`foreign_db`,`foreign_table`);
-
---
--- Indexes for table `pma_savedsearches`
---
-ALTER TABLE `pma_savedsearches`
- ADD PRIMARY KEY (`id`), ADD UNIQUE KEY `u_savedsearches_username_dbname` (`username`,`db_name`,`search_name`);
-
---
--- Indexes for table `pma_table_coords`
---
-ALTER TABLE `pma_table_coords`
- ADD PRIMARY KEY (`db_name`,`table_name`,`pdf_page_number`);
-
---
--- Indexes for table `pma_table_info`
---
-ALTER TABLE `pma_table_info`
- ADD PRIMARY KEY (`db_name`,`table_name`);
-
---
--- Indexes for table `pma_table_uiprefs`
---
-ALTER TABLE `pma_table_uiprefs`
- ADD PRIMARY KEY (`username`,`db_name`,`table_name`);
-
---
--- Indexes for table `pma_tracking`
---
-ALTER TABLE `pma_tracking`
- ADD PRIMARY KEY (`db_name`,`table_name`,`version`);
-
---
--- Indexes for table `pma_userconfig`
---
-ALTER TABLE `pma_userconfig`
- ADD PRIMARY KEY (`username`);
-
---
--- Indexes for table `pma_usergroups`
---
-ALTER TABLE `pma_usergroups`
- ADD PRIMARY KEY (`usergroup`,`tab`,`allowed`);
-
---
--- Indexes for table `pma_users`
---
-ALTER TABLE `pma_users`
- ADD PRIMARY KEY (`username`,`usergroup`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `pma_bookmark`
---
-ALTER TABLE `pma_bookmark`
-MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `pma_column_info`
---
-ALTER TABLE `pma_column_info`
-MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `pma_history`
---
-ALTER TABLE `pma_history`
-MODIFY `id` bigint(20) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `pma_pdf_pages`
---
-ALTER TABLE `pma_pdf_pages`
-MODIFY `page_nr` int(10) unsigned NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `pma_savedsearches`
---
-ALTER TABLE `pma_savedsearches`
-MODIFY `id` int(5) unsigned NOT NULL AUTO_INCREMENT;--
--- Database: `prestashop`
---
---
--- Database: `test`
---
-
-DELIMITER $$
---
--- Procedures
---
-CREATE DEFINER=`root`@`localhost` PROCEDURE `test_multi_sets`()
-    DETERMINISTIC
-begin
-        select user() as first_col;
-        select user() as first_col, now() as second_col;
-        select user() as first_col, now() as second_col, now() as third_col;
-        end$$
-
-DELIMITER ;
---
--- Database: `webauth`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `user_pwd`
---
-
-CREATE TABLE IF NOT EXISTS `user_pwd` (
-  `name` char(30) COLLATE latin1_general_ci NOT NULL DEFAULT '',
-  `pass` char(32) COLLATE latin1_general_ci NOT NULL DEFAULT ''
-) ENGINE=MyISAM DEFAULT CHARSET=latin1 COLLATE=latin1_general_ci;
-
---
--- Dumping data for table `user_pwd`
---
-
-INSERT INTO `user_pwd` (`name`, `pass`) VALUES
-('xampp', 'wampp');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `user_pwd`
---
-ALTER TABLE `user_pwd`
- ADD PRIMARY KEY (`name`);
-
+MODIFY `pcir_id` int(11) NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
