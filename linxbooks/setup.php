@@ -12,7 +12,7 @@ function setup()
 
     $account_email = $_POST['account_email'];
     $account_pass = $_POST['account_pass'];
-    $filename =dirname(__FILE__).'/sql/linxbooks_new.sql';
+    $filename =dirname(__FILE__).'/sql/linxbooks.sql';
 
     //connect database
    $connect = @mysql_connect($mysql_host, $mysql_username, $mysql_password);
