@@ -1,5 +1,5 @@
 # Linxbooks
-Open-source accounting software (customers, invoices, quotations, bills, expenses, payrolls and reports)
+Open-source accounting software (customers, invoices, quotations, bills, expenses, payrolls and reports). LinxBooks is a product of LinxHQ Pte Ltd
 
 ## Features
 * Create and manage multiple users and their permissions
@@ -26,3 +26,6 @@ We use the following:
 * Yii framework 1.1.14
 * Bootstrap
 * JQuery
+
+
+'' Copyright (c) 2015. LinxHQ Pte Ltd ''
