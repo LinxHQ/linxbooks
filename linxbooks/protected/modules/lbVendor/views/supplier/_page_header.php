@@ -22,7 +22,8 @@ echo '<div id="lb-container-header">';
                     array('label' => '<i class="icon-th-large"></i> '.Yii::t('lang','New'), 'items'=>array(
                         array('label'=>Yii::t('lang','Print PDF'),'url'=> '#'),
                         array('label'=>Yii::t('lang','Get Public URL'),'url'=> '#','linkOptions'=>array()),
-                        array('label'=>Yii::t('lang','Create Invoice'),'url'=> '#','linkOptions'=>array()),
+                        array('label'=>Yii::t('lang','Enter Payment'),'url'=> LbVendor::model()->getActionModuleURL('vendor', 'addPayment'),'linkOptions'=>array()),
+//                        array('label'=>Yii::t('lang','Create Invoice'),'url'=> '#','linkOptions'=>array()),
                      )),
                 ),
                 'encodeLabel'=>false,

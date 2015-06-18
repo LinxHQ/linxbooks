@@ -23,29 +23,36 @@ img{max-width:100%;}
 /*end reset*/
 /****-----start-body----****/
 body{
-	background:url(images_login/bg_login.jpeg)  no-repeat center fixed;
-	-webkit-background-size: cover;
+	background:url(images_login/login50g.png)  repeat fixed;
+/*	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
- 	background-size: cover;
+ 	background-size: cover;*/
  	position:relative;
  	font-family: 'Open Sans', sans-serif;
 
 }
 .login-form {
-	background:#fff;
 	width:32%;
 	margin:9% auto 3% auto;
  	position: relative;
+        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.9);
+}
+.login-content{
+    z-index: 100;
 }
 .head {
     font-family: 'Lobster', cursive;
     font-size: 60px;
     /**font-weight: 700;**/
-    left: 30%;
+    left: 28%;
     position: absolute;
     top: 6%;
     color: #666;
+	-webkit-border-radius:50%;
+	-o-border-radius:50%;
+	-moz-border-radius:50%;
 }
 .head img {
 	border-radius:50%;
@@ -55,7 +62,7 @@ body{
 	border:6px solid rgba(221, 218, 215, 0.23);
 }
 form {
-	padding:24% 2.5em 20% 2.5em;
+	padding:24% 2.5em 12% 2.5em;
 }
 form li{
 	border:1px solid #B4B2B2;
@@ -105,7 +112,6 @@ form li:hover{
 	 -moz-box-shadow: 0 0 1em #40A9DF;
 }
 input[type="submit"]{
-	float:right;
 	font-size:18px;
 	display: inline-block;
 	font-weight:600;
@@ -148,6 +154,7 @@ input[type="submit"]:hover{
 /***************************/
 .p-container{
 	margin-top:2em;
+        text-align: center;
 }
 .p-container  .checkbox input {
 
@@ -290,6 +297,10 @@ input[type="submit"]:hover{
 		margin:12% auto 0;
 		width:57%;
 	}
+	.head{
+		top:1%;
+		left:18.5%;
+	}
 	.copy-right {
 	left:38%;
 	bottom:-14%;
@@ -300,6 +311,10 @@ input[type="submit"]:hover{
 		margin:13% auto 0;
 		width:70%;
 	}
+	.head{
+		top:1%;
+		left:25.5%;
+	}
 	.copy-right {
 	left:36%;
 	bottom:-18%;
@@ -309,6 +324,10 @@ input[type="submit"]:hover{
 	.login-form  {
 		margin:20% auto 0;
 		width:90%;
+	}
+	.head{
+		top:1%;
+		left:25.5%;
 	}
 	.copy-right {
 	left:30%;
@@ -340,8 +359,8 @@ input[type="submit"]:hover{
 		margin-left: 28%;
 	}
 	.head{
-		top:-12%;
-		left:35.5%;
+		top:-10%;
+		left:25.5%;
 	}
 	.head img {
 	width:69%;

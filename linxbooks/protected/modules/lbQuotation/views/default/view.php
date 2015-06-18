@@ -35,7 +35,7 @@ $quotation_first = LbQuotation::model()->getMoveIQuotationNum($model->lb_quotati
 
 echo '<div style="float: right; z-index: 9999; top: 150px; position: absolute; width: 60px; height: 300px; margin-left: 1020px;
  border-bottom-right-radius: 5px; border-top-right-radius: 5px;
- padding: 10px;">';
+ padding: 10px;"></div>';
 
 //if($canAdd)
 //{

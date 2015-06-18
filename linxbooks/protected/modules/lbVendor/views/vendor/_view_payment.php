@@ -20,7 +20,7 @@ $customer_option=array(0=>'All')+$customer_option;
   'target' => '#select_customer',
 )); ?>
 <div style="margin-bottom: 15px;">
-    <span style="font-size: 16px;"><?php echo Yii::t('lang','Customer name');?>:</span>
+    <span style="font-size: 16px;"><?php echo Yii::t('lang','Supplier name');?>:</span>
     <?php echo CHtml::dropDownList('select_customer','', $customer_option,array('class'=>'span4')); ?>
     <?php echo CHtml::label(Yii::t('lang','From'), "search_data_from",array('style'=>'display:inline;margin-left: 15px;'));?>
     <?php $this->widget('ext.rezvan.RDatePicker',array(

@@ -1,5 +1,5 @@
- <?php
- $m = $this->module->id;
+<?php
+$m = $this->module->id;
 $canList = BasicPermission::model()->checkModules($m, 'list');
 
  $this->widget('bootstrap.widgets.TbGridView',array(

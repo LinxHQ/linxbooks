@@ -142,7 +142,7 @@ class LbPaymentVendorInvoice extends CLBActiveRecord
         $criteria = new CDbCriteria();
         $criteria->condition = "lb_payment_id = $lb_payment_id";
        
-        return LbPaymentItem::model()->findAll($criteria);
+        return LbPaymentVendorInvoice::model()->findAll($criteria);
     }
     
     public function calculateInvoicetotalPaid($invoice_id){
@@ -154,4 +154,17 @@ class LbPaymentVendorInvoice extends CLBActiveRecord
        
         return $total_paid;
     }
+    
+    public function getOustandingVendorInvoice($lb_payment_id=false,$lb_vendor_invoice_id=false)
+    {
+        
+    }
+    
+//    public function getAllPaymentItemVendorInvoice($lb_vendor_invoice_id)
+//    {
+//        $criteria = new CDbCriteria();
+//        $criteria->condition = "b_vendor_invoice_id = $lb_vendor_invoice_id";
+//       
+//        return LbPaymentVendorInvoice::model()->findAll($criteria);
+//    }
 }

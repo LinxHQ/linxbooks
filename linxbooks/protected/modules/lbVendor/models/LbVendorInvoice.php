@@ -355,4 +355,6 @@ class LbVendorInvoice extends CLBActiveRecord
             return $dataProvider;
  
         }
+        
+       
 }

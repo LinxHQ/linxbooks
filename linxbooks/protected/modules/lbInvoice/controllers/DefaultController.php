@@ -48,7 +48,7 @@ class DefaultController extends CLBController
                     'ajaxUpdateTaxes','ajaxgetNote','AjaxSavePaymentInvoice',
                     'createTax',
                     'ajaxConfirmInvoice',
-                    'saveItemAsTemplate',
+                    'saveItemAsTemplate','ajaxDeletePayment',
                     'PDF',
                     'SenEmail',
                     'AjaxSendEmailInvoice',
@@ -57,7 +57,7 @@ class DefaultController extends CLBController
                     'AjaxSendEmailInvoiceSharePDF',
                     'ajaxUpdateStatus',
                     'dashboard',
-                    'uploadLogo',
+                    'UploadLogo',
                     'admin',
                     'ajaxUpdateStatus',
                     'ajaxUpdateNexIDField',
@@ -139,8 +139,10 @@ class DefaultController extends CLBController
 		));
     
 	}
+        
+      
 
-	/**
+        /**
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
@@ -943,10 +945,12 @@ class DefaultController extends CLBController
         public function actionPDF($id,$email=false)
         {
             $html2pdf = Yii::app()->ePdf->HTML2PDF();
+           
             $model = LbInvoice::model()->findByPk($id);
             //$html2pdf->AddFont(13);
             $html2pdf->WriteHTML($this->renderPartial('pdf', array('model'=>$model),true));
             $html2pdf->WriteHTML($this->renderPartial('_pdf_footer', array(), true));
+//            $html2pdf->SetHtmlFooter(false);
             if($email)
                 return $html2pdf->Output('',true);
             else {
@@ -1292,12 +1296,26 @@ class DefaultController extends CLBController
         public function actionajaxgetAmount()
         {
             $model = LbPaymentItem::model()->find('lb_payment_id = '.$_POST['line_item_pk']);
+            $invoice_id=0;
+            if($_POST['invoice_id']);
+                $invoice_id = $_POST['invoice_id'];
             if (isset($_POST['method_id']))
             {
                 
                   $taxRecord['value']= $model->lb_payment_item_amount = $_POST['method_id'];
+                  //tinh paid
+                   
                     if($model->save())
+                    {
+                        $invoiceTotal = LbInvoiceTotal::model()->getInvoiceTotal($invoice_id);
+                        $taxRecord['paid']=$invoiceTotal->calculateInvoicetotalPaid($invoice_id);
+                        $taxRecord['outstanding']=$invoiceTotal->calculateInvoiceTotalOutstanding();
+                        if($invoiceTotal->calculateInvoiceTotalOutstanding() <= 0)
+                            $taxRecord['status']='I_PAID';
+                        else
+                            $taxRecord['status']='Open';
                         LBApplication::renderPlain($this, array('content'=>CJSON::encode($taxRecord)));
+                    }
               
             }
         }
@@ -1364,6 +1382,26 @@ class DefaultController extends CLBController
                     
                 }
                 
+            }
+            
+            function actionajaxDeletePayment(){
+                if(isset($_GET['id']))
+                    $payment_item_id = $_GET['id'];
+                //delete payment item
+                $payment = LbPaymentItem::model()->deleteByPk($payment_item_id);
+                $invoice_id=$_GET['invoice_id'];
+                $invoiceTotal = LbInvoiceTotal::model()->getInvoiceTotal($invoice_id);
+                $taxRecord['paid']=$invoiceTotal->calculateInvoicetotalPaid($invoice_id);
+                $taxRecord['outstanding']=$invoiceTotal->calculateInvoiceTotalOutstanding();
+                if($invoiceTotal->calculateInvoiceTotalOutstanding() <= 0)
+                        $taxRecord['status']='I_PAID';
+                else
+                        $taxRecord['status']='Open';
+                //update invoice total
+                
+//                if($payment->delete())
+//                    echo 'success';
+                LBApplication::renderPlain($this, array('content'=>CJSON::encode($taxRecord)));
             }
         
 }

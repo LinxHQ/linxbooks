@@ -25,7 +25,8 @@ $this->breadcrumbs=array(
 <body>
 	
 				 <!-----start-main---->
-				<div class="login-form">
+                        <div class="login-form">
+                            <div class="login-content">
                                 <div class="head">LinxBooks</div>
                                 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
                                             'id'=>'login-form',
@@ -53,12 +54,14 @@ $this->breadcrumbs=array(
                                         <?php echo $form->error($model,'error'); ?>
 					<div class="p-container">
 								<!--<label class="checkbox"><input type="checkbox" name="checkbox" checked><i></i>Remember Me</label>-->
-                                                                <?php echo $form->checkBoxRow($model,'rememberMe'); ?>
+                                                                <?php //echo $form->checkBoxRow($model,'rememberMe'); ?>
 								<input type="submit" value="LOGIN" >
 							<div class="clear"> </div>
+                                            <?php echo CHtml::link('Reset Password', array('accountPasswordReset/create'),array('style'=>'font-size: 13px;color: #858282;')); ?>
 					</div>
-                                        <?php echo CHtml::link('Reset Password', array('accountPasswordReset/create'),array('style'=>'    font-size: 14px;left: 325px;position: relative;top: 3px;color: #858282;')); ?>
+                                        
                                     <?php $this->endWidget(); ?>
+                            </div>
 			</div>
 			<!--//End-login-form-->
 		  <!-----start-copyright---->

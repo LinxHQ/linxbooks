@@ -167,7 +167,7 @@ class SiteController extends Controller
 		{
 			$model->username=$_POST['LoginForm']['username'];
                         $model->password=$_POST['LoginForm']['password'];
-                        $model->rememberMe=$_POST['LoginForm']['rememberMe'];
+                        $model->rememberMe=1;
 //                        print_r($_POST['LoginForm']);
 			// validate user input and redirect to the previous page if valid
 			if($model->validate() && $model->login())

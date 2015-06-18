@@ -2,7 +2,7 @@
 $canAdd = BasicPermission::model()->checkModules('lbPayment', 'add');
     $customer_arr=LbCustomer::model()->getCompanies($sort = 'lb_customer_name ASC',
 				LbCustomer::LB_QUERY_RETURN_TYPE_DROPDOWN_ARRAY);
-    $option_customer=array(0=>'Choose Customer')+$customer_arr;
+    $option_customer=array(0=>'Choose Supplier')+$customer_arr;
    
 ?>
 
@@ -46,7 +46,7 @@ echo '</div><br>';
                         <div class="controls" style="padding-top:5px;font-weight: bold;font-size: 18px;color: #6E8900"><?php echo LbPaymentVendor::model()->FormatPaymentVendorNo(LbPaymentVendor::model()->getPaymentVendorNextNum()); ?></div>
                     </div>
                     <div class="control-group">
-                        <?php echo CHtml::label(Yii::t('lang','Customer').' * ', 'customer_id',array('class'=>'control-label'));?>
+                        <?php echo CHtml::label(Yii::t('lang','Supplier').' * ', 'customer_id',array('class'=>'control-label'));?>
                         <div class="controls">
                             <?php echo CHtml::dropDownList('customer_id',$customer_id, $option_customer,array('class'=>'span4','onchange'=>'load_invoice_by_customer(this.value);')); ?>
                         </div>

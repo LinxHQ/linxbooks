@@ -175,4 +175,45 @@ class LbPaymentVendor extends CLBActiveRecord
                     $total += $data->lb_payment_vendor_total;
             return $total;
         }
+        
+        
+        
+    public function getPaymentVendorInvoice($supplier_id=false,$date_form=false,$date_to=false)
+    {
+        $criteria = new CDbCriteria();
+        if($supplier_id)
+        {
+            $criteria->join='LEFT JOIN lb_vendor_invoice a ON a.lb_vd_invoice_supplier_id = t.lb_payment_vendor_customer_id';
+            
+        }
+        if($date_form)
+        {
+            $criteria->addCondition("t.lb_payment_vendor_date >= '".$date_form."'","AND");
+        }
+        if($date_to)
+        {
+            $criteria->addCondition("t.lb_payment_vendor_date <= '".$date_to."'","AND");
+        }
+//        
+        if($supplier_id)
+        {
+        $criteria->addCondition ("a.lb_vd_invoice_supplier_id = $supplier_id","AND");
+        }
+        $criteria->group = 't.lb_record_primary_key';
+        $criteria->order = "t.lb_payment_vendor_customer_id";
+        
+        return $this->findAll($criteria);
+    }
+    
+    public function getTotalPaidByCustomer($supplier_id=false,$date_form=false,$date_to=false)
+    {
+        $AllPayment = $this->getPaymentVendorInvoice($supplier_id,$date_form,$date_to);
+        $total = 0;
+        foreach ($AllPayment as $data)
+            $total += $data->lb_payment_vendor_total;
+        return $total;
+    }
+    
+    
+    
 }

@@ -1,3 +1,32 @@
-All changes will be logged here, in descending order of commit date to GitHub. We may not provide diff. But we'll provide list of updated files,  sql statements, and configurations.
+=====================18/06/2015=================
+linxbooks/protected/modules/lbPayment/models/LbPayment.php
+linxbooks/protected/modules/lbPayment/views/default/_pdf_footer.php
+linxbooks/protected/modules/lbPayment/views/default/_view_payment.php
+linxbooks/css/images_login/login50g.png
+linxbooks/css/images_login/login70.png
+linxbooks/protected/controllers/SiteController.php
+linxbooks/themes/bootstrap/views/site/login.php
+linxbooks/css/bootstrap.min.css
+linxbooks/protected/modules/lbCustomer/models/LbCustomer.php
+linxbooks/protected/modules/lbQuotation/views/default/_pdf_footer.php
+linxbooks/protected/modules/lbQuotation/views/default/_form_line_items.php
+linxbooks/protected/modules/lbQuotation/views/default/view.php
+linxbooks/protected/modules/lbInvoice/views/default/_form_oustanding_quotation.php
+linxbooks/protected/modules/lbInvoice/views/default/_form_line_items.php
+linxbooks/protected/modules/lbInvoice/views/default/_pdf_footer.php
+linxbooks/protected/modules/lbInvoice/controllers/DefaultController.php
+linxbooks/protected/modules/lbInvoice/views/default/_form_line_items.php
+linxbooks/protected/modules/lbInvoice/controllers/DefaultController.php
+linxbooks/protected/modules/lbVendor/models/LbPaymentVendor.php
+linxbooks/protected/modules/lbVendor/models/LbVendorTotal.php
+linxbooks/protected/modules/lbVendor/models/LbPaymentVendorInvoice.php
+linxbooks/protected/modules/lbVendor/models/LbVendorInvoice.php
+linxbooks/protected/modules/lbVendor/controllers/SupplierController.php
+linxbooks/protected/modules/lbVendor/views/supplier/viewSupplier.php
+linxbooks/protected/modules/lbVendor/views/supplier/_page_header.php
+linxbooks/protected/modules/lbVendor/views/default/vendor_pdf.php
+linxbooks/protected/modules/lbVendor/views/default/dashboard.php
+linxbooks/protected/modules/lbVendor/views/vendor/createPayment.php
+linxbooks/protected/modules/lbVendor/views/vendor/_view_payment.php
+linxbooks/protected/modules/lbVendor/views/vendor/_form_view_payment.p
 
-## 18 Jun 2015

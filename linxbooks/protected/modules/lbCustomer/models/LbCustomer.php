@@ -54,6 +54,7 @@ class LbCustomer extends CLBActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
                     'payment'=>array(self::HAS_MANY,'LbPayment','lb_payment_customer_id'),
+                    'paymentVendor'=>array(self::HAS_MANY,'LbPaymentVendor','lb_payment_vendor_customer_id'),
                     );
 	}
 
@@ -224,4 +225,25 @@ class LbCustomer extends CLBActiveRecord
            }
            return $customer;
        }
+       
+       public function getCompaniesByPaymentVendor($sort = 't.lb_customer_name ASC', $return_type = self::LB_QUERY_RETURN_TYPE_ACTIVE_DATA_PROVIDER,$customer_id=false,$date_from=false,$date_to=false,$user_id=false){
+               
+            $criteria = new CDbCriteria();
+            //$criteria -> join = 'INNER JOIN lb_payment p ON p.lb_payment_customer_id = t.lb_record_primary_key';
+            $criteria -> with = array('paymentVendor');
+            
+            if($customer_id)
+                $criteria->compare ('t.lb_record_primary_key', intval($customer_id));
+            if($date_from)
+                $criteria ->compare ('paymentVendor.lb_payment_vendor_date >',"$date_from");
+            if($date_to)
+                $criteria ->compare ('paymentVendor.lb_payment_vendor_date <',"$date_to");
+            
+            $criteria->order = $sort;
+            $criteria->group = 't.lb_record_primary_key';
+            
+            $dataProvider = $this->getFullRecordsDataProvider($criteria,NULL,FALSE,$user_id);
+            
+            return $this->getResultsBasedForReturnType($dataProvider, $return_type);
+        }
 }

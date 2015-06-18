@@ -105,10 +105,12 @@ if(!$canView)
     function search_name(name)
     {
         name = replaceAll(name," ", "%");
-       
+        
+        if(name.length >= 3){
         $('#show_invoice').load('<?php echo $this->createUrl('/lbInvoice/default/_search_invoice');?>?name='+name
                   
             );
+        }
     }
     function replaceAll(string, find, replace) {
       return string.replace(new RegExp(escapeRegExp(find), 'g'), replace);

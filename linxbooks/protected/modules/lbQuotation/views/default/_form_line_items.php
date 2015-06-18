@@ -433,9 +433,18 @@ if($canAdd)
  * =============================== NOTE SECTION ================================
  *******************************************************************************/
 -->
-<div id="container-quotation-note-<?php echo $model->lb_record_primary_key; ?>" style="display: block; clear: both; padding-top: 40px; width: 600px;" class="">
-    <h4><?php echo Yii::t('lang','Note'); ?>:</h4>
+
     <?php
+        echo '<div id="container-quotation-note-'.$model->lb_record_primary_key.'"
+        style="display: flex; clear: both; padding-top: 40px; width: 100%;" class="">';
+    echo '<table class="items table table-bordered" style="width:100%;">'
+    . ' <thead>
+        <tr>
+                    <th class="lb-grid-header" style="font-size:18px;">'.Yii::t('lang','Note').'</th>
+                    </tr>
+            </thead><tbody>';
+
+    echo '<tr><td>';
         $this->widget('editable.EditableField', array(
             'type'        => 'textarea',
             'inputclass'  => 'input-large-textarea',
@@ -449,17 +458,25 @@ if($canAdd)
             'options'	=> array(
             ),
         ));
+        echo '</td></tr></tbody></table></div>';
     ?>
-</div>
+
 
 <!--
 /********************************************************************************
  * =============================== INTERNAL NOTE ================================
  *******************************************************************************/
 -->
-<div id="container-quotation-internal-note-<?php echo $model->lb_record_primary_key; ?>" style="display: block; clear: both; padding-top: 40px; width: 600px;" class="">
-    <h4><?php echo Yii::t('lang','Internal Note');?> :</h4>
-    <?php
+<?php echo '<div id="container-quotation-internal-note-'.$model->lb_record_primary_key.'"
+    style="display: block; clear: both; padding-top: -9px; width: 100%;" class="">';
+echo '<table class="items table table-bordered" style="width:100%;">'
+.' <thead>
+    <tr>
+		<th class="lb-grid-header" style="font-size:18px;">'.Yii::t('lang','Internal Note').'</th>
+		</tr>
+	</thead><tbody>';
+echo '<tr><td>';
+    
         $this->widget('editable.EditableField', array(
             'type'        => 'textarea',
             'inputclass'  => 'input-large-textarea',
@@ -473,8 +490,10 @@ if($canAdd)
             'options'	=> array(
             ),
         ));
+        echo '</td></tr></tbody></table>';
+echo '</div>';// end note div
     ?>
-</div>
+
 
 <!-- //// SAVE BUTTON -->
 <div style="display: block; clear: both; text-align: center; padding-top: 40px;" class="">
@@ -561,7 +580,7 @@ $this->widget('bootstrap.widgets.TbButton', array(
     'url'=>'#',
     'htmlOptions'=>array('data-dismiss'=>'modal'),
 ));
-echo '</div>';
+echo '</div></div>';
 $this->endWidget(); // end modal widget
 ////// END GENERIC MODAL HOLDER
 ?>
@@ -583,6 +602,7 @@ $url_last = ($quotation_last) ? $model->getViewURLByIdNormalized($quotation_last
     <a href="<?php echo $url_next ?>"><i class="icon-forward">&nbsp;</i></a>
     <a href="<?php echo $url_last; ?>"><i class="icon-fast-forward"></i></a>
 </div>
+
 <script type="text/javascript">
    
     var lbquotation_line_items_updated = false;

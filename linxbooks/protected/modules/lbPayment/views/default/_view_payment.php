@@ -48,7 +48,7 @@ $customer_option=array(0=>'All')+$customer_option;
             ));
     ?>  
     
-    <?php echo CHtml::button(Yii::t('lang','Tìm kiếm'), array('onclick'=>'load_search_view_payment();return false;','class'=>'btn','style'=>'margin-top:-3px;')) ?>
+    <?php echo CHtml::button(Yii::t('lang','Search'), array('onclick'=>'load_search_view_payment();return false;','class'=>'btn','style'=>'margin-top:-3px;')) ?>
 </div>
 
 

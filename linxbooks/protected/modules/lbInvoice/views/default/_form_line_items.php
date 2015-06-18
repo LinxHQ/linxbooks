@@ -18,6 +18,9 @@ $canViewProcess = BasicPermission::model()->checkModules('process_checklist', 'v
 //$canDeleteAll = BasicPermission::model()->checkModules($m, 'delete all');
 
 $currency_name = LbGenera::model()->getGeneraSubscription()->lb_genera_currency_symbol;
+$lb_thousand_separator = LbGenera::model()->getGeneraSubscription()->lb_thousand_separator;
+$lb_decimal_symbol = LbGenera::model()->getGeneraSubscription()->lb_decimal_symbol;
+
 
 /********************************************************************************
  * ============================= LINE ITEMS SECTION =============================
@@ -194,19 +197,19 @@ echo '</div>'; // end line items section
 
 // END LINE ITEMS FORM
 
-echo '<div id="container-total">';
+echo '<div id="container-total" >';
 // print sub total
-echo '<div class="invoice-subtotal-container">';// style="clear: both; float: right; display: block; width: 350px">';
-echo "<div style='' class='invoice-total-label'>".Yii::t('lang','Sub Total')." ($currency_name):</div>";
+echo '<div class="invoice-subtotal-container" style="border:solid 1px #dddddd;border-bottom:none;">';// style="clear: both; float: right; display: block; width: 350px">';
+echo "<div style='margin-left:236px;' class='invoice-total-label'>".Yii::t('lang','Sub Total')." ($currency_name):</div>";
 echo "<div id='invoice-subtotal-{$model->lb_record_primary_key}' style=''  class='invoice-total-value'>";
-echo "{$invoiceTotal->lb_invoice_subtotal}</div>";
+echo number_format($invoiceTotal->lb_invoice_subtotal,2,$lb_decimal_symbol,$lb_thousand_separator)."</div>";
 echo '</div>'; // end showing sub total
 
 /********************************************************************************
  * ============================= DISCOUNTS SECTION =============================
  *******************************************************************************/
 
-echo '<div id="container-invoice-discounts" class="invoice-discounts-container">';// style="float: right; display: block; clear: both">';
+echo '<div style="border-left:solid 1px #dddddd; border-right:solid 1px #dddddd;" id="container-invoice-discounts" class="invoice-discounts-container">';// style="float: right; display: block; clear: both">';
 
 $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id'=>'lb-invoice-discounts-form',
@@ -216,7 +219,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 
 //echo '<div style="width: auto; display: block; clear: both">';// style="text-align: right; clear: both; display: block; width: 350px;">';
 //echo "<div style='' class='invoice-total-label'>Discount:</div>";
-echo "<div style='font-size: 9pt; float: left; width: 150px; text-align: right;'>";//  class='invoice-total-value'>";
+echo "<div style='font-size: 9pt; float: left; width: 150px; text-align: right; '>";//  class='invoice-total-value'>";
 echo CHtml::link(Yii::t('lang','Add discount'), '#', array(
     'onclick'=>'
 			$.post("'.$model->getActionURLNormalized('createBlankDiscount',
@@ -320,7 +323,7 @@ echo '</div>';// end invoice discount div
  * =============================== TAXES SECTION ================================
  *******************************************************************************/
 
-echo '<div id="container-invoice-taxes" style="margin-top: -20px;" class="invoice-taxes-container">';
+echo '<div id="container-invoice-taxes" style="margin-top: -20px;border-left:solid 1px #dddddd;border-right:solid 1px #dddddd;" class="invoice-taxes-container" >';
 
 $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     'id'=>'lb-invoice-taxes-form',
@@ -439,21 +442,22 @@ $this->endWidget();
 echo '</div>';// end invoice taxes
 
 /// TOTAL
-echo '<div class="invoice-total-container" style="margin-top: -20px">';
+
+echo '<div class="invoice-total-container" style="margin-top: -20px ;border-left:solid 1px #dddddd;border-right:solid 1px #dddddd; border-bottom:solid 1px #dddddd;border-right:solid 1px #dddddd;" >';
 
 // total after tax
-echo '<div class="invoice-total-label">'.Yii::t('lang','Total').' ('.$currency_name.'):</div>';
+echo '<div class="invoice-total-label" style="margin-left:236px;">'.Yii::t('lang','Total').' ('.$currency_name.'):</div>';
 echo "<div id='invoice-total-{$model->lb_record_primary_key}' class='invoice-total-value'>";
-echo $invoiceTotal->lb_invoice_total_after_taxes;
+echo number_format($invoiceTotal->lb_invoice_total_after_taxes,2,$lb_decimal_symbol,$lb_thousand_separator);
 echo '</div>';
 
 // paid
-echo '<div class="invoice-total-label">'.Yii::t('lang','Paid').' ('.$currency_name.'):</div>';
-echo "<div id='invoice-paid-{$model->lb_record_primary_key}' class='invoice-total-value'>{$invoiceTotal->calculateInvoicetotalPaid($model->lb_record_primary_key)}</div>";
+echo '<div class="invoice-total-label" style="margin-left:236px;">'.Yii::t('lang','Paid').' ('.$currency_name.'):</div>';
+echo "<div id='invoice-paid-{$model->lb_record_primary_key}' class='invoice-total-value'>".number_format($invoiceTotal->calculateInvoicetotalPaid($model->lb_record_primary_key),2,$lb_decimal_symbol,$lb_thousand_separator)."</div>";
 
 // outstanding
-echo '<div class="invoice-total-label">'.Yii::t('lang','Outstanding').' ('.$currency_name.'):</div>';
-echo "<div id='invoice-outstanding-{$model->lb_record_primary_key}' class='invoice-total-value'>{$invoiceTotal->calculateInvoiceTotalOutstanding()}</div>";
+echo '<div style="margin-left:236px;" class="invoice-total-label">'.Yii::t('lang','Outstanding').' ('.$currency_name.'):</div>';
+echo "<div id='invoice-outstanding-{$model->lb_record_primary_key}' class='invoice-total-value'>".number_format($invoiceTotal->calculateInvoiceTotalOutstanding(),2,$lb_decimal_symbol,$lb_thousand_separator)."</div>";
 
 echo '</div>';
 
@@ -462,8 +466,8 @@ echo '</div>';
 
 //Payment
 $PaymentInvoice=  LbPaymentItem::model()->getAllPaymentByInvoice($model->lb_record_primary_key);
-//echo '<pre>';
-//print_r(LbPayment::model()->getPaymentById(153)->lb_payment_no);
+
+
 
 echo '<div id="container-invoice-line-items-section" style="margin-top: 30px;clear:both;">';
 
@@ -482,39 +486,58 @@ LineItem Grid's $data is LbInvoiceItem
 Each line item's fields (description, quantity, unit price and total) 
 are marked by the line item's primary key.
  */
+//$modelPayment = LBPayment::model()->getPaymentById($PaymentInvoice);
+//$this->widget('ext.rezvan.RDatePicker',array(
+//    'name'=>'message[messageDate]',
+//    'value'=>$modelPayment->lb_payment_date,
+//    'options' => array(
+//        'format' => 'yyyy/mm/dd',
+//        'viewformat' => 'yyyy/mm/dd',
+//        'placement' => 'right',
+//        'todayBtn'=>true,
+//    )
+//));
  
 $method = LBPayment::model()->method;
+//$test = LBPayment::model()->findPayment($model->lb_record_primary_key);
+//echo '<pre>';
+//print_r($test);
 
 $grid_payment_id = 'invoice-line-payment-grid-'.$model->lb_record_primary_key;
 $this->widget('bootstrap.widgets.TbGridView', array(
 		'id' => $grid_payment_id,
         'type'=>'bordered',
 		'dataProvider' => $PaymentInvoice,
+                
 		'columns' => array(
-				array(
-						'header' => '#',
-						'type' => 'raw',
-						'value' => '$data->lb_record_primary_key',
-						'htmlOptions'=>array('style'=>'width: 10px; '),
-                                                'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
-				),
-//                       array('class'=>'CCheckBoxColumn','selectableRows'=>2),
-//                array(
+				
+                 array(
+                    'class'=>'bootstrap.widgets.TbButtonColumn',
+                    'template'=>"{delete}",
+                    'deleteButtonUrl'=>'"' . $model->getActionURLNormalized("ajaxDeletePayment") . '" .
+                                        "?id={$data->lb_record_primary_key}&invoice_id={$data->lb_invoice_id}"',
                     
-//                    'class'=>'CCheckBoxColumn',
-//                    'selectableRows'=>2,
+                    'afterDelete'=>'function(link,success,data){
+                        
+                        if(success) {
+                            var responseJSON = $.parseJSON(data);
                     
-//                    'template'=>"{TOGGLE_CHECKBOX}",
-//                    'deleteButtonUrl'=>'"' . $model->getActionURLNormalized("ajaxDeleteItem") . '" .
-//                                        "?id={$data->lb_record_primary_key}"',
-//                    'afterDelete'=>'function(link,success,data){
-//                        if(success) {
-//                            refreshTotals();
-//                        }
-//                    } ',
-//                    'htmlOptions'=>array('style'=>'width: 10px'),
-//                    'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
-//                ),
+                            var status = responseJSON.status;
+                             if(status == "I_PAID")
+                            {
+                                $("#lb_invocie_status").text("Paid");
+                            }
+                        else
+                            $("#lb_invocie_status").text("Open");
+                    
+                        $("#invoice-outstanding-'.$model->lb_record_primary_key.'").text(responseJSON.outstanding);
+                        $("#invoice-paid-'.$model->lb_record_primary_key.'").text(responseJSON.paid);
+                        }
+                    } ',
+                    'htmlOptions'=>array('style'=>'width: 10px'),
+                    'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
+                ),
+
                  array(
 						'header' => Yii::t('lang','Payment No'),
 						'type' => 'raw',
@@ -524,21 +547,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 						'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
                         'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
 		),
-//                     array(
-//                        'class' => 'editable.EditableColumn',
-//                        'name' => 'user_dob',
-//                        'headerHtmlOptions' => array('style' => 'width: 100px'),
-//                        'editable' =>  array(
-//                                            'type'      => 'date',
-//                            'value'=>'01/01/222',
-//                                            'model'     => LbPayment::model()->getPaymentById(153),
-//                                            'attribute' => 'lb_payment_date',
-//                                            'url'       => $model->getActionURLNormalized('ajaxUpdateField'),
-//                                            'placement' => 'right',
-//                                           'format' => 'yyyy-mm-dd', //format in which date is expected from model and submitted to server
-//                                           'viewformat' => 'dd/mm/yyyy', //format in which date is displayed
-//                            )
-//                        ), 
+                   
                  array(
 						'header' => Yii::t('lang','Payment Date'),
 						'type' => 'raw',
@@ -553,6 +562,8 @@ $this->widget('bootstrap.widgets.TbGridView', array(
                                                                               "line_item_pk"=>"{$data->lb_record_primary_key}",
                                                                               "onChange"=>"js:changeDate($(this).attr(\"line_item_pk\"),
                                                                                                             $(this).val())",
+                                                                              
+                                                                               
                                                                               "line_item_field"=>"item-payment"))',
 
 						'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
@@ -626,11 +637,12 @@ $this->widget('bootstrap.widgets.TbGridView', array(
                             			
 						'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
                         'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
-		),//LbPayment::model()->getPaymentById($data->lb_payment_id)->lb_payment_notes
+		),
+                    
 	),
 ));
 echo CHtml::link(Yii::t('lang','Add Payment'), '#', array(
-	'onclick'=>'addItemPayment('.$model->lb_record_primary_key.');'
+	'onclick'=>'addItemPayment('.$model->lb_record_primary_key.'); return false;'
 ));
 
 echo '<button onclick="printPdfPayment()" class="btn" style="margin-left:20px;">Print PDF</button>';
@@ -673,8 +685,8 @@ echo '</div>'; // end line items section
  * =============================== NOTE SECTION ================================
  *******************************************************************************/
 echo '<div id="container-invoice-note-'.$model->lb_record_primary_key.'"
-    style="display: block; clear: both; padding-top: 40px; width: 600px;" class="">';
-echo '<table class="items table table-bordered" style="width:43%;">'
+    style="display: flex; clear: both; padding-top: 40px; width: 100%;" class="">';
+echo '<table class="items table table-bordered" style="width:100%;">'
 . ' <thead>
     <tr>
 		<th class="lb-grid-header" style="font-size:18px;">'.Yii::t('lang','Note').'</th>
@@ -704,6 +716,35 @@ $this->widget('editable.EditableField', array(
     }'
 ));
 echo '</td></tr></tbody></table>';
+
+//echo '<table class="items table table-bordered" style="width:40%;float:right;margin-left:200px;">'
+//.' <thead>
+//    <tr>
+//		<th class="lb-grid-header" style="font-size:18px;">'.Yii::t('lang','Internal Note').'</th>
+//		</tr>
+//	</thead><tbody>';
+//echo '<tr><td>';
+//$this->widget('editable.EditableField', array(
+//    'type'        => 'textarea',
+//    'inputclass'  => 'input-large-textarea',
+//    'emptytext'   => 'Enter internal note',
+//    'model'       => $model,
+//    'attribute'   => 'lb_invoice_internal_note',
+//    'url'         => $model->getActionURLNormalized('ajaxUpdateField'),
+//    'placement'   => 'right',
+//    //'showbuttons' => 'bottom',
+//    'htmlOptions' => array('style'=>'text-decoration: none; border-bottom: none; color: #777'),
+//    'options'	=> array(
+//    ),
+//    'onShown'=> 'js:function(){
+//        var tip = $(this).data("editableContainer").tip();
+//        var editable_left = $(tip).css("left").replace("px","");
+//        //console.log(tip,tip.attr("style"));
+//        //if (editable_left < 0)
+//            $(tip).css("left", 50);
+//    }'
+//));
+//echo '</td></tr></tbody></table>';
 echo '</div>';// end note div
 
 
@@ -712,8 +753,8 @@ echo '</div>';// end note div
  * =============================== INTERANL NOTE SECTION ================================
  *******************************************************************************/
 echo '<div id="container-invoice-internal-note-'.$model->lb_record_primary_key.'"
-    style="display: block; clear: both; padding-top: -9px; width: 600px;" class="">';
-echo '<table class="items table table-bordered" style="width:43%;">'
+    style="display: block; clear: both; padding-top: -9px; width: 100%;" class="">';
+echo '<table class="items table table-bordered" style="width:100%;">'
 .' <thead>
     <tr>
 		<th class="lb-grid-header" style="font-size:18px;">'.Yii::t('lang','Internal Note').'</th>
@@ -819,6 +860,7 @@ if($canDelete)
         ));
     }
 }
+
 echo '</div>';
 
 /***************************** HIDDEN STUFF *************************************/
@@ -944,7 +986,16 @@ if($canViewProcess)
 
 <script language="javascript">
 var item=1;
+
 $(document).ready(function(){
+
+     	
+        var from_date = $(".lbinvoice-line-payment_date").datepicker({
+            format: 'yyyy-mm-dd'
+        }).on('changeDate', function(ev) {
+            from_date.hide();
+        }).data('datepicker');	
+ 
     $('.invoice-item-description').autosize({append: "\n"}); 
     bindLineItemsForChanges("<?php echo $grid_id; ?>");
     bindDiscountsForChanges("<?php echo $discount_grid_id; ?>");
@@ -1146,6 +1197,9 @@ function addItemPayment(invoice_id)
            type:'POST',
            url:'AjaxSavePaymentInvoice',
            data:{id:id},
+           beforeSend:function(){
+               $('#container-invoice-line-items-section').block();
+           },
            success:function(response){
                var responseJSON = jQuery.parseJSON(response);
                var id_payment=responseJSON.lb_payment_id;
@@ -1164,7 +1218,8 @@ function addItemPayment(invoice_id)
                 content +='</tr>';
                 $('#invoice-line-payment-grid-'+invoice_id+' table tr:last' ).after(content);
                 item++;
-           }
+                $('#container-invoice-line-items-section').unblock();
+           },
        });
 //   
    
@@ -1185,15 +1240,18 @@ function onChangeMethodDropdown(line_item_pk, method_id)
         $("#btn-add-new-tax").click();
     } else {
         // submit selected tax to server
+//        $('#content').block();
         $.post("<?php echo $model->getActionURLNormalized('ajaxgetMethod',array('id'=>$model->lb_record_primary_key)); ?>",
-            {line_item_pk: line_item_pk, method_id: method_id},
+            {line_item_pk: line_item_pk, method_id: method_id}, 
+//               $('#container-invoice-line-items-section').block();
             function(response)
             {
                 if (response != null)
                 {
                     var responseJSON = jQuery.parseJSON(response);
                     // refill tax value
-                   
+                    
+//                    $('#content').unblock();
                 }
             }
         );
@@ -1203,6 +1261,7 @@ function changeAmount(line_item_pk, method_id)
 {
    
         // submit selected tax to server
+        $('#content').block();
         $.post("<?php echo $model->getActionURLNormalized('ajaxgetAmount',array('id'=>$model->lb_record_primary_key)); ?>",
             {line_item_pk: line_item_pk, method_id: method_id,invoice_id:<?php echo $model->lb_record_primary_key;?>},
             function(response)
@@ -1220,6 +1279,15 @@ function changeAmount(line_item_pk, method_id)
                     // refill tax value
                     $('#invoice-outstanding-'+<?php echo $model->lb_record_primary_key;?>).text(responseJSON.outstanding);
                     $('#invoice-paid-'+<?php echo $model->lb_record_primary_key;?>).text(responseJSON.paid);
+                    
+                    $('#content').block({
+                        message:"<div style='padding:20px'><?php echo "Successfully: ".date('d/m/Y H:i:s'); ?></div>",
+                    });
+                    setTimeout(function(){
+                            $('#content').unblock()
+                        }, 2000);
+            
+                    
                    
             }
         );
@@ -1261,6 +1329,19 @@ function changeDate(line_item_pk, method_id)
         );
     
 }
+function datePicker(line_item_pk, method_id)
+{
+//   alert(line_item_pk);
+//   alert(method_id);
+    var from_date = $("#lb_invoice_item_payment_"+line_item_pk+"").datepicker({
+            format: 'dd-mm-yyyy'
+        }).on('changeDate', function(ev) {
+            from_date.hide();
+        }).data('datepicker');	
+       
+    
+}
+
 function printPdfPayment()
 {
     window.open('<?php echo yii::app()->createUrl('lbPayment/default/');?>/pdf?invoice=<?php echo $model->lb_record_primary_key;?>&search_date_from=false&search_date_to=false','_target');   

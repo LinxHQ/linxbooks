@@ -260,6 +260,16 @@ class LbVendorTotal extends CLBActiveRecord
        
        return $sum;
         }
+        public function getTotalVendorPaidByCustomer($customer_id){
+        $sql = 'SELECT SUM(lb_vendor_last_paid) AS sum
+                FROM lb_vendor_total t
+                INNER JOIN lb_vendor_invoice i ON i.lb_record_primary_key = t.lb_vendor_invoice_id
+                WHERE i.lb_vd_invoice_supplier_id = '.intval($customer_id).' AND i.lb_vd_invoice_no <> "Draft"';
+       //$sum = LbInvoiceTotal::model()->findBySql($sql);
+       $sum = Yii::app()->db->createCommand($sql)->queryScalar();
+       
+       return $sum;
+        }
        
 	
     
@@ -291,6 +301,17 @@ class LbVendorTotal extends CLBActiveRecord
             $totalModel = $this->find('lb_vendor_invoice_id = '.$id);
         return  $totalModel->lb_vendor_last_outstanding ;
     }
+    
+//    public function getTotalVendorInvoiceByCustomer($customer_id,$date_from,$date_to){
+//        $sql = 'SELECT SUM(lb_vendor_last_outstanding) AS sum
+//                FROM lb_vendor_total t
+//                INNER JOIN lb_vendor_invoice i ON i.lb_record_primary_key = t.lb_vendor_invoice_id
+//                WHERE i.lb_vd_invoice_supplier_id = '.intval($customer_id).' AND i.lb_vd_invoice_no <> "Draft"';
+//       //$sum = LbInvoiceTotal::model()->findBySql($sql);
+//       $sum = Yii::app()->db->createCommand($sql)->queryScalar();
+//       
+//       return $sum;
+//        }
     
    
 }

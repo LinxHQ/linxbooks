@@ -276,5 +276,16 @@ class LbPayment extends CLBActiveRecord
 
         return $this->getResultsBasedForReturnType($dataProvider, $return_type);
     }
+    
+    public function findPayment($invoice_id=FALSE)
+    {
+        $criteria=new CDbCriteria;
+        if($invoice_id)
+            $criteria->condition = "lb_invoice_id = $invoice_id";
+        return $this->findAll($criteria);
+    }
+    public function CaculatorPaymentByInvoice($invoice_id)
+    {
+    }
 
 }

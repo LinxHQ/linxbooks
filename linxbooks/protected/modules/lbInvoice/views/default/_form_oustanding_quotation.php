@@ -34,7 +34,7 @@ if(!$canView)
             $this->widget('bootstrap.widgets.TbGridView',array(
                 'id'=>'lb-quotation-Outstanding-grid',
                 'type'=>'striped bordered condensed',
-                'dataProvider'=>$quotationModel->getQuotationByStatus($status,5,$canListQuotation),
+                'dataProvider'=>$quotationModel->getQuotationByStatus($status,10,$canListQuotation),
                 //'template' => "{items}",
                 'columns'=>array(
                      array(
