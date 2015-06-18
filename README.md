@@ -29,6 +29,10 @@ We use the following:
 * Yii framework 1.1.14
 * Bootstrap
 * JQuery
+* 
+## Change Log
+
+For weekly/regular updates, please refer to CHANGELOG
 
 
 '' Copyright (c) 2015. LinxHQ Pte Ltd ''
