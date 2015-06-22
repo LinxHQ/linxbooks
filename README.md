@@ -18,7 +18,7 @@ Joseph Pham, joseph.pnc@linxhq.com
 * Download the source code and run file /install.php from your browser.
 
 ## Demo
-* Coming soon.
+* http://linxbooks.com/demo (user: admin, password: admin123)
 
 ## Technical details
 
