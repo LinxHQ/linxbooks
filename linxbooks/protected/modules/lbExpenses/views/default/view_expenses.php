@@ -49,6 +49,9 @@ $this->Widget('bootstrap.widgets.TbGridView',array(
 			'class'=>'CButtonColumn',
                         'template'=>'{delete}',
                         'deleteButtonUrl'=>'CHtml::normalizeUrl(array("/lbExpenses/default/delete", "id"=>$data->lb_record_primary_key))',
+                        'afterDelete'=>'function(){
+                            location.reload(true);
+                        } ',
                         'htmlOptions'=>array('width'=>'30'),
 		),
                 array(

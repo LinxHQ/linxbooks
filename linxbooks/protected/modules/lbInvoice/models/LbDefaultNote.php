@@ -101,9 +101,10 @@ class LbDefaultNote extends CLBActiveRecord
             if(count($lastDefaultNote)<=0)
             {
                 $DefaultNote = new LbDefaultNote();
-                $DefaultNote->save();
-                
-                $lastDefaultNote = $this->getFullRecords();
+                $DefaultNote->lb_default_note_quotation= "";
+                $DefaultNote->lb_default_note_invoice= "";
+                if($DefaultNote->save())
+                    $lastDefaultNote = $this->getFullRecords();
             }
             
             $DefaultNoteID = $lastDefaultNote[0]->lb_record_primary_key;

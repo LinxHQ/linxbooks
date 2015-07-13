@@ -9,3 +9,7 @@ $list = array('expenses_category');
 $model = new UserList();
 
 $model->insertList($list[0]);
+$list_recurring = array('recurring');
+$model = new UserList();
+
+$model->insertList($list_recurring[0]);

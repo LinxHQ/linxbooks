@@ -443,7 +443,7 @@ echo '</div>';// end invoice taxes
 
 /// TOTAL
 
-echo '<div class="invoice-total-container" style="margin-top: -20px ;border-left:solid 1px #dddddd;border-right:solid 1px #dddddd; border-bottom:solid 1px #dddddd;border-right:solid 1px #dddddd;" >';
+echo '<div class="invoice-total-container" style="margin-top: -20px ;margin-bottom:30px;border-left:solid 1px #dddddd;border-right:solid 1px #dddddd; border-bottom:solid 1px #dddddd;border-right:solid 1px #dddddd;" >';
 
 // total after tax
 echo '<div class="invoice-total-label" style="margin-left:236px;">'.Yii::t('lang','Total').' ('.$currency_name.'):</div>';
@@ -465,7 +465,7 @@ echo '</div>';
 
 
 //Payment
-$PaymentInvoice=  LbPaymentItem::model()->getAllPaymentByInvoice($model->lb_record_primary_key);
+
 
 
 
@@ -498,154 +498,8 @@ are marked by the line item's primary key.
 //    )
 //));
  
-$method = LBPayment::model()->method;
-//$test = LBPayment::model()->findPayment($model->lb_record_primary_key);
-//echo '<pre>';
-//print_r($test);
 
-$grid_payment_id = 'invoice-line-payment-grid-'.$model->lb_record_primary_key;
-$this->widget('bootstrap.widgets.TbGridView', array(
-		'id' => $grid_payment_id,
-        'type'=>'bordered',
-		'dataProvider' => $PaymentInvoice,
-                
-		'columns' => array(
-				
-                 array(
-                    'class'=>'bootstrap.widgets.TbButtonColumn',
-                    'template'=>"{delete}",
-                    'deleteButtonUrl'=>'"' . $model->getActionURLNormalized("ajaxDeletePayment") . '" .
-                                        "?id={$data->lb_record_primary_key}&invoice_id={$data->lb_invoice_id}"',
-                    
-                    'afterDelete'=>'function(link,success,data){
-                        
-                        if(success) {
-                            var responseJSON = $.parseJSON(data);
-                    
-                            var status = responseJSON.status;
-                             if(status == "I_PAID")
-                            {
-                                $("#lb_invocie_status").text("Paid");
-                            }
-                        else
-                            $("#lb_invocie_status").text("Open");
-                    
-                        $("#invoice-outstanding-'.$model->lb_record_primary_key.'").text(responseJSON.outstanding);
-                        $("#invoice-paid-'.$model->lb_record_primary_key.'").text(responseJSON.paid);
-                        }
-                    } ',
-                    'htmlOptions'=>array('style'=>'width: 10px'),
-                    'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
-                ),
-
-                 array(
-						'header' => Yii::t('lang','Payment No'),
-						'type' => 'raw',
-						'value' => 'LbPayment::model()->getPaymentById($data->lb_payment_id)->lb_payment_no
-							
-						',
-						'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
-                        'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
-		),
-                   
-                 array(
-						'header' => Yii::t('lang','Payment Date'),
-						'type' => 'raw',
-						
-                                                'value' =>'
-                                                            CHtml::activeTextField(LbPayment::model()->getPaymentById($data->lb_payment_id),"lb_payment_date",
-                                                            array("style"=>"width: 100px;text-align: right; padding-right: 0px;
-                                                            border-top: none; border-left: none; border-right: none; box-shadow: none;",
-                                                            "class"=>"lbinvoice-line-payment_date",
-                                                            "name"=>"lb_invoice_item_payment_{$data->lb_record_primary_key}",
-                                                                             "data_invoice_id"=>"{$data->lb_invoice_id}",
-                                                                              "line_item_pk"=>"{$data->lb_record_primary_key}",
-                                                                              "onChange"=>"js:changeDate($(this).attr(\"line_item_pk\"),
-                                                                                                            $(this).val())",
-                                                                              
-                                                                               
-                                                                              "line_item_field"=>"item-payment"))',
-
-						'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
-                        'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
-		),  
-                 array(
-						'header' => Yii::t('lang','Method'),
-						'type' => 'raw',
-						'value' => '
-							CHtml::activeDropdownList(LBPayment::model(),
-                                                        "lb_payment_method",
-                                                        CHtml::listData(LBPayment::model()->getMethod("",LBPayment::LB_QUERY_RETURN_TYPE_MODELS_ARRAY),
-                                                                function($method){return "";},
-                                                                function($method){return LBPayment::model()->method;})
-                                                               ,
-                                                                                        array("style"=>"width: 155px; text-align: right;
-                                                                                                        border-top: none; border-left: none; border-right: none; box-shadow: none;",
-                                                                                                        "class"=>"lbinvoice-tax",
-                                                                                                        "name"=>"lb_payment_{$data->lb_record_primary_key}",
-                                                                                                        "data_invoice_id"=>"{$data->lb_payment_id}",
-                                                                                                        "line_item_pk"=>"{$data->lb_record_primary_key}",
-                                                                                                        "line_item_field"=>"item-description",
-                                                                                                        "options"=>array(
-                                                                  LbPayment::model()->getPaymentById($data->lb_payment_id)->lb_payment_method=>array("selected"=>true),
-                                                                ),
-                                                                "onchange"=>"js:onChangeMethodDropdown($(this).attr(\"line_item_pk\"),
-                                                                    $(this).val());"
-                                                        )
-                                        )
-                                        
-						',
-						'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
-                        'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
-		),
-                 array(
-						'header' => Yii::t('lang','Amount'),
-						'type' => 'raw',
-						'value' =>'
-                                                CHtml::activeTextField($data,"lb_payment_item_amount",
-                                                                                           array("style"=>"width: 100px;text-align: right; padding-right: 0px;
-                                                                                                           border-top: none; border-left: none; border-right: none; box-shadow: none;",
-                                                                                                           "class"=>"lbinvoice-line-payment_amount",
-                                                                                                           "name"=>"lb_invoice_payment_amount_{$data->lb_record_primary_key}",
-                                                                                                           "data_invoice_id"=>"{$data->lb_invoice_id}",
-                                                                                                           "line_item_pk"=>"{$data->lb_record_primary_key}",
-                                                                                                          
-                                                                                                           "onChange"=>"js:changeAmount($(this).attr(\"line_item_pk\"),
-                                                                                                            $(this).val())",
-                                                                                                           "line_item_field"=>"item_payment_amount"),array("onChange"=>"aaa()")
-                                                )',
-                                                
-						'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
-                        'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
-		),
-                 array(
-						'header' => Yii::t('lang','Note'),
-						'type' => 'raw',
-                                                'value' => '
-                                                                                   CHtml::activeTextArea($data,"lb_payment_item_note",
-                                                                                           array("style"=>"width: 350px; border-top: none; border-left: none; border-right: none; box-shadow: none;",
-                                                                                                           "class"=>"invoice-item-note_payment",
-                                                                                                           "name"=>"lb_invoice_-note_payment{$data->lb_record_primary_key}",
-                                                                                                           "data_invoice_id"=>"{$data->lb_payment_id}",
-                                                                                                           "onChange"=>"js:changeNote($(this).attr(\"line_item_pk\"),
-                                                                                                            $(this).val())",
-                                                                                                           
-                                                                                                           "line_item_pk"=>"{$data->lb_record_primary_key}",
-                                                                                                           "line_item_field"=>"item-description"))
-                                                                                  
-                                                                           ',
-                            			
-						'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
-                        'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
-		),
-                    
-	),
-));
-echo CHtml::link(Yii::t('lang','Add Payment'), '#', array(
-	'onclick'=>'addItemPayment('.$model->lb_record_primary_key.'); return false;'
-));
-
-echo '<button onclick="printPdfPayment()" class="btn" style="margin-left:20px;">Print PDF</button>';
+echo '<div id="container-payment-invoice"></div>';
 
 // hidden line item submit button
 if($canEdit)
@@ -820,6 +674,7 @@ if($canEdit)
                         var dataJSON = jQuery.parseJSON(data);
                         $("#lb_invocie_status").html(dataJSON.lb_invoice_status_code);
                         onConfirmInvoiceSuccessful(dataJSON);
+                        loadPaymentInvoice(dataJSON.lb_invoice_status_code);
                     }
                             }'
             ),//end ajax options
@@ -870,7 +725,7 @@ echo '</div>';
 ////// through ajax as well
 $this->beginWidget('bootstrap.widgets.TbModal',
     array('id'=>'modal-holder-'.$model->lb_record_primary_key));
-echo '<div class="modal-header">';
+echo '<div class="modal-header">';//
 echo '<a class="close" data-dismiss="modal">&times;</a>';
 echo '<h4 id="modal-header"></h4>';
 echo '</div>'; // end modal header
@@ -980,6 +835,8 @@ if($canViewProcess)
 //
 //    echo '</div>';
 }
+ 
+
         
 ?>
 
@@ -1006,7 +863,7 @@ $(document).ready(function(){
     invoice_total_paid = <?php echo $invoiceTotal->lb_invoice_total_paid ?>;
     invoice_total_outstanding = <?php echo $invoiceTotal->lb_invoice_total_outstanding; ?>;
     
-    $('#process-checklist').load('<?php echo $this->createUrl('/process_checklist/default/index',array('entity_type'=>'issue','entity_id'=>$model->lb_record_primary_key)); ?>');
+    loadPaymentInvoice()
 });
 
 function refreshLineItemsGrid()
@@ -1057,6 +914,7 @@ function onChangeTaxDropdown(line_item_pk, tax_id)
             {
                 if (response != null)
                 {
+                    
                     var responseJSON = jQuery.parseJSON(response);
                     // refill tax value
                     $("#lb_invoice_item_value_"+line_item_pk).val(responseJSON.lb_tax_value);
@@ -1064,6 +922,7 @@ function onChangeTaxDropdown(line_item_pk, tax_id)
                     // recalculate totals on client-side
                     calculateInvoiceTotals(<?php echo $model->lb_record_primary_key; ?>);
                     updateInvoiceTotalsUI(<?php echo $model->lb_record_primary_key; ?>);
+                    submitTaxesAjaxForm();
                 }
             }
         );
@@ -1076,10 +935,12 @@ function refreshTotals()
         {},
         function(response)
         {
+            
             if (response != null)
             {
                 var responseJSON = jQuery.parseJSON(response);
                 getInvoiceTotals(responseJSON);
+                $("#invoice-outstanding-<?php echo $model->lb_record_primary_key?>").text(responseJSON.lb_invoice_total_outstanding);
                 updateInvoiceTotalsUI(<?php echo $model->lb_record_primary_key;?>);
             }
         }
@@ -1183,53 +1044,6 @@ function calculateInvoiceTotalTax(grid_id)
     });
 }
 
-function addItemPayment(invoice_id)
-{
-    var content;
-    var array=["ab"];
-    var method_arr=<?php  echo json_encode($method);;?>;
-    var id=<?php echo $model->lb_record_primary_key;?>;
-    var method='';
-    for(var i=0;i<method_arr.length;i++)
-        method +='<option value='+i+'>'+method_arr[i]+'</option>';
-    
-    $.ajax({
-           type:'POST',
-           url:'AjaxSavePaymentInvoice',
-           data:{id:id},
-           beforeSend:function(){
-               $('#container-invoice-line-items-section').block();
-           },
-           success:function(response){
-               var responseJSON = jQuery.parseJSON(response);
-               var id_payment=responseJSON.lb_payment_id;
-                content ='<tr id=item_payment'+item+' name=item_payment'+item+'>';
-                content +='<td>1</td>';
-
-            //    content +='<td><button onclick="savePayment('+item+')">save</button><button onclick="deletePayment('+item+');">Delete</button>\n\
-            //        \n\
-            //        </td>';
-
-                content +='<td>'+responseJSON.payment_no+'</td>';
-                content +='<td><input line_item_pk = '+id_payment+' type="text" style="width:100px;border-left: none;border-top:none ;border-right: none; box-shadow: none;" onchange="changeDate('+id_payment+', $(this).val());" value="<?php echo date('Y-m-d');?>"></td>';
-                content +='<td><select onchange="js:onChangeMethodDropdown('+id_payment+', $(this).val());" style="width:100%;border-left: none; border-right: none; border-top:none ;box-shadow: none;">'+method+'<select></td>';
-                content +='<td><input line_item_pk = '+id_payment+' type="text" style="width:100px;border-left: none; border-top:none ;border-right: none; box-shadow: none;" value="0.00" onchange="changeAmount('+id_payment+', $(this).val());"></td>';
-                content +='<td><textarea onchange="changeNote('+id_payment+', $(this).val())" line_item_pk = '+id_payment+' style="width:97%;border-left: none; border-top:none ;border-right: none; box-shadow: none;"></textarea></td>';
-                content +='</tr>';
-                $('#invoice-line-payment-grid-'+invoice_id+' table tr:last' ).after(content);
-                item++;
-                $('#container-invoice-line-items-section').unblock();
-           },
-       });
-//   
-   
-    return true;
-}
-
-function deletePayment(i)
-{
-    $('#item_payment'+i).remove();
-}
 function onChangeMethodDropdown(line_item_pk, method_id)
 {
     if (method_id == -1)
@@ -1342,10 +1156,13 @@ function datePicker(line_item_pk, method_id)
     
 }
 
-function printPdfPayment()
-{
-    window.open('<?php echo yii::app()->createUrl('lbPayment/default/');?>/pdf?invoice=<?php echo $model->lb_record_primary_key;?>&search_date_from=false&search_date_to=false','_target');   
+function loadPaymentInvoice(invoice_status){
+    if(invoice_status==undefined);
+        invoice_status = 'invoice_status=<?php echo $model->lb_invoice_status_code; ?>';
+    $('#container-payment-invoice').html('<img src="'+BASE_URL+'/images/loading.gif"/>');
+    $('#container-payment-invoice').load('<?php echo $this->createUrl('LoadPaymentInvoice'); ?>?invoice_id=<?php echo $model->lb_record_primary_key; ?>&invoice_status='+invoice_status);
 }
+
 </script>
 
 <style>

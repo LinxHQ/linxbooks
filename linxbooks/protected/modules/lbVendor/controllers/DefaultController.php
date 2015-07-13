@@ -712,6 +712,13 @@ class DefaultController extends Controller
     }
     public function actionAjaxUpdateFieldVD()
     {
+        if($_POST['name'] = 'lb_vd_invoice_no')
+        {
+        $id = $_POST['pk'];
+        $model = LbVendorInvoice::model()->findByPk($id);
+        $model->lb_vd_invoice_no = $_POST['value'];
+        }
+        return $model->save();
     }
    
     

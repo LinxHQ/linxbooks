@@ -204,8 +204,8 @@ class ConfigurationController extends Controller
                 {
                     $list_item = UserList::model()->getItemsListName($list);
                 }
-                else
-                    $list_item = SystemList::model()->getItemsListName($list);
+//                else
+                    $list_item = UserList::model()->getItemsListName($list);
 		$this->render('list_item', array('list'=>$list_item,'list_name'=>$list,'taxModel'=>$taxModel));
                 
 		
@@ -242,6 +242,7 @@ class ConfigurationController extends Controller
                 $model->system_list_item_code = $listCode.'_'.$value;
             }
             $model->update();
+//            return false;
             
         }
         

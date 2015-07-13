@@ -16,6 +16,17 @@ $('.search-form form').submit(function(){
 	return false;
 });
 ");**/
+
+if(isset(Yii::app()->user->id))
+    $lang = lbLangUser::model()->getLangName(Yii::app()->user->id);
+
+//
+if($lang != "")
+{
+    Yii::app()->language=$lang;
+    $_SESSION["sess_lang"] = strtolower($lang);
+}
+
 $m = $this->module->id;
 $canAdd = BasicPermission::model()->checkModules($m, 'add');
 $canList = BasicPermission::model()->checkModules($m, 'list');
@@ -84,18 +95,32 @@ echo '</div>';
 <script lang="Javascript">
     $('#view_invoice').load('<?php echo LbInvoice::model()->getActionURLNormalized('_form_oustanding_invoice') ?>',{year:<?php echo date('Y')?>});
      $("#btn_invoice").css("background-color","#5bb75b");
+     $("#btn_invoice").css("color","#fff");
+      $("#btn_graph").css("color","black");
 
+    $("#btn_quotation").css("color","black");
 function view_oustanding_invoice()
 {
-        $('#view_invoice').load('<?php echo LbInvoice::model()->getActionURLNormalized('_form_oustanding_invoice') ?>',{year:<?php echo date('Y')?>});
+//    $('#view_invoice').block();
+    $('#view_invoice').load('<?php echo LbInvoice::model()->getActionURLNormalized('_form_oustanding_invoice') ?>',{year:<?php echo date('Y')?>},function(){
+//        $('#view_invoice').unblock();
+    });
 
-     $("#btn_invoice").css("background-color","#5bb75b");
-     $("#btn_graph").css("background-color","#f5f5f5");
-      $("#btn_quotation").css("background-color","#f5f5f5");
+    $("#btn_invoice").css("background-color","#5bb75b");
+    $("#btn_invoice").css("color","#fff");
+    $("#btn_graph").css("background-color","#f5f5f5");
+    $("#btn_quotation").css("background-color","#f5f5f5");
+     $("#btn_graph").css("color","black");
+
+    $("#btn_quotation").css("color","black");
 }
 
 function view_oustanding_quotation()
 {
+    $("#btn_graph").css("color","black");
+  
+    $("#btn_invoice").css("color","black");
+     $("#btn_quotation").css("color","#fff");
     $("#btn_quotation").css("background-color","#5bb75b");
     $("#btn_invoice").css("background-color","#f5f5f5");
     $("#btn_graph").css("background-color","#f5f5f5");
@@ -103,6 +128,9 @@ function view_oustanding_quotation()
 }
 function view_chart()
 {
+    $("#btn_graph").css("color","#fff");
+    $("#btn_invoice").css("color","black");
+    $("#btn_quotation").css("color","black");
    $("#btn_graph").css("background-color","#5bb75b");
    $("#btn_invoice").css("background-color","#f5f5f5");
    $("#btn_quotation").css("background-color","#f5f5f5");

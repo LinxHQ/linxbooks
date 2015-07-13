@@ -376,7 +376,7 @@ CREATE TABLE IF NOT EXISTS `lb_genera` (
 --
 
 INSERT INTO `lb_genera` (`lb_record_primary_key`, `lb_genera_currency_symbol`, `lb_thousand_separator`, `lb_decimal_symbol`) VALUES
-(1, '', '', '');
+(1, '$', ',', '.');
 
 -- --------------------------------------------------------
 
@@ -497,7 +497,8 @@ CREATE TABLE IF NOT EXISTS `lb_next_ids` (
   `lb_next_supplier_invoice_number` int(11) NOT NULL,
   `	lb_next_supplier_payment_number` int(11) NOT NULL,
   `lb_next_supplier_payment_number` int(11) NOT NULL,
-  `lb_next_pv_number` int(11) NOT NULL
+  `lb_next_pv_number` int(11) NOT NULL,
+  `lb_payment_vendor_number` int(11) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
@@ -758,14 +759,8 @@ CREATE TABLE IF NOT EXISTS `lb_sys_accounts` (
   `account_timezone` varchar(255) DEFAULT NULL,
   `account_language` varchar(255) DEFAULT NULL,
   `account_status` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `lb_sys_accounts`
---
-
-INSERT INTO `lb_sys_accounts` (`account_id`, `account_email`, `account_password`, `account_created_date`, `account_timezone`, `account_language`, `account_status`) VALUES
-(1, 'thongnv@linxhq.com', '$2a$13$qpeEkJRJxEX9EKyWqQZHC.2IAoGyhhWlSWtnavgROUk98Tp0UPODy', '2015-06-15 04:15:17', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -781,6 +776,7 @@ CREATE TABLE IF NOT EXISTS `lb_sys_account_invitations` (
   `account_invitation_status` tinyint(4) NOT NULL,
   `account_invitation_rand_key` char(100) NOT NULL,
   `account_invitation_project` int(11) DEFAULT NULL,
+  `account_invitation_subscription_id` int(11) DEFAULT NULL,
   `account_invitation_type` tinyint(1) NOT NULL COMMENT '0: team member, 1: customer'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -810,14 +806,7 @@ CREATE TABLE IF NOT EXISTS `lb_sys_account_profiles` (
   `account_profile_given_name` varchar(255) NOT NULL,
   `account_profile_preferred_display_name` varchar(255) NOT NULL,
   `account_profile_company_name` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
-
---
--- Dumping data for table `lb_sys_account_profiles`
---
-
-INSERT INTO `lb_sys_account_profiles` (`account_profile_id`, `account_id`, `account_profile_surname`, `account_profile_given_name`, `account_profile_preferred_display_name`, `account_profile_company_name`) VALUES
-(1, 1, '', 'Admin', '', NULL);
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -833,14 +822,8 @@ CREATE TABLE IF NOT EXISTS `lb_sys_account_subscriptions` (
   `account_subscription_start_date` datetime NOT NULL,
   `account_subscription_end_date` datetime DEFAULT NULL,
   `account_subscription_status_id` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
---
--- Dumping data for table `lb_sys_account_subscriptions`
---
-
-INSERT INTO `lb_sys_account_subscriptions` (`account_subscription_id`, `account_id`, `subscription_name`, `account_subscription_package_id`, `account_subscription_start_date`, `account_subscription_end_date`, `account_subscription_status_id`) VALUES
-(1, 1, 'My Company', 0, '2015-06-15 04:15:17', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -1918,7 +1901,7 @@ MODIFY `subscription_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `lb_sys_accounts`
 --
 ALTER TABLE `lb_sys_accounts`
-MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT for table `lb_sys_account_invitations`
 --
@@ -1933,12 +1916,12 @@ MODIFY `account_password_reset_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `lb_sys_account_profiles`
 --
 ALTER TABLE `lb_sys_account_profiles`
-MODIFY `account_profile_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `account_profile_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT for table `lb_sys_account_subscriptions`
 --
 ALTER TABLE `lb_sys_account_subscriptions`
-MODIFY `account_subscription_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `account_subscription_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT for table `lb_sys_account_team_members`
 --
@@ -1973,7 +1956,7 @@ MODIFY `user_credit_card_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `lb_user_list`
 --
 ALTER TABLE `lb_user_list`
-MODIFY `system_list_item_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
+MODIFY `system_list_item_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
 --
 -- AUTO_INCREMENT for table `lb_user_payment`
 --
@@ -2029,6 +2012,19 @@ MODIFY `pcdi_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 ALTER TABLE `process_checklist_item_rel`
 MODIFY `pcir_id` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- Table structure for table `lb_language_user`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_language_user` (
+  `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,
+  `lb_language_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `lb_user_id` int(11) NOT NULL,
+  `invite_id` int(11) NOT NULL,
+  PRIMARY KEY (`lb_record_primary_key`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

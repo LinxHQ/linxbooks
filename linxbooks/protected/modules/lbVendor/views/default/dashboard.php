@@ -16,8 +16,8 @@ echo '<div id="lb-container-header">';
                 'type' => '',
                 'buttons' => array(
                     array('label' => '<i class="icon-plus"></i> '.Yii::t('lang','New'), 'items'=>array(
-                        array('label'=>Yii::t('lang','New Vendor'),'url'=>  LbVendor::model()->getActionModuleURL('vendor', 'create')),
-                        array('label'=>Yii::t('lang','New Vendor invoice'),'url'=> LbVendor::model()->getActionModuleURL('supplier', 'createSupplier')),
+                        array('label'=>Yii::t('lang','New Bill'),'url'=>  LbVendor::model()->getActionModuleURL('vendor', 'create')),
+                        array('label'=>Yii::t('lang','New Bill invoice'),'url'=> LbVendor::model()->getActionModuleURL('supplier', 'createSupplier')),
                         array('label'=>Yii::t('lang','New Payment Voucher'),'url'=> LbVendor::model()->getActionModuleURL('vendor', 'addPayment')),
                      )),
                 ),
@@ -88,7 +88,7 @@ echo '<div>';
     </div>';
 $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_vendor_invoice_gridview',
-            'dataProvider'=> LbVendorInvoice::model()->getVendorInvoice(5),
+            'dataProvider'=> LbVendorInvoice::model()->search(),
             'type'=>'striped bordered condensed',
             //'template' => "{items}",
             'columns'=>array(

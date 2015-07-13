@@ -135,6 +135,12 @@ class LbPaymentVendor extends CLBActiveRecord
             $nextpaymentNo->lb_next_quotation_number = 1;
             $nextpaymentNo->lb_next_payment_number = 1;
             $nextpaymentNo->lb_next_contract_number=1;
+            $nextInvoiceNo->lb_next_expenses_number=1;
+            $nextInvoiceNo->lb_next_po_number=1;
+            $nextInvoiceNo->lb_next_supplier_invoice_number=1;
+            $nextInvoiceNo->lb_next_supplier_payment_number=1;
+            $nextInvoiceNo->lb_payment_vendor_number =1;
+            $nextpaymentNo->lb_next_=1;
                     if ($nextpaymentNo->save())
                             $next_payment_number = $nextInvoiceNo->lb_payment_vendor_number;
             } else {

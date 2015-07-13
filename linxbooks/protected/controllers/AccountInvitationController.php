@@ -83,8 +83,18 @@ class AccountInvitationController extends Controller
 		{
 			$model->attributes=$_POST['AccountInvitation'];
 			//$model->account_invitation_message = $_POST['AccountInvitation']['account_invitation_message'];
-			if($this->createAccountInvitation($model)) 
+                        $account=$this->createAccountInvitation($model);
+			if($account) 
 			{
+                            
+                                $user_id = $account->account_invitation_id;
+                                $language = $_POST['lbLangUser'];
+                                //Save language
+                                $langManage= new lbLangUser();
+                                $langManage->lb_user_id=$user_id;
+                                $langManage->lb_language_name= $language['lb_language_name'];
+                                $langManage->invite_id= 1;
+                                $langManage->save();
 				$this->redirect(array('admin'));
 				//$this->actionAdmin();
 			}
@@ -186,6 +196,7 @@ class AccountInvitationController extends Controller
 	
 	public function actionAccept($id, $key)
 	{
+            
 		// must not be logged in user
 		if (!Yii::app()->user->isGuest)
 		{
@@ -237,9 +248,24 @@ class AccountInvitationController extends Controller
 					$accountProfile->account_profile_surname = $_POST['AccountProfile']['account_profile_surname'];
 					$accountProfile->account_profile_given_name = $_POST['AccountProfile']['account_profile_given_name'];
 					$accountProfile->account_profile_preferred_display_name = 
-						$accountProfile->account_profile_given_name . ' ' . $accountProfile->account_profile_surname;
-					if ($accountProfile->save())
+                                        $accountProfile->account_profile_given_name . ' ' . $accountProfile->account_profile_surname;
+					$lang = lbLangUser::model()->find('lb_user_id = '.$id.' AND invite_id = 1');
+                                        $lang = lbLangUser::model()->find('lb_user_id = '.$id.' AND invite_id = 1');
+                                        if($lang)
+                                        {
+                                                   
+                                            lbLangUser::model()->updateLang($account->account_id,$lang['lb_language_name']);
+                                                    //Xoa record languge co invite=1;
+                                            $lang->delete();
+                                                    //insert
+                                                    
+                                                   
+                                        }
+                                        if ($accountProfile->save())
 					{
+                                                //Save language
+                                                
+                                                
 						// create team member record
 						$teamMember = new AccountTeamMember();
 						$teamMember->accepting_invitation = true;
@@ -410,6 +436,6 @@ class AccountInvitationController extends Controller
 				Yii::app()->mail->send($message);
 			}
 		}
-		return true;
+		return $inviteModel;
 	}
 }

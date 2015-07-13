@@ -29,11 +29,11 @@ echo '<input type="hidden" value="'.$valuePv.'"  id="idPv">';
         <?php echo $form->hiddenField($model,'lb_record_primary_key'); ?>
         
         <?php 
-     
+        
             $ExpensesNo = LbExpenses::model()->FormatExpensesNo(LbExpenses::model()->getExpensesNextNum());
             echo $form->textFieldRow($model, 'lb_expenses_no', array('class'=>'span3', 'value'=>$ExpensesNo));
             
-            
+            $recurring = UserList::model()->getItemsForListCode('recurring');
             $category_arr = UserList::model()->getItemsForListCode('expenses_category');
             echo $form->dropDownListRow($model, 'lb_category_id', CHtml::listData($category_arr, 'system_list_item_id', 'system_list_item_name'));
          
@@ -47,14 +47,14 @@ echo '<input type="hidden" value="'.$valuePv.'"  id="idPv">';
             
             $customer_arr = LbCustomer::model()->getCompanies($sort = 'lb_customer_name ASC', LbCustomer::LB_QUERY_RETURN_TYPE_DROPDOWN_ARRAY);
             $option_customer = $customer_arr;
-//            echo '<div class="control-group">';
-//            echo CHtml::label('Customer', 'LbExpenses_lb_customer_id',array('class'=>'control-label'));
-//            echo '<div class="controls">';
-//            echo CHtml::dropDownList('LbExpenses_lb_customer_id', '', $option_customer, array('multiple'=>true));
-////            echo Chosen::activeMultiSelect($model,'lb_expenses_amount', $option_customer, array('class'=>'span6'));
-//            echo '</div>';
-//            echo '</div>';
-            echo $form->dropDownListRow($customerModel, 'lb_customer_id', $option_customer, array('multiple'=>true));
+            echo '<div class="control-group">';
+            echo CHtml::label('Customer', 'LbExpenses_lb_customer_id',array('class'=>'control-label'));
+            echo '<div class="controls">';
+            echo CHtml::dropDownList('LbExpensesCustomer[lb_customer_id][]', '', $option_customer, array('multiple'=>true));
+//            echo Chosen::activeMultiSelect($model,'lb_expenses_amount', $option_customer, array('class'=>'span6'));
+            echo '</div>';
+            echo '</div>';
+//            echo $form->dropDownListRow($customerModel, 'lb_customer_id', $option_customer, array('multiple'=>true));
             
             $status='("'.LbInvoice::LB_INVOICE_STATUS_CODE_OPEN.'","'.LbInvoice::LB_INVOICE_STATUS_CODE_OVERDUE.'")';
             $invoices = LbInvoice::model()->getInvoiceByStatus($status);
@@ -67,22 +67,28 @@ echo '<input type="hidden" value="'.$valuePv.'"  id="idPv">';
             if (count($invoice_arr) <= 0)
                 $option_invoice = array(''=>'Choose Invoice');
             else $option_invoice = $invoice_arr;
-//            echo '<div class="control-group">';
-//            echo CHtml::label('Invoices', 'LbExpenses_lb_invoice_id',array('class'=>'control-label'));
-//            echo '<div class="controls">';
-//            echo CHtml::dropDownList('LbExpenses_lb_invoice_id', '', $option_invoice, array('multiple'=>true));
-////            echo Chosen::activeMultiSelect($model,'lb_expenses_amount', $option_customer, array('class'=>'span6'));
-//            echo '</div>';
-//            echo '</div>';
-            echo $form->dropDownListRow($invoiceModel, 'lb_invoice_id', $option_invoice, array('multiple'=>true));
+            echo '<div class="control-group">';
+            echo CHtml::label('Invoices', 'LbExpenses_lb_invoice_id',array('class'=>'control-label'));
+            echo '<div class="controls">';
+            echo CHtml::dropDownList('LbExpensesInvoice[lb_invoice_id][]', '', $option_invoice, array('multiple'=>true));
+//            echo Chosen::activeMultiSelect($model,'lb_expenses_amount', $option_customer, array('class'=>'span6'));
+            echo '</div>';
+            echo '</div>';
+//            echo $form->dropDownListRow($invoiceModel, 'lb_invoice_id', $option_invoice, array('multiple'=>true));
             
             echo $form->textAreaRow($model,'lb_expenses_note',array('rows'=>'3','cols'=>'40','style'=>'width:210px;'));
             
-            $recurring_arr = SystemList::model()->getItemsForListCode('recurring');
-            $option_recurring = array(''=>'Choose Recurring');//+$recurring_arr;
-            echo $form->dropDownListRow($model, 'lb_expenses_recurring_id', $option_recurring);
-            
-//            $bank_accounts = LbBankAccount::model()->getBankAccount(Yii::app()->user->id);
+            $recurring = UserList::model()->getItemsForListCode('recurring');
+            $option_recurring = array(''=>'Choose Recurring')+$recurring;
+            echo $form->dropDownListRow($model, 'lb_expenses_recurring_id', CHtml::listData($option_recurring, 'system_list_item_id', 'system_list_item_name'));
+
+//            foreach ($recurring_arr as $data){
+//                $recurring .='<option value="'.$data->lb_record_primary_key.'">'.$data['system_list_item_name'].'</option>';
+//                $option_recurring = array(''=>'Choose Recurring')+$data;
+//            }
+//            echo $form->dropDownListRow($model, 'lb_expenses_recurring_id', $recurring);
+//            
+            $bank_accounts = LbBankAccount::model()->getBankAccount(Yii::app()->user->id);
             $bank_account_arr = array();
             if (count($bankaccounts) > 0) {
                 foreach ($bankaccounts as $data_bank) {
@@ -91,15 +97,23 @@ echo '<input type="hidden" value="'.$valuePv.'"  id="idPv">';
             }
             $option_bank_acc = array(''=>'Choose Bank Account')+$bank_account_arr;
             echo $form->dropDownListRow($model, 'lb_expenses_bank_account_id', $option_bank_acc);
+            $arr_tax=LbTax::model()->getTaxes("",LbTax::LB_QUERY_RETURN_TYPE_MODELS_ARRAY);
+//            echo '<pre>';
+//            print_r($arr_tax);
+            $option_tax ='<option value="0">---</option>';
+            foreach ($arr_tax as $data)
+            {
+                $option_tax .='<option value="'.$data['lb_record_primary_key'].'">'.$data['lb_tax_value'].'</option>';
+            }
             
-            $tax_arr = SystemList::model()->getItemsForListCode('taxes');
-            $option_tax = array(''=>'--')+$tax_arr;
-            echo '<div class="control-group">';
+            echo '<div class="control-group" id="tax_0">';
             echo CHtml::label('Taxes', 'LbExpenses_lb_tax_id',array('class'=>'control-label'));
             echo '<div class="controls">';
-            echo CHtml::dropDownList('LbExpenses_lb_tax_id', '', $option_tax, array('style'=>'width:50px;'));echo '&nbsp;&nbsp;&nbsp;';
-            echo CHtml::textField('LbExpenses_lb_expenses_tax_total', '', array('class'=>'span2'));echo '&nbsp;&nbsp;&nbsp;';
-            echo CHtml::link('More tax', '#', array('onclick'=>'addTaxClick(); return false;'));
+           // echo '<a href="#"  onClick="delete_tax(0); return false;" rel="tooltip" class="delete" data-original-title="Delete"><i class="icon-trash"></i></a>';
+            echo '<select name="LbExpensesTax[lb_tax_id][]" id="LbExpenses_lb_tax_id_0" onchange="changeTax(0);">'.$option_tax.'</select>';echo '&nbsp;&nbsp;&nbsp;';
+//            echo CHtml::dropDownList('LbExpenses_lb_tax_id', '', $option_tax, array('style'=>'width:50px;'));echo '&nbsp;&nbsp;&nbsp;';
+            echo CHtml::textField('LbExpenses_lb_expenses_tax_total', '', array('class'=>'span2','id'=>'LbExpenses_lb_expenses_tax_total_0'));echo '&nbsp;&nbsp;&nbsp;';
+            echo CHtml::link('More tax', '#', array('onclick'=>'addTaxClick(); return false;','id'=>'tax_0'));
             echo '</div>';
             echo '</div>';
             
@@ -138,25 +152,60 @@ echo '<input type="hidden" value="'.$valuePv.'"  id="idPv">';
 </div><!-- form -->
 
 <script language="javascript">
+    
+    
     $(document).ready(function(){
         var from_date = $("#LbExpenses_lb_expenses_date").datepicker({
             format: 'dd-mm-yyyy'
         }).on('changeDate', function(ev) {
             from_date.hide();
         }).data('datepicker');	
+        
+        $('#LbExpenses_lb_expenses_amount').change(function(){
+        changeAmount();
+        
+        });
+        
     });
+    var tax_id=0;
+    
     
     function addTaxClick()
     {
-        $.post("<?php echo $model->getActionURLNormalized('createBlankTax', array('id'=>$model->lb_record_primary_key));?>",
-            function(response){
-                var responseJSON = jQuery.parseJSON(response);
-                if (responseJSON != null && responseJSON.success == 1)
-                {
-                    lbinvoice_new_tax_added = true;
-                    submitTaxesAjaxForm();
-                }
-            });
+       
+        tax_id++;
+        var html ='<div style="margin-left:178px;" id="tax_'+tax_id+'"><a id="tax_'+tax_id+'" href="#" onClick="delete_tax('+tax_id+');return false;" rel="tooltip" class="delete" data-original-title="Delete"><i class="icon-trash"></i></a>';
+        html +='<select onchange = "changeTax('+tax_id+')" style="margin-top:9px;" name="LbExpensesTax[lb_tax_id][]" id="LbExpenses_lb_tax_id_'+tax_id+'"><?php echo $option_tax?></select>&nbsp;&nbsp;&nbsp;'
+        html +='<input type="text" name="LbExpenses_lb_expenses_tax_total" value="" id="LbExpenses_lb_expenses_tax_total_'+tax_id+'" class="span2">&nbsp;&nbsp;&nbsp;</div>';
+        $(html).insertAfter("#tax_"+(tax_id-1));
+        
+        
+        
+    }
+    
+    function changeAmount()
+    {
+        var amount = $('#LbExpenses_lb_expenses_amount').val();
+        for(var i = 0; i<=tax_id;i++)
+            changeTax(i);
+    }
+    function delete_tax(id)
+    {
+        $('#tax_'+id).remove();
+//        $('#LbExpenses_lb_tax_id_'+id).remove();
+//        $('#LbExpenses_lb_expenses_tax_total_'+id).remove();
+        tax_id--;
+    }
+    function changeTax(id)
+    {
+        
+        var amount = $('#LbExpenses_lb_expenses_amount').val();
+        var tax = $('#LbExpenses_lb_tax_id_'+id+' option:selected').text();
+        var tax_value=0;
+        tax_value=(amount*tax)/100;
+        if(tax == '---')
+            tax_value=0;
+        $('#LbExpenses_lb_expenses_tax_total_'+id).val(tax_value);
     }
     
 

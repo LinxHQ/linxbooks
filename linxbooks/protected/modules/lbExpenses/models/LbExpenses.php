@@ -161,7 +161,7 @@ class LbExpenses extends CLBActiveRecord
         {
                 $next_expenses_number = 0;
 
-                $last_used = LbNextId::model()->getFullRecords();
+                $last_used = LbNextId::model()->getOneRecords();
 
                 // TODO: if more than 1 record, something is wrong
                 if (count($last_used) > 1)
@@ -183,10 +183,12 @@ class LbExpenses extends CLBActiveRecord
                         if ($nextexpensesNo->save())
                                 $next_expenses_number = $nextexpensesNo->lb_next_expenses_number;
                 } else {
-                        $nextexpensesNo = $last_used[0];
+                        $nextexpensesNo = $last_used;
                         $next_expenses_number = $nextexpensesNo->lb_next_expenses_number;
+                  
                 }
-
+//                $nextexpensesNo->lb_next_expenses_number++;
+//                $nextexpensesNo->save();
                 return $next_expenses_number;
                 //trigger_error('Not Implemented!', E_USER_WARNING);
         }

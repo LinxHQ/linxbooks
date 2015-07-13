@@ -4,10 +4,15 @@
         <script src="js/jquery.min.js"></script>
         <script src="js/jquery.blockUI.js"></script>
         <link rel="stylesheet"href="css/main.css" />
-        
+       
+        <meta charset="UTF-8">
+
 </head> 
 <?php
-
+$langgage = '<select style="padding:3px;" id="language">'
+        . '<option value="en">English</option>'
+        . '<option value="vi">Tiếng Việt</option>'
+        . '</select>';
 echo '<div style="width:35%;border:1px solid #ccc;margin:auto;background-color:white;margin-top:30px;">';
 echo '<div id = "headerInstall" style="padding-bottom:0px; border-bottom: 1px solid Scrollbar">';
 echo '<h1 align="center"  style="color: rgb(93, 160, 40); font-family: Comic Sans MS;"><b>Install Linxbooks</b></h1>';
@@ -69,6 +74,9 @@ echo '<div id = "setup-account" style="display:-moz-groupbox;margin-left:28px">'
                 . '</tr>';
             echo '<tr><td style="width:150px; " ><span class="lbl">Confirm Password:</span></td>'
                     . '<td  id="user_name"><input  placeholder="Confirm password" type="password" value = "" id="confirm_pass"/><br>&nbsp&nbsp<span  class="error" id="err_confirm_pass" style="color:#b20000"></span></td>'
+                . '</tr>';
+            echo '<tr><td style="width:150px; " ><span class="lbl">Language:</span></td>'
+                    . '<td >'.$langgage.'</td>'
                 . '</tr>';
            
         echo '</table>';
@@ -136,7 +144,8 @@ body{
             var dbUser = document.getElementById('dbUser').value;
             var dbPass = document.getElementById('dbPass').value;
             var err = 0;
-            
+            var yourSelect = document.getElementById("language");
+            var lang = yourSelect.options[yourSelect.selectedIndex].value;
             
             //information account
             var account_email = document.getElementById('account_email').value;
@@ -210,7 +219,7 @@ body{
                     type:'POST',
                     url:'setup.php',
                     data:{hostName:hostName,dbName:dbName,dbUser:dbUser,dbPass: dbPass,account_email: account_email,
-                       account_pass: account_pass,
+                       account_pass: account_pass,lang:lang
                        },
                         
                      success:function(response){

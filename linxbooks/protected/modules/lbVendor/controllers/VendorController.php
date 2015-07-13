@@ -368,7 +368,7 @@ class VendorController extends Controller
             if(isset($_GET['id']) && $_GET['id']!="")
                 $customer_id = $_GET['id'];
             
-            $this->render('createPayment',array(
+            LBApplication::render($this,'createPayment',array(
 			'model'=>$model,                       
                 'customer_id'=>$customer_id
 		));

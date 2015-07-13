@@ -36,6 +36,7 @@ $this->renderPartial('_form_line_items', array(
     'invoiceTotal'=>$invoiceTotal,
 ));
 
+
 //echo '<div style="float: right; z-index: 9999; top: 150px; position: absolute; width: 60px; height: 300px; margin-left: 1020px;
 // border-bottom-right-radius: 5px; border-top-right-radius: 5px;
 // padding: 10px;">';
@@ -108,9 +109,12 @@ $this->renderPartial('_form_line_items', array(
 //    CHtml::image(Yii::app()->baseUrl . '/images/icons/icon_last.png', 'Last', array('class'=>'lb-side-icon')),
 //    ($invoice_last) ? $model->getViewURLById($invoice_last[0],$invoice_last[1]) : '#',
 //    array('data-toggle'=>"tooltip", 'title'=>"Last", 'class'=>'lb-side-link-invoice'));
-//
+
 //echo '</div>';
 ?>
+<div style="margin-top: 30px;" id="view_document">
+        <?php $this->renderPartial('lbDocument.views.default.view',array('id'=>$model->lb_record_primary_key,'module_name'=>'lbInvoice')); ?>
+</div>
 <script language="javascript">
     $(".lb-side-link-invoice").tooltip({placement: 'right'});
     

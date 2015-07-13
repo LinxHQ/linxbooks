@@ -82,7 +82,17 @@ echo '<div id="logo_wrapper" style="overflow:hidden;text-align: center;">';
 echo '</div>';
 //echo '<h3 id="po-number-container">'.$model->getDisplayPOStatus($model->lb_vendor_status).'</h3>';
 echo '<div id="invoice-basic-info-container" style="float: left;width:36%;">';
-echo '<h3 id="po-number-container">'.$model->lb_vd_invoice_no.'</h3><br />';
+echo '<h3 id="po-number-container">';
+
+$this->widget('editable.EditableField', array(
+		'type'      => 'text',
+		'model'     => $model,
+               
+		'attribute' => 'lb_vd_invoice_no',
+		'url'       => LbVendor::model()->getActionURLNormalized('AjaxUpdateFieldVD'),
+		'placement' => 'right',
+));
+echo '</h3><br />';
 
 //date
 echo Yii::t('lang','Date').': ';

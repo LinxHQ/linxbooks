@@ -180,6 +180,8 @@ class SiteController extends Controller
 		// if already login, show projects index
 		if (isset(Yii::app()->user->id) && Yii::app()->user->id > 0)
 		{
+                       
+                        
 			$this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
 			//$this->redirect(array("project/index"));
 		}
@@ -255,11 +257,14 @@ class SiteController extends Controller
         {
             if(!empty($typelang))
             {
-                //Yii::app()->session['sess_lang'] = strtolower($typelang);
+//                Yii::app()->session['sess_lang'] = strtolower($typelang);
                 $_SESSION["sess_lang"] = strtolower($typelang);
+                lbLangUser::model()->updateLang(Yii::app()->user->id,$typelang);
                 $this->redirect(Yii::app()->request->urlReferrer);
+                
             }
             else
                 $this->render('languages');
+            
         }
 }

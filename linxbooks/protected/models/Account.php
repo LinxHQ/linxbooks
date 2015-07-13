@@ -150,8 +150,9 @@ class Account extends CActiveRecord
 			{
 				if ($this->evalPasswordStrength($this->account_new_password) === true)
 				{
-					$this->account_password = $this->account_new_password;
-					$this->save();
+					$this->account_password = $this->hashPassword($this->account_new_password);
+                                       
+					$this->update();
 					return true;
 				}
 				else

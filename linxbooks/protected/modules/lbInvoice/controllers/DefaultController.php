@@ -63,7 +63,7 @@ class DefaultController extends CLBController
                     'ajaxUpdateNexIDField',
                     'ajaxUpdateDefaultNoteField','ajaxgetMethod',
                     'ajaxUpdateFieldTax',
-                    'ajaxUpdateFieldGenera',
+                    'ajaxUpdateFieldGenera','LoadPaymentInvoice',
                     'ajaxCopyInvoice','view_chart_expenditures','_form_oustanding_invoice'
                      ,'_form_oustanding_quotation','chart','_search_invoice','_search_quotation','ajaxgetDate'
                                     ),
@@ -1296,9 +1296,13 @@ class DefaultController extends CLBController
         public function actionajaxgetAmount()
         {
             $model = LbPaymentItem::model()->find('lb_payment_id = '.$_POST['line_item_pk']);
+            
             $invoice_id=0;
-            if($_POST['invoice_id']);
+            if($_POST['invoice_id']);{
                 $invoice_id = $_POST['invoice_id'];
+                $invoiceManage = LbInvoice::model()->findByPk($invoice_id);
+            }
+            
             if (isset($_POST['method_id']))
             {
                 
@@ -1311,9 +1315,19 @@ class DefaultController extends CLBController
                         $taxRecord['paid']=$invoiceTotal->calculateInvoicetotalPaid($invoice_id);
                         $taxRecord['outstanding']=$invoiceTotal->calculateInvoiceTotalOutstanding();
                         if($invoiceTotal->calculateInvoiceTotalOutstanding() <= 0)
+                        {
+                            //update status invoice
+                            
+                            $invoiceManage->lb_invoice_status_code=LbInvoice::LB_INVOICE_STATUS_CODE_PAID;
+                            $invoiceManage->save();
                             $taxRecord['status']='I_PAID';
+                        }
                         else
+                        {
+                            $invoiceManage->lb_invoice_status_code=LbInvoice::LB_INVOICE_STATUS_CODE_OPEN;
+                            $invoiceManage->save();
                             $taxRecord['status']='Open';
+                        }
                         LBApplication::renderPlain($this, array('content'=>CJSON::encode($taxRecord)));
                     }
               
@@ -1350,37 +1364,38 @@ class DefaultController extends CLBController
             {
                 $model_invoice = LbInvoice::model()->findByPk($_POST['id']);
                 $customer = $model_invoice->lb_invoice_customer_id;
-            }
-            $model = new LbPayment();
-           
-            $model->lb_payment_no=LbPayment::model()->FormatPaymentNo(LbPayment::model()->getPaymentNextNum());
-            $model->lb_payment_customer_id = $customer;
-            $model->lb_payment_method=0;
-            $model->lb_payment_date= date('Y-m-d');
-            $model->lb_payment_total=0; 
-            if($model->save())
-            {
-                    $paymentItemModel = new LbPaymentItem();
-                    $paymentItemModel->lb_payment_id = $model->lb_record_primary_key;
-                    $paymentItemModel->lb_invoice_id = $_POST['id'];
-                   
-                    $paymentItemModel->lb_payment_item_amount=0;
-                    if($paymentItemModel->save()){
-                                $response = array();
-                                $response['success'] = YES;
-                                $response['payment_no'] =  $model->lb_payment_no;
-                                $response['lb_payment_id'] =  $model->lb_record_primary_key;
+            
+                $model = new LbPayment();
 
-                                LBApplication::renderPlain($this, array(
-                                        'content'=>CJSON::encode($response)
-                                ));
-                    }
-                    else
-                         echo '{"status":"fail"}';
-                            
-                        
-                    
+                $model->lb_payment_no=LbPayment::model()->FormatPaymentNo(LbPayment::model()->getPaymentNextNum());
+                $model->lb_payment_customer_id = $customer;
+                $model->lb_payment_method=0;
+                $model->lb_payment_date= date('Y-m-d');
+                $model->lb_payment_total=0; 
+                if($model->save())
+                {
+                        $paymentItemModel = new LbPaymentItem();
+                        $paymentItemModel->lb_payment_id = $model->lb_record_primary_key;
+                        $paymentItemModel->lb_invoice_id = $_POST['id'];
+
+                        $paymentItemModel->lb_payment_item_amount=0;
+                        if($paymentItemModel->save()){
+                                    $response = array();
+                                    $response['success'] = YES;
+                                    $response['payment_no'] =  $model->lb_payment_no;
+                                    $response['lb_payment_id'] =  $model->lb_record_primary_key;
+
+                                    LBApplication::renderPlain($this, array(
+                                            'content'=>CJSON::encode($response)
+                                    ));
+                        }
+                        else
+                             echo '{"status":"fail"}';
+
                 }
+                else
+                    echo '{"status":"fail"}';
+            }
                 
             }
             
@@ -1388,20 +1403,44 @@ class DefaultController extends CLBController
                 if(isset($_GET['id']))
                     $payment_item_id = $_GET['id'];
                 //delete payment item
-                $payment = LbPaymentItem::model()->deleteByPk($payment_item_id);
-                $invoice_id=$_GET['invoice_id'];
-                $invoiceTotal = LbInvoiceTotal::model()->getInvoiceTotal($invoice_id);
-                $taxRecord['paid']=$invoiceTotal->calculateInvoicetotalPaid($invoice_id);
-                $taxRecord['outstanding']=$invoiceTotal->calculateInvoiceTotalOutstanding();
-                if($invoiceTotal->calculateInvoiceTotalOutstanding() <= 0)
+                
+                $payment = LbPaymentItem::model()->find('lb_payment_id = '.$payment_item_id);
+                
+                if($payment->delete())
+                {
+                    $invoice_id=$_GET['invoice_id'];
+                    $invoiceManage = LbInvoice::model()->findByPk($invoice_id);
+                    $invoiceTotal = LbInvoiceTotal::model()->getInvoiceTotal($invoice_id);
+                    $taxRecord['paid']=$invoiceTotal->calculateInvoicetotalPaid($invoice_id);
+                    $taxRecord['outstanding']=$invoiceTotal->calculateInvoiceTotalOutstanding();
+                    if($invoiceTotal->calculateInvoiceTotalOutstanding() <= 0)
+                    {
                         $taxRecord['status']='I_PAID';
-                else
+                        
+                        $invoiceManage->lb_invoice_status_code=LbInvoice::LB_INVOICE_STATUS_CODE_PAID;
+                        $invoiceManage->save();
+                    }
+                    else
+                    {
                         $taxRecord['status']='Open';
+                        $invoiceManage->lb_invoice_status_code=LbInvoice::LB_INVOICE_STATUS_CODE_OPEN;
+                        $invoiceManage->save();
+                    }
                 //update invoice total
                 
 //                if($payment->delete())
 //                    echo 'success';
                 LBApplication::renderPlain($this, array('content'=>CJSON::encode($taxRecord)));
+                }
+            }
+            
+            public function actionLoadPaymentInvoice($invoice_id,$invoice_status){
+                    LBApplication::renderPartial($this,'_form_payment_invoice',
+                            array(
+                                'invoice_id'=>$invoice_id,
+                                'invoice_status'=>$invoice_status
+                            )
+                    );
             }
         
 }

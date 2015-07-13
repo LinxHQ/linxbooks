@@ -23,6 +23,9 @@
             array(
                 'name'=>'lb_next_contract_number',
             ),
+            array(
+                'name'=>'lb_next_expenses_number',
+            ),
         ),
         ));
 ?>

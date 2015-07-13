@@ -64,6 +64,14 @@ echo '<div id="lb-view-header">';
             ));
             echo '</div>';
 echo '</div>';
+
+//echo AutoComplete::widget([
+//    'model' => $model,
+//    'attribute' => 'country',
+//    'clientOptions' => [
+//        'source' => ['USA', 'RUS'],
+//    ],
+//]);
 echo '<div id="logo_wrapper" style="overflow:hidden;text-align: center;clear:bold;">';
             $company = (isset($model->owner) ? $model->lb_invoice_company_id : '');
                         $folder ='images/logo/';

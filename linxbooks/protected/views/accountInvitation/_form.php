@@ -4,6 +4,9 @@
 /* @var $form CActiveForm */
 
 $linx_app_account_subscriptions = AccountSubscription::model()->findSubscriptions(Yii::app()->user->id);
+$model_langguage = lbLangUser::model();
+$langgage['en']='English';
+$langgage['vi']='Tiếng Việt';
 ?>
 
 <div class="form">
@@ -33,6 +36,8 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	<?php echo $form->textFieldRow($model,'account_invitation_to_email',array('style'=> 'width: 500px;','maxlength'=>255, 'hint'=>'Multiple emails separated by comma.')); ?>
 	<?php echo $form->textAreaRow($model, "account_invitation_message", array('style'=> 'width: 600px; height: 150px;')); ?>
 	<?php echo $form->checkboxRow($model, 'account_invitation_type'); ?>
+        <?php echo $form->dropDownListRow($model_langguage, 'lb_language_name', $langgage, array('options' => array())); ?>     
+
 </fieldset>
 	<div class="form-actions">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Invite' :'Save',array('onclick'=>'return checkEmail();')); ?>

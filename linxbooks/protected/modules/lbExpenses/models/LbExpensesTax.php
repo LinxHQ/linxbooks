@@ -27,7 +27,7 @@ class LbExpensesTax extends CLBActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('lb_expenses_id, lb_tax_id, lb_expenses_tax_total', 'required'),
+			array('lb_expenses_id', 'required'),
 			array('lb_expenses_id, lb_tax_id', 'numerical', 'integerOnly'=>true),
 			array('lb_expenses_tax_total', 'length', 'max'=>10),
 			// The following rule is used by search().

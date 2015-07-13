@@ -128,6 +128,7 @@ class AccountSubscriptionController extends Controller
                         $accountSubscription->subscription_name = $_POST['AccountSubscription']['subscription_name'];
 			
                         if($accountSubscription->save())
+                            LBApplication::setCurrentlySelectedSubscription($accountSubscription->account_subscription_id);
                             $this->redirect(array('accountTeamMember/admin'));
 //                        }
 		

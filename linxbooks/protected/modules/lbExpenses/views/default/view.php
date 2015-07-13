@@ -122,7 +122,7 @@ echo '</div><br>';
                 'name' => 'lb_expenses_recurring_id',
                 'editable' => array(
                     'type' => 'select',
-                    'source' => array(''=>'Choose Recurring')+CHtml::listData(SystemList::model()->getItemsForListCode('recurring'), 'system_list_item_code', 'system_list_item_name')
+                    'source' => array(''=>'Choose Recurring')+CHtml::listData(UserList::model()->getItemsForListCode('recurring'), 'system_list_item_code', 'system_list_item_name')
                 )
             ),
             array(
@@ -155,50 +155,10 @@ echo '</div><br>';
 //    echo '</div><div style="float: right; width: 49%;">';
 
 //    echo '</div>';
-    
+    $id=$model->lb_record_primary_key;
 ?>
-    <div style="margin-top: 30px;">
-    <h4><?php echo Yii::t('lang','Document'); ?></h4>
-    <?php
-        $this->widget('bootstrap.widgets.TbGridView',array(
-            'id'=>'lb-expenses-documnet_grid',
-            'dataProvider'=> LbDocument::model()->getDocumentParentTypeProvider(LbDocument::LB_DOCUMENT_PARENT_TYPE_EXPENSES, $model->lb_record_primary_key),
-            'template'=>'{items}',
-            'hideHeader'=>true,
-            'htmlOptions'=>array('width'=>'500'),
-            'columns'=>array(
-                array(
-                    'type'=>'raw',
-                    'value'=>'"<a href=\'".Yii::app()->getBaseUrl().$data->lb_document_url."\'><img width=\'100px;\' border=\'0\' alt=\'\' src=\'".Yii::app()->getBaseUrl().$data->lb_document_url."\' />".$data->lb_document_name."</a>"',
-                ),
-                array(
-                    'class'=>'bootstrap.widgets.TbButtonColumn',
-                    'template'=>$templateDelete,
-                    'deleteButtonUrl'=>'Yii::app()->createUrl("lbExpenses/default/deleteDocument",array("id"=>$data->lb_record_primary_key))',
-                    'htmlOptions'=>array('width'=>'20'),
-                ),
-            ),
-        ));
-    ?>
-    <div>
-            <?php
-            if($canEdit)
-                $this->widget('ext.EAjaxUpload.EAjaxUpload',
-                    array(
-                        'id'=>'uploadFile',
-                        'config'=>array(
-                               'action'=>$this->createUrl('uploadDocument',array('id'=>$model->lb_record_primary_key)),
-                               'allowedExtensions'=>array("jpeg","jpg","gif","png","pdf","odt","docx","doc","dia"),//array("jpg","jpeg","gif","exe","mov" and etc...
-                               'sizeLimit'=>10*1024*1024,// maximum file size in bytes
-                               'minSizeLimit'=>1*1024,// minimum file size in bytes
-                               'onComplete'=>"js:function(id, fileName, responseJSON){
-                                        $.fn.yiiGridView.update('lb-expenses-documnet_grid');
-                                        $('#uploadFile .qq-upload-list').html('');
-                                   }",
-                              )
-                )); 
-            ?>
-    </div>
+    <div >
+        <?php $this->renderPartial('lbDocument.views.default.view',array('id'=>$model->lb_record_primary_key,'module_name'=>'lbExpenses')); ?>
 </div>
 <?php
 /**
@@ -231,4 +191,5 @@ $this->widget('bootstrap.widgets.TbTabs', array(
 						'active'=>false),
 				)
 ));
+
 ?>

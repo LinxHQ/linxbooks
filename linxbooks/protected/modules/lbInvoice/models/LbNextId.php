@@ -11,6 +11,7 @@
  * @property integer $lb_next_po_number
  * @property integer $lb_next_supplier_invoice_number
  * @property integer $lb_next_supplier_payment_number
+ * @property integer $lb_payment_vendor_number
  */
 class LbNextId extends CLBActiveRecord
 {
@@ -33,10 +34,10 @@ class LbNextId extends CLBActiveRecord
 		// will receive user inputs.
 		return array(
 			array('lb_next_invoice_number, lb_next_quotation_number, lb_next_payment_number','required'),
-			array('lb_next_invoice_number, lb_next_quotation_number, lb_next_payment_number ,lb_next_contract_number, lb_next_expenses_number, lb_next_po_number, lb_next_supplier_invoice_number, lb_next_supplier_payment_number', 'numerical', 'integerOnly'=>true),
+			array('lb_next_invoice_number, lb_next_quotation_number, lb_next_payment_number ,lb_next_contract_number, lb_next_expenses_number, lb_next_po_number, lb_next_supplier_invoice_number, lb_next_supplier_payment_number, lb_payment_vendor_number', 'numerical', 'integerOnly'=>true),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
-			array('lb_record_primary_key, lb_next_invoice_number, lb_next_quotation_number, lb_next_payment_number, lb_next_contract_number, lb_next_expenses_number', 'safe', 'on'=>'search'),
+			array('lb_record_primary_key, lb_next_invoice_number, lb_next_quotation_number, lb_next_payment_number, lb_next_contract_number, lb_next_expenses_number, lb_payment_vendor_number', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -65,7 +66,8 @@ class LbNextId extends CLBActiveRecord
                         'lb_next_expenses_number'=>'Next Expenses Number',
                         'lb_next_po_number'=>'Next PO Number',
                         'lb_next_supplier_invoice_number'=>'Next Supplier Invoice',
-                        'lb_next_supplier_payment_number'=>'Next Supplier Payment Number'
+                        'lb_next_supplier_payment_number'=>'Next Supplier Payment Number',
+                        'lb_payment_vendor_number'=>'Next Paymenr Bill'
 		);
 	}
 
@@ -124,11 +126,13 @@ class LbNextId extends CLBActiveRecord
                 $nextInvoiceNo->lb_next_po_number=1;
                 $nextInvoiceNo->lb_next_supplier_invoice_number=1;
                 $nextInvoiceNo->lb_next_supplier_payment_number=1;
-                $nextInvoiceNo->save();
-                
-                $lastNextID = $this->getFullRecords();
+                $nextInvoiceNo->lb_payment_vendor_number =1;
+                if($nextInvoiceNo->save())
+                {
+                    $lastNextID = $this->getFullRecords();
+                }
             }
-            
+
             $NextID = $lastNextID[0]->lb_record_primary_key;
             $dataProvider = LbNextId::model()->findByPk($NextID);
             return $dataProvider;

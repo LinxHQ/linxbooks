@@ -527,6 +527,7 @@ if($canEdit)
     LBApplicationUI::submitButton('Save', array(
         'htmlOptions'=>array(
             'onclick'=>'saveInvoice('.$model->lb_record_primary_key.'); return false;',
+            
             'style'=>'margin-left: auto; margin-right: auto',
             'id'=>'btn-invoice-save-all-'.$model->lb_record_primary_key,
         ),
@@ -542,6 +543,14 @@ if($canEdit)
             array(
                 'id' => 'ajax-submit-confirm-invoice-' . uniqid(),
                 'beforeSend' => 'function(data){
+                                    var invoice_vendor_id = $("#po-number-container").text();
+                                 
+                                    if(invoice_vendor_id=="Draft")
+                                    {
+                                   
+                                        alert("Please enter Bill invoice");
+                                        return false;
+                                        }
                                     if(!lbInvoice_choose_customer)
                                     {
                                         alert("Customer name cannot be blank.");

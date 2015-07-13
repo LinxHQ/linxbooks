@@ -12,7 +12,7 @@
 )); ?>
 
 <fieldset>
-	Photo must be smaller than 200Kb in size, and of type PNG, JPEG, or JPG.
+	Photo must be smaller than 1Mb in size, and of type PNG, JPEG, or JPG.
 	<?php echo $form->fileFieldRow($model, 'account_profile_photo'); ?>
 </fieldset>
 	<?php echo CHtml::submitButton('Save'); ?>

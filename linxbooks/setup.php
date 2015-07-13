@@ -9,7 +9,9 @@ function setup()
     $mysql_username =$_POST['dbUser'];
     $mysql_password =$_POST['dbPass'];
     $mysql_host =$_POST['hostName'];
-
+	$lang='en';
+    if($_POST['lang'])
+        $lang=$_POST['lang'];
     $account_email = $_POST['account_email'];
     $account_pass = $_POST['account_pass'];
     $filename =dirname(__FILE__).'/sql/linxbooks.sql';
@@ -66,7 +68,7 @@ function setup()
         fwrite($file,$string);
 
         //create account 
-        addInformation($mysql_host,$mysql_username,$mysql_password,$mysql_database,$account_email,$account_pass);
+        addInformation($mysql_host,$mysql_username,$mysql_password,$mysql_database,$account_email,$account_pass,$lang);
 
 }
 
@@ -77,7 +79,7 @@ echo json_encode($response);
 
 //add information
 
-function addInformation($mysql_host,$mysql_username,$mysql_password,$mysql_database,$account_email,$account_pass)
+function addInformation($mysql_host,$mysql_username,$mysql_password,$mysql_database,$account_email,$account_pass,$lang)
 {
     $conn=mysql_connect($mysql_host, $mysql_username, $mysql_password) or die('Error connecting to MySQL server: ' . mysql_error());
     mysql_select_db($mysql_database,$conn);
@@ -94,6 +96,9 @@ function addInformation($mysql_host,$mysql_username,$mysql_password,$mysql_datab
          // add subcription
          $sql1 = "INSERT INTO lb_sys_account_subscriptions(account_id,account_subscription_package_id,account_subscription_start_date,account_subscription_status_id,subscription_name) VALUES (".$id.",0,'".Date("Y-m-d H:i:s")."',1,'My Company')";
          mysql_query($sql1);   
+
+	$sql2 = "INSERT INTO lb_language_user(lb_user_id,lb_language_name) VALUES (".$id.",'".$lang."')";
+         mysql_query($sql2);
     }
 }
 function hashPassword($password)

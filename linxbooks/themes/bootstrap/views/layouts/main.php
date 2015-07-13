@@ -76,7 +76,7 @@ $report_canView = BasicPermission::model()->checkModules('lbReport', 'view');
 			<?php
                         $ownCompany = LbCustomer::model()->getOwnCompany();
 			$this->widget('bootstrap.widgets.TbNavbar', array(
-					'brandUrl'=> Yii::app()->baseUrl . '/index.php',
+					'brandUrl'=> isset(Yii::app()->user)? LbInvoice::model()->getActionURL('dashboard'):Yii::app()->createUrl('site/login'),
 					'items'=>array(
 							array(
 									'class'=>'bootstrap.widgets.TbMenu',
@@ -155,7 +155,7 @@ $report_canView = BasicPermission::model()->checkModules('lbReport', 'view');
 													'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
 													'visible' => !Yii::app()->user->isGuest && Modules::model()->checkHiddenModule('lbVendor'),
                                                                                                         'items'=>array(
-                                                                                                            array('label'=>Yii::t('lang','Bills'),
+                                                                                                            array('label'=>Yii::t('lang','Outstanding'),
                                                                                                                     'url'=>LbVendor::model()->getActionURL('dashboard'),
                                                                                                                     'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
                                                                                                                     'visible' => $bill_canView,
@@ -249,7 +249,7 @@ $report_canView = BasicPermission::model()->checkModules('lbReport', 'view');
                     $linx_app_menu_subscription_items[] =   array('label'=>'<i class="icon-plus"></i> '.Yii::t('lang','Add Subscription'),
                                                                 'url'=>array('/accountSubscription/create'),
                                                                 'visible'=>$onwSubcrip);
-                    $linx_app_menu_subscription_items[] =   array('label'=>'<i class="icon-plus"></i> '.Yii::t('lang','Manager Subscription'),
+                    $linx_app_menu_subscription_items[] =   array('label'=>'<i class="icon-align-justify"></i> '.Yii::t('lang','Manager Subscription'),
                                                                 'url'=>array('/accountSubscription/admin'),
                                                                 'visible'=>$onwSubcrip);
             }

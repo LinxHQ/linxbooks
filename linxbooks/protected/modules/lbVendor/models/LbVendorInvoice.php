@@ -221,7 +221,7 @@ class LbVendorInvoice extends CLBActiveRecord
             // increasing invoice number by mistake
             if ($this->lb_vd_invoice_status == self::LB_VD_STATUS_CODE_DRAFT)
             {
-                $this->	lb_vd_invoice_no = $this->formatVINextNumFormatted($this->getVINextNum());
+//                $this->	lb_vd_invoice_no = $this->formatVINextNumFormatted($this->getVINextNum());
                 $this->lb_vd_invoice_status = $this::LB_VD_CODE_OPEN;
                 return $this->save();
                 return $this->getVINextNum();
@@ -345,11 +345,11 @@ class LbVendorInvoice extends CLBActiveRecord
         return $total;
     }
     
-    public function getVendorInvoice($pageSize=5,$user_id=false)
+    public function getVendorInvoice($pageSize=10)
         {
             $criteria  = new CDbCriteria();
             
-            $dataProvider = $this->getFullRecordsDataProvider($criteria, null, $pageSize, $user_id);
+            $dataProvider = $this->getFullRecordsDataProvider($criteria, null, $pageSize);
             
         
             return $dataProvider;

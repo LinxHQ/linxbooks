@@ -223,7 +223,8 @@ class AccountController extends Controller
 	public function actionUpdatePassword($id)
 	{
 		$model=$this->loadModel($id);
-		
+
+                
 //		// check permission
 //		if (!Permission::checkPermission($model, PERMISSION_ACCOUNT_UPDATE))
 //		{
@@ -232,18 +233,26 @@ class AccountController extends Controller
 //		}
 		
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-		
+		 $this->performAjaxValidation($model);
+//		
 		if(isset($_POST['Account']))
 		{
-			$model->attributes=$_POST['Account'];
-			$result = $model->updatePassword();
-			if($result === true)
-			{
-				$this->redirect(array('view','id'=>$model->account_id));
-			}
-		}
+
+                        $test = $_POST['Account'];
 		
+                        $model->account_current_password=$test['account_password'];
+                        $model->account_new_password = $test['account_new_password'];
+                        $model->account_new_password_retype = $test['account_new_password_retype'];
+                        
+                       
+			$result = $model->updatePassword();
+                      
+			if($result === true)
+			
+				$this->redirect(array('view','id'=>$model->account_id));
+                   
+		}
+//		
 		$this->render('_form_changepassword',array(
 				'model'=>$model,
 		));
@@ -377,6 +386,8 @@ class AccountController extends Controller
 	 */
 	protected function performAjaxValidation($model)
 	{
+//                echo '<pre>';
+//                print_r($model);
 		if(isset($_POST['ajax']) && $_POST['ajax']==='account-form')
 		{
 			echo CActiveForm::validate($model);

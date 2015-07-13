@@ -48,7 +48,7 @@ class DefaultController extends CLBController
 //                                     'dashboard',
 //                                     'renew',
 //                                     'ajaxFormPayment',
-                                'createExPv',
+                                'createExPv','createBlankTax',
                                      'deleteDocument','deletePaymentVoucher',
                                      'uploadDocument',
                                 'savePaymentVoucher','AjaxLoadViewPV',
@@ -106,6 +106,7 @@ class DefaultController extends CLBController
                 if (isset($_POST['LbExpenses']) && floatval($_POST['LbExpenses']['lb_expenses_amount']) != 0)
                 {
                         $LbExpenses = $_POST['LbExpenses'];
+                       
                         $model->attributes = $LbExpenses;
                         $model->lb_expenses_date = date('Y-m-d', strtotime($_POST['LbExpenses']['lb_expenses_date']));
                         if ($model->save())
@@ -160,7 +161,7 @@ class DefaultController extends CLBController
                             
                             // ********* Choose invoice **********//
                            if(isset($_POST["LbExpensesInvoice"]) )
-{ 
+                            { 
                             $LbExpensesInvoice = $_POST['LbExpensesInvoice'];
                             if (isset($LbExpensesInvoice['lb_invoice_id']) && is_array($LbExpensesInvoice['lb_invoice_id']) && count($LbExpensesInvoice['lb_invoice_id']) > 0)
                             {
@@ -173,7 +174,35 @@ class DefaultController extends CLBController
                                     }
                                 }
                             }
-}
+                            }
+                          
+                            //Insert Tax
+                         
+                            if(isset($_POST["LbExpensesTax"]) ){
+                                $LbExpensesTax= $_POST['LbExpensesTax'];
+                                  
+                                if (isset($LbExpensesTax['lb_tax_id']) && is_array($LbExpensesTax['lb_tax_id']) && count($LbExpensesTax['lb_tax_id']) > 0)
+                                {
+                                    foreach ($LbExpensesTax['lb_tax_id'] as $tax) {
+                                        if ($tax > 0) {
+                                            $expensesTax = new LbExpensesTax();
+                                            $expensesTax->lb_expenses_id = $model->lb_record_primary_key;
+                                            $expensesTax->lb_tax_id = $tax;
+                                            $amount =$_POST['LbExpenses']['lb_expenses_amount'];
+                                            
+                                            $information_tax = LbTax::model()->findByPk($tax);
+                                            $tax_value=$information_tax['lb_tax_value'];
+                                            $expensesTax->lb_expenses_tax_total = ($amount*$tax_value)/100;
+                                            
+                                            $expensesTax->save();
+                                            
+                                           
+                                        }
+                                    }
+                                }
+                            }
+                          
+
                             // *** End add invoice *** //
                             
                             //add ex in payment voucher
@@ -186,7 +215,11 @@ class DefaultController extends CLBController
 
                                 $PvExpenses->insert();
                             }
+//                            echo '<pre>';
+//                            print_r($_POST["LbExpensesTax"]);
+                          
                             $this->redirect(array('view','id'=>$model->lb_record_primary_key));
+                          return;
                         }
                 }
 
@@ -229,8 +262,8 @@ class DefaultController extends CLBController
 	 */
 	public function actionDelete($id)
 	{
-            
-            $model=$this->loadModel($id);
+                $modelPV = new LbPaymentVoucher();
+                 $model=$this->loadModel($id);
 		if($this->loadModel($id)->delete())
                 {
                     $document = LbDocument::model()->getDocumentParentType(LbDocument::LB_DOCUMENT_PARENT_TYPE_EXPENSES, $id);
@@ -264,9 +297,13 @@ class DefaultController extends CLBController
                         }
                     }
                 }
-$this->render('admin',array(
-			'model'=>$model,
-		));
+                return false;
+         
+//            LBApplication::render($this,'admin',array(
+//                                    'model'=>$model,
+//                                    'modelPv'=>$modelPV
+//                            ));
+//               
 	}
 
 	/**
@@ -604,5 +641,20 @@ $this->render('admin',array(
         {
             
             return LbPvExpenses::model()->deleteByPk($id);
+        }
+        public function actionCreateBlankTax($id)
+        {
+        $invoiceItem = new LbInvoiceItem();
+        $result = $invoiceItem->addBlankTax($id);
+        if ($result)
+        {
+            $response = array();
+            $response['success'] = YES;
+            $response['invoice_item_id'] = $invoiceItem->lb_record_primary_key;
+
+            LBApplication::renderPlain($this, array(
+                'content'=>CJSON::encode($response)
+            ));
+        }
         }
 }

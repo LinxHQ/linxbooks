@@ -179,9 +179,9 @@ class AccountProfile extends CActiveRecord
 		if (isset($this->account_profile_photo->size))
 		{
 			// don't allow pic larger than 200 Kb
-			if ($this->account_profile_photo->size > 200*1024)
+			if ($this->account_profile_photo->size > 1024*1024*1024)
 			{
-				$this->addError('account_profile_photo', 'Photo cannot be larger than 200Kb.');
+				$this->addError('account_profile_photo', 'Photo cannot be larger than 1Mb.');
 				return false;
 			}
 		}

@@ -48,7 +48,9 @@ LBApplicationUI::submitButton('Save', array(
         'success' => 'function(data, status, obj) {
             if (data != null)
             {
+                
                 var dataJSON = jQuery.parseJSON(data);
+                
                 var customer_editable = $("#LbInvoice_invoice_customer_id_'.$model->lb_record_primary_key.'");
                 var address_editable = $("#LbInvoice_invoice_customer_address_id_'.$model->lb_record_primary_key.'");
                 var attention_editable = $("#LbInvoice_invoice_attention_contact_id_'.$model->lb_record_primary_key.'");
@@ -58,6 +60,7 @@ LBApplicationUI::submitButton('Save', array(
 
                 address_editable.html("Choose billing address");
                 attention_editable.html("Choose attention");
+                lbInvoice_choose_customer = true;
                 lbAppUIHideModal('.$model->lb_record_primary_key.');
             }
 		}'
