@@ -30,7 +30,7 @@ linxbooks/protected/modules/lbVendor/views/vendor/createPayment.php
 linxbooks/protected/modules/lbVendor/views/vendor/_view_payment.php
 linxbooks/protected/modules/lbVendor/views/vendor/_form_view_payment.p
 
-=====================18/06/2015=================
+=====================13/07/2015=================
 linxbooks/protected/modules/LbInvoice/views/_form_line_items.php
 linxbooks/protected/modules/LbInvoice/views/_form_payment_invoice.php
 linxbooks/protected/modules/LbInvoice/views/_form_customer.php
