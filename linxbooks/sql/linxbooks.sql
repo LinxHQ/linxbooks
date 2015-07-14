@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `lb_account_basic_permission` (
-`account_basic_permission_id` int(11) NOT NULL,
+`lb_record_primary_key` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
   `module_id` int(11) NOT NULL,
   `basic_permission_id` int(11) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `lb_account_basic_permission` (
 --
 
 CREATE TABLE IF NOT EXISTS `lb_account_define_permission` (
-`account_define_permission_id` int(11) NOT NULL,
+`lb_record_primary_key` int(11) NOT NULL,
   `define_permission_id` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
   `module_id` int(11) NOT NULL
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `lb_account_define_permission` (
 --
 
 CREATE TABLE IF NOT EXISTS `lb_account_roles` (
-`account_role_id` int(11) NOT NULL,
+`lb_record_primary_key` int(11) NOT NULL,
   `accout_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -1269,19 +1269,19 @@ CREATE TABLE IF NOT EXISTS `yiisession` (
 -- Indexes for table `lb_account_basic_permission`
 --
 ALTER TABLE `lb_account_basic_permission`
- ADD PRIMARY KEY (`account_basic_permission_id`);
+ ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
 -- Indexes for table `lb_account_define_permission`
 --
 ALTER TABLE `lb_account_define_permission`
- ADD PRIMARY KEY (`account_define_permission_id`);
+ ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
 -- Indexes for table `lb_account_roles`
 --
 ALTER TABLE `lb_account_roles`
- ADD PRIMARY KEY (`account_role_id`);
+ ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
 -- Indexes for table `lb_bank_account`
@@ -1681,17 +1681,17 @@ ALTER TABLE `yiisession`
 -- AUTO_INCREMENT for table `lb_account_basic_permission`
 --
 ALTER TABLE `lb_account_basic_permission`
-MODIFY `account_basic_permission_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_account_define_permission`
 --
 ALTER TABLE `lb_account_define_permission`
-MODIFY `account_define_permission_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_account_roles`
 --
 ALTER TABLE `lb_account_roles`
-MODIFY `account_role_id` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_bank_account`
 --

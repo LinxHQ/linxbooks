@@ -29,8 +29,9 @@ linxbooks/protected/modules/lbVendor/views/default/dashboard.php
 linxbooks/protected/modules/lbVendor/views/vendor/createPayment.php
 linxbooks/protected/modules/lbVendor/views/vendor/_view_payment.php
 linxbooks/protected/modules/lbVendor/views/vendor/_form_view_payment.p
+------------------------------------------------------------------------------------------
 
-=====================13/07/2015=================
+=====================from 09/07/2015 to 11/07/2015=========================================
 linxbooks/protected/modules/LbInvoice/views/_form_line_items.php
 linxbooks/protected/modules/LbInvoice/views/_form_payment_invoice.php
 linxbooks/protected/modules/LbInvoice/views/_form_customer.php
@@ -65,7 +66,8 @@ linxbooks/protected/modules/lbVendor/models/LbPaymentVendor.php
 linxbooks/protected/modules/lbVendor/models/LbVendorInvoice.php
 linxbooks/protected/modules/lbVendor/views/default/dashboard.php
 linxbooks/protected/modules/lbVendor/views/supplier/_form_line_items.php
-linxbooks/protected/modules/lbVendor/views/supplier/_page_header
-
+linxbooks/protected/modules/lbVendor/views/supplier/_page_header.php
+linxbooks/protected/modules/lbDocument/views/default/view.php
+----------------------------------------------------------------------------------------------
 
 
