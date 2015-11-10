@@ -369,8 +369,11 @@ class LbQuotation extends CLBActiveRecord
          */
         public function getQuotationByStatus($status,$pageSize=NULL,$user_id=false)
         {
+            $quotation_id_string = LbInvoice::model()->getInvoice();
             $criteria = new CDbCriteria();
             $criteria->condition = 'lb_quotation_status IN '.$status;
+            if(count($quotation_id_string)>0)
+                $criteria->condition .='AND t.lb_record_primary_key NOT IN ('.implode(',', (array)$quotation_id_string).')';
             $criteria->order="lb_quotation_due_date DESC";
             
             $dataProvider = $this->getFullRecordsDataProvider($criteria,null,$pageSize,$user_id);
@@ -430,5 +433,12 @@ class LbQuotation extends CLBActiveRecord
 
             return $dataProvider;
         }
-        
+        public function countQuotationByStatus($status)
+        {
+            $criteria = new CDbCriteria();
+            $criteria->condition = 'lb_quotation_status IN '.$status;       
+            $q= LbQuotation::model()->findAll($criteria);
+            return count($q);
+        }
+         
 }

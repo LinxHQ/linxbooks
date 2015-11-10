@@ -69,7 +69,8 @@ class LbInvoice extends LbInvoiceGeneric
 				'lb_invoice_note' => Yii::t('lang','Note'),
 				'lb_invoice_status_code' => Yii::t('lang','Status'),
                                 'lb_invoice_encode' => Yii::t('lang','Invoice Encode'),
-                                'lb_invoice_internal_note'=>Yii::t('lang','Internal Note')
+                                'lb_invoice_internal_note'=>Yii::t('lang','Internal Note'),
+                                'lb_quotation_id'=>Yii::t('lang','Quotation No')
 		);
 	}
 
@@ -453,13 +454,14 @@ class LbInvoice extends LbInvoiceGeneric
      */
     public function getInvoiceByStatus($status,$year=false,$pageSize=10,$user_id=false)
     {
+        
         $criteria = new CDbCriteria();
         $criteria->condition = 'lb_invoice_status_code IN '.$status;
         $criteria->order = 'lb_invoice_due_date DESC';
         if($year)
             $criteria->condition = 'lb_invoice_status_code IN '.$status.' AND YEAR(lb_invoice_date) = "'.$year.'"';
         
-        $dataProvider = $this->getFullRecordsDataProvider($criteria,null,$pageSize,$user_id);
+        $dataProvider = $this->getFullRecordsDataProvider($criteria,null,$pageSize);
         return $dataProvider;
     }
     
@@ -661,7 +663,8 @@ class LbInvoice extends LbInvoiceGeneric
         foreach ($model as $value)
         {
             $totalArr = LbInvoiceTotal::model()->find('lb_invoice_id = '.$value->lb_record_primary_key);
-            $total +=$totalArr->lb_invoice_total_outstanding;
+            if($totalArr)
+                $total +=$totalArr->lb_invoice_total_outstanding;
         }
         return $total;
     }
@@ -686,6 +689,31 @@ class LbInvoice extends LbInvoiceGeneric
 
         return $dataProvider;
 
+    }
+    
+    public function countInvoiceByStatus($status)
+    {
+        
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'lb_invoice_status_code IN '.$status;
+       
+        $q=  LbInvoice::model()->findAll($criteria);
+//        echo '<pre>';
+//        print_r($q);
+        return count($q);
+    }
+    
+    public function getInvoice()
+    {
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'lb_quotation_id > 0 ';
+        $quotation_id = array();
+        $q=  LbInvoice::model()->findAll($criteria);
+        foreach ($q as $data)
+        {
+            $quotation_id[] = $data->lb_quotation_id;
+        }
+        return $quotation_id;
     }
     
 }

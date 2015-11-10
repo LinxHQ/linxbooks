@@ -23,10 +23,13 @@ if(!$canView)
 
 LBApplication::renderPartial($this, '_page_header', array(
 	'model'=>$model,
+         'expenses_id'=>$expenses_id,
 ));
 
 $this->renderPartial('_form', array(
-		'model'=>$model)); 
+		'model'=>$model,
+                 'expenses_id'=>$expenses_id,
+    )); 
 
 $this->renderPartial('_form_line_items', array(
 		'model'=>$model,
@@ -34,6 +37,7 @@ $this->renderPartial('_form_line_items', array(
     'invoiceDiscountModel'=>$invoiceDiscountModel,
     'invoiceTaxModel'=>$invoiceTaxModel,
     'invoiceTotal'=>$invoiceTotal,
+     'expenses_id'=>$expenses_id,
 ));
 
 

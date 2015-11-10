@@ -55,12 +55,12 @@ class CLBController extends Controller
                     }
                 }
                 $allowedExtensions = array("jpeg","jpg","gif","png");//array("jpg","jpeg","gif","exe","mov" and etc...
-                $sizeLimit = 10 * 1024 * 1024;// maximum file size in bytes
+                $sizeLimit = 1024 * 1024 * 1024;// maximum file size in bytes
                 $uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
                 
                 $result = $uploader->handleUpload($folder, false,$sub_cription, $company_id);
                 $return = htmlspecialchars(json_encode($result), ENT_NOQUOTES);
-
+                echo $return;
                 $fileSize=filesize($folder.$result['filename']);//GETTING FILE SIZE
                 $fileName=$result['filename'];//GETTING FILE NAME
                 

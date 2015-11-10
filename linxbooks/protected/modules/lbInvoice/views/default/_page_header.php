@@ -23,7 +23,7 @@ echo '<div id="invoice-header-container" class="container-header" style="positio
 //echo '</div></div>';
 
 echo '<div id="lb-view-header">';
-            echo '<div class="lb-header-right" style="width:96px;"><h3><a href="'.LbInvoice::model()->getActionURLNormalized("dashboard").'">Invoices</a></h3></div>';
+            echo '<div class="lb-header-right" style="width:96px;margin-top:10px;"><h4><a style="color:#777;margin-left:9px;margin-top:2px;" href="'.LbInvoice::model()->getActionURLNormalized("dashboard").'">Invoices</a></h4></div>';
            
                         
             ## Next,Previous,Last,First ##########
@@ -47,7 +47,12 @@ echo '<div id="lb-view-header">';
             
             <?php
             echo '<div class="lb-header-left" style="margin-left:397px;margin-top:-15px;">';
-            LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
+           // LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
+             if($expenses_id >0){
+                        LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('View',array('id'=>$expenses_id)));
+                    }else{
+                         LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));  
+                    }        
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(
                 'type' => '',

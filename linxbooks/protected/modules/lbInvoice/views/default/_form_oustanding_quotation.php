@@ -15,7 +15,7 @@ if(!$canView)
 <div class="panel">
     <div style="margin-top: 10px;" class="panel-header-title">
         <div class="panel-header-title-left">
-            <h4><?php echo Yii::t('lang','Outstanding Quotation'); ?></h4>
+            <span style="font-size: 16px;"><b><?php echo Yii::t('lang','Outstanding Quotation'); ?></b></span>
         </div>
         <?php if($canAddQuotation) { ?>
             <div class="panel-header-title-right">
@@ -30,7 +30,7 @@ if(!$canView)
     <div id ="show_quotation">
    
         <?php
-            $status = '("'.LbQuotation::LB_QUOTATION_STATUS_CODE_DRAFT.'","'.LbQuotation::LB_QUOTATION_STATUS_CODE_SENT.'")';
+            $status = '("'.LbQuotation::LB_QUOTATION_STATUS_CODE_DRAFT.'","'.LbQuotation::LB_QUOTATION_STATUS_CODE_SENT.'","'.LbQuotation::LB_QUOTATION_STATUS_CODE_APPROVED.'")';
             $this->widget('bootstrap.widgets.TbGridView',array(
                 'id'=>'lb-quotation-Outstanding-grid',
                 'type'=>'striped bordered condensed',

@@ -41,19 +41,19 @@ $status=false;
 
 <table>
     <tr>
-        <td><span style="font-size: 16px;"><?php echo Yii::t('lang','Customer name');?>:</span> </td>
+        <td><span style="font-size: 16px;"><?php echo Yii::t('lang','Customer name');?></span> </td>
         <td><?php echo CHtml::dropDownList('customer_statement','', $customer_option,array('class'=>'span4','onchange'=>'changeCustomer();')); ?></td>
     </tr>
     <tr>
-        <td><span style="font-size: 16px;"><?php echo Yii::t('lang','Attention:');?>:</span> </td>
+        <td><span style="font-size: 16px;"><?php echo Yii::t('lang','Attention:');?></span> </td>
         <td><?php echo CHtml::dropDownList('attention_statement','', $contact_option,array('class'=>'span4')); ?></td>
     </tr>
     <tr>
-        <td><span style="font-size: 16px;"><?php echo Yii::t('lang','Address:');?>:</span> </td>
+        <td><span style="font-size: 16px;"><?php echo Yii::t('lang','Address:');?></span> </td>
         <td><?php echo CHtml::dropDownList('address_option','', $address_option,array('class'=>'span4')); ?></td>
     </tr>
     <tr>
-        <td><span style="font-size: 16px;"><?php echo Yii::t('lang','Load Invoice:');?>:</span> </td>
+        <td><span style="font-size: 16px;"><?php echo Yii::t('lang','Load Invoice:');?></span> </td>
         <td><?php echo CHtml::dropDownList('invoice_option','', $invoice_option,array('class'=>'span4')); ?></td>
         <td>
             <?php echo CHtml::label(Yii::t('lang','From'), "search_data_from_statements",array('style'=>'display:inline;margin-left: 15px;'));?>

@@ -141,8 +141,9 @@ class DefaultController extends CLBController
 	 */
 	public function actionUpdate($id)
 	{
+                $own=false;
 		$model=$this->loadModel($id);
-$addressModel = new LbCustomerAddress();
+                $addressModel = new LbCustomerAddress();
 		$contactModel = new LbCustomerContact();
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -158,6 +159,7 @@ $addressModel = new LbCustomerAddress();
 			'model'=>$model,
                     'addressModel'=>$addressModel,
 			'contactModel'=>$contactModel,
+                     'own'=>$own,
 		));
                 	
 	}
@@ -172,8 +174,8 @@ $addressModel = new LbCustomerAddress();
             $error = array();
 		
                        
-                    $constrac =   LbContracts::model()->getContractCustomer($id) ;
-                 
+                    $constrac =   LbContracts::model()->countContractByCustomer($id) ;
+                   
                     if(count($constrac) > 0)
                      {
                         throw new CHttpException(404,'This customer has other records in the system, therefore, cannot be deleted. Please contact the Administrator.');
@@ -181,10 +183,10 @@ $addressModel = new LbCustomerAddress();
                     }  else {
                         $this->loadModel($id)->delete();
                     }
-                        
-              
-                
-		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
+//                        
+//              
+//                
+//		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
 			$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
 	}

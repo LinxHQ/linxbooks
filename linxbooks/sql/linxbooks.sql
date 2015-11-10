@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 --
 
 CREATE TABLE IF NOT EXISTS `lb_account_basic_permission` (
-`lb_record_primary_key` int(11) NOT NULL,
+`account_basic_permission_id` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
   `module_id` int(11) NOT NULL,
   `basic_permission_id` int(11) NOT NULL,
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `lb_account_basic_permission` (
 --
 
 CREATE TABLE IF NOT EXISTS `lb_account_define_permission` (
-`lb_record_primary_key` int(11) NOT NULL,
+`account_define_permission_id` int(11) NOT NULL,
   `define_permission_id` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
   `module_id` int(11) NOT NULL
@@ -54,7 +54,7 @@ CREATE TABLE IF NOT EXISTS `lb_account_define_permission` (
 --
 
 CREATE TABLE IF NOT EXISTS `lb_account_roles` (
-`lb_record_primary_key` int(11) NOT NULL,
+`account_role_id` int(11) NOT NULL,
   `accout_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
@@ -376,7 +376,7 @@ CREATE TABLE IF NOT EXISTS `lb_genera` (
 --
 
 INSERT INTO `lb_genera` (`lb_record_primary_key`, `lb_genera_currency_symbol`, `lb_thousand_separator`, `lb_decimal_symbol`) VALUES
-(1, '$', ',', '.');
+(1, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -497,8 +497,7 @@ CREATE TABLE IF NOT EXISTS `lb_next_ids` (
   `lb_next_supplier_invoice_number` int(11) NOT NULL,
   `	lb_next_supplier_payment_number` int(11) NOT NULL,
   `lb_next_supplier_payment_number` int(11) NOT NULL,
-  `lb_next_pv_number` int(11) NOT NULL,
-  `lb_payment_vendor_number` int(11) NOT NULL
+  `lb_next_pv_number` int(11) NOT NULL
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=2 ;
 
 --
@@ -776,7 +775,6 @@ CREATE TABLE IF NOT EXISTS `lb_sys_account_invitations` (
   `account_invitation_status` tinyint(4) NOT NULL,
   `account_invitation_rand_key` char(100) NOT NULL,
   `account_invitation_project` int(11) DEFAULT NULL,
-  `account_invitation_subscription_id` int(11) DEFAULT NULL,
   `account_invitation_type` tinyint(1) NOT NULL COMMENT '0: team member, 1: customer'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 AUTO_INCREMENT=1 ;
 
@@ -1261,6 +1259,79 @@ CREATE TABLE IF NOT EXISTS `yiisession` (
   `data` longblob
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_employee`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_employee` (
+`lb_record_primary_key` int(11) NOT NULL,
+  `lowest_salary` decimal(10,2) NOT NULL,
+  `employee_name` varchar(255) NOT NULL,
+  `employee_address` text NOT NULL,
+  `employee_birthday` date NOT NULL,
+  `employee_phone_1` int(11) NOT NULL,
+  `employee_phone_2` int(11) NOT NULL,
+  `employee_email_1` varchar(255) NOT NULL,
+  `employee_email_2` varchar(255) NOT NULL,
+  `employee_code` varchar(255) NOT NULL,
+  `employee_tax` varchar(255) NOT NULL,
+  `employee_bank` text NOT NULL,
+  `employee_note` text NOT NULL,
+  `employee_salary` decimal(10,2) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_employee_benefits`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_employee_benefits` (
+`lb_record_primary_key` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `benefit_name` varchar(255) NOT NULL,
+  `benefit_tax` decimal(10,2) NOT NULL,
+  `benefit_amount` decimal(10,2) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_employee_payment`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_employee_payment` (
+`lb_record_primary_key` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `payment_date` date NOT NULL,
+  `payment_paid` decimal(10,2) NOT NULL,
+  `payment_oustanding` decimal(10,2) NOT NULL,
+  `payment_status` int(11) NOT NULL,
+  `payment_note` varchar(255) NOT NULL,
+  `payment_created_by` int(11) NOT NULL,
+  `payment_for_month` date NOT NULL,
+  `payment_month` int(11) NOT NULL,
+  `payment_year` int(11) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_employee_salary`
+--
+
+CREATE TABLE IF NOT EXISTS `lb_employee_salary` (
+`lb_record_primary_key` int(11) NOT NULL,
+  `employee_id` int(11) NOT NULL,
+  `salary_name` varchar(255) NOT NULL,
+  `salary_amount` decimal(10,2) NOT NULL
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 --
 -- Indexes for dumped tables
 --
@@ -1269,19 +1340,19 @@ CREATE TABLE IF NOT EXISTS `yiisession` (
 -- Indexes for table `lb_account_basic_permission`
 --
 ALTER TABLE `lb_account_basic_permission`
- ADD PRIMARY KEY (`lb_record_primary_key`);
+ ADD PRIMARY KEY (`account_basic_permission_id`);
 
 --
 -- Indexes for table `lb_account_define_permission`
 --
 ALTER TABLE `lb_account_define_permission`
- ADD PRIMARY KEY (`lb_record_primary_key`);
+ ADD PRIMARY KEY (`account_define_permission_id`);
 
 --
 -- Indexes for table `lb_account_roles`
 --
 ALTER TABLE `lb_account_roles`
- ADD PRIMARY KEY (`lb_record_primary_key`);
+ ADD PRIMARY KEY (`account_role_id`);
 
 --
 -- Indexes for table `lb_bank_account`
@@ -1672,6 +1743,30 @@ ALTER TABLE `process_checklist_item_rel`
 --
 ALTER TABLE `yiisession`
  ADD PRIMARY KEY (`id`);
+ 
+--
+-- Indexes for table `lb_employee`
+--
+ALTER TABLE `lb_employee`
+ ADD PRIMARY KEY (`lb_record_primary_key`);
+
+--
+-- Indexes for table `lb_employee_benefits`
+--
+ALTER TABLE `lb_employee_benefits`
+ ADD PRIMARY KEY (`lb_record_primary_key`);
+
+--
+-- Indexes for table `lb_employee_payment`
+--
+ALTER TABLE `lb_employee_payment`
+ ADD PRIMARY KEY (`lb_record_primary_key`);
+
+--
+-- Indexes for table `lb_employee_salary`
+--
+ALTER TABLE `lb_employee_salary`
+ ADD PRIMARY KEY (`lb_record_primary_key`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1681,17 +1776,17 @@ ALTER TABLE `yiisession`
 -- AUTO_INCREMENT for table `lb_account_basic_permission`
 --
 ALTER TABLE `lb_account_basic_permission`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `account_basic_permission_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_account_define_permission`
 --
 ALTER TABLE `lb_account_define_permission`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `account_define_permission_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_account_roles`
 --
 ALTER TABLE `lb_account_roles`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `account_role_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `lb_bank_account`
 --
@@ -2014,6 +2109,27 @@ ALTER TABLE `process_checklist_item_rel`
 MODIFY `pcir_id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT for table `lb_employee`
+--
+ALTER TABLE `lb_employee`
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT for table `lb_employee_benefits`
+--
+ALTER TABLE `lb_employee_benefits`
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT for table `lb_employee_payment`
+--
+ALTER TABLE `lb_employee_payment`
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT for table `lb_employee_salary`
+--
+ALTER TABLE `lb_employee_salary`
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=1;
+
+--
 -- Table structure for table `lb_language_user`
 --
 
@@ -2024,6 +2140,7 @@ CREATE TABLE IF NOT EXISTS `lb_language_user` (
   `invite_id` int(11) NOT NULL,
   PRIMARY KEY (`lb_record_primary_key`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

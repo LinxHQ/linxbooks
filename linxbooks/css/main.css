@@ -603,3 +603,11 @@ div.search-form
    color: #777; 
    margin: 0px;
 }
+
+.dropdown-menu li > a:hover, .dropdown-menu li > a:focus, .dropdown-submenu:hover > a {
+    background-color: #5bb75b;
+    background-image: linear-gradient(to bottom, #5bb75b, #5bb75b);
+    background-repeat: repeat-x;
+    color: #ffffff;
+    text-decoration: none;
+}

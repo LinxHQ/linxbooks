@@ -15,10 +15,12 @@ define('FAILURE', 'failure');
 define('APP_NO_PERMISSION', 'noPermission');
 define('YES', 1);
 define('NO', 0);
+
 require_once(dirname(__FILE__).'/db.php');
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'LinxBooks',
+         'defaultController' => isset(Yii::app()->user)? LbInvoice::model()->getActionURL('dashboard'):'site/login',
 	'theme' => 'bootstrap',
         'language'=>(isset($_SESSION["sess_lang"])) ? $_SESSION["sess_lang"] : "en",
 
@@ -50,6 +52,8 @@ return array(
                 'application.modules.lbReport.models.*',
                 'application.modules.lbVendor.models.*',
                 'application.modules.lbComment.models.*',
+                'application.modules.lbDocument.models.*',
+                'application.modules.lbEmployee.models.*',
 		//'ext.ajaxmenu.AjaxMenu',
 	),
 		
@@ -88,6 +92,8 @@ return array(
                 'process_checklist',
                 'lbReport',
                 'lbComment',
+                'lbDocument',
+                'lbEmployee',
 	),
 
 	// application components
@@ -96,10 +102,11 @@ return array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
 			'class' => 'WebUser',
+//                       'authTimeout' => 10
 		),
 		
 		'session' => array(
-			'class' => 'CDbHttpSession',
+			'class' => 'system.web.CDbHttpSession',
 			'timeout' => 60*60*24*254, // never timeout
 			'connectionID' => 'db',
 		),
@@ -136,7 +143,8 @@ return array(
                                  // format get public url
                                 "<module:\w+>/p/<encode>"=>"/<module>/default/GetPublicPDF/p/<encode>",
                                 //"pdf/<encode>"=>"lbInvoice/default/PublicPDF/p/<encode>",
-                            
+                               
+                                 
 				// home
 				'<subscription_id:\d+>'
 					=>'invoice/index/subscription/<subscription_id>',

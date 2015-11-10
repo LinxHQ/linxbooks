@@ -17,7 +17,7 @@ if(!$canView)
 <?php 
 
     echo '<div id="lb-container-header">';
-                echo '<div class="lb-header-right" ><h3>'.Yii::t('lang','Contract Dashboard').'</h3></div>';
+                echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>'.Yii::t('lang','Contract Dashboard').'</h4></div>';
                 echo '<div class="lb-header-left">';
                         if($canAdd)
                             LBApplicationUI::newButton(Yii::t('lang','New Contract'), array(
@@ -29,7 +29,7 @@ echo '<div style="clear: both;overflow:hidden"><Br>';
 
 ?>
 <div class="panel">
-    <h4><?php echo Yii::t('lang','Outstanding Payments'); ?></h4>
+    <span style="font-size:16px;"><b><?php echo Yii::t('lang','Outstanding Payments'); ?></b></span>
     <?php
         $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_contract_outstanding_gridview',
@@ -83,8 +83,8 @@ echo '<div style="clear: both;overflow:hidden"><Br>';
     ?>
 </div>
 
-<div class="panel">
-    <h4><?php echo Yii::t('lang','Expiring Contracts'); ?></h4>
+<div class="panel" style="margin-top:10px;">
+    <span style="font-size:16px;"><b><?php echo Yii::t('lang','Expiring Contracts'); ?></b></span>
     <?php
         $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_contract_expiring_gridview',
@@ -138,7 +138,7 @@ echo '<div style="clear: both;overflow:hidden"><Br>';
     ?>
 </div>
 <div class="panel">
-    <h4><?php echo Yii::t('lang','Active Contracts');?></h4>
+    <span style="font-size:16px;"><b><?php echo Yii::t('lang','Active Contracts');?></b></span>
     <?php
         $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_contract_active_gridview',

@@ -1,6 +1,25 @@
 <?php
 class LBApplicationUI
 {
+    public static function getStatusBadge($status_code)
+    {
+        $badge_css = '';
+        if($status_code==  LbInvoice::LB_INVOICE_STATUS_CODE_DRAFT)
+            $badge_css =  '';
+        if($status_code==LbInvoice::LB_INVOICE_STATUS_CODE_OPEN)
+            $badge_css =  'badge-success';
+        if($status_code==LbInvoice::LB_INVOICE_STATUS_CODE_OVERDUE)
+            $badge_css =  'badge-warning';
+        if($status_code==LbInvoice::LB_INVOICE_STATUS_CODE_WRITTEN_OFF)
+            $badge_css =  'badge-warning';
+        if($status_code==LbInvoice::LB_INVOICE_STATUS_CODE_PAID)
+            $badge_css = 'badge-success';
+        
+        $status_name = LbInvoice::model()->getDisplayInvoiceStatus($status_code);
+        
+        return '<div class="badge '.$badge_css.'">'.$status_name.'</div>';
+    }
+    
 	public static function getAppUIController()
 	{
 		return new Controller('LBApplicationUI');

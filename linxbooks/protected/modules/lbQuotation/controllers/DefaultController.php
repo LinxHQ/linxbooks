@@ -134,7 +134,30 @@ class DefaultController extends CLBController
             $blankTotal->createBlankTotal($model->lb_record_primary_key);
             
             $model->save();
+            $id = $model->lb_record_primary_key;
+            $model = $this->loadModel($id);
             
+            $quotationItemModel = new LbQuotationItem('search');
+            $quotationItemModel->unsetAttributes();
+            $quotationItemModel->lb_quotation_id = $model->lb_record_primary_key;
+            
+            $quotationTaxModel = new LbQuotationTax('search');
+            $quotationTaxModel->unsetAttributes();
+            $quotationTaxModel->lb_quotation_id = $model->lb_record_primary_key;
+            
+            $quotationDiscountModel = new LbQuotationDiscount('search');
+            $quotationDiscountModel->unsetAttributes();
+            $quotationDiscountModel->lb_quotation_id = $model->lb_record_primary_key;
+            
+            $quotationTotalModel = LbQuotationTotal::model()->getQuotationTotal($id);
+            
+            
+            LBApplication::render($this, 'view', array(
+                'model'=>$model,
+                'quotationItemModel'=>$quotationItemModel,
+                'quotaitonTaxModel'=>$quotationTaxModel,
+                'quotationDiscountModel'=>$quotationDiscountModel,
+                'quotationTotalModel'=>$quotationTotalModel));
             $this->redirect(array('view','id'=>$model->lb_record_primary_key));
         }
         function actionView($id)
@@ -196,8 +219,15 @@ class DefaultController extends CLBController
                     // reset address just in case some address of previous customer is already there
                     $quotation->lb_quotation_customer_address_id = 0;
                     $quotation->lb_quotation_attention_id = 0;
+                    $address_array['customer_name']="";
                     $quotation->save();
-                    
+                    $address_array['customer']=$quotation->lb_quotation_customer_id;
+                    if($quotation->lb_quotation_customer_id > 0)
+                    {
+                        
+                        $custoemr_name = str_replace( ' ', '-',$quotation->customer->lb_customer_name);
+                        $address_array['customer_name']=$custoemr_name;
+                    }
                     // auto assign one of the addresses of this customer to this invoice
                     $addresses = LbCustomerAddress::model()->getAddresses($quotation->lb_quotation_customer_id,
                                     LbCustomerAddress::LB_QUERY_RETURN_TYPE_MODELS_ARRAY);
@@ -224,15 +254,27 @@ class DefaultController extends CLBController
                                         // return that address in json
                                         // we need to format it nicely.
                                         $address_array = $firstAddress->formatAddressLines();
+                                        $address_array['customer_name']="";
+                                        
+                                        $address_array['customer']=$quotation->lb_quotation_customer_id;
+                                        if($quotation->lb_quotation_customer_id > 0)
+                                        {
 
+                                            $custoemr_name = str_replace( ' ', '-',$quotation->customer->lb_customer_name);
+                                            $address_array['customer_name']=$custoemr_name;
+                                        }
                                         // print json
-                                        LBApplication::renderPartial($this, '//layouts/plain_ajax_content', array(
-                                                'content'=>CJSON::encode($address_array),
-                                        ));
-                                        return true;
+//                                        LBApplication::renderPartial($this, '//layouts/plain_ajax_content', array(
+//                                                'content'=>CJSON::encode($address_array),
+//                                        ));
+                                        
                                 } // end formatting address to return in json
                         }
                     }
+                    LBApplication::renderPartial($this, '//layouts/plain_ajax_content', array(
+                                                'content'=>CJSON::encode($address_array),
+                                        ));
+                                        return true;
                 }   
             }
         }

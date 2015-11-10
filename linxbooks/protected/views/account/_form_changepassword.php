@@ -14,13 +14,14 @@ echo CHtml::link(
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	'id'=>'account-form',
 	'enableAjaxValidation'=>false,
+     
 )); ?>
 
 <fieldset>
 	<?php echo $form->errorSummary($model); ?>
 	
 	<?php echo $form->passwordFieldRow($model,'account_current_password',
-			array('size'=>60,'maxlength'=>255) + (isset($_GET['ajax']) ? $iframe_input_style : array())); ?>
+			array('size'=>60,'maxlength'=>255,'name'=>'Account[account_password]') + (isset($_GET['ajax']) ? $iframe_input_style : array())); ?>
 	<?php echo $form->passwordFieldRow($model,'account_new_password',
 			array('size'=>60,'maxlength'=>255) + (isset($_GET['ajax']) ? $iframe_input_style : array())); ?>
 	<?php echo $form->passwordFieldRow($model,'account_new_password_retype',

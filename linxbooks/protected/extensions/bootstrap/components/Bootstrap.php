@@ -48,6 +48,8 @@ class Bootstrap extends CApplicationComponent
 	{
 		$filename = YII_DEBUG ? 'bootstrap.css' : 'bootstrap.min.css';
 		Yii::app()->clientScript->registerCssFile($this->getAssetsUrl().'/css/'.$filename);
+		$cs = Yii::app()->getClientScript();
+                $cs->registerCssFile(Yii::app()->baseUrl.'/css/dropdownCss.css');
 	}
 
 	/**

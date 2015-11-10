@@ -13,7 +13,7 @@ $langgage = '<select style="padding:3px;" id="language">'
         . '<option value="en">English</option>'
         . '<option value="vi">Tiếng Việt</option>'
         . '</select>';
-echo '<div style="width:35%;border:1px solid #ccc;margin:auto;background-color:white;margin-top:30px;">';
+echo '<div style="width:40%;border:1px solid #ccc;margin:auto;background-color:white;margin-top:30px;">';
 echo '<div id = "headerInstall" style="padding-bottom:0px; border-bottom: 1px solid Scrollbar">';
 echo '<h1 align="center"  style="color: rgb(93, 160, 40); font-family: Comic Sans MS;"><b>Install Linxbooks</b></h1>';
 echo '<pre>';

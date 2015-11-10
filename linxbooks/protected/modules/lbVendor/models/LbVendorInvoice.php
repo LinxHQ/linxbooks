@@ -340,7 +340,10 @@ class LbVendorInvoice extends CLBActiveRecord
         $total = 0;
         foreach($modelInvoiceVendor as $value)
         {
-            $total += LbVendorTotal::model()->totalOustanding(LbVendorTotal::LB_VENDOR_INVOICE_TOTAL,$value->lb_record_primary_key);
+            $total_value=LbVendorTotal::model()->totalOustanding(LbVendorTotal::LB_VENDOR_INVOICE_TOTAL,$value->lb_record_primary_key);
+            if($total_value){
+                $total += $total_value;
+            }
         }
         return $total;
     }

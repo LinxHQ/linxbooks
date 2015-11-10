@@ -110,7 +110,7 @@ $this->Widget('bootstrap.widgets.TbGridView',array(
                array(
                     'header'=>Yii::t('lang','Supplier'),
                     'type'=>'raw',
-                    'value'=>'LbCustomer::model()->customerInformation($data->lb_vd_invoice_supplier_id)->lb_customer_name',
+                    'value'=>'$data->lb_vd_invoice_supplier_id>0?LbCustomer::model()->customerInformation($data->lb_vd_invoice_supplier_id)->lb_customer_name:""',
                     'htmlOptions'=>array('width'=>'150'),
                 ),
                 

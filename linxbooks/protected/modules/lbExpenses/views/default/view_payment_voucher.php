@@ -8,16 +8,35 @@
 $m = $this->module->id;
 $canAdd = BasicPermission::model()->checkModules($m, 'add');
 $canList = BasicPermission::model()->checkModules($m, 'list');
-echo '<div class="btn-toolbar">';
-        if($canAdd)
-        {
-           
-            LBApplicationUI::newButton(Yii::t('lang','New Payment Voucher'), array(
-                    'url'=> $this->createUrl('createPaymentVoucher'),
+
+echo '<div id="lb-container-header">';
+            echo '<div style="margin-left: -10px" class="lb-header-right"><h4>Expenses</h4></div>';
+            echo '<div class="lb-header-left">';
+//            LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
+            echo '&nbsp;';
+            $this->widget('bootstrap.widgets.TbButtonGroup', array(
+                'type' => '',
+                'buttons' => array(
+                    array('label' => '<i class="icon-plus"></i> New', 'items' => array(
+                            array('label' => 'New Expense', 'url' =>  LbExpenses::model()->getActionURL('create',array('type'=>'render'))),
+                            array('label' => 'New Payment Voucher', 'url' => LbExpenses::model()->getActionURL('CreatePaymentVoucher',array('type'=>'render'))),
+                    )),
+                ),
+                'encodeLabel'=>false,
             ));
-        }
-echo '</div><br/>';
-echo '<div align="right">';
+            echo '</div>';
+echo '</div>';
+//echo '<div class="btn-toolbar">';
+//        if($canAdd)
+//        {
+//           
+//            LBApplicationUI::newButton(Yii::t('lang','New Payment Voucher'), array(
+//                    'url'=> $this->createUrl('createPaymentVoucher'),
+//            ));
+//        }
+//echo '</div><br/>';
+echo '<div text-size="30px" style="font-size:16px;padding-top:24px;"><b>Payment Voucher</b></div>';
+echo '<div style="margin-top:18px;">';
         
         //from
         echo Yii::t('lang','From').':</td>';echo '&nbsp;&nbsp;';

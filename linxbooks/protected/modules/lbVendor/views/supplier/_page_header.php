@@ -123,11 +123,15 @@ echo '</span>';
 
 echo '</div>';echo '</div>';
 echo '<div class="pull-right" style="text-align: right; margin-right: 25px;width:60%">';
-$modelCustomer = LbCustomer::model()->find('lb_record_primary_key='.$model->lb_vd_invoice_company_id);
-echo '<h3>'.$modelCustomer->lb_customer_name.'</h3><br/>';
-echo 'Registration No: ' . $modelCustomer->lb_customer_registration. '.&nbsp;';
-echo (($modelCustomer->lb_customer_website_url!=NULL) ? 'Website: '.$modelCustomer->lb_customer_website_url.'<br>' : '');
 
+$modelCustomer = LbCustomer::model()->findByPk($model->lb_vd_invoice_supplier_id);
+
+if(count($modelCustomer)>0)
+{
+    echo '<h3>'.$modelCustomer->lb_customer_name.'</h3><br/>';
+    echo 'Registration No: ' . $modelCustomer->lb_customer_registration. '.&nbsp;';
+    echo (($modelCustomer->lb_customer_website_url!=NULL) ? 'Website: '.$modelCustomer->lb_customer_website_url.'<br>' : '');
+}
 
 echo '</div>'
 // Invoice number, date and due

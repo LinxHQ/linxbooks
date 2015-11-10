@@ -7,13 +7,13 @@
 ?>
 <?php
     echo '<div id="lb-container-header">';
-                echo '<div class="lb-header-right" ><h3>'.Yii::t('lang','Customers').'</h3></div>';
+                echo '<div class="lb-header-right" style="margin-left:-11px" ><h4>'.Yii::t('lang','Customers').'</h4></div>';
                 echo '<div class="lb-header-left">';
                     LBApplicationUI::backButton($model->getHomeURLNormalized());
                 echo '</div>';
     echo '</div>';
 ?>
-<h3><?php echo Yii::t('lang','New Customers'); ?></h3>
+<div style="width:30%;margin-top:19px;margin-bottom:11px;"><span style="font-size: 16px;"><b><?php echo Yii::t('lang','New Customers'); ?></b></span></div>
 <div style="clear: both">
 <?php $this->renderPartial('_form', 
 		array('model'=>$model,

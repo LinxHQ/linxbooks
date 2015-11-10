@@ -20,8 +20,8 @@ echo '<div id="quotation-header-container" class="container-header" style="posit
 //
 //echo '</div></div>';
 
-echo '<div id="lb-view-header">';
-            echo '<div class="lb-header-right" ><h3><a href="'.LbInvoice::model()->getActionURLNormalized("dashboard").'">Quotations</a></h3></div>';
+echo '<div id="lb-view-header" >';
+            echo '<div class="lb-header-right" style="margin-top:7px;"><h4><a style="color:#777;margin-left:9px;margin-top:2px;" href="'.LbInvoice::model()->getActionURLNormalized("dashboard").'">Quotations</a></h4></div>';
             echo '<div class="lb-header-left">';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(
                 'type' => '',

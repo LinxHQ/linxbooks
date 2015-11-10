@@ -9,6 +9,25 @@ if(isset($_REQUEST['idPV']))
     $valuePv = $_REQUEST['idPV'];
 }
 echo '<input type="hidden" value="'.$valuePv.'"  id="idPv">';
+echo '<div id="lb-container-header">';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>Expenses</h4></div>';
+            echo '<div class="lb-header-left">';
+            LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
+
+
+            echo '&nbsp;';
+            $this->widget('bootstrap.widgets.TbButtonGroup', array(
+                'type' => '',
+                'buttons' => array(
+                    array('label' => '<i class="icon-plus"></i> '.Yii::t('lang','New'), 'items'=>array(
+                        array('label'=>Yii::t('lang','New Expenses'),'url'=>  LbExpenses::model()->getActionURLNormalized('create')),
+                        array('label'=>Yii::t('lang','New Payment Voucher'),'url'=> LbExpenses::model()->getActionURLNormalized('createPaymentVoucher')),
+                     )),
+                ),
+                'encodeLabel'=>false,
+            ));
+            echo '</div>';
+echo '</div><br>';
 ?>
 
 <div class="form">
@@ -95,8 +114,11 @@ echo '<input type="hidden" value="'.$valuePv.'"  id="idPv">';
                     $bank_account_arr[$data_bank->lb_record_primary_key] = $data_bank->lb_bank_account;
                 }
             }
-            $option_bank_acc = array(''=>'Choose Bank Account')+$bank_account_arr;
-            echo $form->dropDownListRow($model, 'lb_expenses_bank_account_id', $option_bank_acc);
+            $option_bank_acc=array(''=>'Choose Bank Account');
+            if(UserList::model()->getItemsForListCode('BankAcount'))
+                $option_bank_acc +=UserList::model()->getItemsForListCode('BankAcount');
+            
+            echo $form->dropDownListRow($model, 'lb_expenses_bank_account_id', CHtml::listData($option_bank_acc, 'system_list_item_id', 'system_list_item_name'));
             $arr_tax=LbTax::model()->getTaxes("",LbTax::LB_QUERY_RETURN_TYPE_MODELS_ARRAY);
 //            echo '<pre>';
 //            print_r($arr_tax);
@@ -140,7 +162,7 @@ echo '<input type="hidden" value="'.$valuePv.'"  id="idPv">';
                 <?php 
                 $this->widget('bootstrap.widgets.TbButton', array(
                     'label'=>'Back',
-                    'url'=>LbExpenses::model()->getActionURLNormalized('admin'),
+                    'url'=>LbExpenses::model()->getActionURLNormalized('expenses'),
                 ));
                 ?>
                 <?php // LBApplicationUI::backButton('admin'); ?>

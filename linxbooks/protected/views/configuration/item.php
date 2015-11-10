@@ -108,15 +108,16 @@ echo '</div>';
                 success: function(da) {
                     if(da.status == 'success') {
                         window.location.href='<?php echo Yii::app()->createUrl("configuration/list_item",array("list"=>$list_name)); ?>';
-                    } else {
-                        
-//                        $('#err').html('Item already exits');
-                        $('#err').fadeIn( 'slow' )
-                        .delay( 1800 )
-                        .fadeOut( 'slow' )
-                        .html( '<p style="color: red;"><i> Item already exits </i></p>' );
-//                        $('#new').val('');
-                    }
+                    } 
+//                    else {
+//                        
+////                        $('#err').html('Item already exits');
+//                        $('#err').fadeIn( 'slow' )
+//                        .delay( 1800 )
+//                        .fadeOut( 'slow' )
+//                        .html( '<p style="color: red;"><i> Item already exits </i></p>' );
+////                        $('#new').val('');
+//                    }
                 }
             })
         } else {

@@ -53,12 +53,24 @@
 <body>
 <?php
 //Permission Customer
+//$lang = lbLangUser::model()->getLangName(Yii::app()->user->id);
+//if($lang != "")
+//{
+//    Yii::app()->language=$lang;
+//    $_SESSION["sess_lang"] = strtolower($lang);
+//}
+//echo Yii::app()->user->id;
 $customer_canAdd = BasicPermission::model()->checkModules('lbCustomer', 'add');
 $customer_canView = BasicPermission::model()->checkModules('lbCustomer', 'view');
 
 //Permission Invoice
 $invoice_canAdd = BasicPermission::model()->checkModules('lbInvoice', 'add');
 $invoice_canView = BasicPermission::model()->checkModules('lbInvoice', 'view');
+
+//Permission Expenses
+$expenses_canView = BasicPermission::model()->checkModules('lbExpenses', 'view');
+$expenses_canAdd = BasicPermission::model()->checkModules('lbExpenses', 'add');
+
 
 //Permission Quotation
 $quotation_canAdd = BasicPermission::model()->checkModules('lbQuotation', 'add');
@@ -69,6 +81,8 @@ $bill_canView = BasicPermission::model()->checkModules('lbVendor', 'view');
 
 //Permission Report
 $report_canView = BasicPermission::model()->checkModules('lbReport', 'view');
+
+
 ?>
 <div class="container" id="page">
 
@@ -131,7 +145,7 @@ $report_canView = BasicPermission::model()->checkModules('lbReport', 'view');
                                                                                                                     'visible' => $invoice_canAdd,
                                                                                                                     ),
                                                                                                             array('label'=>Yii::t('lang','New Quotation'),
-                                                                                                                    'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+                                                                                                                    
                                                                                                                     'url'=>LbQuotation::model()->getCreateURLNormalized(),
                                                                                                                     'visible' => $quotation_canAdd,
                                                                                                                 ),
@@ -147,9 +161,33 @@ $report_canView = BasicPermission::model()->checkModules('lbReport', 'view');
 													'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
 													'visible' => !Yii::app()->user->isGuest && Modules::model()->checkHiddenModule('lbContract')),
                                                                                         array('label'=>Yii::t('lang','Expenses'),
-													'url'=> LbExpenses::model()->getActionURL('admin'),
-													'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
-													'visible' => !Yii::app()->user->isGuest && Modules::model()->checkHiddenModule('lbExpenses')),
+//													'url'=> LbExpenses::model()->getActionURL('expenses'),
+//													'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+//													'visible' => !Yii::app()->user->isGuest && Modules::model()->checkHiddenModule('lbExpenses'),
+                                                                                                        'items'=>array(
+                                                                                                            array('label'=>Yii::t('lang','All Expenses'),
+                                                                                                                    'linkOptions' => array('href'=> LbExpenses::model()->getActionURL('expenses'),'data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+                                                                                                                    'url'=>LbExpenses::model()->getActionURL('expenses'),
+                                                                                                                    'visible' => $expenses_canView,
+                                                                                                                   ),
+                                                                                                            array('label'=>Yii::t('lang','All Payment voucher'),
+                                                                                                                    'linkOptions' => array('href'=> LbExpenses::model()->getActionURL('paymentVoucher'),'data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+                                                                                                                    'url'=>  LbExpenses::model()->getActionURL('paymentVoucher'),
+                                                                                                                    'visible' => $expenses_canView,
+                                                                                                                   ),
+//                                                                                                            array('label'=>Yii::t('lang','New Expense'),
+//                                                                                                                    'linkOptions' => array('href'=> LbExpenses::model()->getActionURL('create'),'data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+//                                                                                                                    'url'=>  LbExpenses::model()->getActionURL('create'),
+//                                                                                                                    'visible' => $expenses_canAdd,
+//                                                                                                                   ),
+//                                                                                                            array('label'=>Yii::t('lang','New Payment Voucher'),
+//                                                                                                                    'linkOptions' => array('href'=> LbExpenses::model()->getActionURL('CreatePaymentVoucher'),'data-workspace' => '1', 'live' => false),
+//                                                                                                                    'url'=>  LbExpenses::model()->getActionURL('CreatePaymentVoucher'),
+//                                                                                                                    'visible' => $expenses_canAdd,
+//                                                                                                                   ),
+                                                                                                           
+                                                                                                        )
+                                                                                        ),
                                                                                         array('label'=>Yii::t('lang','Bills'),
 													'url'=> LbVendor::model()->getActionURL('dashboard'),
 													'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
@@ -177,7 +215,7 @@ $report_canView = BasicPermission::model()->checkModules('lbReport', 'view');
                                                                                                                     'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
                                                                                                                     'visible' => $report_canView,
                                                                                                                    ),
-                                                                                                            array('label'=>Yii::t('lang','Align Report'),
+                                                                                                            array('label'=>Yii::t('lang','Aging Report'),
                                                                                                                     'url'=>array('/lbReport/default/index?tab=aging_report'),
                                                                                                                     'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
                                                                                                                     'visible' => $report_canView,
@@ -207,8 +245,40 @@ $report_canView = BasicPermission::model()->checkModules('lbReport', 'view');
                                                                                                                     'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
                                                                                                                     'visible' => $report_canView,
                                                                                                                     ),
+                                                                                                            array('label'=>Yii::t('lang','Employee Report'),
+                                                                                                                    'url'=>array('/lbReport/default/index?tab=employee_report'),
+                                                                                                                    'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+                                                                                                                    'visible' => $report_canView,
+                                                                                                                    ),
+                                                                                                            array('label'=>Yii::t('lang','Payment Report'),
+                                                                                                                    'url'=>array('/lbReport/default/index?tab=payment_report'),
+                                                                                                                    'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+                                                                                                                    'visible' => $report_canView,
+                                                                                                                    ),
                                                                                                            )
                                                                                                         ),
+                                                                             array('label'=>Yii::t('lang','Payroll'),
+													'url'=> LbEmployee::model()->getActionURL('dashboard'),
+													'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+													'visible' => !Yii::app()->user->isGuest && Modules::model()->checkHiddenModule('lbVendor'),
+                                                                                                        'items'=>array(
+                                                                                                            array('label'=>Yii::t('lang','All Employees'),
+                                                                                                                    'url'=>LbEmployee::model()->getActionURL('dashboard'),
+                                                                                                                    'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+                                                                                                                    'visible' => $bill_canView,
+                                                                                                                   ),
+                                                                                                            array('label'=>Yii::t('lang','Make Payment'),
+                                                                                                                    'url'=>  LbEmployee::model()->getActionURL('EnterPayment'),
+                                                                                                                    'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+                                                                                                                    'visible' => $bill_canAdd,
+                                                                                                                    ),
+                                                                                                            array('label'=>Yii::t('lang','All Payment'),
+                                                                                                                    'url'=>LbEmployee::model()->getActionURL('ListPayment'),
+                                                                                                                    'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+                                                                                                                    'visible' => $bill_canView,
+                                                                                                                   ),
+                                                                                                           )
+                                                                                            ),
 									),
 							),
 							
@@ -249,7 +319,7 @@ $report_canView = BasicPermission::model()->checkModules('lbReport', 'view');
                     $linx_app_menu_subscription_items[] =   array('label'=>'<i class="icon-plus"></i> '.Yii::t('lang','Add Subscription'),
                                                                 'url'=>array('/accountSubscription/create'),
                                                                 'visible'=>$onwSubcrip);
-                    $linx_app_menu_subscription_items[] =   array('label'=>'<i class="icon-align-justify"></i> '.Yii::t('lang','Manager Subscription'),
+                    $linx_app_menu_subscription_items[] =   array('label'=>'<i class="icon-plus"></i> '.Yii::t('lang','Manager Subscription'),
                                                                 'url'=>array('/accountSubscription/admin'),
                                                                 'visible'=>$onwSubcrip);
             }

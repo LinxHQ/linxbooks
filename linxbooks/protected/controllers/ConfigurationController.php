@@ -32,17 +32,17 @@ class ConfigurationController extends Controller
 		return array(
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array(
-                                        'index',
-                                        'deleteTax',
+                                        'index','List','updateListName',
+                                        'deleteTax','UpdateList',
                                         'createTax',
                                         'updateTax',
                                         'createDefaultNote',
                                         'ajaxLoadDefaultNote',
                                         'list_item',
                                         'ajaxUpdateItem',
-                                        'ajaxUpdateFieldTax',
+                                        'ajaxUpdateFieldTax','deleteList',
                                         'DeleteItem',
-                                        'AjaxLoadFormItem',
+                                        'AjaxLoadFormItem','AjaxInsertList',
                                         'addLineTranslate',
                                         'deleteLineTranslate',
                                         'ajaxUpdateField',
@@ -76,6 +76,11 @@ class ConfigurationController extends Controller
                     'translate'=>$translate,
                 ));
 	}
+        
+        public function actionList()
+        {
+            $this->renderPartial($this, '_list_item', array(),true);
+        }
         
         public function actionDeleteTax($id)
         {
@@ -144,6 +149,14 @@ class ConfigurationController extends Controller
             LBApplication::render($this, '_form_update_tax', array(
                 'model'=>$model,
                 'error'=>'',
+            ));
+        }
+        public function actionUpdateList($list) 
+        {
+            
+            
+            LBApplication::render($this, '_form_update_list', array(
+               'list'=>$list
             ));
         }
         
@@ -269,6 +282,24 @@ class ConfigurationController extends Controller
            }
            
         }
+         function actionAjaxInsertList()
+        {
+           $model = new UserList();
+           
+           if(isset($_POST['item']) && $_POST['item'] !== "")
+           {
+                    $item = $_POST['item'];
+                    
+                    
+                    if($model->insertList($item)) {
+                        
+                        echo json_encode(array('status'=>'success'));
+                    } else {
+                        echo json_encode(array('status'=>'failed'));
+                    }
+           }
+           
+        }
         
         function actionAddLineTranslate()
         {
@@ -310,5 +341,43 @@ class ConfigurationController extends Controller
 	
 		return false;
 	}
+        
+        public function actiondeleteList()
+        {
+            $model=new UserList();
+            $list="";
+            if($_REQUEST['list'])
+                $list=$_REQUEST['list'];
+
+            $model->deleteAll('system_list_code = "'.$list.'"');
+        }
+        
+        public function actionupdateListName()
+        {
+            $list_name="";
+            if(isset($_POST['list_name']))
+                $list_name=$_POST['list_name'];
+            $list_old=$_POST['list_old'];
+            $model = UserList::model()->find('system_list_code = "'.$list_name.'" ');
+            
+            if(count($model) > 0) {
+                        
+                   echo json_encode(array('status'=>'failed'));
+            } else {
+                   //update list item theo list name
+                   $model_list = UserList::model()->findAll('system_list_code = "'.$list_old.'" ');
+                   
+                   foreach ($model_list as $data)
+                   {
+                       $model = UserList::model()->findByPk($data['system_list_item_id']);
+                       $model->system_list_code=$list_name;
+                       $model->update();
+                   }
+
+                   echo json_encode(array('status'=>'success'));
+            }
+            
+            
+        }
            
 }

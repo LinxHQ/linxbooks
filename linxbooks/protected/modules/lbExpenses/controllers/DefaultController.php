@@ -42,12 +42,13 @@ class DefaultController extends CLBController
                             'actions'=>array(
                                     'index','PrintPdfPV','deletePVExpenses',
                                      'admin','create','view','delete','update',
-                                     'ajaxSearchExpenses','error','createPaymentVoucher','ListEx','viewPaymentVoucher',
+                                     'ajaxSearchExpenses','error','createPaymentVoucher','ListEx','viewPaymentVoucher','ExpensesNewCustomer',
 //                                     'ajaxDropDownContact',
 //                                     'upload',
 //                                     'dashboard',
 //                                     'renew',
 //                                     'ajaxFormPayment',
+                                     'AssignCustomer','AssignInvoice',
                                 'createExPv','createBlankTax',
                                      'deleteDocument','deletePaymentVoucher',
                                      'uploadDocument',
@@ -59,7 +60,7 @@ class DefaultController extends CLBController
                                      'deleteCustomerExpenses',
                                      'deleteInvoiceExpenses',
                                      'loadAjaxTabInvoice',
-                                     'loadAjaxTabCustomer',
+                                     'loadAjaxTabCustomer','expenses','paymentVoucher','SearchExpenses'
                             ),
                             'users'=>array('@'),
                         ),
@@ -222,7 +223,16 @@ class DefaultController extends CLBController
                           return;
                         }
                 }
-
+//                if(isset($_REQUEST['type']))
+//                {
+//                    $this->render('create',array(
+//			'model'=>$model,
+//                        'customerModel'=>$customerModel,
+//                        'invoiceModel'=>$invoiceModel,
+//                        'bankaccounts'=>$bankaccounts,
+//                    ));
+//                    return;
+//                }
 		$this->render('create',array(
 			'model'=>$model,
                         'customerModel'=>$customerModel,
@@ -377,19 +387,29 @@ class DefaultController extends CLBController
                 $from_date = $_POST['from_date'];
                 $to_date = $_POST['to_date'];
                 
-//                $model = new LbExpenses;
                 $expenses = LbExpenses::model()->getExpenses($category);
-//                $model=new LbExpenses('search');
-//		$model->unsetAttributes();  // clear any default values
-//                $model->lb_category_id = $category;
-//                $model->lb_expenses_date
-//		if(isset($_GET['LbExpenses']))
-//			$model->attributes=$_GET['LbExpenses'];
+
 
 		LBApplication::render($this,'admin',array(
 			'model'=>$expenses,
 		));
             
+        }
+        
+        public function actionSearchExpenses()
+        {
+            $date_from = false;
+            $date_to = false;
+            $category_id=0;
+            if(isset ($_POST['category_id']))
+                    $category_id = $_POST['category_id'];
+            if(isset($_POST['date_from']))
+                $date_from = $_POST['date_from'];
+            if(isset ($_POST['date_to']))
+                $date_to = $_POST['date_to'];
+            $model = new LbExpenses();
+          
+            LBApplication::renderPartial($this,'view_expenses',  array('model'=>$model,'category_id'=>$category_id,'date_from'=>$date_from,'date_to'=>$date_to));  
         }
         
         public function actionDeleteDocument($id)
@@ -495,7 +515,7 @@ class DefaultController extends CLBController
         {
            $model = new LbExpenses();
            $modelPV = new LbPaymentVoucher();
-           $id = false;
+           $id = 0;
            
            if(isset($_REQUEST['id']))
            {
@@ -657,4 +677,134 @@ class DefaultController extends CLBController
             ));
         }
         }
+        
+        public function actionexpenses()
+        {
+            $model=new LbExpenses();
+            $modelPV=new LbPaymentVoucher();
+            LBApplication::render($this,'view_expenses',array(
+                                    'model'=>$model,
+                                    'modelPv'=>$modelPV
+                            ));
+        }
+        public function actionpaymentVoucher()
+        {
+            $model=new LbExpenses();
+            $modelPV=new LbPaymentVoucher();
+            LBApplication::render($this,'view_payment_voucher',array(
+                                    'model'=>$model,
+                                    'modelPv'=>$modelPV
+                            ));
+        }
+         public function actionExpensesNewCustomer(){ 
+         //   $model = $this->loadModel($id);
+            $expenses_id = isset($_REQUEST['expenses_id']) ? $_REQUEST['expenses_id'] : 0;
+        //    $submission_type = isset($_GET['form_type']) ? $_GET['form_type'] : 'default';
+            $expensesModel = LbExpenses::model()->findByPk($expenses_id);
+            $customerModel = new LbCustomer();
+            $addressModel = new LbCustomerAddress();
+            $contactModel = new LbCustomerContact();
+            $own = false;
+            if(isset($_POST['LbCustomer'])){
+                $customerModel->attributes = $_POST['LbCustomer'];
+            //    $customerModel->lb_customer_is_own_company = 0;
+                if($customerModel->save()){
+                 //   if($submission_type == 'ajax'){
+                        if(isset($expenses_id) && $expenses_id >0){
+                             $expenses_customer = new LbExpensesCustomer();
+                            $expenses_customer->lb_expenses_id = $expenses_id;
+                            $expenses_customer->lb_customer_id = $customerModel->lb_record_primary_key;
+                            $expenses_customer->save();
+                            
+                            LBApplication::renderPlain($this, array('content'=>CJSON::encode($expenses_customer)));
+                        }
+                        if(isset($_POST['LbCustomerAddress']))
+				{
+					$addressModel->attributes=$_POST['LbCustomerAddress'];
+					$addressModel->lb_customer_id = $customerModel->lb_record_primary_key;
+					$addressModel->save();
+				}
+				
+				// save contact if any
+				if(isset($_POST['LbCustomerContact']))
+				{
+					$contactModel->attributes=$_POST['LbCustomerContact'];
+					$contactModel->lb_customer_id = $customerModel->lb_record_primary_key;
+					if ($contactModel->save())
+					{
+						// automatically assign this contact to submitted address
+						$contactAddressModel = new LbCustomerAddressContact();
+						$contactAddressModel->lb_customer_address_id = $addressModel->lb_record_primary_key;
+						$contactAddressModel->lb_customer_contact_id = $contactModel->lb_record_primary_key;
+						$contactAddressModel->save();
+					}
+				}
+                        
+                }
+            }
+       
+            LBApplication::render($this, 'addCustomer', array(
+                'expensesModel'=>$expensesModel,
+                'own'=>$own,
+                'customerModel'=>$customerModel,
+                'addressModel'=>$addressModel,
+                'contactModel'=>$contactModel,
+            ));
+        }
+        public function actionAssignCustomer(){
+            $expenses_id = isset($_REQUEST['expenses_id']) ? $_REQUEST['expenses_id'] : 0;
+             $expensesModel = LbExpenses::model()->findByPk($expenses_id); 
+            $customerModel = new LbCustomer('search');  
+            $customerModel->unsetAttributes();
+            if(isset($_GET['LbCustomer'])){
+                $customerModel->attributes = $_GET['LbCustomer'];
+            }           
+                $customer_id = Yii::app()->request->getParam('customer_id');
+                if(isset($customer_id) && is_array($customer_id) && count($customer_id) > 0){
+                    foreach($customer_id as  $customer){
+                        if($customer > 0){
+                            if(isset($expenses_id) && $expenses_id > 0){
+                            $expensesCustomer = new LbExpensesCustomer();
+                            $expensesCustomer->lb_expenses_id = $expenses_id;
+                            $expensesCustomer->lb_customer_id = $customer;
+                            $expensesCustomer->save();
+                            }
+                        }
+                    }
+                }
+
+                LBApplication::render($this, '_assign_customer', array(
+                    'customerModel'=>$customerModel,
+                    'expensesModel'=>$expensesModel,
+                ));
+            
+        }
+        public function actionAssignInvoice(){
+            $expenses_id = isset($_REQUEST['expenses_id']) ? $_REQUEST['expenses_id'] : 0;
+            $expensesModel = LbExpenses::model()->findByPk($expenses_id);
+            $invoiceModel = new LbInvoice('search');
+            $invoiceModel->unsetAttributes();
+            if(isset($_GET['LbInvoice'])){
+                $invoiceModel->attributes = $_GET['LbInvoice'];
+            }
+            $invoice_id = Yii::app()->request->getParam('invoice_id');
+            if(isset($invoice_id) && is_array($invoice_id) && count($invoice_id) > 0){
+                foreach ($invoice_id as $invoice) {
+                    if($invoice > 0){
+                        if(isset($expenses_id) && $expenses_id > 0){
+                            $expensesInvoice = new LbExpensesInvoice();
+                            $expensesInvoice->lb_expenses_id = $expenses_id;
+                            $expensesInvoice->lb_invoice_id = $invoice;
+                            $expensesInvoice->save();
+                        }
+                    }
+                }
+            }
+            LBApplication::render($this, '_assign_invoice', array(
+                'invoiceModel'=>$invoiceModel,
+                'expensesModel'=>$expensesModel,
+            ));
+        }
 }
+
+

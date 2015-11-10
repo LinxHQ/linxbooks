@@ -98,7 +98,8 @@ class UserList extends CActiveRecord
 		$criteria->compare('system_list_parent_item_id',$this->system_list_parent_item_id);
 		$criteria->compare('system_list_item_order',$this->system_list_item_order);
 		$criteria->compare('system_list_item_active',$this->system_list_item_active);
-               
+		$criteria->compare('system_list_code',$this->system_list_code);
+                $criteria->group="system_list_code";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -318,4 +319,7 @@ class UserList extends CActiveRecord
             $dataProvider->setPagination(false);
             return $dataProvider->getData();
         }
+        
+        
+        
 }

@@ -16,7 +16,7 @@ if(!$canView)
 }
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" ><h3>'.Yii::t('lang','Customers').'</h3></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>'.Yii::t('lang','Customers').'</h4></div>';
             echo '<div class="lb-header-left">';
                 LBApplicationUI::backButton($model->getHomeURLNormalized());
                 echo '&nbsp;';
@@ -40,7 +40,7 @@ echo '<div id="lb-container-header">';
 echo '</div>';
 ?>
 
-<h3><?php echo $model->lb_customer_name; ?></h3>
+<div style="width:30%;margin-top:19px;margin-bottom:11px;"><span style="font-size: 16px;"><b><?php echo $model->lb_customer_name; ?></b></span></div>
 
 <?php 
 echo '<div class="btn-toolbar">';

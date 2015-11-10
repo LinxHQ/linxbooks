@@ -245,7 +245,7 @@ class SiteController extends Controller
 	public function actionSubscription($id)
 	{
 		LBApplication::setCurrentlySelectedSubscription($id);
-		$this->redirect(Yii::app()->baseUrl."/".$id."/lbInvoice/dashboard");
+		$this->redirect(Yii::app()->baseUrl."/index.php/".$id."/lbInvoice/dashboard");
 	}
         
         /**

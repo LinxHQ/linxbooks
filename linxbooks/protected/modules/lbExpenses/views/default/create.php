@@ -13,7 +13,7 @@ $this->menu=array(
 );
 ?>
 
-<h1>New Expenses</h1>
+
 
 <?php $this->renderPartial('_form', array(
                                         'model'=>$model,

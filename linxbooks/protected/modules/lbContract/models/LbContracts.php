@@ -308,4 +308,13 @@ class LbContracts extends CLBActiveRecord
  
     }
     
+    public function countContractByCustomer($customer_id)
+    {
+        $criteria = new CDbCriteria();
+        if($customer_id)
+            $criteria->compare ('t.lb_customer_id', intval($customer_id));
+        
+       return $this->findAll($criteria);
+    }
+    
 }

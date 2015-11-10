@@ -107,11 +107,14 @@ class LbExpenses extends CLBActiveRecord
 //		$criteria->compare('lb_record_primary_key',$this->lb_record_primary_key);
                 if ($this->lb_category_id)
                 {
+                    
                     $conditions[] = '(lb_category_id = '.intval($this->lb_category_id).')';
 //                    $criteria->compare('lb_category_id', $this->lb_category_id, true);
                 }
+                
                 if ($this->from_date && $this->to_date)
                 {
+                  
                     $conditions[] = '(lb_expenses_date >= "'.$this->from_date.'") AND (lb_expenses_date <= "'.$this->to_date.'")';
                 }
                 if (count($conditions) > 0)
@@ -127,7 +130,7 @@ class LbExpenses extends CLBActiveRecord
 //                return new CActiveDataProvider($this, array(
 //			'criteria'=>$criteria,
 //		));
-		$dataProvider = $this->getFullRecordsDataProvider($criteria,null,20,$user_id);
+		$dataProvider = $this->getFullRecordsDataProvider($criteria,null,10,$user_id);
                 
                 return $dataProvider;
 	}
@@ -244,7 +247,8 @@ class LbExpenses extends CLBActiveRecord
             foreach($pvexpenses as $data)
             {
                 $modelExpenses = LbExpenses::model()->find('lb_record_primary_key = '.$data->lb_expenses_id);
-                $total += $modelExpenses->lb_expenses_amount;
+                if($modelExpenses)
+                    $total += $modelExpenses->lb_expenses_amount;
             }
             return $total;
         }
@@ -261,4 +265,6 @@ class LbExpenses extends CLBActiveRecord
             }
             return $total;
         }
+        
+       
 }

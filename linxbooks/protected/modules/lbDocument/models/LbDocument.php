@@ -134,16 +134,23 @@ class LbDocument extends CLBActiveRecord
         
         public function getDocumentParentTypeProvider($parent_type, $parent_id)
         {
-//                $this->lb_document_parent_type = $parent_type;
-//                $this->lb_document_parent_id = $parent_id;
-//                $dp = $this->search();
-//                $dp->setPagination(false);
-//                return $dp->getData();
+
                 $criteria=new CDbCriteria;
                 $criteria->compare('lb_document_parent_type',"$parent_type");
                 $criteria->compare('lb_document_parent_id',$parent_id);
                 return new CActiveDataProvider($this, array(
                         'criteria'=>$criteria,
                 ));
+        }
+        
+        public function addDocument($module_name,$parent_id,$fileName)
+        {
+                $documentModel = new LbDocument;
+                $documentModel->lb_document_parent_type = $module_name;
+                $documentModel->lb_document_parent_id = $parent_id;
+                $documentModel->lb_document_url = "/uploads/".$fileName; 
+                $documentModel->lb_document_name = $fileName; // this links your picture model to the main model (like your user, or profile model)
+                $documentModel->lb_document_encoded_name = $fileName;
+                $documentModel->save(); // DONE
         }
 }

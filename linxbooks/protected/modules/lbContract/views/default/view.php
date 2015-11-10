@@ -28,7 +28,7 @@ if(!$canView)
 //?>
 <?php
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" ><h3>Contracts</h3></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px"><h4>Contracts</h4></div>';
             echo '<div class="lb-header-left">';
             LBApplicationUI::backButton(LbContracts::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
@@ -43,8 +43,8 @@ echo '<div id="lb-container-header">';
 echo '</div><Br>';
 ?>
 <div style="overflow: hidden; clear: both;">
-    <div style="float: left;width: 300px;"><h3 style="line-height:10px;">Contract: <?php echo $model->lb_contract_no; ?></h3></div>
-   <div style="text-align: right;"><h3 style="line-height:10px;"><?php echo $model->customer->lb_customer_name; ?></h3></div>
+    <div style="float: left;width: 300px;"><span style="font-size:16px;"><b>Contract: <?php echo $model->lb_contract_no; ?></b></span></div>
+   <div style="text-align: right;"><span style="font-size:16px;"><b><?php echo $model->customer->lb_customer_name; ?></span></div>
 </div>
 <?php
     if($canEdit)

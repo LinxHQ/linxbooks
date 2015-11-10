@@ -21,4 +21,9 @@ $this->menu=array(
 <?php $this->renderPartial('_form', 
 		array('model'=>$model,
 				'addressModel'=>$addressModel,
-				'contactModel'=>$contactModel)); ?>
+				'contactModel'=>$contactModel,
+                                'own'=>$own,
+                    
+                    ));
+                                
+         ?>

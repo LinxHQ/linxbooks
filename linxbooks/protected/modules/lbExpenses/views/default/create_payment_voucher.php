@@ -7,9 +7,9 @@
  */
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" ><h3>Expenses</h3></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>Expenses</h4></div>';
             echo '<div class="lb-header-left">';
-            LBApplicationUI::backButton(LbExpenses::model()->getAdminURLNormalized());
+            LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('paymentVoucher'));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(
                 'type' => '',
@@ -33,7 +33,7 @@ echo '<div id="lb-container-header">';
 echo '</div><br>';
 
    
-echo '<div class = "header">';
+echo '<div class = "header" style="margin-bottom:10px">';
 
 if($id)
 {
@@ -44,7 +44,7 @@ if($id)
 }
 else
 {
-        echo '<h2>New Payment Voucher</h2>';
+        echo '<span style="font-size:16px;"><b>New Payment Voucher</b></span>';
 }       
 echo '</div>';
 $this->renderPartial('_form_pv', array(

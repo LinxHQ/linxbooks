@@ -15,7 +15,14 @@
                                 if (value < 0) return "Please select a valid customer";
                             }',
                     'success' => 'js: function(response, newValue) {
-                                var jsonResponse = jQuery.parseJSON(response);		 
+                                
+                                var jsonResponse = jQuery.parseJSON(response);	
+                                
+                                if(jsonResponse.customer >0){
+                                    var cutomer_id=jsonResponse.customer;
+                                    var customer_name=jsonResponse.customer_name;
+                                    $("#user").attr("href", "'.$this->createUrl('/'.LBApplication::getCurrentlySelectedSubscription().'/lbCustomer/"+cutomer_id+"-"+customer_name+"').'");
+                                }
                                 updateQuotationAddressLines(jsonResponse);
                                 updateAttentionUI('.$model->lb_record_primary_key.',0,"Choose contact");
                                 lbQuotation_choose_customer = true;
@@ -37,6 +44,19 @@
                         'id'=>'LbInvoice_quotation_customer_id_'.$model->lb_record_primary_key,
                     ),
                 ));
+                $custoemr_id=0;
+                $custoemr_name="";
+                if($model->lb_quotation_customer_id){
+                    $custoemr_id=$model->lb_quotation_customer_id;
+                    $custoemr_name = str_replace( ' ', '-',$model->customer->lb_customer_name);
+
+                }
+                if($custoemr_id>0){
+                    echo '&nbsp;&nbsp;<a id="user" href="'.$this->createUrl('/'.LBApplication::getCurrentlySelectedSubscription().'/lbCustomer/'.$model->lb_quotation_customer_id.'-'.$custoemr_name).'"><i class="icon-search"></i></a>';
+                }
+                else
+                    echo '&nbsp;&nbsp;<a id="user"><i class="icon-search"></i></a>';
+
             ?>
         </div>
         

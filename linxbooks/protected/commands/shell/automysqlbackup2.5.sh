@@ -25,19 +25,19 @@
 #=====================================================================
 
 # Username to access the MySQL server e.g. dbuser
-USERNAME='536091_linxb'
+USERNAME=''
 
 # Username to access the MySQL server e.g. password
-PASSWORD='Lkeaj9823$@1-0RTAR'
+PASSWORD=''
 
 # Host name (or IP address) of MySQL server e.g localhost
 DBHOST='localhost'
 
 # List of DBNAMES for Daily/Weekly Backup e.g. "DB1 DB2 DB3"
-DBNAMES='536091_linxbklive'
+DBNAMES=''
 
 # Backup directory location e.g /backups
-BACKUPDIR='/home/linxbooks/public_html/protected/backup'
+BACKUPDIR=''
 
 # Mail setup
 # What would you like to be mailed to you?

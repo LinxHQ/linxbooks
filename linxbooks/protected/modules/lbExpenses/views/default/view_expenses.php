@@ -11,34 +11,68 @@ $canList = BasicPermission::model()->checkModules($m, 'list');
 
 
 <?php 
-// NEW BUTTON
+//    'category_id'=>$category_id,'date_from'=>$date_from,'date_to'=>$date_to
     
-    echo '<div align="right">';
-    $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-        'id'=>'search-expenses-form',
-        'enableAjaxValidation'=>false,
-//	'action'=>$model->getActionURLNormalized('ajaxSearchExpenses'),//Yii::app()->createUrl($this->route),
-	'method'=>'get',
-));
-        echo Yii::t('lang','Category');echo '&nbsp;&nbsp;&nbsp;';
-        $category_arr = UserList::model()->getItemsListCode('expenses_category');
-            echo $form->dropDownList($model, 'lb_category_id',
-                    array(''=>'All')+CHtml::listData($category_arr, 'system_list_item_id', 'system_list_item_name'),
-                    array('style'=>'width:150px;')
-                );
-            echo '&nbsp;&nbsp;&nbsp;';
-//            echo CHtml::dropDownList('lb_category_id', '', array(''=>'All')+CHtml::listData($category_arr, 'system_list_item_id', 'system_list_item_name'), array('style'=>'width:150px;'));echo '&nbsp;&nbsp;&nbsp;';
-            echo Yii::t('lang','From').': ' . $form->textField($model, 'from_date', array('class'=>'span2'));echo '&nbsp;&nbsp;&nbsp;';
-//                    echo CHtml::textField('from_date', '', array('value'=>date('d-m-Y'), 'style'=>'width:100px;'));echo '&nbsp;&nbsp;&nbsp;';
-            echo Yii::t('lang','To').': ' . $form->textField($model, 'to_date', array('class'=>'span2'));echo '&nbsp;&nbsp;&nbsp;';
-//                    echo CHtml::textField('to_date', '', array('value'=>date('d-m-Y'), 'style'=>'width:100px;'));echo '&nbsp;&nbsp;&nbsp;';
-                    $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'submit', 'label'=>Yii::t('lang','Search')));
-                    $this->endWidget();
+    if(isset($category_id))
+    {
+        $date_form = DateTime::createFromFormat('d-m-Y', $date_from)->format('Y-m-d');
+        $date_to = DateTime::createFromFormat('d-m-Y', $date_to)->format('Y-m-d');
+        $model = LbExpenses::model();
+        $model->lb_category_id=$category_id;
+        $model->from_date=$date_form;
+        $model->to_date=$date_to;
+      
+        
+    }
+    else{
+// NEW BUTTON
+    echo '<div id="lb-container-header">';
+            
+            echo '<div style="margin-left: -10px" class="lb-header-right"><h4>Expenses</h4></div>';
+            echo '<div class="lb-header-left">';
+//            LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
+
+
+            echo '&nbsp;';
+            $this->widget('bootstrap.widgets.TbButtonGroup', array(
+                'type' => '',
+                'buttons' => array(
+                    array('label' => '<i class="icon-plus"></i> '.Yii::t('lang','New'), 'items'=>array(
+                        array('label'=>Yii::t('lang','New Expenses'),'url'=>  LbExpenses::model()->getActionURLNormalized('create')),
+                        array('label'=>Yii::t('lang','New Payment Voucher'),'url'=> LbExpenses::model()->getActionURLNormalized('createPaymentVoucher')),
+                     )),
+                ),
+                'encodeLabel'=>false,
+            ));
+            echo '</div>';
+echo '</div><br>';
+    echo '<div style="margin-left:0px;margin-top:0px;margin-bottom:-22px;">';
+
+    $category_arr = UserList::model()->getItemsListCode('expenses_category');
     echo '</div><br/>';
+    echo '<div style="margin-top:18px;">';
+        echo Yii::t('lang','Category').':</td>';echo '&nbsp;&nbsp;';
+        echo CHtml::dropDownList('lb_category_id', '', array(''=>'All')+CHtml::listData($category_arr, 'system_list_item_id', 'system_list_item_name'), array('style'=>'width:150px;'));echo '&nbsp;&nbsp;&nbsp;';
+
+        //from
+        echo Yii::t('lang','From').':</td>';echo '&nbsp;&nbsp;';
+        echo '<input type="text" id="LbExpenses_from_date" name="LbExpenses[lb_expenses_date]" value="'.date('d-m-Y').'"><span style="display: none" id="LbExpenses_lb_expenses_date_em_" class="help-inline error"></span>';
+       
+        echo '&nbsp;&nbsp;&nbsp;';
+
+        //to
+        echo Yii::t('lang','To').':</td>';echo '&nbsp;&nbsp;';
+        echo '<input type="text" id="LbExpenses_to_date" name="LbExpenses[lb_expenses_date]" value="'.date('d-m-Y').'"><span style="display: none" id="LbExpenses_lb_expenses_date_em_" class="help-inline error"></span>';
+       
+        echo '&nbsp;&nbsp;&nbsp;';
+        echo '<button class="btn" name="yt0" type="submit" onclick = "searchExpenses()" style="margin-top:-10px">Search</button>';
+                  
+        echo '</div><br/>';
+    }
        
 
 //$this->renderPartial('index', array('model'=>$model));
-
+echo '<div id="list_payment_voucher"> ';
 $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_expenses_gridview',
             'dataProvider'=>  $model->search($canList),
@@ -90,7 +124,7 @@ $this->Widget('bootstrap.widgets.TbGridView',array(
                 ),
             )
         ));
-
+echo '</div>';
 //        LBApplicationUI::button('Delete', array(
 //                'url'=>$this->createUrl('delete'),
 //        ));
@@ -110,5 +144,15 @@ $this->Widget('bootstrap.widgets.TbGridView',array(
             to_date.hide();
         }).data('datepicker');	
     });
+    
+    function searchExpenses()
+    {
+        var date_from = $('#LbExpenses_from_date').val();
+        var date_to =$('#LbExpenses_to_date').val();
+        var category_id=$('#lb_category_id option:selected').val();
+      
+        $('#list_payment_voucher').load('SearchExpenses',{category_id:category_id,date_from:date_from,date_to:date_to});
+      
+    }
     
 </script>

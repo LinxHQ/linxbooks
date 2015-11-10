@@ -13,14 +13,15 @@ $canAdd = BasicPermission::model()->checkModules('lbPayment', 'add');
 </style>
 <?php // echo $model->lb_record_primary_key; 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" ><h3>Bills</h3></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>Bills</h4></div>';
             echo '<div class="lb-header-left">';
             LBApplicationUI::backButton(LbVendor::model()->getActionURLNormalized('dashboard'));
             echo '&nbsp;';
             echo '</div>';
 echo '</div><br>';
 ?>
-<h3>Payment</h3>
+
+<div style="font-size:16px;padding-top:0px;margin-bottom:18px;" text-size="30px"><b>Payment</b></div>
 <div style="overflow: hidden;">
     <div class="accordion" id="accordion2">
         <?php if($canAdd) { ?>

@@ -39,7 +39,13 @@ $this->widget('editable.EditableField', array(
             if (value < 0) return "Please select a valid customer";
         }',
 		'success' => 'js: function(response, newValue) {
-			var jsonResponse = jQuery.parseJSON(response);		 
+                    var jsonResponse = jQuery.parseJSON(response);
+                    if(jsonResponse.customer >0){
+                                    var cutomer_id=jsonResponse.customer;
+                                    var customer_name=jsonResponse.customer_name;
+                                    $("#user").attr("href", "'.$this->createUrl('/'.LBApplication::getCurrentlySelectedSubscription().'/lbCustomer/"+cutomer_id+"-"+customer_name+"').'");
+                                }
+
 		    updateInvoiceAddressLines(jsonResponse);
 		    updateAttentionUI('.$model->lb_record_primary_key.',0,"Choose contact");
                     lbInvoice_choose_customer = true;
@@ -69,9 +75,26 @@ $this->widget('editable.EditableField', array(
             'id'=>'LbInvoice_invoice_customer_id_'.$model->lb_record_primary_key,
         ),
     ));
+ 
+
+
+
+$custoemr_id=0;
+$custoemr_name="";
+if($model->lb_invoice_customer_id){
+        $custoemr_id=$model->lb_invoice_customer_id;
+        $custoemr_name = str_replace( ' ', '-',$model->customer->lb_customer_name);
+
+        }
+        if($custoemr_id>0){
+            echo '&nbsp;&nbsp;<a id="user" href="'.$this->createUrl('/'.LBApplication::getCurrentlySelectedSubscription().'/lbCustomer/'.$model->lb_invoice_customer_id.'-'.$custoemr_name).'"><i class="icon-search"></i></a>';
+        }
+        else
+            echo '&nbsp;&nbsp;<a id="user"><i class="icon-search"></i></a>';
 echo '</div>'; // end div for customer name's txt
 echo CHtml::hiddenField('hidden-invoice-customer-id', $model->lb_invoice_customer_id, 
 		array('id'=>'hidden-invoice-customer-id'));
+
 echo '</div>'; // end customer name
 
 // customer address
@@ -115,6 +138,8 @@ $this->widget('editable.EditableField', array(
             });
         }',
     ));
+
+
 echo '</div>';
 echo '</div>'; // end customer address
 

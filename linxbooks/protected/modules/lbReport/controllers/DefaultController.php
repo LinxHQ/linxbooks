@@ -151,5 +151,29 @@ class DefaultController extends Controller
             $html2pdf->WriteHTML($this->renderPartial('PDFCash', array('model'=>$lbInvoiceModel,'customer_id'=>$customer,'search_date_from'=>$search_date_from,'search_date_to'=>$search_date_to),true));
             $html2pdf->Output('PDFCash.pdf','I');
         }
-          
+         public function actionAjaxLoadFormViewPayment(){
+            $model = new LbEmployeePayment();
+            LBApplication::renderPartial($this,'_form_view_payment_report', array('model'=>$model));
+        }
+        public function actionAjaxLoadViewEmployeeReport(){
+            $model = new LbEmployeePayment();
+            LBApplication::renderPartial($this,'_form_view_employee_report', array('model'=>$model));
+        }
+        public function actionPDFEmployee($employee_id, $payment_year){
+            $html2pdf = Yii::app()->ePdf->HTML2PDF();
+            $model = new LbEmployeePayment();
+            $html2pdf->WriteHTML($this->renderPartial('PDFSalaryEmployee', array('model'=>$model,'employee_id'=>$employee_id, 'payment_year'=>$payment_year),true));
+            $html2pdf->Output('PDFSalaryEmployee.pdf','I');
+        }
+        public function actionprintPDF_payment($month_year){
+           //$month_year = isset($_GET['month_year']) ? $_GET['month_year'] : 0;           
+           $html2pdf = Yii::app()->ePdf->HTML2PDF();
+           $model = new LbEmployeePayment();
+           $html2pdf->WriteHTML($this->renderPartial('PDFPayment',array('model'=>$model,'month_year'=>$month_year),true));
+           $html2pdf->Output('Payment.pdf','I');
+       }
+       public function actionHistorySalary(){
+           $model = new LbEmployeePayment();
+           LBApplicationUI::renderPartial($this,'_form_employee_report',array('model'=>$model));
+       }
 }

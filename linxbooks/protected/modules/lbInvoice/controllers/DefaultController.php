@@ -63,7 +63,7 @@ class DefaultController extends CLBController
                     'ajaxUpdateNexIDField',
                     'ajaxUpdateDefaultNoteField','ajaxgetMethod',
                     'ajaxUpdateFieldTax',
-                    'ajaxUpdateFieldGenera','LoadPaymentInvoice',
+                    'ajaxUpdateFieldGenera',
                     'ajaxCopyInvoice','view_chart_expenditures','_form_oustanding_invoice'
                      ,'_form_oustanding_quotation','chart','_search_invoice','_search_quotation','ajaxgetDate'
                                     ),
@@ -88,7 +88,7 @@ class DefaultController extends CLBController
 	 * Displays a particular model.
 	 * @param integer $id the ID of the model to be displayed
 	 */
-	public function actionView($id=false,$invoice_no=false)
+/*	public function actionView($id=false,$invoice_no=false)
 	{
             if(isset($_REQUEST['invoice_no']))
             {
@@ -146,7 +146,7 @@ class DefaultController extends CLBController
 	 * Creates a new model.
 	 * If creation is successful, the browser will be redirected to the 'view' page.
 	 */
-	public function actionCreate()
+/*	public function actionCreate()
 	{
 		// are we creating invoice or quotation?
 		if (isset($_GET['group']) 
@@ -238,8 +238,186 @@ class DefaultController extends CLBController
             'invoiceTaxModel'=>$invoiceTaxModel,
             'invoiceTotal'=>$invoiceTotal,
         ));**/
-	}
+	//}
 	
+        public function actionView($id=false,$invoice_no=false,$expenses_id=false)
+	{
+            $expenses_id = isset($_REQUEST['expenses_id']) ? ($_REQUEST['expenses_id']) :0;
+            if(isset($_REQUEST['invoice_no']))
+            {
+                $model=  LbInvoice::model()->find('lb_invoice_no="'.$invoice_no.'"');
+                if(count($model) > 0)
+                {
+                    $id = $model->lb_record_primary_key;
+                    
+                    $url = ($model->customer) ?$model->getViewURL($model->customer->lb_customer_name)
+                            :$model->getViewURL("No customer");
+                    $this->redirect($url);
+                }
+                else
+                    return;
+            }
+           
+                if(isset($_REQUEST['id']) && $_REQUEST['id']>0)
+                $id = $_REQUEST['id'];
+            
+            
+            $model = $this->loadModel($id);
+            $invoiceItemModel=new LbInvoiceItem('search');
+            $invoiceItemModel->unsetAttributes();  // clear any default values
+            $invoiceItemModel->lb_invoice_id = $model->lb_record_primary_key;
+
+            // invoice discounts
+            $invoiceDiscountModel = new LbInvoiceItem('search');
+            $invoiceDiscountModel->unsetAttributes();  // clear any default values
+            $invoiceDiscountModel->lb_invoice_id = $model->lb_record_primary_key;
+
+            // invoice taxes
+            $invoiceTaxModel = new LbInvoiceItem('search');
+            $invoiceTaxModel->unsetAttributes();  // clear any default values
+            $invoiceTaxModel->lb_invoice_id = $model->lb_record_primary_key;
+
+        // invoiceTotal
+        $invoiceTotal = LbInvoiceTotal::model()->getInvoiceTotal($id);
+
+		LBApplication::render($this,'view',array(
+			'model'=>$model,
+			'invoiceItemModel'=>$invoiceItemModel,
+            'invoiceDiscountModel'=>$invoiceDiscountModel,
+            'invoiceTaxModel'=>$invoiceTaxModel,
+            'invoiceTotal'=>$invoiceTotal,
+            'expenses_id'=>$expenses_id,
+			//'ownCompany'=>$ownCompany,
+			//'ownCompanyAddress'=>$ownCompanyAddress,
+			//'customerCompany'=>$customerCompany,
+		));
+    
+	}
+        
+      
+
+        /**
+	 * Creates a new model.
+	 * If creation is successful, the browser will be redirected to the 'view' page.
+	 */
+	public function actionCreate()
+	{
+                $expenses_id = isset($_GET['expenses_id']) ? $_GET['expenses_id'] :0;
+            //     $expensesModel = LbExpenses::model()->findByPk($expenses_id);
+		// are we creating invoice or quotation?
+		if (isset($_GET['group']) && $_GET['group'] == strtolower(LbInvoiceGeneric::LB_INVOICE_GROUP_INVOICE))
+		{
+			$model=new LbInvoice;
+		} else {
+			$model = new LbQuotation();
+		}
+		
+		// get basic info to assign to this record
+		$ownCompany = LbCustomer::model()->getOwnCompany();
+		$ownCompanyAddress = null;
+		$customerCompany = new LbCustomer;
+		$customerCompany->lb_customer_name = 'Click to choose customer';
+		
+		// get own company address
+		if ($ownCompany->lb_record_primary_key)
+		{
+			// auto assign owner company
+			$model->lb_invoice_company_id = $ownCompany->lb_record_primary_key;
+			
+			$own_company_addresses = LbCustomerAddress::model()->getActiveAddresses($ownCompany->lb_record_primary_key,
+					$ownCompany::LB_QUERY_RETURN_TYPE_MODELS_ARRAY);
+			
+			if (count($own_company_addresses))
+			{
+				$ownCompanyAddress= $own_company_addresses[0];
+				// auto assign owner company's address
+				$model->lb_invoice_company_address_id = $ownCompanyAddress->lb_record_primary_key;
+			}
+		}
+		
+		// add invoice to database right away.
+		// other fields will be updated on the invoice page later on
+		$model->saveUnconfirmed();
+		
+		//
+		// == Prepare line items grid
+		// add 1 line-item by default
+		// 
+		$blankItem = new LbInvoiceItem();
+		$blankItem->addBlankItem($model->lb_record_primary_key);
+		$blankTax = new LbInvoiceItem();
+        $blankTax->addBlankTax($model->lb_record_primary_key);
+
+		$invoiceItemModel=new LbInvoiceItem('search');
+		$invoiceItemModel->unsetAttributes();  // clear any default values
+		$invoiceItemModel->lb_invoice_id = $model->lb_record_primary_key;
+
+        // totals - create a blank total record, set everything to zero: subtotal, after disc, after tax, paid, outstanding....
+        $invoiceTotal = new LbInvoiceTotal;
+        $invoiceTotal->createBlankTotal($model->lb_record_primary_key);
+
+		// == end items grid data prep
+		
+		// Uncomment the following line if AJAX validation is needed
+		// $this->performAjaxValidation($model);
+
+        $invoiceDiscountModel = new LbInvoiceItem();
+        $invoiceDiscountModel->lb_invoice_item_type = LbInvoiceItem::LB_INVOICE_ITEM_TYPE_DISCOUNT;
+        $invoiceTaxModel = new LbInvoiceItem();
+        $invoiceTaxModel->lb_invoice_item_type = LbInvoiceItem::LB_INVOICE_ITEM_TYPE_TAX;
+
+		if(isset($_POST['LbInvoice']))
+		{
+			$model->attributes=$_POST['LbInvoice'];
+			if($model->save()){
+                            $this->redirect(array('view','id'=>$model->lb_record_primary_key));
+                        }
+				
+		}
+    if(isset($expenses_id) & $expenses_id > 0){
+        $this->redirect(array('view','id'=>$model->lb_record_primary_key,'expenses_id'=>$expenses_id));
+    }  else {
+        $this->redirect(array('view','id'=>$model->lb_record_primary_key));
+    }
+        
+    /*   LBApplication::render($this,'view',array(
+            'model'=>$model,
+            'invoiceItemModel'=>$invoiceItemModel,
+            'invoiceDiscountModel'=>$invoiceDiscountModel,
+            'invoiceTaxModel'=>$invoiceTaxModel,
+            'invoiceTotal'=>$invoiceTotal,
+            'id'=>$model->lb_record_primary_key,
+            'expenses_id'=>$expenses_id,
+        ));*/
+        /**
+		LBApplication::render($this,'create',array(
+			//'save_unconfirmed'=>$save_unconfirmed,
+			'model'=>$model,
+			'invoiceItemModel'=>$invoiceItemModel,
+            'invoiceDiscountModel'=>$invoiceDiscountModel,
+            'invoiceTaxModel'=>$invoiceTaxModel,
+            'invoiceTotal'=>$invoiceTotal,
+		));**/
+/*
+        if (isset($expenses_id)){
+            LBApplication::render($this,'view',array(
+            'model'=>$model,
+            'expenses_id'=>$expenses_id,
+            'invoiceItemModel'=>$invoiceItemModel,
+            'invoiceDiscountModel'=>$invoiceDiscountModel,
+            'invoiceTaxModel'=>$invoiceTaxModel,
+            'invoiceTotal'=>$invoiceTotal,
+            ));
+        }else{
+        LBApplication::render($this,'view',array(
+            'model'=>$model,
+            'invoiceItemModel'=>$invoiceItemModel,
+            'invoiceDiscountModel'=>$invoiceDiscountModel,
+            'invoiceTaxModel'=>$invoiceTaxModel,
+            'invoiceTotal'=>$invoiceTotal,
+        ));
+        }*/
+        }
 	/**
 	 * Create a new blank item for this invoice
 	 * Usually called when user add a new line on the GUI
@@ -261,6 +439,7 @@ class DefaultController extends CLBController
 			));
 		}
 	}
+        
 
     /**
      * Create a new blank discount for this invoice
@@ -364,7 +543,13 @@ class DefaultController extends CLBController
 				$invoice->lb_invoice_customer_address_id = 0;
                 $invoice->lb_invoice_attention_contact_id = 0;
 				$invoice->save();
+                                $address_array['customer']=$invoice->lb_invoice_customer_id;
+                                if($invoice->lb_invoice_customer_id > 0)
+                                {
 
+                                    $custoemr_name = str_replace( ' ', '-',$invoice->customer->lb_customer_name);
+                                    $address_array['customer_name']=$custoemr_name;
+                                }
 
                 // auto assign one of the addresses of this customer to this invoice
 				$addresses = LbCustomerAddress::model()->getAddresses($invoice->lb_invoice_customer_id,
@@ -394,16 +579,22 @@ class DefaultController extends CLBController
 						// return that address in json
 						// we need to format it nicely.
 						$address_array = $firstAddress->formatAddressLines();
-						
+						$address_array['customer']=$invoice->lb_invoice_customer_id;
+                                                if($invoice->lb_invoice_customer_id > 0)
+                                                {
+
+                                                    $custoemr_name = str_replace( ' ', '-',$invoice->customer->lb_customer_name);
+                                                    $address_array['customer_name']=$custoemr_name;
+                                                }
 						// print json
-						LBApplication::renderPartial($this, '//layouts/plain_ajax_content', array(
-							'content'=>CJSON::encode($address_array),
-						));
-						return true;
+						
 					} // end formatting address to return in json
 				}// end if found addresses
 			}
-			return true;
+			LBApplication::renderPartial($this, '//layouts/plain_ajax_content', array(
+							'content'=>CJSON::encode($address_array),
+						));
+						return true;
 		}
 	
 		return false;
@@ -688,7 +879,7 @@ class DefaultController extends CLBController
      *
      * @param $id
      */
-    public function actionAjaxConfirmInvoice($id)
+/*    public function actionAjaxConfirmInvoice($id)
     {
         $model = $this->loadModel($id);
 
@@ -698,6 +889,26 @@ class DefaultController extends CLBController
         $result['lb_invoice_no'] = $model->lb_invoice_no;
         $result['lb_record_primary_key']= $id;
         LBApplication::renderPlain($this, array('content'=>CJSON::encode($result)));
+    }*/
+    public function actionAjaxConfirmInvoice($id,$expenses_id=false)
+    {
+
+            $expenses_id = isset($_GET['expenses_id']) ? $_GET['expenses_id'] : 0; 
+            $model = $this->loadModel($id);
+            if($model->confirm()){
+                if(isset($expenses_id) && $expenses_id > 0){
+                    $expenses_invoice = new LbExpensesInvoice;
+                    $expenses_invoice->lb_expenses_id = $expenses_id;
+                    $expenses_invoice->lb_invoice_id = $id;
+                    $expenses_invoice->save();
+                }
+            };
+            $result = array();
+            $result['lb_invoice_status_code']=  LbInvoice::model()->getDisplayInvoiceStatus($model->lb_invoice_status_code);
+            $result['lb_invoice_no'] = $model->lb_invoice_no;
+            $result['lb_record_primary_key']= $id;
+            LBApplication::renderPlain($this, array('content'=>CJSON::encode($result)));
+      //  }
     }
 
 	/**
@@ -1364,38 +1575,37 @@ class DefaultController extends CLBController
             {
                 $model_invoice = LbInvoice::model()->findByPk($_POST['id']);
                 $customer = $model_invoice->lb_invoice_customer_id;
-            
-                $model = new LbPayment();
-
-                $model->lb_payment_no=LbPayment::model()->FormatPaymentNo(LbPayment::model()->getPaymentNextNum());
-                $model->lb_payment_customer_id = $customer;
-                $model->lb_payment_method=0;
-                $model->lb_payment_date= date('Y-m-d');
-                $model->lb_payment_total=0; 
-                if($model->save())
-                {
-                        $paymentItemModel = new LbPaymentItem();
-                        $paymentItemModel->lb_payment_id = $model->lb_record_primary_key;
-                        $paymentItemModel->lb_invoice_id = $_POST['id'];
-
-                        $paymentItemModel->lb_payment_item_amount=0;
-                        if($paymentItemModel->save()){
-                                    $response = array();
-                                    $response['success'] = YES;
-                                    $response['payment_no'] =  $model->lb_payment_no;
-                                    $response['lb_payment_id'] =  $model->lb_record_primary_key;
-
-                                    LBApplication::renderPlain($this, array(
-                                            'content'=>CJSON::encode($response)
-                                    ));
-                        }
-                        else
-                             echo '{"status":"fail"}';
-
-                }
-                else
-                    echo '{"status":"fail"}';
             }
+            $model = new LbPayment();
+           
+            $model->lb_payment_no=LbPayment::model()->FormatPaymentNo(LbPayment::model()->getPaymentNextNum());
+            $model->lb_payment_customer_id = $customer;
+            $model->lb_payment_method=0;
+            $model->lb_payment_date= date('Y-m-d');
+            $model->lb_payment_total=0; 
+            if($model->save())
+            {
+                    $paymentItemModel = new LbPaymentItem();
+                    $paymentItemModel->lb_payment_id = $model->lb_record_primary_key;
+                    $paymentItemModel->lb_invoice_id = $_POST['id'];
+                   
+                    $paymentItemModel->lb_payment_item_amount=0;
+                    if($paymentItemModel->save()){
+                                $response = array();
+                                $response['success'] = YES;
+                                $response['payment_no'] =  $model->lb_payment_no;
+                                $response['lb_payment_id'] =  $model->lb_record_primary_key;
+
+                                LBApplication::renderPlain($this, array(
+                                        'content'=>CJSON::encode($response)
+                                ));
+                    }
+                    else
+                         echo '{"status":"fail"}';
+                            
+                        
+                    
+                }
                 
             }
             
@@ -1432,15 +1642,6 @@ class DefaultController extends CLBController
 //                    echo 'success';
                 LBApplication::renderPlain($this, array('content'=>CJSON::encode($taxRecord)));
                 }
-            }
-            
-            public function actionLoadPaymentInvoice($invoice_id,$invoice_status){
-                    LBApplication::renderPartial($this,'_form_payment_invoice',
-                            array(
-                                'invoice_id'=>$invoice_id,
-                                'invoice_status'=>$invoice_status
-                            )
-                    );
             }
         
 }

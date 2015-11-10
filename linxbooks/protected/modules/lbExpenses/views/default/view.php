@@ -35,9 +35,11 @@ $this->breadcrumbs=array(
 ?>
 <?php
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" ><h3>Expenses</h3></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>Expenses</h4></div>';
             echo '<div class="lb-header-left">';
-            LBApplicationUI::backButton(LbExpenses::model()->getAdminURLNormalized());
+            LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
+
+
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(
                 'type' => '',
@@ -54,24 +56,24 @@ echo '</div><br>';
 ?>
 
 
-<div style="overflow: hidden;">
-    <h3 style="line-height: 10px;"><?php echo Yii::t('lang','Expenses'); ?>: <?php echo $model->lb_expenses_no; ?></h3>
+<div style="overflow: hidden;margin-bottom:11px;">
+    <span style="font-size:16px;"><b><?php echo Yii::t('lang','Expenses'); ?>: <?php echo $model->lb_expenses_no; ?></span>
 </div>
 
 <?php
 //var_dump(LbBankAccount::model()->getBankAccount(Yii::app()->user->id));
-    echo '<div class="btn-toolbar">';
-        
-        //LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('admin'));
-        $this->widget('bootstrap.widgets.TbButton', array(
-            'label'=>Yii::t('lang','Back'),
-            'url'=>LbExpenses::model()->getActionURLNormalized('admin'),
-        ));
-        
-        
-//        LBApplicationUI::button('Print PDF');
-    
-    echo '</div><br/>';
+//    echo '<div class="btn-toolbar">';
+//        
+//        //LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('admin'));
+//        $this->widget('bootstrap.widgets.TbButton', array(
+//            'label'=>Yii::t('lang','Back'),
+//            'url'=>LbExpenses::model()->getActionURLNormalized('expenses'),
+//        ));
+//        
+//        
+////        LBApplicationUI::button('Print PDF');
+//    
+//    echo '</div><br/>';
 
 //$this->widget('zii.widgets.CDetailView', array(
 //	'data'=>$model,
@@ -100,7 +102,7 @@ echo '</div><br>';
                 'name' => 'lb_category_id',
                 'editable' => array(
                     'type' => 'select',
-                    'source' => CHtml::listData(SystemList::model()->getItemsForListCode('expenses_category'), 'system_list_item_id', 'system_list_item_name')
+                    'source' => array('0'=>'Choose Category')+CHtml::listData(SystemList::model()->getItemsForListCode('expenses_category'), 'system_list_item_id', 'system_list_item_name')
                 )
             ),
             array(
@@ -122,14 +124,14 @@ echo '</div><br>';
                 'name' => 'lb_expenses_recurring_id',
                 'editable' => array(
                     'type' => 'select',
-                    'source' => array(''=>'Choose Recurring')+CHtml::listData(UserList::model()->getItemsForListCode('recurring'), 'system_list_item_code', 'system_list_item_name')
+                    'source' => array('0'=>'Choose Recurring')+CHtml::listData(UserList::model()->getItemsForListCode('recurring'), 'system_list_item_id', 'system_list_item_name')
                 )
             ),
             array(
                 'name' => 'lb_expenses_bank_account_id',
                 'editable' => array(
                     'type' => 'select',
-                    'source' => array(''=>'Choose bank account')+CHtml::listData(LbBankAccount::model()->getBankAccount(Yii::app()->user->id), 'lb_record_primary_key', 'lb_bank_account')
+                    'source' => array(''=>'Choose bank account')+CHtml::listData(UserList::model()->getItemsForListCode('BankAcount'), 'system_list_item_id', 'system_list_item_name')
                 )
             ),
             

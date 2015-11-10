@@ -1,7 +1,9 @@
-<?php $m = $this->module->id;
+<?php 
+$m = $this->module->id;
 $canAdd = BasicPermission::model()->checkModules($m, 'add');
 $canList = BasicPermission::model()->checkModules($m, 'list');
-
+//echo $m;
+echo $canList;
 $canView = BasicPermission::model()->checkModules($m, 'view');
 $canAddQuotation = BasicPermission::model()->checkModules('lbQuotation', 'add');
 $canListQuotation = BasicPermission::model()->checkModules('lbQuotation', 'list');
@@ -17,7 +19,7 @@ if(!$canView)
 <div class="panel">
     <div style="margin-top: 10px;" class="panel-header-title">
         <div class="panel-header-title-left">
-            <h5><?php echo Yii::t('lang','Outstanding Invoice'); ?></h5>
+            <span style="font-size: 16px;"><b><?php echo Yii::t('lang','Outstanding Invoice'); ?></b></span>
         </div>
         <div class="panel-header-title-right">
             <?php if($canAdd){ ?>
@@ -38,7 +40,7 @@ if(!$canView)
    
                 $this->widget('bootstrap.widgets.TbGridView',array(
                     'id'=>'lb-invoice-Outstanding-grid',
-                    'type'=>'striped bordered condensed',
+                    'type'=>'striped',
                     'dataProvider'=>$model->getInvoiceByStatus($status,FALSE,10,$canList),
                     //'template' => "{items}",
                     'columns'=>array(
@@ -49,13 +51,15 @@ if(!$canView)
                             . 'if(data){ responseJSON = jQuery.parseJSON(data);'
                             . '     alert(responseJSON.error); }'
                             
-                            . '}'
+                            . '}',
+                            'htmlOptions'=>array('width'=>'20'),
                         ),
                         array(
                             'header'=>Yii::t('lang','Invoice No'),
                             'type'=>'raw',
                             'value'=>'LBApplication::workspaceLink($data->lb_invoice_no,
-                                        $data->customer ? $data->getViewURL($data->customer->lb_customer_name) : $data->getViewURL("No customer"))',
+                                        $data->customer ? $data->getViewURL($data->customer->lb_customer_name) : $data->getViewURL("No customer")) . "<br/>".
+                                        LBApplicationUI::getStatusBadge($data->lb_invoice_status_code)',
                             'htmlOptions'=>array('width'=>'130'),
                         ),
                         array(
@@ -63,7 +67,7 @@ if(!$canView)
                             'type'=>'raw',
                             'value'=>'$data->customer ? $data->customer->lb_customer_name."<br><span style=\'color:#666;\'>". $data->lb_invoice_subject."</span>" : "No customer"
                                     ."<br><span style=\'color:#666;\'>". $data->lb_invoice_subject."</span>"',
-                            'htmlOptions'=>array('width'=>'380'),
+                            'htmlOptions'=>array('width'=>''),
                         ),
                         array(
                             'header'=>Yii::t('lang','Due Date'),
@@ -77,6 +81,7 @@ if(!$canView)
                             'value'=>'($data->total_invoice ? LbInvoice::CURRENCY_SYMBOL.$data->total_invoice->lb_invoice_total_outstanding : "0.00")',
                             'htmlOptions'=>array('width'=>'120','style'=>'text-align:right'),
                         ),
+                        /**
                         array(
                             'header'=>Yii::t('lang','Status'),
                             'type'=>'raw',
@@ -88,7 +93,7 @@ if(!$canView)
                             'header'=>Yii::t('lang','Created By'),
                             'type'=>'raw',
                             'value'=>'AccountProfile::model()->getFullName(LbCoreEntity::model()->getCoreEntity(LbInvoice::model()->module_name,$data->lb_record_primary_key)->lb_created_by)',
-                        ),
+                        ),**/
                         
 
                     ),

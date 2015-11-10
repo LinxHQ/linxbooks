@@ -16,7 +16,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<h2>Manage Subscriptions</h2>
+<h4>Manage Subscriptions</h4>
 
 <?php
 $this->widget('bootstrap.widgets.TbGridView', array(
