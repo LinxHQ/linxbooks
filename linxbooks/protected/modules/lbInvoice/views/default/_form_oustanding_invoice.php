@@ -9,6 +9,11 @@ $canAddQuotation = BasicPermission::model()->checkModules('lbQuotation', 'add');
 $canListQuotation = BasicPermission::model()->checkModules('lbQuotation', 'list');
 $canAddPayment = BasicPermission::model()->checkModules('lbPayment', 'add');
 
+$currency_name = LbGenera::model()->getGeneraSubscription()->lb_genera_currency_symbol;
+$lb_thousand_separator = LbGenera::model()->getGeneraSubscription()->lb_thousand_separator;
+$lb_decimal_symbol = LbGenera::model()->getGeneraSubscription()->lb_decimal_symbol;
+
+
 if(!$canView)
 {
     echo "Have no permission to see this record";
@@ -34,7 +39,7 @@ if(!$canView)
         </div>
     </div>
     <div>
-        <div id ="show_invoice">
+    <div id ="show_invoice">
     <?php $status='("'.LbInvoice::LB_INVOICE_STATUS_CODE_DRAFT.'","'.LbInvoice::LB_INVOICE_STATUS_CODE_OPEN.'","'.LbInvoice::LB_INVOICE_STATUS_CODE_OVERDUE.'")'; ?>
     <?php
    
@@ -78,7 +83,7 @@ if(!$canView)
                         array(
                             'header'=>Yii::t('lang','Amount'),
                             'type'=>'raw',
-                            'value'=>'($data->total_invoice ? LbInvoice::CURRENCY_SYMBOL.$data->total_invoice->lb_invoice_total_outstanding : "0.00")',
+                            'value'=>'($data->total_invoice ? number_format($data->total_invoice->lb_invoice_total_outstanding,2,LbGenera::model()->getGeneraSubscription()->lb_decimal_symbol,LbGenera::model()->getGeneraSubscription()->lb_thousand_separator) : "0.00")',
                             'htmlOptions'=>array('width'=>'120','style'=>'text-align:right'),
                         ),
                         /**

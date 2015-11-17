@@ -70,7 +70,7 @@ if(!$canView)
                     array(
                         'header'=>Yii::t('lang','Amount'),
                         'type'=>'raw',
-                        'value'=>'$data->quotationTotal ? LbInvoice::CURRENCY_SYMBOL.$data->quotationTotal->lb_quotation_total_after_total : "{LbInvoice::CURRENCY_SYMBOL}0,00"',
+                        'value'=>'$data->quotationTotal ? number_format($data->quotationTotal->lb_quotation_total_after_total,2,LbGenera::model()->getGeneraSubscription()->lb_decimal_symbol,LbGenera::model()->getGeneraSubscription()->lb_thousand_separator) : "{LbInvoice::CURRENCY_SYMBOL}0,00"',
                         'htmlOptions'=>array('width'=>'120','style'=>'text-align:right'),
                     ),
                     array(

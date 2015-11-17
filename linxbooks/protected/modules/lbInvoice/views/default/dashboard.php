@@ -3,59 +3,6 @@
 /* @var $model LbInvoice */
 /* @var $quotationModel LbQuotation */
 
-
-//// xoa du lieu cua module invoice
-//$subcription_id= LBApplication::getCurrentlySelectedSubscription();
-//$allAccount = AccountSubscription::model()->findAllByPk($subcription_id);
-//$allAccountId=array();
-//$i = 0;
-//foreach ($allAccount as $arr_account)
-//{
-//    $allAccountId[$i] = $arr_account->account_id;
-//    $i++;
-//}
-//$j=0;
-//$t=0;
-//$allInvoice = LbInvoice::model()->findAll();
-//foreach ($allInvoice as $invocie)
-//{
-//    $id=$invocie['lb_record_primary_key'];
-//    
-//    $test =LbCoreEntity::model()->getCoreEntity(LbInvoice::model()->module_name,$id);
-//    
-//    if(count($test) > 0)
-//    {
-//        
-//        if($test->lb_subscription_id == 9)
-//        {
-//            
-//            $j++;
-//                    
-//            $paymentItem = LbPaymentItem::model()->findAll('lb_invoice_id='.$id);
-//
-//            if(count($paymentItem)>0)
-//            {
-//            foreach ($paymentItem as $value) {
-//                $payment_id= $value['lb_payment_id'];
-//                LbPayment::model()->deleteByPk($payment_id);
-//            }
-//            
-//            
-//            }
-//            LbPaymentItem::model()->deleteAll('lb_invoice_id='.$id);
-//
-//             LbInvoice::model()->deleteByPk($id);
-//             
-//        }
-//        
-//        
-//
-//          
-//    }
-//    
-//         
-//}  
-
 if(isset(Yii::app()->user->id))
     $lang = lbLangUser::model()->getLangName(Yii::app()->user->id);
 

@@ -1,21 +1,22 @@
  <?php
  $m = $this->module->id;
 $canListQuotation = BasicPermission::model()->checkModules('lbQuotation', 'list');
- $status = '("'.LbQuotation::LB_QUOTATION_STATUS_CODE_DRAFT.'","'.LbQuotation::LB_QUOTATION_STATUS_CODE_SENT.'")';
+
+$status = '("'.LbQuotation::LB_QUOTATION_STATUS_CODE_DRAFT.'","'.LbQuotation::LB_QUOTATION_STATUS_CODE_SENT.'","'.LbQuotation::LB_QUOTATION_STATUS_CODE_APPROVED.'")';
             $this->widget('bootstrap.widgets.TbGridView',array(
                 'id'=>'lb-quotation-Outstanding-grid',
                 'type'=>'striped bordered condensed',
-                'dataProvider'=>  LbQuotation::model()->searchQuotationByName($_REQUEST['name'],10,$canListQuotation),
+                'dataProvider'=> LbQuotation::model()->searchQuotationByName($_REQUEST['name'],10,$canListQuotation),
                 //'template' => "{items}",
                 'columns'=>array(
                      array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
                              'template'=>'{delete}',
-                         'afterDelete'=>'function(link,success,data){ '
-                            . ' $( "#update-dialog" )..dialog("close");'
-                                                     
-                            . '$(this).dialog("close");'
-                            . 'alert(success)}'
+                            'afterDelete'=>'function(link,success,data){ '
+                            . 'if(data){ responseJSON = jQuery.parseJSON(data);'
+                            . '     alert(responseJSON.error); }'
+                            
+                            . '}'
                         ),
                     array(
                         'header'=>Yii::t('lang','Quotation No'),
@@ -41,7 +42,7 @@ $canListQuotation = BasicPermission::model()->checkModules('lbQuotation', 'list'
                     array(
                         'header'=>Yii::t('lang','Amount'),
                         'type'=>'raw',
-                        'value'=>'$data->quotationTotal ? LbInvoice::CURRENCY_SYMBOL.$data->quotationTotal->lb_quotation_total_after_total : "{LbInvoice::CURRENCY_SYMBOL}0,00"',
+                        'value'=>'$data->quotationTotal ? number_format($data->quotationTotal->lb_quotation_total_after_total,2,LbGenera::model()->getGeneraSubscription()->lb_decimal_symbol,LbGenera::model()->getGeneraSubscription()->lb_thousand_separator) : "{LbInvoice::CURRENCY_SYMBOL}0,00"',
                         'htmlOptions'=>array('width'=>'120','style'=>'text-align:right'),
                     ),
                     array(
@@ -58,3 +59,4 @@ $canListQuotation = BasicPermission::model()->checkModules('lbQuotation', 'list'
                     )
                 ),
             ));
+ 
