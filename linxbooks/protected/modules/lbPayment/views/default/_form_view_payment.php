@@ -23,7 +23,7 @@ $customer_arr= LbCustomer::model()->getCompaniesByPayment('lb_customer_name ASC'
  border-bottom-right-radius: 5px; border-top-right-radius: 5px;
  padding: 10px;">
    <?php
-
+/*
         if($canAdd)
             echo LBApplication::workspaceLink(
                 CHtml::image(Yii::app()->baseUrl . '/images/icons/icon_new.png', 'Share', array('class'=>'lb-side-icon'))
@@ -54,7 +54,7 @@ echo LBApplication::workspaceLink(
 
 echo LBApplication::workspaceLink(
     CHtml::image(Yii::app()->baseUrl . '/images/icons/icon_last.png', 'Last', array('class'=>'lb-side-icon')));
-
+*/
 
 ?>
 </div>

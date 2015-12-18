@@ -28,7 +28,7 @@ $PDFSalaryEmployee = '<table border="0" style="margin:auto; width:100%;" cellpad
                 </td></tr>'
             .'</table>
             <h4 style="margin-left:20px;">Salary Components:</h4>
-             <table border="1"   style="margin:auto;margin-top:20px; width:100%;" class="items table table-bordered">';
+             <table border="1" style="width:100%;margin-top:20px;margin-left:10px;" cellpadding="0" cellspacing="0">';
                 $PDFSalaryEmployee .= '<thead>
                     
                         <tr style="font-weight:bold;" align="center">                        
@@ -59,7 +59,7 @@ $PDFSalaryEmployee = '<table border="0" style="margin:auto; width:100%;" cellpad
                 $PDFSalaryEmployee.='            
             </table>
             <h4 ">Benefits Detail:</h4>
-            <table border="1"   style="margin:auto;margin-top:20px; width:100%;" class="items table table-bordered">';
+            <table border="1" style="width:100%;margin-top:20px;margin-left:10px;" cellpadding="0" cellspacing="0">';
                 $PDFSalaryEmployee .= '<thead>
                         
                         <tr style="font-weight:bold;" align="center">                        

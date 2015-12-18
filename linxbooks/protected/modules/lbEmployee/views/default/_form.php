@@ -24,6 +24,7 @@
         ?>          
              <p class="note">Fields with <span class="required">*</span> are required. &nbsp;
                  <a href="<?php echo LbEmployee::model()->getActionURLNormalized('EnterPayment',array('employee_id'=>$employee_id)) ?>"><img width="16" style="margin-left: 100px;" src="<?php echo Yii::app()->baseUrl.'/images/icons/dolar.png' ?>" /> <?php echo Yii::t('lang','Enter Payment'); ?></a>
+                 <a href="<?php echo LbEmployee::model()->getActionURLNormalized('printPDF_DetailSalaryEmployee', array('employee_id'=>$employee_id))?>" target="_blank"><img width="16" style="margin-left: 50px;" src="<?php echo Yii::app()->baseUrl.'/images/icons/icon_pdf.png' ?>" /> <?php echo Yii::t('lang','Print'); ?></a>
              </p>
         <?php   
         }  else {
@@ -65,12 +66,15 @@
 		echo '<div class="accordion-group">';
 		
 		// heading
-		echo '<div class="accordion-heading">';
-		echo '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-basic-info-collapse">';
-                echo YII::t('lang','Basic Information');
-                echo  '</a></div>'; // end heading
-                 
-                  echo '<div id="form-new-customer-basic-info-collapse" class="accordion-body collapse in">
+                echo '<div class="accordion-heading" id="new_payment">
+                      <a class="accordion-toggle" data-toggle="collapse"  href="#form_new_payment">
+                      <i></i>
+                      <span style="color: #6E8900;font-size: 14px; font-weight: bold">Basic Information</span>
+                      </a>
+                    </div>';
+		
+                
+                echo '<div id="form_new_payment" class="accordion-body collapse in">
       			<div class="accordion-inner">';
                  ?>
                 <div style="margin-bottom:25px;">
@@ -161,7 +165,7 @@
                 </div>
 
 	<?php
-        echo '</div></div><br/>'; // end body
+        echo '</div></div>'; // end body
 		echo '</div>';// end accordion-group
 		/** END CONTACT **/
                 
@@ -170,21 +174,23 @@
                 echo '<div class="accordion-group">';
 		
 		// heading
-		echo '<div class="accordion-heading">';
-		echo '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-basic-info-collapse">';
-                echo YII::t('lang','Salary Components');
-                echo  '</a></div>'; // end heading
-                
-                echo '<div id="form-new-customer-basic-info-collapse" class="accordion-body collapse in">
+		
+                echo '<div class="accordion-heading" id="new_salary">
+                      <a class="accordion-toggle" data-toggle="collapse"  href="#form_view_salary">
+                      <i></i>
+                      <span style="color: #6E8900;font-size: 14px; font-weight: bold">Salary Components</span>
+                      </a>
+                    </div>';
+                echo '<div id="form_view_salary" class="accordion-body collapse in">
       			<div class="accordion-inner">';
 
                 
-		echo '<table id="table_salary" class="items table table-bordered">';
-                echo '<thead><tr>';
-                echo '<th>#</th>';
-                echo '<th>Salary Name</th>';
-                echo '<th>Salary Amount</th>';
-                echo '</tr></thead>';
+		echo '<table id="table_salary" class="items table">';
+//                echo '<thead><tr>';
+//                echo '<th>#</th>';
+//                echo '<th>Salary Name</th>';
+//                echo '<th>Salary Amount</th>';
+//                echo '</tr></thead>';
                 echo '<tbody>';
                 $total_salary=0;
                 if(count($test) > 0)
@@ -198,7 +204,7 @@
                         echo '<td><a href="'.$this->createAbsoluteUrl('AjaxDeleteItem',array('id'=>$data->lb_record_primary_key,'employee_id'=>$model->lb_record_primary_key)).'"><i class="icon-trash"></i></a></td>';
                     //    echo '<td>'.'<select name="salary_name[]" id="salary_name">'.$data->salary_name.$option_salary.'</select>'.'</td>';
                         echo '<td>'.$form->dropDownList($data,'salary_name',$option_salary_update,array('empty'=>$data->salary_name,'name'=>'salary_name[]')).'</td>';
-                        echo '<td>'.$form->textField($data,'salary_amount',array('name'=>'salary_amount[]')).'</td>';
+                        echo '<td>'.$form->textField($data,'salary_amount',array('name'=>'salary_amount[]'),array('style'=>"margin-left:29px;placeholder:test")).'</td>';
                         echo '<td hidden="true">'.$form->textField($data,'lb_record_primary_key',array('name'=>'lb_record_primary_key[]')).'</td>';
 
                         echo '</tr>';
@@ -238,20 +244,24 @@
                 echo '<div class="accordion-group">';
 		
 		// heading
-		echo '<div class="accordion-heading">';
-		echo '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-basic-info-collapse">';
-                echo YII::t('lang','Benefits');
-                echo  '</a></div>'; // end heading
-                 
-                echo '<div id="form-new-customer-basic-info-collapse" class="accordion-body collapse in">
+		echo '<div class="accordion-heading" id="new_benefit">
+                      <a class="accordion-toggle" data-toggle="collapse"  href="#form_view_benefit">
+                      <i></i>
+                      <span style="color: #6E8900;font-size: 14px; font-weight: bold">Benefits</span>
+                      </a>
+                    </div>';
+                echo '<div class="accordion-heading">';
+               
+                echo '</div>'; 
+                echo '<div id="form_view_benefit" class="accordion-body collapse in">
       		<div class="accordion-inner">';
-                echo '<table id="table_benefits" class="items table table-bordered">';
-                echo '<thead><tr>';
-                
-                echo '<th></th>';
-                echo '<th>Benefits Name</th>';
-                echo '<th>Benefits Amount</th>';
-                echo '</tr></thead>';
+                echo '<table id="table_benefits" class="items table" >';
+//                echo '<thead><tr>';
+//                
+//                echo '<th></th>';
+//                echo '<th>Benefits Name</th>';
+//                echo '<th>Benefits Amount</th>';
+//                echo '</tr></thead>';
                 echo '<tbody>';
                 $total_benefit = 0;
                 if(count($benefit) > 0)
@@ -338,7 +348,7 @@
 <div class="form-actions">
 		<?php
 		echo '<button class="btn btn-success" >Save</button>&nbsp&nbsp';
-                echo ' <button style="border-radius:4px;border-width:1px;padding:4px 12px;" class="ui-button ui-state-default ui-corner-all" target="_blank" onclick="printPDF_SalaryEmployee(); return false;">Print PDF</button>';
+            //    echo ' <button style="border-radius:4px;border-width:1px;padding:4px 12px;" class="ui-button ui-state-default ui-corner-all" target="_blank" onclick="printPDF_SalaryEmployee(); return false;">Print PDF</button>';
                 //echo ' <button style="border-radius:4px;border-width:1px;padding:4px 12px;" class="ui-button ui-state-default ui-corner-all" target="_blank" onclick="Make_Payment(); return false;">New Payment</button>';
                 
 		?>
@@ -362,10 +372,48 @@ echo '<br />';
 {
     width:40%;float:right;
 }
+.accordion-heading
+{
+    background-color: #f5f5f5;
+}
 </style>
 
 <script>
     var tax_id=$('#tax_id').val();
+    $('#new_payment i').addClass('icon-minus-sign');
+    $('#view_payment i').addClass('icon-plus-sign');
+    $('#form_new_payment').on('show', function () {
+        $('#new_payment i').removeClass();
+        $('#new_payment i').addClass('icon-minus-sign');
+    });
+    $('#form_new_payment').on('hidden', function () {
+        $('#new_payment i').removeClass();
+        $('#new_payment i').addClass('icon-plus-sign');
+    });
+    
+    $('#new_salary i').addClass('icon-minus-sign');
+    $('#new_salary i').addClass('icon-plus-sign');
+    $('#form_view_salary').on('show', function () {
+        $('#new_salary i').removeClass();
+        $('#new_salary i').addClass('icon-minus-sign');
+    });
+    $('#form_view_salary').on('hidden', function () {
+        $('#new_salary i').removeClass();
+        $('#new_salary i').addClass('icon-plus-sign');
+    });
+    
+    $('#new_benefit i').addClass('icon-minus-sign');
+    $('#new_benefit i').addClass('icon-plus-sign');
+    $('#form_view_benefit').on('show', function () {
+        $('#new_benefit i').removeClass();
+        $('#new_benefit i').addClass('icon-minus-sign');
+    });
+    $('#form_view_benefit').on('hidden', function () {
+        $('#new_benefit i').removeClass();
+        $('#new_benefit i').addClass('icon-plus-sign');
+    });
+
+    
     $("#view_comment").load("<?php echo LbComment::model()->getActionURLNormalized('index',array('id_item'=>$employee_id,'model_name'=>'lbEmployee'));?>");
 
     $(document).ready(function(){

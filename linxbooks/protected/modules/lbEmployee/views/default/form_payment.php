@@ -8,12 +8,15 @@ $canListQuotation = BasicPermission::model()->checkModules('lbQuotation', 'list'
 $canAddPayment = BasicPermission::model()->checkModules('lbPayment', 'add');
 $canView = BasicPermission::model()->checkModules($m, 'view');
 
-$model = new LbEmployee();
+
+$employee_id = isset($_GET['employee_id']) ? $_GET['employee_id'] : 0;
+$employee = LbEmployee::model()->getInfoEmployee($employee_id);
+$create_by = AccountProfile::model()->getFullName(Yii::app()->user->id);
 echo '<div id="lb-container-header">';
             
-            echo '<div style="margin-left: -10px" class="lb-header-right"><h4>Employees</h4></div>';
+            echo '<div style="margin-left: -10px" class="lb-header-right"><h4>Employees:'.$employee->employee_name.'</h4></div>';
             echo '<div class="lb-header-left">';
-//            LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
+            LBApplicationUI::backButton(LbEmployee::model()->getActionURLNormalized('View',array('id'=>$employee_id)));
 
 
             echo '&nbsp;';
@@ -31,40 +34,23 @@ echo '<div id="lb-container-header">';
 echo '</div><br>';
 ?>
 <div class="panel">
-    <div style="margin-top: 10px;" class="panel-header-title">
-        <div class="panel-header-title-left">
-            <span style="font-size: 16px;"><b><?php echo Yii::t('lang','Enter Payment'); ?></b></span>
-        </div>
-        <div class="panel-header-title-right" style="margin-left:-54px;margin-top:-8px;">
-            <?php if($canAdd){ ?>
-                <a href="<?php echo $model->getCreateURLNormalized(array('group'=>strtolower(LbInvoice::LB_INVOICE_GROUP_INVOICE))); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Employee'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            <?php } ?>
-            <?php if($canAddPayment) { ?>
-                <a href="<?php echo Yii::app()->createAbsoluteUrl('lbPayment/default/create'); ?>"><img width="16" src="<?php echo Yii::app()->baseUrl.'/images/icons/dolar.png' ?>" /> <?php echo Yii::t('lang','Enter Payment'); ?></a>
-            <?php } ?>
-        </div>
-        <div style="float:right;margin-bottom:5px; ">
-            <input type="text" placeholder="Search" value="" style="border-radius: 15px;" id="name" onKeyup="search_payment(this.value);">
-        </div>
-    </div>
+    
     
 <?php
 echo '<div align="right" >
     <span>Paid For Month:</span>
     <input style="margin-left:72px;margin-top:6px;" type="text" id="paidForDate" class="text" value="'.date('m-Y').'"/>
 </div>';
-$employee_id = isset($_GET['employee_id']) ? $_GET['employee_id'] : 0;
-$employee = LbEmployee::model()->getInfoEmployee($employee_id);
-$create_by = AccountProfile::model()->getFullName(Yii::app()->user->id);
+
 echo '<div id="show_enter_pay">';
 $date_now = date('Y-m-d');
-
+$date = date('m-Y');
 $month_default= date('m', strtotime($date_now)); 
 $year_default=  date('Y',strtotime($date_now));
 
 $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_expenses_gridview',
-            'dataProvider'=>  $model->search(),
+            'dataProvider'=>  $model,
             'type'=>'striped bordered condensed',
             //'template' => "{items}",
             'columns'=>array(
@@ -127,7 +113,7 @@ echo '<div style="text-align: center" class="control-group">
     var data_post = new Array();
     var arr_date= new Object();
     var i = 0;
-    var data_payment = new Array();
+
     $(function () {
             $('#paidForDate').datepicker({
                
@@ -146,17 +132,15 @@ echo '<div style="text-align: center" class="control-group">
                     $(this).datepicker('setDate', new Date(year, month, 1));
                 }
             }).on('changeDate', function(ev) {
-                var name_value = $('#name').val();
-                search_payment(name_value);
+               // var name_value = $('#name').val();
+                search_payment();
             });
             
     });
-    function search_payment(name)
+    function search_payment()
     {
-        var date_value = $('#paidForDate').val();
-        name = replaceAll(name," ", "%");
-        $('#show_enter_pay').load('<?php echo $this->createUrl('/lbEmployee/default/_search_Payment');?>?name='+name+'&date='+date_value+'&type=payment');
-     
+        var date = $('#paidForDate').val();         
+        $('#show_enter_pay').load('<?php echo $this->createUrl('/lbEmployee/default/_search_Payment');?>?employee_id=<?php echo $employee_id ;?>&date='+date+'&type=payment');
     }
     function replaceAll(string, find, replace) {
       return string.replace(new RegExp(escapeRegExp(find), 'g'), replace);
@@ -166,10 +150,10 @@ echo '<div style="text-align: center" class="control-group">
     }
     
     function addData(id)
-    {          
-        data_post.push(id);
-         var payment_paid_arr = new Array();
-    //     var payment_id_arr = new Array();
+    {
+        
+         data_post.push(id);
+         var payment_paid_arr = new Array();    
         var check_item = 0;
         for (i = 0; i < data_post.length; i++) {        
             var j = data_post[i];
@@ -182,54 +166,13 @@ echo '<div style="text-align: center" class="control-group">
             alert("Please enter Paid must is number");
             return;
         }
-//        var last = data_post[data_post.length - 1];
-//        for( k = 0; k < data_post.length; k++){
-//            var e = data_post[k];
-//            if(e !== last){               
-//                data_post.splice(k,1);  
-//               // payment_id_arr = data_post.splice(k,1);                           
-//            }
-//        }
-//        console.warn(last);
-//        console.warn(data_post);
-//     //   console.warn(payment_id_arr);
+      
+       
     }
-     function removeArray(data_post){
-          for( k = 0; k < data_post.length; k++){    
-            for(var i = k+1; i<=data_post.length-1; i++){
-                if(data_post[k]===data_post[i]){
-                   data_post.splice(i,1);                
-                    break;
-                }
-            }
-        }
-        return data_post;
-    }
-    var id_arr = new Array();
+    
     function save_payment_employee()
-    {
-         id_arr = removeArray(data_post);
-      //  console.warn(id_arr);
-     //   return false;
-        var datePaid='01-'+$('#paidForDate').val();     
-        for (i = 0; i < id_arr.length; i++) {        
-            var j = id_arr[i];           
-            data_payment[i]={employee_id:j,
-                             payment_paid:$('#paid_'+j).val(),
-                             payment_note:$('#note_'+j).val()
-                            };
-        }
-         $.ajax({
-            type: 'POST',
-            url: '<?php echo LbEmployee::model()->getActionURLNormalized('Payment', array()) ?>',
-            data: {LbEmployeePayment: data_payment, datePaid: datePaid},
-            success: function (data) {
-
-                alert("Success payment!");
-                location.reload(true);
-            }
-        });
-/*     //   alert(len);
+    {   
+        var datePaid='01-'+$('#paidForDate').val();
         for(i=1; i<=data_post.length; i++){
             var j = data_post[i-1];
             var data_payment = new Array();
@@ -239,20 +182,21 @@ echo '<div style="text-align: center" class="control-group">
             data_payment[j] = arr_date;
         $.ajax({
             type:'POST',
-            url:'',
+            url:'<?php echo LbEmployee::model()->getActionURLNormalized('Payment',array()) ?>',
             data:{LbEmployeePayment:data_payment,datePaid:datePaid},
             success:function(data){
-                                              
+                alert("Success payment!");
+                $('#show_enter_pay').load('<?php echo $this->createUrl('/lbEmployee/default/_search_Payment');?>?employee_id=<?php echo $employee_id ;?>&date=<?php echo $date;?>&type=payment');                              
             }
         });
         }
-        alert("Success payment!");
-        location.reload(true);   */
+
+       
     }
     function printPDF_EnterPayment(){
         var month_year = $('#paidForDate').val();
-        var employee_name = $('#name').val();
+     //   var employee_name = $('#name').val();
        
-        window.open('printPDF_EnterPayment?month_year='+month_year+'&employee_name='+employee_name+'','_target');
+        window.open('printPDF_EnterPayment?month_year='+month_year+'&employee_name=<?php echo $employee->employee_name;?>','_target');
     }
 </script>

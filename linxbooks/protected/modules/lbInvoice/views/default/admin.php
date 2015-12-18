@@ -77,17 +77,20 @@ $this->widget('bootstrap.widgets.TbGridView', array(
                 $data->customer ? $data->getViewURL($data->customer->lb_customer_name) : $data->getViewURL("No customer"))',
             'htmlOptions'=>array('width'=>'100'),
             'headerHtmlOptions'=>array('width'=>'100'),
-            'filter' => CHtml::activeTextField($model, 'lb_invoice_no', array('class' => 'input-mini')),
+            'filter' => CHtml::activeTextField($model, 'lb_invoice_no', array('class' => 'input-mini','style'=>'width:80%')),
         ),
 		array(
-                    'name'=>'lb_invoice_customer_id',
+                //    'name'=>'customer.lb_customer_name',
+                        'name'=>'lb_invoice_customer_id',
                                 'type'=>'raw',
                                 'value'=>'
                                         ($data->customer ?
                                                 LBApplication::workspaceLink( $data->customer->lb_customer_name, $data->getViewURL($data->customer->lb_customer_name) )
                                                 :LBApplication::workspaceLink("No customer", $data->getViewURL("No customer") )
                                         )."<br><span style=\'color:#666;\'>". $data->lb_invoice_subject."</span>"
-                                        '
+                                        ',
+                        'filter'=>  CHtml::listData(LbInvoice::model()->with('customer')->findAll(), 'lb_invoice_customer_id', 'customer.lb_customer_name'),                
+                    //    'filter'=>  CHtml::activeTextField(LbInvoice::model()->with('customer')->findAll(), 'lb_invoice_customer_id', 'customer.lb_customer_name'),                
 		),
                 array(
                     'name'=>'lb_invoice_date',

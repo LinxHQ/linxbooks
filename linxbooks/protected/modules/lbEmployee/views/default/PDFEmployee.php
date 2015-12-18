@@ -14,9 +14,9 @@ $PDFEmployee = '<table border="0" style="margin:auto; width:100%;" cellpadding="
             </table>
           </td></tr>'
         .'</table>   
-         <table border="0" style="margin-left:30px;margin-top:50px; width:100%" class="items table table-bordered">';
+         <table border="1" style="width:100%;margin-top:20px;margin-left:10px;" cellpadding="0" cellspacing="0">';
                     $PDFEmployee.='<thead>        
-                            <tr>
+                            <tr style="font-weight:bold;" align="center">
                                 <th width="120" class="lb-grid-header">'.Yii::t('lang','Name').'</th>
                                 <th width="100" class="lb-grid-header">'.Yii::t('lang','Birthday').'</th>
                                 <th width="100" class="lb-grid-header">'.Yii::t('lang','Phone').'</th>
@@ -33,9 +33,9 @@ $PDFEmployee = '<table border="0" style="margin:auto; width:100%;" cellpadding="
                             $totalSalary = number_format($salary-$benefit,2);
                             $PDFEmployee.='<tr>';
                             $PDFEmployee.='<td>'.$model[$key]['employee_name'].'</td>';
-                            $PDFEmployee.='<td>'.date('d/M/Y',  strtotime($model[$key]['employee_birthday'])).'</td>';
-                            $PDFEmployee.='<td>'.$model[$key]['employee_phone_1'].'</td>';
-                            $PDFEmployee.='<td style="float:left;">'.$totalSalary.'</td>';
+                            $PDFEmployee.='<td align="center">'.date('d/M/Y',  strtotime($model[$key]['employee_birthday'])).'</td>';
+                            $PDFEmployee.='<td aligm="center">'.$model[$key]['employee_phone_1'].'</td>';
+                            $PDFEmployee.='<td align="right">'.$totalSalary.'</td>';
                             $PDFEmployee.='<td>'.$model[$key]['employee_email_1'].'</td>';                               
                             $PDFEmployee.='<td>'.$model[$key]['employee_address'].'</td>';
                             $PDFEmployee.='</tr> ';

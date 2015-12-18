@@ -58,6 +58,7 @@ $this->widget('bootstrap.widgets.TbGridView',  array(
 				)."<br><span style=\'color:#666;\'>". $data->lb_quotation_subject."</span>"',
                          'htmlOptions'=>array('width'=>'250'),
                         'headerHtmlOptions'=>array('width'=>'300'),
+                        'filter'=>  CHtml::listData(LbQuotation::model()->with('customer')->findAll(), 'lb_quotation_customer_id', 'customer.lb_customer_name'),                
                    ),
                     array(
                         'name'=>'lb_quotation_date',

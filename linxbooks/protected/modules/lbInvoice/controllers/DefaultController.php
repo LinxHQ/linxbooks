@@ -929,8 +929,8 @@ class DefaultController extends CLBController
 	{
 		$model=new LbInvoice('search');
 		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Modules']))
-			$model->attributes=$_GET['Modules'];
+		if(isset($_GET['LbInvoice']))
+			$model->attributes=$_GET['LbInvoice'];
                 if(isset($_GET['status_id']))
                     $model->lb_invoice_status_code = $_GET['status_id'];
 
@@ -939,7 +939,7 @@ class DefaultController extends CLBController
                         'status_id'=>$model->lb_invoice_status_code,
 		));
 	}
-
+        
     /**
      * Quick create customer from a modal form
      * over invoice main page
