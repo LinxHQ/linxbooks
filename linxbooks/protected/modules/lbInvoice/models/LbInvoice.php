@@ -715,5 +715,34 @@ class LbInvoice extends LbInvoiceGeneric
         }
         return $quotation_id;
     }
-    
+     public function getInvoiceByStatusAndYear($status, $year = false){
+        $criteria = new CDbCriteria();
+        $criteria->condition = 'lb_invoice_status_code IN '.$status;
+        if($year){
+            $criteria->condition = 'lb_invoice_status_code IN'.$status.'AND YEAR(lb_invoice_date) = "'.$year.'"';
+        }
+        return LbInvoice::model()->findAll($criteria);
+        
+    }
+	 public function totalInvoiceYearToDateRevenue($status,$year = false){
+        $data = $this->getInvoiceByStatusAndYear($status, $year);
+        $totalAmount = 0;
+        foreach ($data as $value) {
+             $totalModel = LbInvoiceTotal::model()->find('lb_invoice_id='.intval($value['lb_record_primary_key']));
+            if(count($totalModel)>0)
+                $totalAmount+=$totalModel->lb_invoice_total_after_taxes;
+        //    $totalAmount+=$value->lb_invoice_total_after_taxes;
+        }        
+        return $totalAmount;
+    }
+	public function totalInvoiceOutstanding($status, $year = false){
+        $data = $this->getInvoiceByStatusAndYear($status, $year);
+        $totalAmount = 0;
+        foreach ($data as $value){
+             $totalModel = LbInvoiceTotal::model()->find('lb_invoice_id='.intval($value['lb_record_primary_key']));
+            if(count($totalModel)>0)
+                $totalAmount+=$totalModel->lb_invoice_total_outstanding;
+        }
+        return $totalAmount;
+    }
 }
