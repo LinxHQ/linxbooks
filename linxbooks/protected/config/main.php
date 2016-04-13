@@ -1,7 +1,5 @@
 <?php
 @ob_start();
-@session_start();
-
 // uncomment the following to define a path alias
 // Yii::setPathOfAlias('local','path/to/local-folder');
 Yii::setPathOfAlias('editable', dirname(__FILE__).'/../extensions/x-editable');

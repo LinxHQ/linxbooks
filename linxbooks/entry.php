@@ -21,6 +21,8 @@
     The full text of the GPL is in the COPYING file.
  */
 
+require_once __DIR__ . '/protected/vendor/autoload.php';
+
 $location = dirname(__FILE__).'/protected/config/db.php';
 $lines = file($location);
 if(count($lines) > 0)
@@ -30,7 +32,6 @@ if(count($lines) > 0)
     ini_set('display_startup_errors', TRUE);
 
     // change the following paths if necessary
-    $yii=dirname(__FILE__).'/framework/yii.php';
     $config=dirname(__FILE__).'/protected/config/main.php';
 
 
@@ -38,13 +39,13 @@ if(count($lines) > 0)
     defined('YII_DEBUG') or define('YII_DEBUG',true);
     // specify how many levels of call stack should be shown in each log message
     defined('YII_TRACE_LEVEL') or define('YII_TRACE_LEVEL',3);
+    
 
-    require_once($yii);
     Yii::createWebApplication($config)->run();
 }
 
 else {
-    header('Location: '.curPageURL().'install.php');
+    header('Location: /install.php');
 
 }
 
