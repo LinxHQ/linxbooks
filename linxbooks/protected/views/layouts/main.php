@@ -49,7 +49,7 @@
 			),
 		));**/ 
 
-		$this->widget('ext.ajaxmenu.AjaxMenu',array(
+		$this->widget('zii.widgets.CMenu',array(
 			'items'=>array(
 				array('label'=>'Home', 'url'=>array('/site/index')
 					, 'ajax' => false),
@@ -61,8 +61,8 @@
 				//array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
 				//array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest),
 			),
-			'optionalIndex' => true,
-			'randomID'=>true,
+//			'optionalIndex' => true,
+//			'randomID'=>true,
 		));
 		?>
 	</div><!-- mainmenu -->

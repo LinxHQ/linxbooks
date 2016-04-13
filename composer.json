@@ -1,0 +1,23 @@
+{
+    "name": "sam-it/linxbooks",
+    "description": "Open-source accounting software (customers, invoices, quotations, bills, expenses, payrolls and reports).",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Sam Mousa",
+            "email": "sam@mousa.nl"
+        }
+    ],
+    "require": {
+        "yiisoft/yii": "1.1.14",
+        "spipu/html2pdf": "4.6.0"
+    },
+    "autoload" : {
+        "files" : [
+            "linxbooks/protected/vendor/yiisoft/yii/framework/yii.php"
+        ]
+    },
+    "config": {
+        "vendor-dir": "linxbooks/protected/vendor"
+    }
+}

@@ -1,7 +1,9 @@
 <?php
 
-// change the following paths if necessary
-$yiic=dirname(__FILE__).'/../framework/yiic.php';
-$config=dirname(__FILE__).'/config/console.php';
+require_once __DIR__ . '/vendor/autoload.php';
 
-require_once($yiic);
+$config = __DIR__ . '/config/console.php';
+
+Yii::createApplication(\CConsoleApplication::class, $config);
+Yii::app()->commandRunner->addCommands(YII_PATH.'/cli/commands');
+Yii::app()->run();
