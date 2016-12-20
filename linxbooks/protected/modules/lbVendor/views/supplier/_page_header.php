@@ -13,7 +13,7 @@
 
 echo '<div id="lb-container-header">';
             echo '<div class="lb-header-right" ><h3>Bills</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div class="lb-header-left" style="margin-top:-35px;">';
             LBApplicationUI::backButton(LbVendor::model()->getActionURLNormalized('dashboard'));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(

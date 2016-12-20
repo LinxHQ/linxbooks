@@ -35,7 +35,7 @@ $this->breadcrumbs=array(
 ?>
 <?php
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>Expenses</h4></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>Expenses</h3></div>';
             echo '<div class="lb-header-left">';
             LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
 
@@ -159,7 +159,7 @@ echo '</div><br>';
 //    echo '</div>';
     $id=$model->lb_record_primary_key;
 ?>
-    <div >
+    <div class="view_document">
         <?php $this->renderPartial('lbDocument.views.default.view',array('id'=>$model->lb_record_primary_key,'module_name'=>'lbExpenses')); ?>
 </div>
 <?php

@@ -113,7 +113,8 @@ class AccountProfile extends CActiveRecord
 		if (count($result))
 		{
 			$profiles = $result->getData();
-			return $profiles[0];
+                        if(count($profiles))
+                            return $profiles[0];
 		}
 		
 		return new AccountProfile();

@@ -33,7 +33,7 @@
 		<?php echo $form->textAreaRow($model,'lb_customer_address_note',array('size'=>60,'maxlength'=>255,'class'=>'span6','rows'=>'4')); ?>
 		<?php echo $form->dropDownListRow($model,'lb_customer_address_is_active', LbCustomerAddress::$dropdownActive); ?>
 
-        <div class="form-actions">
+        <div style="padding-left: 200px;">
                         <?php
                         LBApplicationUI::submitButton('Save');
                         ?>

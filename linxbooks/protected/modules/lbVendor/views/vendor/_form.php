@@ -27,7 +27,7 @@ echo '<div id="container-invoice-customer-info" style="padding-top: 20px;clear: 
 // customer name
 echo '<div id="container-invoice-customer-name">';
 echo '<div class="field-label-left">'.Yii::t('lang','To').':</div>';
-echo '<div class="field-value-left">';
+echo '<div class="field-value-left lb_info_bill">';
 $this->widget('editable.EditableField', array(
         'type'      => 'select',
         'model'     => $model,
@@ -79,7 +79,7 @@ echo '</div>'; // end customer name
 // customer address
 echo '<div id="container-invoice-customer-address">';
 echo '<div class="field-label-left">'.Yii::t('lang','Billing Address').':</div>';
-echo '<div class="field-value-left">';
+echo '<div class="field-value-left lb_info_bill">';
 $this->widget('editable.EditableField', array(
 		'type'      => 'select',
 		'model'     => $model,
@@ -122,7 +122,7 @@ echo '</div>'; // end customer address
 
 echo '<div id="container-invoice-customer-attention">';
 echo '<div class="field-label-left">'.Yii::t('lang','Attention').':</div>';
-echo '<div class="field-value-left">';
+echo '<div class="field-value-left lb_info_bill">';
 $this->widget('editable.EditableField', array(
     'type'      => 'select',
     'model'     => $model,
@@ -178,7 +178,7 @@ echo '<div class="field-label-left">'.Yii::t('lang','Category').':</div>';
             ),
             'htmlOptions'=>array(
                 'id'=>'LbInvoice_invoice_attention_contact_id_'.$model->lb_record_primary_key,
-                'class'=>'editable editable-click editable-empty'
+                'class'=>'editable editable-click editable-empty lb_info_bill'
             ),
             'onShown' => 'js: function() {
                     var $tip = $(this).data("editableContainer").tip();
@@ -213,7 +213,7 @@ echo '<br />';
             'url'         => $model->getActionURLNormalized('ajaxUpdateField'),
             'placement'   => 'right',
             //'showbuttons' => 'bottom',
-            'htmlOptions' => array('style'=>'text-decoration: none; border-bottom: none; color: #777'),
+            'htmlOptions' => array('class'=>'lb_edit_table'),
             'options'	=> array(
             ),
         ));

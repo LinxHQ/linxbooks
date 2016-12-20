@@ -1,10 +1,19 @@
 <?php 
 //$module_name = $_REQUEST['module_name'];
 
-?>
- <h4><?php echo Yii::t('lang','Document'); ?></h4>
-    <?php
-        $this->widget('bootstrap.widgets.TbGridView',array(
+
+ echo '<div id="container-invoice-internal-note"
+    style="display: block; clear: both; padding-top: -9px; width: 100%;" class="">';
+echo '<table style="width:100%;">'
+.' <thead>
+    <tr>
+		<th class="lb-grid-header headerDocument" >'.Yii::t('lang','Attachment').'</th>
+		</tr>
+	</thead>';
+echo '</table>';
+//echo '<tr><td>';
+echo '<div>';
+     $this->widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb-expenses-documnet_grid',
             'dataProvider'=> LbDocument::model()->getDocumentParentTypeProvider($module_name, $id),
             'template'=>'{items}',
@@ -28,12 +37,7 @@
                 ),
             ),
         ));
-    ?>
-    <div>
-        <!--<div class="qq-upload-button" style="position: relative; overflow: hidden; direction: ltr;">Upload a file<input type="file" name="file" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0;"></div>-->
-            <?php
-//            if($canEdit)
-                $this->widget('ext.EAjaxUpload.EAjaxUpload',
+      $this->widget('ext.EAjaxUpload.EAjaxUpload',
                     array(
                         'id'=>'uploadFile1',
                         'config'=>array(
@@ -49,6 +53,18 @@
                                    }",
                               )
                 )); 
+//echo '</td></tr></tbody></table>';
+echo '</div>';
+echo '</div>';// end note div
+
+    
+       
+    ?>
+    <div>
+        <!--<div class="qq-upload-button" style="position: relative; overflow: hidden; direction: ltr;">Upload a file<input type="file" name="file" style="position: absolute; right: 0px; top: 0px; font-family: Arial; font-size: 118px; margin: 0px; padding: 0px; cursor: pointer; opacity: 0;"></div>-->
+            <?php
+//            if($canEdit)
+               
             ?>
     </div>
  
@@ -64,7 +80,13 @@
      #view_document #uploadFile1 .qq-uploader .qq-upload-button
      {
        margin-left: -456px;
-
+     }
+	 .headerDocument{
+         font-size: 18px;
+         height: 35px;
+         padding-left: 10px;
+         text-align: left;
+          border-radius: 2px;
      }
  </style>
 

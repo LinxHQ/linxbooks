@@ -18,6 +18,7 @@ foreach ($modelMod as $modelModItem) {
 <?php
     $this->widget('bootstrap.widgets.TbGridView',array(
         'id'=>'lb-module-grid',
+        'template' => "{items}\n{pager}\n{summary}",
         'dataProvider'=>$model->search(),
         'columns'=>array(
             array(
@@ -57,7 +58,7 @@ foreach ($modelMod as $modelModItem) {
         ),
     ));
 ?>
-
+<br />
 <h3><?php echo Yii::t('lang', 'Modules Deactivate'); ?></h3>
 <table class="items table table-striped">
     <thead>

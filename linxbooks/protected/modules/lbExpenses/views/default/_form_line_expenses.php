@@ -17,7 +17,8 @@ if(isset($_REQUEST['id']))
 //print_r(LbExpenses::model()->getExpensesByPk(4));
 $this->widget('bootstrap.widgets.TbGridView', array(
 		'id' => 'payment_invoice_grid',
-        'type'=>'bordered',
+        //         'htmlOptions'=>array('class'=>'items table table-bordered'),
+       // 'type'=>'bordered',
 		'dataProvider' => $model->listPV($id),
 		'columns' => array(
 				

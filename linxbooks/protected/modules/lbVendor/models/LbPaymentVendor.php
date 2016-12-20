@@ -213,7 +213,32 @@ class LbPaymentVendor extends CLBActiveRecord
             $total += $data->lb_payment_vendor_total;
         return $total;
     }
-    
+    public function getTotalPaymentPrev($financial_year = false, $financial_prev_year = false){
+        $criteria = new CDbCriteria();
+        if($financial_prev_year)
+            $criteria->addCondition("lb_payment_vendor_date >= '".$financial_prev_year."'", "AND");
+        if($financial_year)
+            $criteria->addCondition ("lb_payment_vendor_date < '".$financial_year."'", "AND");
+        $Payment_all = $this->findAll($criteria);
+        $totalPayment = 0;
+        foreach ($Payment_all as $row) {
+            $totalPayment+=$row['lb_payment_vendor_total'];
+        }
+        return $totalPayment;
+    }
+    public function getTotalPaymentNext($financial_year = false, $financial_next_year = false){
+        $criteria = new CDbCriteria();       
+        if($financial_year)
+            $criteria->addCondition ("lb_payment_vendor_date >= '".$financial_year."'", "AND");
+        if($financial_next_year)
+            $criteria->addCondition("lb_payment_vendor_date < '".$financial_next_year."'", "AND");
+        $AllPayment = $this->findAll($criteria);
+        $totalPaymentNext = 0;
+        foreach ($AllPayment as $row) {
+            $totalPaymentNext+=$row['lb_payment_vendor_total'];
+        }
+        return $totalPaymentNext;
+    }
     
     
 }

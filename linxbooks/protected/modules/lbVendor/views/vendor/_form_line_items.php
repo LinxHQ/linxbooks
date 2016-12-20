@@ -60,7 +60,7 @@ $modelTotal = LbVendorTotal::model()->getVendorTotal($model->lb_record_primary_k
 $grid_id = 'invoice-line-items-grid-'.$model->lb_record_primary_key;
 $this->widget('bootstrap.widgets.TbGridView', array(
 		'id' => $grid_id,
-                'type'=>'bordered',
+          //      'type'=>'bordered',
 		'dataProvider' => $modelItemVendor->getItemByVendor($model->lb_record_primary_key, LbVendorItem::LB_VENDOR_ITEM_TYPE_LINE),
 		'columns' => array(
 				array(
@@ -509,7 +509,7 @@ echo '<div id="container-invoice-note-'.$model->lb_record_primary_key.'"
         'url'         => $model->getActionURLNormalized('ajaxUpdateField'),
         'placement'   => 'right',
         //'showbuttons' => 'bottom',
-        'htmlOptions' => array('style'=>'text-decoration: none; border-bottom: none; color: #777'),
+        'htmlOptions' => array('class'=>'lb_edit_table'),
         'options'	=> array(
         ),
         'onShown'=> 'js:function(){

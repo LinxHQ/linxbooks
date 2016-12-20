@@ -246,4 +246,20 @@ class LbCustomer extends CLBActiveRecord
             
             return $this->getResultsBasedForReturnType($dataProvider, $return_type);
         }
+    public function searchCustomer($search_name,$page=10,$user_id=false)
+    {
+        $criteria=new CDbCriteria();    
+        $criteria->select='t.*,';
+        $criteria->select .='i.lb_customer_address_line_1, i.lb_customer_address_line_2';
+        
+        $criteria->join='LEFT JOIN lb_customer_addresses i ON t.lb_record_primary_key = i.lb_customer_id';
+            $criteria->condition .= ' lb_customer_name LIKE "%'.$search_name.'%" OR i.lb_customer_address_line_1 LIKE "%'.$search_name.'%" OR i.lb_customer_address_line_2 LIKE "%'.$search_name.'%"';
+      //  $search_name = $_REQUEST['search_name'];      
+       //$criteria->condition .= ' lb_customer_name LIKE "%'.$search_name.'%" OR lb_customer_registration LIKE "%'.$search_name.'%"';
+        $dataProvider = new CActiveDataProvider($this,array('criteria'=>$criteria),$page,$user_id);
+        return $dataProvider;
+
+    }
+   
+    
 }

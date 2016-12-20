@@ -4,63 +4,7 @@
 
     $date = date('Y');?>
 
-    <div class="col-lg-4" style="float:right;">
-        <div class="panel-header"><?php echo Yii::t('lang','All Time Revenue'); ?></div>
-        <div class="panel-body">
-            <div class="info_title">
-                2010 - <?php echo date('Y');?>
-            </div>
-            <div class="info_content">
-                <?php
-                    $status = '("'.LbInvoice::LB_INVOICE_STATUS_CODE_OPEN.'","'.LbInvoice::LB_INVOICE_STATUS_CODE_OVERDUE.'","'.LbInvoice::LB_INVOICE_STATUS_CODE_PAID.'")';
-                    echo LbInvoice::CURRENCY_SYMBOL.number_format($model->calculateInvoiceTotalAmount($status),2);
-				//	echo LbInvoice::CURRENCY_SYMBOL.number_format($model->totalInvoiceYearToDateRevenue($status),2);
-                ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4" style="float:right;">
-        <div class="panel-header"><?php echo Yii::t('lang','Year To Date Revenue'); ?></div>
-        <div class="panel-body">
-            <div class="info_title">
-                <?php echo $year = date('Y');?>
-            </div>
-            <div class="info_content">
-                <?php //
-                    $status = '("'.LbInvoice::LB_INVOICE_STATUS_CODE_OPEN.'","'.LbInvoice::LB_INVOICE_STATUS_CODE_OVERDUE.'","'.LbInvoice::LB_INVOICE_STATUS_CODE_PAID.'")';
-                    echo LbInvoice::CURRENCY_SYMBOL.number_format($model->calculateInvoiceTotalAmount($status,$year),2); 
-                //     echo LbInvoice::CURRENCY_SYMBOL.number_format($model->totalInvoiceYearToDateRevenue($status,$year),2);
-                ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4" style="float:right;">
-        <div class="panel-header"><?php echo Yii::t('lang','Cash Collected'); ?></div>
-        <div class="panel-body">
-            <div class="info_title">
-                <?php echo date('Y');?>
-            </div>
-            <div class="info_content">
-                <?php echo LbInvoice::CURRENCY_SYMBOL.number_format($model->calculateInvoiceTotalPaymentByYear(),2); ?>
-            </div>
-        </div>
-    </div>
-    <div class="col-lg-4" style="float:right;">
-        <div class="panel-header"><?php echo Yii::t('lang','Outstanding'); ?></div>
-        <div class="panel-body">
-            <div class="info_title">
-                <?php echo '<br/>';?>
-            </div>
-            <div class="info_content strong">
-                <?php
-                    $status = '("'.LbInvoice::LB_INVOICE_STATUS_CODE_OPEN.'","'.LbInvoice::LB_INVOICE_STATUS_CODE_OVERDUE.'")'; 
-                    echo LbInvoice::CURRENCY_SYMBOL.number_format($model->calculateInvoiceTotalOutstanding($status,false),2);
-				//	echo LbInvoice::CURRENCY_SYMBOL.number_format($model->totalInvoiceOutstanding($status,false),2);
-                ?>
-            </div>
-        </div>
-    </div>
-     <div class="panel-header-title" style="padding-top:124px;">
+     <div class="panel-header-title" style="padding-top:51px;">
             <div class="panel-header-title-right">
                 <button class="btn" id="btn_year_<?php echo $date-2; ?>" onclick="chart_expenditures(<?php echo $date-2;?>);"><?php echo $date-2 ?></button>
                 <button class="btn" id="btn_year_<?php echo $date-1;?>" onclick="chart_expenditures(<?php echo $date-1;?>);"><?php echo $date-1 ?></button>

@@ -11,7 +11,7 @@ $canView = BasicPermission::model()->checkModules($m, 'view');
 $model = new LbEmployee();
 echo '<div id="lb-container-header">';
             
-            echo '<div style="margin-left: -10px" class="lb-header-right"><h4>Employees</h4></div>';
+            echo '<div style="margin-left: -10px" class="lb-header-right"><h3>Employees</h3></div>';
             echo '<div class="lb-header-left">';
 //            LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
 
@@ -65,8 +65,9 @@ $year_default=  date('Y',strtotime($date_now));
 $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_expenses_gridview',
             'dataProvider'=>  $model->search(),
-            'type'=>'striped bordered condensed',
+          //  'type'=>'striped bordered condensed',
             //'template' => "{items}",
+            'template' => "{items}\n{pager}\n{summary}", 
             'columns'=>array(
 
                     array(

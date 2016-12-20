@@ -9,7 +9,7 @@ $canAdd = BasicPermission::model()->checkModules($m, 'add');
 
 echo '<div id="lb-container-header">';
             echo '<div class="lb-header-right" ><h3>'.Yii::t('lang','Quotation').'</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div style="margin-top: 15px;margin-right:10px;">';
             LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(
@@ -30,7 +30,7 @@ echo '<br>';
 // SEARCH
 echo '<div style="text-align:right;width:100%">';
     echo 'Status: '.CHtml::dropDownList('status_quo_id', $status_id,
-    LbQuotation::model()->getArrayStatusQuotation(), array('empty' => 'All','onchange'=>'search_quotation();return false;'));
+    LbQuotation::model()->ArrayStatusQuotation(), array('empty' => 'All','onchange'=>'search_quotation();return false;'));
 echo '</div>';
 // END SEARCH
 
@@ -38,6 +38,7 @@ echo '<div id="quotation_more_grid">';
 $this->widget('bootstrap.widgets.TbGridView',  array(
                 'id'=>'lb-quotation-grid',
                 'dataProvider'=>$model->search($canList,$status_id),
+                'template' => "{items}\n{pager}\n{summary}", 
                 'filter'=>$model,
                 'columns'=>array(
                     array(

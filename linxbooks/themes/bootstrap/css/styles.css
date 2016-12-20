@@ -142,7 +142,7 @@
 {
     font-weight: bold;
     text-align: left;
-    width: 150px;
+    width: 15px;
     display: inline-block;
     vertical-align:top;
 }
@@ -160,6 +160,7 @@
     padding-left: 20px;
     font-weight: normal;
     display: inline-block;
+    width: 90% !important;
 }
 
 .lb-side-icon
@@ -309,6 +310,29 @@ div[class="tooltip-inner"] {
     border: 1px solid #eee;
     margin: 9px;
 }
+.col-lg{
+    background-color: #f5f5f5;
+    border: 1px solid #e8e8e8;
+    float: left;
+    height: 150px;
+    margin: 9px;
+    width: 30%;
+}
+.col-lg .panel-header-summary h3{
+    color: #777;
+}
+.panel-header-summary{
+    text-align: center;
+}
+.panel-footer{
+    color: #dcdcdc; text-align: center;
+}
+.info_content_summary h1{
+    color: rgb(91,183,91);
+}
+.info_content_summary{
+    text-align: center;
+}
 .panel .info_title
 {
     color: #999999;
@@ -328,7 +352,7 @@ div[class="tooltip-inner"] {
 }
 .more
 {
- color: #007700;
+ color: rgb(91, 183, 91);
  text-decoration: underline;
 }
 .panel-header-title
@@ -388,6 +412,7 @@ div[class="tooltip-inner"] {
     font-size: 36px;
     /**font-weight: bold;**/
     font-family: 'Lobster', cursive;
+  //  background: url(../img/logo_home.npg);
 }
 
 .navbar .nav{
@@ -415,7 +440,7 @@ div[class="tooltip-inner"] {
 #lb-top-menu .navbar .nav
 {
     position: relative;
-    margin: 0 0 0 11px;
+    margin: 0 0 0 -20px;
 }
 
 #lb-top-shortcuts .navbar .brand{
@@ -423,10 +448,10 @@ div[class="tooltip-inner"] {
 }
 
 #lb-container-header{
-    background-color: #eeeeee;
+    background-color: rgb(91, 183, 91);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px 10px 0 0;
-    height: 38px;
+    height: 68px;
     margin: -20px -20px 0;
     padding: 6px 10px 0 30px;
     text-align: right;
@@ -434,16 +459,16 @@ div[class="tooltip-inner"] {
 }
 
 #lb-view-header{
-    background-color: #eeeeee;
+    //background-color: #eeeeee;
+    background-color: rgb(91, 183, 91);
     border-bottom: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: 10px 10px 0 0;
-    height: 38px;
+    height: 68px;
     margin: -10px -20px 0;
     padding: 7px 10px 4px;
     text-align: right;
     width: 100%;
 }
-
 #lb-container-header .btn-group,#lb-view-header .btn-group{
     text-align: left;
 }
@@ -454,6 +479,7 @@ div[class="tooltip-inner"] {
 
 #lb-top-menu .navbar .nav > li > a
 {
+    color: #777777 !important;
     font-size: 14px;
     /**font-weight: bold;**/
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
@@ -499,4 +525,245 @@ legend{
 .grid-header td{
     background-color: #eee;
     font-weight: bold;
+}
+#lb_dashboard_summary{
+    margin-left: 18px;
+    width: 100%;
+    height: 147px;
+    margin-top: 5px;
+}
+#lb_dashboard_submenu{
+    float: left;
+    /*margin-bottom: 10px;*/
+    margin-left: 186px;
+    margin-top: 15px;
+    width: 100%;
+    height: 142px;
+}
+#lb_dashboard_submenu .lb_submenu_left{
+    color: #dcdcdc;
+    float: left;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: 94px;
+}
+#lb_dashboard_submenu .lb_submenu_right{
+    float:right;
+/*    font-size: 16px ;
+    font-weight: bold;
+    color: #dcdcdc;*/
+}
+.lb_grid_amount_draft {
+    text-align: right !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: #e8e8e8;
+}
+.lb_grid_amount_open {
+    text-align: right !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: RGB(91,183,91);
+}
+.lb_grid_amount_overdue {
+    text-align: right !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: #dd3d36;
+}
+.lb_grid_amount_approved {
+    text-align: right !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: RGB(91,183,91);
+}
+.lb_grid_amount {
+    text-align: right !important;
+    font-size: 16px;
+    font-weight: bold;
+    color: #777;
+}
+.lb_edit_table{
+    text-decoration: none; border-bottom: none; color: rgb(91,183,91);
+}
+.submenu_label{
+    display: inline !important;
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.summary{
+    float: right !important;
+    margin-top: 27px;
+}
+.lb_table{
+    margin-top: auto;
+}
+.lb-header-left_search{
+    margin-left:50%;margin-top:-32px;
+}
+.lb_glyphicons-halflings{
+    background-image: url(/../img/glyphicons-halflings-white.png);
+    background-repeat: no-repeat;
+    display: inline-block;
+    height: 14px;
+    line-height: 14px;
+    margin-top: 1px;
+    vertical-align: text-top;
+    width: 14px;
+     top: 40%;
+}
+.lb_group_action{
+/*    left: 19%;
+    position: absolute;*/
+    background-position: -240px 1px ! important;
+    left: -1px;
+    position: absolute;
+    top: -1px;
+}
+.lb_icon_backward{
+    background-position: -240px -72px !important;
+    position: absolute;
+    right: 297px;
+}
+.lb_icon_forward{
+    background-position: -336px -72px !important;
+    position: absolute;
+    right: 37px;
+}
+.lb_icon_fast_backward{
+    background-position: -216px -72px !important;
+    position: absolute;
+    right: 320px;
+}
+.lb_icon_fast_forward{
+    background-position: -360px -72px !important;
+    position: absolute;
+    margin-right: 10px;
+    margin-left: -10px;
+}
+.lb_input_search{
+    border-radius: 15px !important;
+    margin-right: 43px !important;
+    margin-top: -14px !important;
+}
+.lb_badge_status{
+    color: #dd3d36;
+    background: #fff;
+    text-shadow: none;
+     border-radius: 9px;
+     padding-left: 9px;
+     padding-right: 9px;
+     display: inline-block; font-size: 11.844px;
+     font-weight: bold;
+     line-height: 14px; 
+     vertical-alignment: baseline; 
+     white-space: nowrap;
+      position: absolute;
+    margin-top: 11px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+}
+.lb_badge_status_left{
+    margin-left: 16px;
+    display: inline !important;
+}
+.lb_icon_action{
+    margin-left:11px!important;
+    margin-top:-18px;
+    display:inline-block;
+}
+#data_search
+    {
+        position: absolute;
+        display: none;
+        float: right;
+        right: 6%;
+        background: #FFF none repeat scroll 0% 0%;
+        width: 20%;
+        text-align: left;
+        height:auto;
+        max-height: 350px;
+        overflow: auto;
+        border: 1px solid #eee;
+        top: 55px;
+        border-radius: 15px;
+        padding: 5px;
+        z-index: 1000;
+    }
+.li_search{
+        list-style: none !important;
+}
+.lb_table_InvoiceInfo{
+    margin-top: 20px;
+    width: 400px !important; 
+    float: right;
+}
+.lb_th_InvoiceInfo{
+    width: 50px;
+    height:20px !important;
+}
+.lb_td_InoviceInfo{
+    width: 50px;
+    text-align: right !important; 
+    height:20px !important;
+}
+.lb_div_InvoiceInfo{
+    float: right;
+    text-align: right;
+    width: 60%;
+}
+.lb_subject_invoice{
+    padding-top: 25%;width: 36%;
+}
+.lb_customer_info{
+    float: left;width:36%;
+}
+.lb_logo{
+    overflow:hidden;text-align: center;clear:bold;margin-top:20px;
+}
+.lb_company_info{
+    text-align: right; margin-right: 25px;width:50%;
+}
+.lb_address_info{
+    float: right; max-width: 600px;
+}
+.lb_customer_header_left{
+    margin-top:30px;margin-right:-28px;
+}
+/*.btn{
+   // color: #777 !important;
+}
+.btn-success{
+    color: #777 !important;
+}*/
+.lb_info_bill{
+    padding-left: 60px;
+}
+.lb_accordion_heading{
+    background:rgb(91,183,91);
+}
+.lb_accordion-toggle{
+    color: #fff !important;
+}
+.view_document{
+    margin-top: 30px; border: 0.1px solid #dddddd; border-radius: 4px;
+}
+.lb_img_submenu_left
+{
+    height: 70px;
+    width: 70px;
+    opacity:1;
+    cursor: pointer;
+}
+.lb_img_submenu_left_opacity
+{
+    height: 70px;
+    width: 70px;
+    opacity:0.26;
+    cursor: pointer;
+}
+#show_invoice
+{
+    margin-top: -10px;
 }

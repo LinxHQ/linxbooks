@@ -8,12 +8,12 @@ $canAdd = BasicPermission::model()->checkModules('lbPayment', 'add');
 
 <style>
     .accordion-heading{
-        background: #F5F5F5;
+        background: rgb(91,183,91);
     }
 </style>
 <?php // echo $model->lb_record_primary_key; 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>Bills</h4></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>Bills</h3></div>';
             echo '<div class="lb-header-left">';
             LBApplicationUI::backButton(LbVendor::model()->getActionURLNormalized('dashboard'));
             echo '&nbsp;';
@@ -21,7 +21,7 @@ echo '<div id="lb-container-header">';
 echo '</div><br>';
 ?>
 
-<div style="font-size:16px;padding-top:0px;margin-bottom:18px;" text-size="30px"><b>Payment</b></div>
+<!--<div style="font-size:16px;padding-top:0px;margin-bottom:18px;" text-size="30px"><b>Payment</b></div>-->
 <div style="overflow: hidden;">
     <div class="accordion" id="accordion2">
         <?php if($canAdd) { ?>
@@ -29,7 +29,7 @@ echo '</div><br>';
             <div class="accordion-heading" id="new_payment">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form_new_payment">
                     <i></i>
-                    <span style="color: #6E8900;font-size: 20px; font-weight: bold"><?php echo Yii::t('lang','New Payment'); ?></span>
+                    <span style="color: #fff;font-size: 20px; font-weight: bold"><?php echo Yii::t('lang','New Payment'); ?></span>
                 </a>
             </div>
             <div id="form_new_payment" class="accordion-body collapse in">
@@ -98,6 +98,7 @@ echo '</div><br>';
                     <div id="payment_invoice">
                         <?php LBApplication::renderPartial($this,'_form_line_item', array('customer_id'=>$customer_id)); ?>
                     </div>
+                    </br>
                     <div class="control-group" style="text-align: center">
                         <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'buttom','htmlOptions'=>array('class'=>'btn btn-success','onclick'=>'save_payment();return false;'), 'label'=>'<i class="icon-ok icon-white"></i> &nbsp; Save','encodeLabel'=>false)); ?>
                     </div>
@@ -110,7 +111,7 @@ echo '</div><br>';
             <div class="accordion-heading" id="view_payment">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form_view_payment">
                     <i></i>
-                    <span style="color: #6E8900;font-size: 20px; font-weight: bold"><?php echo Yii::t('lang','View Payment'); ?></span>
+                    <span style="color: #fff;font-size: 20px; font-weight: bold"><?php echo Yii::t('lang','View Payment'); ?></span>
                 </a>
             </div>
             <div id="form_view_payment" class="accordion-body collapse">

@@ -65,7 +65,9 @@ class DefaultController extends CLBController
                     'ajaxUpdateFieldTax',
                     'ajaxUpdateFieldGenera',
                     'ajaxCopyInvoice','view_chart_expenditures','_form_oustanding_invoice'
-                     ,'_form_oustanding_quotation','chart','_search_invoice','_search_quotation','ajaxgetDate'
+                     ,'_form_oustanding_quotation','chart','_search_invoice','_search_quotation','ajaxgetDate','_load_status_invoice','_load_status_quotation',
+                    'Search_Invoice','ajaxQuickCreateCurrency',
+                    'UpdateStatus','AjaxUpdateFieldDate'
                                     ),
 				'users'=>array('@'),
 			),
@@ -1426,11 +1428,19 @@ class DefaultController extends CLBController
             $model=new LbInvoice('search');
             $model->unsetAttributes();  // clear any default values
             $invoiceModel = new LbQuotation();
-      
+            if(isset($_GET['status_id'])){
+                    $model->lb_invoice_status_code = $_GET['status_id'];
+
+		LBApplication::renderPartial($this, '_form_oustanding_invoice',array(
+			'model'=>$model,
+                        'status_id'=>$model->lb_invoice_status_code,
+		));
+            }else{
             LBApplication::renderPartial($this, '_form_oustanding_invoice',array(
 			'model'=>$model,
                        
 		));
+            }
         }
         
         public function action_form_oustanding_quotation()
@@ -1438,11 +1448,21 @@ class DefaultController extends CLBController
             $model=new LbInvoice('search');
             $model->unsetAttributes();  // clear any default values
             $invoiceModel = new LbQuotation();
-      
+            
+            if(isset($_GET['status_id'])){
+                    $model->lb_invoice_status_code = $_GET['status_id'];
+
+		LBApplication::renderPartial($this, '_form_oustanding_quotation',array(
+			'model'=>$model,
+                        'status_id'=>$model->lb_invoice_status_code,
+                        'quotationModel'=>$invoiceModel,
+		));
+            }else{
             LBApplication::renderPartial($this, '_form_oustanding_quotation',array(
 			'model'=>$model,'quotationModel'=>$invoiceModel,
                        
 		));
+            }
         }
         public function actionChart()
         {
@@ -1643,5 +1663,99 @@ class DefaultController extends CLBController
                 LBApplication::renderPlain($this, array('content'=>CJSON::encode($taxRecord)));
                 }
             }
-        
+//    public function action_load_status_invoice()
+//        {
+////            if(isset($_REQUEST['status_id'])){
+////                $status_id = $_REQUEST['status_id'];
+////            }
+//            $model=new LbInvoice('search');
+//		$model->unsetAttributes();  // clear any default values
+//		
+//                if(isset($_REQUEST['status_id']))
+//                    $model->lb_invoice_status_code = $_REQUEST['status_id'];
+//
+//            LBApplication::renderPartial($this, '_load_status_invoice',array(
+//			'status_id'=>$model->lb_invoice_status_code,
+//                        'model'=>$model,
+//		));
+//        }
+//    public function action_load_status_quotation() {
+//            if(isset($_REQUEST['status_id'])){
+//                $status_id = $_REQUEST['status_id'];
+//            }
+//            LBApplication::renderPartial($this, '_load_status_quotation',array(
+//                    'status_id'=>$status_id,
+//            ));
+//    }
+    public function actionSearch_Invoice(){
+        $search_name = isset($_GET['search_name']) ? $_GET['search_name'] : '';
+        LBApplication::renderPartial($this, 'search_view_invoice', array(
+            'search_name'=>$search_name,
+        ));
+    }
+    public function actionajaxQuickCreateCurrency(){
+        $invoice_id = isset($_REQUEST['invoice_id']) ? $_REQUEST['invoice_id'] : '';        
+       // $model = LbInvoice::model()->findByPk($invoice_id);
+        $model = $this->loadModel($invoice_id);
+        $GeneraModel = new LbGenera();
+        if(isset($_POST['LbGenera'])){
+            $GeneraModel->attributes = $_POST['LbGenera'];
+            if($GeneraModel->save()){
+                $model->lb_invoice_currency = $GeneraModel->lb_record_primary_key;
+                 $model->save();
+            }
+            LBApplication::renderPlain($this,
+                array('content'=>CJSON::encode($GeneraModel))
+            );
+            return true;
+        }
+        LBApplication::renderPartial($this, '_form_currency', array(
+            'model'=>$model,
+            'GeneraModel'=>$GeneraModel,
+        ));
+    }
+     public function actionUpdateStatus()
+        {            
+            $invoice_id = isset($_POST['invoice_id']) ? $_POST['invoice_id'] : 0;     
+            $status = LbInvoice::model()->UpdateStatusInvoice($invoice_id);            
+            $model = LbInvoice::model()->findByPk($invoice_id);
+            $model->lb_invoice_status_code=$status;      
+            $model->save();
+//            LBApplication::renderPlain($this,
+//                array('content'=>CJSON::encode($model))
+//            );
+            $url_invoice =  $model->customer ? $model->getViewURLNormalized($model->customer->lb_customer_name) : $model->getViewURLNormalized("No customer") ;         
+           // echo "{'url':'".$url_invoice."'}";    
+          // echo '{"url": [' . json_encode($url_invoice) . ']}';
+            echo $url_invoice;
+        }
+	public function actionAjaxUpdateFieldDate()
+	{
+		if (isset($_POST['pk']) && isset($_POST['name']) && isset($_POST['value']))
+		{
+			$id = $_POST['pk'];
+			$attribute = $_POST['name'];
+			$value = $_POST['value'];
+                        
+			// get model
+			$model = $this->loadModel($id);
+			// update
+			$model->$attribute = $value;
+			//$model->save();
+                        if($model->save()){
+                            if($model->lb_invoice_status_code != LbInvoice::LB_INVOICE_STATUS_CODE_PAID){
+                            	if ($model->lb_invoice_status_code != LbInvoice::LB_INVOICE_STATUS_CODE_DRAFT) {
+                            		$status = LbInvoice::model()->UpdateStatusInvoice($model->lb_record_primary_key);
+                                $model->lb_invoice_status_code = $status;
+                            	}
+                                
+								$model->lb_invoice_due_date = LbInvoice::model()->UpdateDueDate($model->lb_record_primary_key);
+                                $model->save();
+                            }
+                        }
+                        return true;
+		}
+	
+		return false;
+	}
 }

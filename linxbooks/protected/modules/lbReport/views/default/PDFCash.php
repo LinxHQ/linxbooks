@@ -3,7 +3,7 @@ $m = $this->module->id;
 $canAdd = BasicPermission::model()->checkModules($m, 'add');
 $canList = BasicPermission::model()->checkModules($m, 'list');
 
-$method = LBPayment::model()->method;
+$method = LbPayment::model()->method;
 $customer_id =false;
 if(isset($_GET['customer']) && $_GET['customer']!="")
     $customer_id=$_GET['customer'];

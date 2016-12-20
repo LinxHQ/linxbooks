@@ -10,6 +10,7 @@
 class LbGenera extends CLBActiveRecord
 {
         var $module_name = 'lbInvoice';
+        const LB_QUERY_RETURN_TYPE_ACTIVE_DATA_PROVIDER = 'ActiveDataProvider';
 	/**
 	 * @return string the associated database table name
 	 */
@@ -99,6 +100,22 @@ class LbGenera extends CLBActiveRecord
       
         public function getGeneraSubscription()
         {
+          //  $lastGenera = $this->getFullRecords();
+          //  if(count($lastGenera)<=0)
+          //  {
+          //      $genera = new LbGenera();
+          //      $genera->lb_genera_currency_symbol = "";
+          //      $genera->save();
+          //      
+          //      $lastGenera = $this->getFullRecords();
+          //  }
+           $lastGenera = LbGenera::model()->findAll();  
+            $generaID = $lastGenera[0]->lb_record_primary_key;
+            $dataProvider = LbGenera::model()->findByPk($generaID);
+            return $dataProvider;
+        }
+        public function getGeneraCurrency()
+        {
             $lastGenera = $this->getFullRecords();
             if(count($lastGenera)<=0)
             {
@@ -110,8 +127,13 @@ class LbGenera extends CLBActiveRecord
             }
             
             $generaID = $lastGenera[0]->lb_record_primary_key;
-            $dataProvider = LbGenera::model()->findByPk($generaID);
+            $dataProvider = LbGenera::model()->findByPk($generaID)->lb_genera_currency_symbol;
             return $dataProvider;
         }
-        
+        public function getCurrency($sort="",$return_type = self::LB_QUERY_RETURN_TYPE_ACTIVE_DATA_PROVIDER){    
+        $criteria=new CDbCriteria;
+        $criteria->order = $sort;
+        $dataProvider = $this->getFullRecordsDataProvider($criteria);
+        return $this->getResultsBasedForReturnType($dataProvider,$return_type);    
+        }
 }

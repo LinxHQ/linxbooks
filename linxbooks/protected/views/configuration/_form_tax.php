@@ -8,6 +8,7 @@
     
     $this->widget('bootstrap.widgets.TbGridView',array(
         'id'=>'lb_tax_grid',
+        'template' => "{items}\n{pager}\n{summary}",
         'dataProvider'=>$taxModel,
         'columns'=>array(
             array(
@@ -36,7 +37,7 @@
 //                        'placement' => 'right',
 //                   )
 //            ),
-            array(
+  /*          array(
                 'class'=>'CButtonColumn',
                     'template'=>'{update}{delete}',
                     'buttons'=>array(
@@ -49,7 +50,7 @@
                            'visible'=>'LbTax::model()->IsTaxExistInvoiceORQuotation($data->lb_record_primary_key)==false',
                        )
                     ),
-            ),
+            ),*/
         ),
     ));
 ?>

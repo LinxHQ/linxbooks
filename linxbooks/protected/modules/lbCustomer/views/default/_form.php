@@ -33,8 +33,8 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 		echo '<div class="accordion-group">';
 		
 		// heading
-		echo '<div class="accordion-heading">';
-		echo '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-basic-info-collapse">';
+		echo '<div class="accordion-heading lb_accordion_heading">';
+		echo '<a class="accordion-toggle lb_accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-basic-info-collapse">';
         echo YII::t('lang','Basic Information');
 	    echo  '</a></div>'; // end heading
 		
@@ -64,8 +64,8 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 		echo '<div class="accordion-group">';
 		
 		// heading
-		echo '<div class="accordion-heading">';
-		echo '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-address-collapse">';
+		echo '<div class="accordion-heading lb_accordion_heading">';
+		echo '<a class="accordion-toggle lb_accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-address-collapse">';
 		echo Yii::t('lang','Address').' ('.Yii::t('lang','Optional').')';
 		echo  '</a></div>'; // end heading
 		
@@ -92,8 +92,8 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 		echo '<div class="accordion-group">';
 		
 		// heading
-		echo '<div class="accordion-heading">';
-		echo '<a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-contact-collapse">';
+		echo '<div class="accordion-heading lb_accordion_heading">';
+		echo '<a class="accordion-toggle lb_accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-contact-collapse">';
 		echo Yii::t('lang','Contact Person').' ('.Yii::t('lang','Optional').')';
 		echo  '</a></div>'; // end heading
 		
@@ -112,7 +112,7 @@ $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 		/** END CONTACT **/
 		?>
 </fieldset>
-<div class="form-actions">
+<div style="padding-left: 200px;">
 		<?php
 		LBApplicationUI::submitButton('Save');
 		?>

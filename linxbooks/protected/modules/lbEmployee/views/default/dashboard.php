@@ -11,7 +11,7 @@ $canView = BasicPermission::model()->checkModules($m, 'view');
 //date
 echo '<div id="lb-container-header">';
             
-            echo '<div style="margin-left: -10px" class="lb-header-right"><h4>Employees</h4></div>';
+            echo '<div style="margin-left: -10px" class="lb-header-right"><h3>Employees</h3></div>';
             echo '<div class="lb-header-left">';
 //            LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
 
@@ -41,26 +41,29 @@ echo '</div><br>';
             <?php } ?>
             <?php if($canAddPayment) { ?>
                 <a href="<?php echo $model->getActionURLNormalized('EnterPayment') ?>"><img width="16" src="<?php echo Yii::app()->baseUrl.'/images/icons/dolar.png' ?>" /> <?php echo Yii::t('lang','Enter Payment'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;
-            <?php } ?>                                        
+            <?php } ?>    
+                <a href="" onclick="printPDF_employee(); return false;" target="_blank"><img width="16"  src="<?php echo Yii::app()->baseUrl.'/images/icons/icon_pdf.png' ?>" /> <?php echo Yii::t('lang','Print'); ?></a>                                    
         </div>
         <div style="float:right;margin-bottom:5px; ">
             <input type="text" placeholder="Search" value="" style="border-radius: 15px;" onKeyup="search_employee(this.value);">
         </div>
     </div>
-    <button class="ui-button ui-state-default ui-corner-all" target="_blank" onclick="printPDF_employee(); return false;">Print PDF</button>
+  
     
 <?php
+
 echo '<div id="show_employee">';
 $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_expenses_gridview',
             'dataProvider'=>  $model->search(),
-            'type'=>'striped bordered condensed',
+        //    'type'=>'striped bordered condensed',
             //'template' => "{items}",
+            'template' => "{items}\n{pager}\n{summary}", 
             'columns'=>array(
                     array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',
                              'template'=>'{delete}',
-                              'htmlOptions'=>array('width'=>'10'),
+                              'htmlOptions'=>array('width'=>'10','height'=>'40px'),
                              'afterDelete'=>'function(link,success,data){ '
                             . 'if(data){ responseJSON = jQuery.parseJSON(data);'
                             . '     alert(responseJSON.error); }'
@@ -70,41 +73,41 @@ $this->Widget('bootstrap.widgets.TbGridView',array(
                     array(
                         'header'=>Yii::t('lang','Name'),
                         'type'=>'raw',
-                        'value'=>'LBApplication::workspaceLink($data->employee_name,$data->getViewURLNormalized("update",array("id"=>$data->lb_record_primary_key)))',
-                        'htmlOptions'=>array('width'=>'130'),
+                        'value'=>'LBApplication::workspaceLink($data->employee_name,$data->getViewURL("update",array("id"=>$data->lb_record_primary_key)))',
+                        'htmlOptions'=>array('width'=>'130','height'=>'40px'),
                     ),
                   
                     array(
                         'header'=>Yii::t('lang','Birthday'),
                         'type'=>'raw',
                         'value'=>'date("d-m-Y", strtotime($data->employee_birthday))',
-                        'htmlOptions'=>array('width'=>'130'),
+                        'htmlOptions'=>array('width'=>'130','height'=>'40px'),
                     ),
                     array(
                         'header'=>Yii::t('lang','Phone 1'),
                         'type'=>'raw',
                         'value'=>'$data->employee_phone_1',
-                        'htmlOptions'=>array('width'=>'130'),
+                        'htmlOptions'=>array('width'=>'130','height'=>'40px'),
                     ),
                     array(
                         'header'=>Yii::t('lang','Email 1'),
                         'type'=>'raw',
                         'value'=>'$data->employee_email_1',
-                        'htmlOptions'=>array('width'=>'130'),
+                        'htmlOptions'=>array('width'=>'130','height'=>'40px'),
                     ),
                    
                     array(
                         'header'=>Yii::t('lang','Total Salary'),
                         'type'=>'raw',
                         'value'=>'number_format(LbEmployeeSalary::model()->totalSalaryEmployee($data->lb_record_primary_key)-LbEmployeeBenefits::model()->caculatorBenefitByEmployee($data->lb_record_primary_key),2)',
-                        'htmlOptions'=>array('width'=>'130','style'=>'text-align:right'),
+                        'htmlOptions'=>array('width'=>'130','height'=>'40px','style'=>'text-align:right'),
                     ),
                     
                     array(
                         'header'=>Yii::t('lang','Note'),
                         'type'=>'raw',
                         'value'=>'$data->employee_note',
-                        'htmlOptions'=>array('width'=>'130'),
+                        'htmlOptions'=>array('width'=>'130','height'=>'40px'),
                     ),
                   
             )

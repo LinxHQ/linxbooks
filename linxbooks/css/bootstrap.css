@@ -231,7 +231,7 @@ body {
 }
 
 a {
-  color: #747b58; /**#0088cc;**/
+  color: rgb(91, 183, 91); /**#0088cc;**/
   text-decoration: none;
 }
 
@@ -1990,7 +1990,7 @@ table {
   padding: 8px;
   line-height: 20px;
   text-align: left;
-  vertical-align: top;
+//  vertical-align: top;
   border-top: 1px solid #e8e8e8;
 }
 

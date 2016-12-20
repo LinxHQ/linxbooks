@@ -4,6 +4,8 @@
 /* @var $ownCompany LbCustomer */
 
 $currency_name = LbGenera::model()->getGeneraSubscription()->lb_genera_currency_symbol;
+
+
 $thousand =LbGenera::model()->getGeneraSubscription()->lb_thousand_separator;
 $decimal= LbGenera::model()->getGeneraSubscription()->lb_decimal_symbol;
 
@@ -14,7 +16,10 @@ $strnum = new LbInvoiceTotal();
 
 $invoice_subtotal_arr = LbInvoiceTotal::model()->getInvoiceTotal($model->lb_record_primary_key);
 
-
+if($model && $model->lb_invoice_currency>0)
+{
+    $currency_name=LbGenera::model()->findByPk($model->lb_invoice_currency)->lb_genera_currency_symbol;
+}
 
 // Discount Invoice
 $invoice_discount_arr = LbInvoiceItem::model()->getInvoiceDiscounts($model->lb_record_primary_key,'ModelArray');
@@ -111,6 +116,7 @@ if(isset($model->lb_invoice_subject))
                     <tr><td colspan="2">'.nl2br($model->lb_invoice_subject).'</td></tr>';
 }
 $create_by = AccountProfile::model()->getFullName(LbCoreEntity::model()->getCoreEntity(LbInvoice::model()->module_name,$model->lb_record_primary_key)->lb_created_by);
+$term = UserList::model()->getTermName('term',$model->lb_invoice_term_id);
 
 $tbl= '<table border="0" style="margin:auto;width:100%;" cellpadding="0" cellspacing="0">
         '.$html_logo.'
@@ -119,6 +125,7 @@ $tbl= '<table border="0" style="margin:auto;width:100%;" cellpadding="0" cellspa
                 <span style="font-size:20px;font-weight:bold;">INVOICE</span><br>
                 Invoice No: '.$model->lb_invoice_no.'<br>
                 Invoice Date: '.date('d-M-Y',  strtotime($model->lb_invoice_date)).'<br>
+                Term: '.$term[0]['system_list_item_name'].'<br>
                 Due Date: '.date('d-M-Y',  strtotime($model->lb_invoice_due_date)).'<br>
             </td>
             <td width="400" align="right">

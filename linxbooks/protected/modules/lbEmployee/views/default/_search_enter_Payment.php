@@ -16,8 +16,9 @@ $year_default=  date('Y',strtotime($date_now));
 $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_expenses_gridview',
             'dataProvider'=>  $model,
-            'type'=>'striped bordered condensed',
+          //  'type'=>'striped bordered condensed',
             //'template' => "{items}",
+            'template' => "{items}\n{pager}\n{summary}", 
             'columns'=>array(
 
                     array(

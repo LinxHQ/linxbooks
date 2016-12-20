@@ -66,11 +66,11 @@ if(count($customer_arr)==0)
 ?>
 
 <?php foreach ($customer_arr as $data) { ?>
-<form>
+<form style="margin: 0 0 50px;">
     <fieldset>
         <legend style="color: #000000;font-size: 20px;width: 98%; margin: 0;font-weight: bold;">
-            <div style="float:left;width: 100%;position: relative;top: 20px;"><?php echo $data->lb_customer_name; ?></div>
-            <div style="float:left;width: 100%; font-size: 14px;text-align: right;position: relative;top: 10px;">
+            <div style="float:left;width: 100%;position: relative;bottom: 20px;"><?php echo $data->lb_customer_name; ?></div>
+            <div style="float:left;width: 100%; font-size: 14px;text-align: right;position: relative;bottom: 60px;">
                 <?php echo Yii::t('lang','Total');?>: <span style="font-weight: normal"><?php echo number_format(LbInvoiceTotal::model()->getTotalCustomer($data->lb_record_primary_key, "Total"),2) ?> | </span>
                 <?php echo Yii::t('lang','Total Paid');?>: <span style="font-weight: normal"><?php echo number_format(LbInvoiceTotal::model()->getTotalCustomer($data->lb_record_primary_key,"Total Paid"),2); ?> | </span>
                 <?php echo Yii::t('lang','Total Due');?>: <span style="font-weight: normal"><?php echo number_format(LbInvoiceTotal::model()->getTotalCustomer($data->lb_record_primary_key,"Total Due"),2); ?></span>

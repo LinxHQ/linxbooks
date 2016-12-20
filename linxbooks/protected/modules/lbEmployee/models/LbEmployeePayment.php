@@ -312,4 +312,18 @@ class LbEmployeePayment extends CLBActiveRecord
             }
             return $total;
         }
+		 public function getAllPayment(){
+		            $criteria = new CDbCriteria();
+		            $criteria->group = 'payment_year';
+		            $data = LbEmployeePayment::model()->findAll($criteria);
+		           
+		            return $data;
+		        }
+        public function getAllEmployeePayment(){
+            $criteria = new CDbCriteria();
+            $criteria->group = 'employee_id';
+            $data = LbEmployeePayment::model()->findAll($criteria);
+           
+            return $data;
+        }
 }

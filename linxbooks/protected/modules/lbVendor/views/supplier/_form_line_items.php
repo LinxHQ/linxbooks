@@ -63,7 +63,7 @@ $modelTotal = LbVendorTotal::model()->getVendorTotal($model->lb_record_primary_k
 $grid_id = 'invoice-line-items-grid-'.$model->lb_record_primary_key;
 $this->widget('bootstrap.widgets.TbGridView', array(
 		'id' => $grid_id,
-                'type'=>'bordered',
+        //        'type'=>'bordered',
 		'dataProvider' => $modelItemVendor->getItemByVendorInvoice($model->lb_record_primary_key, LbVendorItem::LB_VENDOR_INVOICE_ITEM_TYPE_LINE),
 		'columns' => array(
 				array(
@@ -119,7 +119,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 										"line_item_field"=>"item-quantity"))
 						',
 						'htmlOptions'=>array('width'=>'50','style'=>'text-align: right;'),
-                        'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
+                        'headerHtmlOptions'=>array('class'=>'lb-grid-header lb-grid-header_th'),
 				),
 				array(
 						'header' => Yii::t('lang','Unit Price'),
@@ -137,7 +137,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 										"line_item_field"=>"item-value"))
 						',
 						'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
-                        'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
+                        'headerHtmlOptions'=>array('class'=>'lb-grid-header lb-grid-header_th'),
 				),
 				array(
 						'header' => Yii::t('lang','Total'),
@@ -154,7 +154,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 										"line_item_field"=>"item-total"))
 						',
 						'htmlOptions'=>array('width'=>'90','style'=>'text-align: right;'),
-                        'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
+                        'headerHtmlOptions'=>array('class'=>'lb-grid-header lb-grid-header_th'),
 				),
 		),
 ));
@@ -504,7 +504,7 @@ echo '<div id="container-invoice-note-'.$model->lb_record_primary_key.'"
         'url'         => LbVendor::model()->getActionURLNormalized('ajaxUpdateNoteVI'),
         'placement'   => 'right',
         //'showbuttons' => 'bottom',
-        'htmlOptions' => array('style'=>'text-decoration: none; border-bottom: none; color: #777'),
+        'htmlOptions' => array('style'=>'text-decoration: none; border-bottom: none; color: rgb(91,183,91)'),
         'options'	=> array(
         ),
         'onShown'=> 'js:function(){

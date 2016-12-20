@@ -10,7 +10,7 @@ if(isset($_REQUEST['idPV']))
 }
 echo '<input type="hidden" value="'.$valuePv.'"  id="idPv">';
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>Expenses</h4></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>Expenses</h3></div>';
             echo '<div class="lb-header-left">';
             LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
 
@@ -156,14 +156,25 @@ echo '</div><br>';
             </div>
         </div>
 
-	<div class="form-actions">
-		<?php  echo CHtml::SubmitButton('Save',array('onclick'=>'return validation();')); ?>
+	<div style="padding-left: 200px;">
+		<?php  
+            LBApplicationUI::submitButton('Save', array(
+                        'htmlOptions'=>array(
+                            'onclick'=>'return validation()',
+                            'style'=>'margin-left: auto; margin-right: auto; background:#fff,',
+                         //   'id'=>'btn-invoice-save-all-'.$model->lb_record_primary_key,
+                        ),
+                    ));
+                    echo '&nbsp;&nbsp;&nbsp&nbsp;';
+                    LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
+        //echo CHtml::SubmitButton('Save',array('onclick'=>'return validation();'));
+         ?>
             
                 <?php 
-                $this->widget('bootstrap.widgets.TbButton', array(
-                    'label'=>'Back',
-                    'url'=>LbExpenses::model()->getActionURLNormalized('expenses'),
-                ));
+         //       $this->widget('bootstrap.widgets.TbButton', array(
+          //          'label'=>'Back',
+          //          'url'=>LbExpenses::model()->getActionURLNormalized('expenses'),
+          //      ));
                 ?>
                 <?php // LBApplicationUI::backButton('admin'); ?>
 	</div>

@@ -7,13 +7,13 @@ $canAdd = BasicPermission::model()->checkModules('lbPayment', 'add');
 ?>
 <style>
     .accordion-heading{
-        background: #F5F5F5;
+        background: rgb(91,183,91);
     }
 </style>
 <?php 
 
     echo '<div id="lb-container-header">';
-                echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>'.Yii::t('lang','Payment').'</h4></div>';
+                echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>'.Yii::t('lang','Payment').'</h3></div>';
                 echo '<div class="lb-header-left">';
                         LBApplicationUI::backButton(LbInvoice::model()->getAdminURLNormalized());
                         echo '&nbsp;';
@@ -29,7 +29,7 @@ echo '<div style="clear: both;overflow:hidden"><Br>';
             <div class="accordion-heading" id="new_payment">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form_new_payment">
                     <i></i>
-                    <span style="color: #6E8900;font-size: 20px; font-weight: bold"><?php echo Yii::t('lang','New Payment'); ?></span>
+                    <span style="color: #fff;font-size: 20px; font-weight: bold"><?php echo Yii::t('lang','New Payment'); ?></span>
                 </a>
             </div>
             <div id="form_new_payment" class="accordion-body collapse in">
@@ -98,6 +98,7 @@ echo '<div style="clear: both;overflow:hidden"><Br>';
                     <div id="payment_invoice">
                         <?php LBApplication::renderPartial($this,'_form_line_item', array('lbInvoiceModel'=>$lbInvoiceModel,'customer_id'=>$customer_id)); ?>
                     </div>
+                    </br>
                     <div class="control-group" style="text-align: center">
                         <?php $this->widget('bootstrap.widgets.TbButton', array('buttonType'=>'buttom','htmlOptions'=>array('class'=>'btn btn-success','onclick'=>'save_payment();return false;'), 'label'=>'<i class="icon-ok icon-white"></i> &nbsp; Save','encodeLabel'=>false)); ?>
                     </div>
@@ -110,7 +111,7 @@ echo '<div style="clear: both;overflow:hidden"><Br>';
             <div class="accordion-heading" id="view_payment">
                 <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form_view_payment">
                     <i></i>
-                    <span style="color: #6E8900;font-size: 20px; font-weight: bold"><?php echo Yii::t('lang','View Payment'); ?></span>
+                    <span style="color: #fff;font-size: 20px; font-weight: bold"><?php echo Yii::t('lang','View Payment'); ?></span>
                 </a>
             </div>
             <div id="form_view_payment" class="accordion-body collapse">

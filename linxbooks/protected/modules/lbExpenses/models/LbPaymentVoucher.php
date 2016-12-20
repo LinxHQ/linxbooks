@@ -237,7 +237,23 @@ class LbPaymentVoucher extends CLBActiveRecord
 			'criteria'=>$criteria,
 		));
         }
+    public function getTotalPaymentPrev($financial_year = false, $financial_prev_year = false){
+        $criteria = new CDbCriteria();
+        if($financial_prev_year)
+            $criteria->addCondition("lb_pv_date >= '".$financial_prev_year."'", "AND");
+        if($financial_year)
+            $criteria->addCondition ("lb_pv_date < '".$financial_year."'", "AND");
         
+        return $this->findAll($criteria);
+    }
+    public function getTotalPaymentNext($financial_year = false, $financial_next_year = false){
+        $criteria = new CDbCriteria();       
+        if($financial_year)
+            $criteria->addCondition ("lb_pv_date >= '".$financial_year."'", "AND");
+        if($financial_next_year)
+            $criteria->addCondition("lb_pv_date < '".$financial_next_year."'", "AND");
+        return $this->findAll($criteria);
+    }    
        
         
         

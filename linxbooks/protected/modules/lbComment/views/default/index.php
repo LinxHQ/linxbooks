@@ -32,7 +32,7 @@ echo '<div id ="show_comment">';
         {
             foreach ($model as $data)
             {
-                echo '<div id="comment-root'.$data->lb_record_primary_key.'" class="comment" style="width: 58%;">';
+                echo '<div id="comment-root'.$data->lb_record_primary_key.'" class="comment" style="width: 100%;">';
                 $customer = AccountProfile::model()->getProfile($data->lb_account_id);
 
                 echo '<div style = " padding:20px" id="comment-content-container'.$data->lb_record_primary_key.'">';
@@ -48,8 +48,8 @@ echo '<div id ="show_comment">';
                 echo '<div style="float: right">';
                 if($data->lb_account_id == Yii::app()->user->id)
                 {
-                    echo '<a href="#" onclick = EditComment('.$data->lb_record_primary_key.') > Edit</a> &nbsp';
-                    echo '<a href="#" onclick = deleteComment('.$data->lb_record_primary_key.')>Delete</a>';
+                    echo '<a href="#" onclick = "EditComment('.$data->lb_record_primary_key.');return false;" > Edit</a> &nbsp';
+                    echo '<a href="#" onclick = "deleteComment('.$data->lb_record_primary_key.');return false;">Delete</a>';
                 }
                 echo '</div>';
                 echo '</div>';
@@ -98,5 +98,56 @@ echo '</div>';
     function cancelComment()
     {
        $('#show_form_comment').hide();
+    }
+    function EditComment(id)
+    {
+        var descript = $('#description'+id).text();
+       
+        html='<textarea type="text" style="width:100%;height:100px" id="description_comment'+id+'">'+descript+'</textarea>\n\
+        <div id=""><input type="submit" id="yt0" value="Save" onclick = updateComment('+id+');> <input type="submit" id="yt0" value="Cancel" name="yt0" onclick=cancelCommentUpdate('+id+',"'+descript+'")><br />';
+        $("#description"+id).html(html);
+     
+    }
+    function deleteComment(id)
+    {
+        $.post("<?php echo LbComment::model()->getActionURLNormalized('deleteComment', array())?>",
+                    {id:id},
+                    function(response){
+                        var responseJSON = jQuery.parseJSON(response);
+                        if(responseJSON.success == 1)
+                        {
+                            $('#comment-root'+id).remove();
+                        }
+
+                    }
+                );
+    }
+    function updateComment(id)
+    {
+    var description = $("#description_comment"+id).val();
+    $.post("<?php echo LbComment::model()->getActionURLNormalized('updateComment', array())?>",
+                {description:description,model_name:'lbPaymentVoucher',id_comment:id},
+                function(response){
+                    var responseJSON = jQuery.parseJSON(response);
+                    if(responseJSON.success == 1)
+                    {
+                       $('#description_comment'+id).hide();
+                       $('#description'+id).html(responseJSON.lb_comment_description);
+                       $('#fotter'+id).html(responseJSON.lb_comment_date);
+                       
+//                        $('#comment-root'+id).remove();
+                    }
+                  
+                }
+     );
+    }
+
+    function cancelCommentUpdate(id,descript)
+    {
+    
+  
+    $('#description_comment'+id).hide();
+    $('#description'+id).html(descript);
+
     }
 </script>

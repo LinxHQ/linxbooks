@@ -9,7 +9,7 @@ if(!$canView)
 }
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-12px;" ><h4>Bills</h4></div>';
+            echo '<div class="lb-header-right" style="margin-left:-12px;" ><h3>Bills</h3></div>';
             echo '<div class="lb-header-left">';
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(
@@ -81,16 +81,17 @@ echo '</div><br>';
 
 //Vendor Invoice
 echo '<div>';
-    echo '<div class="panel-header-title" style="margin-top: -12px;">
-        <div class="panel-header-title-left">
-            <h5>Bills</h5>
-        </div> 
-    </div>';
+//    echo '<div class="panel-header-title" style="margin-top: -12px;">
+//        <div class="panel-header-title-left">
+//            <h5>Bills</h5>
+//        </div> 
+//    </div>';
 $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_vendor_invoice_gridview',
             'dataProvider'=> LbVendorInvoice::model()->search(),
-            'type'=>'striped bordered condensed',
+           // 'type'=>'striped bordered condensed',
             //'template' => "{items}",
+            'template' => "{items}\n{pager}\n{summary}", 
             'columns'=>array(
                
                 array(
@@ -98,33 +99,33 @@ $this->Widget('bootstrap.widgets.TbGridView',array(
                     'name'=>'lb_customer_id',
                     'type'=>'raw',
                     'value'=>'$data->lb_vd_invoice_date ? date("d M, Y", strtotime($data->lb_vd_invoice_date)) : ""',
-                    'htmlOptions'=>array('width'=>'120'),
+                    'htmlOptions'=>array('width'=>'120','height'=>'40px'),
                 ),
                 array(
                     'header'=>Yii::t('lang','Bill number'),
                     'type'=>'raw',
                     'value'=>'"<a href=".Yii::app()->createUrl("lbVendor/supplier/viewSupplier/",array("id"=>$data->lb_record_primary_key)).">$data->lb_vd_invoice_no</a>"',
 //                  
-                    'htmlOptions'=>array('width'=>'180'),
+                    'htmlOptions'=>array('width'=>'180','height'=>'40px'),
                 ),
                array(
                     'header'=>Yii::t('lang','Supplier'),
                     'type'=>'raw',
                     'value'=>'$data->lb_vd_invoice_supplier_id>0?LbCustomer::model()->customerInformation($data->lb_vd_invoice_supplier_id)->lb_customer_name:""',
-                    'htmlOptions'=>array('width'=>'150'),
+                    'htmlOptions'=>array('width'=>'150','height'=>'40px'),
                 ),
                 
                 array(
                     'header'=>Yii::t('lang','Total'),
                     'type'=>'raw',
                     'value'=>'LbVendorTotal::model()->getVendorTotal($data->lb_record_primary_key,LbVendorTotal::LB_VENDOR_INVOICE_TOTAL)->lb_vendor_last_tax',
-                    'htmlOptions'=>array('align'=>'right'),
+                    'htmlOptions'=>array('align'=>'right','height'=>'40px'),
                 ),
                 array(
                     'header'=>Yii::t('lang','Status'),
                     'type'=>'raw',
                     'value'=>'LbVendorInvoice::model()->getDisplayInvoiceStatus($data->lb_vd_invoice_status)',
-                    'htmlOptions'=>array('align'=>'right'),
+                    'htmlOptions'=>array('align'=>'right','height'=>'40px'),
                 ),
             )
         ));

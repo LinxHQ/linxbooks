@@ -14,7 +14,7 @@ $employee = LbEmployee::model()->getInfoEmployee($employee_id);
 $create_by = AccountProfile::model()->getFullName(Yii::app()->user->id);
 echo '<div id="lb-container-header">';
             
-            echo '<div style="margin-left: -10px" class="lb-header-right"><h4>Employees:'.$employee->employee_name.'</h4></div>';
+            echo '<div style="margin-left: -10px" class="lb-header-right"><h3>Employees:'.$employee->employee_name.'</h3></div>';
             echo '<div class="lb-header-left">';
             LBApplicationUI::backButton(LbEmployee::model()->getActionURLNormalized('View',array('id'=>$employee_id)));
 

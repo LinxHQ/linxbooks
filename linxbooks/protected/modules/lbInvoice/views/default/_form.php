@@ -19,12 +19,13 @@ echo '</div>';
 /**
  * ===== CUSTOMER SECTION =====
  */
-echo '<div id="container-invoice-customer-info" style="padding-top: 20px;clear: both;">';
+echo '<div id="container-invoice-customer-info" class="lb_customer_info">';
 
 // customer name
 echo '<div id="container-invoice-customer-name">';
-echo '<div class="field-label-left">'.Yii::t('lang','To').':</div>';
+echo '<div class="field-label-left"><h4>'.Yii::t('lang','To').':</h4></div>';
 echo '<div class="field-value-left">';
+echo '<h4>';
 $this->widget('editable.EditableField', array(
         'type'      => 'select',
         'model'     => $model,
@@ -91,6 +92,7 @@ if($model->lb_invoice_customer_id){
         }
         else
             echo '&nbsp;&nbsp;<a id="user"><i class="icon-search"></i></a>';
+echo '</h4>';
 echo '</div>'; // end div for customer name's txt
 echo CHtml::hiddenField('hidden-invoice-customer-id', $model->lb_invoice_customer_id, 
 		array('id'=>'hidden-invoice-customer-id'));
@@ -99,7 +101,7 @@ echo '</div>'; // end customer name
 
 // customer address
 echo '<div id="container-invoice-customer-address">';
-echo '<div class="field-label-left">'.Yii::t('lang','Billing Address').':</div>';
+//echo '<div class="field-label-left">'.Yii::t('lang','Billing Address').':</div>';
 echo '<div class="field-value-left">';
 $this->widget('editable.EditableField', array(
 		'type'      => 'select',
@@ -144,7 +146,7 @@ echo '</div>';
 echo '</div>'; // end customer address
 
 echo '<div id="container-invoice-customer-attention">';
-echo '<div class="field-label-left">'.Yii::t('lang','Attention').':</div>';
+//echo '<div class="field-label-left">'.Yii::t('lang','Attention').':</div>';
 echo '<div class="field-value-left">';
 $this->widget('editable.EditableField', array(
     'type'      => 'select',
@@ -184,7 +186,7 @@ echo '</div>';
 ?>
 
 <br>
-<div id="container-invoice-customer-subject">
+<div id="container-invoice-customer-subject" class="lb_subject_invoice">
     <h4><?php echo Yii::t('lang','Subject'); ?>:</h4>
     <?php
         $this->widget('editable.EditableField', array(
@@ -196,7 +198,7 @@ echo '</div>';
             'url'         => $model->getActionURLNormalized('ajaxUpdateField'),
             'placement'   => 'right',
             //'showbuttons' => 'bottom',
-            'htmlOptions' => array('style'=>'text-decoration: none; border-bottom: none; color: #777'),
+            'htmlOptions' => array('class'=>'lb_edit_table'),
             'options'	=> array(
             ),
         ));

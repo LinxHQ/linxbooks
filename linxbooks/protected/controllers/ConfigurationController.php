@@ -46,7 +46,7 @@ class ConfigurationController extends Controller
                                         'addLineTranslate',
                                         'deleteLineTranslate',
                                         'ajaxUpdateField',
-                                        
+                                        'ajaxUpdateDate',
                                     
                                     ),
                             'users'=>array('@'),
@@ -379,5 +379,14 @@ class ConfigurationController extends Controller
             
             
         }
-           
+        public function actionajaxUpdateDate(){
+            $pk = $_POST['pk'];
+            $date = $_POST['value'];
+            $day = date("d",  strtotime($date));
+            $month = date("m", strtotime($date));
+            $model = UserList::model()->findByPk($pk);
+            $model->system_list_item_day = $day;
+            $model->system_list_item_month = $month;
+            $model->update();
+        } 
 }

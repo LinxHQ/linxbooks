@@ -9,9 +9,9 @@ $this->breadcrumbs=array(
 );
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>'.Yii::t('lang','Customers').'</h4></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>'.Yii::t('lang','Employee').'</h3></div>';
             echo '<div class="lb-header-left">';
-                LBApplicationUI::backButton($model->getHomeURLNormalized());
+                LBApplicationUI::backButton($model->getActionModuleURL('default', 'Dashboard'));
                 echo '&nbsp;';
                 // new
                 

@@ -59,6 +59,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 		
 	),
 )); 
+echo '<br/><br/><br/>';
 LBApplicationUI::submitButton('Save',array(
     'htmlOptions'=>array(
         'onclick'=>'SaveInvoice();',

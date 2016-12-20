@@ -17,7 +17,7 @@ if(!$canView)
 <?php 
 
     echo '<div id="lb-container-header">';
-                echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>'.Yii::t('lang','Contract Dashboard').'</h4></div>';
+                echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>'.Yii::t('lang','Contract Dashboard').'</h3></div>';
                 echo '<div class="lb-header-left">';
                         if($canAdd)
                             LBApplicationUI::newButton(Yii::t('lang','New Contract'), array(
@@ -34,8 +34,9 @@ echo '<div style="clear: both;overflow:hidden"><Br>';
         $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_contract_outstanding_gridview',
             'dataProvider'=>  $model->getContractOutstanding(5,$canList),
-            'type'=>'striped bordered condensed',
+           // 'type'=>'striped bordered condensed',
             //'template' => "{items}",
+			'template' => "{items}\n{pager}\n{summary}",
             'columns'=>array(
                 array(
                     'name'=>'lb_contract_no',
@@ -89,17 +90,18 @@ echo '<div style="clear: both;overflow:hidden"><Br>';
         $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_contract_expiring_gridview',
             'dataProvider'=>  $model->getExpiringContract(5,$canList),
-            'type'=>'striped bordered condensed',
+           // 'type'=>'striped bordered condensed',
             //'template' => "{items}",
+			'template' => "{items}\n{pager}\n{summary}",
             'columns'=>array(
                 array(
                     'name'=>'lb_contract_no',
                     'type'=>'raw',
                     'value'=>'
-                            ($data->lb_contract_no ?
+                            ($data->lb_contract_no) ?
                                     LBApplication::workspaceLink($data->lb_contract_no, $data->getViewURL($data->customer->lb_customer_name,null,$data->lb_record_primary_key) )
                                     :LBApplication::workspaceLink("No customer", $data->getViewURL("No customer") )
-                            )
+                            
                         ',
                     'htmlOptions'=>array('width'=>'130'),
                 ),
@@ -143,17 +145,18 @@ echo '<div style="clear: both;overflow:hidden"><Br>';
         $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_contract_active_gridview',
             'dataProvider'=>  $model->getContract(LbContracts::LB_CONTRACT_STATUS_ACTIVE,5,$canList),
-            'type'=>'striped bordered condensed',
+            //'type'=>'striped bordered condensed',
             //'template' => "{items}",
+			'template' => "{items}\n{pager}\n{summary}",
             'columns'=>array(
                 array(
                     'name'=>'lb_contract_no',
                     'type'=>'raw',
                     'value'=>'
-                            ($data->lb_contract_no ?
+                            ($data->lb_contract_no) ?
                                     LBApplication::workspaceLink($data->lb_contract_no, $data->getViewURL($data->customer->lb_customer_name) )
                                     :LBApplication::workspaceLink("No customer", $data->getViewURL("No customer") )
-                            )
+                            
                         ',
                     'htmlOptions'=>array('width'=>'130'),
                 ),

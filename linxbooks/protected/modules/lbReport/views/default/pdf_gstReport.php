@@ -3,7 +3,7 @@
 $thousand =LbGenera::model()->getGeneraSubscription()->lb_thousand_separator;
 $decimal= LbGenera::model()->getGeneraSubscription()->lb_decimal_symbol;
 $strnum = new LbInvoiceTotal();
-$method = LBPayment::model()->method;
+$method = LbPayment::model()->method;
 $date_from = date('Y-m-d');
 $date_to = date('Y-m-d', strtotime("+1 month -1 day"));
 $customer_id = false;

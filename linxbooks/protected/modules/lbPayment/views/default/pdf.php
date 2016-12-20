@@ -7,7 +7,7 @@ $method = LBPayment::model()->method;
 $date_from = date('Y-m-d');
 $date_to = date('Y-m-d', strtotime("+1 month -1 day"));
 
-if (isset($_REQUEST['search_date_from']) && $_REQUEST['search_date_from'] != "")
+if (isset($_REQUEST['search_date_from']) && $_REQUEST['search_date_from'] != "" )
     $date_from = date('Y-m-d', strtotime($_REQUEST['search_date_from']));
 if (isset($_REQUEST['search_date_to']) && $_REQUEST['search_date_to'] != "")
     $date_to = date('Y-m-d', strtotime($_REQUEST['search_date_to']));
@@ -68,20 +68,26 @@ $add ="";
 if(isset($model->ownerAddress->lb_customer_address_line_1) || isset($model->ownerAddress->lb_customer_address_line_2))
     $add = 'Address: ';
 //echo $html_logo;
-$a = '<table border="0" style="margin:auto;width:100%;" cellpadding="0" cellspacing="0">
+$a = '<table border="0" style="width:100%;margin-left:10px;" cellpadding="0" cellspacing="0">
     <tr><td>
         <table border="0" style="margin:auto;width:100%;" cellpadding="0" cellspacing="0">
         ' . $html_logo . '
     </table></td></tr>
     <tr><td>
-    <table border="0" style="margin:auto;width:100%;" cellpadding="0" cellspacing="0">
+    <table border="0" style="width:98%;" cellpadding="0" cellspacing="0">
         <tr valign="top">
-            <td width="300">
-                <span style="font-size:20px;font-weight:bold;">PAYMENT</span><br>
-                Date From:' . date('d-M-Y',  strtotime($date_from)) . ' <br>
-                Date To: ' . date('d-M-Y',  strtotime($date_to)) . '<br>
-            </td>
-            <td width="400" align="right">
+            <td >
+                <span style="font-size:20px;font-weight:bold;">PAYMENT RECEIPT</span><br>
+               ';
+                if($_REQUEST['search_date_from'] == "false" && $_REQUEST['search_date_to'] == "false")
+                    $a .='<br/>';
+                else
+                {
+                $a .='Date From:' . date('d-M-Y',  strtotime($date_from)) . ' <br>
+                    Date To: ' . date('d-M-Y',  strtotime($date_to)) . '<br>';
+                }
+           $a .='</td>
+            <td  align="right">
                 
                 <span style="font-size:16px;font-weight:bold;">' . (isset($model->owner->lb_customer_name) ? $model->owner->lb_customer_name :'') . '</span><br>
                 ' . (isset($model->owner->lb_customer_registration) ? "Registration No: " . $model->owner->lb_customer_registration . '. ' : '') . '
@@ -100,7 +106,7 @@ $a = '<table border="0" style="margin:auto;width:100%;" cellpadding="0" cellspac
             <tr><td height="25">&nbsp;</td></tr>
         <tr>
             <td colspan="2">
-                <table border="0"  style="width:100%">
+                <table border="0"  style="width:98%">
                         <tr>
                             <td width="110">
                                 To:
@@ -134,12 +140,13 @@ $a = '<table border="0" style="margin:auto;width:100%;" cellpadding="0" cellspac
                    
             </tr></table></td></tr>';
 $a .= '<tr><td>
-                    <table border="1" style="margin-left:10px;width:100%;" cellpadding="0" cellspacing="0">
-                       <tr>
-                                <td height="40">Amount Paid</td>
-                                <td style="text-align:center">Method</td>
-                                <td >Data</td>
-                                <td width="200">Notes</td>
+                    <table border="1" style="width:90%;margin-top:10px;" cellpadding="0" cellspacing="0">
+                       <tr style="background-color:#ddd">
+                                <td  style="width:20%;height:30px;">Receipt Nos</td>
+                                <td height="40" style="width:20%">Amount Paid</td>
+                                <td style="text-align:center;width:20%">Method</td>
+                                <td style="width:20%">Data</td>
+                                <td style="width:20%">Notes</td>
                         </tr>';
 
 $data_paymentItem = LbPaymentItem::model()->findAll('lb_invoice_id=:invoice_id', array(':invoice_id' => $model->lb_record_primary_key));
@@ -148,28 +155,29 @@ foreach ($data_paymentItem as $payment_invoice) {
    
     $payment = LbPayment::model()->findByPk($payment_invoice->lb_payment_id);
   
-    $a .='<tr>
+    $a .='<tr>              <td class="lb-grid" style="text-align: center">' . $payment->lb_payment_no . '</td>
                             <td class="lb-grid" style="text-align: right;">' . $strnum->adddotstring($payment_invoice->lb_payment_item_amount,$thousand,$decimal) . '</td>';
                             if(isset($payment))
                             {
                                 
                                 $a .='
+                                
                                 <td class="lb-grid" style="text-align: center">' . $method[$payment->lb_payment_method] . '</td>
                                 <td style="text-align: center">' . date('d-M-Y',  strtotime($payment->lb_payment_date)) . '</td>
-                                <td width="300">' . $payment_invoice->lb_payment_item_note . '</td>';
+                                <td width="200px">' . $payment_invoice->lb_payment_item_note . '</td>';
                             }
     $a .= '</tr>';
 }
 
 
 $a .= '<tr>
-                        <td height="20" style="text-align: left;color: #6E8900;float:right;"><span style="float: left;text-align: left;">Total Paid: </span>' .$strnum->adddotstring($invoice_total->lb_invoice_total_paid,$thousand, $decimal) . '</td>
-                        <td colspan="3" style="border-left: 0px;" ></td>
+                        <td height="20" style="text-align: left;color: #6E8900;float:right;"><span style="float: left;text-align: left;">Total Paid: </span>$' .$strnum->adddotstring($invoice_total->lb_invoice_total_paid,$thousand, $decimal) . '</td>
+                        <td colspan="4" style="border-left: 0px;" ></td>
   
                     </tr>
                     <tr>
-                        <td height="20" style="color: #6E8900;"><span style="width: 50%;float: left;text-align: left">Total Balance: </span>' .$strnum->adddotstring($invoice_total->lb_invoice_total_outstanding, $thousand, $decimal)  . '</td>
-                        <td colspan="3" style="border-left: 0px;"></td>
+                        <td height="20" style="color: #6E8900;"><span style="width: 50%;float: left;text-align: left">Total Balance: </span>$' .$strnum->adddotstring($invoice_total->lb_invoice_total_outstanding, $thousand, $decimal)  . '</td>
+                        <td colspan="4" style="border-left: 0px;"></td>
                     </tr>
                 </table></td></tr>
                 </table>';

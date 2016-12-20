@@ -1,5 +1,6 @@
-<div id="container-quotation-customer-info" style="padding-top: 20px;clear: both;">
+<div id="container-quotation-customer-info" class="lb_customer_info">
     <div id="container-quotation-customer-name">
+        <h4 style="display: inline-flex;">
         <div class="field-label-left"><?php echo Yii::t('lang','To'); ?>:</div>
         <div class="field-value-left">
             <?php
@@ -59,10 +60,10 @@
 
             ?>
         </div>
-        
+        </h4>
     </div>
     <div id="container-quotation-customer-address">
-        <div class="field-label-left"><?php echo Yii::t('lang','Billing Address'); ?>:</div>
+       
         <div class="field-value-left">
             <?php
                 $this->widget('editable.EditableField',array(
@@ -100,7 +101,7 @@
     </div>
     
 <div id="container-quotation-customer-attention">
-        <div class="field-label-left"><?php echo Yii::t('lang','Attention'); ?>:</div>
+        
         <div class="field-value-left">
             <?php
                 $this->widget('editable.EditableField',array(
@@ -130,7 +131,7 @@
         </div>
 </div>
     <br>
-    <div id="container-quotation-customer-subject">
+    <div id="container-quotation-customer-subject" style="padding-top: 40%;">
         <h4><?php echo Yii::t('lang','Subject'); ?>:</h4>
         <?php
             $this->widget('editable.EditableField', array(

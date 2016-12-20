@@ -10,6 +10,7 @@ $this->Widget('bootstrap.widgets.TbGridView',array(
             'dataProvider'=> $model,
             'type'=>'striped bordered condensed',
             //'template' => "{items}",
+            'template' => "{items}\n{pager}\n{summary}", 
             'columns'=>array(
 
                     array(

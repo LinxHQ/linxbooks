@@ -11,7 +11,7 @@ if(!$canView)
 }
     
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>Report</h4></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>Report</h3></div>';
             echo '<div class="lb-header-left">';
                 echo '&nbsp;';
             echo '</div>';
@@ -55,16 +55,17 @@ echo '</div><br>';
                                                        
                                                 ),true),
                                                 'active'=>($tab=="customer_statement") ? true : false),
+								array('id'=>'tab8','label'=>'<strong>'.Yii::t('lang','Payment Report').'</strong>', 
+                                                'content'=> $this->renderPartial('_form_payment_report', array(
+                                                       
+                                                ),true),
+                                                'active'=>($tab=="payment_report") ? true : false),
                                 array('id'=>'tab7','label'=>'<strong>'.Yii::t('lang','Employee Report').'</strong>', 
                                                 'content'=> $this->renderPartial('_form_employee_report', array(
                                                        
                                                 ),true),
                                                 'active'=>($tab=="employee_report") ? true : false),
-                                array('id'=>'tab8','label'=>'<strong>'.Yii::t('lang','Payment Report').'</strong>', 
-                                                'content'=> $this->renderPartial('_form_payment_report', array(
-                                                       
-                                                ),true),
-                                                'active'=>($tab=="payment_report") ? true : false),
+                                
                                  
                             ),
     ));

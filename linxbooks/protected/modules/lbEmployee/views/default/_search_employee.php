@@ -5,8 +5,9 @@ $canList = BasicPermission::model()->checkModules($m, 'list');
  $this->Widget('bootstrap.widgets.TbGridView',array(
             'id'=>'lb_expenses_gridview',
             'dataProvider'=> LbEmployee::model()->searchEmployeeByName($name),
-            'type'=>'striped bordered condensed',
+           // 'type'=>'striped bordered condensed',
             //'template' => "{items}",
+            'template' => "{items}\n{pager}\n{summary}", 
             'columns'=>array(
                     array(
 			'class'=>'bootstrap.widgets.TbButtonColumn',

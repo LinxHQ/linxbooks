@@ -265,6 +265,32 @@ class LbExpenses extends CLBActiveRecord
             }
             return $total;
         }
-        
-       
+        public function getTotalExpensesNext($financial_year, $financial_next_year){
+            $All_PV = LbPaymentVoucher::model()->getTotalPaymentNext($financial_year, $financial_next_year);
+            foreach($All_PV as $row){
+                $pvexpenses = LbPvExpenses::model()->findAll('lb_payment_voucher_id = '.$row->lb_record_primary_key);
+                $total = 0;
+                foreach($pvexpenses as $data)
+                {
+                    $modelExpenses = LbExpenses::model()->find('lb_record_primary_key = '.$data->lb_expenses_id);
+                    if($modelExpenses)
+                        $total += $modelExpenses->lb_expenses_amount;
+                }
+                return $total;
+            }
+        }
+        public function getTotalExpensesPrev($financial_year, $financial_prev_year){
+            $All_PV = LbPaymentVoucher::model()->getTotalPaymentPrev($financial_year, $financial_prev_year);
+            foreach($All_PV as $row){
+                $pvexpenses = LbPvExpenses::model()->findAll('lb_payment_voucher_id = '.$row->lb_record_primary_key);
+                $total = 0;
+                foreach($pvexpenses as $data)
+                {
+                    $modelExpenses = LbExpenses::model()->find('lb_record_primary_key = '.$data->lb_expenses_id);
+                    if($modelExpenses)
+                        $total += $modelExpenses->lb_expenses_amount;
+                }
+                return $total;
+            }
+        }
 }

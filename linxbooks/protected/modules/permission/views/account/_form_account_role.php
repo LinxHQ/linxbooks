@@ -16,7 +16,10 @@ $roleAccount = AccountRoles::model()->getRoleByAccount($account_id);
         foreach ($roleAccount->data as $roleAccountItem) {
         ?>
             <tr>
-                <td><?php echo $roleAccountItem->role->role_name; ?></td>
+                <td><?php 
+                if(isset($roleAccountItem->role->role_name))
+                    echo $roleAccountItem->role->role_name; ?>
+                </td>
                 <td style="text-align: center;"><a href="#" onclick="deleteRoleAcount(<?php echo $roleAccountItem->lb_record_primary_key; ?>);return false;"><i class="icon-remove"></i></a></td>
             </tr>
         <?php } ?>

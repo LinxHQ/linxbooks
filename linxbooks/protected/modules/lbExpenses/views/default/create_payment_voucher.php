@@ -7,7 +7,7 @@
  */
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>Expenses</h4></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>Expenses</h3></div>';
             echo '<div class="lb-header-left">';
             LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('paymentVoucher'));
             echo '&nbsp;';

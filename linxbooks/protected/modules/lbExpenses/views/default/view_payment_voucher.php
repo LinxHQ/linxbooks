@@ -10,7 +10,7 @@ $canAdd = BasicPermission::model()->checkModules($m, 'add');
 $canList = BasicPermission::model()->checkModules($m, 'list');
 
 echo '<div id="lb-container-header">';
-            echo '<div style="margin-left: -10px" class="lb-header-right"><h4>Expenses</h4></div>';
+            echo '<div style="margin-left: -10px" class="lb-header-right"><h3>Expenses</h3></div>';
             echo '<div class="lb-header-left">';
 //            LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
@@ -55,15 +55,16 @@ echo '</div><br/>';
 echo '<div id ="list_payment_voucher">';
 $this->widget('bootstrap.widgets.TbGridView', array(
 		'id' => 'payment_invoice_grid',
-        'type'=>'bordered',
+      //  'type'=>'bordered',
 		'dataProvider' => LbPaymentVoucher::model()->search(),
+        'template' => "{items}\n{pager}\n{summary}", 
 		'columns' => array(
 				
                                 array(
                                     'class'=>'CButtonColumn',
                                     'template'=>'{delete}',
                                     'deleteButtonUrl'=>'CHtml::normalizeUrl(array("/lbExpenses/default/deletePaymentVoucher", "id"=>$data->lb_record_primary_key))',
-                                    'htmlOptions'=>array('width'=>'30'),
+                                    'htmlOptions'=>array('width'=>'30','height'=>'40px'),
                                     'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
                                 ),
                                 array(
@@ -73,7 +74,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
                                     'id'=>'$data->lb_record_primary_key',
                                     
                                     'value' =>'$data->lb_pv_date',
-                                    'htmlOptions'=>array('width'=>'120'),
+                                    'htmlOptions'=>array('width'=>'120','height'=>'40px'),
                                       'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
                                 ),
 ////                    
@@ -81,7 +82,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
                                         'header'=>Yii::t('lang','Payment Voucher No'),
                                         'type'=>'raw',
                                         'value'=>'($data->lb_payment_voucher_no) ? LBApplication::workspaceLink($data->lb_payment_voucher_no, YII::app()->baseUrl."/index.php/lbExpenses/default/CreatePaymentVoucher/id/".$data->lb_record_primary_key ) : LBApplication::workspaceLink("No customer", $data->getViewURL("No customer") )',
-                                        'htmlOptions'=>array('width'=>'180'),
+                                        'htmlOptions'=>array('width'=>'180','height'=>'40px'),
                                      'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
                                     ),
                                     array(
@@ -89,7 +90,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
                                     'type'=>'raw',
                                     'value' =>'$data->lb_pv_title',
                                     
-                                    'htmlOptions'=>array('width'=>'150'),
+                                    'htmlOptions'=>array('width'=>'150','height'=>'40px'),
                                     'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
                                 ),
                                 array(
@@ -97,14 +98,14 @@ $this->widget('bootstrap.widgets.TbGridView', array(
                                 'type'=>'raw',
                                 
                                     'value' =>'$data->lb_pv_description',
-                                'htmlOptions'=>array('width'=>'250'),
+                                'htmlOptions'=>array('width'=>'250','height'=>'40px'),
                                 'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
                             ),
                                 array(
                                         'header' =>  Yii::t('lang','Create By'),
                                         'type' => 'raw',
                                         'value' =>'AccountProfile::model()->getFullName($data->lb_pv_create_by)',
-                                        'htmlOptions'=>array('style'=>'width: 80px;text-align:left;'),
+                                        'htmlOptions'=>array('style'=>'width: 80px;height:40px;text-align:left;'),
                                 'headerHtmlOptions'=>array('class'=>'lb-grid-header'),        
                                 ),
                                 

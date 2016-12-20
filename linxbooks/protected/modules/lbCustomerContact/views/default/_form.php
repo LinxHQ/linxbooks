@@ -29,7 +29,7 @@
 		<?php echo $form->textAreaRow($model,'lb_customer_contact_note',array('size'=>60,'maxlength'=>255,'class'=>'span6','rows'=>'5')); ?>
 		<?php echo $form->dropDownListRow($model,'lb_customer_contact_is_active', LbCustomerContact::$dropdownActiveContact); ?>
 
-        <div class="form-actions">
+        <div style="padding-left: 200px;">
                         <?php
                             LBApplicationUI::submitButton('Save');
                         ?>

@@ -149,7 +149,7 @@ class DefaultController extends Controller
             $html2pdf = Yii::app()->ePdf->HTML2PDF();
             $lbInvoiceModel = new LbInvoice();
             $html2pdf->WriteHTML($this->renderPartial('PDFCash', array('model'=>$lbInvoiceModel,'customer_id'=>$customer,'search_date_from'=>$search_date_from,'search_date_to'=>$search_date_to),true));
-            $html2pdf->Output('PDFCash.pdf','I');
+            $html2pdf->Output('ReceiptNo.pdf','I');
         }
          public function actionAjaxLoadFormViewPayment(){
             $model = new LbEmployeePayment();

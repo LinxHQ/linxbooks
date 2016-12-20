@@ -9,6 +9,61 @@ echo '</div>';
      <input hidden="true" class="nameList" value = <?php  echo $list_name; ?> ></input>
     
     <?php
+        if($list_name == 'financial_year'){
+            $this->widget('bootstrap.widgets.TbGridView', array(
+            'id' => 'usergrid',
+            'itemsCssClass' => 'table-bordered items',
+            'dataProvider' => $list,
+            'columns'=>array(
+//                            array(
+//                                'class' => 'editable.EditableColumn',
+//                                 'name' => 'system_list_item_id',
+//                                'headerHtmlOptions' => array('style' => 'width: 110px'),
+//                                'editable' => array( //editable section
+//                                    'apply' => '$data->system_list_item_id', //can't edit deleted users
+//                                    'placement' => 'right',
+//                                ),
+//                            ),
+                            array(
+                            'class' => 'editable.EditableColumn',
+                            'name' => 'system_list_item_code',
+                            'value' =>'$data->system_list_item_name',
+                            'headerHtmlOptions' => array('style' => 'width: 110px'),
+                            'editable' => array( 
+                                'type' =>'text',
+                                //'apply' => '$data->system_list_item_name', //can't edit deleted users
+                                'url'   => Yii::app()->createAbsoluteUrl('configuration/ajaxUpdateItem'),
+                                'placement' => 'right',
+                                )
+                            ),
+                            array(                                 
+                                'class' => 'editable.EditableColumn',
+                                'name' => 'system_list_item_name',
+                                // 'value' => '$data->year',
+                                'value'=> '$data->system_list_item_day."/".$data->system_list_item_month',
+                                'headerHtmlOptions' => array('style' => 'width: 110px'),
+                                'editable' => array( 
+                                    
+                                    'type' =>'date',
+                                    'viewformat'=>'d/m',
+                                    //'apply' => '$data->system_list_item_day." ".date("M",strtotime($data->system_list_item_month))', //can't edit deleted users
+                                    'url'   => Yii::app()->createAbsoluteUrl('configuration/ajaxUpdateDate'),
+                                    'placement' => 'right',
+                                    )
+                             ),
+                           array(
+                                'class'=>'CButtonColumn',
+                               'template'=>"{delete}",
+                                'buttons'=>array(
+                                    'delete'=>array(
+                                       'url'=>  'Yii::app()->createUrl("configuration/deleteItem", array("id"=>$data->system_list_item_id,"list"=>$data->system_list_code))',
+                                    )),
+                    ),
+
+                ),
+            ));
+    
+        }else{
            //($model->customerAddress->lb_customer_address_line_1!=NULL) ? $model->customerAddress->lb_customer_address_line_1.'. ' : ''
            $this->widget('bootstrap.widgets.TbGridView', array(
             'id' => 'usergrid',
@@ -46,7 +101,7 @@ echo '</div>';
     ),
     ))
     ;
-    
+        }
 
 ?>
     

@@ -12,6 +12,10 @@
         $deleteTemplate = "{delete}";
     
     $currency_name = LbGenera::model()->getGeneraSubscription()->lb_genera_currency_symbol;
+    if($model && $model->lb_quotation_currency>0)
+    {
+    $currency_name=LbGenera::model()->findByPk($model->lb_quotation_currency)->lb_genera_currency_symbol;
+    }
 ?>
 <div style="margin-top: 30px">
     <?php
@@ -28,8 +32,10 @@
     <?php $grid_id = 'quotation-line-item-grid-'.$model->lb_record_primary_key; ?>
     <?php $this->widget('bootstrap.widgets.TbGridView',array(
                     'id'=>$grid_id,
-                    'type'=>'bordered',
+                 //   'type'=>'bordered',
                     'dataProvider'=>$quotationItemModel->getquotationItems($model->lb_record_primary_key),
+                    'htmlOptions'=>array('style'=>'padding-top:50px'),
+                    'template'=>"{items}\n{summary}",
                     'columns'=>array(
                         array(
                             'header'=>'#',
@@ -91,7 +97,7 @@
                                                    "line_item_field"=>"item-quantity"))
                                 ',
                             'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
-                            'headerHtmlOptions'=>array('class'=>'lb-grid-header')
+                            'headerHtmlOptions'=>array('class'=>'lb-grid-header lb-grid-header_th')
                             
                         ),
                         array(
@@ -108,7 +114,7 @@
                                                             "line_item_field"=>"item-value"))
                                 ',
                             'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
-                            'headerHtmlOptions'=>array('class'=>'lb-grid-header')
+                            'headerHtmlOptions'=>array('class'=>'lb-grid-header lb-grid-header_th')
                             
                         ),
                         array(
@@ -124,11 +130,12 @@
                                                             "line_item_field"=>"item-total"))
                                 ',
                             'htmlOptions'=>array('width'=>'100','style'=>'text-align: right;'),
-                            'headerHtmlOptions'=>array('class'=>'lb-grid-header')
+                            'headerHtmlOptions'=>array('class'=>'lb-grid-header lb-grid-header_th')
                             
                         ), 
                     ),
     )); ?>
+    <br/>
  <?php
  if($canEdit)
  {
@@ -173,6 +180,7 @@ if($canAdd)
 }
 ?>
     <!--    Get Total Item-->
+    <br/><br />
     <div class="invoice-subtotal-container">
         <div class="invoice-total-label"><?php echo Yii::t('lang','Sub Total');?> (<?php echo $currency_name ?>):</div>
         <div id='quotation-subtotal' class="invoice-total-value"><?php echo $quotationTotalModel->lb_quotation_subtotal; ?></div>
@@ -454,14 +462,14 @@ if($canAdd)
             'url'         => $model->getActionURLNormalized('ajaxUpdateField'),
             'placement'   => 'right',
             //'showbuttons' => 'bottom',
-            'htmlOptions' => array('style'=>'text-decoration: none; border-bottom: none; color: #777'),
+            'htmlOptions' => array('style'=>'text-decoration: none; border-bottom: none; color: rgb(91,183,91)'),
             'options'	=> array(
             ),
         ));
         echo '</td></tr></tbody></table></div>';
     ?>
 
-
+    <br/>
 <!--
 /********************************************************************************
  * =============================== INTERNAL NOTE ================================
@@ -486,7 +494,7 @@ echo '<tr><td>';
             'url'         => $model->getActionURLNormalized('ajaxUpdateField'),
             'placement'   => 'right',
             //'showbuttons' => 'bottom',
-            'htmlOptions' => array('style'=>'text-decoration: none; border-bottom: none; color: #777'),
+            'htmlOptions' => array('style'=>'text-decoration: none; border-bottom: none; color: rgb(91,183,91)'),
             'options'	=> array(
             ),
         ));
@@ -529,6 +537,7 @@ echo '</div>';// end note div
                         if(data != null)
                         {
                             var dataJSON = jQuery.parseJSON(data);
+                            
                             onConfirmQuotationSuccessful(dataJSON);
                         }
                                 }'
@@ -586,22 +595,22 @@ $this->endWidget(); // end modal widget
 ?>
 <?php
 ## Next,Previous,Last,First ##########
-$quotation_next = LbQuotation::model()->getMoveIQuotationNum($model->lb_quotation_no,'next');
-$quotation_previous = LbQuotation::model()->getMoveIQuotationNum($model->lb_quotation_no,"previous");
-$quotation_last = LbQuotation::model()->getMoveIQuotationNum($model->lb_quotation_no,"last");
-$quotation_first = LbQuotation::model()->getMoveIQuotationNum($model->lb_quotation_no,"first");
-
-$url_first = ($quotation_first) ? $model->getViewURLByIdNormalized($quotation_first[0],$quotation_first[1]) : '#';
-$url_previous = ($quotation_previous) ? $model->getViewURLByIdNormalized($quotation_previous[0],$quotation_previous[1]) : '#';
-$url_next = ($quotation_next) ? $model->getViewURLByIdNormalized($quotation_next[0],$quotation_next[1]) : '#';
-$url_last = ($quotation_last) ? $model->getViewURLByIdNormalized($quotation_last[0],$quotation_last[1]) : '#';
+//$quotation_next = LbQuotation::model()->getMoveIQuotationNum($model->lb_quotation_no,'next');
+//$quotation_previous = LbQuotation::model()->getMoveIQuotationNum($model->lb_quotation_no,"previous");
+//$quotation_last = LbQuotation::model()->getMoveIQuotationNum($model->lb_quotation_no,"last");
+//$quotation_first = LbQuotation::model()->getMoveIQuotationNum($model->lb_quotation_no,"first");
+//
+//$url_first = ($quotation_first) ? $model->getViewURLByIdNormalized($quotation_first[0],$quotation_first[1]) : '#';
+//$url_previous = ($quotation_previous) ? $model->getViewURLByIdNormalized($quotation_previous[0],$quotation_previous[1]) : '#';
+//$url_next = ($quotation_next) ? $model->getViewURLByIdNormalized($quotation_next[0],$quotation_next[1]) : '#';
+//$url_last = ($quotation_last) ? $model->getViewURLByIdNormalized($quotation_last[0],$quotation_last[1]) : '#';
 ?>
-<div id="lb-container-footer">
-    <a href="<?php echo $url_first;  ?>" ><i class="icon-fast-backward"></i></a>&nbsp;
-    <a href="<?php echo $url_previous; ?>"><i class="icon-backward"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-    <a href="<?php echo $url_next ?>"><i class="icon-forward">&nbsp;</i></a>
-    <a href="<?php echo $url_last; ?>"><i class="icon-fast-forward"></i></a>
-</div>
+<!--<div id="lb-container-footer">
+    <a href="<?//php// echo $url_first;  ?>" ><i class="icon-fast-backward"></i></a>&nbsp;
+    <a href="<?//php// echo $url_previous; ?>"><i class="icon-backward"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <a href="<?//php// echo $url_next ?>"><i class="icon-forward">&nbsp;</i></a>
+    <a href="<?//php// echo $url_last; ?>"><i class="icon-fast-forward"></i></a>
+</div>-->
 
 <script type="text/javascript">
    
@@ -757,6 +766,7 @@ $url_last = ($quotation_last) ? $model->getViewURLByIdNormalized($quotation_last
     }
     function onConfirmQuotationSuccessful(quotationJSON){
         $('#quotation-number-container').html(quotationJSON.lb_quotation_no);
+        $('#LbQuotation_quotation_genera_id_'+quotationJSON.lb_record_primary_key).html(quotationJSON.lb_quotation_status_display);
         $('#quotation_status_container').html(quotationJSON.lb_quotation_status_display);
         $('#quotation_status .editable').html(quotationJSON.lb_quotation_status);
         $('#quotation_status .editable').attr("data-value",quotationJSON.lb_quotation_status);

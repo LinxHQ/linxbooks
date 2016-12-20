@@ -7,6 +7,7 @@ $invoice = $lbInvoiceModel->getInvoiceAmountByCustomer($customer_id);
 $this->widget('bootstrap.widgets.TbGridView', array(
 		'id' => 'payment_invoice_grid',
         'type'=>'bordered',
+                'htmlOptions'=>array('class'=>'items table '),
 		'dataProvider' => $invoice,
 		'columns' => array(
 				array(
@@ -65,7 +66,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
     ));
 
 ?>
-
+<br />
 <?php if(count($invoice->data)){ ?>
     <div style="width:100%;overflow:hidden;margin-bottom: 50px;text-align: right;font-weight: bold;">
         <div style="float:left;width:245px;">Total:</div>

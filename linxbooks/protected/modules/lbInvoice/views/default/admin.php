@@ -23,7 +23,7 @@ $('.search-form form').submit(function(){
 ");**/
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h4>Invoices</h4></div>';
+            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>Invoices</h3></div>';
             echo '<div class="lb-header-left">';
             LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
@@ -64,6 +64,7 @@ echo '<div id="invoice_more_date">';
 $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'lb-invoice-grid',
 	'dataProvider'=>$model->search($canList,$status_id),
+    'template' => "{items}\n{pager}\n{summary}", 
 	'filter'=>$model, 
 	'columns'=>array(
 		//'lb_record_primary_key',

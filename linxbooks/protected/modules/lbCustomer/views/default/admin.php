@@ -36,8 +36,9 @@ $('.search-form form').submit(function(){
 ");
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;" ><h4> '.Yii::t('lang','Customers').'</h4></div>';
-            echo '<div class="lb-header-left">&nbsp;';
+            echo '<div class="lb-header-right" style="margin-left:-11px;" ><h3> '.Yii::t('lang','Customers').'</h3></div>';
+            echo '<div class="lb_customer_header_left">&nbsp;';
+                echo'<input type="search" onKeyup="search_name(this.value);" id="search_invoice" value="" class="lb_input_search" value="" placeholder="Search" />';
             echo '</div>';
 echo '</div>';
 
@@ -49,7 +50,7 @@ echo '</div>';
 ?>
 <?php 
 echo '<br/>';
-echo '<div style="display: inline">';
+echo '<div id="show_customer" style="display: inline; top:-100px;">';
 // NEW BUTTON
 //if($canAdd)
 //{
@@ -65,36 +66,39 @@ $subcription =  LbCustomer::model()->getOwnCompany();
 
 $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'lb-customer-grid',
-        'type'=>'bordered',
+       // 'type'=>'bordered',
+   //     'htmlOptions'=>array('class'=>'margin-top'),
 	'dataProvider'=>$model->search($canList),
-	'filter'=>$model,
+    'template' => "{items}\n{pager}\n{summary}", 
+	//'filter'=>$model,
 	'columns'=>array(
 		
 		array(
-			'name'=>'lb_customer_name',
+			//'name'=>'lb_customer_name',
 			'type'=>'raw',
                        
                         
 			'value'=>'LBApplication::workspaceLink($data->lb_customer_name, $data->getViewURLNormalized($data->lb_customer_name),array("id"=>$data->lb_record_primary_key))',
-                        'htmlOptions'=>array('width'=>'40%'),
+                        'htmlOptions'=>array('width'=>'40%','height'=>'40px'),
                         'headerHtmlOptions'=>array('width'=>'250','id'=>'$data->lb_customer_name'),
-                        'filter' => CHtml::activeTextField($model, 'lb_customer_name', array('class' => 'input-mini','style'=>'width:90%')),
+                       // 'filter' => CHtml::activeTextField($model, 'lb_customer_name', array('class' => 'input-mini','style'=>'width:90%')),
                 ),
 		
                 array(
-                        'htmlOptions'=>array('width'=>'20%'),
+                        'htmlOptions'=>array('width'=>'20%','height'=>'40px'),
                         'headerHtmlOptions'=>array('width'=>'120'),
-                        'name'=>'lb_customer_registration',
-                        'filter' => CHtml::activeTextField($model, 'lb_customer_registration', array('class' => 'input-mini','style'=>'width:90%')),
+                       // 'name'=>'lb_customer_registration',
+                        'value'=>'$data->lb_customer_registration',
+                        //'filter' => CHtml::activeTextField($model, 'lb_customer_registration', array('class' => 'input-mini','style'=>'width:90%')),
                         
                     ),
                 
                     array(
-		'name'=>'lb_customer_website_url',
-               'htmlOptions'=>array('width'=>'30%'),
-                'headerHtmlOptions'=>array('width'=>'135'),
-                        'filter' => CHtml::activeTextField($model, 'lb_customer_website_url', array('class' => 'input-mini','style'=>'width:90%')),
-                             ),
+                        'value'=>'$data->lb_customer_website_url',
+                       'htmlOptions'=>array('width'=>'30%','height'=>'40px'),
+                        'headerHtmlOptions'=>array('width'=>'135'),
+                        //'filter' => CHtml::activeTextField($model, 'lb_customer_website_url', array('class' => 'input-mini','style'=>'width:90%')),
+                    ),
 //                        array(
 //		'name'=>'lb_customer_is_own_company',
 //               'htmlOptions'=>array('width'=>'110'),
@@ -115,5 +119,20 @@ $this->widget('bootstrap.widgets.TbGridView', array(
     </style>
     <script>
     $('#<?php echo $subcription->lb_record_primary_key;?>').append("  <span class='badge badge-success'>My company</span>");
-    
+    function search_name(name)
+    {
+        name = replaceAll(name," ", "%");
+        
+        if(name.length >= 3){
+          
+                $('#show_customer').load('<?php echo LbCustomer::model()->getActionURLNormalized('_search_customer')?>',{name:name});
+            
+        }
+    }
+    function replaceAll(string, find, replace) {
+      return string.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+    }
+    function escapeRegExp(string) {
+        return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+    }
     </script>

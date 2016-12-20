@@ -1,22 +1,19 @@
 <?php
-/* @var $this LbInvoiceController */
-/* @var $model LbInvoice */
-/* @var $invoiceItemModel LbInvoiceItem */
-/* @var $invoiceDiscountModel LbInvoiceItem */
-/* @var $invoiceTaxModel LbInvoiceItem */
-/* @var $invoiceTotal LbInvoiceTotal */
+/* @var $this DefaultControllersController */
+/* @var $model LbEmployee */
 
-LBApplication::renderPartial($this, '_page_header', array(
-	'model'=>$model,
-));
+$this->breadcrumbs=array(
+	'Lb Employees'=>array('index'),
+	'Create',
+);
 
-$this->renderPartial('_form', array(
-		'model'=>$model)); 
+$this->menu=array(
+	array('label'=>'List LbEmployee', 'url'=>array('index')),
+	array('label'=>'Manage LbEmployee', 'url'=>array('admin')),
+);
+echo '<div id="lb-view-header" style="margin: -20px -20px 17px; padding: 4px 20px;">';
+echo '<div class="lb-header-right" style="margin-left:-10px"><h3><a style="color:#777;margin-left:9px;margin-top:2px;" href="'.LbInvoice::model()->getActionURLNormalized("dashboard").'">New Employee</a></h3></div>';
+echo '</div>';
+?>
 
-$this->renderPartial('_form_line_items', array(
-		'model'=>$model,
-		'invoiceItemModel'=>$invoiceItemModel,
-    'invoiceDiscountModel'=>$invoiceDiscountModel,
-    'invoiceTaxModel'=>$invoiceTaxModel,
-    'invoiceTotal'=>$invoiceTotal,
-));
+<?php $this->renderPartial('_form', array('model'=>$model,'salaryModel'=>$salaryModel,'benefitModel'=>$benefitModel)); ?>

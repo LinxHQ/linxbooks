@@ -287,5 +287,34 @@ class LbPayment extends CLBActiveRecord
     public function CaculatorPaymentByInvoice($invoice_id)
     {
     }
-
+    public function getTotalPayment($financial_year = false, $financial_prev_year = false){
+        $criteria = new CDbCriteria();
+        if($financial_prev_year)
+            $criteria->addCondition ("lb_payment_date > '".$financial_prev_year."'", "AND");
+        if($financial_year)
+            $criteria->addCondition("lb_payment_date <= '".$financial_year."'", "AND");                   
+        $paymentAll = LbPayment::model()->findAll($criteria);
+        $totalPayment = 0;
+        foreach ($paymentAll as $row) {
+            $totalPayment+=$row['lb_payment_total'];
+        }
+        return $totalPayment;
+    }
+     public function getTotalPaymentFinancial($financial_year = false, $financial_next_year = false){
+        $criteria = new CDbCriteria();
+//        if($financial_year)
+//            $criteria ->compare ('lb_payment_date >',$financial_year); 
+//        if($financial_next_year)
+//            $criteria ->compare ('lb_payment_date <',$financial_next_year);
+        if($financial_year)
+            $criteria->addCondition ("lb_payment_date > '".$financial_year."'", "AND");
+        if($financial_next_year)
+            $criteria->addCondition("lb_payment_date <= '".$financial_next_year."'", "AND");           
+        $paymentAll = LbPayment::model()->findAll($criteria);
+        $totalPayment = 0;
+        foreach ($paymentAll as $row) {
+            $totalPayment+=$row['lb_payment_total'];
+        }
+        return $totalPayment;
+    }
 }

@@ -6,9 +6,10 @@
 
 $this->widget('bootstrap.widgets.TbGridView',array(
                 'id'=>'lb-invoice-Outstanding-grid',
-                'type'=>'striped bordered condensed',
+              //  'type'=>'striped bordered condensed',
                 'dataProvider'=>LbInvoice::model()->getInvoiceAllByCustomer($model->lb_record_primary_key,5),
                 //'template' => "{items}",
+                'template' => "{items}\n{pager}\n{summary}",
                 'columns'=>array(
                     array(
                         'header'=>Yii::t('lang','Date'),

@@ -7,6 +7,7 @@
     
     $this->widget('bootstrap.widgets.TbGridView', array(
 		'id' => 'payment_invoice_grid',
+            //     'htmlOptions'=>array('class'=>'items table table-bordered'),
         'type'=>'bordered',
 		'dataProvider' => $invoice,
 		'columns' => array(

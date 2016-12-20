@@ -59,6 +59,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 
 	),
 ));
+echo '<br/><br/><br/>';
 LBApplicationUI::submitButton('Save',array(
 //    'url'=>LbExpenses::model()->getActionURLNormalized('AssignCustomer',array('customer_id'=>93)),
     'htmlOptions'=>array(

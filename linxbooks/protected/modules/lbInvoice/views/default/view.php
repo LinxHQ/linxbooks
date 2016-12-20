@@ -116,9 +116,7 @@ $this->renderPartial('_form_line_items', array(
 
 //echo '</div>';
 ?>
-<div style="margin-top: 30px;" id="view_document">
-        <?php $this->renderPartial('lbDocument.views.default.view',array('id'=>$model->lb_record_primary_key,'module_name'=>'lbInvoice')); ?>
-</div>
+
 <script language="javascript">
     $(".lb-side-link-invoice").tooltip({placement: 'right'});
     

@@ -19,10 +19,11 @@
 	
 	<?php 
         $employee_id = isset($_GET['id']) ? $_GET['id'] : 0;
-      
+        $date_now = date('m-Y');
         if(isset($employee_id) && $employee_id > 0){
         ?>          
              <p class="note">Fields with <span class="required">*</span> are required. &nbsp;
+                
                  <a href="<?php echo LbEmployee::model()->getActionURLNormalized('EnterPayment',array('employee_id'=>$employee_id)) ?>"><img width="16" style="margin-left: 100px;" src="<?php echo Yii::app()->baseUrl.'/images/icons/dolar.png' ?>" /> <?php echo Yii::t('lang','Enter Payment'); ?></a>
                  <a href="<?php echo LbEmployee::model()->getActionURLNormalized('printPDF_DetailSalaryEmployee', array('employee_id'=>$employee_id))?>" target="_blank"><img width="16" style="margin-left: 50px;" src="<?php echo Yii::app()->baseUrl.'/images/icons/icon_pdf.png' ?>" /> <?php echo Yii::t('lang','Print'); ?></a>
              </p>
@@ -69,7 +70,7 @@
                 echo '<div class="accordion-heading" id="new_payment">
                       <a class="accordion-toggle" data-toggle="collapse"  href="#form_new_payment">
                       <i></i>
-                      <span style="color: #6E8900;font-size: 14px; font-weight: bold">Basic Information</span>
+                      <span style="color: #fff;font-size: 14px; font-weight: bold">Basic Information</span>
                       </a>
                     </div>';
 		
@@ -178,7 +179,7 @@
                 echo '<div class="accordion-heading" id="new_salary">
                       <a class="accordion-toggle" data-toggle="collapse"  href="#form_view_salary">
                       <i></i>
-                      <span style="color: #6E8900;font-size: 14px; font-weight: bold">Salary Components</span>
+                      <span style="color: #fff;font-size: 14px; font-weight: bold">Salary Components</span>
                       </a>
                     </div>';
                 echo '<div id="form_view_salary" class="accordion-body collapse in">
@@ -247,7 +248,7 @@
 		echo '<div class="accordion-heading" id="new_benefit">
                       <a class="accordion-toggle" data-toggle="collapse"  href="#form_view_benefit">
                       <i></i>
-                      <span style="color: #6E8900;font-size: 14px; font-weight: bold">Benefits</span>
+                      <span style="color: #fff;font-size: 14px; font-weight: bold">Benefits</span>
                       </a>
                     </div>';
                 echo '<div class="accordion-heading">';
@@ -374,12 +375,12 @@ echo '<br />';
 }
 .accordion-heading
 {
-    background-color: #f5f5f5;
+    background-color: rgb(91,183,91);
 }
 </style>
 
 <script>
-    var tax_id=$('#tax_id').val();
+    var tax_id = $('#tax_id').val();
     $('#new_payment i').addClass('icon-minus-sign');
     $('#view_payment i').addClass('icon-plus-sign');
     $('#form_new_payment').on('show', function () {
@@ -436,7 +437,7 @@ echo '<br />';
                 html +='<td><select name="salary_name[]" id="salary_name" ><?php echo $option_salary; ?></select></td>';
                
                 html += '<td><?php echo $form->textField($salaryModel,'salary_amount',array('name'=>'salary_amount[]','id'=>'salary_amount_1'));?></td>';          
-                html += '<td  hidden="true"><?php echo $form->textField($salaryModel,'lb_record_primary_key',array('name'=>'key_salary[]'));?></td>';                               
+                html += '<td  hidden="true"><?php echo $form->textField($salaryModel,'lb_record_primary_key',array('name'=>'lb_record_primary_key[]'));?></td>';                               
                 html += '</tr>';
         $('#table_salary tr:last').after(html);
           
@@ -529,5 +530,5 @@ echo '<br />';
         $('#description'+comment_id).html(descript);
 
     }
-    
+   
     </script>

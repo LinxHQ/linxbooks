@@ -31,7 +31,7 @@ $PDFPayment = '<table border="0" style="margin:auto; width:100%;" cellpading="0"
                 </table>
             </td></tr>'
             .'</table>
-            <table border="1"   style="margin-left:40px;margin-top:50px; width:100%;" class="items table table-bordered">';
+            <table border="1" style="width:100%;margin-top:20px;margin-left:40px;" cellpadding="0" cellspacing="0">';
                 $PDFPayment .= '<thead>
                     
                         <tr style="font-weight:bold;" align="center">                        

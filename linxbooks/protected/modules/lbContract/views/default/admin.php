@@ -32,7 +32,7 @@ $('.search-form form').submit(function(){
 <?php
 echo '<div id="lb-container-header">';
             echo '<div class="lb-header-right" ><h3>Contracts</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div class="lb-header-left" style="width:400px;">';
             LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(

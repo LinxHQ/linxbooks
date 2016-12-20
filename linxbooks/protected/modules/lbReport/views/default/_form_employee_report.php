@@ -37,7 +37,7 @@ $date_now = date('Y');
                   array('empty' => 'All','class'=>'span2')
                     );
         ?> &nbsp;&nbsp;&nbsp;&nbsp;
-        <?php echo CHtml::button(Yii::t('lang','Search'), array('onclick'=>'load_search_aging_report();return false;','class'=>'btn','style'=>'margin-top:-9px;')) ?>
+        <?php echo CHtml::button(Yii::t('lang','Search'), array('onclick'=>'load_search_employee_report();return false;','class'=>'btn','style'=>'margin-top:-9px;')) ?>
         
         </div>
         
@@ -63,7 +63,7 @@ $date_now = date('Y');
     
    //$('#form_view_employee_report').load('AjaxLoadViewEmployeeReport');
 
-   function load_search_aging_report(){
+   function load_search_employee_report(){
        var employee_id = $('#employee').val();            
        var payment_year = $('#payment_year').val();
        

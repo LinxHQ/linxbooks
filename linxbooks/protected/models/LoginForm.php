@@ -77,4 +77,21 @@ class LoginForm extends CFormModel
 		else
 			return false;
 	}
+        
+        function remoteLogin($return_data)
+        {
+           if ($this->_identity === null)
+           {
+              $this->_identity = new UserIdentity($return_data->account_username, 'blankpassword'); 
+              $this->_identity->remoteAuthenticate($return_data);
+           }
+           if ($this->_identity->errorCode===UserIdentity::ERROR_NONE)
+           {
+              $duration=$this->rememberMe ? 3600*24*10 : 0; // 10 days
+              Yii::app()->user->login($this->_identity,$duration);
+              return true;
+           } else {
+              return false;
+           }
+        }
 }

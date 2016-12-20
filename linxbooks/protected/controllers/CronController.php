@@ -14,10 +14,16 @@ class CronController extends Controller
             $current_date = date('Y-m-d');
             $modelAll = LbInvoice::model()->findAll();
             foreach ($modelAll as $data) {
-                if(strtotime($current_date) > strtotime($data->lb_invoice_due_date) && $data->lb_invoice_status_code == LbInvoice::LB_INVOICE_STATUS_CODE_OPEN)
+                if(strtotime($current_date) > strtotime($data->lb_invoice_due_date) && $data->lb_invoice_status_code == LbInvoice::LB_INVOICE_STATUS_CODE_OPEN && $data->lb_invoice_status_code!="Draft")
                 {
                     $model=  LbInvoice::model()->findByPk($data->lb_record_primary_key);
                     $model->lb_invoice_status_code= LbInvoice::LB_INVOICE_STATUS_CODE_OVERDUE;
+                    $model->save();
+                }
+                else if($data->lb_invoice_status_code == "Draft")
+                {
+                    $model=  LbInvoice::model()->findByPk($data->lb_record_primary_key);
+                    $model->lb_invoice_status_code= LbInvoice::LB_INVOICE_STATUS_CODE_DRAFT;
                     $model->save();
                 }
             }

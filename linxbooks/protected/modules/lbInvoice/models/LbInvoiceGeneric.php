@@ -14,6 +14,7 @@
  * @property integer $lb_invoice_customer_id
  * @property integer $lb_invoice_customer_address_id
  * @property integer $lb_invoice_attention_contact_id
+ * @property integer $lb_invoice_term_id
  * @property string $lb_invoice_subject
  * @property string $lb_invoice_note
  * @property string $lb_invoice_status_code
@@ -118,7 +119,7 @@ class LbInvoiceGeneric extends CLBActiveRecord
 		// will receive user inputs.
 		return array(
 				array('lb_invoice_group, lb_invoice_no, lb_invoice_date', 'required'),
-				array('lb_generated_from_quotation_id, lb_invoice_company_id, lb_invoice_company_address_id, lb_invoice_customer_id, lb_invoice_customer_address_id, lb_invoice_attention_contact_id, lb_quotation_id', 'numerical', 'integerOnly'=>true),
+				array('lb_generated_from_quotation_id, lb_invoice_company_id, lb_invoice_company_address_id, lb_invoice_customer_id, lb_invoice_customer_address_id, lb_invoice_attention_contact_id, lb_quotation_id,lb_invoice_term_id,lb_invoice_currency', 'numerical', 'integerOnly'=>true),
 				array('lb_invoice_group, lb_invoice_status_code', 'length', 'max'=>60),
 				array('lb_invoice_no', 'length', 'max'=>50),
 				array('lb_invoice_subject', 'length', 'max'=>255),
@@ -127,7 +128,7 @@ class LbInvoiceGeneric extends CLBActiveRecord
 				array('lb_invoice_no_formatted, lb_invoice_internal_note', 'safe'),
 				// The following rule is used by search().
 				// Please remove those attributes that should not be searched.
-				array('lb_record_primary_key, lb_invoice_group, lb_generated_from_quotation_id, lb_invoice_no, lb_invoice_date, lb_invoice_due_date, lb_invoice_company_id, lb_invoice_company_address_id, lb_invoice_customer_id, lb_invoice_customer_address_id, lb_invoice_attention_contact_id, lb_invoice_subject, lb_invoice_note, lb_invoice_status_code, lb_invoice_encode, lb_quotation_id', 'safe', 'on'=>'search'),
+				array('lb_record_primary_key, lb_invoice_group, lb_generated_from_quotation_id, lb_invoice_no, lb_invoice_date, lb_invoice_due_date, lb_invoice_company_id, lb_invoice_company_address_id, lb_invoice_customer_id, lb_invoice_customer_address_id, lb_invoice_attention_contact_id, lb_invoice_subject, lb_invoice_note, lb_invoice_status_code, lb_invoice_encode, lb_quotation_id, lb_invoice_term_id,lb_invoice_currency', 'safe', 'on'=>'search'),
 		);
 	}
 	
@@ -184,6 +185,8 @@ class LbInvoiceGeneric extends CLBActiveRecord
 		$criteria->compare('lb_invoice_status_code',$this->lb_invoice_status_code,true);
                 $criteria->compare('lb_invoice_encode', $this->lb_invoice_encode, true);
                 $criteria->compare('lb_quotation_id', $this->lb_quotation_id, true);
+                $criteria->compare('lb_invoice_term_id', $this->lb_invoice_term_id, true);
+                $criteria->compare('lb_invoice_currency', $this->lb_invoice_currency, true);
                 if($status_id)
                     $criteria->compare('lb_invoice_status_code',$status_id,true);
                 $criteria->order = 'lb_invoice_due_date DESC';

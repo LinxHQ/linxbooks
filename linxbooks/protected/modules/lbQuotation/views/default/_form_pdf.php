@@ -7,6 +7,10 @@ $decimal= LbGenera::model()->getGeneraSubscription()->lb_decimal_symbol;
 
 
 $currency_name = LbGenera::model()->getGeneraSubscription()->lb_genera_currency_symbol;
+if($model && $model->lb_quotation_currency>0)
+    {
+    $currency_name=LbGenera::model()->findByPk($model->lb_quotation_currency)->lb_genera_currency_symbol;
+    }
 // Subtotal quotation
 $quotation_subtotal_arr = LbQuotationTotal::model()->getQuotationTotal($model->lb_record_primary_key);
 // Discount Quotation
@@ -113,7 +117,7 @@ if(isset($model->lb_quotation_subject))
                     </tr>
                     <tr><td colspan="2">'.nl2br($model->lb_quotation_subject).'</td></tr>';
 }
-
+$term = UserList::model()->getTermName('term',$model->lb_quotation_term);
 $tbl= '<table border="0" style="margin:auto;width:100%;" cellpadding="0" cellspacing="0">
         '.$html_logo.'
         <tr valign="top">
@@ -121,6 +125,7 @@ $tbl= '<table border="0" style="margin:auto;width:100%;" cellpadding="0" cellspa
                 <span style="font-size:20px;font-weight:bold;">QUOTATION</span><br>
                 Quotation No: '.$model->lb_quotation_no.'<br>
                 Quotation Date: '.date('d-M-Y',  strtotime($model->lb_quotation_date)).'<br>
+                Term: '.$term[0]['system_list_item_name'].'<br>
                 Due Date: '.date('d-M-Y',  strtotime($model->lb_quotation_due_date)).'<br>
             </td>
             <td width="400" align="right">

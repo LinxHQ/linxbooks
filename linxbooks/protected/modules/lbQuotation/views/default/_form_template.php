@@ -55,9 +55,13 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         item_description += $("#<?php echo $grid_id; ?> #lb_item_description_"+template_id).val();
 
         var item_unit_price = $("#<?php echo $grid_id; ?> #lb_item_unit_price_"+template_id).val();
+        var item_quantity = $("#lb_quotation_item_quantity_"+item_id).val();
+        var total = parseFloat(item_unit_price)*parseFloat(item_quantity);
+        var item_total = total.toFixed(2);
         $("#lb_quotation_item_description_"+item_id).val(item_description);
         $("#lb_quotation_item_price_"+item_id).val(item_unit_price);
-        $("#lb_quotation_item_total_"+item_id).val(item_unit_price);
+       // $("#lb_quotation_item_total_"+item_id).val(item_unit_price);
+        $("#lb_quotation_item_total_"+item_id).val(item_total);
         lbquotation_line_items_updated = true;
         lbAppUIHideModal(<?php echo $model->lb_record_primary_key?>);
     }

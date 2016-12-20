@@ -2,9 +2,9 @@
 $model= UserList::model()->search();
 $this->widget('bootstrap.widgets.TbGridView',array(
         'id'=>'lb_list',
-         
+        'template' => "{items}\n{pager}\n{summary}",
         'dataProvider'=>  $model,
-        'htmlOptions' => array('class'=>'items table table-bordered','width'=>'98%'),
+       // 'htmlOptions' => array('class'=>'items table table-bordered','width'=>'98%'),
         'columns'=>array(
                         array(
                             'name'=>'List',

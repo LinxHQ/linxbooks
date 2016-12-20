@@ -28,6 +28,7 @@ $i=0;
 foreach ($expenses_invoice as $ex_invoice)
 {
         $invoice = LbInvoice::model()->findByPk($ex_invoice->lb_invoice_id);
+        if(count($invoice) > 0){
         $i++;
 	echo "
                 <div style='overflow:hidden; border-top: 1px solid #EEEEEE;margin-top: 5px;'>
@@ -46,6 +47,7 @@ foreach ($expenses_invoice as $ex_invoice)
         echo    "</div>
                 <div id='error_delete_expense_invoice_".$invoice->lb_record_primary_key."' class='alert alert-block alert-error' style='display:none;'></div>
             ";
+        }
 } // end for
 //form assign invoice
     $this->beginWidget('bootstrap.widgets.TbModal',array('id'=>'modal-invoice-assign-form'));

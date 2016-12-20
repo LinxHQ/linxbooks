@@ -32,23 +32,117 @@ $count_invoice=  LbInvoice::model()->getInvoiceByStatus($status);
 $count_invoice= $count_invoice->totalItemCount;
 $count_quotation= LbQuotation::model()->getQuotationByStatus('("'.LbQuotation::LB_QUOTATION_STATUS_CODE_DRAFT.'","'.LbQuotation::LB_QUOTATION_STATUS_CODE_SENT.'","'.LbQuotation::LB_QUOTATION_STATUS_CODE_APPROVED.'")');
 $count_quotation=$count_quotation->totalItemCount;
+//$status_arr = LbInvoice::model()->getArrayStatusInvoice();
+//$option_status = '<options>'.$status_arr.'</options>';
 // Buttons
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left: -10px"><h4>'.Yii::t("lang","Invoice Dashboard").'</h4></div>';
+            echo '<div class="lb-header-right" style="margin-left: -10px"><h3>'.Yii::t("lang","Dashboard").'</h3></div>';
             echo '<div class="lb-header-left">';
-            echo '<div class="btn-toolbar" style="margin-top:2px;">';
-            if($canAdd)
-                echo '<button id="btn_invoice" class = "btn" onclick="view_oustanding_invoice()">Outstanding Invoice<span class="notification-badge">'.$count_invoice.'</span></button>';
-            if($canAddQuotation)
-                echo '<button id="btn_quotation" class = "btn" onclick="view_oustanding_quotation()">Outstanding Quotation<span class="notification-badge">'.$count_quotation.'</span></button>';
-            if($canAddPayment)
-                echo '<button id="btn_graph" class = "btn" onclick="view_chart()">Chart</button>';
+            echo '<div id="lb_invoice" class="btn-toolbar" style="margin-top:2px;" >';
+                echo ' <input type="text" placeholder="Search" value="" style="border-radius: 15px;" onKeyup="search_name_invoice(this.value);">';
+//            if($canAdd)
+//                echo '<button id="btn_invoice" class = "btn" onclick="view_oustanding_invoice()">Outstanding Invoice<span class="notification-badge">'.$count_invoice.'</span></button>';
+//            if($canAddQuotation)
+//                echo '<button id="btn_quotation" class = "btn" onclick="view_oustanding_quotation()">Outstanding Quotation<span class="notification-badge">'.$count_quotation.'</span></button>';
+//            if($canAddPayment)
+//                echo '<button id="btn_graph" class = "btn" onclick="view_chart()">Chart</button>';
+            echo '</div>';
+            echo '<div id="lb_quotation" class="btn-toolbar" style="margin-top:2px;">';
+                echo '<input type="text" placeholder="Search" value="" style="border-radius: 15px;" onKeyup="search_name_quotation(this.value);">';
             echo '</div>';
             echo '</div>';
 echo '</div>';
+    
+echo '<div id="lb_dashboard_summary">';
+    //echo '<div style="width:15%;"></div>';
+    LBApplication::renderPartial($this,'dashboard_summary',  array('model'=>$model));                   
+echo '</div>';
+echo '</br>';
+echo '<div id="lb_dashboard_submenu">';
+    echo '<div class="lb_submenu_left">';
+        echo '<img id="img_invoice" class="lb_img_submenu_left" src='.Yii::app()->baseUrl.'/images/icons/invoice-green.png onclick="view_oustanding_invoice()"><br/>';
+        echo '<label  style="margin-left:10px;" class="submenu_label" id="btn_invoice"  onclick="view_oustanding_invoice()">Invoice</label>&nbsp&nbsp';
+  
+    echo '</div>';
+     echo '<div class="lb_submenu_left">';
+        echo '<img id="img_quotation" class="lb_img_submenu_left_opacity" onclick="view_oustanding_quotation()" src='.Yii::app()->baseUrl.'/images/icons/icon_quote3.png ><br/>';
+        
+        echo '<label class="submenu_label" id="btn_quotation" style="color:black !important;" onclick="view_oustanding_quotation()">Quotations</label>&nbsp&nbsp';  
+    echo '</div>';
+     echo '<div class="lb_submenu_left">';
+        echo '<img id="img_chart" class="lb_img_submenu_left_opacity" src='.Yii::app()->baseUrl.'/images/icons/chart.png onclick="view_chart()"><br/>';
+        echo '<label class="submenu_label" id="btn_graph"  style="margin-left:16px;" onclick="view_chart()">Charts</label>';
+    echo '</div>';
+    
+    
+echo '</div>';
 echo '<br />';
-echo '<div id ="view_invoice">';
+echo '<div style="border-bottom:3px solid #e8e8e8;margin-top:107px"></div>';
+echo '<div id="lb_submenu_right_invoice" class="lb_submenu_right">';
+
+            
+  
+       
+    ?>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+        <a style="margin-left:-17px" href="<?php echo $model->getCreateURLNormalized(array('group'=>strtolower(LbInvoice::LB_INVOICE_GROUP_INVOICE))); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Invoice'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="<?php echo LbQuotation::model()->getCreateURLNormalized(); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Quotation'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="<?php echo Yii::app()->createAbsoluteUrl('lbPayment/default/create'); ?>"><img width="16" src="<?php echo Yii::app()->baseUrl.'/images/icons/dolar.png' ?>" /> <?php echo Yii::t('lang','New Payment'); ?></a>
+    <?php
+    echo '<div class="dropdown" style="display:inline-flex;color:rgb(91,183,91); float:right;">';
+//                echo 'Invoice Status:&nbsp;';
+                echo'<label data-toggle="dropdown">All Status
+                 <span class="caret"></span></label>';
+                 echo'<ul class="dropdown-menu">';
+                   
+                    $list = LbInvoice::model()->getArrayStatusInvoice();
+                    foreach ($list as $value) {
+                        $status_invoice = LbInvoice::model()->getInvoiceStatus($value);
+                        ?>
+                            <li><a href="#" onclick="search_invoice('<?php echo $status_invoice;?>'); return false;"><?php echo $value?></a></li>
+                            <?php                      
+                   }                 
+                 echo '</ul>';
+            echo '</div>';
+    echo '</div>';
+echo '<div id="lb_submenu_right_quotation" class="lb_submenu_right">';
+        ?>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
+         <a style="margin-left:-17px" href="<?php echo $model->getCreateURLNormalized(array('group'=>strtolower(LbInvoice::LB_INVOICE_GROUP_INVOICE))); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Invoice'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="<?php echo LbQuotation::model()->getCreateURLNormalized(); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Quotation'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="<?php echo Yii::app()->createAbsoluteUrl('lbPayment/default/create'); ?>"><img width="16" src="<?php echo Yii::app()->baseUrl.'/images/icons/dolar.png' ?>" /> <?php echo Yii::t('lang','New Payment'); ?></a>
+    <?php
+         echo '<div class="dropdown" style="display:inline-flex;color:rgb(91,183,91);float:right">';
+//                echo 'Quotation Status:&nbsp;';
+                echo'<label data-toggle="dropdown">All Status
+                 <span class="caret"></span></label>';
+                 echo'<ul class="dropdown-menu">';
+                   
+                    $listQuoStatus = LbQuotation::model()->ArrayStatusQuotation();
+                    foreach ($listQuoStatus as $value) {
+                        $status_quotation = LbQuotation::model()->getQuotationStatus($value);
+                        
+                        ?>
+                            <li><a href="#" onclick="search_quotation('<?php echo $status_quotation;?>'); return false;"><?php echo $value?></a></li>
+                            <?php                      
+                   }                 
+                 echo '</ul>';
+            echo '</div>';
+//            echo 'Quotation Status: '.CHtml::dropDownList('status_quo_id', '',
+//    LbQuotation::model()->ArrayStatusQuotation(), array('empty' => 'All','onchange'=>'search_quotation();return false;','style'=>'width:100px;'));
+//       
+    
+    echo '</div>';
+    echo '<div id="lb_menu_right" class="lb_submenu_right">';
+    ?>
+         <a href="<?php echo $model->getCreateURLNormalized(array('group'=>strtolower(LbInvoice::LB_INVOICE_GROUP_INVOICE))); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Invoice'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="<?php echo LbQuotation::model()->getCreateURLNormalized(); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Quotation'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="<?php echo Yii::app()->createAbsoluteUrl('lbPayment/default/create'); ?>"><img width="16" src="<?php echo Yii::app()->baseUrl.'/images/icons/dolar.png' ?>" /> <?php echo Yii::t('lang','New Payment'); ?></a>
+    <?php
+    echo '</div>';
+    
+echo '<div id ="view_invoice" style="clear:both">';
 
 echo '</div>';
 ?>
@@ -58,41 +152,111 @@ echo '</div>';
 view_oustanding_invoice();
 function view_oustanding_invoice()
 {
-//    $('#view_invoice').block();
+    $("#img_quotation").removeClass();
+    $('#img_quotation').addClass("lb_img_submenu_left_opacity");
+    
+    $("#img_invoice").removeClass();
+    $('#img_invoice').addClass("lb_img_submenu_left");
+    
+    $("#img_chart").removeClass();
+    $('#img_chart').addClass("lb_img_submenu_left_opacity");
     $('#view_invoice').load('<?php echo LbInvoice::model()->getActionURLNormalized('_form_oustanding_invoice') ?>',{year:<?php echo date('Y')?>},function(){
-//        $('#view_invoice').unblock();
     });
-
-    $("#btn_invoice").css("background-color","#5bb75b");
-    $("#btn_invoice").css("color","#fff");
-    $("#btn_graph").css("background-color","#f5f5f5");
-    $("#btn_quotation").css("background-color","#f5f5f5");
-     $("#btn_graph").css("color","black");
-
-    $("#btn_quotation").css("color","black");
+    $("#btn_invoice").css("color","rgb(91,183,91) !important");   
+     $("#btn_graph").css("color","#dcdcdc !important");
+    $("#btn_quotation").css("color","#dcdcdc !important");
+    $("#lb_submenu_right_quotation").hide();
+    $("#lb_submenu_right_invoice").show();
+    $("#lb_menu_right").hide();
+    $("#lb_quotation").hide();
+    $("#lb_invoice").show();
 }
 
 function view_oustanding_quotation()
 {
-    $("#btn_graph").css("color","black");
+    $("#img_quotation").removeClass();
+    $('#img_quotation').addClass("lb_img_submenu_left");
+    
+    $("#img_invoice").removeClass();
+    $('#img_invoice').addClass("lb_img_submenu_left_opacity");
+    
+    $("#img_chart").removeClass();
+    $('#img_chart').addClass("lb_img_submenu_left_opacity");
+    
+    $("#btn_graph").css("color","#dcdcdc");
   
-    $("#btn_invoice").css("color","black");
-     $("#btn_quotation").css("color","#fff");
-    $("#btn_quotation").css("background-color","#5bb75b");
-    $("#btn_invoice").css("background-color","#f5f5f5");
-    $("#btn_graph").css("background-color","#f5f5f5");
+    $("#btn_invoice").css("color","#dcdcdc");
+     $("#btn_quotation").css("color","rgb(91,183,91)!important");
+    
     $('#view_invoice').load('<?php echo LbInvoice::model()->getActionURLNormalized('_form_oustanding_quotation') ?>');
+    $("#lb_submenu_right_quotation").show();
+    $("#lb_submenu_right_invoice").hide();
+    $("#lb_menu_right").hide();
+    $("#lb_quotation").show();
+    $("#lb_invoice").hide();
 }
 function view_chart()
 {
-    $("#btn_graph").css("color","#fff");
-    $("#btn_invoice").css("color","black");
-    $("#btn_quotation").css("color","black");
-   $("#btn_graph").css("background-color","#5bb75b");
-   $("#btn_invoice").css("background-color","#f5f5f5");
-   $("#btn_quotation").css("background-color","#f5f5f5");
+    $("#img_quotation").removeClass();
+    $('#img_quotation').addClass("lb_img_submenu_left_opacity");
+    
+    $("#img_invoice").removeClass();
+    $('#img_invoice').addClass("lb_img_submenu_left_opacity");
+    
+    $("#img_chart").removeClass();
+    $('#img_chart').addClass("lb_img_submenu_left");
+    
+    
+    $("#btn_graph").css("color","rgb(91,183,91)!important");
+    $("#btn_invoice").css("color","#dcdcdc");
+    $("#btn_quotation").css("color","#dcdcdc");
+
     $('#view_invoice').load('<?php echo LbInvoice::model()->getActionURLNormalized('chart') ?>');
+    $("#lb_submenu_right_quotation").hide();
+    $("#lb_submenu_right_invoice").hide();
+    $("#lb_menu_right").show();
 }
+function search_name_invoice(name)
+    {
+        name = replaceAll(name," ", "%");
+        
+        if(name.length >= 3){
+        $('#show_invoice').load('<?php echo $this->createUrl('/lbInvoice/default/_search_invoice');?>?name='+name
+                  
+            );
+        }
+    }
+    function replaceAll(string, find, replace) {
+      return string.replace(new RegExp(escapeRegExp(find), 'g'), replace);
+    }
+    function escapeRegExp(string) {
+        return string.replace(/([.*+?^=!:${}()|\[\]\/\\])/g, "\\$1");
+    }
+function search_name_quotation(name)
+    {
+        name = replaceAll(name," ", "%");
+         $('#show_quotation').load('<?php echo $this->createUrl('/lbInvoice/default/_search_quotation');?>?name='+name);
+    }
+   
+function search_invoice(status_id)
+    {
+        //var status_id = $(this).attr("status_id");
+     //   var status_id = $('#status_inv_id').attr('value');   
+       
+        console.log(status_id);
+           
+       // $('#show_invoice').load('<?//php// echo LbInvoice::model()->getActionURLNormalized('_load_status_invoice',array()) ?>',{status_id:status_id});
+      // $('#view_invoice').load('<?//php// echo LbInvoice::model()->getActionURLNormalized('_form_oustanding_invoice') ?>',{status_id:status_id});
+       $('#view_invoice').load('<?php echo $this->createUrl('/lbInvoice/default/_form_oustanding_invoice')?>?status_id='+status_id);
+    }
+function search_quotation(status_id)
+    {
+       
+      //  var status_id = $('#status_quo_id').val();      
+      //  $('#show_quotation').load('<?//php// echo LbInvoice::model()->getActionURLNormalized('_load_status_quotation') ?>',{status_id:status_id});
+       // $('#view_invoice').load('<?//php// echo LbInvoice::model()->getActionURLNormalized('_form_oustanding_quotation') ?>',{status_id:status_id});
+        $('#view_invoice').load('<?php echo $this->createUrl('/lbInvoice/default/_form_oustanding_quotation')?>?status_id='+status_id);
+    }
 </script>
 <style>
     .notification-badge {

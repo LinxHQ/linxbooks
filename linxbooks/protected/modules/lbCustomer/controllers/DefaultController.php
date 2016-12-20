@@ -32,7 +32,7 @@ class DefaultController extends CLBController
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','ajaxUpdateField','createAddress','deleteAddress','loadAjaxTabAddress','loadAjaxTabContract','deleteContact'),
+				'actions'=>array('create','update','ajaxUpdateField','createAddress','deleteAddress','loadAjaxTabAddress','loadAjaxTabContract','deleteContact','_search_customer'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -387,5 +387,11 @@ class DefaultController extends CLBController
                             'customer_contacts'=>$customer_contacts,
                             'customer_id'=>$id,
                           ));
+        }
+        function action_search_customer(){
+            $name = isset($_GET['name']) ? $_GET['name'] : '';
+            LBApplication::renderPartial($this, '_search_customer', array(
+                'name'=>$name,
+            ));
         }
 }

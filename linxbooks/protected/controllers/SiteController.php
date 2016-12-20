@@ -153,6 +153,7 @@ class SiteController extends Controller
 	 */
 	public function actionLogin()
 	{
+
 		$model=new LoginForm;
 
 		// if it is ajax validation request
@@ -190,6 +191,29 @@ class SiteController extends Controller
 		LBApplication::renderPartial($this, 'login', array('model'=>$model));
 		
 		//$this->render('login',array('model'=>$model));
+            
+            /* CODE TICH HOP */
+                /*
+            $app = Yii::app();
+            $request = $app->getRequest();
+            $linxHQAPI = new LinxHQAuthenticationAPI;
+            $remote_data = $linxHQAPI::isAuthenticated();
+            if (isset($remote_data) && $remote_data->action_code == 'ALREADY_AUTHENTICATED') {
+               $loginForm = new LoginForm();
+               if ($loginForm->remoteLogin($remote_data))
+               {
+                    // if already login, show projects index
+                    if (isset(Yii::app()->user->id) && Yii::app()->user->id > 0)
+                    {
+
+
+                            $this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
+                            //$this->redirect(array("project/index"));
+                    }
+               } else {
+                  $request->redirect(Yii::app()->params['linxhqAccountsURL']);
+               }
+            }*/
 	}
 
 	/**
@@ -197,9 +221,11 @@ class SiteController extends Controller
 	 */
 	public function actionLogout()
 	{
-		Yii::app()->user->logout();
-		$this->redirect(array("site/login"));
-		//$this->redirect(Yii::app()->homeUrl);
+            Yii::app()->user->logout();
+            $this->redirect(array("site/login"));
+            
+            /* CODE TICH HOP */
+            //Yii::app()->getRequest()->redirect(Yii::app()->params['linxhqLogoutURL']);
 	}
 	
 	public function actionSearch()

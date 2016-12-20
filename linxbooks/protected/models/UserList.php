@@ -46,7 +46,7 @@ class UserList extends CActiveRecord
 			array('system_list_name, system_list_item_name', 'length', 'max'=>255),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('system_list_item_id, system_list_name, system_list_item_name, system_list_parent_item_id, system_list_item_order, system_list_item_active', 'safe', 'on'=>'search'),
+			array('system_list_item_id, system_list_name, system_list_item_name, system_list_parent_item_id, system_list_item_order, system_list_item_active,system_list_item_day,system_list_item_month', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -99,7 +99,9 @@ class UserList extends CActiveRecord
 		$criteria->compare('system_list_item_order',$this->system_list_item_order);
 		$criteria->compare('system_list_item_active',$this->system_list_item_active);
 		$criteria->compare('system_list_code',$this->system_list_code);
-                $criteria->group="system_list_code";
+		$criteria->compare('system_list_item_day', $this->system_list_item_day);
+        $criteria->compare('system_list_item_month', $this->system_list_item_month);
+        $criteria->group="system_list_code";
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
 		));
@@ -319,7 +321,39 @@ class UserList extends CActiveRecord
             $dataProvider->setPagination(false);
             return $dataProvider->getData();
         }
+         public function getItemsList($list_code)
+        {
+            $dataProvider = new CActiveDataProvider('UserList', array(
+                'criteria'=>array(
+                    'condition' => "system_list_code = '" . $list_code . "'",
+                    'order' => 'system_list_item_order ASC',
+                )
+            ));           
+            $dataProvider->setPagination(false);
+            return $dataProvider->getData();
+        }
         
-        
-        
+        public function getTerm($list_id){
+            $criteria = new CDbCriteria();
+            $criteria->compare('system_list_item_id', $list_id);
+            $list = $this->findAll($criteria);
+            foreach ($list as $value) {
+                $term = $value['system_list_item_name'];
+                if($term=='Immediate')
+                    return $termValue = 0;
+                if($term=='7 days')
+                    return $termValue = 7;
+                if($term=='14 days')
+                    return $termValue = 14;
+                if($term=='30 days')
+                    return $termValue = 30;
+            }
+        }
+        public function getTermName($list_code,$list_id){
+            $criteria = new CDbCriteria();
+            $criteria->compare('system_list_item_id', $list_id);
+            $criteria->compare('system_list_code', $list_code);
+            $list = $this->findAll($criteria);
+            return $list;
+        }
 }

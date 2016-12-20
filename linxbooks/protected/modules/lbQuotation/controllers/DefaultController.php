@@ -62,6 +62,9 @@ class DefaultController extends CLBController
                                      'ajaxUpdateField',
                                      'uploadLogo',
                                      'ajaxCopyQuotation',
+                                     'Search_Quotation',
+                                     'ajaxQuickCreateCurrency',
+                                     'AjaxUpdateFieldDate'
                             ),
                             'users'=>array('@'),
                         ),
@@ -956,5 +959,57 @@ class DefaultController extends CLBController
         }        
         
     }
-
+    public function actionSearch_Quotation(){
+        $search_name = isset($_GET['search_name']) ? $_GET['search_name'] : '';
+        LBApplication::renderPartial($this, 'search_view_quotation', array(
+            'search_name'=>$search_name,
+        ));
+    }
+     public function actionajaxQuickCreateCurrency(){
+        $quotation_id = isset($_REQUEST['quotation_id']) ? $_REQUEST['quotation_id'] : '';        
+       // $model = LbInvoice::model()->findByPk($invoice_id);
+        $model = $this->loadModel($quotation_id);
+        $GeneraModel = new LbGenera();
+        if(isset($_POST['LbGenera'])){
+            $GeneraModel->attributes = $_POST['LbGenera'];
+            if($GeneraModel->save()){
+                $model->lb_quotation_currency = $GeneraModel->lb_record_primary_key;
+                 $model->save();
+            }
+            LBApplication::renderPlain($this,
+                array('content'=>CJSON::encode($GeneraModel))
+            );
+            return true;
+        }
+        LBApplication::renderPartial($this, '_form_currency', array(
+            'model'=>$model,
+            'GeneraModel'=>$GeneraModel,
+        ));
+    }
+    public function actionAjaxUpdateFieldDate()
+	{
+		if (isset($_POST['pk']) && isset($_POST['name']) && isset($_POST['value']))
+		{
+			$id = $_POST['pk'];
+			$attribute = $_POST['name'];
+			$value = $_POST['value'];
+                        
+			// get model
+			$model = $this->loadModel($id);
+			// update
+			$model->$attribute = $value;
+			//$model->save();
+                        if($model->save()){
+                           // if($model->lb_invoice_status_code != LbInvoice::LB_INVOICE_STATUS_CODE_PAID){
+//                                $status = LbInvoice::model()->UpdateStatusInvoice($model->lb_record_primary_key);
+//                                $model->lb_invoice_status_code = $status;
+                                $model->lb_quotation_due_date = LbQuotation::model()->UpdateDueDate($model->lb_record_primary_key);
+                                $model->save();
+                           // }
+                        }
+                        return true;
+		}
+	
+		return false;
+	}
 }
