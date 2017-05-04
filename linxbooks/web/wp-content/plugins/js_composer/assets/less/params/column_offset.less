@@ -1,0 +1,46 @@
+.vc_column-offset-table {
+    > tbody {
+        > tr {
+            > th {
+                border: 0;
+                text-align: left;
+            }
+            > td {
+                border: 1px solid @table-border-color;
+                padding: 20px;
+                text-align: center;
+            }
+        }
+    }
+
+    .vc_screen-size {
+        background-color: #F8F8F8;
+        .vc_icon {
+            background: transparent url(../vc/column_offset_screen_size.png) -21px 0 no-repeat;
+            width: 21px;
+            height: 21px;
+            display: inline-block;
+        }
+        &-md {
+            .vc_icon {
+                background-position: -21px -21px;
+            }
+        }
+        &-sm {
+            .vc_icon {
+                background-position: -21px -42px;
+            }
+        }
+        &-xs {
+            .vc_icon {
+                background-position: -21px -84px;
+            }
+        }
+    }
+}
+.vc_responsive_disabled {
+    .vc_size-xs, .vc_size-md, .vc_size-lg {
+        .opacity(.5);
+    }
+}
+//@import "../shortcodes/vc_message.less"; @deprecated since 4.4

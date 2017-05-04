@@ -1,0 +1,97 @@
+.vc_column(@bg_controls_color, @wrapper_bg_color, @padding) {
+    margin-bottom: @vc_backend_column_margin_bottom;
+    //height: 100%; // removed due to bugs with big "height", todo test this is it really needed, related bugs: #1545, #1536
+    position: relative;
+    > .vc_controls {
+        text-align: center;
+        background: @bg_controls_color;
+        width: 100%;
+        line-height: 1px;
+        padding: 2px;
+        height: @vc_backend_column_controls_height;
+        .vc_control {
+            padding: 0;
+        }
+    }
+    > .wpb_element_wrapper {
+        background: @wrapper_bg_color; // @vc_column_bg;
+        padding: @padding;
+    }
+}
+.wpb_row_container {
+    // > .wpb_vc_column_inner,
+    > .wpb_vc_column {
+        .vc_column(@vc_column_bg; @vc_column_bg; 1px 14px 1px);
+    }
+    > .wpb_vc_column_inner {
+        .vc_column(#FFFFFF; #FFFFFF; 1px 14px 1px);
+    }
+}
+.wpb_vc_row, .wpb_vc_row_inner {
+    > .controls {
+        > .column_move {
+            background-color: @vc_column_bg;
+        }
+        .column_delete {
+            &:hover {
+                background-color: #FFE0E0;
+            }
+        }
+    }
+/*
+    > .wpb_element_wrapper {
+        > .vc_closed {
+            height: 24px;
+            overflow: hidden;
+        }
+    }
+    > .controls {
+        .column_toggle.vc_inverse {
+            .vc_icon {
+                background-position: -16px -112px;
+            }
+        }
+    }
+*/
+
+
+}
+.vc_collapsed-row {
+    > .wpb_element_wrapper {
+    // border-bottom: 20px solid @vc_column_bg;
+        > .vc_container_for_children {
+            height: @vc_backend_column_controls_height + @vc_backend_column_margin_bottom;
+            overflow: hidden;
+            > .wpb_vc_column, .wpb_vc_column_inner {
+                .vc_controls {
+                    border-bottom: 1px solid transparent;
+                    border-left: 1px solid transparent;
+                    border-right: 1px solid transparent;
+                    .border-bottom-radius(@vc_border_radius);
+                    margin-bottom: @vc_backend_column_margin_bottom;
+                }
+            }
+        }
+    }
+    > .controls {
+        .column_toggle {
+            .vc_icon {
+                background-position: -16px -112px;
+            }
+        }
+    }
+}
+.wpb_vc_row_inner {
+    > .controls {
+        > .column_move {
+            background-color: #FFFFFF;
+        }
+    }
+    &.wpb_sortable {
+        margin-bottom: -15px; // Inner row margins: #1225
+    }
+}
+
+
+
+

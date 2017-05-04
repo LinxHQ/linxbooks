@@ -1,0 +1,115 @@
+// Set element size
+
+.wpb-elements-list-modal {
+    .vc_modal-dialog {
+        margin: @vc_modal_top_margin auto 0;
+        .vc_modal-body {
+            height: auto;
+            overflow-y: auto;
+            .wpb-content-layouts-container {
+                margin: 0;
+                .isotope-filter {
+                    *:first-child {
+                        margin-left: 1px;
+                    }
+                    li {
+                        display: inline-block;
+                        margin-left: 10px;
+                        &.active a {
+                            border-bottom: 0 none;
+                            color: #000000;
+                        }
+                        a {
+                            border-bottom: 1px dotted;
+                            text-decoration: none;
+                            -webkit-box-shadow: none;
+                            -moz-box-shadow: none;
+                            box-shadow: none;
+                            &:hover {
+                                text-decoration: none;
+                            }
+                            &:focus {
+                                -webkit-box-shadow: none;
+                                -moz-box-shadow: none;
+                                box-shadow: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .wpb-content-layouts {
+        padding: 0;
+        margin: 0;
+        li {
+            background: none repeat scroll 0 0 #F5F5F5;
+            border: 1px solid #faf9f9;
+            margin: 0 0 2px 2px;
+            width: @vc_add_element_button_width;
+            display: none;
+            overflow: hidden;
+            position: relative;
+            float: left;
+            height: 70px;
+
+            list-style: none;
+            .transition(border-color 0.2s);
+            &:hover {
+                border-color: #00aef0;
+            }
+            .vc_el-container {
+                display: table;
+                height: 69px;
+                width: 100%;
+            }
+        }
+        a {
+            outline: none;
+            display: table-cell;
+            line-height: 14px;
+            padding: 2px 4px 2px 47px;
+            vertical-align: middle;
+            white-space: normal;
+            text-decoration: none;
+            font-weight: bold;
+            .vc_element-description {
+                display: block;
+                position: relative;
+                background-color: transparent;
+                top: auto;
+                left: auto;
+                width: auto;
+                height: auto;
+                font-size: 11px;
+                font-style: normal;
+                font-weight: normal;
+                margin-top: 3px;
+                color: #999999;
+            }
+        }
+        .vc_visible {
+            display: block;
+        }
+        .vc_inappropriate {
+            display: none !important;
+        }
+    }
+    .vc_element-icon {
+        position: absolute;
+        top: 20px;
+        left: 8px;
+    }
+}
+
+.vc_elements-list-filter {
+    position: absolute;
+    padding: 4px 3px 3px 30px;
+    top: 9px;
+    right: 44px;
+    z-index: 1;
+    width: 190px;
+    font-size: 12px;
+    border: medium none;
+    background: url("../vc/search.png") no-repeat scroll 9px 6px #ffffff;
+}

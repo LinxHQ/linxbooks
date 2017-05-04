@@ -20,6 +20,7 @@ require_once(dirname(__FILE__).'/db.php');
 return array(
 	'basePath'=>dirname(__FILE__).DIRECTORY_SEPARATOR.'..',
 	'name'=>'LinxBooks',
+	'behaviors' => array('AppConfigBehavior'),
          'defaultController' => isset(Yii::app()->user)? LbInvoice::model()->getActionURL('dashboard'):'site/login',
 	'theme' => 'bootstrap',
         'language'=>(isset($_SESSION["sess_lang"])) ? $_SESSION["sess_lang"] : "en",
@@ -289,7 +290,9 @@ return array(
 		'emailSignature' => 'Have a nice day!<br/>Admin.', // this can contain html
 		'documentRootDir' => 'documents/',
 		'profilePhotosDir' => 'profile_photos/',
-		'enableMobileWeb'=>1,
+		'enableMobileWeb'=>0,
                 'languages'=>array('en_us'=>'English', 'fr'=>'French', 'fa_ir'=>'فارسی'),
+            'LINXHQ_SSO_URL'=>'http://accounts.linxenterprisedemo.com/',
+            //'LINXHQ_SSO_URL'=>'http://localhost:8080/LinxHQ/',
 	),
 );

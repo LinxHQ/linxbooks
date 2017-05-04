@@ -1,0 +1,25 @@
+/* Video widget
+---------------------------------------------------------- */
+.wpb_video_widget .wpb_wrapper {
+  .wpb_video_wrapper {
+    padding-top: 56%;
+    position: relative;
+    > div {
+      padding-top: 0 !important;
+      position: static;
+    }
+  }
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+    display: block;
+    position: absolute;
+    margin: 0;
+    top: 0;
+    left: 0;
+    .box-sizing(border-box);
+  }
+}
+
+.wpb_video_wrapper .fluid-width-video-wrapper { padding-top: 0 !important; position: static; }

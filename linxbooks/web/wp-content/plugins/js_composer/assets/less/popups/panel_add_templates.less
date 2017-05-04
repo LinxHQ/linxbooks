@@ -1,0 +1,166 @@
+.vc_panel.vc_templates-panel {
+    width: 600px;
+
+
+    .vc_input-group .vc_form-control.vc_panel-templates-name {
+        width: 99%;
+    }
+
+    .vc_panel-body {
+        padding-bottom: 20px;
+        h3 {
+            font-size: 14px;
+            margin-bottom: 0;
+        }
+    }
+
+    .vc_template {
+        .vc_template-icon {
+            cursor: pointer;
+            text-align: center;
+            padding-left: 4px;
+            padding-right: 2px;
+            .vc_icon {
+                background-image: url("../vc/fe/controls.png");
+                background-position: -16px -64px;
+                background-repeat: no-repeat;
+                display: inline-block;
+                height: 16px;
+                width: 16px;
+                line-height: 16px;
+                margin: 0;
+                vertical-align: top;
+            }
+            &.vc_template-delete-icon {
+                .vc_icon {
+                    background-position: -16px -64px;
+                }
+            }
+            &:hover {
+                .opacity(0.7);
+            }
+            &:last-child {
+                padding-right: 10px
+            }
+        }
+    }
+
+    .vc_templates-list-my_templates,
+    .vc_templates-list-grid_templates,
+    .vc_templates-list-default_templates {
+        display: block;
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        margin-left: -1px;
+        margin-right: -1px;
+        .vc_template {
+            padding: 0;
+            margin: 0;
+            .vc_template-wrapper {
+                border: 1px solid #F5F5F5;
+                border-radius: 2px;
+                background: #F5F5F5;
+                margin: 1px;
+                padding: 0;
+                .vc_template-display-content,
+                .vc_template-display-title {
+                    padding-left: 10px;
+                    padding-bottom: 10px;
+                    padding-top: 10px;
+                    padding-right: 10px;
+                    cursor: pointer;
+                    text-decoration: none;
+                    font-weight: bold;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                    &:focus {
+                        -webkit-box-shadow: none;
+                        -moz-box-shadow: none;
+                        box-shadow: none;
+                    }
+                }
+                .vc_template-display-title {
+                    width: 95%;
+                }
+                .vc_template-display-content {
+                    > span {
+                        display: block;
+                        height: 3em;
+                        overflow: hidden;
+                        position: relative;
+                    }
+                }
+                &:hover {
+                    border: 1px solid #00aef0;
+                }
+            }
+        }
+    }
+    .vc_templates-list-grid_templates {
+        .vc_template {
+            display: inline-block;
+            float: none;
+            vertical-align: top;
+        }
+        .vc_template-display-content,
+        .vc_template-display-title {
+            display: inline-block;
+
+        }
+    }
+    .vc_templates-list-default_templates {
+        .vc_template {
+            text-align: center;
+            float: none;
+            vertical-align: top;
+            display: inline-block;
+            .vc_template-wrapper {
+                .vc_template-display-content,
+                .vc_template-display-title {
+                    .vc_templates-image {
+                        margin-top: 10px;
+                        margin-bottom: 10px;
+                    }
+                    display: block;
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: @screen-xs-max) {
+    .vc_panel.vc_templates-panel {
+        width: 400px !important;
+        .vc_templates-list-default_templates {
+            .vc_template {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (min-width: @screen-sm-min) and (max-width: @screen-sm-max) {
+    .vc_panel.vc_templates-panel {
+        width: (@screen-sm-min)-100 !important;
+        .vc_templates-list-default_templates {
+            .vc_template {
+                width: 50%;
+            }
+        }
+    }
+}
+
+@media (min-width: @screen-md-min) and (max-width: @screen-md-max) {
+    .vc_panel.vc_templates-panel {
+        width: (@screen-md-min)-100 !important;
+    }
+}
+
+@media (min-width: @screen-lg-min) {
+    .vc_panel.vc_templates-panel {
+        width: (@screen-lg-min)-100 !important;
+    }
+}
+

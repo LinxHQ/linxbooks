@@ -15,7 +15,36 @@ function setup()
     $account_email = $_POST['account_email'];
     $account_pass = $_POST['account_pass'];
     $filename =dirname(__FILE__).'/sql/linxbooks.sql';
-
+    /* @var $financial_day type */
+    $financial_day = $_POST['financial_day'];
+    $financial_month = $_POST['financial_month'];
+    //value currency
+   // $currency = $_POST['currency'];
+    $currency_symbol = $_POST['currency_symbol'];
+    $thousand_separator = $_POST['thousand_separator'];
+    $decimal_separator = $_POST['decimal_separator'];
+    //value tax
+    $tax_name = $_POST['tax_name'];
+    $tax_value = $_POST['tax_value'];
+    $checkbox = $_POST['tax_checkbox'];
+    if($checkbox == true){
+        $tax_checkbox = 1;
+    }else{
+        $tax_checkbox = 0;
+    }
+    //value my company
+    $company_name = $_POST['company_name'];
+    $company_regis = $_POST['company_resgis'];
+    $company_website = $_POST['company_website'];
+    $company_address_1 = $_POST['company_address_1'];
+    $compnay_address_2 = $_POST['company_address_2'];
+    $company_city = $_POST['company_city'];
+    $company_state = $_POST['company_state'];
+    $company_country = $_POST['company_country'];
+    $company_postal = $_POST['company_postal'];
+    $company_phone = $_POST['company_phone'];
+    $company_fax = $_POST['company_fax'];
+    
     //connect database
    $connect = @mysql_connect($mysql_host, $mysql_username, $mysql_password);
 
@@ -68,7 +97,9 @@ function setup()
         fwrite($file,$string);
 
         //create account 
-        addInformation($mysql_host,$mysql_username,$mysql_password,$mysql_database,$account_email,$account_pass,$lang);
+        addInformation($mysql_host,$mysql_username,$mysql_password,$mysql_database,$account_email,$account_pass,$lang,$financial_day,$financial_month,$currency_symbol,
+                         $thousand_separator,$decimal_separator,$tax_name,$tax_value,$tax_checkbox,$company_name,$company_regis,$company_website,$company_address_1,
+                        $compnay_address_2,$company_city,$company_country,$company_postal,$company_state,$company_phone,$company_fax);
 
 }
 
@@ -79,7 +110,9 @@ echo json_encode($response);
 
 //add information
 
-function addInformation($mysql_host,$mysql_username,$mysql_password,$mysql_database,$account_email,$account_pass,$lang)
+function addInformation($mysql_host,$mysql_username,$mysql_password,$mysql_database,$account_email,$account_pass,$lang,$financial_day,$financial_month,$currency_symbol,
+                         $thousand_separator,$decimal_separator,$tax_name,$tax_value,$tax_checkbox,$company_name,$company_regis,$company_website,$company_address_1,
+                        $compnay_address_2,$company_city,$company_country,$company_postal,$company_state,$company_phone,$company_fax)
 {
     $conn=mysql_connect($mysql_host, $mysql_username, $mysql_password) or die('Error connecting to MySQL server: ' . mysql_error());
     mysql_select_db($mysql_database,$conn);
@@ -99,6 +132,22 @@ function addInformation($mysql_host,$mysql_username,$mysql_password,$mysql_datab
 
 	$sql2 = "INSERT INTO lb_language_user(lb_user_id,lb_language_name) VALUES (".$id.",'".$lang."')";
          mysql_query($sql2);
+      //  $sql3 = "INSERT INTO lb_user_list(system_list_code,system_list_item_day,system_list_item_month) VALUES ('financial_year','".$financial_day."','".$financial_month."')";
+        $sql3 = "INSERT INTO lb_user_list(system_list_code,system_list_item_code,system_list_item_name,system_list_item_active,system_list_item_day,system_list_item_month) VALUES ('financial_year','financial_year','Financial Year',1,'".$financial_day."','".$financial_month."')";
+	    mysql_query($sql3);
+        $sql4 = "INSERT INTO lb_genera(lb_genera_currency_symbol, lb_thousand_separator, lb_decimal_symbol) VALUE ('".$currency_symbol."','".$thousand_separator."','".$decimal_separator."')";
+        mysql_query($sql4);
+        $sql5 = "INSERT INTO lb_taxes(lb_tax_name, lb_tax_value, lb_tax_is_default) VALUE ('".$tax_name."','".$tax_value."','".$tax_checkbox."')";
+        mysql_query($sql5);
+        $sql6 = "INSERT INTO lb_customers(lb_customer_name, lb_customer_registration, lb_customer_website_url) VALUE ('".$company_name."','".$company_regis."','".$company_website."')";
+        if(mysql_query($sql6)){
+            $q = "Select * from lb_customers";
+            $r = mysql_query($q);
+            $row1 = mysql_fetch_array($r);
+            $customer_id = $row1['lb_record_primary_key'];
+            $sql7 = "INSERT INTO lb_customer_addresses (lb_customer_id, lb_customer_address_line_1, lb_customer_address_2, lb_customer_address_city, lb_customer_address_state, lb_customer_address_country, lb_customer_address_postal_code, lb_customer_address_phone_1, lb_customer_address_fax) VALUE ('".$customer_id."','".$company_address_1."','".$compnay_address_2."','".$company_city."','".$company_state."','".$company_country."','".$company_postal."','".$company_phone."','".$company_fax."')";
+            mysql_query($sql7);
+        }
     }
 }
 function hashPassword($password)
@@ -133,3 +182,4 @@ function hashPassword($password)
 		
 	return $salt;
 }
+ 

@@ -1,0 +1,303 @@
+#titlediv .inside p.description {
+	margin: 8px 2px 0;
+}
+
+#titlediv .inside p.description label {
+	cursor: pointer;
+}
+
+span.shortcode {
+	display: block;
+	margin: 2px 0;
+}
+
+span.shortcode > input {
+	background: inherit;
+	color: inherit;
+	font-size: 12px;
+	border: none;
+	box-shadow: none;
+	padding: 4px 8px;
+	margin: 0;
+}
+
+#submitpost input.copy {
+	margin-bottom: 10px;
+}
+
+#submitpost input.delete {
+	padding: 0;
+	margin: 0;
+	border: none;
+	cursor: pointer;
+	background: inherit;
+	color: #a00;
+}
+
+#submitpost input.delete:focus {
+	outline: thin dotted;
+}
+
+.postbox-container .postbox h3 {
+	border-bottom: 1px solid transparent;
+}
+
+/*
+ * Tabs
+ */
+#contact-form-editor-tabs {
+	border-bottom: 1px solid #aaa;
+	padding: 9px 15px 0 10px;
+	margin: 0;
+}
+
+#contact-form-editor-tabs li {
+	display: inline-block;
+	list-style: none;
+	border: 1px solid #ccc;
+	border-bottom: 1px solid #aaa;
+	padding: 0;
+	margin: 0 4px -1px;
+	background-color: #e4e4e4;
+}
+
+#contact-form-editor-tabs li:hover {
+	background-color: #fff;
+}
+
+#contact-form-editor-tabs li.ui-tabs-active,
+#contact-form-editor-tabs li.ui-tabs-active:hover {
+	border-top: 1px solid #aaa;
+	border-right: 1px solid #aaa;
+	border-left: 1px solid #aaa;
+	border-bottom: 1px solid #f5f5f5;
+	background-color: #f5f5f5;
+}
+
+#contact-form-editor-tabs li a {
+	padding: 6px 10px;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 30px;
+	color: #333;
+	text-decoration: none;
+}
+
+#contact-form-editor-tabs li.ui-tabs-active a {
+	color: #000;
+	font-size: 14px;
+	font-weight: bold;
+}
+
+#contact-form-editor-tabs li a:hover {
+	color: #000;
+}
+
+#contact-form-editor .contact-form-editor-panel h3 {
+	font-size: 18px;
+	font-weight: 400;
+	line-height: 24px;
+	margin: 8px 0;
+	padding: 0;
+}
+
+#contact-form-editor .contact-form-editor-panel {
+	background-color: #f5f5f5;
+	border: 1px solid #aaa;
+	border-top: none;
+	padding: 16px;
+}
+
+#contact-form-editor .form-table th {
+	width: 100px;
+}
+
+#contact-form-editor .contact-form-editor-panel fieldset legend {
+	line-height: 1.5;
+	margin: .6em 0 .4em;
+}
+
+/*
+ * Form Panel
+ */
+#tag-generator-list a.button {
+	font-size: 12px;
+	height: 26px;
+	line-height: 24px;
+	margin: 2px;
+	padding: 0 8px 1px;
+}
+
+.tag-generator-panel {
+	position: relative;
+	height: 495px;
+}
+
+.tag-generator-panel .control-box {
+	padding: 0;
+	margin: 0;
+	height: 380px;
+	overflow: auto;
+}
+
+.tag-generator-panel .control-box > fieldset legend {
+	border: 1px solid #dfdfdf;
+	border-left: 4px solid #00a0d2;
+	background: #f7fcfe;
+	padding: 4px 12px;
+	margin: 4px 0;
+	line-height: 1.4em;
+	width: 95%;
+}
+
+.tag-generator-panel table {
+	width: 100%;
+}
+
+.tag-generator-panel table.form-table th {
+	width: 120px;
+	padding: 4px 10px 4px 0;
+	font-size: 13px;
+}
+
+.tag-generator-panel table.form-table td {
+	padding: 4px 10px;
+	font-size: 13px;
+}
+
+.tag-generator-panel .control-box input.oneline {
+	width: 200px;
+}
+
+.tag-generator-panel .control-box textarea.values {
+	width: 200px;
+	height: 6em;
+}
+
+.tag-generator-panel .control-box input[type="number"],
+.tag-generator-panel .control-box input[type="date"] {
+	width: 88px;
+}
+
+.tag-generator-panel .control-box table caption {
+	text-align: left;
+	font-size: 110%;
+	font-weight: bold;
+	color: #777;
+	margin: 10px 0 5px;
+}
+
+.tag-generator-panel .control-box table.form-table td label {
+	line-height: 1.1em;
+}
+
+.tag-generator-panel .control-box table.form-table td label .description {
+	line-height: 1.4em;
+}
+
+.tag-generator-panel .insert-box {
+	position: absolute;
+	left: -15px;
+	right: -15px;
+	bottom: -15px;
+	width: 100%;
+	height: 84px;
+	margin: 0;
+	padding: 8px 16px;
+	background-color: #fcfcfc;
+	border-top: 1px solid #dfdfdf;
+	overflow: auto;
+}
+
+.tag-generator-panel .insert-box input.tag {
+	width: 480px;
+	float: left;
+	background-color: transparent;
+	box-shadow: none;
+}
+
+.tag-generator-panel .insert-box .submitbox {
+	padding: 2px 4px;
+}
+
+.tag-generator-panel .insert-box .submitbox input[type="button"] {
+	float: right;
+}
+
+.tag-generator-panel .insert-box .description label {
+	cursor: text;
+}
+
+/*
+ * Mail Panel
+ */
+.contact-form-editor-box-mail span.mailtag {
+	display: inline-block;
+	margin: 0 0 0 4px;
+	padding: 1px 2px;
+	cursor: pointer;
+	color: #000;
+}
+
+.contact-form-editor-box-mail span.mailtag.used {
+	color: #666;
+}
+
+/*
+ * List Table
+ */
+.fixed .column-title {
+	width: 38%;
+}
+
+.fixed .column-shortcode {
+	width: 38%;
+}
+
+/*
+ * Welcome Panel
+ */
+.welcome-panel p.message {
+	line-height: 1.4em;
+	margin-right: 25px;
+}
+
+.welcome-panel li {
+	margin-bottom: 12px;
+}
+
+.welcome-panel-close {
+	z-index: 2;
+}
+
+/*
+ * Integration
+ */
+.card {
+	background: #fff none repeat scroll 0 0;
+	border: 1px solid #e5e5e5;
+	box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+	margin-top: 20px;
+	max-width: 520px;
+	min-width: 255px;
+	padding: 0.7em 2em 1em;
+	position: relative;
+}
+
+.card.active {
+	background-color: #f7fcfe;
+}
+
+.card h3.title {
+	float: left;
+	max-width: 260px;
+}
+
+.card .infobox {
+	float: right;
+	font-size: 13px;
+	color: #666;
+	margin: 2px 0 5px;
+	line-height: 1.5;
+	max-width: 240px;
+}

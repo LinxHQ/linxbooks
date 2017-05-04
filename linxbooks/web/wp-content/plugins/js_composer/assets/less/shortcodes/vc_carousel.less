@@ -1,0 +1,31 @@
+.vc_carousel {
+    .vc_carousel-control {
+        text-shadow: none;
+        .wpb_transition();
+        &:active, &:focus {
+            outline: none;
+        }
+
+        /*.icon-prev,
+        .icon-next {
+            background-color: @vc_carousel_arrows_bg;
+            .wpb_transition();
+            &:hover {
+                background-color: @vc_carousel_arrows_bg_hover;
+            }
+        }*/
+    }
+
+    .vc_carousel-indicators li {
+        width: 5px;
+        height: 5px;
+        margin: 0;
+        //background-color: @vc_carousel_arrows_bg;
+        border-color: @vc_carousel_arrows_bg;
+        .wpb_transition();
+        &.vc_active {
+            //border-color: @vc_carousel_arrows_bg;
+            //background-color: transparent;
+        }
+    }
+}

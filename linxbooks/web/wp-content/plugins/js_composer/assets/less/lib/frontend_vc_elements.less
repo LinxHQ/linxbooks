@@ -1,0 +1,134 @@
+/**
+ .vc_element html item wraps shortcodes output html.
+*/
+
+.vc_element {
+    display: block;
+    position: relative;
+    /*
+    > .wpb_column {
+        padding-left: (@grid-gutter-width / 2); // @todo add to class-vc-settings.php in re-generation?
+        padding-right: (@grid-gutter-width / 2);
+    }
+    */
+    > .vc_row.vc_row-no-padding {
+        > .vc_vc_column  {
+            padding-left: 0;
+            padding-right: 0;
+        }
+    }
+    &.vc_empty {
+        .vc_empty-element {
+            min-height: 100px;
+            cursor: pointer;
+            position: relative;
+            &:after {
+                content: '';
+                margin: 0; padding: 0;
+                position: absolute;
+                z-index: 0;
+                top: 50%; left: 0;
+                margin-top: -19px;
+                width: 100%; height: 38px;
+                background: transparent url(@vc_pe_empty_container_icon) no-repeat top center;
+            }
+            &:hover {
+                &:after {
+                    background-position: bottom center;
+                }
+            }
+            > .vc_element-container {
+                min-height: 100px;
+            }
+        }
+        > .vc_controls {
+            .control-btn-append {
+                display: none;
+            }
+        }
+    }
+    &.vc_sorting-over {
+        background-image: none;
+    }
+    &.bring-to-front {
+        z-index: 100000;
+    }
+    &.vc_active, &.vc_hold-active  {
+        > .vc_controls {
+            visibility: visible;
+            opacity: 0.7;
+        }
+    }
+    &:hover, &.vc_hover, &.vc_hold-hover {
+        > .vc_controls {
+            visibility: visible;
+            opacity: 1;
+        }
+        .wpb_row() {
+            > .wpb_row {
+                > .vc_element {
+                    &:before {
+                        content: '';
+                        margin: 0;
+                        padding: 0;
+                        position: absolute;
+                        z-index: 0;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        outline: 1px dashed @vc_element_hover_border;
+                        outline: 1px dashed @vc_element_hover_border_rgba;
+                    }
+                    &:after {
+                        clear: both;
+                    }
+                }
+            }
+        }
+        .wpb_row();
+    }
+    // Element must have min height enough to show placeholder on sorting.
+    .vc_element-container {
+        min-height: @vc_elemnet_container_min_height;
+    }
+    .wpb_accordion_wrapper > :last-child .wpb_accordion_content {
+        margin-bottom: 30px;
+        &.vc_empty-element {
+            margin-bottom: 0px;
+        }
+    }
+    &.vc_vc_separator:last-child {
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    &.vc_vc_separator:first-child {
+      padding-bottom: 10px;
+      padding-top: 10px;
+    }
+    &.vc_vc_gallery:last-child {
+      padding-bottom: 15px;
+    }
+    &.vc_vc_row {
+      > .vc_row {
+        > .vc_vc_column {
+          > .wpb_column {
+            > .vc_element-container {
+              > .vc_vc_row_inner {
+                .vc_vc_column_inner {
+                  margin-bottom: 30px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+}
+
+.wpb_column {
+    > .wpb_wrapper > .vc_element:last-child > .wpb_content_element,
+    > .wpb_wrapper > .vc_element:last-child > .wpb_row {
+        margin-bottom: 0; //remove margin bottom from last content elements in columns
+    }
+}

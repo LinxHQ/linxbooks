@@ -11392,93 +11392,93 @@ Stack trace:
 REQUEST_URI=/linxbooks/assets/a4850a31/js/jalali.js
 HTTP_REFERER=http://localhost/linxbooks/index.php/lbPayment/default/create
 ---
-2015/11/10 03:04:16 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'linxbooks10112015.lb_employee' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `lb_employee`.
-in E:\xampp\htdocs\linxbooks\protected\components\CLBActiveRecord.php (82)
-in E:\xampp\htdocs\linxbooks\protected\modules\lbEmployee\controllers\DefaultController.php (66)
-in E:\xampp\htdocs\linxbooks\index.php (43)
-2015/11/10 03:04:16 [error] [exception.CDbException] exception 'CDbException' with message 'The table "lb_employee" for active record class "LbEmployee" cannot be found in the database.' in E:\xampp\htdocs\linxbooks\framework\db\ar\CActiveRecord.php:2362
+2016/01/05 10:08:59 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user '536091_linxb'@'localhost' (using password: YES)' in /Users/josephpnc/Sites/linxbooks/framework/db/CDbConnection.php:382
 Stack trace:
-#0 E:\xampp\htdocs\linxbooks\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(LbEmployee))
-#1 E:\xampp\htdocs\linxbooks\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
-#2 E:\xampp\htdocs\linxbooks\protected\components\CLBActiveRecord.php(82): CActiveRecord->__construct('search')
-#3 E:\xampp\htdocs\linxbooks\protected\modules\lbEmployee\controllers\DefaultController.php(66): CLBActiveRecord->__construct('search')
-#4 E:\xampp\htdocs\linxbooks\framework\web\actions\CInlineAction.php(49): DefaultController->actionDashboard()
-#5 E:\xampp\htdocs\linxbooks\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#6 E:\xampp\htdocs\linxbooks\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#7 E:\xampp\htdocs\linxbooks\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#8 E:\xampp\htdocs\linxbooks\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#9 E:\xampp\htdocs\linxbooks\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#10 E:\xampp\htdocs\linxbooks\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#11 E:\xampp\htdocs\linxbooks\framework\web\CController.php(291): CFilterChain->run()
-#12 E:\xampp\htdocs\linxbooks\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#13 E:\xampp\htdocs\linxbooks\framework\web\CWebApplication.php(282): CController->run('dashboard')
-#14 E:\xampp\htdocs\linxbooks\framework\web\CWebApplication.php(141): CWebApplication->runController('lbEmployee/defa...')
-#15 E:\xampp\htdocs\linxbooks\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#16 E:\xampp\htdocs\linxbooks\index.php(43): CApplication->run()
-#17 {main}
-REQUEST_URI=/linxbooks/index.php/1/lbEmployee/dashboard?workspace=1&_=d1d8fee801f3a7dac26b2a23ba34
-HTTP_REFERER=http://localhost:8080/linxbooks/index.php/1/lbInvoice/dashboard
+#0 /Users/josephpnc/Sites/linxbooks/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/josephpnc/Sites/linxbooks/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/josephpnc/Sites/linxbooks/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Users/josephpnc/Sites/linxbooks/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php(1455): CActiveRecord->getCommandBuilder()
+#7 /Users/josephpnc/Sites/linxbooks/protected/components/UserIdentity.php(15): CActiveRecord->find('LOWER(account_e...', Array)
+#8 /Users/josephpnc/Sites/linxbooks/protected/models/LoginForm.php(55): UserIdentity->authenticate()
+#9 /Users/josephpnc/Sites/linxbooks/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#10 /Users/josephpnc/Sites/linxbooks/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#11 /Users/josephpnc/Sites/linxbooks/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#12 /Users/josephpnc/Sites/linxbooks/protected/controllers/SiteController.php(174): CModel->validate()
+#13 /Users/josephpnc/Sites/linxbooks/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#14 /Users/josephpnc/Sites/linxbooks/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /Users/josephpnc/Sites/linxbooks/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /Users/josephpnc/Sites/linxbooks/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Users/josephpnc/Sites/linxbooks/framework/web/CWebApplication.php(282): CController->run('login')
+#18 /Users/josephpnc/Sites/linxbooks/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /Users/josephpnc/Sites/linxbooks/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /Users/josephpnc/Sites/linxbooks/index.php(43): CApplication->run()
+#21 {main}
+REQUEST_URI=/linxbooks/
+HTTP_REFERER=http://localhost:8888/linxbooks/
 ---
-2015/11/10 03:04:19 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'linxbooks10112015.lb_employee' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `lb_employee`.
-in E:\xampp\htdocs\linxbooks\protected\components\CLBActiveRecord.php (82)
-in E:\xampp\htdocs\linxbooks\protected\modules\lbEmployee\controllers\DefaultController.php (66)
-in E:\xampp\htdocs\linxbooks\index.php (43)
-2015/11/10 03:04:19 [error] [exception.CDbException] exception 'CDbException' with message 'The table "lb_employee" for active record class "LbEmployee" cannot be found in the database.' in E:\xampp\htdocs\linxbooks\framework\db\ar\CActiveRecord.php:2362
+2016/01/05 10:12:04 [error] [exception.CDbException] exception 'CDbException' with message 'CDbConnection failed to open the DB connection: SQLSTATE[28000] [1045] Access denied for user '536091_linxb'@'localhost' (using password: YES)' in /Users/josephpnc/Sites/linxbooks/framework/db/CDbConnection.php:382
 Stack trace:
-#0 E:\xampp\htdocs\linxbooks\framework\db\ar\CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(LbEmployee))
-#1 E:\xampp\htdocs\linxbooks\framework\db\ar\CActiveRecord.php(79): CActiveRecord->getMetaData()
-#2 E:\xampp\htdocs\linxbooks\protected\components\CLBActiveRecord.php(82): CActiveRecord->__construct('search')
-#3 E:\xampp\htdocs\linxbooks\protected\modules\lbEmployee\controllers\DefaultController.php(66): CLBActiveRecord->__construct('search')
-#4 E:\xampp\htdocs\linxbooks\framework\web\actions\CInlineAction.php(49): DefaultController->actionDashboard()
-#5 E:\xampp\htdocs\linxbooks\framework\web\CController.php(308): CInlineAction->runWithParams(Array)
-#6 E:\xampp\htdocs\linxbooks\framework\web\filters\CFilterChain.php(133): CController->runAction(Object(CInlineAction))
-#7 E:\xampp\htdocs\linxbooks\framework\web\filters\CFilter.php(40): CFilterChain->run()
-#8 E:\xampp\htdocs\linxbooks\framework\web\CController.php(1145): CFilter->filter(Object(CFilterChain))
-#9 E:\xampp\htdocs\linxbooks\framework\web\filters\CInlineFilter.php(58): CController->filterAccessControl(Object(CFilterChain))
-#10 E:\xampp\htdocs\linxbooks\framework\web\filters\CFilterChain.php(130): CInlineFilter->filter(Object(CFilterChain))
-#11 E:\xampp\htdocs\linxbooks\framework\web\CController.php(291): CFilterChain->run()
-#12 E:\xampp\htdocs\linxbooks\framework\web\CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
-#13 E:\xampp\htdocs\linxbooks\framework\web\CWebApplication.php(282): CController->run('dashboard')
-#14 E:\xampp\htdocs\linxbooks\framework\web\CWebApplication.php(141): CWebApplication->runController('lbEmployee/defa...')
-#15 E:\xampp\htdocs\linxbooks\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#16 E:\xampp\htdocs\linxbooks\index.php(43): CApplication->run()
-#17 {main}
-REQUEST_URI=/linxbooks/index.php/1/lbEmployee/dashboard
-HTTP_REFERER=http://localhost:8080/linxbooks/index.php/1/lbEmployee/dashboard
+#0 /Users/josephpnc/Sites/linxbooks/framework/db/CDbConnection.php(330): CDbConnection->open()
+#1 /Users/josephpnc/Sites/linxbooks/framework/db/CDbConnection.php(308): CDbConnection->setActive(true)
+#2 /Users/josephpnc/Sites/linxbooks/framework/base/CModule.php(387): CDbConnection->init()
+#3 /Users/josephpnc/Sites/linxbooks/framework/base/CApplication.php(450): CModule->getComponent('db')
+#4 /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php(634): CApplication->getDb()
+#5 /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php(667): CActiveRecord->getDbConnection()
+#6 /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php(1455): CActiveRecord->getCommandBuilder()
+#7 /Users/josephpnc/Sites/linxbooks/protected/components/UserIdentity.php(15): CActiveRecord->find('LOWER(account_e...', Array)
+#8 /Users/josephpnc/Sites/linxbooks/protected/models/LoginForm.php(55): UserIdentity->authenticate()
+#9 /Users/josephpnc/Sites/linxbooks/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#10 /Users/josephpnc/Sites/linxbooks/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#11 /Users/josephpnc/Sites/linxbooks/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#12 /Users/josephpnc/Sites/linxbooks/protected/controllers/SiteController.php(174): CModel->validate()
+#13 /Users/josephpnc/Sites/linxbooks/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#14 /Users/josephpnc/Sites/linxbooks/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#15 /Users/josephpnc/Sites/linxbooks/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#16 /Users/josephpnc/Sites/linxbooks/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#17 /Users/josephpnc/Sites/linxbooks/framework/web/CWebApplication.php(282): CController->run('login')
+#18 /Users/josephpnc/Sites/linxbooks/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#19 /Users/josephpnc/Sites/linxbooks/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#20 /Users/josephpnc/Sites/linxbooks/index.php(43): CApplication->run()
+#21 {main}
+REQUEST_URI=/linxbooks/
+HTTP_REFERER=http://localhost:8888/linxbooks/
 ---
-2015/11/10 03:05:41 [warning] [application] Failed to set unsafe attribute "employee_bank" of "LbEmployee".
-in E:\xampp\htdocs\linxbooks\protected\modules\lbEmployee\controllers\DefaultController.php (99)
-in E:\xampp\htdocs\linxbooks\index.php (43)
-2015/11/10 03:05:41 [warning] [application] Failed to set unsafe attribute "employee_note" of "LbEmployee".
-in E:\xampp\htdocs\linxbooks\protected\modules\lbEmployee\controllers\DefaultController.php (99)
-in E:\xampp\htdocs\linxbooks\index.php (43)
-2015/11/10 03:06:27 [warning] [application] Failed to set unsafe attribute "payment_note" of "LbEmployeePayment".
-in E:\xampp\htdocs\linxbooks\protected\modules\lbEmployee\controllers\DefaultController.php (360)
-in E:\xampp\htdocs\linxbooks\index.php (43)
-2015/11/10 03:06:57 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "lbEmployeePayment/default/create".' in E:\xampp\htdocs\linxbooks\framework\web\CWebApplication.php:286
+2016/01/05 10:13:03 [error] [system.db.CDbCommand] CDbCommand::fetchAll() failed: SQLSTATE[42S02]: Base table or view not found: 1146 Table '536091_linxbklive.lb_sys_accounts' doesn't exist. The SQL statement executed was: SHOW FULL COLUMNS FROM `lb_sys_accounts`.
+in /Users/josephpnc/Sites/linxbooks/protected/components/UserIdentity.php (15)
+in /Users/josephpnc/Sites/linxbooks/protected/models/LoginForm.php (55)
+in /Users/josephpnc/Sites/linxbooks/protected/controllers/SiteController.php (174)
+2016/01/05 10:13:03 [error] [exception.CDbException] exception 'CDbException' with message 'The table "lb_sys_accounts" for active record class "Account" cannot be found in the database.' in /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php:2362
 Stack trace:
-#0 E:\xampp\htdocs\linxbooks\framework\web\CWebApplication.php(141): CWebApplication->runController('lbEmployeePayme...')
-#1 E:\xampp\htdocs\linxbooks\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 E:\xampp\htdocs\linxbooks\index.php(43): CApplication->run()
+#0 /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php(411): CActiveRecordMetaData->__construct(Object(Account))
+#1 /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php(658): CActiveRecord->getMetaData()
+#2 /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php(1350): CActiveRecord->getTableSchema()
+#3 /Users/josephpnc/Sites/linxbooks/framework/db/ar/CActiveRecord.php(1456): CActiveRecord->query(Object(CDbCriteria))
+#4 /Users/josephpnc/Sites/linxbooks/protected/components/UserIdentity.php(15): CActiveRecord->find('LOWER(account_e...', Array)
+#5 /Users/josephpnc/Sites/linxbooks/protected/models/LoginForm.php(55): UserIdentity->authenticate()
+#6 /Users/josephpnc/Sites/linxbooks/framework/validators/CInlineValidator.php(42): LoginForm->authenticate('password', Array)
+#7 /Users/josephpnc/Sites/linxbooks/framework/validators/CValidator.php(213): CInlineValidator->validateAttribute(Object(LoginForm), 'password')
+#8 /Users/josephpnc/Sites/linxbooks/framework/base/CModel.php(159): CValidator->validate(Object(LoginForm), NULL)
+#9 /Users/josephpnc/Sites/linxbooks/protected/controllers/SiteController.php(174): CModel->validate()
+#10 /Users/josephpnc/Sites/linxbooks/framework/web/actions/CInlineAction.php(49): SiteController->actionLogin()
+#11 /Users/josephpnc/Sites/linxbooks/framework/web/CController.php(308): CInlineAction->runWithParams(Array)
+#12 /Users/josephpnc/Sites/linxbooks/framework/web/CController.php(286): CController->runAction(Object(CInlineAction))
+#13 /Users/josephpnc/Sites/linxbooks/framework/web/CController.php(265): CController->runActionWithFilters(Object(CInlineAction), Array)
+#14 /Users/josephpnc/Sites/linxbooks/framework/web/CWebApplication.php(282): CController->run('login')
+#15 /Users/josephpnc/Sites/linxbooks/framework/web/CWebApplication.php(141): CWebApplication->runController('')
+#16 /Users/josephpnc/Sites/linxbooks/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#17 /Users/josephpnc/Sites/linxbooks/index.php(43): CApplication->run()
+#18 {main}
+REQUEST_URI=/linxbooks/
+HTTP_REFERER=http://localhost:8888/linxbooks/
+---
+2016/01/05 10:14:28 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "install".' in /Users/josephpnc/Sites/linxbooks/framework/web/CWebApplication.php:286
+Stack trace:
+#0 /Users/josephpnc/Sites/linxbooks/framework/web/CWebApplication.php(141): CWebApplication->runController('install')
+#1 /Users/josephpnc/Sites/linxbooks/framework/base/CApplication.php(180): CWebApplication->processRequest()
+#2 /Users/josephpnc/Sites/linxbooks/index.php(43): CApplication->run()
 #3 {main}
-REQUEST_URI=/linxbooks/index.php/1/lbEmployeePayment/create?group=invoice&
-HTTP_REFERER=http://localhost:8080/linxbooks/index.php/1/lbEmployee/ListPayment
----
-2015/11/10 03:07:19 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/5515afb6/js/jalali.js".' in E:\xampp\htdocs\linxbooks\framework\web\CWebApplication.php:286
-Stack trace:
-#0 E:\xampp\htdocs\linxbooks\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/5515afb6...')
-#1 E:\xampp\htdocs\linxbooks\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 E:\xampp\htdocs\linxbooks\index.php(43): CApplication->run()
-#3 {main}
-REQUEST_URI=/linxbooks/assets/5515afb6/js/jalali.js
-HTTP_REFERER=http://localhost:8080/linxbooks/index.php/lbReport/default/index?tab=aging_report
----
-2015/11/10 03:07:27 [error] [exception.CHttpException.404] exception 'CHttpException' with message 'Unable to resolve the request "assets/5515afb6/js/jalali.js".' in E:\xampp\htdocs\linxbooks\framework\web\CWebApplication.php:286
-Stack trace:
-#0 E:\xampp\htdocs\linxbooks\framework\web\CWebApplication.php(141): CWebApplication->runController('assets/5515afb6...')
-#1 E:\xampp\htdocs\linxbooks\framework\base\CApplication.php(180): CWebApplication->processRequest()
-#2 E:\xampp\htdocs\linxbooks\index.php(43): CApplication->run()
-#3 {main}
-REQUEST_URI=/linxbooks/assets/5515afb6/js/jalali.js
-HTTP_REFERER=http://localhost:8080/linxbooks/index.php/lbReport/default/index?tab=aging_report
+REQUEST_URI=/linxbooks/install
 ---

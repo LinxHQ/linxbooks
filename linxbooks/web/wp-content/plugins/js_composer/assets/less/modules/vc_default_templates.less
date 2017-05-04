@@ -1,0 +1,66 @@
+.vc_default-templates-separator {
+    margin: 20px 0;
+}
+
+.generate-default-templates(@n, @i: 1, @h, @oh: 0) when (@i =< @n) {
+    &.vc_default_template-@{i} {
+        .vc_templates-image {
+            background-position: 0 @oh;
+        }
+    }
+    .generate-default-templates(@n, (@i + 1), @h, (@oh - @h));
+}
+
+.vc_templates-image {
+    height: 154px;
+    width: 114px;
+    /*transition: 0.3s ease-in-out all;
+    -moz-transition: 0.3s ease-in-out all;
+    -webkit-transition: 0.3s ease-in-out all;
+    -o-transition: 0.3s ease-in-out all;*/
+    background-image: url("../vc/fe/default_templates_sprite.png");
+    background-repeat: no-repeat;
+    margin: 0 auto;
+}
+// vc_default-template-0 is class for "default placeholder"
+.generate-default-templates(44, 0, 154px, 0px);
+
+.vc_default-templates {
+    > .wpb_row.vc_row-fluid {
+        margin: 0;
+    }
+
+    .vc_template {
+        padding: 10px 15px 10px 15px;
+        display: inline-block;
+        text-align: center;
+        vertical-align: top;
+        position: relative;
+        font-size: 14px;
+
+
+        .wpb_text_column {
+            width: 114px;
+        }
+
+        > .wpb_wrapper {
+            cursor: pointer;
+            &:hover {
+                .opacity(0.7);
+            }
+        }
+    }
+    #vc_templates-more-layouts {
+        clear: both;
+        //display: block; // there is no
+        margin: 0 auto 25px !important;
+        //width: 90px;
+        background-image: url("../vc/fe/more_layouts.png");
+        background-position: 14px center;
+        background-repeat: no-repeat;
+        padding-left: 52px;
+        border: none !important;
+        font-size: 14px;
+        .vc_btn_variants(#F8C733, #ffffff);
+    }
+}

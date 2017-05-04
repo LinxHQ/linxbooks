@@ -1,0 +1,45 @@
+.vc_templates-editor {
+    display: none;
+    position: fixed;
+    z-index: 100003;
+    top: 74px;
+    left: 50%;
+    .vc_title_name {
+        width: 317px;
+    }
+    .wpb_templates_list {
+        margin-top: 10px;
+        overflow-y: auto;
+        height: 234px;
+        .wpb_template_li {
+            display: block;
+            margin: 0 0 1px 0;
+            background: #eeeeee;
+            padding: 10px;
+            a {
+                color: #1b6bb0;
+                text-decoration: none;
+                &:hover {
+                    text-decoration: underline;
+                }
+            }
+        }
+        .wpb_remove_template {
+            display: block;
+            float: right;
+            cursor: pointer;
+            .icon {
+                display: inline-block;
+                background-image: url('../vc/fe/controls.png');
+                background-repeat: no-repeat;
+                background-position: -16px -64px;
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+}
+.wpb_templates_list .wpb_no_templates {
+    text-align: center;
+    line-height: 225px;
+}

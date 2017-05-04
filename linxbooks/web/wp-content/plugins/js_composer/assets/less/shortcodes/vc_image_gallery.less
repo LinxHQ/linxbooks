@@ -1,0 +1,179 @@
+/* Image grid
+---------------------------------------------------------- */
+.wpb_image_grid {
+	.wpb_image_grid_ul {
+		margin: 0;
+		padding: 0;
+		> li {
+  		.no_bullet_fix();
+		}
+		.isotope-item {
+			list-style: none;
+			margin: 0 1px 1px 0;
+			max-width: 100%;
+			float: left;
+		  	img {
+
+			  max-width: none;
+			}
+		}
+		
+		a {
+			display: block;
+		}
+		
+		img {
+			display: block;
+			max-width: 100%;
+			height: auto;
+		}
+	}
+}
+
+
+/* Gallery
+---------------------------------------------------------- */
+.wpb_gallery {
+  //adjustments for nivo slider default theme
+  .theme-default {
+    .nivoSlider {
+      margin-bottom: 0;
+    }
+    .nivo-controlNav {
+      padding: 10px 0 3px 0;
+    }
+  }
+  //flexslider adjustments {
+  .wpb_flexslider {
+    //margin-bottom: 33px;
+    .flex-control-nav {
+      bottom: -35px;
+    }
+    .flex-caption {
+      cursor: default;
+    }
+    .flex-direction-nav a:before {
+      line-height: 1;
+    }
+    .flex-control-paging {
+      z-index: 10;
+    }
+  }
+}
+
+//.wpb_gallery {
+//	position: relative;
+//	background: none;
+//	
+//	.border-radius(0px);
+//	.box-shadow(none);
+//	
+//	.wpb_gallery_slides {
+//		position: relative;
+//		margin: 0;
+//		border: none;
+//		background: none;
+//		
+//		a {
+//			padding: 0;
+//			margin: 0;
+//		}
+//		
+//		.nivo-controlNav,
+//		.flex-control-nav {
+//			right: 10px;
+//			bottom: auto;
+//			top: 10px;
+//			width: auto;
+//			position: absolute;
+//			z-index: 50;
+//			font-size: 1px;
+//			padding: 0;
+//			
+//			li {
+//				margin: 0;
+//				padding: 0;
+//				.no_bullet_fix();
+//			}
+//			
+//			a {
+//				background-color: @vc_image_slider_link;
+//				padding: 0;
+//				margin: 0 0 0 3px;
+//				
+//				font-size: 1px;
+//				text-indent: 100px;
+//				overflow: hidden;
+//				
+//				border: none;
+//				
+//				float: left;
+//				
+//				.square(6px);
+//				.border-radius(0);
+//				.wpb_transition();
+//				
+//				&.active,
+//				&:hover,
+//				&.flex-active {
+//					background-color: @vc_image_slider_link_active;
+//					cursor: pointer;
+//				}
+//			}
+//		}
+//		&:hover {
+//			.flex-direction-nav,
+//			.nivo-directionNav {
+//				.opacity(100);
+//			}
+//		}
+//		
+//		.nivo-caption {
+ //     display: none !important;
+  //  }
+	//}
+//	
+//	.flex-direction-nav,
+//	.nivo-directionNav {
+//		.opacity(0);
+//		.wpb_transition(opacity, 0.2s);
+//		
+//		a {
+//			background-image: url(../images/arrows.png);
+//			width: 36px;
+//			height: 39px;
+//			border: none;
+//			display: block;
+//			text-indent: -9999px;
+//		}
+//		.flex-next,
+//		.nivo-nextNav {
+//			background-position: 0 -39px;
+//			right: 0px;
+//			.opacity(100);
+//		}
+//		.flex-prev,
+//		.nivo-prevNav {
+//			left: 0px;
+//			.opacity(100);
+//		}
+//	}
+//}
+
+
+/*** remove ul & li margins ***/
+#content .wpb_gallery_slides ul.slides,
+.content .wpb_gallery_slides ul.slides,
+.wpb_gallery_slides ul.slides,
+
+#content .wpb_gallery_slides ul.flex-direction-nav,
+.content .wpb_gallery_slides ul.flex-direction-nav,
+.wpb_gallery_slides ul.flex-direction-nav,
+
+body .wpb_gallery_slides ul li,
+.wpb_content_element .wpb_gallery_slides ul li {
+	list-style: none;
+	padding: 0;
+	background-image: none;
+  margin: 0;
+}

@@ -1,0 +1,37 @@
+// Depreciated
+/* Twitter
+---------------------------------------------------------- */
+#content .wpb_twitter_widget ul.tweet_list,
+.wpb_twitter_widget ul.tweet_list {
+	margin: 0;
+	padding: 0;
+	
+	li {
+		border-bottom: 1px solid @vc_twitter_li_border;
+		margin: 0 0 1em 0;
+		padding-bottom: 1em;
+		
+		.no_bullet_fix();
+	}
+}
+
+.wpb_twitter_widget {
+	.tweet_time {
+		//padding-left: 5px;
+		display: block;
+		color: @vc_twitter_tweet_time_color;
+		font-size: @vc_smaller_font;
+	}
+	p.twitter_follow_button_wrap {
+		margin-bottom: 0;
+		font-size: @vc_smaller_font;
+	}
+	.twitter_follow_button {
+		background-image: url(../images/twitter_bird.png);
+		background-position: left center;
+		background-repeat: no-repeat;
+		padding-left: 25px;
+		display: inline-block;
+		min-height: 16px;
+	}
+}

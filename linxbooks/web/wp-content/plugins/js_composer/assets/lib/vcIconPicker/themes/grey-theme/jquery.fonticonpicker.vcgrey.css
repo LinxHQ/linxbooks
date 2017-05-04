@@ -1,0 +1,106 @@
+/**
+ * Grey Theme file for fontIconPicker
+ * {@link https://github.com/micc83/fontIconPicker}
+ */
+/* Main Container */
+.fip-vc-theme-grey.vc-icons-selector {
+  font-size: 16px;
+  /* Icon selector */
+  /* Selector open button */
+  /* Selected icon */
+  /* IconPicker Popup */
+  /* Search input & category selector */
+  /* Search input placeholder */
+  /* Search and cancel icon */
+  /* Icon Container inside Popup */
+  /* Pagination and footer icons */
+  /* Pagination arrows icons hover */
+  /* Currently selected icon color */
+  /* No icons found */
+}
+.fip-vc-theme-grey.vc-icons-selector .selector {
+  border: 1px solid #EDEDED;
+  background-color: #fff;
+}
+.fip-vc-theme-grey.vc-icons-selector .selector-button {
+  background-color: #F4F4F4;
+  border-left: 1px solid #E1E1E1;
+  color: #999;
+  /* Selector open button hover */
+  /* Selector open button icon */
+}
+.fip-vc-theme-grey.vc-icons-selector .selector-button:hover {
+  background-color: #f1f1f1;
+}
+.fip-vc-theme-grey.vc-icons-selector .selector-button:hover i {
+  color: #999;
+}
+.fip-vc-theme-grey.vc-icons-selector .selector-button i {
+  color: #aaa;
+  text-shadow: 0px 1px 0px #FFF;
+}
+.fip-vc-theme-grey.vc-icons-selector .selected-icon i {
+  color: #404040;
+}
+.fip-vc-theme-grey.vc-icons-selector .selector-popup {
+  -moz-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  -webkit-box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.04);
+  border: 1px solid #E5E5E5;
+}
+.fip-vc-theme-grey.vc-icons-selector .selector-search input[type="text"],
+.fip-vc-theme-grey.vc-icons-selector .selector-category select {
+  border: 1px solid #EDEDED;
+  color: #404040;
+  -moz-box-shadow: none;
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+.fip-vc-theme-grey.vc-icons-selector input::-webkit-input-placeholder,
+.fip-vc-theme-grey.vc-icons-selector input:-moz-placeholder,
+.fip-vc-theme-grey.vc-icons-selector input::-moz-placeholder,
+.fip-vc-theme-grey.vc-icons-selector input:-ms-input-placeholder {
+  color: #ddd !important;
+}
+.fip-vc-theme-grey.vc-icons-selector .selector-search i {
+  color: #eee;
+}
+.fip-vc-theme-grey.vc-icons-selector .fip-icons-container {
+  background-color: #fff;
+  border: 1px solid #EDEDED;
+  /* Icon container loading */
+  /* Single icon box */
+}
+.fip-vc-theme-grey.vc-icons-selector .fip-icons-container .loading {
+  color: #eee;
+}
+.fip-vc-theme-grey.vc-icons-selector .fip-icons-container .fip-box {
+  border: 1px solid #EFEFEF;
+  /* Single icon box hover */
+}
+.fip-vc-theme-grey.vc-icons-selector .fip-icons-container .fip-box:hover {
+  background-color: #f6f6f6;
+}
+.fip-vc-theme-grey.vc-icons-selector .selector-footer {
+  color: #ddd;
+}
+.fip-vc-theme-grey.vc-icons-selector .selector-footer i {
+  color: #ddd;
+}
+.fip-vc-theme-grey.vc-icons-selector .selector-arrows i:hover {
+  color: #777;
+}
+.fip-vc-theme-grey.vc-icons-selector span.current-icon {
+  background-color: #2EA2CC;
+  color: #fff;
+  border: 1px solid #298CBA;
+}
+.fip-vc-theme-grey.vc-icons-selector span.current-icon:hover {
+  background-color: #2EA2CC;
+  color: #fff;
+  border: 1px solid #298CBA;
+}
+.fip-vc-theme-grey.vc-icons-selector .icons-picker-error i:before {
+  color: #eee;
+}

@@ -1,0 +1,409 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<fields>
+	<fieldset name="general" label="General Settings" icon="eg-icon-cog-alt">
+		<field name="delay" type="text" default="9000" label="Delay" description="The time one slide stays on the screen in Milliseconds" />
+		<field name="shuffle" type="radio" default="off" label="Shuffle Mode" description="Turn Shuffle Mode on and off! Will be randomized only once at the start.">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="lazy_load" type="radio" default="off" label="Lazy Load" description="The lazy load means that the images will be loaded by demand, it speeds the loading of the slider.">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="use_wpml" type="radio" default="off" label="Use Multi Language (WPML)" description="Use the slide as mutli language - show multi language controls across the slider. This available only when wpml plugin exists">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="enable_static_layers" type="radio" default="off" label="Enable Static Layers" description="This will enable the static layerss, giving you the option to have layers that stay on the slider on more then one slide">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="next_slide_on_window_focus" type="radio" default="off" label="Next Slide on Focus" description="Enabling this will move to the next slide if the Slider gets into focus if the user switched between tabs">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="start_js_after_delay" type="text" label="Initialization Delay" default="0" unit="ms" datatype="number" description="Sets a delay before the Slider gets initialized" />
+	</fieldset>
+	<fieldset name="stopslider" label="Loop and Progress" icon="eg-icon-chart-bar">
+		<field name="stop_slider" type="radio" default="off" label="Stop Slider" description="On / Off to stop slider after some amount of loops / slides">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="stop_after_loops" type="text" default="0" label="Stop After Loops" datatype="number" description="Stop the slider after certain amount of loops. 0 related to the first loop." />
+		<field name="stop_at_slide" type="text" default="2" label="Stop At Slide" datatype="number" description="Stop the slider at the given slide" />
+		<field type="control" ctype="enable" parent="stop_slider" child="stop_after_loops" value="on" />
+		<field type="control" ctype="enable" parent="stop_slider" child="stop_at_slide" value="on" />
+		<field name="show_timerbar" type="list" default="top" label="Show Progressbar" description="Show the top running progressbar">
+			<option value="top" text="Top" />
+			<option value="bottom" text="Bottom" />
+			<option value="hide" text="Hide" />
+		</field>
+		<field name="loop_slide" type="radio" default="loop" label="Loop Single Slide" description="If only one Slide is in the Slider, you can choose wether the Slide should loop or if it should stop.">
+			<option value="loop" text="On" />
+			<option value="noloop" text="Off" />
+		</field>
+	</fieldset>
+	<fieldset name="position" label="Position" icon="eg-icon-resize-full-alt">
+		<field name="position" type="list" default="center" label="Position on the page" description="The position of the slider on the page, (float:left, float:right, margin:0px auto;)">
+			<option value="left" text="Left" />
+			<option value="center" text="Center" />
+			<option value="right" text="Right" />
+		</field>
+		<field name="margin_top" type="text" label="Margin Top" default="0" unit="px" datatype="number" description="The top margin of the slider wrapper div" />
+		<field name="margin_bottom" type="text" label="Margin Bottom" default="0" unit="px" datatype="number" description="The bottom margin of the slider wrapper div" />
+		<field name="margin_left" type="text" label="Margin Left" default="0" unit="px" datatype="number" description="The left margin of the slider wrapper div" />
+		<field name="margin_right" type="text" label="Margin Right" default="0" unit="px" datatype="number" description="The right margin of the slider wrapper div" />
+		<field type="control" ctype="disable" parent="position" child="margin_left" value="center" />
+		<field type="control" ctype="disable" parent="position" child="margin_right" value="center" />
+	</fieldset>
+	<fieldset name="appearance" label="Appearance" icon="eg-icon-droplet">
+		<field name="shadow_type" type="list" default="2" label="Shadow Type" description="The Shadow display underneath the banner. The shadow apply to fixed and responsive modes only, the full width slider don't have a shadow.">
+			<option value="0" text="No Shadow" />
+			<option value="1" text="1" />
+			<option value="2" text="2" />
+			<option value="3" text="3" />
+		</field>
+		<field name="padding" type="text" default="0" label="Padding (border)" datatype="number" description="The wrapper div padding, if it has value, then together with background color it it will make border around the slider." />
+		<field name="backround_image_options" type="statictext" label="&lt;div class='setting_info_small'&gt;Background Image Options (best used with transparent slides)&lt;/div&gt;" />
+		<field type="hr" />
+		<field name="background_color" type="color" default="#E9E9E9" label="Background color" description="Slider wrapper div background color, for transparent slider, leave empty." />
+		<field name="background_dotted_overlay" type="list" default="none" label="Dotted Overlay Size" description="Show a dotted overlay on the whole slider, choose width of dots">
+			<option value="none" text="none" />
+			<option value="twoxtwo" text="2 x 2 Black" />
+			<option value="twoxtwowhite" text="2 x 2 White" />
+			<option value="threexthree" text="3 x 3 Black" />
+			<option value="threexthreewhite" text="3 x 3 White" />
+		</field>
+		<field name="show_background_image" type="radio" default="false" label="Show Background Image" description="yes / no to put background image to the main slider wrapper.">
+			<option value="true" text="Yes" />
+			<option value="false" text="No" />
+		</field>
+		<field name="background_image" type="text" default="" label="Background Image Url" class="text-sidebar-long" description="The background image that will be on the slider wrapper. Will be shown at slider preloading." />
+		<field name="bg_fit" type="list" default="cover" label="Background Fit" description="How the background will be fitted into the Slider">
+			<option value="cover" text="cover" />
+			<option value="contain" text="contain" />
+			<option value="normal" text="normal" />
+		</field>
+		<field name="bg_repeat" type="list" default="no-repeat" label="Background Repeat" description="How the background will be repeated into the Slider">
+			<option value="no-repeat" text="no-repeat" />
+			<option value="repeat" text="repeat" />
+			<option value="repeat-x" text="repeat-x" />
+			<option value="repeat-y" text="repeat-y" />
+		</field>
+		<field name="bg_position" type="list" default="center top" label="Background Position" description="How the background will be positioned into the Slider">
+			<option value="center top" text="center top" />
+			<option value="center right" text="center right" />
+			<option value="center bottom" text="center bottom" />
+			<option value="center center" text="center center" />
+			<option value="left top" text="left top" />
+			<option value="left center" text="left center" />
+			<option value="left bottom" text="left bottom" />
+			<option value="right top" text="right top" />
+			<option value="right center" text="right center" />
+			<option value="right bottom" text="right bottom" />
+		</field>
+		<field type="control" ctype="enable" parent="show_background_image" child="background_image" value="true" />
+		<field type="control" ctype="enable" parent="show_background_image" child="bg_fit" value="true" />
+		<field type="control" ctype="enable" parent="show_background_image" child="bg_repeat" value="true" />
+		<field type="control" ctype="enable" parent="show_background_image" child="bg_position" value="true" />
+	</fieldset>
+	<fieldset name="navigation" label="Navigation" icon="eg-icon-flickr">
+		<field name="stop_on_hover" type="radio" default="on" label="Stop On Hover" description="Stop the Timer when hovering the slider">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="keyboard_navigation" type="radio" default="off" label="Keyboard Navigation" description="Allow/disallow to navigate the slider with keyboard">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="navigation_style" type="list" default="round" label="Navigation Style" description="Look of the navigation bullets  ** If you choose navbar, we recommend to choose Navigation Arrows to nexttobullets">
+			<option value="round" text="Round" />
+			<option value="navbar" text="Navbar" />
+			<option value="preview1" text="Preview 1" />
+			<option value="preview2" text="Preview 2" />
+			<option value="preview3" text="Preview 3" />
+			<option value="preview4" text="Preview 4" />
+			<option value="custom" text="Custom" />
+			<option value="round-old" text="Old Round" />
+			<option value="square-old" text="Old Square" />
+			<option value="navbar-old" text="Old Navbar" />
+		</field>
+		
+		<field name="navigaion_type" type="list" default="bullet" label="Bullet Type" description="Display type of the navigation bar (Default:none">
+			<option value="none" text="None" />
+			<option value="bullet" text="Bullet" />
+			<option value="thumb" text="Thumb" />
+		</field>
+		<field name="navigation_arrows" type="list" default="solo" label="Navigation Arrows" description="Display position of the Navigation Arrows (** By navigation Type Thumb arrows always centered or none visible)">
+			<option value="nexttobullets" text="With Bullets" />
+			<option value="solo" text="Solo" />
+			<option value="none" text="None" />
+		</field>
+		<field name="navigaion_always_on" type="list" default="false" label="Always Show Navigation" description="Always show the navigation and the thumbnails.">
+			<option value="true" text="Yes" />
+			<option value="false" text="No" />
+		</field>
+		<field name="hide_thumbs" type="text" label="Hide Navigation After" default="200" unit="ms" datatype="number" description="Time after that the Navigation and the Thumbs will be hidden(Default: 200 ms)" />
+		<field type="control" ctype="enable" parent="navigaion_always_on" child="hide_thumbs" value="false" />
+		<field type="bulk_control_start" parent="navigaion_type" ctype="hide" value="none" />
+		<field name="bullets_and_thumbnail_positions" type="statictext" label="&lt;div class='setting_info_small'&gt;Bullets / Thumbnail Position&lt;/div&gt;" />
+		<field type="hr" />
+		<field name="navigaion_align_hor" type="list" default="center" label="Navigation Horizontal Align" description="Horizontal Align of Bullets / Thumbnails">
+			<option value="left" text="Left" />
+			<option value="center" text="Center" />
+			<option value="right" text="Right" />
+		</field>
+		<field name="navigaion_align_vert" type="list" default="bottom" label="Navigation Vertical Align" description="Vertical Align of Bullets / Thumbnails">
+			<option value="top" text="Top" />
+			<option value="center" text="Center" />
+			<option value="bottom" text="Bottom" />
+		</field>
+		<field name="navigaion_offset_hor" type="text" label="Navigation Horizontal Offset" default="0" unit="px" description="Offset from current Horizontal position of Bullets / Thumbnails negative and positive direction" />
+		<field name="navigaion_offset_vert" type="text" label="Navigation Vertical Offset" default="20" unit="px" datatype="number" description="Offset from current Vertical  position of Bullets / Thumbnails negative and positive direction" />
+		<field type="bulk_control_end" />
+		<field type="bulk_control_start" parent="navigation_arrows" ctype="hide" value="none" />
+		<field name="left_arrow_positions" type="statictext" label="&lt;div class='setting_info_small'&gt;Left Arrow Position&lt;/div&gt;" />
+		<field type="hr" />
+		<field name="leftarrow_align_hor" type="list" default="left" label="Left Arrow Horizontal Align" description="Horizontal Align of left Arrow (only if arrow is not next to bullets)">
+			<option value="left" text="Left" />
+			<option value="center" text="Center" />
+			<option value="right" text="Right" />
+		</field>
+		<field name="leftarrow_align_vert" type="list" default="center" label="Left Arrow Vertical Align" description="Vertical Align of left Arrow (only if arrow is not next to bullets)">
+			<option value="top" text="Top" />
+			<option value="center" text="Center" />
+			<option value="bottom" text="Bottom" />
+		</field>
+		<field name="leftarrow_offset_hor" type="text" label="Left Arrow Horizontal Offset" default="20" unit="px" datatype="number" description="Offset from current Horizontal position of of left Arrow  negative and positive direction" />
+		<field name="leftarrow_offset_vert" type="text" label="Left Arrow Vertical Offset" default="0" unit="px" datatype="number" description="Offset from current Vertical position of of left Arrow negative and positive direction" />
+		<field name="right_arrow_positions" type="statictext" label="&lt;div class='setting_info_small'&gt;Right Arrow Position&lt;/div&gt;" />
+		<field type="hr" />
+		<field name="rightarrow_align_hor" type="list" default="right" label="Right Arrow Horizontal Align" description="Horizontal Align of right Arrow (only if arrow is not next to bullets)">
+			<option value="left" text="Left" />
+			<option value="center" text="Center" />
+			<option value="right" text="Right" />
+		</field>
+		<field name="rightarrow_align_vert" type="list" default="center" label="Right Arrow Vertical Align" description="Vertical Align of right Arrow (only if arrow is not next to bullets)">
+			<option value="top" text="Top" />
+			<option value="center" text="Center" />
+			<option value="bottom" text="Bottom" />
+		</field>
+		<field name="rightarrow_offset_hor" type="text" label="Right Arrow Horizontal Offset" default="20" datatype="number" unit="px" description="Offset from current Horizontal position of of right Arrow negative and positive direction" />
+		<field name="rightarrow_offset_vert" type="text" label="Right Arrow Vertical Offset" default="0" datatype="number" unit="px" description="Offset from current Vertical position of of right Arrow negative and positive direction" />
+		<field type="bulk_control_end" />
+	</fieldset>
+	<fieldset name="thumbs" label="Thumbnails" icon="eg-icon-th-large">
+		<field name="thumb_width" type="text" label="Thumb Width" default="100" unit="px" datatype="number" description="The basic Width of one Thumbnail (only if thumb is selected)" />
+		<field name="thumb_height" type="text" label="Thumb Height" default="50" unit="px" datatype="number" description="the basic Height of one Thumbnail (only if thumb is selected)" />
+		<field name="thumb_amount" type="text" label="Thumb Amount" default="5" unit="px" datatype="number" description="the amount of the Thumbs visible same time (only if thumb is selected)" />
+	</fieldset>
+	<fieldset name="spinner" label="Spinner" icon="eg-icon-back-in-time">
+		<field name="use_spinner" type="list" default="0" label="Choose Spinner" description="Select a Spinner for your Slider">
+			<option value="-1" text="off" />
+			<option value="0" text="0" />
+			<option value="1" text="1" />
+			<option value="2" text="2" />
+			<option value="3" text="3" />
+			<option value="4" text="4" />
+			<option value="5" text="5" />
+		</field>
+		<field name="spinner_color" type="color" default="#FFFFFF" label="Spinner Color" description="The Color the Spinner will be shown in" />
+	</fieldset>
+	<fieldset name="parallax" label="Parallax" icon="eg-icon-camera-alt">
+		<field name="use_parallax" type="radio" default="off" label="Enable Parallax" description="Enabling this, will give you new options in the slides to create a unique parallax effect">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="disable_parallax_mobile" type="list" default="off" label="Disable on Mobile" description="If set to on, parallax will be disabled on mobile devices to save performance">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="parallax_type" type="list" default="mouse" label="Type" description="Defines on what input type the parallax should react to">
+			<option value="mouse" text="Mouse Position" />
+			<option value="scroll" text="Scroll Position" />
+			<option value="mouse+scroll" text="Mouse and Scroll" />
+		</field>
+		<field name="parallax_bg_freeze" type="list" default="off" label="BG Freeze" description="Setting this to on will freeze the background so that it is not affected by the parallax effect">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="parallax_level_1" type="text" label="Level Depth 1" default="5" description="Defines a level that can be used in Slide Editor for this Slider" />
+		<field name="parallax_level_2" type="text" label="Level Depth 2" default="10" description="Defines a level that can be used in Slide Editor for this Slider" />
+		<field name="parallax_level_3" type="text" label="Level Depth 3" default="15" description="Defines a level that can be used in Slide Editor for this Slider" />
+		<field name="parallax_level_4" type="text" label="Level Depth 4" default="20" description="Defines a level that can be used in Slide Editor for this Slider" />
+		<field name="parallax_level_5" type="text" label="Level Depth 5" default="25" description="Defines a level that can be used in Slide Editor for this Slider" />
+		<field name="parallax_level_6" type="text" label="Level Depth 6" default="30" description="Defines a level that can be used in Slide Editor for this Slider" />
+		<field name="parallax_level_7" type="text" label="Level Depth 7" default="35" description="Defines a level that can be used in Slide Editor for this Slider" />
+		<field name="parallax_level_8" type="text" label="Level Depth 8" default="40" description="Defines a level that can be used in Slide Editor for this Slider" />
+		<field name="parallax_level_9" type="text" label="Level Depth 9" default="45" description="Defines a level that can be used in Slide Editor for this Slider" />
+		<field name="parallax_level_10" type="text" label="Level Depth 10" default="50" description="Defines a level that can be used in Slide Editor for this Slider" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_type" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_bg_freeze" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_level_1" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_level_2" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_level_3" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_level_4" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_level_5" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_level_6" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_level_7" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_level_8" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_level_9" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="parallax_level_10" value="on" />
+		<field type="control" ctype="enable" parent="use_parallax" child="disable_parallax_mobile" value="on" />
+	</fieldset>
+	<fieldset name="mobile_touch" label="Mobile Touch" icon="eg-icon-up-hand">
+		<field name="touchenabled" type="radio" default="on" label="Touch Enabled" description="Enable Swipe Function on touch devices">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="swipe_velocity" type="text" label="Swipe Treshhold (0 - 200)" default="75" datatype="number" description="Defines the sensibility of gestures. Smaller values mean a higher sensibility" />
+		<field name="swipe_min_touches" type="text" label="Swipe Min Finger" default="1" datatype="number" description="Defines how many fingers are needed minimum for swiping" />
+		<field name="drag_block_vertical" type="radio" default="false" label="Drag Block Vertical" description="Scroll below slider on vertical swipe">
+			<option value="true" text="On" />
+			<option value="false" text="Off" />
+		</field>
+	</fieldset>
+	<fieldset name="mobile_visibility" label="Mobile Visibility" icon="eg-icon-mobile">
+		<field name="disable_on_mobile" type="radio" default="off" label="Disable Slider on Mobile" description="If this is enabled, the slider will not be loaded on mobile devices.">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="disable_kenburns_on_mobile" type="radio" default="off" label="Disable KenBurn On Mobile" description="This will disable KenBurns on mobile devices to save performance">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="hide_slider_under" type="text" label="Hide Slider Under Width" default="0" unit="px" datatype="number" description="Hide the slider under some slider width. Works only in Responsive Style. Not available for Fullwidth." />
+		<field name="hide_defined_layers_under" type="text" label="Hide Defined Layers Under Width" default="0" unit="px" datatype="number" description="Hide some defined layers in the layer properties under some slider width." />
+		<field name="hide_all_layers_under" type="text" label="Hide All Layers Under Width" default="0" unit="px" datatype="number" description="Hide all layers under some slider width" />
+		<field type="hr" />
+		<field name="hide_arrows_on_mobile" type="radio" default="off" label="Hide Arrows on Mobile" description="Show/Hide the Navigation Arrows on Mobile Devices">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="hide_bullets_on_mobile" type="radio" default="off" label="Hide Bullets on Mobile" description="Show/Hide the Navigation Bullets on Mobile Devices">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="hide_thumbs_on_mobile" type="radio" default="off" label="Hide Thumbnails on Mobile" description="Show/Hide the Thumbnails on Mobile Devices">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="hide_thumbs_under_resolution" type="text" label="Hide Thumbs Under Width" default="0" unit="px" datatype="number" description="Hide the Thumbnails on Mobile Devices under some slider width" />
+		<field name="hide_thumbs_delay_mobile" type="text" label="Hide Mobile Nav After" default="1500" unit="ms" datatype="number" description="Time after that the Navigation and the Thumbs will be hidden on mobile devices(Default: 1500 ms)" />
+	</fieldset>
+	<fieldset name="first_slide" label="Alternative First Slide" icon="eg-icon-thumbs-up">
+		<field name="start_with_slide" type="text" default="1" label="Start With Slide" description="Change it if you want to start from a different slide then 1" />
+		<field type="hr" />
+		<field name="first_transition_active" type="radio" default="false" label="First Transition Active" description="If active, it will overwrite the first slide transition. Use it when you want a special transition for the first slide only.">
+			<option value="true" text="On" />
+			<option value="false" text="Off" />
+		</field>
+		<field type="bulk_control_start" parent="first_transition_active" ctype="enable" value="true" />
+		<field name="first_transition_type" type="list" default="fade" label="First Transition Type" description="First slide transition type">
+			<option value="replace" text="Replace me!" />
+			<option value="replace2" text="Replace me!" />
+		</field>
+		<field name="first_transition_duration" type="text" default="300" datatype="number" label="First Transition Duration" description="First slide transition duration (Default:300, min: 100 max 2000)" unit="ms" />
+		<field name="first_transition_slot_amount" type="text" default="7" datatype="number" label="First Transition Slot Amount" description="The number of slots or boxes the slide is divided into. If you use boxfade, over 7 slots can be juggy" unit="ms" />
+		<field type="bulk_control_end" />
+	</fieldset>
+	<fieldset name="fallbacks" label="Fallbacks" icon="eg-icon-ccw-1">
+		<field name="simplify_ie8_ios4" type="radio" default="off" label="Simplify on IOS4/IE8" description="Simplyfies the Slider on IOS4 and IE8">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="show_alternative_type" type="list" default="off" label="Use Alternative" description="Disables the Slider on the setting you make and shows an alternative image instead">
+			<option value="off" text="Off" />
+			<option value="mobile" text="On Mobile" />
+			<option value="ie8" text="On IE8" />
+			<option value="mobile-ie8" text="On Mobile and IE8" />
+		</field>
+		<field type="bulk_control_start" parent="show_alternative_type" ctype="disable" value="off" />
+			<field name="show_alternate_image" type="text" default="" label="Alternate Image" class="text-sidebar-long" description="The image that will used as the alternative to the Slider" />
+		<field type="bulk_control_end" />
+	</fieldset>
+	<fieldset name="reset_slide_settings" label="Global Overwrites" icon="eg-icon-reply">
+		<field name="reset_transitions" type="list" default=" " label="Reset Transitions" description="Resets all Slide Transitions of this Slider to your desired type (if empty, no changes will be made)">
+			<option value=" " text="Choose to operate" />
+			<option value="random-static" text="Random Flat" />
+			<option value="random-premium" text="Random Premium" />
+			<option value="random" text="Random Flat and Premium" />
+			<option value="slideup" text="Slide To Top" />
+			<option value="slidedown" text="Slide To Bottom" />
+			<option value="slideright" text="Slide To Right" />
+			<option value="slideleft" text="Slide To Left" />
+			<option value="slidehorizontal" text="Slide Horizontal (depending on Next/Previous)" />
+			<option value="slidevertical" text="Slide Vertical (depending on Next/Previous)" />
+			<option value="boxslide" text="Slide Boxes" />
+			<option value="slotslide-horizontal" text="Slide Slots Horizontal" />
+			<option value="slotslide-vertical" text="Slide Slots Vertical" />
+			<option value="notransition" text="No Transition" />
+			<option value="fade" text="Fade" />
+			<option value="boxfade" text="Fade Boxes" />
+			<option value="slotfade-horizontal" text="Fade Slots Horizontal" />
+			<option value="slotfade-vertical" text="Fade Slots Vertical" />
+			<option value="fadefromright" text="Fade and Slide from Right" />
+			<option value="fadefromleft" text="Fade and Slide from Left" />
+			<option value="fadefromtop" text="Fade and Slide from Top" />
+			<option value="fadefrombottom" text="Fade and Slide from Bottom" />
+			<option value="fadetoleftfadefromright" text="Fade To Left and Fade From Right" />
+			<option value="fadetorightfadefromleft" text="Fade To Right and Fade From Left" />
+			<option value="fadetotopfadefrombottom" text="Fade To Top and Fade From Bottom" />
+			<option value="fadetobottomfadefromtop" text="Fade To Bottom and Fade From Top" />
+			<option value="parallaxtoright" text="Parallax to Right" />
+			<option value="parallaxtoleft" text="Parallax to Left" />
+			<option value="parallaxtotop" text="Parallax to Top" />
+			<option value="parallaxtobottom" text="Parallax to Bottom" />
+			<option value="scaledownfromright" text="Zoom Out and Fade From Right" />
+			<option value="scaledownfromleft" text="Zoom Out and Fade From Left" />
+			<option value="scaledownfromtop" text="Zoom Out and Fade From Top" />
+			<option value="scaledownfrombottom" text="Zoom Out and Fade From Bottom" />
+			<option value="zoomout" text="ZoomOut" />
+			<option value="zoomin" text="ZoomIn" />
+			<option value="slotzoom-horizontal" text="Zoom Slots Horizontal" />
+			<option value="slotzoom-vertical" text="Zoom Slots Vertical" />
+			<option value="curtain-1" text="Curtain from Left" />
+			<option value="curtain-2" text="Curtain from Right" />
+			<option value="curtain-3" text="Curtain from Middle" />
+			<option value="3dcurtain-horizontal" text="3D Curtain Horizontal" />
+			<option value="3dcurtain-vertical" text="3D Curtain Vertical" />
+			<option value="cube" text="Cube Vertical" />
+			<option value="cube-horizontal" text="Cube Horizontal" />
+			<option value="incube" text="In Cube Vertical" />
+			<option value="incube-horizontal" text="In Cube Horizontal" />
+			<option value="turnoff" text="TurnOff Horizontal" />
+			<option value="turnoff-vertical" text="TurnOff Vertical" />
+			<option value="papercut" text="Paper Cut" />
+			<option value="flyin" text="Fly In" />
+		</field>
+		<field name="reset_transition_duration" type="text" default="0" datatype="number" label="Reset Transition Duration" description="Reset all transition durations to choosen number (Default:300, min: 100 max 2000, if 0, no changes will be made)" unit="ms" />
+		<field name="reset_slide_button" type="button" class="button-primary revblue" default="Execute settings on all slides" />
+	</fieldset>
+	<fieldset name="troubleshooting" label="Troubleshooting" icon="eg-icon-medkit">
+		<field name="jquery_noconflict" type="list" default="on" label="JQuery No Conflict Mode" description="Turns on / off jquery noconflict mode. You can play with this option when you have some javascript conflicts.">
+			<option value="on" text="On" />
+			<option value="off" text="Off" />
+		</field>
+		<field name="js_to_body" type="radio" default="false" label="Put JS Includes To Body" description="Putting the js to body (in addition to head) is good for fixing some javascript conflicts of type: TypeError: tpj('#rev_slider_1_1').show().revolution is not a function">
+			<option value="true" text="True" />
+			<option value="false" text="False" />
+		</field>
+		<field name="output_type" type="list" default="none" label="Output Filters Protection" description="Activate a protection against wordpress output filters that adds html blocks to the shortcode output like P and BR">
+			<option value="none" text="None" />
+			<option value="compress" text="By Compressing Output" />
+			<option value="echo" text="By Echo Output" />
+		</field>
+	</fieldset>
+	<fieldset name="google_fonts" label="Google Font Settings (deprecated)" icon="eg-icon-font">
+		<field name="text_google_deprecated" type="statictext" label=" This menu point will be deprecated in V5.0. Please use the Punch Fonts Menu" />
+		<field name="load_googlefont" type="radio" default="false" label="Load Google Font" description="yes / no to load google font">
+			<option value="true" text="Yes" />
+			<option value="false" text="No" />
+		</field>
+		<field name="text_google_font" type="statictext" label="The google font families to load:" />
+		<field name="google_font" type="multitext" class="text-sidebar-long-double" default="&lt;link href='http://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'&gt;" />
+		<field name="text_google_font" type="statictext" label="&lt;a href=&quot;javascript:void(0);&quot; data-name=&quot;google_font&quot; class=&quot;multiple_text_add&quot; &gt;&lt;div class='addnewicon reviconwithhover'&gt;&lt;i class='revicon-list-add'&gt;&lt;/i&gt;Add New&lt;/div&gt;&lt;div class='clear'&gt;&lt;/div&gt;&lt;/a&gt;" />
+		<field name="text_google" type="statictext" label="To add more google fonts please read &lt;a target=&quot;_blank&quot; href=&quot;http://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380/faqs/15268&quot;&gt; this tutorial &lt;/a&gt; " />
+	</fieldset>
+	
+</fields>

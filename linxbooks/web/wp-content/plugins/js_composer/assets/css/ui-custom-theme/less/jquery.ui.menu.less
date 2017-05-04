@@ -1,0 +1,45 @@
+.ui-menu {
+  list-style:none;
+  padding:2px;
+  margin:0;
+  display:block;
+  outline:none;
+  .ui-menu {
+    margin-top:-3px;
+    position:absolute;
+  }
+  .ui-menu-item {
+    margin:0;
+    padding:0;
+    zoom:1;
+    width:100%;
+    a.ui-state-focus, a.ui-state-active {
+      /*font-weight:normal;*/
+      margin:-1px;
+    }
+    a {
+      text-decoration:none;
+      display:block;
+      padding:2px .4em;
+      /*line-height:1.5;*/
+      zoom:1;
+      /*font-weight:normal;*/
+    }
+  }
+  .ui-icon {
+    position:absolute;
+    top:.2em;
+    left:.2em;
+  }
+  .ui-menu-icon {
+    position:static;
+    float:right;
+  }
+}
+.ui-menu-icons {
+  position:relative;
+  .ui-menu-item a {
+    position:relative;
+    padding-left:2em;
+  }
+}

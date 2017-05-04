@@ -1,0 +1,16 @@
+.tag-generator-panel {
+	text-align: right;
+}
+
+.tag-generator-panel .control-box > fieldset legend {
+	border: 1px solid #dfdfdf;
+	border-right: 4px solid #00a0d2;
+}
+
+.tag-generator-panel .insert-box input.tag {
+	float: right;
+}
+
+.tag-generator-panel .insert-box .submitbox input[type="button"] {
+	float: left;
+}

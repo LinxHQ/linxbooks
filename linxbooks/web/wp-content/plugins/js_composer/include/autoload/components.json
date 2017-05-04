@@ -1,0 +1,11 @@
+{
+	"vendors/*": "Vendors scripts for 3rd plugins",
+	"params/*": "Params scripts",
+	"hook-vc-grid.php": "Logic for shortcode vc_grid",
+	"hook-vc-iconpicker-param.php": "Logic for shortcode param iconpicker",
+	"hook-vc-message.php": "Logic for shortcode vc_message",
+	"hook-vc-wp-text.php": "Logic for shortcode vc_wp_text fix",
+	"vc-grid-item-editor.php": "Create new post type vc_grid_item or Grid item",
+	"hook-vc-iconpicker-param.php": "Logic for shortcode param iconpicker",
+	"ui-admin-pointers.php": "Integrating With WordPress’ UI: Admin Pointers"
+}

@@ -1,0 +1,68 @@
+// Animated blocks
+.vc_gitem-tabs {
+  margin: 0;
+  .vc_gitem-animated-block-tab {
+    display: block;
+    float: left;
+    margin: 0 2px 0 0;
+    .border-top-radius(@vc_gitem_round_radius);
+    background-color: #e6e6e6;
+    border: 1px solid transparent;
+    a {
+      margin: 0;
+      display: inline-block;
+      padding: 4px;
+      color: #444;
+      text-decoration: none;
+      .vc_label {
+        display: inline-block;
+        line-height: 16px;
+        height: 16px;
+        text-align: center;
+        box-sizing: border-box;
+        margin: 0 3px;
+      }
+    }
+    &.vc_active {
+      background-color: #f5f5f5;
+    }
+  }
+}
+.vc_gitem-animated-block-content-controls {
+  .vc_gitem-animation {
+    margin: 0 0 6px;
+    select {
+      margin: 0 auto;
+      display: block;
+    }
+  }
+}
+.vc_gitem-zone-tab {
+  min-height: @vc_gitem_min_height;
+  display: none;
+  &.vc_active {
+    display: block;
+  }
+}
+.vc_gitem_animated_block-shortcode {
+  margin: 10px;
+  box-sizing: border-box;
+  > .vc_controls {
+    display: block;
+    float: right;
+    .vc_control-btn-edit {
+      border: 1px solid #f5f5f5;
+      .border-top-radius(@vc_gitem_round_radius);
+      .border-bottom-radius(@vc_gitem_round_radius);
+      padding: 2px;
+      width: 20px;
+      text-align: center;
+    }
+  }
+}
+
+.vc_gitem-animation-single {
+  .vc_gitem-tab-b {
+    display: none;
+  }
+}

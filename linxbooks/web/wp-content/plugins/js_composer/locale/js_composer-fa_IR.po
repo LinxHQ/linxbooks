@@ -1,0 +1,4126 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Visual Composer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-08-14 14:43+0200\n"
+"PO-Revision-Date: 2014-10-15 12:22+0330\n"
+"Last-Translator: www.BestIT.co <Info@BestIT.co>\n"
+"Language-Team: iran farda co (iran4all.ir) <amintab2001@gmail.com>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.6.9\n"
+"Language: fa_IR\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-SearchPath-0: ./config/.\n"
+"X-Poedit-SearchPath-1: ./include/.\n"
+
+#: config/./map.php:13 config/./map.php:2342
+msgid "Grey"
+msgstr "خاکستری"
+
+#: config/./map.php:14 config/./map.php:2343
+msgid "Blue"
+msgstr "آبی"
+
+#: config/./map.php:15 config/./map.php:2344
+msgid "Turquoise"
+msgstr "فیروزه ای"
+
+#: config/./map.php:16 config/./map.php:2345
+msgid "Green"
+msgstr "سبز"
+
+#: config/./map.php:17 config/./map.php:2346
+msgid "Orange"
+msgstr "نارنجی"
+
+#: config/./map.php:18 config/./map.php:2347
+msgid "Red"
+msgstr "قرمز"
+
+#: config/./map.php:19 config/./map.php:2348
+msgid "Black"
+msgstr "مشکی"
+
+#: config/./map.php:24
+msgid "Regular size"
+msgstr "سایز معمولی"
+
+#: config/./map.php:25
+msgid "Large"
+msgstr "بزرگ"
+
+#: config/./map.php:26 config/./map.php:571
+msgid "Small"
+msgstr "کوچک"
+
+#: config/./map.php:27
+msgid "Mini"
+msgstr "خیلی کوچک"
+
+#: config/./map.php:31
+msgid "Same window"
+msgstr "همان پنجره"
+
+#: config/./map.php:32
+msgid "New window"
+msgstr "پنجره جدید"
+
+#: config/./map.php:37
+msgid "CSS Animation"
+msgstr "css متحرک"
+
+#: config/./map.php:41 config/./map.php:2515 config/./map.php:2526
+#: config/./map.php:2537
+msgid "No"
+msgstr "خیر"
+
+#: config/./map.php:42
+msgid "Top to bottom"
+msgstr "بالا به پایین"
+
+#: config/./map.php:43
+msgid "Bottom to top"
+msgstr "پایین به بالا"
+
+#: config/./map.php:44
+msgid "Left to right"
+msgstr "چپ به راست"
+
+#: config/./map.php:45
+msgid "Right to left"
+msgstr "راست به چپ"
+
+#: config/./map.php:46
+msgid "Appear from center"
+msgstr "از مرکز ظاهر شود"
+
+#: config/./map.php:48
+msgid ""
+"Select type of animation if you want this element to be animated when it "
+"enters into the browsers viewport. Note: Works only in modern browsers."
+msgstr ""
+"اگر میخواهید این المان در هنگام ورود به ویوپورت مرورگرها متحرک باشد، نوع "
+"انیمیشن را انتخاب کنید. توجه:این مورد فقط در مرورگرهای مدرن جواب میدهد."
+
+#: config/./map.php:52 config/./map.php:126
+msgid "Row"
+msgstr "ردیف"
+
+#: config/./map.php:57 config/./map.php:269 config/./map.php:341
+#: config/./map.php:393 config/./map.php:465 config/./map.php:621
+#: config/./map.php:668 config/./map.php:771 config/./map.php:863
+#: config/./map.php:995 config/./map.php:1044 config/./map.php:1113
+#: config/./map.php:1181 config/./map.php:1211 config/./map.php:1455
+#: config/./map.php:1575 config/./map.php:1786 config/./map.php:1848
+#: config/./map.php:1912 config/./map.php:1991 config/./map.php:2119
+#: config/./map.php:2157 config/./map.php:2256 config/./map.php:2315
+#: config/./map.php:2387 config/./map.php:2463 config/./map.php:2499
+#: config/./map.php:3035 config/./map.php:3062
+#: include/./classes/settings/class-vc-automapper.php:256
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:35
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:34
+msgid "Content"
+msgstr "محتوا"
+
+#: config/./map.php:58 config/./map.php:133
+msgid "Place content elements inside the row"
+msgstr "المانهای محتوا را در ردیف قرار بده."
+
+#: config/./map.php:62 config/./map.php:137 config/./map.php:180
+#: config/./map.php:231
+msgid "Font Color"
+msgstr "رنگ فونت"
+
+#: config/./map.php:64 config/./map.php:139 config/./map.php:182
+#: config/./map.php:233
+msgid "Select font color"
+msgstr "انتخاب رنگ"
+
+#: config/./map.php:111 config/./map.php:144 config/./map.php:187
+#: config/./map.php:238 config/./map.php:282 config/./map.php:380
+#: config/./map.php:450 config/./map.php:499 config/./map.php:655
+#: config/./map.php:751 config/./map.php:850 config/./map.php:978
+#: config/./map.php:1014 config/./map.php:1064 config/./map.php:1137
+#: config/./map.php:1344 config/./map.php:1440 config/./map.php:1561
+#: config/./map.php:1706 config/./map.php:1737 config/./map.php:1835
+#: config/./map.php:1898 config/./map.php:1979 config/./map.php:2106
+#: config/./map.php:2137 config/./map.php:2201 config/./map.php:2301
+#: config/./map.php:2372 config/./map.php:2429 config/./map.php:2573
+#: config/./map.php:2597 config/./map.php:2627 config/./map.php:2651
+#: config/./map.php:2693 config/./map.php:2732 config/./map.php:2771
+#: config/./map.php:2806 config/./map.php:2843 config/./map.php:2904
+#: config/./map.php:2938 config/./map.php:2972 config/./map.php:3021
+#: config/./map.php:3048 config/./map.php:3117
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:54
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:53
+msgid "Extra class name"
+msgstr "نام کلاس اضافی"
+
+#: config/./map.php:113 config/./map.php:146 config/./map.php:189
+#: config/./map.php:241 config/./map.php:284 config/./map.php:382
+#: config/./map.php:452 config/./map.php:501 config/./map.php:657
+#: config/./map.php:753 config/./map.php:852 config/./map.php:980
+#: config/./map.php:1016 config/./map.php:1066 config/./map.php:1139
+#: config/./map.php:1346 config/./map.php:1442 config/./map.php:1563
+#: config/./map.php:1708 config/./map.php:1739 config/./map.php:1837
+#: config/./map.php:1900 config/./map.php:1981 config/./map.php:2108
+#: config/./map.php:2139 config/./map.php:2203 config/./map.php:2303
+#: config/./map.php:2374 config/./map.php:2431 config/./map.php:2575
+#: config/./map.php:2599 config/./map.php:2629 config/./map.php:2653
+#: config/./map.php:2695 config/./map.php:2734 config/./map.php:2773
+#: config/./map.php:2808 config/./map.php:2845 config/./map.php:2906
+#: config/./map.php:2940 config/./map.php:2974 config/./map.php:3023
+#: config/./map.php:3050 config/./map.php:3119
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:56
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:55
+msgid ""
+"If you wish to style particular content element differently, then use this "
+"field to add a class name and then refer to it in your css file."
+msgstr ""
+"اگر میخواهید به المان خاصی از محتوا استایل متفاوتی دهید، از این فیلد برای "
+"افزودن کلاس استفاده کنید و سپس آنرا به فایل css ارجاع دهید"
+
+#: config/./map.php:117 config/./map.php:150 config/./map.php:193
+#: config/./map.php:245 config/./map.php:288 config/./map.php:757
+#: config/./map.php:2143 config/./map.php:3123
+msgid "Css"
+msgstr "Css"
+
+#: config/./map.php:120 config/./map.php:153 config/./map.php:196
+#: config/./map.php:248 config/./map.php:291 config/./map.php:760
+#: config/./map.php:2146 config/./map.php:3126
+msgid "Design options"
+msgstr "تنظیمات طراحی"
+
+#: config/./map.php:159 include/./params/column_offset/column_offset.php:22
+msgid "1 column - 1/12"
+msgstr "1 ستون - 1/12"
+
+#: config/./map.php:160 include/./params/column_offset/column_offset.php:23
+msgid "2 columns - 1/6"
+msgstr "2 ستون - 1/6"
+
+#: config/./map.php:161 include/./params/column_offset/column_offset.php:24
+msgid "3 columns - 1/4"
+msgstr "3 ستون - 1/4"
+
+#: config/./map.php:162 include/./params/column_offset/column_offset.php:25
+msgid "4 columns - 1/3"
+msgstr "4 ستون - 1/3 "
+
+#: config/./map.php:163 include/./params/column_offset/column_offset.php:26
+msgid "5 columns - 5/12"
+msgstr "5 ستون - 5/12 "
+
+#: config/./map.php:164 include/./params/column_offset/column_offset.php:27
+msgid "6 columns - 1/2"
+msgstr "6 ستون - 1/2"
+
+#: config/./map.php:165 include/./params/column_offset/column_offset.php:28
+msgid "7 columns - 7/12"
+msgstr "7 ستون - 7/12"
+
+#: config/./map.php:166 include/./params/column_offset/column_offset.php:29
+msgid "8 columns - 2/3"
+msgstr "8 ستون - 2/3"
+
+#: config/./map.php:167 include/./params/column_offset/column_offset.php:30
+msgid "9 columns - 3/4"
+msgstr "9 ستون - 3/4"
+
+#: config/./map.php:168 include/./params/column_offset/column_offset.php:31
+msgid "10 columns - 5/6"
+msgstr "10 ستون - 5/6"
+
+#: config/./map.php:169 include/./params/column_offset/column_offset.php:32
+msgid "11 columns - 11/12"
+msgstr "11 ستون - 11/12 "
+
+#: config/./map.php:170 include/./params/column_offset/column_offset.php:33
+msgid "12 columns - 1/1"
+msgstr "12 ستون - 1/1"
+
+#: config/./map.php:173 config/./map.php:219
+msgid "Column"
+msgstr "ستون"
+
+#: config/./map.php:200 config/./map.php:252
+#: include/./templates/params/column_offset/template.tpl.php:20
+msgid "Width"
+msgstr "عرض"
+
+#: config/./map.php:203 config/./map.php:211 config/./map.php:255
+msgid "Width & Responsiveness"
+msgstr "عرض و واکنش گرایی"
+
+#: config/./map.php:204 config/./map.php:256
+msgid "Select column width."
+msgstr "انتخاب عرض ستون"
+
+#: config/./map.php:209
+msgid "Responsiveness"
+msgstr "واکنش گرایی"
+
+#: config/./map.php:212
+msgid ""
+"Adjust column for different screen sizes. Control width, offset and "
+"visibility settings."
+msgstr ""
+"تنظیم ستونها برای سایزهای اسکرین متفاوت. کنترل عرض، آفست و تنظیمات نمایان "
+"بودن"
+
+#: config/./map.php:265
+msgid "Text Block"
+msgstr "بلاک متن"
+
+#: config/./map.php:270
+msgid "A block of text with WYSIWYG editor"
+msgstr "بلاک متن با ویرایشگر WYSIWYG "
+
+#: config/./map.php:275 config/./map.php:1398 config/./map.php:1483
+#: config/./map.php:1918 config/./map.php:2779 config/./map.php:2795
+#: config/./map.php:3067 include/./classes/shortcodes/example.php:111
+#: include/./params/sorted_list/sorted_list.php:57
+#: include/./params/sorted_list/sorted_list.php:61
+#: include/./templates/teaser.html.php:52
+msgid "Text"
+msgstr "متن"
+
+#: config/./map.php:277
+msgid ""
+"<p>I am text block. Click edit button to change this text. Lorem ipsum dolor "
+"sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec "
+"ullamcorper mattis, pulvinar dapibus leo.</p>"
+msgstr ""
+"<p> من یک بلاک متن هستم، روی دکمه ویرایش کلیک کنید تا این متن را تغییر "
+"دهید.  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit "
+"tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</p>"
+
+#: config/./map.php:337
+msgid "Separator"
+msgstr "جداکننده"
+
+#: config/./map.php:343
+msgid "Horizontal separator line"
+msgstr "خط جداکننده افقی"
+
+#: config/./map.php:347 config/./map.php:417 config/./map.php:1813
+#: config/./map.php:1875 config/./map.php:1945 config/./map.php:2071
+msgid "Color"
+msgstr "رنگ"
+
+#: config/./map.php:349 config/./map.php:419
+msgid "Custom color"
+msgstr "رنگ سفارشی"
+
+#: config/./map.php:351 config/./map.php:421
+msgid "Separator color."
+msgstr "رنگ جداکننده"
+
+#: config/./map.php:356
+msgid "Custom Border Color"
+msgstr "رنگ سفارشی مرزها"
+
+#: config/./map.php:358
+msgid "Select border color for your element."
+msgstr "انتخاب رنگ مرزهای المانها"
+
+#: config/./map.php:366 config/./map.php:436 config/./map.php:483
+#: config/./map.php:1868
+msgid "Style"
+msgstr "استایل"
+
+#: config/./map.php:369 config/./map.php:439
+msgid "Separator style."
+msgstr "استایل جداکننده"
+
+#: config/./map.php:373 config/./map.php:443 config/./map.php:2021
+msgid "Element width"
+msgstr "عرض المان"
+
+#: config/./map.php:376 config/./map.php:446
+msgid "Separator element width in percents."
+msgstr "عرض المان جداکننده به  درصد."
+
+#: config/./map.php:390
+msgid "Separator with Text"
+msgstr "جداکننده با متن"
+
+#: config/./map.php:394
+msgid "Horizontal separator line with heading"
+msgstr "خط جداکننده افقی با heading"
+
+#: config/./map.php:398 config/./map.php:401 config/./map.php:1092
+#: config/./map.php:1165 config/./map.php:1324 config/./map.php:1397
+#: config/./map.php:1482 config/./map.php:1686
+#: include/./params/loop/loop.php:248
+#: include/./params/sorted_list/sorted_list.php:59
+#: include/./params/vc_link/vc_link.php:6
+msgid "Title"
+msgstr "عنوان"
+
+#: config/./map.php:402
+msgid "Separator title."
+msgstr "عنوان جداکننده"
+
+#: config/./map.php:406
+msgid "Title position"
+msgstr "مکان عنوان"
+
+#: config/./map.php:409 config/./map.php:698
+msgid "Align center"
+msgstr "مرکز"
+
+#: config/./map.php:410 config/./map.php:696 config/./map.php:1971
+#: config/./map.php:2098
+msgid "Align left"
+msgstr "چپ"
+
+#: config/./map.php:411 config/./map.php:697 config/./map.php:1970
+#: config/./map.php:2097
+msgid "Align right"
+msgstr "راست"
+
+#: config/./map.php:413
+msgid "Select title location."
+msgstr "انتخاب مکان عنوان"
+
+#: config/./map.php:426 config/./map.php:2349
+msgid "Custom Color"
+msgstr "رنگ سفارشی"
+
+#: config/./map.php:428
+msgid "Custom separator color for your element."
+msgstr "رنگ سفارشی جداکننده برای المان شما"
+
+#: config/./map.php:461
+msgid "Message Box"
+msgstr "باکس پیغام"
+
+#: config/./map.php:466
+msgid "Notification box"
+msgstr "باکس اطلاع رسانی"
+
+#: config/./map.php:470
+msgid "Message box type"
+msgstr "نوع باکس پیغام"
+
+#: config/./map.php:473
+msgid "Informational"
+msgstr "اطلاعات"
+
+#: config/./map.php:474
+msgid "Warning"
+msgstr "هشدار"
+
+#: config/./map.php:475
+msgid "Success"
+msgstr "موفقیت"
+
+#: config/./map.php:476
+msgid "Error"
+msgstr "خطا"
+
+#: config/./map.php:478
+msgid "Select message type."
+msgstr "انتخاب نوع پیغام"
+
+#: config/./map.php:486
+msgid "Alert style."
+msgstr "استایل هشدارها"
+
+#: config/./map.php:492
+msgid "Message text"
+msgstr "متن پیغام"
+
+#: config/./map.php:494
+msgid "<p>I am message box. Click edit button to change this text.</p>"
+msgstr ""
+"<p> من یک باکس پیغام هستم. بر روی دکمه ویرایش کلیک کنید تا متن تغییر کند. </"
+"p>"
+
+#: config/./map.php:510
+msgid "Facebook Like"
+msgstr "لایک فیسبوک"
+
+#: config/./map.php:513 config/./map.php:537 config/./map.php:561
+#: config/./map.php:598
+msgid "Social"
+msgstr "اجتماعی"
+
+#: config/./map.php:514
+msgid "Facebook like button"
+msgstr "دکمه لایک فیسبوک"
+
+#: config/./map.php:518 config/./map.php:542
+msgid "Button type"
+msgstr "نوع دکمه"
+
+#: config/./map.php:522 config/./map.php:570
+msgid "Standard"
+msgstr "استاندارد"
+
+#: config/./map.php:523
+msgid "Button count"
+msgstr "تعداد دکمه"
+
+#: config/./map.php:524
+msgid "Box count"
+msgstr "تعداد باکس"
+
+#: config/./map.php:526 config/./map.php:550
+msgid "Select button type."
+msgstr "انتخاب نوع دکمه"
+
+#: config/./map.php:534
+msgid "Tweetmeme Button"
+msgstr "دکمه Tweetmeme"
+
+#: config/./map.php:538
+msgid "Share on twitter button"
+msgstr "اشتراک با دکمه توئیتر"
+
+#: config/./map.php:546 config/./map.php:607 config/./map.php:922
+#: config/./map.php:1514
+msgid "Horizontal"
+msgstr "افقی"
+
+#: config/./map.php:547 config/./map.php:608 config/./map.php:923
+#: config/./map.php:1514
+msgid "Vertical"
+msgstr "عمودی"
+
+#: config/./map.php:548 config/./map.php:585 config/./map.php:1747
+msgid "None"
+msgstr "هیچکدام"
+
+#: config/./map.php:558
+msgid "Google+ Button"
+msgstr "دکمه گوگل پلاس"
+
+#: config/./map.php:562
+msgid "Recommend on Google"
+msgstr "پیشنهاد شده بر گوگل"
+
+#: config/./map.php:566
+msgid "Button size"
+msgstr "سایز دکمه"
+
+#: config/./map.php:572
+msgid "Medium"
+msgstr "متوسط"
+
+#: config/./map.php:573
+msgid "Tall"
+msgstr "بلند"
+
+#: config/./map.php:575
+msgid "Select button size."
+msgstr "انتخاب سایز دکمه"
+
+#: config/./map.php:579
+msgid "Annotation"
+msgstr "حاشیه نویسی"
+
+#: config/./map.php:583
+msgid "Inline"
+msgstr "اینلاین"
+
+#: config/./map.php:584
+msgid "Bubble"
+msgstr "حبابی"
+
+#: config/./map.php:587
+msgid "Select type of annotation"
+msgstr "انتخاب نوع حاشیه نویسی"
+
+#: config/./map.php:595
+msgid "Pinterest"
+msgstr "پینترست"
+
+#: config/./map.php:599
+msgid "Pinterest button"
+msgstr "دکمه پینترست"
+
+#: config/./map.php:603
+msgid "Button layout"
+msgstr "طرح دکمه"
+
+#: config/./map.php:609
+msgid "No count"
+msgstr "بدون شمارش"
+
+#: config/./map.php:610
+msgid "Select button layout."
+msgstr "انتخاب طرح دکمه"
+
+#: config/./map.php:618
+msgid "FAQ"
+msgstr "FAQ"
+
+#: config/./map.php:622
+msgid "Toggle element for Q&A block"
+msgstr "تاگل کردن المان برای بلاک Q&A"
+
+#: config/./map.php:628 config/./map.php:630
+msgid "Toggle title"
+msgstr "عنوان تاگل"
+
+#: config/./map.php:631
+msgid "Toggle block title."
+msgstr "عنوان بلاک تاگل"
+
+#: config/./map.php:637
+msgid "Toggle content"
+msgstr "محتوای تاگل"
+
+#: config/./map.php:639
+msgid "<p>Toggle content goes here, click edit button to change this text.</p>"
+msgstr ""
+"<p>محتوای تاگل در این قسمت قرار میگیرد ، بر روی دکمه ویرایش کلیک کنید تا این "
+"متن تغییر کنید </p>"
+
+#: config/./map.php:640
+msgid "Toggle block content."
+msgstr "محتوای بلاک تاگل"
+
+#: config/./map.php:644
+msgid "Default state"
+msgstr "حالت پیش فرض"
+
+#: config/./map.php:647
+msgid "Closed"
+msgstr "بسته"
+
+#: config/./map.php:648
+msgid "Open"
+msgstr "باز"
+
+#: config/./map.php:650
+msgid "Select \"Open\" if you want toggle to be open by default."
+msgstr "\"Open\" را انتخاب کنید اگر میخواهید که به صورت پیش فرض باز باشد."
+
+#: config/./map.php:665
+msgid "Single Image"
+msgstr "تصویر تکی"
+
+#: config/./map.php:669
+msgid "Simple image with CSS animation"
+msgstr "تصویر ساده با css انیمیشن"
+
+#: config/./map.php:673 config/./map.php:776 config/./map.php:868
+#: config/./map.php:1000 config/./map.php:1050 config/./map.php:1118
+#: config/./map.php:1185 config/./map.php:1366 config/./map.php:1460
+#: config/./map.php:1580 config/./map.php:1725 config/./map.php:2124
+#: config/./map.php:2162 config/./map.php:2261 config/./map.php:2320
+#: config/./map.php:2392 config/./map.php:2567 config/./map.php:2591
+#: config/./map.php:2615 config/./map.php:2645 config/./map.php:2669
+#: config/./map.php:2719 config/./map.php:2757 config/./map.php:2789
+#: config/./map.php:2825 config/./map.php:2922 config/./map.php:2957
+#: config/./map.php:2990
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:40
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:39
+msgid "Widget title"
+msgstr "عنوان ابزارک"
+
+#: config/./map.php:675 config/./map.php:778 config/./map.php:870
+#: config/./map.php:1002 config/./map.php:1052 config/./map.php:1120
+#: config/./map.php:1187 config/./map.php:1368 config/./map.php:1462
+#: config/./map.php:1582 config/./map.php:1727 config/./map.php:2126
+#: config/./map.php:2164 config/./map.php:2263 config/./map.php:2322
+#: config/./map.php:2394
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:42
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:41
+msgid ""
+"Enter text which will be used as widget title. Leave blank if no title is "
+"needed."
+msgstr ""
+"متنی را برای عنوان ابزارک وارد کنید. اگر نیازی به عنوان ندارید آن را خالی "
+"بگذارید"
+
+#: config/./map.php:679 include/./params/sorted_list/sorted_list.php:58
+msgid "Image"
+msgstr "تصویر"
+
+#: config/./map.php:682
+msgid "Select image from media library."
+msgstr "تصویر را از کتابخانه رسانه ها انتخاب کنید."
+
+#: config/./map.php:687 config/./map.php:812 config/./map.php:881
+msgid "Image size"
+msgstr "سایز تصویر"
+
+#: config/./map.php:689
+msgid ""
+"Enter image size. Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
+"other sizes defined by current theme. Alternatively enter image size in "
+"pixels: 200x100 (Width x Height). Leave empty to use \"thumbnail\" size."
+msgstr ""
+"سایز تصویر را وارد کنید. مثال: \"thumbnail\", \"medium\", \"large\", \"full"
+"\" ویا سایزهای دیگری که توسط قالب تعریف شده است. به همین ترتیب سایز تصویر را "
+"به پیکسل وارد کنید:  200x100 (Width x Height). برای استفاده از سایز "
+"\"thumbnail\" آنرا خالی بگذارید."
+
+#: config/./map.php:693
+msgid "Image alignment"
+msgstr "جای تصویر"
+
+#: config/./map.php:700
+msgid "Select image alignment."
+msgstr "انتخاب مکان تصویر"
+
+#: config/./map.php:704
+msgid "Image style"
+msgstr "استایل تصویر"
+
+#: config/./map.php:710
+msgid "Border color"
+msgstr "رنگ مرزبندی"
+
+#: config/./map.php:718
+msgid "Border color."
+msgstr "رنگ مرزبندی."
+
+#: config/./map.php:723
+msgid "Link to large image?"
+msgstr "پیوند به تصویر بزرگ؟"
+
+#: config/./map.php:725
+msgid "If selected, image will be linked to the larger image."
+msgstr "اگر انتخاب شود، تصویر به تصویر بزرگتر لینک میشود."
+
+#: config/./map.php:726 config/./map.php:946 config/./map.php:953
+#: config/./map.php:960 config/./map.php:967 config/./map.php:974
+#: config/./map.php:1419 config/./map.php:1529 config/./map.php:1536
+#: config/./map.php:1543 config/./map.php:1550 config/./map.php:1557
+#: config/./map.php:1634 config/./map.php:2839
+msgid "Yes, please"
+msgstr "بله ، لطفا"
+
+#: config/./map.php:730
+msgid "Image link"
+msgstr "لینک تصویر"
+
+#: config/./map.php:732
+msgid "Enter URL if you want this image to have a link."
+msgstr "URL را وارد کنید اگر که میخواهید این تصویر لینک داشته باشد."
+
+#: config/./map.php:741
+msgid "Link Target"
+msgstr "لینک هدف"
+
+#: config/./map.php:768
+msgid "Image Gallery"
+msgstr "گالری تصاویر"
+
+#: config/./map.php:772
+msgid "Responsive image gallery"
+msgstr "گالری تصویر واکنش گرا"
+
+#: config/./map.php:782
+msgid "Gallery type"
+msgstr "نوع گالری"
+
+#: config/./map.php:785 config/./map.php:1590
+msgid "Flex slider fade"
+msgstr "اسلایدر فلکس - محو"
+
+#: config/./map.php:786 config/./map.php:1591
+msgid "Flex slider slide"
+msgstr "اسلایدر فلکس - اسلاید"
+
+#: config/./map.php:787 config/./map.php:1592
+msgid "Nivo slider"
+msgstr "اسلایدر nivo"
+
+#: config/./map.php:788
+msgid "Image grid"
+msgstr "جدول تصویر"
+
+#: config/./map.php:790
+msgid "Select gallery type."
+msgstr "انتخاب نوع گالری"
+
+#: config/./map.php:794 config/./map.php:1056 config/./map.php:1604
+msgid "Auto rotate slides"
+msgstr "چرخش اتوماتیک اسلایدها"
+
+#: config/./map.php:796 config/./map.php:1008 config/./map.php:1058
+#: config/./map.php:1606 include/./classes/settings/class-vc-settings.php:571
+msgid "Disable"
+msgstr "غیرفعال کردن"
+
+#: config/./map.php:797 config/./map.php:1060 config/./map.php:1607
+msgid "Auto rotate slides each X seconds."
+msgstr "چرخش اتوماتیک اسلایدها هر X ثانیه."
+
+#: config/./map.php:805 config/./map.php:874
+msgid "Images"
+msgstr "تصاویر"
+
+#: config/./map.php:808 config/./map.php:877
+msgid "Select images from media library."
+msgstr "انتخاب تصاویر از کتابخانه رسانه ها"
+
+#: config/./map.php:814 config/./map.php:883
+msgid ""
+"Enter image size. Example: thumbnail, medium, large, full or other sizes "
+"defined by current theme. Alternatively enter image size in pixels: 200x100 "
+"(Width x Height). Leave empty to use \"thumbnail\" size."
+msgstr ""
+"سایز تصویر را وارد کنید. مثال: بندانگشتی ، متوسط ، بزرگ، تمام و یا سایزهای "
+"دیگری که توسط قالب تعریف شده است. به همین ترتیب سایز تصویر را به پیکسل وارد "
+"کنید: 200x100 (Width x Height). برای استفاده از سایز \"thumbnail\" آنرا خالی "
+"رها کنید."
+
+#: config/./map.php:818 config/./map.php:887
+msgid "On click"
+msgstr "با کلیک"
+
+#: config/./map.php:821 config/./map.php:890
+msgid "Open prettyPhoto"
+msgstr "باز کردن prettyPhoto"
+
+#: config/./map.php:822 config/./map.php:891
+msgid "Do nothing"
+msgstr "هیچ کاری انجام نده"
+
+#: config/./map.php:823 config/./map.php:892 config/./map.php:1647
+msgid "Open custom link"
+msgstr "باز کردن لینک سفارشی"
+
+#: config/./map.php:825
+msgid "Define action for onclick event if needed."
+msgstr "در صورت نیاز عملی را برای رویداد کلیک تعریف کنید."
+
+#: config/./map.php:829 config/./map.php:898 config/./map.php:1654
+msgid "Custom links"
+msgstr "لینکهای سفارشی"
+
+#: config/./map.php:831 config/./map.php:900
+msgid ""
+"Enter links for each slide here. Divide links with linebreaks (Enter) . "
+msgstr "برای هر اسلاید لینکی را وارد کنید. لینکها را با اینتر از هم جدا کنید."
+
+#: config/./map.php:839 config/./map.php:908
+msgid "Custom link target"
+msgstr "لینک هدف"
+
+#: config/./map.php:841 config/./map.php:910
+msgid "Select where to open  custom links."
+msgstr "انتخاب کنید که لینکهای سفارشی کجا باز شوند."
+
+#: config/./map.php:860
+msgid "Image Carousel"
+msgstr "Carousel تصویر"
+
+#: config/./map.php:864
+msgid "Animated carousel with images"
+msgstr "Carousel متحرک با تصاویر"
+
+#: config/./map.php:894
+msgid "What to do when slide is clicked?"
+msgstr "وقتی اسلاید کلیک میشود چه کاری انجام شود؟"
+
+#: config/./map.php:919 config/./map.php:1512
+msgid "Slider mode"
+msgstr "مد اسلایدر"
+
+#: config/./map.php:925 config/./map.php:1515
+msgid ""
+"Slides will be positioned horizontally (for horizontal swipes) or vertically "
+"(for vertical swipes)"
+msgstr "اسلایدها به صورت افقی یا عمودی مرتب میشوند "
+
+#: config/./map.php:929 config/./map.php:1505
+msgid "Slider speed"
+msgstr "سرعت اسلایدر"
+
+#: config/./map.php:932 config/./map.php:1508
+msgid "Duration of animation between slides (in ms)"
+msgstr "مدت زمان انیمیشن بین اسلایدها (در میلی ثانیه)"
+
+#: config/./map.php:936 config/./map.php:1519
+msgid "Slides per view"
+msgstr "اسلایدها به ازای هر مشاهده"
+
+#: config/./map.php:939
+msgid ""
+"Set numbers of slides you want to display at the same time on slider's "
+"container for carousel mode. Supports also \"auto\" value, in this case it "
+"will fit slides depending on container's width. \"auto\" mode isn't "
+"compatible with loop mode."
+msgstr ""
+"تنظیم تعداد اسلایدهایی که میخواهید در یک زمان در نگهدارنده اسلایدر در مد "
+"Carousel نمایش داده شود. در این حالت مقدار  \"auto\" هم پشتیبانی میشود ، در "
+"این حالت اسلایدها با توجه به عرض نگهدارنده تنظیم میشوند. مد  \"auto\" با مد "
+"loop سازگار نیست."
+
+#: config/./map.php:943 config/./map.php:1526
+msgid "Slider autoplay"
+msgstr "پخش اتوماتیک اسلایدر"
+
+#: config/./map.php:945 config/./map.php:1528
+msgid "Enables autoplay mode."
+msgstr "فعالسازی مد پخش اتوماتیک"
+
+#: config/./map.php:950 config/./map.php:1533
+msgid "Hide pagination control"
+msgstr "پنهانسازی کنترل صفحه بندی"
+
+#: config/./map.php:952
+msgid "If YES pagination control will be removed."
+msgstr "اگر بله انتخاب شود صفحه بندی حذف میشود."
+
+#: config/./map.php:957 config/./map.php:1540
+msgid "Hide prev/next buttons"
+msgstr "مخفی کردن دکمه های قبلی/بعدی"
+
+#: config/./map.php:959
+msgid "If \"YES\" prev/next control will be removed."
+msgstr "اگر\"YES\" انتخاب شود کنترل قبلی/بعدی حذف میشود."
+
+#: config/./map.php:964 config/./map.php:1547
+msgid "Partial view"
+msgstr "مشاهده قسمتی"
+
+#: config/./map.php:966
+msgid "If \"YES\" part of the next slide will be visible on the right side."
+msgstr "اگر \"YES\" قسمتی از اسلاید بعدی در سمت راست قابل مشاهده خواهد بود."
+
+#: config/./map.php:971 config/./map.php:1554
+msgid "Slider loop"
+msgstr "حلقه ی اسلایدر"
+
+#: config/./map.php:973 config/./map.php:1556
+msgid "Enables loop mode."
+msgstr "فعالسازی مد حلقه (لوپ)"
+
+#: config/./map.php:990
+msgid "Tabs"
+msgstr "تب ها"
+
+#: config/./map.php:996
+msgid "Tabbed content"
+msgstr "محتوای تب بندی شده"
+
+#: config/./map.php:1006
+msgid "Auto rotate tabs"
+msgstr "چرخش خودکار تب ها"
+
+#: config/./map.php:1010
+msgid "Auto rotate tabs each X seconds."
+msgstr "چرخش خودکار تب ها هر X ثانیه"
+
+#: config/./map.php:1027 config/./map.php:1077
+msgid "Tab 1"
+msgstr "تب 1"
+
+#: config/./map.php:1028 config/./map.php:1078
+msgid "Tab 2"
+msgstr "تب 2"
+
+#: config/./map.php:1038
+msgid "Tour"
+msgstr "تور"
+
+#: config/./map.php:1046
+msgid "Vertical tabbed content"
+msgstr "محتوای تب عمومی"
+
+#: config/./map.php:1084 include/./classes/core/class-vc-base.php:529
+#: include/./classes/shortcodes/vc-tab.php:2
+msgid "Tab"
+msgstr "تب"
+
+#: config/./map.php:1094
+msgid "Tab title."
+msgstr "عنوان تب"
+
+#: config/./map.php:1098
+msgid "Tab ID"
+msgstr "ID تب"
+
+#: config/./map.php:1108
+msgid "Accordion"
+msgstr "آکاردیون"
+
+#: config/./map.php:1114
+msgid "Collapsible content panels"
+msgstr "پنل محتوای از پیش ساخته شده"
+
+#: config/./map.php:1124
+msgid "Active section"
+msgstr "فعالسازی  بخش"
+
+#: config/./map.php:1126
+msgid ""
+"Enter section number to be active on load or enter false to collapse all "
+"sections."
+msgstr ""
+"شماره بخش را وارد کنید تا به هنگام لود بارگذاری شود و یا آنرا اشتباه وارد "
+"کنید تا تمامی بخشها جمع آوری شوند."
+
+#: config/./map.php:1130
+msgid "Allow collapsible all"
+msgstr "اجازه جمع آوری همه"
+
+#: config/./map.php:1132
+msgid "Select checkbox to allow all sections to be collapsible."
+msgstr "چک باکس را علامت بزنید تا اجازه دهید تمامی بخشها قابل جمع آوری شود."
+
+#: config/./map.php:1133
+msgid "Allow"
+msgstr "اجازه بده"
+
+#: config/./map.php:1147
+msgid "Add section"
+msgstr "افزودن بخش"
+
+#: config/./map.php:1151
+msgid "Section 1"
+msgstr "بخش 1"
+
+#: config/./map.php:1152
+msgid "Section 2"
+msgstr "بخش 2"
+
+#: config/./map.php:1157 include/./classes/core/class-vc-base.php:530
+#: include/./classes/core/class-vc-base.php:533
+#: include/./templates/shortcodes/vc_accordion_tab.php:5
+msgid "Section"
+msgstr "بخش"
+
+#: config/./map.php:1167
+msgid "Accordion section title."
+msgstr "عنوان بخش آکاردئون"
+
+#: config/./map.php:1177
+msgid "Teaser (posts) Grid"
+msgstr "جدول تیزر (پستها)"
+
+#: config/./map.php:1191 config/./map.php:1382
+msgid "Columns count"
+msgstr "تعداد ستونها"
+
+#: config/./map.php:1195 config/./map.php:1387
+msgid "Select columns count."
+msgstr "انتخاب تعداد ستونها،"
+
+#: config/./map.php:1199 config/./map.php:1611
+#: include/./params/loop/loop.php:178
+msgid "Post types"
+msgstr "پست تایپها"
+
+#: config/./map.php:1201 config/./map.php:1613
+msgid "Select post types to populate posts from."
+msgstr "انتخاب پست تایپ ها برای محبوب کردن"
+
+#: config/./map.php:1205
+msgid "Teasers count"
+msgstr "تعداد تیزرها"
+
+#: config/./map.php:1207
+msgid "How many teasers to show? Enter number or word \"All\"."
+msgstr "چه تعداد تیزر نمایش داده شود؟ تعداد آن را وارد کنید  \"All\"."
+
+#: config/./map.php:1214 config/./map.php:1621
+msgid "Teaser (Excerpt)"
+msgstr "تیزر (excerpt)"
+
+#: config/./map.php:1215
+msgid "Full Content"
+msgstr "محتوای کامل"
+
+#: config/./map.php:1217 config/./map.php:1263 config/./map.php:1277
+#: config/./map.php:1430
+msgid "Teaser layout template."
+msgstr "قالب طرح تیزر"
+
+#: config/./map.php:1221
+msgid "Layout"
+msgstr "طرح"
+
+#: config/./map.php:1224
+msgid "Title + Thumbnail + Text"
+msgstr "عنوان + بندانگشتی + متن"
+
+#: config/./map.php:1225
+msgid "Thumbnail + Title + Text"
+msgstr "بندانگشتی + عنوان + متن"
+
+#: config/./map.php:1226
+msgid "Thumbnail + Text"
+msgstr "بندانگشتی + متن"
+
+#: config/./map.php:1227
+msgid "Thumbnail + Title"
+msgstr "بندانگشتی + عنوان"
+
+#: config/./map.php:1228
+msgid "Thumbnail only"
+msgstr "فقط بندانگشتی"
+
+#: config/./map.php:1229
+msgid "Title + Text"
+msgstr "عنوان + متن"
+
+#: config/./map.php:1230
+msgid "Teaser layout."
+msgstr "طرح تیزر"
+
+#: config/./map.php:1234 config/./map.php:1642
+#: include/./params/sorted_list/sorted_list.php:60
+msgid "Link"
+msgstr "لینک"
+
+#: config/./map.php:1237 config/./map.php:1354 config/./map.php:1645
+#: include/./params/sorted_list/sorted_list.php:68
+msgid "Link to post"
+msgstr "لینک به پست"
+
+#: config/./map.php:1238 config/./map.php:1356 config/./map.php:1646
+msgid "Link to bigger image"
+msgstr "لینک به تصویر بزرگتر"
+
+#: config/./map.php:1239
+msgid "Thumbnail to bigger image, title to post"
+msgstr "تصویر بندانگشتی به تصویر بزرگتر ، عنوان پست"
+
+#: config/./map.php:1240 config/./map.php:1355 config/./map.php:1648
+#: include/./params/sorted_list/sorted_list.php:67
+#: include/./templates/teaser.html.php:16
+#: include/./templates/teaser.html.php:37
+msgid "No link"
+msgstr "بدون لینک"
+
+#: config/./map.php:1242 config/./map.php:1650
+msgid "Link type."
+msgstr "نوع لینک."
+
+#: config/./map.php:1246 config/./map.php:1407 config/./map.php:1492
+msgid "Link target"
+msgstr "لینک هدف"
+
+#: config/./map.php:1256
+msgid "Teaser grid layout"
+msgstr "طرح گرید تیزر"
+
+#: config/./map.php:1259
+msgid "Grid"
+msgstr "جدول"
+
+#: config/./map.php:1260
+msgid "Grid with filter"
+msgstr "جدول با فیلتر"
+
+#: config/./map.php:1261
+msgid "Carousel"
+msgstr "Carousel"
+
+#: config/./map.php:1267 config/./map.php:1424
+msgid "Layout mode"
+msgstr "مد طرح"
+
+#: config/./map.php:1270 config/./map.php:1427
+msgid "Fit rows"
+msgstr "فیت کردن ردیف ها"
+
+#: config/./map.php:1271 config/./map.php:1428
+msgid "Masonry"
+msgstr "Masonry"
+
+#: config/./map.php:1281 include/./params/loop/loop.php:182
+msgid "Taxonomies"
+msgstr "طبقه بندی"
+
+#: config/./map.php:1289
+msgid "Select taxonomies."
+msgstr "انتخاب طبقه بندی ها"
+
+#: config/./map.php:1293 config/./map.php:1434 config/./map.php:1499
+#: config/./map.php:1661
+msgid "Thumbnail size"
+msgstr "سایز بندانگشتی"
+
+#: config/./map.php:1295 config/./map.php:1436 config/./map.php:1501
+#: config/./map.php:1663
+msgid ""
+"Enter thumbnail size. Example: thumbnail, medium, large, full or other sizes "
+"defined by current theme. Alternatively enter image size in pixels: 200x100 "
+"(Width x Height) . "
+msgstr ""
+"سایز بندانگشتی را وارد کنید. مثال: بندانگشتی ، متوسط ، بزرگ ، کامل یا "
+"سایزهای تعریف شده دیگر توسط قالب فعلی. به همین ترتیب سایز تصویر را به پیکسل "
+"وارد کنید:  200x100 (Width x Height) . "
+
+#: config/./map.php:1299 config/./map.php:1667
+msgid "Post/Page IDs"
+msgstr "ID پست/صفحه"
+
+#: config/./map.php:1301
+msgid ""
+"Fill this field with page/posts IDs separated by commas (,) to retrieve only "
+"them. Use this in conjunction with \"Post types\" field."
+msgstr ""
+"ID پست/صفحه را در این فیلد وارد کنید و آن ها را با کاما از هم جدا کنید (, ). "
+"در کنار آن از فیلد \"Post types\" استفاده کنید."
+
+#: config/./map.php:1305
+msgid "Exclude Post/Page IDs"
+msgstr "استثناء قائل شدن Post/Page IDs"
+
+#: config/./map.php:1307
+msgid ""
+"Fill this field with page/posts IDs separated by commas (,) to exclude them "
+"from query."
+msgstr ""
+"ID پست/صفحه را در این فیلد وارد کنید و آن ها را با کاما از هم جدا کنید (, ) "
+"تا از کوئری مستثنی شوند."
+
+#: config/./map.php:1311 config/./map.php:1673 config/./map.php:2912
+#: include/./params/loop/loop.php:180
+#: include/./templates/shortcodes/vc_wp_categories.php:4
+msgid "Categories"
+msgstr "دسته بندی ها"
+
+#: config/./map.php:1313 config/./map.php:1675
+msgid ""
+"If you want to narrow output, enter category names here. Note: Only listed "
+"categories will be included. Divide categories with linebreaks (Enter) . "
+msgstr ""
+"اگر میخواهید خروجی را محدود کنید ، نام دسته بندی را در اینجا وارد کنید. "
+"توجه: تنها دسته بندی های لیست شده شامل خواهند شد.  دسته بندی ها را با  اینتر "
+"از هم جدا کنید."
+
+#: config/./map.php:1317 config/./map.php:1679 config/./map.php:1696
+msgid "Order by"
+msgstr "مرتب سازی بر اساس"
+
+#: config/./map.php:1321 config/./map.php:1683
+#: include/./params/loop/loop.php:245
+msgid "Date"
+msgstr "تاریخ"
+
+#: config/./map.php:1322 config/./map.php:1684
+msgid "ID"
+msgstr "ID"
+
+#: config/./map.php:1323 config/./map.php:1685
+#: include/./params/loop/loop.php:179 include/./params/loop/loop.php:247
+msgid "Author"
+msgstr "نویسنده"
+
+#: config/./map.php:1325 config/./map.php:1687
+#: include/./params/loop/loop.php:250
+msgid "Modified"
+msgstr "تنظیم شده"
+
+#: config/./map.php:1326 config/./map.php:1688 config/./map.php:2295
+#: config/./map.php:2883 include/./params/loop/loop.php:252
+msgid "Random"
+msgstr "تصادفی"
+
+#: config/./map.php:1327 config/./map.php:1689
+#: include/./params/loop/loop.php:253
+msgid "Comment count"
+msgstr "تعداد دیدگاه"
+
+#: config/./map.php:1328 config/./map.php:1690
+#: include/./params/loop/loop.php:254
+msgid "Menu order"
+msgstr "ترتیب منو"
+
+#: config/./map.php:1330 config/./map.php:1692
+#, php-format
+msgid "Select how to sort retrieved posts. More at %s."
+msgstr "انتخاب چگونگی مرتب سازی پستهای بازیابی شده. بیشتر در %s."
+
+#: config/./map.php:1334
+msgid "Order way"
+msgstr "روش سفارش"
+
+#: config/./map.php:1337 config/./map.php:1699
+#: include/./params/loop/loop.php:264
+msgid "Descending"
+msgstr "نزولی"
+
+#: config/./map.php:1338 config/./map.php:1700
+#: include/./params/loop/loop.php:263
+msgid "Ascending"
+msgstr "صعودی"
+
+#: config/./map.php:1340 config/./map.php:1702
+#, php-format
+msgid "Designates the ascending or descending order. More at %s."
+msgstr "تعیین ترتیب صعودی یا نزولی.اطلاعات بیشتر در %s."
+
+#: config/./map.php:1359
+msgid "Posts Grid"
+msgstr "گرید پستها"
+
+#: config/./map.php:1362
+msgid "Posts in grid view"
+msgstr "پست ها در نمایش گرید"
+
+#: config/./map.php:1372
+msgid "Grids content"
+msgstr "محتوای گریدها"
+
+#: config/./map.php:1378 config/./map.php:1472
+msgid "Create WordPress loop, to populate content from your site."
+msgstr "لوپ وردپرس ایجاد کنید، برای محبوب کردن محتوای سایتتان."
+
+#: config/./map.php:1391 config/./map.php:1476
+msgid "Teaser layout"
+msgstr "طرح تیزر"
+
+#: config/./map.php:1393 config/./map.php:1478
+msgid ""
+"Control teasers look. Enable blocks and place them in desired order. Note: "
+"This setting can be overrriden on post to post basis."
+msgstr ""
+"کنترل ظاهر تیزرها. بلاکها را فعال کنید و آنها را به ترتیب مورد نظرتان قرار "
+"دهید."
+
+#: config/./map.php:1396 config/./map.php:1481
+msgid "Thumbnail"
+msgstr "بند انگشتی"
+
+#: config/./map.php:1399 config/./map.php:1484
+msgid "Teaser/Excerpt"
+msgstr "تیزر / Excerpt"
+
+#: config/./map.php:1400 config/./map.php:1485
+msgid "Full content"
+msgstr "محتوای کامل"
+
+#: config/./map.php:1402 config/./map.php:1487
+msgid "Read more link"
+msgstr "لینک بیشتر بخوانید"
+
+#: config/./map.php:1417
+msgid "Show filter"
+msgstr "نمایش فیلتر"
+
+#: config/./map.php:1420
+msgid "Select to add animated category filter to your posts grid."
+msgstr "افزودن فیلتر دسته بندی متحرک به گرید پستهای شما"
+
+#: config/./map.php:1451
+msgid "Post Carousel"
+msgstr "Carousel پست"
+
+#: config/./map.php:1456
+msgid "Animated carousel with posts"
+msgstr "carousel  متحرک با پستها"
+
+#: config/./map.php:1466
+msgid "Carousel content"
+msgstr "محتوای carousel "
+
+#: config/./map.php:1522
+msgid ""
+"Set numbers of slides you want to display at the same time on slider's "
+"container for carousel mode. Also supports for \"auto\" value, in this case "
+"it will fit slides depending on container's width. \"auto\" mode doesn't "
+"compatible with loop mode."
+msgstr ""
+"تنظیم تعداد اسلایدهایی که میخواهید در یک زمان بر روی مد carousel اسلایدر "
+"نشان داده شود. مقادیر \"auto\" هم پشتیبانی میشود ، در این حالت بسته به عرض "
+"container اسلایدها فیت میشوند. مد \"auto\" با مد لوپ سازگاری ندارد."
+
+#: config/./map.php:1535
+msgid "If \"YES\" pagination control will be removed"
+msgstr "اگر \"YES\" ، کنترل صفحه بندی حذف میشود."
+
+#: config/./map.php:1542
+msgid "If \"YES\" prev/next control will be removed"
+msgstr "اگر \"YES\" ، کنترل قبلی/بعدی حذف میشود."
+
+#: config/./map.php:1549
+msgid "If \"YES\" part of the next slide will be visible on the right side"
+msgstr "اگر \"YES\" ، قسمتی از اسلاید بعدی در سمت راست نمایان میشود"
+
+#: config/./map.php:1572
+msgid "Posts Slider"
+msgstr "اسلایدر پستها"
+
+#: config/./map.php:1576
+msgid "Slider with WP Posts"
+msgstr "اسلایدر با پستهای وردپرس"
+
+#: config/./map.php:1586
+msgid "Slider type"
+msgstr "نوع اسلایدر"
+
+#: config/./map.php:1594
+msgid "Select slider type."
+msgstr "نوع اسلایدر را انتخاب کنید."
+
+#: config/./map.php:1598
+msgid "Slides count"
+msgstr "تعداد اسلایدها"
+
+#: config/./map.php:1600
+msgid "How many slides to show? Enter number or word \"All\"."
+msgstr "چه تعداد اسلاید نمایش داده شود؟ عدد یا کلمه وارد کنید \"All\"."
+
+#: config/./map.php:1617
+#: include/./classes/settings/class-vc-automapper.php:299
+msgid "Description"
+msgstr "توضیحات"
+
+#: config/./map.php:1620
+msgid "No description"
+msgstr "بدون توضیحات"
+
+#: config/./map.php:1623
+msgid "Some sliders support description text, what content use for it?"
+msgstr ""
+"برخی از اسلایدرها از متن توضیحات پشتیبانی میکنند ، از چه محتوایی برای آن "
+"استفاده شود؟"
+
+#: config/./map.php:1631
+msgid "Output post title?"
+msgstr "خروجی عنوان پست؟"
+
+#: config/./map.php:1633
+msgid "If selected, title will be printed before the teaser text."
+msgstr "اگر انتخاب شود، عنوان قبل از متن تیزر پرینت میشود."
+
+#: config/./map.php:1657
+msgid "Enter links for each slide here. Divide links with linebreaks (Enter)."
+msgstr "لینکها را برای هر اسلاید وارد کنید. لینکها را با اینتر از هم جدا کنید"
+
+#: config/./map.php:1669
+msgid ""
+"Fill this field with page/posts IDs separated by commas (,), to retrieve "
+"only them. Use this in conjunction with \"Post types\" field."
+msgstr ""
+"ID صفحه / پست را در این فیلد قرار دهید و آنها را با کاما از هم جدا کنید. از "
+"آن در کنار فیلد \"Post types\" استفاده کنید."
+
+#: config/./map.php:1716
+msgid "Widgetised Sidebar"
+msgstr "سایدبار با ابزارک"
+
+#: config/./map.php:1720 config/./map.php:2214 config/./map.php:2235
+msgid "Structure"
+msgstr "ساختار"
+
+#: config/./map.php:1721
+msgid "Place widgetised sidebar"
+msgstr "قرار دادن سایدبار ابزارکی"
+
+#: config/./map.php:1731
+msgid "Sidebar"
+msgstr "سایدبار"
+
+#: config/./map.php:1733
+msgid "Select which widget area output."
+msgstr "انتخاب کنید کدام ناحیه ابزارک  خروجی باشد."
+
+#: config/./map.php:1748
+msgid "Address book icon"
+msgstr "آیکون دفترجه آدرس"
+
+#: config/./map.php:1749
+msgid "Alarm clock icon"
+msgstr "آیکون آلارم ساعت"
+
+#: config/./map.php:1750
+msgid "Anchor icon"
+msgstr "آیکون نویسنده"
+
+#: config/./map.php:1751
+msgid "Application Image icon"
+msgstr "آیکون تصویر برنامه کاربردی"
+
+#: config/./map.php:1752
+msgid "Arrow icon"
+msgstr "آیکون پیکان"
+
+#: config/./map.php:1753
+msgid "Asterisk icon"
+msgstr "آیکون Asterisk "
+
+#: config/./map.php:1754
+msgid "Hammer icon"
+msgstr "آیکون چکش"
+
+#: config/./map.php:1755
+msgid "Balloon icon"
+msgstr "آیکون بالون"
+
+#: config/./map.php:1756
+msgid "Balloon Buzz icon"
+msgstr "آیکون بیز بالون"
+
+#: config/./map.php:1757
+msgid "Balloon Facebook icon"
+msgstr "آیکون فیسبوک بالون"
+
+#: config/./map.php:1758
+msgid "Balloon Twitter icon"
+msgstr "آیکون توئیتر بالون"
+
+#: config/./map.php:1759
+msgid "Battery icon"
+msgstr "آیکون باتری"
+
+#: config/./map.php:1760
+msgid "Binocular icon"
+msgstr "آیکون دوربین"
+
+#: config/./map.php:1761
+msgid "Document Excel icon"
+msgstr "آیکون سند اکسل"
+
+#: config/./map.php:1762
+msgid "Document Image icon"
+msgstr "آیکون سند تصویر"
+
+#: config/./map.php:1763
+msgid "Document Music icon"
+msgstr "آیکون سند موزیک"
+
+#: config/./map.php:1764
+msgid "Document Office icon"
+msgstr "آیکون سند آفیس"
+
+#: config/./map.php:1765
+msgid "Document PDF icon"
+msgstr "آیکون سند PDF"
+
+#: config/./map.php:1766
+msgid "Document Powerpoint icon"
+msgstr "آیکون سند پاورپوینت"
+
+#: config/./map.php:1767
+msgid "Document Word icon"
+msgstr "آیکون سند ورد"
+
+#: config/./map.php:1768
+msgid "Bookmark icon"
+msgstr "آیکون بوکمارک"
+
+#: config/./map.php:1769
+msgid "Camcorder icon"
+msgstr "آیکون دوربین فیلمبرداری"
+
+#: config/./map.php:1770
+msgid "Camera icon"
+msgstr "آیکون دوربین"
+
+#: config/./map.php:1771
+msgid "Chart icon"
+msgstr "آیکون چت"
+
+#: config/./map.php:1772
+msgid "Chart pie icon"
+msgstr "آیکون نمودار دایره ای"
+
+#: config/./map.php:1773
+msgid "Clock icon"
+msgstr "آیکون ساعت"
+
+#: config/./map.php:1774
+msgid "Fire icon"
+msgstr "آیکون آتش"
+
+#: config/./map.php:1775
+msgid "Heart icon"
+msgstr "آیکون قلب"
+
+#: config/./map.php:1776
+msgid "Mail icon"
+msgstr "آیکون ایمیل"
+
+#: config/./map.php:1777
+msgid "Play icon"
+msgstr "آیکون پخش"
+
+#: config/./map.php:1778
+msgid "Shield icon"
+msgstr "آیکون شیلد"
+
+#: config/./map.php:1779
+msgid "Video icon"
+msgstr "آیکون ویدئو"
+
+#: config/./map.php:1783 config/./map.php:1844
+msgid "Button"
+msgstr "دکمه"
+
+#: config/./map.php:1787 config/./map.php:1849
+msgid "Eye catching button"
+msgstr "دکمه چشمگیر"
+
+#: config/./map.php:1791 config/./map.php:1795 config/./map.php:1859
+#: config/./map.php:1863 config/./map.php:1925 config/./map.php:1927
+#: config/./map.php:2055 config/./map.php:2059
+#: include/./templates/shortcodes/vc_button.php:10
+#: include/./templates/shortcodes/vc_button2.php:4
+#: include/./templates/shortcodes/vc_cta_button.php:9
+#: include/./templates/shortcodes/vc_cta_button2.php:22
+msgid "Text on the button"
+msgstr "متن دکمه"
+
+#: config/./map.php:1796 config/./map.php:1864 config/./map.php:1928
+#: config/./map.php:2060
+msgid "Text on the button."
+msgstr "متن روی دکمه"
+
+#: config/./map.php:1800 config/./map.php:1853 config/./map.php:1932
+#: config/./map.php:2049
+msgid "URL (Link)"
+msgstr "URL (لینک)"
+
+#: config/./map.php:1802 config/./map.php:1855 config/./map.php:1934
+#: config/./map.php:2051
+msgid "Button link."
+msgstr "لینک دکمه"
+
+#: config/./map.php:1806 config/./map.php:1938
+msgid "Target"
+msgstr "هدف"
+
+#: config/./map.php:1816 config/./map.php:1878 config/./map.php:1948
+#: config/./map.php:2074
+msgid "Button color."
+msgstr "رنگ دکمه"
+
+#: config/./map.php:1821 config/./map.php:1953
+msgid "Icon"
+msgstr "آیکون"
+
+#: config/./map.php:1824 config/./map.php:1956
+msgid "Button icon."
+msgstr "آیکون دکمه"
+
+#: config/./map.php:1828 config/./map.php:1890 config/./map.php:1960
+#: config/./map.php:2086
+msgid "Size"
+msgstr "سایز"
+
+#: config/./map.php:1831 config/./map.php:1894 config/./map.php:1963
+#: config/./map.php:2090
+msgid "Button size."
+msgstr "سایز دکمه."
+
+#: config/./map.php:1871 config/./map.php:2067
+msgid "Button style."
+msgstr "استایل دکمه."
+
+#: config/./map.php:1909 config/./map.php:1988
+msgid "Call to Action Button"
+msgstr "دکمه call to action"
+
+#: config/./map.php:1913 config/./map.php:1992
+msgid "Catch visitors attention with CTA block"
+msgstr "توجه بازدیدکنندگان را با بلاک CTA جلب کنید"
+
+#: config/./map.php:1920
+msgid "Click edit button to change this text."
+msgstr "برای تغییر متن دکمه ویرایش را کلیک کنید"
+
+#: config/./map.php:1921 include/./classes/shortcodes/example.php:114
+msgid "Enter your content."
+msgstr "محتوا را وارد کنید."
+
+#: config/./map.php:1967 config/./map.php:2094
+msgid "Button position"
+msgstr "مکان دکمه"
+
+#: config/./map.php:1972 config/./map.php:2099
+msgid "Align bottom"
+msgstr "زیر"
+
+#: config/./map.php:1974 config/./map.php:2101
+msgid "Select button alignment."
+msgstr "انتخاب مکان دکمه"
+
+#: config/./map.php:1996
+msgid "Heading first line"
+msgstr "heading خط اول"
+
+#: config/./map.php:2000
+msgid "Hey! I am first heading line feel free to change me"
+msgstr "سلام! من اولین خط هدینگ هستم، آزادی که منو تغییر بدی :)"
+
+#: config/./map.php:2001
+msgid "Text for the first heading line."
+msgstr "متن برای اولین خط هدینگ"
+
+#: config/./map.php:2005
+msgid "Heading second line"
+msgstr "خط دوم heading"
+
+#: config/./map.php:2010
+msgid "Optional text for the second heading line."
+msgstr "متن اختیاری برای دومین خط هدینگ"
+
+#: config/./map.php:2014
+msgid "CTA style"
+msgstr "استایل CTA"
+
+#: config/./map.php:2017
+msgid "Call to action style."
+msgstr "استایل call to action"
+
+#: config/./map.php:2024
+msgid "Call to action element width in percents."
+msgstr "عرض المان call to action به درصد"
+
+#: config/./map.php:2028 include/./params/font_container/font_container.php:93
+msgid "Text align"
+msgstr "چیدمان متن"
+
+#: config/./map.php:2031
+msgid "Text align in call to action block."
+msgstr "چیدمان متن در بلاک call to action"
+
+#: config/./map.php:2035
+msgid "Custom Background Color"
+msgstr "رنگ پس زمینه"
+
+#: config/./map.php:2037
+msgid "Select background color for your element."
+msgstr "رنگ پس زمینه را برای المان خود انتخاب کنید."
+
+#: config/./map.php:2043
+msgid "Promotional text"
+msgstr "متن تبلیغاتی"
+
+#: config/./map.php:2045
+msgid ""
+"I am promo text. Click edit button to change this text. Lorem ipsum dolor "
+"sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec "
+"ullamcorper mattis, pulvinar dapibus leo."
+msgstr ""
+"من متن تبلیغی هستم. برای تغییر این متن روی کلید ویرایش کلیک کنید. Lorem "
+"ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus "
+"nec ullamcorper mattis, pulvinar dapibus leo."
+
+#: config/./map.php:2064
+msgid "Button style"
+msgstr "استایل دکمه"
+
+#: config/./map.php:2116
+msgid "Video Player"
+msgstr "ویدئو پلیر"
+
+#: config/./map.php:2120
+msgid "Embed YouTube/Vimeo player"
+msgstr "Embed YouTube/Vimeo player"
+
+#: config/./map.php:2130
+msgid "Video link"
+msgstr "لینک ویدئو"
+
+#: config/./map.php:2133
+#, php-format
+msgid "Link to the video. More about supported formats at %s."
+msgstr "به ویدئو لینک دهید.بیشتر در مورد فرمت های پشتیبانی شده در %s."
+
+#: config/./map.php:2154
+msgid "Google Maps"
+msgstr "گوگل مپ"
+
+#: config/./map.php:2158
+msgid "Map block"
+msgstr "بلاک نقشه"
+
+#: config/./map.php:2168
+msgid "Map embed iframe"
+msgstr "Map embed iframe"
+
+#: config/./map.php:2170
+#, php-format
+msgid ""
+"Visit %s to create your map. 1) Find location 2) Click \"Share\" and make "
+"sure map is public on the web 3) Click folder icon to reveal \"Embed on my "
+"site\" link 4) Copy iframe code and paste it here."
+msgstr ""
+"از %s دیدن کنید تا نقشه را ایجاد کنید. 1) محل را پیدا کنید. 2)  \"Share\" را "
+"کلیک کنید و اطمینان حاصل کنید که نقشه همگانیست. 3)آیکون فولدر را کلیک کنید "
+"تا لینک \"Embed on my site\" آشکار شود. 4)کد iframe را در اینجا کپی و پیست  "
+"کنید."
+
+#: config/./map.php:2174
+msgid "Map height"
+msgstr "ارتفاع نقشه"
+
+#: config/./map.php:2177
+msgid ""
+"Enter map height in pixels. Example: 200 or leave it empty to make map "
+"responsive."
+msgstr ""
+"ارتفاع نقشه را به پیکسل وارد کنید. مثال: 200 و یا آن را خالی بگذارید تا نقشه "
+"ریسپانسیو شود."
+
+#: config/./map.php:2211 config/./map.php:2221
+msgid "Raw HTML"
+msgstr "HTML خام"
+
+#: config/./map.php:2216
+msgid "Output raw html code on your page"
+msgstr "خروجی کد html خام در صفحه"
+
+#: config/./map.php:2224
+msgid "Enter your HTML content."
+msgstr "محتوای HTML را وارد کنید"
+
+#: config/./map.php:2232
+msgid "Raw JS"
+msgstr "JS خام"
+
+#: config/./map.php:2237
+msgid "Output raw javascript code on your page"
+msgstr "خروجی کد جاوا اسکریپت خام در صفحه"
+
+#: config/./map.php:2242
+msgid "Raw js"
+msgstr "js خام"
+
+#: config/./map.php:2245
+msgid "Enter your JS code."
+msgstr "کد Js خود را وارد کنید"
+
+#: config/./map.php:2254
+msgid "Flickr Widget"
+msgstr "ابزارک flickr"
+
+#: config/./map.php:2257
+msgid "Image feed from your flickr account"
+msgstr "تصویر feed از حساب flickr شما"
+
+#: config/./map.php:2267
+msgid "Flickr ID"
+msgstr "Flickr ID"
+
+#: config/./map.php:2270
+#, php-format
+msgid "To find your flickID visit %s."
+msgstr "برای یافتن flickr ID از %s. بازدید کنید."
+
+#: config/./map.php:2274
+msgid "Number of photos"
+msgstr "تعداد تصاویر"
+
+#: config/./map.php:2277
+msgid "Number of photos."
+msgstr "تعداد تصاویر"
+
+#: config/./map.php:2281
+msgid "Type"
+msgstr "نوع"
+
+#: config/./map.php:2284
+msgid "User"
+msgstr "کاربر"
+
+#: config/./map.php:2285
+msgid "Group"
+msgstr "گروه"
+
+#: config/./map.php:2287
+msgid "Photo stream type."
+msgstr "نوع photo stream"
+
+#: config/./map.php:2291
+msgid "Display"
+msgstr "نمایش"
+
+#: config/./map.php:2294
+msgid "Latest"
+msgstr "آخرین"
+
+#: config/./map.php:2297
+msgid "Photo order."
+msgstr "ترتیب تصویر"
+
+#: config/./map.php:2312
+msgid "Progress Bar"
+msgstr "نوار پیشرفت"
+
+#: config/./map.php:2316
+msgid "Animated progress bar"
+msgstr "نوار پیشرفت متحرک"
+
+#: config/./map.php:2326
+msgid "Graphic values"
+msgstr "مقادیر گرافیک"
+
+#: config/./map.php:2328
+msgid ""
+"Input graph values, titles and color here. Divide values with linebreaks "
+"(Enter). Example: 90|Development|#e75956"
+msgstr ""
+"ورودی مقادیر گراف ، عناوین و رنگ در اینجاست. مقادیر را با اینتر از هم جدا "
+"کنید. مثال : 90|Development|#e75956"
+
+#: config/./map.php:2333 config/./map.php:2414
+msgid "Units"
+msgstr "واحدها"
+
+#: config/./map.php:2335 config/./map.php:2416
+msgid ""
+"Enter measurement units (if needed) Eg. %, px, points, etc. Graph value and "
+"unit will be appended to the graph title."
+msgstr ""
+"وارد کردن واحدهای اندازه گیری ( در صورت نیاز)  %,px, points و غیره. مقادیر "
+"گراف و واحدها به تایتل گراف ضمیمه میشوند."
+
+#: config/./map.php:2339 config/./map.php:2420
+msgid "Bar color"
+msgstr "رنگ بار"
+
+#: config/./map.php:2351
+msgid "Select bar background color."
+msgstr "انتخاب رنگ پس زمینه بار"
+
+#: config/./map.php:2356
+msgid "Bar custom color"
+msgstr "رنگ سفارشی بار"
+
+#: config/./map.php:2358
+msgid "Select custom background color for bars."
+msgstr "انتخاب رنگ پس زمینه سفارشی برای بارها"
+
+#: config/./map.php:2363 config/./map.php:2888 config/./map.php:2928
+#: config/./map.php:2963 config/./map.php:3011
+msgid "Options"
+msgstr "تنظیمات"
+
+#: config/./map.php:2366
+msgid "Add Stripes?"
+msgstr "افزودن اسکریپت؟"
+
+#: config/./map.php:2367
+msgid "Add animation? Will be visible with striped bars."
+msgstr "افزودن انیمیشن؟ به همراه بارهای راه راه نمایان میشوند."
+
+#: config/./map.php:2383
+msgid "Pie chart"
+msgstr "نمودار دایره ای"
+
+#: config/./map.php:2388
+msgid "Animated pie chart"
+msgstr "نمودار دایره ای متحرک"
+
+#: config/./map.php:2399
+msgid "Pie value"
+msgstr "مقدار دایره ای"
+
+#: config/./map.php:2401
+msgid "Input graph value here. Choose range between 0 and 100."
+msgstr "مقدار گراف را در اینجا وارد کنید. عددی بین 0 تا 100 را انتخاب کنید."
+
+#: config/./map.php:2407
+msgid "Pie label value"
+msgstr "مقدار برچسب دایره ای"
+
+#: config/./map.php:2409
+msgid "Input integer value for label. If empty \"Pie value\" will be used."
+msgstr ""
+"مقدار صحیح را برای برچسب وارد کنید. اگر خالی باشد \"Pie value\" مورد استفاده "
+"قرار میگیرد."
+
+#: config/./map.php:2423
+msgid "Select pie chart color."
+msgstr "انتخاب رنگ نمودار دایره ای."
+
+#: config/./map.php:2457
+msgid "No contact forms found"
+msgstr "فرم تماسی یافت نشد."
+
+#: config/./map.php:2461
+msgid "Contact Form 7"
+msgstr "فرم تماس نسخه 7"
+
+#: config/./map.php:2464
+msgid "Place Contact Form7"
+msgstr "قرار دادن فرم تماس7"
+
+#: config/./map.php:2468
+msgid "Form title"
+msgstr "ایجاد عنوان"
+
+#: config/./map.php:2471
+msgid "What text use as form title. Leave blank if no title is needed."
+msgstr ""
+"از چه متنی به عنوان تایتل استفاده شود؟ اگر عنوان نیاز نیست، آن را خالی "
+"بگذارید."
+
+#: config/./map.php:2475
+msgid "Select contact form"
+msgstr "انتخاب فرم تماس"
+
+#: config/./map.php:2478
+msgid "Choose previously created contact form from the drop down list."
+msgstr "انتخاب فرم تماسی از قبل ایجاد شده از لیست کشویی"
+
+#: config/./map.php:2485
+msgid "No Gravity forms found."
+msgstr "فرم gravity پیدا نشد."
+
+#: config/./map.php:2489
+msgid "Select a form to display."
+msgstr "فرمی را برای نمایش انتخاب کنید."
+
+#: config/./map.php:2496
+msgid "Gravity Form"
+msgstr "فرم Gravity"
+
+#: config/./map.php:2500
+msgid "Place Gravity form"
+msgstr "قرار دادن فرم Gravity"
+
+#: config/./map.php:2504
+msgid "Form"
+msgstr "فرم"
+
+#: config/./map.php:2507
+msgid "Select a form to add it to your post or page."
+msgstr "فرمی را انتخاب کنید تا آن را به پست یا صفحه اضافه کنید."
+
+#: config/./map.php:2512
+msgid "Display Form Title"
+msgstr "نمایش عنوان فرم"
+
+#: config/./map.php:2516 config/./map.php:2527 config/./map.php:2538
+msgid "Yes"
+msgstr "بله"
+
+#: config/./map.php:2518
+msgid "Would you like to display the forms title?"
+msgstr "آیا میخواهید عنوان فرم ها نمایش داده شود؟"
+
+#: config/./map.php:2523
+msgid "Display Form Description"
+msgstr "نمایش توضیحات فرم"
+
+#: config/./map.php:2529
+msgid "Would you like to display the forms description?"
+msgstr "آیا میخواهید توضیحات فرم نمایش داده شود؟"
+
+#: config/./map.php:2534
+msgid "Enable AJAX?"
+msgstr "فعالسازی ajax?"
+
+#: config/./map.php:2540
+msgid "Enable AJAX submission?"
+msgstr "فعالسازی ajax برای ارسال؟"
+
+#: config/./map.php:2545
+msgid "Tab Index"
+msgstr "ایندکس تب"
+
+#: config/./map.php:2547
+msgid ""
+"(Optional) Specify the starting tab index for the fields of this form. Leave "
+"blank if you're not sure what this is."
+msgstr ""
+"(اختیاری) تب ایندکس شروع را برای فیلدهای این فرم مشخص کنید. اگر در مورد این "
+"مورد اطلاعی ندارید آن را خالی بگذارید."
+
+#: config/./map.php:2557
+msgid "Search"
+msgstr "جستجو"
+
+#: config/./map.php:2560 config/./map.php:2584 config/./map.php:2608
+#: config/./map.php:2638 config/./map.php:2662 config/./map.php:2712
+#: config/./map.php:2750 config/./map.php:2782 config/./map.php:2818
+#: config/./map.php:2862 config/./map.php:2915 config/./map.php:2950
+#: config/./map.php:2983
+msgid "WordPress Widgets"
+msgstr "ابزارکهای وردپرس"
+
+#: config/./map.php:2563
+msgid "A search form for your site"
+msgstr "یک فرم جستجو برای سایت شما"
+
+#: config/./map.php:2569 config/./map.php:2593 config/./map.php:2617
+#: config/./map.php:2647 config/./map.php:2671 config/./map.php:2721
+#: config/./map.php:2759 config/./map.php:2791 config/./map.php:2827
+#: config/./map.php:2924 config/./map.php:2959 config/./map.php:2992
+msgid ""
+"What text use as a widget title. Leave blank to use default widget title."
+msgstr ""
+"چه متنی برای عنوان ابزارک مورد استفاده قرار گیرد. اگر میخواهید عنوان پیش فرض "
+"قرار گیرد آن را خالی بگذارید."
+
+#: config/./map.php:2581 include/./templates/shortcodes/vc_wp_meta.php:4
+msgid "Meta"
+msgstr "متا"
+
+#: config/./map.php:2587
+msgid "Log in/out, admin, feed and WordPress links"
+msgstr "ورود / خروج , ادمین, فید و لینکهای وردپرس"
+
+#: config/./map.php:2605
+#: include/./templates/shortcodes/vc_wp_recentcomments.php:4
+msgid "Recent Comments"
+msgstr "دیدگاههای اخیر"
+
+#: config/./map.php:2611
+msgid "The most recent comments"
+msgstr "جدیدترین دیدگاهها"
+
+#: config/./map.php:2621
+msgid "Number of comments to show"
+msgstr "تعداد دیدگاههای نمایش داده شده"
+
+#: config/./map.php:2635
+msgid "Calendar"
+msgstr "تقویم"
+
+#: config/./map.php:2641
+msgid "A calendar of your sites posts"
+msgstr "تقویم پستهای سایت شما"
+
+#: config/./map.php:2659 include/./templates/shortcodes/vc_wp_pages.php:4
+msgid "Pages"
+msgstr "صفحات"
+
+#: config/./map.php:2665
+msgid "Your sites WordPress Pages"
+msgstr "صفحات سایت وردپرسی شما"
+
+#: config/./map.php:2675 config/./map.php:2877
+msgid "Sort by"
+msgstr "مرتب سازی بر اساس"
+
+#: config/./map.php:2678
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:13
+msgid "Page title"
+msgstr "عنوان صفحه"
+
+#: config/./map.php:2679
+msgid "Page order"
+msgstr "ترتیب صفحات"
+
+#: config/./map.php:2680
+msgid "Page ID"
+msgstr "ID صفحه"
+
+#: config/./map.php:2686
+msgid "Exclude"
+msgstr "استثنا"
+
+#: config/./map.php:2688
+msgid "Page IDs, separated by commas."
+msgstr "ID صفحات ، جدا شده با کاما."
+
+#: config/./map.php:2709
+msgid "Tag Cloud"
+msgstr "ابر برچسب"
+
+#: config/./map.php:2715
+msgid "Your most used tags in cloud format"
+msgstr "بیشترین تگهای استفاده شده توسط شما در قالب ابری"
+
+#: config/./map.php:2725
+msgid "Taxonomy"
+msgstr "طبقه بندی"
+
+#: config/./map.php:2747
+msgid "Custom Menu"
+msgstr "منوی سفارشی"
+
+#: config/./map.php:2753
+msgid "Use this widget to add one of your custom menus as a widget"
+msgstr ""
+"از این ابزارک برای افزودن یکی از منوهای سفارشیتان به عنوان ابزارک استفاده "
+"کنید."
+
+#: config/./map.php:2763
+msgid "Menu"
+msgstr "منو"
+
+#: config/./map.php:2766
+msgid ""
+"Custom menus not found. Please visit <b>Appearance > Menus</b> page to "
+"create new menu."
+msgstr ""
+"منوهای سفارشی پیدا نشدند. لطفا به نمایش>> فهرست بروید تا بتوانید منوی جدید "
+"بسازید."
+
+#: config/./map.php:2766
+msgid "Select menu"
+msgstr "انتخاب منو"
+
+#: config/./map.php:2785
+msgid "Arbitrary text or HTML"
+msgstr "متن اختیاری یا HTML"
+
+#: config/./map.php:2815 include/./templates/shortcodes/vc_wp_posts.php:4
+msgid "Recent Posts"
+msgstr "پستهای اخیر"
+
+#: config/./map.php:2821
+msgid "The most recent posts on your site"
+msgstr "آخرین پستهای سایت شما"
+
+#: config/./map.php:2831
+msgid "Number of posts to show"
+msgstr "تعداد پست های نمایش داده شده"
+
+#: config/./map.php:2837
+msgid "Display post date?"
+msgstr "نمایش تاریخ پست؟"
+
+#: config/./map.php:2851
+msgid "All Links"
+msgstr "همه لینک ها"
+
+#: config/./map.php:2859
+msgid "Links"
+msgstr "لینکها"
+
+#: config/./map.php:2866
+msgid "Your blogroll"
+msgstr "بلاگ رول"
+
+#: config/./map.php:2870
+msgid "Link Category"
+msgstr "دسته بندی لینک"
+
+#: config/./map.php:2880
+msgid "Link title"
+msgstr "عنوان لینک"
+
+#: config/./map.php:2881
+msgid "Link rating"
+msgstr "امتیاز لینک"
+
+#: config/./map.php:2882
+msgid "Link ID"
+msgstr "ID لینک"
+
+#: config/./map.php:2891
+msgid "Show Link Image"
+msgstr "نمایش تصویر لینک"
+
+#: config/./map.php:2892
+msgid "Show Link Name"
+msgstr "نمایش نام لینک"
+
+#: config/./map.php:2893
+msgid "Show Link Description"
+msgstr "نمایش توضیحات لینک"
+
+#: config/./map.php:2894
+msgid "Show Link Rating"
+msgstr "نمایش امتباز لینک"
+
+#: config/./map.php:2899
+msgid "Number of links to show"
+msgstr "تعداد لینکهای مشاهده شده"
+
+#: config/./map.php:2918
+msgid "A list or dropdown of categories"
+msgstr "یک لیست یا منوی کشویی دسته بندی ها"
+
+#: config/./map.php:2931 config/./map.php:2966
+msgid "Display as dropdown"
+msgstr "نمایش به عنوان کشویی"
+
+#: config/./map.php:2932 config/./map.php:2967
+msgid "Show post counts"
+msgstr "نمایش تعداد پستها"
+
+#: config/./map.php:2933
+msgid "Show hierarchy"
+msgstr "نمایش سلسله مراتبی"
+
+#: config/./map.php:2947 include/./templates/shortcodes/vc_wp_archives.php:4
+msgid "Archives"
+msgstr "بایگانی ها"
+
+#: config/./map.php:2953
+msgid "A monthly archive of your sites posts"
+msgstr "آرشیو ماهانه از پستهای سایت شما"
+
+#: config/./map.php:2980
+msgid "RSS"
+msgstr "RSS"
+
+#: config/./map.php:2986
+msgid "Entries from any RSS or Atom feed"
+msgstr "Entries from any RSS or Atom feed"
+
+#: config/./map.php:2996
+msgid "RSS feed URL"
+msgstr "RSS feed URL"
+
+#: config/./map.php:2998
+msgid "Enter the RSS feed URL."
+msgstr "Enter the RSS feed URL."
+
+#: config/./map.php:3003
+msgid "Items"
+msgstr "آیتمها"
+
+#: config/./map.php:3005
+msgid "10 - Default"
+msgstr "10- پیش فرض"
+
+#: config/./map.php:3006
+msgid "How many items would you like to display?"
+msgstr "چه تعداد آیتم میخواهید نمایش داده شود؟"
+
+#: config/./map.php:3014
+msgid "Display item content?"
+msgstr "نمایش محتوای آیتم؟"
+
+#: config/./map.php:3015
+msgid "Display item author if available?"
+msgstr "نمایش نویسنده آیتم در صورت موجود بودن؟"
+
+#: config/./map.php:3016
+msgid "Display item date?"
+msgstr "نمایش تاریخ آیتم؟"
+
+#: config/./map.php:3031
+msgid "Empty Space"
+msgstr "فضای خالی"
+
+#: config/./map.php:3036
+msgid "Add spacer with custom height"
+msgstr "ایجاد فضا با ارتفاع سفارشی"
+
+#: config/./map.php:3040
+msgid "Height"
+msgstr "ارتفاع"
+
+#: config/./map.php:3044
+msgid "Enter empty space height."
+msgstr "ارتفاع فضای خالی را وارد کنید."
+
+#: config/./map.php:3058
+msgid "Custom Heading"
+msgstr "heading سفارشی"
+
+#: config/./map.php:3063
+msgid "Add custom heading text with google fonts"
+msgstr "افزودن متن heading سفارشی با فونت های گوگل"
+
+#: config/./map.php:3070
+msgid "This is custom heading element with Google Fonts"
+msgstr "این المان heading سفارشی با فونتهای گوگل است."
+
+#: config/./map.php:3071
+msgid ""
+"Enter your content. If you are using non-latin characters be sure to "
+"activate them under Settings/Visual Composer/General Settings."
+msgstr ""
+"محتوای خود را وارد کنید. اگر از کاراکترهای غیرلاتین استفاده میکنید از فعال "
+"کردن آنها در تنظیمات>> visual composer>> تنظیمات عمومی اطمینان حاصل کنید."
+
+#: config/./map.php:3088
+msgid "Select element tag."
+msgstr "انتخاب تگ  المان"
+
+#: config/./map.php:3089
+msgid "Select text alignment."
+msgstr "انتخاب مکان متن"
+
+#: config/./map.php:3090
+msgid "Enter font size."
+msgstr "سایز فونت را وارد کنید"
+
+#: config/./map.php:3091
+msgid "Enter line height."
+msgstr "ارتفاع بین خطوط را وارد کنید."
+
+#: config/./map.php:3092
+msgid "Select color for your element."
+msgstr "انتخاب رنگ المان "
+
+#: config/./map.php:3109
+msgid "Select font family."
+msgstr "انتخاب نوع فونت"
+
+#: config/./map.php:3110
+msgid "Select font styling."
+msgstr "انتخاب استایل فونت"
+
+#: config/./templates.php:5
+msgid "Landing Page"
+msgstr "Landing Page"
+
+#: config/./templates.php:16
+msgid "Call to Action Page"
+msgstr "صفحه call to action"
+
+#: config/./templates.php:26
+msgid "Feature List"
+msgstr "لیست ویژگی"
+
+#: config/./templates.php:36
+msgid "Description Page"
+msgstr "صفحه توضیحات"
+
+#: config/./templates.php:46
+msgid "Service List"
+msgstr "لیست خدمات"
+
+#: config/./templates.php:56
+msgid "Product Page"
+msgstr "صفحه محصولات"
+
+#: include/./classes/core/class-vc-base.php:515
+msgid "Add/remove picture"
+msgstr "افزودن/حذف تصویر"
+
+#: include/./classes/core/class-vc-base.php:516
+msgid "Finish Adding Images"
+msgstr "اتمام افزودن تصویر"
+
+#: include/./classes/core/class-vc-base.php:517
+msgid "Add Image"
+msgstr "افزودن تصویر"
+
+#: include/./classes/core/class-vc-base.php:518
+msgid "Add Images"
+msgstr "افزودن تصاویر"
+
+#: include/./classes/core/class-vc-base.php:519
+#: include/./classes/editors/class-vc-backend-editor.php:53
+#: include/./classes/editors/navbar/class-vc-navbar.php:62
+#: include/./classes/settings/class-vc-settings.php:100
+#: include/./classes/settings/class-vc-settings.php:106
+msgid "Visual Composer"
+msgstr "Visual Composer"
+
+#: include/./classes/core/class-vc-base.php:520
+msgid "BACKEND EDITOR"
+msgstr "BACKEND EDITOR"
+
+#: include/./classes/core/class-vc-base.php:521
+msgid "FRONTEND EDITOR"
+msgstr "FRONTEND EDITOR"
+
+#: include/./classes/core/class-vc-base.php:522
+msgid "CLASSIC MODE"
+msgstr "مد کلاسیک"
+
+#: include/./classes/core/class-vc-base.php:523
+msgid "Please enter template name"
+msgstr "نام قالب را وارد کنید"
+
+#: include/./classes/core/class-vc-base.php:524
+msgid ""
+"Confirm deleting \"{template_name}\" template, press Cancel to leave. This "
+"action cannot be undone."
+msgstr ""
+"پاک کردن قالب \"{template_name}\" را تایید کنید یا برای ترک این گزینه Cancel "
+"را بفشارید. این کار قابل بازگشت نیست."
+
+#: include/./classes/core/class-vc-base.php:525
+msgid "Press OK to delete section, Cancel to leave"
+msgstr "برای حذف بخش ok را بفشارید و برای ترک Cancel  کنید."
+
+#: include/./classes/core/class-vc-base.php:526
+msgid "Drag and drop me in the column"
+msgstr "من را بگیرید و به سمت ستون بکشید."
+
+#: include/./classes/core/class-vc-base.php:527
+msgid "Press OK to delete \"{tab_name}\" tab, Cancel to leave"
+msgstr "ok را بزنید تا تب  \"{tab_name}\" پاک شود و Cancel  برای لغو."
+
+#: include/./classes/core/class-vc-base.php:528
+#: include/./classes/shortcodes/vc-tour.php:4
+msgid "Slide"
+msgstr "اسلاید"
+
+#: include/./classes/core/class-vc-base.php:531
+msgid "Please enter new tab title"
+msgstr "لطفا عنوان تب جدید را وارد کنید."
+
+#: include/./classes/core/class-vc-base.php:532
+msgid "Press OK to delete \"{tab_name}\" section, Cancel to leave"
+msgstr ""
+"برای پاک کردن بخش \"{tab_name}\" ok را بفشارید و یا برای ترک Cancel  را "
+"بفشارید."
+
+#: include/./classes/core/class-vc-base.php:534
+msgid "Please enter new section title"
+msgstr "لطفا عنوان بخش جدید را وارد کنید."
+
+#: include/./classes/core/class-vc-base.php:535
+msgid "Error. Please try again."
+msgstr "خطا، دوباره تلاش کنید."
+
+#: include/./classes/core/class-vc-base.php:536
+msgid ""
+"If you close this window all shortcode settings will be lost. Close this "
+"window?"
+msgstr ""
+"اگر این پنجره را ببندید تمام تنظیمات کدهای کوتاه از دست میروند. بسته شود؟"
+
+#: include/./classes/core/class-vc-base.php:537
+msgid "Select element type"
+msgstr "انتخاب نوع المان"
+
+#: include/./classes/core/class-vc-base.php:538
+msgid "Media gallery"
+msgstr "گالری رسانه"
+
+#: include/./classes/core/class-vc-base.php:539
+msgid "Element settings"
+msgstr "تنظیمات المان"
+
+#: include/./classes/core/class-vc-base.php:540
+msgid "Add tab"
+msgstr "افزودن تب"
+
+#: include/./classes/core/class-vc-base.php:541
+msgid "Are you sure you want to convert to new version?"
+msgstr "آیا مطمئنید که میخواهید به نسخه جدید تبدیل کنید؟"
+
+#: include/./classes/core/class-vc-base.php:542
+msgid "Loading..."
+msgstr "در حال بارگذاری..."
+
+#: include/./classes/core/class-vc-base.php:544
+msgid "Set Image"
+msgstr "تنظیم تصویر"
+
+#: include/./classes/core/class-vc-base.php:545
+msgid "Are you sure that you want to remove all your data?"
+msgstr "آیا مطمئنید که میخواهید تمامی داده ها را حذف کنید؟"
+
+#: include/./classes/core/class-vc-base.php:546
+msgid "Loop settings"
+msgstr "تنظیمات loop"
+
+#: include/./classes/core/class-vc-base.php:547
+msgid "Enter custom layout for your row:"
+msgstr "طرح سفارشی برای ردیف را وارد کنید:"
+
+#: include/./classes/core/class-vc-base.php:548
+msgid "Wrong row layout format! Example: 1/2 + 1/2 or span6 + span6."
+msgstr "طرح ردیف نادرست است! مثال:1/2 + 1/2 یا span6 + span6."
+
+#: include/./classes/core/class-vc-base.php:549
+msgid "Row background color"
+msgstr "رنگ پس زمینه ردیف"
+
+#: include/./classes/core/class-vc-base.php:550
+msgid "Row background image"
+msgstr "تصویر پس زمینه ردیف"
+
+#: include/./classes/core/class-vc-base.php:551
+msgid "Column background color"
+msgstr "رنگ پس زمینه ستون"
+
+#: include/./classes/core/class-vc-base.php:552
+msgid "Column background image"
+msgstr "تصویر پس زمینه ستون"
+
+#: include/./classes/core/class-vc-base.php:553
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:22
+msgid "Guides ON"
+msgstr "راهنما روشن"
+
+#: include/./classes/core/class-vc-base.php:554
+msgid "Guides OFF"
+msgstr "راهنما خاموش"
+
+#: include/./classes/core/class-vc-base.php:555
+msgid "New template successfully saved!"
+msgstr "قالب جدید با موفقیت ذخیره شد!"
+
+#: include/./classes/core/class-vc-base.php:556
+msgid "Template added to the page."
+msgstr "قالب به صفحه افزوده شد."
+
+#: include/./classes/core/class-vc-base.php:557
+msgid "Nothing to save. Template is empty."
+msgstr "چیزی برای ذخیره وجود ندارد. قالب خالی‌ست"
+
+#: include/./classes/core/class-vc-base.php:558
+msgid "Page settings updated!"
+msgstr "تنظیمات صفحه به روز شد!"
+
+#: include/./classes/core/class-vc-base.php:559
+msgid "Update all"
+msgstr "به روز رسانی همه"
+
+#: include/./classes/core/class-vc-base.php:560
+msgid "The changes you made will be lost if you navigate away from this page."
+msgstr "اگر از این صفحه خارج شوید تغییرات اعمال شده، از دست خواهند رفت."
+
+#: include/./classes/core/class-vc-base.php:561
+#, php-format
+msgid "%s saved!"
+msgstr "%s ذخیره شد!"
+
+#: include/./classes/core/class-vc-base.php:562
+#, php-format
+msgid "%s deleted!"
+msgstr "%s پاک شد!"
+
+#: include/./classes/core/class-vc-base.php:563
+#, php-format
+msgid ""
+"%s cloned. <a href=\"#\" class=\"vc_edit-cloned\" data-model-id=\"%s\">Edit "
+"now?</a>"
+msgstr ""
+"%s cloned. <a href=\"#\" class=\"vc_edit-cloned\" data-model-id=\"%s\"> "
+"ویرایش؟ </a>"
+
+#: include/./classes/core/class-vc-base.php:564
+msgid "Loading Google Font failed"
+msgstr "بارگذاری فونت گوگل با شکست مواجه شد"
+
+#: include/./classes/core/class-vc-base.php:565
+msgid "Loading Font..."
+msgstr "بارگذاری فونت..."
+
+#: include/./classes/core/class-vc-base.php:566
+msgid "Unable to load Google Fonts"
+msgstr "قادر به بارگذاری فونت گوگل نبود"
+
+#: include/./classes/core/class-vc-base.php:626
+#: include/./classes/settings/class-vc-settings.php:99
+#: include/./classes/settings/class-vc-settings.php:105
+#: include/./classes/settings/class-vc-settings.php:983
+msgid "Visual Composer Settings"
+msgstr "تنظبمات visual composer"
+
+#: include/./classes/core/class-wpb-map.php:104
+#: include/./classes/core/class-wpb-map.php:264
+#: include/./classes/core/class-wpb-map.php:292
+#: include/./classes/core/class-wpb-map.php:329
+#: include/./classes/core/class-wpb-map.php:394
+#, php-format
+msgid "Wrong name for shortcode:%s. Name required"
+msgstr "نام اشتباه برای کد کوتاه. %s. نام الزامی است"
+
+#: include/./classes/core/class-wpb-map.php:106
+#, php-format
+msgid "Wrong base for shortcode:%s. Base required"
+msgstr "base اشتباه برای کدکوتاه. %s. base الزامی ست."
+
+#: include/./classes/core/class-wpb-map.php:294
+#: include/./classes/core/class-wpb-map.php:331
+#, php-format
+msgid "Wrong attribute for '%s' shortcode. Attribute 'param_name' required"
+msgstr "صفت نادرست برای کد کوتاه  '%s' . صفت  'param_name' الزامی ست."
+
+#: include/./classes/core/class-wpb-map.php:396
+#, php-format
+msgid "Wrong setting_name for shortcode:%s. Base can't be modified."
+msgstr "setting_name نادرست برای کدکوتاه. %s. base قابل تنظیم نیست."
+
+#: include/./classes/editors/class-vc-frontend-editor.php:222
+#, php-format
+msgid "Edit %s with Visual Composer"
+msgstr "ویرایش  %s با visual composer"
+
+#: include/./classes/editors/class-vc-frontend-editor.php:231
+#: include/./classes/editors/class-vc-frontend-editor.php:241
+#: include/./classes/editors/class-vc-frontend-editor.php:272
+msgid "Edit with Visual Composer"
+msgstr "ویرایش با visual composer"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:31
+msgid "Desktop"
+msgstr "دسکتاپ"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:37
+msgid "Tablet landscape mode"
+msgstr "مد landscpae تبلت"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:42
+msgid "Tablet portrait mode"
+msgstr "مد portrait تبلت"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:47
+msgid "Smartphone landscape mode"
+msgstr "مد landscape تلفن هوشمند"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:52
+msgid "Smartphone portrait mode"
+msgstr "مد portrait تلفن هوشمند"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:60
+msgid "Responsive preview"
+msgstr "پیش نمایش واکنش گرا"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:84
+msgid "Cancel all changes and return to WP dashboard"
+msgstr "لغو همه ی تغییرات و بازگشت به داشبورد وردپرس"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:84
+msgid "Backend editor"
+msgstr "Backend editor"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:89
+msgid "Save draft"
+msgstr "ذخیره پیش نویس"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:93
+msgid "Save as Pending"
+msgstr "ذخیره به عنوان pending"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:98
+msgid "Publish"
+msgstr "انتشار"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:102
+msgid "Submit for Review"
+msgstr "ارسال برای بازبینی"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:106
+#: include/./classes/editors/navbar/class-vc-navbar.php:96
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:28
+msgid "Update"
+msgstr "به روز رسانی"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:117
+msgid "Exit Visual Composer edit mode"
+msgstr "خروج از مد ویرایش visual composer"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:68
+msgid "CSS"
+msgstr "css"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:74
+msgid "Add new element"
+msgstr "افزودن المان"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:80
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:8
+msgid "Templates"
+msgstr "قالب ها"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:85
+msgid "Frontend"
+msgstr "Frontend"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:95
+msgid "Preview"
+msgstr "پیش نمایش"
+
+#: include/./classes/editors/popups/class-vc-add-element-box.php:70
+msgid "Show all"
+msgstr "نمایش همه"
+
+#: include/./classes/editors/popups/class-vc-add-element-box.php:82
+msgid "Other"
+msgstr "سایر"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:222
+msgid "Delete template"
+msgstr "پاک کردن قالب"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:231
+msgid "Save current page as a Template"
+msgstr "ذخیره صفحه فعلی به عنوان قالب"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:233
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:34
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:46
+msgid "Load Template"
+msgstr "بارگذاری قالب"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:239
+msgid "No custom templates yet."
+msgstr "هنوز قالب سفارشی ای وجود ندارد."
+
+#: include/./classes/settings/class-vc-automapper.php:110
+#: include/./classes/settings/class-vc-automapper.php:123
+msgid "My shortcodes"
+msgstr "کدهای کوتاه من"
+
+#: include/./classes/settings/class-vc-automapper.php:121
+msgid "Are you sure you want to delete this shortcode?"
+msgstr "آیا مطمئنید که میخواهید این کدکوتاه را پاک کنید؟"
+
+#: include/./classes/settings/class-vc-automapper.php:122
+msgid "Are you sure you want to delete the shortcode's param?"
+msgstr "آیا مطمئنید که میخواهید پارام کد کوتاه را پاک کنید؟"
+
+#: include/./classes/settings/class-vc-automapper.php:124
+msgid "Shortcode name is required."
+msgstr "نام کدکوتاه الزامیست"
+
+#: include/./classes/settings/class-vc-automapper.php:125
+msgid "Please enter valid shortcode tag."
+msgstr "لطفا برچسب معتبر کدکوتاه را وارد کنید."
+
+#: include/./classes/settings/class-vc-automapper.php:126
+msgid "Please enter all required fields for params."
+msgstr "لطفا تمامی فیلدهای مورد نیاز پارام ها را وارد کنید."
+
+#: include/./classes/settings/class-vc-automapper.php:127
+msgid "New shortcode mapped from string!"
+msgstr "کدکوتاه جدید از رشته نگاشت شد."
+
+#: include/./classes/settings/class-vc-automapper.php:128
+msgid "Shortcode updated!"
+msgstr "کدکوتاه به روز شد!"
+
+#: include/./classes/settings/class-vc-automapper.php:129
+msgid "Content param can not be added manually, please use checkbox."
+msgstr "پارام محتوا نمیتواند به طور دستی اضافه شود. از چک باکس استفاده کنید."
+
+#: include/./classes/settings/class-vc-automapper.php:130
+#, php-format
+msgid "Param %s already exists. Param names must be unique."
+msgstr "پارام %s وجو داردو اسامی پارام باید منحصر به فرد باشند."
+
+#: include/./classes/settings/class-vc-automapper.php:131
+msgid "Please use only letters, numbers and underscore for param name"
+msgstr "لطفا فقط از حروف ، اعداد و آندرلاین برای نام پارام استفاده کنید."
+
+#: include/./classes/settings/class-vc-automapper.php:132
+msgid "Please enter valid shortcode to parse!"
+msgstr "لطفا کد کوتاه معتبری را وارد کنید!"
+
+#: include/./classes/settings/class-vc-automapper.php:147
+msgid ""
+"Use Visual Composer Shortcode Mapper in order to add your custom or 3rd "
+"party vendors shortcodes to the list of Visual Composer elements menu. In "
+"order to map shortcode you need it to be already installed on your WordPress "
+"site."
+msgstr ""
+"Use Visual Composer Shortcode Mapper in order to add your custom or 3rd "
+"party vendors shortcodes to the list of Visual Composer elements menu. In "
+"order to map shortcode you need it to be already installed on your WordPress "
+"site."
+
+#: include/./classes/settings/class-vc-automapper.php:150
+msgid "Map shortcode"
+msgstr "کد کوتاه نقشه"
+
+#: include/./classes/settings/class-vc-automapper.php:172
+msgid "Please enter shortcode string"
+msgstr "رشته  کد کوتاه را وارد کنید"
+
+#: include/./classes/settings/class-vc-automapper.php:176
+msgid "Please enter valid shortcode"
+msgstr "کدکوتاه معتبری وارد کنید"
+
+#: include/./classes/settings/class-vc-automapper.php:181
+msgid "Parse shortcode"
+msgstr "تجزیه کدکوتاه"
+
+#: include/./classes/settings/class-vc-automapper.php:182
+#: include/./classes/settings/class-vc-automapper.php:243
+msgid "Cancel"
+msgstr "لغو"
+
+#: include/./classes/settings/class-vc-automapper.php:186
+msgid ""
+"Please enter valid shortcode like [my_shortcode first_param="
+"\"first_param_value\"]My shortcode content[/my_shortcode]"
+msgstr ""
+"کد کوتاه معتبری مانند روبرو وارد کنید. [my_shortcode first_param="
+"\"first_param_value\"]My shortcode content[/my_shortcode]"
+
+#: include/./classes/settings/class-vc-automapper.php:212
+msgid "General information"
+msgstr "اطلاعات عمومی"
+
+#: include/./classes/settings/class-vc-automapper.php:215
+msgid "Tag:"
+msgstr "برچسب:"
+
+#: include/./classes/settings/class-vc-automapper.php:219
+msgid "Description:"
+msgstr "توضیحات:"
+
+#: include/./classes/settings/class-vc-automapper.php:223
+msgid "Category:"
+msgstr "دسته بندی:"
+
+#: include/./classes/settings/class-vc-automapper.php:225
+msgid "Comma separated categories names"
+msgstr "نام دسته بندی های جدا شده با کاما"
+
+#: include/./classes/settings/class-vc-automapper.php:229
+msgid "Include content param into shortcode"
+msgstr "شامل شدن پارام محتوا در کدکوتاه"
+
+#: include/./classes/settings/class-vc-automapper.php:235
+msgid "Shortcode parameters"
+msgstr "پارامترهای کد کوتاه"
+
+#: include/./classes/settings/class-vc-automapper.php:242
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:16
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:36
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:16
+msgid "Save changes"
+msgstr "ذخیره تغییرات"
+
+#: include/./classes/settings/class-vc-automapper.php:244
+#: include/./classes/settings/class-vc-automapper.php:313
+msgid "Delete"
+msgstr "حذف"
+
+#: include/./classes/settings/class-vc-automapper.php:254
+msgid "Param name"
+msgstr "نام پارام"
+
+#: include/./classes/settings/class-vc-automapper.php:258
+#: include/./classes/settings/class-vc-automapper.php:264
+#: include/./classes/settings/class-vc-automapper.php:272
+msgid "Required value"
+msgstr "مقدار الزامی"
+
+#: include/./classes/settings/class-vc-automapper.php:261
+#: include/./classes/settings/class-vc-automapper.php:266
+msgid "Please use only letters, numbers and underscore."
+msgstr "لطفا فقط از حروف، اعداد و آندرلاین استفاده کنید."
+
+#: include/./classes/settings/class-vc-automapper.php:270
+msgid "Heading"
+msgstr "هدینگ"
+
+#: include/./classes/settings/class-vc-automapper.php:274
+msgid "Heading for field in shortcode edit form."
+msgstr "Heading for field in shortcode edit form."
+
+#: include/./classes/settings/class-vc-automapper.php:277
+msgid "Field type"
+msgstr "نوع فیلد"
+
+#: include/./classes/settings/class-vc-automapper.php:279
+msgid "Select field type"
+msgstr "انتخاب نوع فیلد"
+
+#: include/./classes/settings/class-vc-automapper.php:281
+msgid "Textfield"
+msgstr "فیلد متنی"
+
+#: include/./classes/settings/class-vc-automapper.php:283
+msgid "Dropdown"
+msgstr "کشویی"
+
+#: include/./classes/settings/class-vc-automapper.php:285
+msgid "Textarea"
+msgstr "فضای متنی"
+
+#: include/./classes/settings/class-vc-automapper.php:287
+msgid "Textarea HTML"
+msgstr "فضای متنی HTML"
+
+#: include/./classes/settings/class-vc-automapper.php:290
+msgid "Field type for shortcode edit form."
+msgstr "نوع فیلد برای فرم ویرایش کد کوتاه"
+
+#: include/./classes/settings/class-vc-automapper.php:293
+msgid "Default value"
+msgstr "مقدار پیش فرض"
+
+#: include/./classes/settings/class-vc-automapper.php:296
+msgid "Default value or list of values for dropdown type(separate by comma)."
+msgstr "مقدار پیش فرض یا لیستی از مقادیر برای نوع کشویی (با کاما جدا میشوند)"
+
+#: include/./classes/settings/class-vc-automapper.php:301
+msgid "Explain param."
+msgstr "توصیف پارام"
+
+#: include/./classes/settings/class-vc-automapper.php:314
+#: include/./classes/shortcodes/shortcodes.php:596
+#: include/./classes/shortcodes/shortcodes.php:890
+msgid "Edit"
+msgstr "ویرایش"
+
+#: include/./classes/settings/class-vc-license.php:97
+#, php-format
+msgid ""
+"Hola! Please <a href=\"%s\">activate your copy</a> of Visual Composer to "
+"receive automatic updates."
+msgstr ""
+"لطفا <a href=\"%s\">کپی visual composer خود را  فعال کنید </a> تا به روز "
+"رسانی های اتوماتیک را دریافت کنید."
+
+#: include/./classes/settings/class-vc-settings.php:74
+msgid "General Settings"
+msgstr "تنظیمات عمومی"
+
+#: include/./classes/settings/class-vc-settings.php:78
+msgid "Design Options"
+msgstr "تنظیمات طراحی"
+
+#: include/./classes/settings/class-vc-settings.php:80
+msgid "Custom CSS"
+msgstr "css سفارشی"
+
+#: include/./classes/settings/class-vc-settings.php:84
+msgid "Product License"
+msgstr "لایسنس محصول"
+
+#: include/./classes/settings/class-vc-settings.php:136
+msgid "Main accent color"
+msgstr "رنگ Main accent"
+
+#: include/./classes/settings/class-vc-settings.php:137
+msgid "Hover color"
+msgstr "رنگ Hover"
+
+#: include/./classes/settings/class-vc-settings.php:138
+msgid "Call to action background color"
+msgstr "رنگ پس زمینه ی call to action"
+
+#: include/./classes/settings/class-vc-settings.php:140
+msgid "Google maps background color"
+msgstr "رنگ پس زمینه گوگل مپ"
+
+#: include/./classes/settings/class-vc-settings.php:141
+msgid "Post slider caption background color"
+msgstr "رنگ پس زمینه عبارت پست درون اسلایدرها"
+
+#: include/./classes/settings/class-vc-settings.php:142
+msgid "Progress bar background color"
+msgstr "رنگ پس زمینه نوار پیشرفت"
+
+#: include/./classes/settings/class-vc-settings.php:143
+msgid "Separator border color"
+msgstr "رنگ مرز جداکننده"
+
+#: include/./classes/settings/class-vc-settings.php:144
+msgid "Tabs navigation background color"
+msgstr "رنگ پس زمینه تب منو"
+
+#: include/./classes/settings/class-vc-settings.php:145
+msgid "Active tab background color"
+msgstr "فعال کردن رنگ پس زمینه تب"
+
+#: include/./classes/settings/class-vc-settings.php:188
+msgid "Content types"
+msgstr "انواع محتوا"
+
+#: include/./classes/settings/class-vc-settings.php:193
+msgid "User groups access rules"
+msgstr "قوانین دسترسی گروه کاربران"
+
+#: include/./classes/settings/class-vc-settings.php:197
+msgid "Disable responsive content elements"
+msgstr "غیرفعالسازی المان های محتوای ریسپانسیو"
+
+#: include/./classes/settings/class-vc-settings.php:201
+msgid "Google fonts subsets"
+msgstr "زیرمجموعه های فونت های گوگل"
+
+#: include/./classes/settings/class-vc-settings.php:214
+msgid "Use custom design options"
+msgstr "استفاده از تنظیمات سفارشی طراحی"
+
+#: include/./classes/settings/class-vc-settings.php:239
+msgid "Elements bottom margin"
+msgstr "حاشیه پایین المانها"
+
+#: include/./classes/settings/class-vc-settings.php:249
+msgid "Grid gutter width"
+msgstr "عرض جدول gutter"
+
+#: include/./classes/settings/class-vc-settings.php:259
+msgid "Mobile screen width"
+msgstr "عرض صفحه موبایل"
+
+#: include/./classes/settings/class-vc-settings.php:305
+msgid "Paste your CSS code"
+msgstr "کد css خود را paste کنید."
+
+#: include/./classes/settings/class-vc-settings.php:314
+msgid "Envato Username"
+msgstr "نام کاربری envato"
+
+#: include/./classes/settings/class-vc-settings.php:318
+msgid "Secret API Key"
+msgstr "Secret API Key"
+
+#: include/./classes/settings/class-vc-settings.php:322
+msgid "Visual Composer License Key"
+msgstr "Visual Composer License Key"
+
+#: include/./classes/settings/class-vc-settings.php:405
+#: include/./classes/settings/class-vc-settings.php:406
+msgid "Are you sure you want to reset to defaults?"
+msgstr "آیا مطمئنید که میخواهید تنظیمات  را به حالت پیش فرض برگردانید؟"
+
+#: include/./classes/settings/class-vc-settings.php:407
+msgid "Something went wrong! Please try again later."
+msgstr "اشتباهی رخ داد! دوباره تلاش کنید."
+
+#: include/./classes/settings/class-vc-settings.php:408
+msgid "License successfully activated. Thank you!"
+msgstr "لایسنس با موفقیت فعال شد. با تشکر"
+
+#: include/./classes/settings/class-vc-settings.php:409
+msgid "Your license key is deactivated."
+msgstr "license key شما غیرفعال شد."
+
+#: include/./classes/settings/class-vc-settings.php:410
+msgid "Envato username and license key are required."
+msgstr "نام کاربری envato و liscense key الزامی هستند."
+
+#: include/./classes/settings/class-vc-settings.php:411
+msgid "Invalid liense key. Please check information in your envato profile."
+msgstr "license key اشتباه است. لطفا اطلاعات پروفایل envato خود را بررسی کنید."
+
+#: include/./classes/settings/class-vc-settings.php:412
+msgid "Wrong data. Please check your information or ask support for help."
+msgstr ""
+"اطلاعات اشتباه. لطفا اطلاعات خود را بررسی کنید و یا از پشتیبانی کمک بگیرید."
+
+#: include/./classes/settings/class-vc-settings.php:413
+msgid "License successfully activated. Thank you! (401)"
+msgstr "لایسنس با موفقیت فعال شد. متشکریم! (401)"
+
+#: include/./classes/settings/class-vc-settings.php:414
+#, php-format
+msgid ""
+"Your license key is already activated on another website ({site}), you "
+"should deactivate it first or <a href=\"%s\" target=\"_blank\">obtain new "
+"license key</a>."
+msgstr ""
+"لایسنس شما در حال حاضر روی سایت دیگری فعال است ({site}), باید ابتدا آن را "
+"غیرفعال کنید یا <a href=\"%s\" target=\"_blank\">obtain new license key</a>."
+
+#: include/./classes/settings/class-vc-settings.php:415
+#: include/./classes/settings/class-vc-settings.php:1109
+msgid "Activate license"
+msgstr "فعالسازی لایسنس"
+
+#: include/./classes/settings/class-vc-settings.php:416
+#: include/./classes/settings/class-vc-settings.php:1109
+msgid "Deactivate license"
+msgstr "غیرفعالسازی لایسنس"
+
+#: include/./classes/settings/class-vc-settings.php:431
+msgid "Show Visual Composer & default editor"
+msgstr "نمایش visual composer و ویرایشگر پیش فرض"
+
+#: include/./classes/settings/class-vc-settings.php:432
+msgid "Show only Visual Composer"
+msgstr "فقط نمایش visual composer"
+
+#: include/./classes/settings/class-vc-settings.php:433
+msgid "Don't allow to use Visual Composer"
+msgstr "اجازه استفاده از visual composer را نده"
+
+#: include/./classes/settings/class-vc-settings.php:454
+msgid "Visual Composer access"
+msgstr "دسترسی visual composer"
+
+#: include/./classes/settings/class-vc-settings.php:464
+msgid "Enabled shortcodes"
+msgstr "کدهای کوتاه فعال شده"
+
+#: include/./classes/settings/class-vc-settings.php:491
+msgid "Select All"
+msgstr "انتخاب همه"
+
+#: include/./classes/settings/class-vc-settings.php:493
+msgid "Select none"
+msgstr "انتخاب هیچکدام"
+
+#: include/./classes/settings/class-vc-settings.php:526
+#: include/./classes/settings/class-vc-settings.php:551
+msgid ""
+"Select for which content types Visual Composer should be available during "
+"post creation/editing."
+msgstr ""
+"انتخاب کنید برای کدام محتواها visual composer  به هنگام ایجاد/ ویرایش پست "
+"موجود باشد."
+
+#: include/./classes/settings/class-vc-settings.php:559
+msgid ""
+"If you want to add some custom CSS code to the plugin and don't want to "
+"modify any files, then it's a good place to enter your code at this field."
+msgstr ""
+"اگر میخواهید که کد css سفارشی اضافه کنید و نمیخواهید که فایل ها را ویرایش "
+"کنید این فیلد جای مناسبی برای ورود کدهایتان است."
+
+#: include/./classes/settings/class-vc-settings.php:574
+msgid ""
+"Check this checkbox to prevent content elements from \"stacking\" one on top "
+"other (on small media screens, eg. mobile)."
+msgstr ""
+"برای جلوگیری از \"stacking\"المانهای محتوا یکی پس از دیگری ،این چک باکس را "
+"علامت بزنید. (روی صفحات اسکرین کوچک مثل موبایل)"
+
+#: include/./classes/settings/class-vc-settings.php:599
+msgid "Select subsets for google fonts."
+msgstr "انتخاب زیرمجموعه های فونت های گوگل"
+
+#: include/./classes/settings/class-vc-settings.php:647
+#: include/./classes/settings/class-vc-settings.php:662
+msgid "Empty value"
+msgstr "مقدار خالی"
+
+#: include/./classes/settings/class-vc-settings.php:685
+msgid "Enable"
+msgstr "فعالسازی"
+
+#: include/./classes/settings/class-vc-settings.php:688
+msgid ""
+"Enable the use of custom design options for your site. When checked, custom "
+"css file will be used."
+msgstr ""
+"فعالسازی استفاده از تنظیمات طراحی سفارشی، برای سایت شما. در صورت علامت زدن، "
+"css سفارشی مورد استفاده قرار میگیرد."
+
+#: include/./classes/settings/class-vc-settings.php:701
+msgid ""
+"To change default vertical spacing between content elements, enter new value "
+"here. Example: 20px"
+msgstr ""
+"برای تغییر فضای عمودی پیش فرض بین المانهای محتوا ، مقدار جدید را در اینجا "
+"وارد کنید. مثال: 20px"
+
+#: include/./classes/settings/class-vc-settings.php:707
+msgid ""
+"To change default horizontal spacing between columns, enter new value in "
+"pixels here."
+msgstr ""
+"برای تغییر فضای افقی پیش فرض بین ستونها، مقدار جدید را در اینجا به پیکسل "
+"وارد کنید."
+
+#: include/./classes/settings/class-vc-settings.php:713
+msgid ""
+"By default content elements \"stack\" one on top other when screen size is "
+"smaller then 768px. Here you can change that value if needed."
+msgstr ""
+"به طور پیش فرض المان های محتوا  بر روی یکدیگر \"stack\" میشوند زمانی که سایز "
+"اسکرین از 768پیکسل باشد. در اینجا میتوانید این مقدار را در صورت نیاز عوض "
+"کنید."
+
+#: include/./classes/settings/class-vc-settings.php:720
+msgid "Your Envato username."
+msgstr "نام کاربری envato شما"
+
+#: include/./classes/settings/class-vc-settings.php:728
+#, php-format
+msgid ""
+"Please enter your CodeCanyon Visual Composer license key, you can find your "
+"key by following the instructions on <a href=\"%s\" target=\"_blank\">this "
+"page</a>. License key looks similar to this: bjg759fk-"
+"kvta-6584-94h6-75jg8vblatftq."
+msgstr ""
+"لطفا لایسنس Visual Composer CodeCanyon خود را وارد کنید ، شما میتوانید کلید "
+"خود را با استفاده از دستورالعمل روبرو بیابید <a href=\"%s\" target=\"_blank"
+"\">this page</a>.  کلید لایسنس چیزی شبیه به روبروست : bjg759fk-"
+"kvta-6584-94h6-75jg8vblatftq."
+
+#: include/./classes/settings/class-vc-settings.php:735
+#, php-format
+msgid ""
+"You can find API key by visiting your Envato Account page, then clicking the "
+"My Settings tab. At the bottom of the page you'll find your account's API "
+"key. <a href='%s' target='_blank'>Need help?</a>"
+msgstr ""
+"شما میتوانید API key را با ورود به صفحه حساب کاربری envato خود بیابید، سپس "
+"روی تب تنظیمات من کلیک کنید. در پایین صفحه API KEY حساب خود را پیدا خواهید "
+"کرد. <a href='%s' target='_blank'>Need help?</a>"
+
+#: include/./classes/settings/class-vc-settings.php:759
+msgid ""
+"Here you can tweak default Visual Composer content elements visual "
+"appearance. By default Visual Composer is using neutral light-grey theme. "
+"Changing \"Main accent color\" will affect all content elements if no "
+"specific \"content block\" related color is set."
+msgstr ""
+"در اینجا میتوانید ظاهر المانهای محتوای visual composer پیش فرض را تغییر "
+"دهید. visual composer به طور پیش فرض از تم خاکستری-روشن استفاده میکند. "
+"تغییر  \"Main accent color\" در صورتی که هیج رنگ  \"content block\" خاصی "
+"تنظیم نشده باشد، تمامی المانهای محتوا را تحت تاثیر قرار میدهد."
+
+#: include/./classes/settings/class-vc-settings.php:767
+msgid "Please activate your license in Product License tab!"
+msgstr "لطفا لایسنس خود را در تب لایسنس محصولات فعال کنید!"
+
+#: include/./classes/settings/class-vc-settings.php:773
+#, php-format
+msgid ""
+"A valid license key qualifies you for support and enables automatic updates. "
+"<strong>A license key may only be used for one Visual Composer installation "
+"on one WordPress site at a time.</strong> If you previosly activated your "
+"license key on another site, then you should deactivate it first or <a href="
+"\"%s\" target=\"_blank\">obtain new license key</a>."
+msgstr ""
+"برای پشتیبانی و فعالسازی به روز رسانی اتوماتیک ، یک لایسنس معتبر مورد نیاز "
+"است. هر لایسنس فقط بر روی یک visual composer نصب شده بر روی یک سایت وردپرسی "
+"در یک زمان قابل استفاده است. اگر قبلا لایسنس خود را بر روی سایت دیگری فعال "
+"کرده اید، باید ابتدا آن را غیرفعال کنید یا <a href=\"%s\" target=\"_blank"
+"\">لایسنس جدیدی بگیرید</a>."
+
+#: include/./classes/settings/class-vc-settings.php:877
+msgid "Invalid Margin value."
+msgstr "مقدار margin نامعتبر."
+
+#: include/./classes/settings/class-vc-settings.php:886
+msgid "Invalid Gutter value."
+msgstr "مقدار gutter نامعتبر"
+
+#: include/./classes/settings/class-vc-settings.php:895
+msgid "Invalid \"Responsive max\" value."
+msgstr "مقدار  \"Responsive max\" نامعتبر"
+
+#: include/./classes/settings/class-vc-settings.php:945
+#, php-format
+msgid ""
+"Visual Composer: Your css class names settings are deprecated. <a href=\"%s"
+"\">Click here to resolve</a>."
+msgstr ""
+"visual composer: تنظیمات نام کلاس css شما مناسب نیست. <a href=\"%s\">برای حل "
+"مشکل اینجا را کلیک کنید</a>."
+
+#: include/./classes/settings/class-vc-settings.php:999
+msgid ""
+"<strong>Deprecated:</strong> To override class names that are applied to "
+"Visual Composer content elements you should use WordPress "
+"add_filter('vc_shortcodes_css_class') function. <a "
+"class='vc_show_example'>See Example</a>."
+msgstr ""
+"نامناسب: برای نادیده گرفتن نام کلاسهای به کار گرفته شده در المانهای محتوای "
+"visual composer باید از تابع وردپرسی add_filter ('vc_shortcodes_css_class') "
+"استفاده کنید. <a class='vc_show_example'>See Example</a>."
+
+#: include/./classes/settings/class-vc-settings.php:1007
+msgid ""
+"You have used element class names settings to replace row and column css "
+"classes."
+msgstr ""
+"شما از تنظیمات نام کلاس های المان برای جایجایی کلاسهای css ردیف و ستون "
+"استفاده کرده اید."
+
+#: include/./classes/settings/class-vc-settings.php:1008
+msgid ""
+"Below is code snippet which you should add to your functions.php file in "
+"your theme, to replace row and column classes with custom classes saved by "
+"you earlier."
+msgstr ""
+"در زیر کد  اسنیپت وجود دارد که باید به functions.php قالب خود اضافه کنید ، "
+"برای جابجا کردن کلاسهای ردیف و ستون با کلاسهای سفارشی که قبلا توسط شما ذخیره "
+"شده است."
+
+#: include/./classes/settings/class-vc-settings.php:1077
+msgid "Remove all saved"
+msgstr "حذف تمام ذخیره شده ها"
+
+#: include/./classes/settings/class-vc-settings.php:1098
+msgid "Save Changes"
+msgstr "ذخیره تغییرات"
+
+#: include/./classes/settings/class-vc-settings.php:1103
+msgid "Restore to defaults"
+msgstr "بازگردانی به حالت پیش فرض"
+
+#: include/./classes/settings/class-vc-settings.php:1263
+msgid ""
+"Something went wrong: js_composer_front_custom.css could not be created."
+msgstr "اشتباهی رخ داده است: js_composer_front_custom.css ایجاد نشده است."
+
+#: include/./classes/settings/class-vc-settings.php:1265
+msgid "js_composer_front_custom.css could not be created. Connection error."
+msgstr "js_composer_front_custom.css نتوانست ایجاد شود. خطای اتصال"
+
+#: include/./classes/settings/class-vc-settings.php:1267
+#, php-format
+msgid ""
+"js_composer_front_custom.css could not be created. Cannot write custom css "
+"to \"%s\"."
+msgstr ""
+"js_composer_front_custom.css نتوانست ایجاد شود. css سفارشی در \"%s\" نوشته "
+"نشد."
+
+#: include/./classes/settings/class-vc-settings.php:1269
+msgid "js_composer_front_custom.css could not be created. Problem with access."
+msgstr "js_composer_front_custom.css نتوانست ایجاد شود. مشکل در دسترسی."
+
+#: include/./classes/settings/class-vc-settings.php:1304
+msgid "Something went wrong: custom.css could not be created."
+msgstr "اشتباهی رخ داد: custom.css ایجاد نشد."
+
+#: include/./classes/settings/class-vc-settings.php:1306
+msgid "custom.css could not be created. Connection error."
+msgstr "custom.css نتوانست ایجاد شود. خطای اتصال"
+
+#: include/./classes/settings/class-vc-settings.php:1308
+msgid "custom.css could not be created. Cannot write custom css to \""
+msgstr "custom.css نتوانست ایجاد شود. css سفارشی در  \" نوشته نشد."
+
+#: include/./classes/settings/class-vc-settings.php:1310
+msgid "custom.css could not be created. Problem with access."
+msgstr "custom.css ایجاد نشد. مشکل در دسترسی."
+
+#: include/./classes/settings/class-vc-settings.php:1350
+#: include/./classes/settings/class-vc-settings.php:1356
+msgid "This is required to enable file writing for js_composer"
+msgstr "فعالسازی نوشتن فایل برای  js_composer الزامی ست."
+
+#: include/./classes/shortcodes/example.php:94
+msgid "Hello World"
+msgstr "سلام دنیا!"
+
+#: include/./classes/shortcodes/example.php:102
+msgid "Foo attribute"
+msgstr "صفت Foo"
+
+#: include/./classes/shortcodes/example.php:104
+msgid "I'm foo attribute"
+msgstr "من صفت foo هستم."
+
+#: include/./classes/shortcodes/example.php:105
+msgid "Enter foo value."
+msgstr "مقدار foo را وارد کنید."
+
+#: include/./classes/shortcodes/example.php:113
+msgid "I'm hello world"
+msgstr "من سلام دنیا هستم..."
+
+#: include/./classes/shortcodes/example.php:118
+msgid "Drop down example"
+msgstr "مثال کشویی"
+
+#: include/./classes/shortcodes/example.php:121
+msgid "One, two or three?"
+msgstr "یک، دو و یا سه؟"
+
+#: include/./classes/shortcodes/shortcodes.php:235
+#, php-format
+msgid ""
+"Template file is missing for `%s` shortcode. Make sure you have `%s` file in "
+"your theme folder."
+msgstr ""
+"فایل قالب کدکوتاه `%s` را ندارد. مطمئن شوید که فایل `%s` را در فولدر قالب "
+"خود دارید."
+
+#: include/./classes/shortcodes/shortcodes.php:456
+#: include/./templates/editors/partials/backend_controls.tpl.php:14
+#: include/./templates/editors/partials/backend_controls_tab.tpl.php:13
+#: include/./templates/editors/partials/frontend_controls.tpl.php:10
+#: include/./templates/editors/partials/frontend_controls.tpl.php:29
+#: include/./templates/editors/partials/frontend_controls.tpl.php:59
+#: include/./templates/editors/partials/frontend_controls.tpl.php:81
+#: include/./templates/editors/partials/frontend_controls.tpl.php:109
+#: include/./templates/editors/partials/frontend_controls.tpl.php:134
+#: include/./templates/editors/partials/frontend_controls.tpl.php:165
+#: include/./templates/editors/partials/frontend_controls.tpl.php:187
+#, php-format
+msgid "Edit %s"
+msgstr "ویرایش  %s"
+
+#: include/./classes/shortcodes/shortcodes.php:457
+#: include/./templates/editors/partials/backend_controls.tpl.php:18
+#: include/./templates/editors/partials/backend_controls_tab.tpl.php:17
+#: include/./templates/editors/partials/frontend_controls.tpl.php:13
+#: include/./templates/editors/partials/frontend_controls.tpl.php:35
+#: include/./templates/editors/partials/frontend_controls.tpl.php:65
+#: include/./templates/editors/partials/frontend_controls.tpl.php:118
+#: include/./templates/editors/partials/frontend_controls.tpl.php:171
+#: include/./templates/editors/partials/frontend_controls.tpl.php:193
+#, php-format
+msgid "Clone %s"
+msgstr "Clone %s"
+
+#: include/./classes/shortcodes/shortcodes.php:457
+#: include/./templates/editors/partials/backend_controls.tpl.php:22
+#: include/./templates/editors/partials/backend_controls_tab.tpl.php:21
+#: include/./templates/editors/partials/frontend_controls.tpl.php:16
+#: include/./templates/editors/partials/frontend_controls.tpl.php:38
+#: include/./templates/editors/partials/frontend_controls.tpl.php:68
+#: include/./templates/editors/partials/frontend_controls.tpl.php:121
+#: include/./templates/editors/partials/frontend_controls.tpl.php:140
+#: include/./templates/editors/partials/frontend_controls.tpl.php:174
+#: include/./templates/editors/partials/frontend_controls.tpl.php:196
+#, php-format
+msgid "Delete %s"
+msgstr "حذف %s"
+
+#: include/./classes/shortcodes/shortcodes.php:610
+msgid "Save"
+msgstr "ذخیره"
+
+#: include/./classes/shortcodes/shortcodes.php:663
+msgid ""
+"Field type is changed from `textarea_html` to `textarea`, because it is "
+"already used by `"
+msgstr ""
+"نوع فیلد از  `textarea_html`  به  `textarea` تغییر پیدا کرد ، زیرا در حال "
+"حاضر توسط  ` مورد استفاده قرار گرفته است."
+
+#: include/./classes/shortcodes/shortcodes.php:732
+#: include/./classes/shortcodes/vc-gallery.php:27
+msgid "Add images"
+msgstr "افزودن تصاویر"
+
+#: include/./classes/shortcodes/shortcodes.php:746
+#: include/./classes/shortcodes/vc-single-image.php:22
+#: include/./params/css_editor/css_editor.php:73
+msgid "Add image"
+msgstr "افزودن تصویر"
+
+#: include/./classes/shortcodes/shortcodes.php:809
+#, php-format
+msgid "Append to this %s"
+msgstr "ضمیمه کردن به این %s"
+
+#: include/./classes/shortcodes/shortcodes.php:810
+#, php-format
+msgid "Prepend to this %s"
+msgstr "افزودن به این %s"
+
+#: include/./classes/shortcodes/shortcodes.php:813
+#, php-format
+msgid "Edit this %s"
+msgstr "ویرایش این %s"
+
+#: include/./classes/shortcodes/shortcodes.php:814
+#, php-format
+msgid "Clone this %s"
+msgstr "Clone this %s"
+
+#: include/./classes/shortcodes/shortcodes.php:816
+#, php-format
+msgid "Delete this %s"
+msgstr "حذف این  %s"
+
+#: include/./classes/shortcodes/shortcodes.php:914
+msgid "General"
+msgstr "عمومی"
+
+#: include/./classes/shortcodes/vc-column.php:21
+msgid "Append to this column"
+msgstr "ضمیمه به این ستون"
+
+#: include/./classes/shortcodes/vc-column.php:22
+msgid "Prepend to this column"
+msgstr "افزودن به این ستون"
+
+#: include/./classes/shortcodes/vc-column.php:25
+msgid "Edit this column"
+msgstr "ویرایش به این ستون"
+
+#: include/./classes/shortcodes/vc-column.php:26
+msgid "Delete this column"
+msgstr "حذف این ستون"
+
+#: include/./classes/shortcodes/vc-flickr.php:21
+#: include/./templates/shortcodes/vc_flickr.php:19
+msgid "View stream on flickr"
+msgstr "نمایش stream در flicker"
+
+#: include/./classes/shortcodes/vc-posts-grid.php:22
+#: include/./params/sorted_list/sorted_list.php:30
+msgid "VC: Custom Teaser"
+msgstr "VC: تیزر سفارشی"
+
+#: include/./classes/shortcodes/vc-posts-grid.php:123
+#: include/./templates/shortcodes/vc_posts_slider.php:152
+#: include/./templates/shortcodes/vc_teaser_grid.php:181
+#: include/./templates/shortcodes/vc_teaser_grid.php:202
+#: include/./templates/shortcodes/vc_teaser_grid.php:203
+#: include/./templates/shortcodes/vc_teaser_grid.php:219
+#: include/./templates/shortcodes/post_block/_item.php:20
+#, php-format
+msgid "Permalink to %s"
+msgstr "پرمالینک به %s"
+
+#: include/./classes/shortcodes/vc-row.php:31
+msgid "Custom layout"
+msgstr "طرح سفارشی"
+
+#: include/./classes/shortcodes/vc-row.php:31
+#: include/./params/sorted_list/sorted_list.php:63
+#: include/./params/sorted_list/sorted_list.php:65
+#: include/./templates/teaser.html.php:30
+#: include/./templates/teaser.html.php:54
+msgid "Custom"
+msgstr "سفارشی"
+
+#: include/./classes/shortcodes/vc-row.php:34
+msgid "Drag row to reorder"
+msgstr "ردیف را برای مرتب سازی مجدد درگ کنید"
+
+#: include/./classes/shortcodes/vc-row.php:35
+msgid "Add column"
+msgstr "افزودن ستون"
+
+#: include/./classes/shortcodes/vc-row.php:36
+msgid "Delete this row"
+msgstr "حذف این ردیف"
+
+#: include/./classes/shortcodes/vc-row.php:37
+msgid "Edit this row"
+msgstr "ویرایش این ردیف"
+
+#: include/./classes/shortcodes/vc-row.php:38
+msgid "Clone this row"
+msgstr "Clone کردن این ردیف"
+
+#: include/./classes/shortcodes/vc-row.php:39
+msgid "Toggle row"
+msgstr "تاگل ردیف"
+
+#: include/./classes/shortcodes/vc-teaser-grid.php:14
+#, php-format
+msgid "View all posts filed under %s"
+msgstr "نمایش تمامی پستها در %s"
+
+#: include/./classes/shortcodes/vc-teaser-grid.php:31
+#, php-format
+msgid "Feed for all posts filed under %s"
+msgstr "feed برای تمامی پست ها در  %s"
+
+#: include/./classes/updaters/class-vc-updater.php:63
+msgid "Downloading package from envato market..."
+msgstr "دانلود پکیج از فروشگاه envato..."
+
+#: include/./classes/updaters/class-vc-updater.php:68
+msgid "Error! Can't connect to filesystem"
+msgstr "خطا! نتوانستیم به فایل سیستم متصل شویم"
+
+#: include/./classes/updaters/class-vc-updater.php:74
+msgid ""
+"To receive automatic updates license activation is required. Please visit <a "
+"href=\""
+msgstr ""
+"برای دریافت به روزرسانی‌های اتوماتیک فعالسازی لایسنس الزامی‌ست. از لینک روبرو "
+"دیدن کنید <a href=\""
+
+#: include/./classes/updaters/class-vc-updater.php:79
+msgid "Error! Envato API error"
+msgstr "خطا! Envato API error"
+
+#: include/./classes/updaters/class-vc-updater.php:94
+msgid "Error on unzipping package"
+msgstr "خطا در گشودن بسته"
+
+#: include/./classes/updaters/class-vc-updating-manager.php:166
+msgid "Download new version from CodeCanyon."
+msgstr "دانلود نسخه جدید از CodeCanyon"
+
+#: include/./classes/updaters/class-vc-updating-manager.php:170
+msgid "Update Visual Composer now."
+msgstr "به روز رسانی visual composer"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:29
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:28
+msgid "No sliders found"
+msgstr "اسلایدری یافت نشد"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:33
+msgid "Layer Slider"
+msgstr "Layer Slider"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:36
+msgid "Place LayerSlider"
+msgstr "مکان LayerSlider"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:46
+msgid "LayerSlider ID"
+msgstr "Layer Slider ID"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:50
+msgid "Select your LayerSlider."
+msgstr "Layer Slider خود را انتخاب کنید."
+
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:32
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:45
+msgid "Revolution Slider"
+msgstr "Revolution Slider"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:35
+msgid "Place Revolution slider"
+msgstr "مکان Revolution Slider"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:49
+msgid "Select your Revolution Slider."
+msgstr "Revolution Slider خود را  انتخاب کنید"
+
+#: include/./helpers/helpers.php:244
+msgid "Added"
+msgstr "افزوده شد"
+
+#: include/./helpers/helpers_api.php:4
+msgid "Wrong wpb_map object. Base attribute is required"
+msgstr "wpb_map نادرست. صفت base الزامیست."
+
+#: include/./params/column_offset/column_offset.php:55
+msgid "Default value from width attribute"
+msgstr "مقدار پیش فرض از صفت width"
+
+#: include/./params/column_offset/column_offset.php:57
+#: include/./params/column_offset/column_offset.php:69
+msgid "Inherit from smaller"
+msgstr "ارث بری از کوچکتر"
+
+#: include/./params/column_offset/column_offset.php:69
+#: include/./params/column_offset/column_offset.php:73
+msgid "No offset"
+msgstr "بدون آفست"
+
+#: include/./params/css_editor/css_editor.php:43
+msgid "Border"
+msgstr "مرز (border)"
+
+#: include/./params/css_editor/css_editor.php:46
+msgid "Background"
+msgstr "پس زمینه"
+
+#: include/./params/css_editor/css_editor.php:50
+msgid "Box controls"
+msgstr "کنترلهای باکس"
+
+#: include/./params/css_editor/css_editor.php:51
+msgid "Simplify controls"
+msgstr "ساده سازی کنترلها"
+
+#: include/./params/css_editor/css_editor.php:77
+#: include/./params/css_editor/css_editor.php:86
+msgid "Theme defaults"
+msgstr "پیش فرضهای قالب"
+
+#: include/./params/css_editor/css_editor.php:88
+msgid "Cover"
+msgstr "پوشش (کاور)"
+
+#: include/./params/css_editor/css_editor.php:89
+msgid "Contain"
+msgstr "شامل"
+
+#: include/./params/css_editor/css_editor.php:90
+msgid "No Repeat"
+msgstr "بدون تکرار"
+
+#: include/./params/css_editor/css_editor.php:91
+msgid "Repeat"
+msgstr "تکرار"
+
+#: include/./params/font_container/font_container.php:57
+msgid "Element tag"
+msgstr "برچسب المان"
+
+#: include/./params/font_container/font_container.php:78
+msgid "Font size"
+msgstr "سایز فونت"
+
+#: include/./params/font_container/font_container.php:96
+msgid "left"
+msgstr "چپ"
+
+#: include/./params/font_container/font_container.php:97
+msgid "right"
+msgstr "راست"
+
+#: include/./params/font_container/font_container.php:98
+msgid "center"
+msgstr "وسط"
+
+#: include/./params/font_container/font_container.php:99
+msgid "justify"
+msgstr "تراز"
+
+#: include/./params/font_container/font_container.php:112
+msgid "Line height"
+msgstr "ارتفاع بین خطوط"
+
+#: include/./params/font_container/font_container.php:126
+msgid "Text color"
+msgstr "رنگ متن"
+
+#: include/./params/font_container/font_container.php:142
+#: include/./templates/params/google_fonts/template.php:2
+msgid "Font Family"
+msgstr "نوع فونت"
+
+#: include/./params/font_container/font_container.php:162
+#: include/./templates/params/google_fonts/template.php:19
+msgid "Font style"
+msgstr "استایل فونت"
+
+#: include/./params/font_container/font_container.php:165
+msgid "italic"
+msgstr "italic"
+
+#: include/./params/font_container/font_container.php:169
+msgid "bold"
+msgstr "bold"
+
+#: include/./params/loop/loop.php:15
+msgid "Build query"
+msgstr "Build query"
+
+#: include/./params/loop/loop.php:175
+msgid "Post Count"
+msgstr "تعداد پست"
+
+#: include/./params/loop/loop.php:176
+msgid "Order By"
+msgstr "مرتب سازی بر اساس"
+
+#: include/./params/loop/loop.php:177
+msgid "Order"
+msgstr "ترتیب"
+
+#: include/./params/loop/loop.php:181
+#: include/./templates/shortcodes/vc_wp_tagcloud.php:4
+msgid "Tags"
+msgstr "برچسبها"
+
+#: include/./params/loop/loop.php:183
+msgid "Individual Posts/Pages"
+msgstr "پست/صفحه های شخصی"
+
+#: include/./params/options/options.php:5
+msgid "Manage options"
+msgstr "مدیریت تنظیمات"
+
+#: include/./params/options/options.php:6
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:14
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:34
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:14
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:62
+msgid "Close"
+msgstr "بستن"
+
+#: include/./params/sorted_list/sorted_list.php:56
+msgid "Empty title"
+msgstr "عنوان خالی"
+
+#: include/./params/sorted_list/sorted_list.php:62
+#: include/./templates/teaser.html.php:50
+msgid "Excerpt"
+msgstr "Excerpt"
+
+#: include/./params/sorted_list/sorted_list.php:64
+msgid "Featered"
+msgstr "Featered"
+
+#: include/./params/sorted_list/sorted_list.php:66
+msgid "Link text"
+msgstr "متن لینک"
+
+#: include/./params/sorted_list/sorted_list.php:69
+msgid "Link to big image"
+msgstr "لینک به تصویر بزرگ"
+
+#: include/./params/sorted_list/sorted_list.php:70
+#: include/./templates/teaser.html.php:72
+msgid "Add custom image"
+msgstr "افزودن تصویر سفارشی"
+
+#: include/./params/sorted_list/sorted_list.php:72
+msgid "Enable custom teaser"
+msgstr "فعالسازی تیزر سفارشی"
+
+#: include/./params/sorted_list/sorted_list.php:75
+msgid ""
+"Here you can customize teaser block design. It will be used instead of "
+"default settings in \"Posts Grid\" or \"Carousel\" content elements."
+msgstr ""
+"در اینجا میتوانید طرح بلاک تیزر را سفارشی سازی کنید که به جای تنظیمات پیش "
+"فرض در المانهای  \"Posts Grid\" یا  \"Carousel\" استفاده میشود."
+
+#: include/./params/vc_link/vc_link.php:6
+msgid "Select URL"
+msgstr "انتخاب URL"
+
+#: include/./params/vc_link/vc_link.php:6
+msgid "URL"
+msgstr "URL"
+
+#: include/./templates/teaser.html.php:14
+#: include/./templates/teaser.html.php:35
+msgid "Link to"
+msgstr "لینک به"
+
+#: include/./templates/teaser.html.php:18
+#: include/./templates/teaser.html.php:39
+msgid "On post"
+msgstr "در پست"
+
+#: include/./templates/teaser.html.php:20
+#: include/./templates/teaser.html.php:41
+msgid "Big image"
+msgstr "تصویر بزرگ"
+
+#: include/./templates/teaser.html.php:29
+msgid "Featured"
+msgstr "Featured"
+
+#: include/./templates/teaser.html.php:63
+#: include/./templates/shortcodes/vc_teaser_grid.php:181
+#: include/./templates/shortcodes/post_block/_item.php:20
+msgid "Read more"
+msgstr "بیشتر بخوانید"
+
+#: include/./templates/editors/backend_editor.tpl.php:24
+msgid "Loading, please wait..."
+msgstr "درحال بارگذاری... لطفا صبر کنید..."
+
+#: include/./templates/editors/backend_editor.tpl.php:25
+msgid "Crunching..."
+msgstr "در حال تجزیه..."
+
+#: include/./templates/editors/partials/backend_controls.tpl.php:5
+#: include/./templates/editors/partials/frontend_controls.tpl.php:7
+#: include/./templates/editors/partials/frontend_controls.tpl.php:26
+#: include/./templates/editors/partials/frontend_controls.tpl.php:55
+#: include/./templates/editors/partials/frontend_controls.tpl.php:77
+#: include/./templates/editors/partials/frontend_controls.tpl.php:105
+#: include/./templates/editors/partials/frontend_controls.tpl.php:130
+#: include/./templates/editors/partials/frontend_controls.tpl.php:161
+#: include/./templates/editors/partials/frontend_controls.tpl.php:183
+#, php-format
+msgid "Drag to move %s"
+msgstr "درگ کنید برای جابجایی  %s"
+
+#: include/./templates/editors/partials/backend_controls.tpl.php:10
+#: include/./templates/editors/partials/backend_controls_tab.tpl.php:9
+#: include/./templates/editors/partials/frontend_controls.tpl.php:32
+#: include/./templates/editors/partials/frontend_controls.tpl.php:62
+#: include/./templates/editors/partials/frontend_controls.tpl.php:84
+#: include/./templates/editors/partials/frontend_controls.tpl.php:137
+#: include/./templates/editors/partials/frontend_controls.tpl.php:190
+#, php-format
+msgid "Prepend to %s"
+msgstr "افزودن به %s"
+
+#: include/./templates/editors/partials/frontend_controls.tpl.php:44
+#: include/./templates/editors/partials/frontend_controls.tpl.php:94
+#: include/./templates/editors/partials/frontend_controls.tpl.php:150
+#: include/./templates/editors/partials/frontend_controls.tpl.php:206
+#, php-format
+msgid "Append to %s"
+msgstr "ضمیمه کردن به %s"
+
+#: include/./templates/editors/partials/frontend_controls.tpl.php:72
+#: include/./templates/editors/partials/frontend_controls.tpl.php:88
+#: include/./templates/editors/partials/frontend_controls.tpl.php:125
+#: include/./templates/editors/partials/frontend_controls.tpl.php:144
+#: include/./templates/editors/partials/frontend_controls.tpl.php:178
+#: include/./templates/editors/partials/frontend_controls.tpl.php:200
+#, php-format
+msgid "Show %s controls"
+msgstr "نمایش کنترلهای  %s"
+
+#: include/./templates/editors/partials/frontend_controls.tpl.php:112
+msgid "Change layout"
+msgstr "تغییر طرح"
+
+#: include/./templates/editors/partials/frontend_controls.tpl.php:115
+#: include/./templates/editors/partials/frontend_controls.tpl.php:168
+#, php-format
+msgid "Add new %s"
+msgstr "افزودن %s جدید"
+
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:3
+msgid "Welcome to Blank Page, You Have No Content Yet!"
+msgstr "به صفحه خالی خوش آمدید ، شما هنوز محتوایی ندارید!"
+
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:5
+msgid " Add Some Content or Use Predefined Layouts..."
+msgstr "محتوایی بیافزایید و یا از طرحهای از پیش تعریف شده استفاده کنید..."
+
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:9
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:12
+#: include/./templates/editors/popups/modal_add_element.tpl.php:11
+msgid "Add element"
+msgstr "افزودن المان"
+
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:15
+msgid "Add text block"
+msgstr "افزودن بلاک متن"
+
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:21
+msgid "Choose Your Layout"
+msgstr "انتخاب طرح شما"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:3
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:3
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:3
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:3
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:3
+msgid "Close panel"
+msgstr "بستن پنل"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:5
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:5
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:5
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:5
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:5
+msgid "Hide panel"
+msgstr "پنهان کردن پنل"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:8
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:13
+msgid "Row layout"
+msgstr "طرح ردیف"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:21
+msgid "Choose row layout from predefined options."
+msgstr "انتخاب طرح ردیف از تنظیمات از پیش تعریف شده"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:24
+msgid "Enter custom layout for your row"
+msgstr "طرح سفارشی را برای ردیف خود وارد کنید."
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:30
+msgid ""
+"Change particular row layout manually by specifying number of columns and "
+"their size value."
+msgstr ""
+"طرح ردیف مشخص را با دادن تعداد ستونها و سایز آنها به صورت دستی تغییر دهید."
+
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:7
+msgid "Edit elements"
+msgstr "ویرایش المانها"
+
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:8
+msgid "Page settings"
+msgstr "تنظیمات صفحه"
+
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:19
+msgid "Please enter page title"
+msgstr "لطفا عنوان صفحه را وارد کنید"
+
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:23
+msgid "Custom CSS settings"
+msgstr "تنظیمات css سفارشی"
+
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:27
+msgid ""
+"Enter custom CSS code here. Your custom CSS will be outputted only on this "
+"particular page."
+msgstr ""
+"css سفارشی را در اینجا وارد کنید. css سفارشی شما فقط خروجی همین صفحه مشخص "
+"است."
+
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:10
+msgid "Select content element to edit properties."
+msgstr "المان محتوا را برای ویرایش ویژگیها انتخاب کنید."
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:16
+msgid "My templates"
+msgstr "قالب های من"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:18
+msgid "Default templates"
+msgstr "قالبهای پیش فرض"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:23
+msgid "Save current layout as a template"
+msgstr "ذخیره طرح فعلی به عنوان یک قالب"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:26
+msgid "Template name"
+msgstr "نام قالب"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:28
+msgid "Save template"
+msgstr "ذخیره  قالب"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:31
+msgid "Save your layout and reuse it on different sections of your website"
+msgstr "طرح خود را ذخیره کنید و آن را در بخش های متفاوت سایت خود استفاده کنید"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:36
+msgid "Append previosly saved template to the current layout"
+msgstr "قالب ذخیره شده قبلی را به طرح فعلی ضمیمه کنید"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:47
+msgid "Append default template to the current layout"
+msgstr "قالی پیش فرض را به طرح فعلی ضمیمه کنید"
+
+#: include/./templates/params/column_offset/template.tpl.php:5
+#, php-format
+msgid ""
+"Responsive design settings are currently disabled. You can enable them in "
+"Visual Composer <a href=\"%s\">settings page</a> by unchecking \"Disable "
+"responsive content elements\"."
+msgstr ""
+"تنظیمات طرح واکنش گرا در حال حاضر غیرفعال هستند. شما میتوانید آنها در visual "
+"composer فعال کنید. <a href=\"%s\">صفحه تنظیمات </a> با غیرفعال کردن "
+"\"Disable responsive content elements\"."
+
+#: include/./templates/params/column_offset/template.tpl.php:14
+msgid "Device"
+msgstr "Device"
+
+#: include/./templates/params/column_offset/template.tpl.php:17
+msgid "Offset"
+msgstr "Offset"
+
+#: include/./templates/params/column_offset/template.tpl.php:23
+msgid "Hide on device?"
+msgstr "پنهان کردن کردن در device؟"
+
+#: include/./templates/params/column_offset/template.tpl.php:40
+msgid "Hide"
+msgstr "مخفی"
+
+#: include/./templates/params/column_offset/template.tpl.php:49
+msgid "Inherit: "
+msgstr "ارثبری:"
+
+#: include/./templates/params/column_offset/template.tpl.php:50
+msgid "Inherit from default"
+msgstr "از پیش فرض بگیر"
+
+#: include/./templates/params/google_fonts/template.php:30
+msgid "Google Fonts preview"
+msgstr "پیش نمایش فونتهای گوگل"
+
+#: include/./templates/params/google_fonts/template.php:32
+msgid "Grumpy wizards make toxic brew for the evil Queen and Jack."
+msgstr "Grumpy wizards make toxic brew for the evil Queen and Jack."
+
+#: include/./templates/shortcodes/vc_accordion_tab.php:12
+msgid "Empty section. Edit page to add content here."
+msgstr "بخش خالی. برای افزودن محتوا صفحه را ویرایش کنید."
+
+#: include/./templates/shortcodes/vc_item.php:9
+msgid "Item"
+msgstr "آیتم"
+
+#: include/./templates/shortcodes/vc_posts_grid.php:130
+#: include/./templates/shortcodes/vc_teaser_grid.php:313
+msgid "All"
+msgstr "همه"
+
+#: include/./templates/shortcodes/vc_posts_grid.php:164
+#: include/./templates/shortcodes/vc_posts_slider.php:192
+#: include/./templates/shortcodes/vc_teaser_grid.php:327
+msgid "Nothing found."
+msgstr "چیزی پیدا نشد."
+
+#: include/./templates/shortcodes/vc_tab.php:9
+msgid "Empty tab. Edit page to add content here."
+msgstr "تب خالی. صفحه را برای افزودن محتوا ویرایش کنید."
+
+#: include/./templates/shortcodes/vc_tabs.php:44
+msgid "Previous tab"
+msgstr "تب قبلی"
+
+#: include/./templates/shortcodes/vc_tabs.php:44
+msgid "Next tab"
+msgstr "تب بعدی"
+
+#: include/./templates/shortcodes/vc_toggle.php:4
+msgid "Click to toggle"
+msgstr "برای تاگل کلیک کنید."
+
+#: include/./templates/shortcodes/vc_tweetmeme.php:9
+msgid "Tweet"
+msgstr "توئیت"
+
+#: include/./templates/shortcodes/vc_twitter.php:20
+msgid "Follow us on twitter"
+msgstr "ما را در توئیتر دنبال کنید."

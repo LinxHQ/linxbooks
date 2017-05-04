@@ -1,0 +1,34 @@
+@import "../modules/vc_helper.less";
+@import "../modules/vc_placeholder.less";
+
+// Sorting
+&.vc_sorting {
+    .wpb_row() {
+        .wpb_row {
+            > .vc_element {
+                &:before {
+                    content: '';
+                    margin: 0;
+                    padding: 0;
+                    position: absolute;
+                    z-index: 0;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    outline: 1px dashed @vc_element_hover_border;
+                    outline: 1px dashed @vc_element_hover_border_rgba;
+                }
+                &:after {
+                    clear: both;
+                }
+            }
+        }
+    }
+    .wpb_row();
+    .vc_controls {
+        visibility: hidden !important;
+        opacity: 0;
+    }
+
+}

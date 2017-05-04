@@ -1,0 +1,5596 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Visual Composer\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-10-23 18:17+0200\n"
+"PO-Revision-Date: 2014-10-23 18:17+0200\n"
+"Last-Translator: icedge <icedge@abv.bg>\n"
+"Language-Team: Bulgarian\n"
+"Language: bg_BG\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr__\n"
+"X-Poedit-Basepath: ../\n"
+"X-Generator: Poedit 1.6.7\n"
+"X-Poedit-SearchPath-0: ./config/.\n"
+"X-Poedit-SearchPath-1: ./include/.\n"
+
+#: config/./map.php:13 config/./map.php:2368
+msgid "Grey"
+msgstr "Сив"
+
+#: config/./map.php:14 config/./map.php:2369
+msgid "Blue"
+msgstr "Син"
+
+#: config/./map.php:15 config/./map.php:2370
+msgid "Turquoise"
+msgstr "Тюркоаз"
+
+#: config/./map.php:16 config/./map.php:2371
+msgid "Green"
+msgstr "Зелен"
+
+#: config/./map.php:17 config/./map.php:2372
+msgid "Orange"
+msgstr "Оранжев"
+
+#: config/./map.php:18 config/./map.php:2373
+msgid "Red"
+msgstr "Червен"
+
+#: config/./map.php:19 config/./map.php:2374
+msgid "Black"
+msgstr "Черен"
+
+#: config/./map.php:24
+msgid "Regular size"
+msgstr "Редовен размер"
+
+#: config/./map.php:25
+msgid "Large"
+msgstr "Голям"
+
+#: config/./map.php:26 config/./map.php:597
+msgid "Small"
+msgstr "Малък"
+
+#: config/./map.php:27
+msgid "Mini"
+msgstr "Мини"
+
+#: config/./map.php:31
+msgid "Same window"
+msgstr "Същия прозорец"
+
+#: config/./map.php:32
+msgid "New window"
+msgstr "Нов прозорец"
+
+#: config/./map.php:37
+msgid "CSS Animation"
+msgstr "CSS анимация"
+
+#: config/./map.php:41 config/./map.php:2541 config/./map.php:2552
+#: config/./map.php:2563
+msgid "No"
+msgstr "Не"
+
+#: config/./map.php:42
+msgid "Top to bottom"
+msgstr "Отгоре надолу"
+
+#: config/./map.php:43
+msgid "Bottom to top"
+msgstr "Отдолу нагоре"
+
+#: config/./map.php:44
+msgid "Left to right"
+msgstr "Отляво надясно"
+
+#: config/./map.php:45
+msgid "Right to left"
+msgstr "Отдясно наляво"
+
+#: config/./map.php:46
+msgid "Appear from center"
+msgstr "Появява се на центъра"
+
+#: config/./map.php:48
+msgid ""
+"Select type of animation if you want this element to be animated when it "
+"enters into the browsers viewport. Note: Works only in modern browsers."
+msgstr ""
+"Изберете тип на анимацията, ако искате този елемент да бъде анимиран, когато "
+"влезе във видимата точка на браузера. Забележка: Работи само при модерните "
+"браузери."
+
+#: config/./map.php:52 config/./map.php:126
+msgid "Row"
+msgstr "Ред"
+
+#: config/./map.php:57 config/./map.php:269 config/./map.php:341
+#: config/./map.php:400 config/./map.php:490 config/./map.php:647
+#: config/./map.php:694 config/./map.php:797 config/./map.php:889
+#: config/./map.php:1021 config/./map.php:1070 config/./map.php:1139
+#: config/./map.php:1207 config/./map.php:1237 config/./map.php:1481
+#: config/./map.php:1601 config/./map.php:1812 config/./map.php:1874
+#: config/./map.php:1938 config/./map.php:2017 config/./map.php:2145
+#: config/./map.php:2183 config/./map.php:2282 config/./map.php:2341
+#: config/./map.php:2413 config/./map.php:2489 config/./map.php:2525
+#: config/./map.php:3061 config/./map.php:3088 config/./map.php:3683
+#: config/./map.php:3693 config/./map.php:3727 config/./map.php:3738
+#: include/./classes/settings/class-vc-automapper.php:256
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:37
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:35
+msgid "Content"
+msgstr "Съдържание"
+
+#: config/./map.php:58 config/./map.php:133
+msgid "Place content elements inside the row"
+msgstr "Поставете елементи със съдържание в реда"
+
+#: config/./map.php:62 config/./map.php:137 config/./map.php:180
+#: config/./map.php:231
+msgid "Font Color"
+msgstr "Цвят на шрифта"
+
+#: config/./map.php:64 config/./map.php:139 config/./map.php:182
+#: config/./map.php:233
+msgid "Select font color"
+msgstr "Изберете цвят на шрифта"
+
+#: config/./map.php:111 config/./map.php:144 config/./map.php:187
+#: config/./map.php:238 config/./map.php:282 config/./map.php:387
+#: config/./map.php:475 config/./map.php:524 config/./map.php:681
+#: config/./map.php:777 config/./map.php:876 config/./map.php:1004
+#: config/./map.php:1040 config/./map.php:1090 config/./map.php:1163
+#: config/./map.php:1370 config/./map.php:1466 config/./map.php:1587
+#: config/./map.php:1732 config/./map.php:1763 config/./map.php:1861
+#: config/./map.php:1924 config/./map.php:2005 config/./map.php:2132
+#: config/./map.php:2163 config/./map.php:2227 config/./map.php:2327
+#: config/./map.php:2398 config/./map.php:2455 config/./map.php:2599
+#: config/./map.php:2623 config/./map.php:2653 config/./map.php:2677
+#: config/./map.php:2719 config/./map.php:2758 config/./map.php:2797
+#: config/./map.php:2832 config/./map.php:2869 config/./map.php:2930
+#: config/./map.php:2964 config/./map.php:2998 config/./map.php:3047
+#: config/./map.php:3074 config/./map.php:3143
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:56
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:54
+msgid "Extra class name"
+msgstr "Име на екстра класът"
+
+#: config/./map.php:113 config/./map.php:146 config/./map.php:189
+#: config/./map.php:241 config/./map.php:284 config/./map.php:389
+#: config/./map.php:477 config/./map.php:526 config/./map.php:683
+#: config/./map.php:779 config/./map.php:878 config/./map.php:1006
+#: config/./map.php:1042 config/./map.php:1092 config/./map.php:1165
+#: config/./map.php:1372 config/./map.php:1468 config/./map.php:1589
+#: config/./map.php:1734 config/./map.php:1765 config/./map.php:1863
+#: config/./map.php:1926 config/./map.php:2007 config/./map.php:2134
+#: config/./map.php:2165 config/./map.php:2229 config/./map.php:2329
+#: config/./map.php:2400 config/./map.php:2457 config/./map.php:2601
+#: config/./map.php:2625 config/./map.php:2655 config/./map.php:2679
+#: config/./map.php:2721 config/./map.php:2760 config/./map.php:2799
+#: config/./map.php:2834 config/./map.php:2871 config/./map.php:2932
+#: config/./map.php:2966 config/./map.php:3000 config/./map.php:3049
+#: config/./map.php:3076 config/./map.php:3145
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:58
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:56
+msgid ""
+"If you wish to style particular content element differently, then use this "
+"field to add a class name and then refer to it in your css file."
+msgstr ""
+"Ако искате да стилизирате единично съдържание по различен начин, тогава "
+"използвайте това поле за да добавите име на клас и след това да го добавите "
+"във Вашия CSS файл."
+
+#: config/./map.php:117 config/./map.php:150 config/./map.php:193
+#: config/./map.php:245 config/./map.php:288 config/./map.php:783
+#: config/./map.php:2169 config/./map.php:3149
+msgid "Css"
+msgstr "Css"
+
+#: config/./map.php:120 config/./map.php:153 config/./map.php:196
+#: config/./map.php:248 config/./map.php:291 config/./map.php:786
+#: config/./map.php:2172 config/./map.php:3152
+msgid "Design options"
+msgstr "Опции за дизайна"
+
+#: config/./map.php:159 include/./params/column_offset/column_offset.php:22
+msgid "1 column - 1/12"
+msgstr "1 колона - 1/12"
+
+#: config/./map.php:160 include/./params/column_offset/column_offset.php:23
+msgid "2 columns - 1/6"
+msgstr "2 колони - 1/6"
+
+#: config/./map.php:161 include/./params/column_offset/column_offset.php:24
+msgid "3 columns - 1/4"
+msgstr "3 колони - 1/4"
+
+#: config/./map.php:162 include/./params/column_offset/column_offset.php:25
+msgid "4 columns - 1/3"
+msgstr "4 колони - 1/3"
+
+#: config/./map.php:163 include/./params/column_offset/column_offset.php:26
+msgid "5 columns - 5/12"
+msgstr "5 колони - 5/12"
+
+#: config/./map.php:164 include/./params/column_offset/column_offset.php:27
+msgid "6 columns - 1/2"
+msgstr "6 колони - 1/2"
+
+#: config/./map.php:165 include/./params/column_offset/column_offset.php:28
+msgid "7 columns - 7/12"
+msgstr "7 колони - 7/12"
+
+#: config/./map.php:166 include/./params/column_offset/column_offset.php:29
+msgid "8 columns - 2/3"
+msgstr "8 колони - 2/3"
+
+#: config/./map.php:167 include/./params/column_offset/column_offset.php:30
+msgid "9 columns - 3/4"
+msgstr "9 колони - 3/4"
+
+#: config/./map.php:168 include/./params/column_offset/column_offset.php:31
+msgid "10 columns - 5/6"
+msgstr "10 колони - 5/6"
+
+#: config/./map.php:169 include/./params/column_offset/column_offset.php:32
+msgid "11 columns - 11/12"
+msgstr "11 колони - 11/12"
+
+#: config/./map.php:170 include/./params/column_offset/column_offset.php:33
+msgid "12 columns - 1/1"
+msgstr "12 колони - 1/1"
+
+#: config/./map.php:173 config/./map.php:219
+msgid "Column"
+msgstr "Колона"
+
+#: config/./map.php:200 config/./map.php:252
+#: include/./templates/params/column_offset/template.tpl.php:20
+msgid "Width"
+msgstr "Ширина"
+
+#: config/./map.php:203 config/./map.php:211 config/./map.php:255
+msgid "Width & Responsiveness"
+msgstr "Ширина & респонзив"
+
+#: config/./map.php:204 config/./map.php:256
+msgid "Select column width."
+msgstr "Изберете ширината на колоната."
+
+#: config/./map.php:209
+msgid "Responsiveness"
+msgstr "Респонзивнес"
+
+#: config/./map.php:212
+msgid ""
+"Adjust column for different screen sizes. Control width, offset and "
+"visibility settings."
+msgstr ""
+"Нагласете колоната за различни размери на екрана. Контролирайте настройките "
+"за ширина, отстъп и видимост."
+
+#: config/./map.php:265
+msgid "Text Block"
+msgstr "Текстов блок"
+
+#: config/./map.php:270
+msgid "A block of text with WYSIWYG editor"
+msgstr "Блок от текст с WYSIWYG редактор"
+
+#: config/./map.php:275 config/./map.php:1424 config/./map.php:1509
+#: config/./map.php:1944 config/./map.php:2805 config/./map.php:2821
+#: config/./map.php:3093 include/./classes/shortcodes/example.php:111
+#: include/./params/sorted_list/sorted_list.php:57
+#: include/./params/sorted_list/sorted_list.php:61
+#: include/./templates/teaser.html.php:52
+msgid "Text"
+msgstr "Текст"
+
+#: config/./map.php:277
+msgid ""
+"<p>I am text block. Click edit button to change this text. Lorem ipsum dolor "
+"sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec "
+"ullamcorper mattis, pulvinar dapibus leo.</p>"
+msgstr ""
+"<p>Аз съм текстово блокче. Натиснете на бутона за редактиране за да "
+"промените този текст. Lorem ipsum dolor sit amet, consectetur adipiscing "
+"elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.</"
+"p>"
+
+#: config/./map.php:337
+msgid "Separator"
+msgstr "Разделител"
+
+#: config/./map.php:343
+msgid "Horizontal separator line"
+msgstr "Хоризонтална разделителна линия"
+
+#: config/./map.php:347 config/./map.php:435 config/./map.php:1839
+#: config/./map.php:1901 config/./map.php:1971 config/./map.php:2097
+#: config/./map.php:3470
+msgid "Color"
+msgstr "Цвят"
+
+#: config/./map.php:349 config/./map.php:437
+msgid "Custom color"
+msgstr "Цвят по избор"
+
+#: config/./map.php:351 config/./map.php:439
+msgid "Separator color."
+msgstr "Разделител за цвят."
+
+#: config/./map.php:356
+msgid "Custom Border Color"
+msgstr "Цвят на рамка по избор"
+
+#: config/./map.php:358
+msgid "Select border color for your element."
+msgstr "Изберете цвят на рамката за вашия елемент."
+
+#: config/./map.php:366 config/./map.php:454 config/./map.php:508
+#: config/./map.php:1894 config/./map.php:3435
+msgid "Style"
+msgstr "Стил"
+
+#: config/./map.php:369 config/./map.php:457
+msgid "Separator style."
+msgstr "Стил на разделител."
+
+#: config/./map.php:373 config/./map.php:461
+#, fuzzy
+msgid "Border width"
+msgstr "Ширина на улея на мрежата"
+
+#: config/./map.php:376 config/./map.php:464
+msgid "Border width in pixels."
+msgstr ""
+
+#: config/./map.php:380 config/./map.php:468 config/./map.php:2047
+msgid "Element width"
+msgstr "Ширина на елемента"
+
+#: config/./map.php:383 config/./map.php:471
+msgid "Separator element width in percents."
+msgstr "Ширина на разделителния елемент в проценти."
+
+#: config/./map.php:397
+msgid "Separator with Text"
+msgstr "Разделител с текст"
+
+#: config/./map.php:401
+msgid "Horizontal separator line with heading"
+msgstr "Хоризонтална разделителна линия със заглавие"
+
+#: config/./map.php:405 config/./map.php:408 config/./map.php:1118
+#: config/./map.php:1191 config/./map.php:1350 config/./map.php:1423
+#: config/./map.php:1508 config/./map.php:1712 config/./map.php:3348
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:62
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1032
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1060
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1094
+#: include/./params/loop/loop.php:248
+#: include/./params/sorted_list/sorted_list.php:59
+#: include/./params/vc_link/vc_link.php:6
+msgid "Title"
+msgstr "Заглавие"
+
+#: config/./map.php:409
+msgid "Separator title."
+msgstr "Заглавие на разделителя."
+
+#: config/./map.php:413
+msgid "Title position"
+msgstr "Позиция на заглавието"
+
+#: config/./map.php:416 config/./map.php:724
+msgid "Align center"
+msgstr "Подравняване в центъра"
+
+#: config/./map.php:417 config/./map.php:722 config/./map.php:1997
+#: config/./map.php:2124
+msgid "Align left"
+msgstr "Подравняване на ляво"
+
+#: config/./map.php:418 config/./map.php:723 config/./map.php:1996
+#: config/./map.php:2123
+msgid "Align right"
+msgstr "Подравни на дясно"
+
+#: config/./map.php:420
+msgid "Select title location."
+msgstr "Изберете заглавие на местоположението."
+
+#: config/./map.php:424
+#, fuzzy
+msgid "Separator alignment"
+msgstr "Стил на разделител."
+
+#: config/./map.php:427 config/./map.php:3458
+#, fuzzy
+msgid "Center"
+msgstr "център"
+
+#: config/./map.php:428 config/./map.php:3459
+msgid "Left"
+msgstr ""
+
+#: config/./map.php:429 config/./map.php:3460
+#, fuzzy
+msgid "Right"
+msgstr "Дясно"
+
+#: config/./map.php:431
+#, fuzzy
+msgid "Select separator alignment."
+msgstr "Изберете подравняване на текста."
+
+#: config/./map.php:444 config/./map.php:2375
+msgid "Custom Color"
+msgstr "Цвят по избор"
+
+#: config/./map.php:446
+msgid "Custom separator color for your element."
+msgstr "Цвят на потребителския разделител за Вашият елемент."
+
+#: config/./map.php:486
+msgid "Message Box"
+msgstr "Кутия за съобщения"
+
+#: config/./map.php:491
+msgid "Notification box"
+msgstr "Кутия за известия"
+
+#: config/./map.php:495
+msgid "Message box type"
+msgstr "Тип кутия за съобщение"
+
+#: config/./map.php:498
+msgid "Informational"
+msgstr "Информационни"
+
+#: config/./map.php:499
+msgid "Warning"
+msgstr "Предупреждение"
+
+#: config/./map.php:500
+msgid "Success"
+msgstr "Успех"
+
+#: config/./map.php:501
+msgid "Error"
+msgstr "Грешка"
+
+#: config/./map.php:503
+msgid "Select message type."
+msgstr "Изберете тип на съобщение."
+
+#: config/./map.php:511
+msgid "Alert style."
+msgstr "Стил на предупреждение."
+
+#: config/./map.php:517
+msgid "Message text"
+msgstr "Текст на съобщението"
+
+#: config/./map.php:519
+msgid "<p>I am message box. Click edit button to change this text.</p>"
+msgstr ""
+"<p>Аз съм кутия за съобщение. Натиснете бутона за редактиране за да "
+"промените този текст.</p>"
+
+#: config/./map.php:535
+msgid "Facebook Like"
+msgstr "Facebook харесване"
+
+#: config/./map.php:538 config/./map.php:563 config/./map.php:587
+#: config/./map.php:624
+msgid "Social"
+msgstr "Социална"
+
+#: config/./map.php:539
+msgid "Facebook like button"
+msgstr "Бутон за харесване във Facebook"
+
+#: config/./map.php:543 config/./map.php:568
+msgid "Button type"
+msgstr "Тип бутон"
+
+#: config/./map.php:547 config/./map.php:596
+msgid "Standard"
+msgstr "Стандартен"
+
+#: config/./map.php:548
+msgid "Button count"
+msgstr "Бутон брояч"
+
+#: config/./map.php:549
+msgid "Box count"
+msgstr "Кутия брояч"
+
+#: config/./map.php:551 config/./map.php:576
+msgid "Select button type."
+msgstr "Изберете тип бутон."
+
+#: config/./map.php:559
+msgid "Tweetmeme Button"
+msgstr "Tweetmeme бутон"
+
+#: config/./map.php:564
+msgid "Share on twitter button"
+msgstr "Бутон за споделяне в twitter"
+
+#: config/./map.php:572 config/./map.php:633 config/./map.php:948
+#: config/./map.php:1540
+msgid "Horizontal"
+msgstr "Хоризонтална"
+
+#: config/./map.php:573 config/./map.php:634 config/./map.php:949
+#: config/./map.php:1540
+msgid "Vertical"
+msgstr "Вертикална"
+
+#: config/./map.php:574 config/./map.php:611 config/./map.php:1773
+#: config/./map.php:3537 config/./map.php:3589 config/./new_elements.php:102
+#: config/./new_elements.php:117
+#: include/./params/animation_style/animation_style.php:32
+msgid "None"
+msgstr "Няма"
+
+#: config/./map.php:584
+msgid "Google+ Button"
+msgstr "Google + бутон"
+
+#: config/./map.php:588
+msgid "Recommend on Google"
+msgstr "Препоръчване на Google"
+
+#: config/./map.php:592 config/./map.php:3520
+msgid "Button size"
+msgstr "Размер на бутона"
+
+#: config/./map.php:598
+msgid "Medium"
+msgstr "Средно"
+
+#: config/./map.php:599
+msgid "Tall"
+msgstr "Висок"
+
+#: config/./map.php:601
+msgid "Select button size."
+msgstr "Изберете размер на бутона."
+
+#: config/./map.php:605
+msgid "Annotation"
+msgstr "Анотация"
+
+#: config/./map.php:609
+msgid "Inline"
+msgstr "Вградени"
+
+#: config/./map.php:610
+msgid "Bubble"
+msgstr "Балон"
+
+#: config/./map.php:613
+msgid "Select type of annotation"
+msgstr "Изберете тип на анотация"
+
+#: config/./map.php:621
+msgid "Pinterest"
+msgstr "Pinterest"
+
+#: config/./map.php:625
+msgid "Pinterest button"
+msgstr "Pinterest бутон"
+
+#: config/./map.php:629
+msgid "Button layout"
+msgstr "Оформление на бутона"
+
+#: config/./map.php:635
+msgid "No count"
+msgstr "Няма брой"
+
+#: config/./map.php:636
+msgid "Select button layout."
+msgstr "Изберете оформление на бутона."
+
+#: config/./map.php:644
+msgid "FAQ"
+msgstr "ЧЕСТО ЗАДАВАНИ ВЪПРОСИ"
+
+#: config/./map.php:648
+msgid "Toggle element for Q&A block"
+msgstr "Сгъваем елемент за ЧЗВ блока"
+
+#: config/./map.php:654 config/./map.php:656
+msgid "Toggle title"
+msgstr "Заглавие на сгъваемия елемент"
+
+#: config/./map.php:657
+msgid "Toggle block title."
+msgstr "Заглавие на сгъваемия блок."
+
+#: config/./map.php:663
+msgid "Toggle content"
+msgstr "Съдържание на сгъваемия елемент"
+
+#: config/./map.php:665
+msgid "<p>Toggle content goes here, click edit button to change this text.</p>"
+msgstr ""
+"<p>Съдържанието на сгъваемия елемент стои тук. Натиснете бутона за "
+"редактиране за да промените този текст.</p>"
+
+#: config/./map.php:666
+msgid "Toggle block content."
+msgstr "Съдържание на сгъваемия блок."
+
+#: config/./map.php:670
+msgid "Default state"
+msgstr "Състояние по подразбиране"
+
+#: config/./map.php:673
+msgid "Closed"
+msgstr "Затворено"
+
+#: config/./map.php:674
+msgid "Open"
+msgstr "Отворено"
+
+#: config/./map.php:676
+msgid "Select \"Open\" if you want toggle to be open by default."
+msgstr ""
+"Изберете \"Отворено\", ако искате превключвателя да бъде отворен по "
+"подразбиране."
+
+#: config/./map.php:691
+msgid "Single Image"
+msgstr "Единично изображение"
+
+#: config/./map.php:695
+msgid "Simple image with CSS animation"
+msgstr "Единично изображение със CSS анимация"
+
+#: config/./map.php:699 config/./map.php:802 config/./map.php:894
+#: config/./map.php:1026 config/./map.php:1076 config/./map.php:1144
+#: config/./map.php:1211 config/./map.php:1392 config/./map.php:1486
+#: config/./map.php:1606 config/./map.php:1751 config/./map.php:2150
+#: config/./map.php:2188 config/./map.php:2287 config/./map.php:2346
+#: config/./map.php:2418 config/./map.php:2593 config/./map.php:2617
+#: config/./map.php:2641 config/./map.php:2671 config/./map.php:2695
+#: config/./map.php:2745 config/./map.php:2783 config/./map.php:2815
+#: config/./map.php:2851 config/./map.php:2948 config/./map.php:2983
+#: config/./map.php:3016
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:42
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:40
+msgid "Widget title"
+msgstr "Заглавие на джаджата"
+
+#: config/./map.php:701 config/./map.php:804 config/./map.php:896
+#: config/./map.php:1028 config/./map.php:1078 config/./map.php:1146
+#: config/./map.php:1213 config/./map.php:1394 config/./map.php:1488
+#: config/./map.php:1608 config/./map.php:1753 config/./map.php:2152
+#: config/./map.php:2190 config/./map.php:2289 config/./map.php:2348
+#: config/./map.php:2420
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:44
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:42
+msgid ""
+"Enter text which will be used as widget title. Leave blank if no title is "
+"needed."
+msgstr ""
+"Въведете текст, който ще се използва като заглавие на джаджата. Оставете "
+"празно, ако няма нужда от заглавие."
+
+#: config/./map.php:705 include/./params/sorted_list/sorted_list.php:58
+msgid "Image"
+msgstr "Изображение"
+
+#: config/./map.php:708
+msgid "Select image from media library."
+msgstr "Изберете изображение от медийната библиотека."
+
+#: config/./map.php:713 config/./map.php:838 config/./map.php:907
+msgid "Image size"
+msgstr "Размер на изображението"
+
+#: config/./map.php:715
+msgid ""
+"Enter image size. Example: \"thumbnail\", \"medium\", \"large\", \"full\" or "
+"other sizes defined by current theme. Alternatively enter image size in "
+"pixels: 200x100 (Width x Height). Leave empty to use \"thumbnail\" size."
+msgstr ""
+"Въведете размер на изображението. Например: \"миниатюра\", \"среден\", "
+"\"голям\", \"пълен\" или размерите дефинирани от темата в момента. "
+"Антернативно може да въведете размера на изображението в пиксели: 200x100 "
+"(Ширина x Височина). Оставете празно за да използвате размер \"миниатюра\"."
+
+#: config/./map.php:719
+msgid "Image alignment"
+msgstr "Подравняване на изображение"
+
+#: config/./map.php:726
+msgid "Select image alignment."
+msgstr "Изберете Подравняване на изображението."
+
+#: config/./map.php:730
+msgid "Image style"
+msgstr "Стил на изображението"
+
+#: config/./map.php:736
+msgid "Border color"
+msgstr "Цвят на рамката"
+
+#: config/./map.php:744
+msgid "Border color."
+msgstr "Цвят на рамката."
+
+#: config/./map.php:749
+msgid "Link to large image?"
+msgstr "Линк към голямо изображение?"
+
+#: config/./map.php:751
+msgid "If selected, image will be linked to the larger image."
+msgstr "ако е избрано, изображението ще е линкнато към по-голямо изображение."
+
+#: config/./map.php:752 config/./map.php:972 config/./map.php:979
+#: config/./map.php:986 config/./map.php:993 config/./map.php:1000
+#: config/./map.php:1445 config/./map.php:1555 config/./map.php:1562
+#: config/./map.php:1569 config/./map.php:1576 config/./map.php:1583
+#: config/./map.php:1660 config/./map.php:2865 config/./map.php:3307
+#: config/./map.php:3633
+msgid "Yes, please"
+msgstr "Да, моля"
+
+#: config/./map.php:756
+msgid "Image link"
+msgstr "Връзка към изображението"
+
+#: config/./map.php:758
+msgid "Enter URL if you want this image to have a link."
+msgstr "Въведете URL адреса, ако искате това изображение да има връзка."
+
+#: config/./map.php:767
+msgid "Link Target"
+msgstr "Къде да сочи връзката"
+
+#: config/./map.php:794
+msgid "Image Gallery"
+msgstr "Галерия с изображения"
+
+#: config/./map.php:798
+msgid "Responsive image gallery"
+msgstr "Респонзив Галерия"
+
+#: config/./map.php:808
+msgid "Gallery type"
+msgstr "Тип на галерия"
+
+#: config/./map.php:811 config/./map.php:1616
+msgid "Flex slider fade"
+msgstr "Избледняване на flex слайдер"
+
+#: config/./map.php:812 config/./map.php:1617
+msgid "Flex slider slide"
+msgstr "Слайд на flex слайдер"
+
+#: config/./map.php:813 config/./map.php:1618
+msgid "Nivo slider"
+msgstr "Nivo слайдер"
+
+#: config/./map.php:814
+msgid "Image grid"
+msgstr "Мрежа с изображения"
+
+#: config/./map.php:816
+msgid "Select gallery type."
+msgstr "Изберете тип на галерията."
+
+#: config/./map.php:820 config/./map.php:1082 config/./map.php:1630
+msgid "Auto rotate slides"
+msgstr "Автоматично въртене на слайдовете"
+
+#: config/./map.php:822 config/./map.php:1034 config/./map.php:1084
+#: config/./map.php:1632 include/./classes/settings/class-vc-settings.php:571
+msgid "Disable"
+msgstr "Забранете"
+
+#: config/./map.php:823 config/./map.php:1086 config/./map.php:1633
+msgid "Auto rotate slides each X seconds."
+msgstr "Автоматично въртене на слайдовете всеки за X секунди."
+
+#: config/./map.php:831 config/./map.php:900 config/./map.php:3701
+#: config/./map.php:3703
+msgid "Images"
+msgstr "Изображения"
+
+#: config/./map.php:834 config/./map.php:903
+msgid "Select images from media library."
+msgstr "Изберете изображения от медийната библиотека."
+
+#: config/./map.php:840 config/./map.php:909
+msgid ""
+"Enter image size. Example: thumbnail, medium, large, full or other sizes "
+"defined by current theme. Alternatively enter image size in pixels: 200x100 "
+"(Width x Height). Leave empty to use \"thumbnail\" size."
+msgstr ""
+"Въведете размер на изображението. Например: \"миниатюра\", \"среден\", "
+"\"голям\", \"пълен\" или размерите дефинирани от темата в момента. "
+"Антернативно може да въведете размера на изображението в пиксели: 200x100 "
+"(Ширина x Височина). Оставете празно за да използвате размер \"миниатюра\"."
+
+#: config/./map.php:844 config/./map.php:913
+msgid "On click"
+msgstr "При кликване"
+
+#: config/./map.php:847 config/./map.php:916
+msgid "Open prettyPhoto"
+msgstr "Отворете prettyPhoto"
+
+#: config/./map.php:848 config/./map.php:917
+msgid "Do nothing"
+msgstr "Да не прави нищо"
+
+#: config/./map.php:849 config/./map.php:918 config/./map.php:1673
+msgid "Open custom link"
+msgstr "Отваряне на потребителска връзка"
+
+#: config/./map.php:851
+msgid "Define action for onclick event if needed."
+msgstr "Дефинира действие събитие onclick, ако е необходимо."
+
+#: config/./map.php:855 config/./map.php:924 config/./map.php:1680
+msgid "Custom links"
+msgstr "Потребителски връзки"
+
+#: config/./map.php:857 config/./map.php:926
+msgid ""
+"Enter links for each slide here. Divide links with linebreaks (Enter) . "
+msgstr ""
+"Въведете връзки за всеки слайд тук. Разделете връзките на всеки нов ред "
+"(Enter). "
+
+#: config/./map.php:865 config/./map.php:934
+msgid "Custom link target"
+msgstr "Цел на потребителската връзка"
+
+#: config/./map.php:867 config/./map.php:936
+msgid "Select where to open  custom links."
+msgstr "Изберете към къде да водят потребителските връзки."
+
+#: config/./map.php:886
+msgid "Image Carousel"
+msgstr "Въртележка на изображенията"
+
+#: config/./map.php:890
+msgid "Animated carousel with images"
+msgstr "Анимирана въртележка със изображения"
+
+#: config/./map.php:920
+msgid "What to do when slide is clicked?"
+msgstr "Какво да се прави, когато слайдът е натиснат?"
+
+#: config/./map.php:945 config/./map.php:1538
+msgid "Slider mode"
+msgstr "Режим на слайдера"
+
+#: config/./map.php:951 config/./map.php:1541
+msgid ""
+"Slides will be positioned horizontally (for horizontal swipes) or vertically "
+"(for vertical swipes)"
+msgstr ""
+"Слайдера ще се позиционира хоризонтално (за хоризонтално въртене) или "
+"вертикално (за вертикално въртене)"
+
+#: config/./map.php:955 config/./map.php:1531
+msgid "Slider speed"
+msgstr "Скорост на слайдера"
+
+#: config/./map.php:958 config/./map.php:1534
+msgid "Duration of animation between slides (in ms)"
+msgstr "Продължителност на анимацията между слайдовете (в мс)"
+
+#: config/./map.php:962 config/./map.php:1545
+msgid "Slides per view"
+msgstr "Слайдове на изглед"
+
+#: config/./map.php:965
+msgid ""
+"Set numbers of slides you want to display at the same time on slider's "
+"container for carousel mode. Supports also \"auto\" value, in this case it "
+"will fit slides depending on container's width. \"auto\" mode isn't "
+"compatible with loop mode."
+msgstr ""
+"Задайте брой слайдове, които искате да се показват в същото време на "
+"контейнера на слайдера за режим въртележка. Поддържа също \"auto\" стойност, "
+"в случай, че се побира на ширината на контейнера на слайдовете. \"auto\" "
+"режима не е съвместим с loop режима."
+
+#: config/./map.php:969 config/./map.php:1552
+msgid "Slider autoplay"
+msgstr "Автоматично стартиране на слайдера"
+
+#: config/./map.php:971 config/./map.php:1554
+msgid "Enables autoplay mode."
+msgstr "Разрешава режима на автоматичното стартиране."
+
+#: config/./map.php:976 config/./map.php:1559
+msgid "Hide pagination control"
+msgstr "Скриване на контролите на пагинацията"
+
+#: config/./map.php:978
+msgid "If YES pagination control will be removed."
+msgstr "Ако Да контролите на пагинацията ще бъдат премахнати."
+
+#: config/./map.php:983 config/./map.php:1566
+msgid "Hide prev/next buttons"
+msgstr "Скриване на предишен/следващ бутони"
+
+#: config/./map.php:985
+msgid "If \"YES\" prev/next control will be removed."
+msgstr "Ако \"ДА\" контролите за предишен/следващ ще бъдат премахнати."
+
+#: config/./map.php:990 config/./map.php:1573
+msgid "Partial view"
+msgstr "Частичен изглед"
+
+#: config/./map.php:992
+msgid "If \"YES\" part of the next slide will be visible on the right side."
+msgstr "Ако \"ДА\" част от следващия слайд ще бъде видим от дясната страна."
+
+#: config/./map.php:997 config/./map.php:1580
+msgid "Slider loop"
+msgstr "Повтаряне на слайдера"
+
+#: config/./map.php:999 config/./map.php:1582
+msgid "Enables loop mode."
+msgstr "Разрешава loop режима."
+
+#: config/./map.php:1016
+msgid "Tabs"
+msgstr "Раздели"
+
+#: config/./map.php:1022
+msgid "Tabbed content"
+msgstr "Съдържание в раздели"
+
+#: config/./map.php:1032
+msgid "Auto rotate tabs"
+msgstr "Автоматично завъртане на разделите"
+
+#: config/./map.php:1036
+msgid "Auto rotate tabs each X seconds."
+msgstr "Автоматично завъртане на разделите на всеки X секунди."
+
+#: config/./map.php:1053 config/./map.php:1103
+msgid "Tab 1"
+msgstr "Раздел 1"
+
+#: config/./map.php:1054 config/./map.php:1104
+msgid "Tab 2"
+msgstr "Раздел 2"
+
+#: config/./map.php:1064
+msgid "Tour"
+msgstr "Обиколка"
+
+#: config/./map.php:1072
+msgid "Vertical tabbed content"
+msgstr "Съдържание на вертикални раздели"
+
+#: config/./map.php:1110 include/./classes/core/class-vc-base.php:475
+#: include/./classes/shortcodes/vc-tab.php:2
+msgid "Tab"
+msgstr "Раздел"
+
+#: config/./map.php:1120
+msgid "Tab title."
+msgstr "Заглавие на раздела."
+
+#: config/./map.php:1124
+msgid "Tab ID"
+msgstr "ID на раздела"
+
+#: config/./map.php:1134
+msgid "Accordion"
+msgstr "Акордеон"
+
+#: config/./map.php:1140
+msgid "Collapsible content panels"
+msgstr "Съдържание на сгъваеми елементи"
+
+#: config/./map.php:1150
+msgid "Active section"
+msgstr "Активен раздел"
+
+#: config/./map.php:1152
+msgid ""
+"Enter section number to be active on load or enter false to collapse all "
+"sections."
+msgstr ""
+"Въведете номера на раздела, за да бъде активен при зареждане или натиснете "
+"false за да съберете всичките раздели."
+
+#: config/./map.php:1156
+msgid "Allow collapsible all"
+msgstr "Позволете всичките да са сгъваеми"
+
+#: config/./map.php:1158
+msgid "Select checkbox to allow all sections to be collapsible."
+msgstr "Отметнете кутията за да позволите на всички секции да бъдат сгъваеми."
+
+#: config/./map.php:1159
+msgid "Allow"
+msgstr "Позволете"
+
+#: config/./map.php:1173
+msgid "Add section"
+msgstr "Добавете секция"
+
+#: config/./map.php:1177
+msgid "Section 1"
+msgstr "Секция 1"
+
+#: config/./map.php:1178
+msgid "Section 2"
+msgstr "Секция 2"
+
+#: config/./map.php:1183 include/./classes/core/class-vc-base.php:476
+#: include/./classes/core/class-vc-base.php:479
+#: include/./templates/shortcodes/vc_accordion_tab.php:5
+msgid "Section"
+msgstr "Секция"
+
+#: config/./map.php:1193
+msgid "Accordion section title."
+msgstr "Заглавие на акордеонната секция."
+
+#: config/./map.php:1203
+msgid "Teaser (posts) Grid"
+msgstr "Мрежа със закачени (публикации)"
+
+#: config/./map.php:1217 config/./map.php:1408
+msgid "Columns count"
+msgstr "Броене на колони"
+
+#: config/./map.php:1221 config/./map.php:1413
+msgid "Select columns count."
+msgstr "Изберете броене на колони."
+
+#: config/./map.php:1225 config/./map.php:1637
+#: include/./params/loop/loop.php:178
+msgid "Post types"
+msgstr "Типове публикации"
+
+#: config/./map.php:1227 config/./map.php:1639
+msgid "Select post types to populate posts from."
+msgstr ""
+"Изберете типовете публикации за популяризиране на формата за публикации."
+
+#: config/./map.php:1231
+msgid "Teasers count"
+msgstr "Броене на закачването"
+
+#: config/./map.php:1233
+msgid "How many teasers to show? Enter number or word \"All\"."
+msgstr "Колко закачени да се показват? Въведете номер или дума \"All\"."
+
+#: config/./map.php:1240 config/./map.php:1647
+msgid "Teaser (Excerpt)"
+msgstr "Закачена (Откъс)"
+
+#: config/./map.php:1241
+msgid "Full Content"
+msgstr "Цялото съдържание"
+
+#: config/./map.php:1243 config/./map.php:1289 config/./map.php:1303
+#: config/./map.php:1456
+msgid "Teaser layout template."
+msgstr "Шаблон на оформлението на закачени."
+
+#: config/./map.php:1247
+msgid "Layout"
+msgstr "Оформление"
+
+#: config/./map.php:1250
+msgid "Title + Thumbnail + Text"
+msgstr "Заглавие + миниатюра + текст"
+
+#: config/./map.php:1251
+msgid "Thumbnail + Title + Text"
+msgstr "Миниатюра + Заглавие + Текст"
+
+#: config/./map.php:1252
+msgid "Thumbnail + Text"
+msgstr "Миниатюра + Текст"
+
+#: config/./map.php:1253
+msgid "Thumbnail + Title"
+msgstr "Миниатюра + Заглавие"
+
+#: config/./map.php:1254
+msgid "Thumbnail only"
+msgstr "Сами миниатюра"
+
+#: config/./map.php:1255
+msgid "Title + Text"
+msgstr "Заглавие + Текст"
+
+#: config/./map.php:1256
+msgid "Teaser layout."
+msgstr "Оформление на закачените."
+
+#: config/./map.php:1260 config/./map.php:1668 config/./new_elements.php:76
+#: include/./params/sorted_list/sorted_list.php:60
+msgid "Link"
+msgstr "Връзка"
+
+#: config/./map.php:1263 config/./map.php:1380 config/./map.php:1671
+#: include/./params/sorted_list/sorted_list.php:68
+msgid "Link to post"
+msgstr "Връзка към публикация"
+
+#: config/./map.php:1264 config/./map.php:1382 config/./map.php:1672
+msgid "Link to bigger image"
+msgstr "Връзка към по-голямо изображение"
+
+#: config/./map.php:1265
+msgid "Thumbnail to bigger image, title to post"
+msgstr "Миниатюра за по-голямо изображение, заглавие или публикация"
+
+#: config/./map.php:1266 config/./map.php:1381 config/./map.php:1674
+#: include/./params/sorted_list/sorted_list.php:67
+#: include/./templates/teaser.html.php:16
+#: include/./templates/teaser.html.php:37
+msgid "No link"
+msgstr "Без връзка"
+
+#: config/./map.php:1268 config/./map.php:1676
+msgid "Link type."
+msgstr "Тип на връзката."
+
+#: config/./map.php:1272 config/./map.php:1433 config/./map.php:1518
+msgid "Link target"
+msgstr "Къде да сочи връзката"
+
+#: config/./map.php:1282
+msgid "Teaser grid layout"
+msgstr "Оформление на мрежата на закачените"
+
+#: config/./map.php:1285
+msgid "Grid"
+msgstr "Мрежа"
+
+#: config/./map.php:1286
+msgid "Grid with filter"
+msgstr "Мрежа с филтър"
+
+#: config/./map.php:1287
+msgid "Carousel"
+msgstr "Въртележка"
+
+#: config/./map.php:1293 config/./map.php:1450
+msgid "Layout mode"
+msgstr "Режим на оформление"
+
+#: config/./map.php:1296 config/./map.php:1453
+msgid "Fit rows"
+msgstr "Вместимост на редовете"
+
+#: config/./map.php:1297 config/./map.php:1454
+msgid "Masonry"
+msgstr "Зидария"
+
+#: config/./map.php:1307 config/./map.php:3179
+#: include/./params/loop/loop.php:182
+msgid "Taxonomies"
+msgstr "Класификации"
+
+#: config/./map.php:1315
+msgid "Select taxonomies."
+msgstr "Изберете класификации."
+
+#: config/./map.php:1319 config/./map.php:1460 config/./map.php:1525
+#: config/./map.php:1687
+msgid "Thumbnail size"
+msgstr "Размер на миниатюрите"
+
+#: config/./map.php:1321 config/./map.php:1462 config/./map.php:1527
+#: config/./map.php:1689
+msgid ""
+"Enter thumbnail size. Example: thumbnail, medium, large, full or other sizes "
+"defined by current theme. Alternatively enter image size in pixels: 200x100 "
+"(Width x Height) . "
+msgstr ""
+"Въведете размера на миниатюрите. Пример: миниатюри, средни, големи, пълен "
+"или други размери, определени от текущата тема. Освен това въведете размера "
+"на изображението в пиксели: 200 x 100 (ширина х височина). "
+
+#: config/./map.php:1325 config/./map.php:1693
+msgid "Post/Page IDs"
+msgstr "ID-та на Публикации/Страници"
+
+#: config/./map.php:1327
+msgid ""
+"Fill this field with page/posts IDs separated by commas (,) to retrieve only "
+"them. Use this in conjunction with \"Post types\" field."
+msgstr ""
+"Попълнете това поле със ID-та на страници/публикации разделени със запетаи "
+"(,), за да извлечете само тях. Използвайте това заедно с полето \"типове "
+"публикации\"."
+
+#: config/./map.php:1331
+msgid "Exclude Post/Page IDs"
+msgstr "Изключване на IDта на публикации/Страници"
+
+#: config/./map.php:1333
+msgid ""
+"Fill this field with page/posts IDs separated by commas (,) to exclude them "
+"from query."
+msgstr ""
+"Попълнете това поле с IDта на страници/публикации разделени със запетая (,) "
+"за да ги изключите от заявката."
+
+#: config/./map.php:1337 config/./map.php:1699 config/./map.php:2938
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:633
+#: include/./params/loop/loop.php:180
+#: include/./templates/shortcodes/vc_wp_categories.php:4
+msgid "Categories"
+msgstr "Категории"
+
+#: config/./map.php:1339 config/./map.php:1701
+msgid ""
+"If you want to narrow output, enter category names here. Note: Only listed "
+"categories will be included. Divide categories with linebreaks (Enter) . "
+msgstr ""
+"Ако искате да ограничите изхода, въведете имената на категориите тук. "
+"Забележка: Само категориите в списъка ще бъдат включени. Разделете "
+"категориите с нов ред (Enter) . "
+
+#: config/./map.php:1343 config/./map.php:1705 config/./map.php:1722
+#: config/./map.php:3342
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:203
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:250
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:334
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:545
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:606
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:686
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:764
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:818
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:911
+msgid "Order by"
+msgstr "Подреждане по"
+
+#: config/./map.php:1347 config/./map.php:1709 config/./map.php:3345
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:59
+#: include/./params/loop/loop.php:245
+msgid "Date"
+msgstr "Дата"
+
+#: config/./map.php:1348 config/./map.php:1710
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:60
+msgid "ID"
+msgstr "ID"
+
+#: config/./map.php:1349 config/./map.php:1711 config/./map.php:3347
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:61
+#: include/./params/loop/loop.php:179 include/./params/loop/loop.php:247
+msgid "Author"
+msgstr "Автор"
+
+#: config/./map.php:1351 config/./map.php:1713
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:63
+#: include/./params/loop/loop.php:250
+msgid "Modified"
+msgstr "Модифицирани"
+
+#: config/./map.php:1352 config/./map.php:1714 config/./map.php:2321
+#: config/./map.php:2909
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:64
+#: include/./params/loop/loop.php:252
+msgid "Random"
+msgstr "Случайни"
+
+#: config/./map.php:1353 config/./map.php:1715
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:65
+#: include/./params/loop/loop.php:253
+msgid "Comment count"
+msgstr "Брояч на коментари"
+
+#: config/./map.php:1354 config/./map.php:1716
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:66
+#: include/./params/loop/loop.php:254
+msgid "Menu order"
+msgstr "Подредба на менюто"
+
+#: config/./map.php:1356 config/./map.php:1718
+#, php-format
+msgid "Select how to sort retrieved posts. More at %s."
+msgstr "Изберете как да се сортират извлечените публикации. Повече на %s."
+
+#: config/./map.php:1360
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:210
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:257
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:341
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:552
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:613
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:693
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:771
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:825
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:918
+msgid "Order way"
+msgstr "Начин на подреждане"
+
+#: config/./map.php:1363 config/./map.php:1725 config/./map.php:3373
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:71
+#: include/./params/loop/loop.php:264
+msgid "Descending"
+msgstr "Низходящо"
+
+#: config/./map.php:1364 config/./map.php:1726 config/./map.php:3372
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:72
+#: include/./params/loop/loop.php:263
+msgid "Ascending"
+msgstr "Възходящо"
+
+#: config/./map.php:1366 config/./map.php:1728
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:213
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:260
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:344
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:555
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:616
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:696
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:774
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:828
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:921
+#, php-format
+msgid "Designates the ascending or descending order. More at %s."
+msgstr "Определя възходящ или низходящ ред. Още на %s."
+
+#: config/./map.php:1385
+msgid "Posts Grid"
+msgstr "Мрежа на публикациите"
+
+#: config/./map.php:1388
+msgid "Posts in grid view"
+msgstr "Публикации в табличен вид"
+
+#: config/./map.php:1398
+msgid "Grids content"
+msgstr "Съдържание на таблиците"
+
+#: config/./map.php:1404 config/./map.php:1498
+msgid "Create WordPress loop, to populate content from your site."
+msgstr ""
+"Създаване на WordPress loop, за да публикува съдържанието от Вашия сайт."
+
+#: config/./map.php:1417 config/./map.php:1502
+msgid "Teaser layout"
+msgstr "Оформление на закачените"
+
+#: config/./map.php:1419 config/./map.php:1504
+msgid ""
+"Control teasers look. Enable blocks and place them in desired order. Note: "
+"This setting can be overrriden on post to post basis."
+msgstr ""
+"Контролирайте изгледа на закачените. Разрешете блокчета и ги поставете в "
+"избрания ред. Забележка: Тези настройки могат да бъдат презаписани върху "
+"публикациите на основа на публикациите."
+
+#: config/./map.php:1422 config/./map.php:1507
+msgid "Thumbnail"
+msgstr "Миниатюра"
+
+#: config/./map.php:1425 config/./map.php:1510
+msgid "Teaser/Excerpt"
+msgstr "Закачени/откъс"
+
+#: config/./map.php:1426 config/./map.php:1511
+msgid "Full content"
+msgstr "Цялото съдържание"
+
+#: config/./map.php:1428 config/./map.php:1513
+msgid "Read more link"
+msgstr "Връзка към прочетете още"
+
+#: config/./map.php:1443 config/./map.php:3305
+msgid "Show filter"
+msgstr "Показване на филтър"
+
+#: config/./map.php:1446
+msgid "Select to add animated category filter to your posts grid."
+msgstr ""
+"Изберете за да добавите анимиран филтър за категория на Вашата мрежа с "
+"публикации."
+
+#: config/./map.php:1477
+msgid "Post Carousel"
+msgstr "Въртележка с публикации"
+
+#: config/./map.php:1482
+msgid "Animated carousel with posts"
+msgstr "Анимирана въртележка с публикации"
+
+#: config/./map.php:1492
+msgid "Carousel content"
+msgstr "Съдържание на въртележката"
+
+#: config/./map.php:1548
+msgid ""
+"Set numbers of slides you want to display at the same time on slider's "
+"container for carousel mode. Also supports for \"auto\" value, in this case "
+"it will fit slides depending on container's width. \"auto\" mode doesn't "
+"compatible with loop mode."
+msgstr ""
+"Задайте брой слайдове, които искате да се показват в същото време на "
+"контейнера на слайдера за режим въртележка. Поддържа също \"auto\" стойност, "
+"в случай, че се побира на ширината на контейнера на слайдовете. \"auto\" "
+"режима не е съвместим с loop режима."
+
+#: config/./map.php:1561
+msgid "If \"YES\" pagination control will be removed"
+msgstr "Ако Да контролите на пагинацията ще бъдат премахнати"
+
+#: config/./map.php:1568
+msgid "If \"YES\" prev/next control will be removed"
+msgstr "Ако \"ДА\" контролите за предишен/следващ ще бъдат премахнати"
+
+#: config/./map.php:1575
+msgid "If \"YES\" part of the next slide will be visible on the right side"
+msgstr "Ако \"ДА\" част от следващия слайд ще бъде видим от дясната страна"
+
+#: config/./map.php:1598
+msgid "Posts Slider"
+msgstr "Слайдер с публикации"
+
+#: config/./map.php:1602
+msgid "Slider with WP Posts"
+msgstr "Слайдер с WP публикации"
+
+#: config/./map.php:1612
+msgid "Slider type"
+msgstr "Тип на слайдера"
+
+#: config/./map.php:1620
+msgid "Select slider type."
+msgstr "Изберете типа на слайдера."
+
+#: config/./map.php:1624
+msgid "Slides count"
+msgstr "Брояч на слайдовете"
+
+#: config/./map.php:1626
+msgid "How many slides to show? Enter number or word \"All\"."
+msgstr "Колко слайдове да се показват? Въведете брой или думата \"All\"."
+
+#: config/./map.php:1643
+#: include/./classes/settings/class-vc-automapper.php:299
+msgid "Description"
+msgstr "Описание"
+
+#: config/./map.php:1646
+msgid "No description"
+msgstr "Без описание"
+
+#: config/./map.php:1649
+msgid "Some sliders support description text, what content use for it?"
+msgstr ""
+"Някои слайдери поддържат описателен текст, какво съдържание да се използва "
+"за тях?"
+
+#: config/./map.php:1657
+msgid "Output post title?"
+msgstr "Изход за заглавието на публикацията?"
+
+#: config/./map.php:1659
+msgid "If selected, title will be printed before the teaser text."
+msgstr ""
+"Ако е избрано, заглавието ще се визуализира преди показването на текста."
+
+#: config/./map.php:1683
+msgid "Enter links for each slide here. Divide links with linebreaks (Enter)."
+msgstr ""
+"Въведете връзки за всеки слайд тук. Разделете връзките на всеки нов ред "
+"(Enter)."
+
+#: config/./map.php:1695
+msgid ""
+"Fill this field with page/posts IDs separated by commas (,), to retrieve "
+"only them. Use this in conjunction with \"Post types\" field."
+msgstr ""
+"Попълнете това поле със ID-та на страници/публикации разделени със запетаи "
+"(,), за да извлечете само тях. Използвайте това заедно с полето \"типове "
+"публикации\"."
+
+#: config/./map.php:1742
+msgid "Widgetised Sidebar"
+msgstr "Странична лента с възможност за джаджи"
+
+#: config/./map.php:1746 config/./map.php:2240 config/./map.php:2261
+msgid "Structure"
+msgstr "Структура"
+
+#: config/./map.php:1747
+msgid "Place widgetised sidebar"
+msgstr "Поставете странична лента с възможност за джаджи"
+
+#: config/./map.php:1757
+msgid "Sidebar"
+msgstr "Странична лента"
+
+#: config/./map.php:1759
+msgid "Select which widget area output."
+msgstr "Изберете изхода за областта на джаджите."
+
+#: config/./map.php:1774
+msgid "Address book icon"
+msgstr "Икона за адресна книга"
+
+#: config/./map.php:1775
+msgid "Alarm clock icon"
+msgstr "Икона за алармен часовник"
+
+#: config/./map.php:1776
+msgid "Anchor icon"
+msgstr "Икона за котва"
+
+#: config/./map.php:1777
+msgid "Application Image icon"
+msgstr "Икона за изображение на приложение"
+
+#: config/./map.php:1778
+msgid "Arrow icon"
+msgstr "Икона със стрелка"
+
+#: config/./map.php:1779
+msgid "Asterisk icon"
+msgstr "Икона със звездичка"
+
+#: config/./map.php:1780
+msgid "Hammer icon"
+msgstr "Икона с чук"
+
+#: config/./map.php:1781
+msgid "Balloon icon"
+msgstr "Икона с балон"
+
+#: config/./map.php:1782
+msgid "Balloon Buzz icon"
+msgstr "Икона с балон Buzz"
+
+#: config/./map.php:1783
+msgid "Balloon Facebook icon"
+msgstr "Икона с балон Facebook"
+
+#: config/./map.php:1784
+msgid "Balloon Twitter icon"
+msgstr "Икона с балон Twitter"
+
+#: config/./map.php:1785
+msgid "Battery icon"
+msgstr "Икона с батерия"
+
+#: config/./map.php:1786
+msgid "Binocular icon"
+msgstr "Икона с бинокъл"
+
+#: config/./map.php:1787
+msgid "Document Excel icon"
+msgstr "Икона с документ за Excel"
+
+#: config/./map.php:1788
+msgid "Document Image icon"
+msgstr "Икона с изображение на документ"
+
+#: config/./map.php:1789
+msgid "Document Music icon"
+msgstr "Икона с изображение на документ за музика"
+
+#: config/./map.php:1790
+msgid "Document Office icon"
+msgstr "Икона с изображение на офис документ"
+
+#: config/./map.php:1791
+msgid "Document PDF icon"
+msgstr "Икона с изображение на PDF документ"
+
+#: config/./map.php:1792
+msgid "Document Powerpoint icon"
+msgstr "Икона с изображение на Powerpoint документ"
+
+#: config/./map.php:1793
+msgid "Document Word icon"
+msgstr "Икона с изображение на Word документ"
+
+#: config/./map.php:1794
+msgid "Bookmark icon"
+msgstr "Икона за показалец"
+
+#: config/./map.php:1795
+msgid "Camcorder icon"
+msgstr "Икона с камера"
+
+#: config/./map.php:1796
+msgid "Camera icon"
+msgstr "Икона с фотоапарат"
+
+#: config/./map.php:1797
+msgid "Chart icon"
+msgstr "Икона с диаграма"
+
+#: config/./map.php:1798
+msgid "Chart pie icon"
+msgstr "Икона с кръгла диаграма"
+
+#: config/./map.php:1799
+msgid "Clock icon"
+msgstr "Икона с часовник"
+
+#: config/./map.php:1800
+msgid "Fire icon"
+msgstr "Икона с огън"
+
+#: config/./map.php:1801
+msgid "Heart icon"
+msgstr "Икона със сърце"
+
+#: config/./map.php:1802
+msgid "Mail icon"
+msgstr "Икона с mail"
+
+#: config/./map.php:1803
+msgid "Play icon"
+msgstr "Икона за пускане"
+
+#: config/./map.php:1804
+msgid "Shield icon"
+msgstr "Икона със щит"
+
+#: config/./map.php:1805
+msgid "Video icon"
+msgstr "Икона за видео"
+
+#: config/./map.php:1809 config/./map.php:1870 config/./new_elements.php:75
+msgid "Button"
+msgstr "Бутон"
+
+#: config/./map.php:1813 config/./map.php:1875
+msgid "Eye catching button"
+msgstr "Хващащ окото бутон"
+
+#: config/./map.php:1817 config/./map.php:1821 config/./map.php:1885
+#: config/./map.php:1889 config/./map.php:1951 config/./map.php:1953
+#: config/./map.php:2081 config/./map.php:2085
+#: include/./templates/shortcodes/vc_button.php:10
+#: include/./templates/shortcodes/vc_button2.php:4
+#: include/./templates/shortcodes/vc_cta_button.php:9
+#: include/./templates/shortcodes/vc_cta_button2.php:22
+msgid "Text on the button"
+msgstr "Текст на бутона"
+
+#: config/./map.php:1822 config/./map.php:1890 config/./map.php:1954
+#: config/./map.php:2086
+msgid "Text on the button."
+msgstr "Текст на бутона."
+
+#: config/./map.php:1826 config/./map.php:1879 config/./map.php:1958
+#: config/./map.php:2075
+msgid "URL (Link)"
+msgstr "URL (линк)"
+
+#: config/./map.php:1828 config/./map.php:1881 config/./map.php:1960
+#: config/./map.php:2077
+msgid "Button link."
+msgstr "Връзка за бутона."
+
+#: config/./map.php:1832 config/./map.php:1964
+msgid "Target"
+msgstr "Цел"
+
+#: config/./map.php:1842 config/./map.php:1904 config/./map.php:1974
+#: config/./map.php:2100
+msgid "Button color."
+msgstr "Цвят на бутона."
+
+#: config/./map.php:1847 config/./map.php:1979
+msgid "Icon"
+msgstr "Икона"
+
+#: config/./map.php:1850 config/./map.php:1982
+msgid "Button icon."
+msgstr "Икона на бутона."
+
+#: config/./map.php:1854 config/./map.php:1916 config/./map.php:1986
+#: config/./map.php:2112
+msgid "Size"
+msgstr "Размер"
+
+#: config/./map.php:1857 config/./map.php:1920 config/./map.php:1989
+#: config/./map.php:2116 config/./map.php:3524
+msgid "Button size."
+msgstr "Размер на бутона."
+
+#: config/./map.php:1897 config/./map.php:2093
+msgid "Button style."
+msgstr "Размер на бутона."
+
+#: config/./map.php:1935 config/./map.php:2014
+msgid "Call to Action Button"
+msgstr "Бутон с извикване на действие"
+
+#: config/./map.php:1939 config/./map.php:2018
+msgid "Catch visitors attention with CTA block"
+msgstr "Хванете вниманието на посетителя със блока CTA"
+
+#: config/./map.php:1946
+msgid "Click edit button to change this text."
+msgstr "Натиснете върху редактиране на бутона за да промените текста."
+
+#: config/./map.php:1947 include/./classes/shortcodes/example.php:114
+msgid "Enter your content."
+msgstr "Въведете Вашето съдържание."
+
+#: config/./map.php:1993 config/./map.php:2120
+msgid "Button position"
+msgstr "Позиция на бутона"
+
+#: config/./map.php:1998 config/./map.php:2125
+msgid "Align bottom"
+msgstr "Подравняване на бутона"
+
+#: config/./map.php:2000 config/./map.php:2127
+msgid "Select button alignment."
+msgstr "Изберете подравняване на бутона."
+
+#: config/./map.php:2022
+msgid "Heading first line"
+msgstr "Първи ред на заглавието"
+
+#: config/./map.php:2026
+msgid "Hey! I am first heading line feel free to change me"
+msgstr ""
+"Хей! Аз съм първият ред на заглавието, чувствайте се свободни да ме смените"
+
+#: config/./map.php:2027
+msgid "Text for the first heading line."
+msgstr "Текст за първия ред на заглавието."
+
+#: config/./map.php:2031
+msgid "Heading second line"
+msgstr "Втори ред на заглавието"
+
+#: config/./map.php:2036
+msgid "Optional text for the second heading line."
+msgstr "Незадължителен текст за втори ред на заглавието."
+
+#: config/./map.php:2040
+msgid "CTA style"
+msgstr "Стил на CTA"
+
+#: config/./map.php:2043
+msgid "Call to action style."
+msgstr "Стил на извикване на действие."
+
+#: config/./map.php:2050
+msgid "Call to action element width in percents."
+msgstr "Ширина на елемента извикване на действие в проценти."
+
+#: config/./map.php:2054 include/./params/font_container/font_container.php:93
+msgid "Text align"
+msgstr "Подравняване на текста"
+
+#: config/./map.php:2057
+msgid "Text align in call to action block."
+msgstr "Подравняване на текста в блока с извикване на действие."
+
+#: config/./map.php:2061
+msgid "Custom Background Color"
+msgstr "Потребителски цвят на фона"
+
+#: config/./map.php:2063
+msgid "Select background color for your element."
+msgstr "Изберете цвят на фона за Вашият елемент."
+
+#: config/./map.php:2069
+msgid "Promotional text"
+msgstr "Промоционален текст"
+
+#: config/./map.php:2071
+msgid ""
+"I am promo text. Click edit button to change this text. Lorem ipsum dolor "
+"sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec "
+"ullamcorper mattis, pulvinar dapibus leo."
+msgstr ""
+"Аз съм промо текст. Натиснете на бутона за редактиране за да смените този "
+"текст. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit "
+"tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo."
+
+#: config/./map.php:2090 config/./map.php:3496
+msgid "Button style"
+msgstr "Стил на бутона"
+
+#: config/./map.php:2142
+msgid "Video Player"
+msgstr "Видео плейър"
+
+#: config/./map.php:2146
+msgid "Embed YouTube/Vimeo player"
+msgstr "YouTube/Vimeo плейър за вграждане"
+
+#: config/./map.php:2156
+msgid "Video link"
+msgstr "Видео връзка"
+
+#: config/./map.php:2159
+#, php-format
+msgid "Link to the video. More about supported formats at %s."
+msgstr "Връзка към видеото. Повече за поддържаните формати на %s."
+
+#: config/./map.php:2180
+msgid "Google Maps"
+msgstr "Google карти"
+
+#: config/./map.php:2184
+msgid "Map block"
+msgstr "Блок с карта"
+
+#: config/./map.php:2194
+msgid "Map embed iframe"
+msgstr "Карта за вграждане в iframe"
+
+#: config/./map.php:2196
+#, php-format
+msgid ""
+"Visit %s to create your map. 1) Find location 2) Click \"Share\" and make "
+"sure map is public on the web 3) Click folder icon to reveal \"Embed on my "
+"site\" link 4) Copy iframe code and paste it here."
+msgstr ""
+"Посетете %s за да създадете Вашата карта. 1) Намерете местоположение 2) "
+"Натиснете \"Сподели\" и се уверете, че картата е публикувана в уеб 3) "
+"Натоснете на иконата с папка за да се разкрие \"Постави в моя сайт\" "
+"връзката 4) Копирайте iframe кода и го поставете тук."
+
+#: config/./map.php:2200
+msgid "Map height"
+msgstr "Височина на картата"
+
+#: config/./map.php:2203
+msgid ""
+"Enter map height in pixels. Example: 200 or leave it empty to make map "
+"responsive."
+msgstr ""
+"Въведете височина на картата в пиксели. Пример: 200 или оставете празно за "
+"да направите картата респонзив."
+
+#: config/./map.php:2237 config/./map.php:2247
+msgid "Raw HTML"
+msgstr "Чист HTML"
+
+#: config/./map.php:2242
+msgid "Output raw html code on your page"
+msgstr "Изходен чист html код за Вашата страница"
+
+#: config/./map.php:2250
+msgid "Enter your HTML content."
+msgstr "Въведете Вашето html съдържание."
+
+#: config/./map.php:2258
+msgid "Raw JS"
+msgstr "Чист JS"
+
+#: config/./map.php:2263
+msgid "Output raw javascript code on your page"
+msgstr "Изходен чист javascript код на Вашата страница"
+
+#: config/./map.php:2268
+msgid "Raw js"
+msgstr "Чист js"
+
+#: config/./map.php:2271
+msgid "Enter your JS code."
+msgstr "Въведете Вашият JS код."
+
+#: config/./map.php:2280
+msgid "Flickr Widget"
+msgstr "Flickr джаджа"
+
+#: config/./map.php:2283
+msgid "Image feed from your flickr account"
+msgstr "Хранилище за изображения от Вашия flickr акаунт"
+
+#: config/./map.php:2293
+msgid "Flickr ID"
+msgstr "Flickr ID"
+
+#: config/./map.php:2296
+#, php-format
+msgid "To find your flickID visit %s."
+msgstr "За да намерите Вашето Flickr ID посетете %s."
+
+#: config/./map.php:2300
+msgid "Number of photos"
+msgstr "Брои снимки"
+
+#: config/./map.php:2303
+msgid "Number of photos."
+msgstr "Брои снимки."
+
+#: config/./map.php:2307
+msgid "Type"
+msgstr "Тип"
+
+#: config/./map.php:2310
+msgid "User"
+msgstr "Потребител"
+
+#: config/./map.php:2311
+msgid "Group"
+msgstr "Група"
+
+#: config/./map.php:2313
+msgid "Photo stream type."
+msgstr "Тип поток за снимки."
+
+#: config/./map.php:2317
+msgid "Display"
+msgstr "Показване"
+
+#: config/./map.php:2320
+msgid "Latest"
+msgstr "Последни"
+
+#: config/./map.php:2323
+msgid "Photo order."
+msgstr "Подреждане на изображения."
+
+#: config/./map.php:2338
+msgid "Progress Bar"
+msgstr "Прогрес бар"
+
+#: config/./map.php:2342
+msgid "Animated progress bar"
+msgstr "Анимиран прогрес бар"
+
+#: config/./map.php:2352
+msgid "Graphic values"
+msgstr "Графични стойности"
+
+#: config/./map.php:2354
+msgid ""
+"Input graph values, titles and color here. Divide values with linebreaks "
+"(Enter). Example: 90|Development|#e75956"
+msgstr ""
+"Въведете графичните стойности, заглавия и цветове тук. Разделете ги с "
+"разделителна линия (Enter). Например: 90|Development|#e75956"
+
+#: config/./map.php:2359 config/./map.php:2440
+msgid "Units"
+msgstr "Единици"
+
+#: config/./map.php:2361 config/./map.php:2442
+msgid ""
+"Enter measurement units (if needed) Eg. %, px, points, etc. Graph value and "
+"unit will be appended to the graph title."
+msgstr ""
+"Въведете мерни единици (ако е необходимо) Пр. %, пиксела, точки и др. "
+"Графичните стойности и единиците ще бъдат приложени към заглавието на "
+"графиката."
+
+#: config/./map.php:2365 config/./map.php:2446
+msgid "Bar color"
+msgstr "Цвят на лентата"
+
+#: config/./map.php:2377
+msgid "Select bar background color."
+msgstr "Изберете цвета на фона за лентата."
+
+#: config/./map.php:2382
+msgid "Bar custom color"
+msgstr "Потребителски цвят на лентата"
+
+#: config/./map.php:2384
+msgid "Select custom background color for bars."
+msgstr "Изберете потребителски цвят на фона за лентите."
+
+#: config/./map.php:2389 config/./map.php:2914 config/./map.php:2954
+#: config/./map.php:2989 config/./map.php:3037
+msgid "Options"
+msgstr "Опции"
+
+#: config/./map.php:2392
+msgid "Add Stripes?"
+msgstr "Добавяне на ленти?"
+
+#: config/./map.php:2393
+msgid "Add animation? Will be visible with striped bars."
+msgstr "Добавяне на анимация? Ще са видими с шарени ленти."
+
+#: config/./map.php:2409
+msgid "Pie chart"
+msgstr "Кръгова диаграма"
+
+#: config/./map.php:2414
+msgid "Animated pie chart"
+msgstr "Анимирана кръгова диаграма"
+
+#: config/./map.php:2425
+msgid "Pie value"
+msgstr "Стойност на кръговата диаграма"
+
+#: config/./map.php:2427
+msgid "Input graph value here. Choose range between 0 and 100."
+msgstr "Въвеждане на graph стойност тук. Изберете диапазон от 0 до 100."
+
+#: config/./map.php:2433
+msgid "Pie label value"
+msgstr "Стойност на етикета на кръговата диаграма"
+
+#: config/./map.php:2435
+msgid "Input integer value for label. If empty \"Pie value\" will be used."
+msgstr ""
+"Въведете целочислена стойност за етикета. Ако е празно ще се използва "
+"\"стойността на кръговата диаграма\"."
+
+#: config/./map.php:2449
+msgid "Select pie chart color."
+msgstr "Изберете цвят на кръговата диаграма."
+
+#: config/./map.php:2483
+msgid "No contact forms found"
+msgstr "Няма намерени формуляри за контакт"
+
+#: config/./map.php:2487
+msgid "Contact Form 7"
+msgstr "Contact Form 7"
+
+#: config/./map.php:2490
+msgid "Place Contact Form7"
+msgstr "Поставете Contact Form 7"
+
+#: config/./map.php:2494
+msgid "Form title"
+msgstr "Заглавие на формата"
+
+#: config/./map.php:2497
+msgid "What text use as form title. Leave blank if no title is needed."
+msgstr ""
+"Какъв текст да се използва за заглавие на формата. Оставете празно, ако не е "
+"нужно заглавие."
+
+#: config/./map.php:2501
+msgid "Select contact form"
+msgstr "Изберете форма за контакт"
+
+#: config/./map.php:2504
+msgid "Choose previously created contact form from the drop down list."
+msgstr "Изберете предишно създадена форма за контакт от падащия списък."
+
+#: config/./map.php:2511
+msgid "No Gravity forms found."
+msgstr "Няма намерени Gravity форми."
+
+#: config/./map.php:2515
+msgid "Select a form to display."
+msgstr "Изберете форма за показване."
+
+#: config/./map.php:2522
+msgid "Gravity Form"
+msgstr "Gravity форма"
+
+#: config/./map.php:2526
+msgid "Place Gravity form"
+msgstr "Поставете Gravity форма"
+
+#: config/./map.php:2530
+msgid "Form"
+msgstr "Форма"
+
+#: config/./map.php:2533
+msgid "Select a form to add it to your post or page."
+msgstr "Изберете форма за да добавите във Вашата публикация или страница."
+
+#: config/./map.php:2538
+msgid "Display Form Title"
+msgstr "Покажете заглавието на формата"
+
+#: config/./map.php:2542 config/./map.php:2553 config/./map.php:2564
+#: config/./new_elements.php:132 config/./new_elements.php:145
+msgid "Yes"
+msgstr "Да"
+
+#: config/./map.php:2544
+msgid "Would you like to display the forms title?"
+msgstr "Желаете ли да се показват заглавията на формите?"
+
+#: config/./map.php:2549
+msgid "Display Form Description"
+msgstr "Покажете описанието на формите"
+
+#: config/./map.php:2555
+msgid "Would you like to display the forms description?"
+msgstr "Желаете ли да се показват описанията на формите?"
+
+#: config/./map.php:2560
+msgid "Enable AJAX?"
+msgstr "Разрешаване на AJAX?"
+
+#: config/./map.php:2566
+msgid "Enable AJAX submission?"
+msgstr "Разрешаване на добавянето на AJAX?"
+
+#: config/./map.php:2571
+msgid "Tab Index"
+msgstr "Индекс на раздела"
+
+#: config/./map.php:2573
+msgid ""
+"(Optional) Specify the starting tab index for the fields of this form. Leave "
+"blank if you're not sure what this is."
+msgstr ""
+"(По избор) Задайте началния индекс за раздела за полетата на тази форма. "
+"Оставете празно, ако не сте сигурни какво е това."
+
+#: config/./map.php:2583
+msgid "Search"
+msgstr "Търсене"
+
+#: config/./map.php:2586 config/./map.php:2610 config/./map.php:2634
+#: config/./map.php:2664 config/./map.php:2688 config/./map.php:2738
+#: config/./map.php:2776 config/./map.php:2808 config/./map.php:2844
+#: config/./map.php:2888 config/./map.php:2941 config/./map.php:2976
+#: config/./map.php:3009
+msgid "WordPress Widgets"
+msgstr "WordPress джаджи"
+
+#: config/./map.php:2589
+msgid "A search form for your site"
+msgstr "Форма за търсене за Вашия сайт"
+
+#: config/./map.php:2595 config/./map.php:2619 config/./map.php:2643
+#: config/./map.php:2673 config/./map.php:2697 config/./map.php:2747
+#: config/./map.php:2785 config/./map.php:2817 config/./map.php:2853
+#: config/./map.php:2950 config/./map.php:2985 config/./map.php:3018
+msgid ""
+"What text use as a widget title. Leave blank to use default widget title."
+msgstr ""
+"Какъв текст да се използва за заглавие на джаджата. Оставете празно за да "
+"използвате заглавието по подразбиране за джаджата."
+
+#: config/./map.php:2607 include/./templates/shortcodes/vc_wp_meta.php:4
+msgid "Meta"
+msgstr "Мета"
+
+#: config/./map.php:2613
+msgid "Log in/out, admin, feed and WordPress links"
+msgstr "Вписване/изход, администрация, емисии и WordPress връзки"
+
+#: config/./map.php:2631
+#: include/./templates/shortcodes/vc_wp_recentcomments.php:4
+msgid "Recent Comments"
+msgstr "Последни коментари"
+
+#: config/./map.php:2637
+msgid "The most recent comments"
+msgstr "Най-последните коментари"
+
+#: config/./map.php:2647
+msgid "Number of comments to show"
+msgstr "Брой на коментари за покзване"
+
+#: config/./map.php:2661
+msgid "Calendar"
+msgstr "Календар"
+
+#: config/./map.php:2667
+msgid "A calendar of your sites posts"
+msgstr "Календар за Вашите публикации на сайта"
+
+#: config/./map.php:2685 include/./templates/shortcodes/vc_wp_pages.php:4
+msgid "Pages"
+msgstr "Страници"
+
+#: config/./map.php:2691
+msgid "Your sites WordPress Pages"
+msgstr "Вашите сайтове за WordPress страници"
+
+#: config/./map.php:2701 config/./map.php:2903 config/./map.php:3368
+msgid "Sort by"
+msgstr "Сортиране по"
+
+#: config/./map.php:2704
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:13
+msgid "Page title"
+msgstr "Заглавие на страницата"
+
+#: config/./map.php:2705
+msgid "Page order"
+msgstr "Подреждане на страницата"
+
+#: config/./map.php:2706
+msgid "Page ID"
+msgstr "ID на страницата"
+
+#: config/./map.php:2712 config/./map.php:3407 config/./map.php:3409
+msgid "Exclude"
+msgstr "Изключение"
+
+#: config/./map.php:2714
+msgid "Page IDs, separated by commas."
+msgstr "ID-та на страниците, разделени със запетаи."
+
+#: config/./map.php:2735
+msgid "Tag Cloud"
+msgstr "Облак от етикети"
+
+#: config/./map.php:2741
+msgid "Your most used tags in cloud format"
+msgstr "Вашите най-използвани етикети във формат на облак"
+
+#: config/./map.php:2751
+msgid "Taxonomy"
+msgstr "Класификация"
+
+#: config/./map.php:2773
+msgid "Custom Menu"
+msgstr "Потребителско меню"
+
+#: config/./map.php:2779
+msgid "Use this widget to add one of your custom menus as a widget"
+msgstr ""
+"Използвайте тази джаджа за да добавите едно от Вашите потребителски менюта "
+"като джаджа"
+
+#: config/./map.php:2789
+msgid "Menu"
+msgstr "Меню"
+
+#: config/./map.php:2792
+msgid ""
+"Custom menus not found. Please visit <b>Appearance > Menus</b> page to "
+"create new menu."
+msgstr ""
+"Потребителски менюта не са намерени. Моля посетете <b>Оформление > Менюта</"
+"b> страницата за създаване ново меню."
+
+#: config/./map.php:2792
+msgid "Select menu"
+msgstr "Изберете меню"
+
+#: config/./map.php:2811
+msgid "Arbitrary text or HTML"
+msgstr "Произволен текст или HTML"
+
+#: config/./map.php:2841 include/./templates/shortcodes/vc_wp_posts.php:4
+msgid "Recent Posts"
+msgstr "Последни публикации"
+
+#: config/./map.php:2847
+msgid "The most recent posts on your site"
+msgstr "Най-новите публикации на вашия сайт"
+
+#: config/./map.php:2857
+msgid "Number of posts to show"
+msgstr "Брой публикации за показване"
+
+#: config/./map.php:2863
+msgid "Display post date?"
+msgstr "Показване датата на публикациите?"
+
+#: config/./map.php:2877
+msgid "All Links"
+msgstr "Всички връзки"
+
+#: config/./map.php:2885
+msgid "Links"
+msgstr "Връзки"
+
+#: config/./map.php:2892
+msgid "Your blogroll"
+msgstr "Вашият блогрол"
+
+#: config/./map.php:2896
+msgid "Link Category"
+msgstr "Категория на връзката"
+
+#: config/./map.php:2906
+msgid "Link title"
+msgstr "Заглавие на връзката"
+
+#: config/./map.php:2907
+msgid "Link rating"
+msgstr "Рейтинг на връзката"
+
+#: config/./map.php:2908
+msgid "Link ID"
+msgstr "ID на връзката"
+
+#: config/./map.php:2917
+msgid "Show Link Image"
+msgstr "Показване на изображение на връзката"
+
+#: config/./map.php:2918
+msgid "Show Link Name"
+msgstr "Показване на име на връзката"
+
+#: config/./map.php:2919
+msgid "Show Link Description"
+msgstr "Показване на описание на връзката"
+
+#: config/./map.php:2920
+msgid "Show Link Rating"
+msgstr "Показване на рейтинг на връзката"
+
+#: config/./map.php:2925
+msgid "Number of links to show"
+msgstr "Брой на връзки за показване"
+
+#: config/./map.php:2944
+msgid "A list or dropdown of categories"
+msgstr "Списък или падащо меню с категории"
+
+#: config/./map.php:2957 config/./map.php:2992
+msgid "Display as dropdown"
+msgstr "Покажи като падащо меню"
+
+#: config/./map.php:2958 config/./map.php:2993
+msgid "Show post counts"
+msgstr "Покажи брой на публикациите"
+
+#: config/./map.php:2959
+msgid "Show hierarchy"
+msgstr "Покажи йерархия"
+
+#: config/./map.php:2973 include/./templates/shortcodes/vc_wp_archives.php:4
+msgid "Archives"
+msgstr "Архиви"
+
+#: config/./map.php:2979
+msgid "A monthly archive of your sites posts"
+msgstr "Месечен архив на Вашите публикации на сайта"
+
+#: config/./map.php:3006
+msgid "RSS"
+msgstr "RSS"
+
+#: config/./map.php:3012
+msgid "Entries from any RSS or Atom feed"
+msgstr "Записи от всяко RSS или Atom хранилище"
+
+#: config/./map.php:3022
+msgid "RSS feed URL"
+msgstr "URL на RSS хранилище"
+
+#: config/./map.php:3024
+msgid "Enter the RSS feed URL."
+msgstr "Въведете URL-ът на RSS хранилището."
+
+#: config/./map.php:3029
+msgid "Items"
+msgstr "Елементи"
+
+#: config/./map.php:3031
+msgid "10 - Default"
+msgstr "10 - по подразбиране"
+
+#: config/./map.php:3032
+msgid "How many items would you like to display?"
+msgstr "Колко елемента желаете да се показват?"
+
+#: config/./map.php:3040
+msgid "Display item content?"
+msgstr "Показване на съдържанието на елемента?"
+
+#: config/./map.php:3041
+msgid "Display item author if available?"
+msgstr "Показване на автора на елемента, ако е достъпен?"
+
+#: config/./map.php:3042
+msgid "Display item date?"
+msgstr "Показване на датата на елемента?"
+
+#: config/./map.php:3057
+msgid "Empty Space"
+msgstr "Празно място"
+
+#: config/./map.php:3062
+msgid "Add spacer with custom height"
+msgstr "Добавете празно място с височина по избор"
+
+#: config/./map.php:3066
+msgid "Height"
+msgstr "Височина"
+
+#: config/./map.php:3070
+msgid "Enter empty space height."
+msgstr "Въведете височината на празното място."
+
+#: config/./map.php:3084
+msgid "Custom Heading"
+msgstr "Потребителско заглавие"
+
+#: config/./map.php:3089
+msgid "Add custom heading text with google fonts"
+msgstr "Добавете потребителски текст за заглавие с google шрифтове"
+
+#: config/./map.php:3096
+msgid "This is custom heading element with Google Fonts"
+msgstr "Това е елемент с потребителско заглавие с Google шрифтове"
+
+#: config/./map.php:3097
+msgid ""
+"Enter your content. If you are using non-latin characters be sure to "
+"activate them under Settings/Visual Composer/General Settings."
+msgstr ""
+"Въведете Вашето съдържание. Ако използвате не латински символи бъдете "
+"сигурни, че сте ги активирали от Настройки/Визуален редактор/Основни "
+"настройки."
+
+#: config/./map.php:3114
+msgid "Select element tag."
+msgstr "Изберете етикет на елемента."
+
+#: config/./map.php:3115
+msgid "Select text alignment."
+msgstr "Изберете подравняване на текста."
+
+#: config/./map.php:3116
+msgid "Enter font size."
+msgstr "Въведете размер на шрифта."
+
+#: config/./map.php:3117
+msgid "Enter line height."
+msgstr "Въведете височина на реда."
+
+#: config/./map.php:3118
+msgid "Select color for your element."
+msgstr "Изберете цвят за Вашият елемент."
+
+#: config/./map.php:3135
+msgid "Select font family."
+msgstr "Изберете семейство на шрифта."
+
+#: config/./map.php:3136
+msgid "Select font styling."
+msgstr "Изберете стил на шрифта."
+
+#: config/./map.php:3166 config/./map.php:3229 config/./map.php:3231
+#, fuzzy
+msgid "Custom query"
+msgstr "Потребителско меню"
+
+#: config/./map.php:3167
+msgid "List of ids"
+msgstr ""
+
+#: config/./map.php:3195
+msgid "2 columns (6 items per row)"
+msgstr ""
+
+#: config/./map.php:3196
+msgid "3 columns (4 items per row)"
+msgstr ""
+
+#: config/./map.php:3197
+msgid "4 columns (3 items per row)"
+msgstr ""
+
+#: config/./map.php:3198
+msgid "6 columns (2 items per row)"
+msgstr ""
+
+#: config/./map.php:3199
+msgid "12 columns (1 item per row)"
+msgstr ""
+
+#: config/./map.php:3205
+msgid "Data source"
+msgstr ""
+
+#: config/./map.php:3208
+msgid "What content do you want to show."
+msgstr ""
+
+#: config/./map.php:3212 config/./map.php:3214
+msgid "Include only"
+msgstr ""
+
+#: config/./map.php:3239
+msgid "Narrow data source"
+msgstr ""
+
+#: config/./map.php:3261
+msgid "Taxonomies like tags, categories as etc."
+msgstr ""
+
+#: config/./map.php:3269
+#, fuzzy
+msgid "Total items count"
+msgstr "Брояч на слайдовете"
+
+#: config/./map.php:3273
+msgid "If empty then all items will be displayed"
+msgstr ""
+
+#: config/./map.php:3281
+#, fuzzy
+msgid "Display Style"
+msgstr "Покажете заглавието на формата"
+
+#: config/./map.php:3284
+#: include/./classes/editors/popups/class-vc-add-element-box.php:70
+msgid "Show all"
+msgstr "Показване на всички"
+
+#: config/./map.php:3285 config/./map.php:3500 config/./map.php:3512
+#: config/./map.php:3525
+#, fuzzy
+msgid "Load more button"
+msgstr "Връзка към прочетете още"
+
+#: config/./map.php:3286
+#, fuzzy
+msgid "Lazy loading"
+msgstr "Зареждане..."
+
+#: config/./map.php:3287 config/./map.php:3688 config/./map.php:3733
+msgid "Paginator"
+msgstr ""
+
+#: config/./map.php:3293 config/./map.php:3295 config/./new_elements.php:87
+msgid "Items per page"
+msgstr ""
+
+#: config/./map.php:3308
+msgid "Show filter on the top of the grid"
+msgstr ""
+
+#: config/./map.php:3312
+#, fuzzy
+msgid "Single element width"
+msgstr "Ширина на елемента"
+
+#: config/./map.php:3320 config/./map.php:3336
+msgid "Gap"
+msgstr ""
+
+#: config/./map.php:3323
+msgid "0px"
+msgstr ""
+
+#: config/./map.php:3324
+msgid "1px"
+msgstr ""
+
+#: config/./map.php:3325
+msgid "2px"
+msgstr ""
+
+#: config/./map.php:3326
+msgid "3px"
+msgstr ""
+
+#: config/./map.php:3327
+msgid "4px"
+msgstr ""
+
+#: config/./map.php:3328
+msgid "5px"
+msgstr ""
+
+#: config/./map.php:3329
+msgid "10px"
+msgstr ""
+
+#: config/./map.php:3330
+msgid "15px"
+msgstr ""
+
+#: config/./map.php:3331
+msgid "20px"
+msgstr ""
+
+#: config/./map.php:3332
+msgid "25px"
+msgstr ""
+
+#: config/./map.php:3333
+msgid "30px"
+msgstr ""
+
+#: config/./map.php:3334
+msgid "35px"
+msgstr ""
+
+#: config/./map.php:3346
+#, fuzzy
+msgid "Order by post id"
+msgstr "Подреждане по"
+
+#: config/./map.php:3349
+msgid "Last modified date"
+msgstr ""
+
+#: config/./map.php:3350
+msgid "Post/page parent id"
+msgstr ""
+
+#: config/./map.php:3351
+#, fuzzy
+msgid "Number of comments"
+msgstr "Брой на коментари за покзване"
+
+#: config/./map.php:3352
+msgid "Menu order/Order by Page Order"
+msgstr ""
+
+#: config/./map.php:3353
+#, fuzzy
+msgid "Meta value"
+msgstr "Стойност на кръговата диаграма"
+
+#: config/./map.php:3354
+msgid "Meta value number"
+msgstr ""
+
+#: config/./map.php:3356
+#, fuzzy
+msgid "Random order"
+msgstr "Случайни"
+
+#: config/./map.php:3358
+msgid ""
+"Note that meta key must also be present if \"Meta value\" or \"Meta value "
+"Number\" is set."
+msgstr ""
+
+#: config/./map.php:3359 config/./map.php:3370 config/./map.php:3386
+#: config/./map.php:3398 config/./map.php:3410
+#, fuzzy
+msgid "Data settings"
+msgstr "Настройки на страница"
+
+#: config/./map.php:3383 config/./map.php:3385
+#, fuzzy
+msgid "Meta key"
+msgstr "Мета"
+
+#: config/./map.php:3395 config/./map.php:3397
+#: include/./templates/params/column_offset/template.tpl.php:17
+msgid "Offset"
+msgstr "Изместване"
+
+#: config/./map.php:3424
+msgid "Source"
+msgstr ""
+
+#: config/./map.php:3427 config/./map.php:3451 config/./map.php:3466
+#: config/./map.php:3478 config/./map.php:3491
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:839
+msgid "Filter"
+msgstr ""
+
+#: config/./map.php:3438 config/./map.php:3544
+msgid "Rounded"
+msgstr ""
+
+#: config/./map.php:3439
+msgid "Less Rounded"
+msgstr ""
+
+#: config/./map.php:3440 include/./params/css_editor/css_editor.php:43
+msgid "Border"
+msgstr "Рамка"
+
+#: config/./map.php:3441
+#, fuzzy
+msgid "Rounded Border"
+msgstr "Рамка"
+
+#: config/./map.php:3442
+msgid "Less Rounded Border"
+msgstr ""
+
+#: config/./map.php:3443
+msgid "Filled"
+msgstr ""
+
+#: config/./map.php:3444
+msgid "Rounded Filled"
+msgstr ""
+
+#: config/./map.php:3445
+#: include/./classes/settings/class-vc-automapper.php:283
+msgid "Dropdown"
+msgstr "Падащо меню"
+
+#: config/./map.php:3455
+#, fuzzy
+msgid "Align"
+msgstr "Подравняване на ляво"
+
+#: config/./map.php:3482
+#, fuzzy
+msgid "Filter size"
+msgstr "Размер на шрифта"
+
+#: config/./map.php:3486
+#, fuzzy
+msgid "Filter size."
+msgstr "Размер на шрифта"
+
+#: config/./map.php:3508
+#, fuzzy
+msgid "Button color"
+msgstr "Цвят на бутона."
+
+#: config/./map.php:3534
+#, fuzzy
+msgid "Arrows design"
+msgstr "Икона със стрелка"
+
+#: config/./map.php:3538
+msgid "Simple"
+msgstr ""
+
+#: config/./map.php:3539
+msgid "Simple Circle Border"
+msgstr ""
+
+#: config/./map.php:3540
+msgid "Simple Circle"
+msgstr ""
+
+#: config/./map.php:3541
+msgid "Simple Square"
+msgstr ""
+
+#: config/./map.php:3542
+msgid "Simple Square Rounded"
+msgstr ""
+
+#: config/./map.php:3543
+msgid "Simple Rounded"
+msgstr ""
+
+#: config/./map.php:3545
+msgid "Rounded Circle Border"
+msgstr ""
+
+#: config/./map.php:3546
+msgid "Rounded Circle"
+msgstr ""
+
+#: config/./map.php:3547
+msgid "Rounded Square"
+msgstr ""
+
+#: config/./map.php:3548
+msgid "Simple Arrow"
+msgstr ""
+
+#: config/./map.php:3549
+msgid "Simple Rounded Arrow"
+msgstr ""
+
+#: config/./map.php:3552 config/./map.php:3566 config/./map.php:3578
+#: config/./map.php:3610 config/./map.php:3622 config/./map.php:3634
+#: config/./map.php:3646 config/./map.php:3656 config/./map.php:3669
+#, fuzzy
+msgid "Pagination controls"
+msgstr "Скриване на контролите на пагинацията"
+
+#: config/./map.php:3560
+#, fuzzy
+msgid "Arrows position"
+msgstr "Икона със стрелка"
+
+#: config/./map.php:3563
+msgid "Inside Wrapper"
+msgstr ""
+
+#: config/./map.php:3564
+msgid "Outside Wrapper"
+msgstr ""
+
+#: config/./map.php:3574
+#, fuzzy
+msgid "Arrows color"
+msgstr "Икона със стрелка"
+
+#: config/./map.php:3586
+msgid "Paging design"
+msgstr ""
+
+#: config/./map.php:3590
+msgid "Square Dots"
+msgstr ""
+
+#: config/./map.php:3591
+msgid "Radio Dots"
+msgstr ""
+
+#: config/./map.php:3592
+msgid "Point Dots"
+msgstr ""
+
+#: config/./map.php:3593
+msgid "Fill Square Dots"
+msgstr ""
+
+#: config/./map.php:3594
+msgid "Rounded Fill Square Dots"
+msgstr ""
+
+#: config/./map.php:3595
+msgid "Pagination Default"
+msgstr ""
+
+#: config/./map.php:3596
+msgid "Outline Default Dark"
+msgstr ""
+
+#: config/./map.php:3597
+msgid "Outline Default Light"
+msgstr ""
+
+#: config/./map.php:3598
+msgid "Pagination Rounded"
+msgstr ""
+
+#: config/./map.php:3599
+msgid "Outline Rounded Dark"
+msgstr ""
+
+#: config/./map.php:3600
+msgid "Outline Rounded Light"
+msgstr ""
+
+#: config/./map.php:3601
+msgid "Pagination Square"
+msgstr ""
+
+#: config/./map.php:3602
+msgid "Outline Square Dark"
+msgstr ""
+
+#: config/./map.php:3603
+msgid "Outline Square Light"
+msgstr ""
+
+#: config/./map.php:3604
+msgid "Pagination Rounded Square"
+msgstr ""
+
+#: config/./map.php:3605
+msgid "Outline Rounded Square Dark"
+msgstr ""
+
+#: config/./map.php:3606
+msgid "Outline Rounded Square Light"
+msgstr ""
+
+#: config/./map.php:3607
+msgid "Stripes Dark"
+msgstr ""
+
+#: config/./map.php:3608
+msgid "Stripes Light"
+msgstr ""
+
+#: config/./map.php:3618
+#, fuzzy
+msgid "Paging color"
+msgstr "Цвят на лентата"
+
+#: config/./map.php:3630 config/./map.php:3632
+msgid "Loop"
+msgstr ""
+
+#: config/./map.php:3642
+msgid "Autoplay time"
+msgstr ""
+
+#: config/./map.php:3645
+msgid "Default -1. Disabled autoplay."
+msgstr ""
+
+#: config/./map.php:3654
+#, fuzzy
+msgid "Animation In"
+msgstr "CSS анимация"
+
+#: config/./map.php:3667
+#, fuzzy
+msgid "Animation Out"
+msgstr "CSS анимация"
+
+#: config/./map.php:3680
+#, fuzzy
+msgid "Basic grid"
+msgstr "Мрежа с изображения"
+
+#: config/./map.php:3684 config/./map.php:3694
+#, fuzzy
+msgid "All in one grid element"
+msgstr "Добавете нов елемент"
+
+#: config/./map.php:3690
+#, fuzzy
+msgid "Masonry grid"
+msgstr "Зидария"
+
+#: config/./map.php:3724
+#, fuzzy
+msgid "Media grid"
+msgstr "Медия галерия"
+
+#: config/./map.php:3728 config/./map.php:3739
+#, fuzzy
+msgid "Media grid element"
+msgstr "Добавяне на елемент"
+
+#: config/./map.php:3735
+msgid "Masonry Media grid"
+msgstr ""
+
+#: config/./new_elements.php:72
+#, fuzzy
+msgid "Load more button style"
+msgstr "Стил на бутона"
+
+#: config/./new_elements.php:73
+#, fuzzy
+msgid "Select load more button style"
+msgstr "Изберете тип бутон."
+
+#: config/./new_elements.php:89
+msgid "How much Items to display in one view (default 10)"
+msgstr ""
+
+#: config/./new_elements.php:99
+#, fuzzy
+msgid "Arrows style"
+msgstr "Стил на предупреждение."
+
+#: config/./new_elements.php:100
+msgid "Select arrows style(carousel)"
+msgstr ""
+
+#: config/./new_elements.php:103
+#, fuzzy
+msgid "Style1"
+msgstr "Стил"
+
+#: config/./new_elements.php:104
+#, fuzzy
+msgid "Style2"
+msgstr "Стил"
+
+#: config/./new_elements.php:114
+#, fuzzy
+msgid "Pager style"
+msgstr "Стил на изображението"
+
+#: config/./new_elements.php:115
+msgid "Select pager style(carousel)"
+msgstr ""
+
+#: config/./new_elements.php:118
+#, fuzzy
+msgid "Box style"
+msgstr "Стил на бутона"
+
+#: config/./new_elements.php:119
+#, fuzzy
+msgid "Numbers"
+msgstr "Брои снимки"
+
+#: config/./new_elements.php:120
+msgid "Circles"
+msgstr ""
+
+#: config/./new_elements.php:130
+msgid "Auto play pager"
+msgstr ""
+
+#: config/./new_elements.php:134
+msgid "Auto play pager?"
+msgstr ""
+
+#: config/./new_elements.php:143
+msgid "Loop pager"
+msgstr ""
+
+#: config/./new_elements.php:147
+#, fuzzy
+msgid "Loop pager content?"
+msgstr "Съдържание на сгъваемия елемент"
+
+#: config/./new_elements.php:156
+msgid "Speed for slides changes in autoplay mode in milliseconds, default 500"
+msgstr ""
+
+#: config/./new_elements.php:158
+msgid "Auto play speed"
+msgstr ""
+
+#: config/./new_elements.php:167
+#, fuzzy
+msgid "Carousel effect"
+msgstr "Съдържание на въртележката"
+
+#: config/./templates.php:5
+msgid "Landing Page"
+msgstr "Основна страница"
+
+#: config/./templates.php:16
+msgid "Call to Action Page"
+msgstr "Страница за действие"
+
+#: config/./templates.php:26
+msgid "Feature List"
+msgstr "Списък с функции"
+
+#: config/./templates.php:36
+msgid "Description Page"
+msgstr "Страница за описание"
+
+#: config/./templates.php:46
+msgid "Service List"
+msgstr "Списък с услуги"
+
+#: config/./templates.php:56
+msgid "Product Page"
+msgstr "Страница на продукта"
+
+#: include/./classes/core/class-vc-base.php:461
+msgid "Add/remove picture"
+msgstr "Добавяне/премахване на снимка"
+
+#: include/./classes/core/class-vc-base.php:462
+msgid "Finish Adding Images"
+msgstr "Финализиране с добавянето на изображения"
+
+#: include/./classes/core/class-vc-base.php:463
+msgid "Add Image"
+msgstr "Добавете изобравение"
+
+#: include/./classes/core/class-vc-base.php:464
+msgid "Add Images"
+msgstr "Добавете изображения"
+
+#: include/./classes/core/class-vc-base.php:465
+#: include/./classes/editors/class-vc-backend-editor.php:52
+#: include/./classes/editors/navbar/class-vc-navbar.php:60
+#: include/./classes/editors/navbar/class-vc-navbar.php:62
+#: include/./classes/settings/class-vc-settings.php:100
+#: include/./classes/settings/class-vc-settings.php:106
+msgid "Visual Composer"
+msgstr "Визуален редактор"
+
+#: include/./classes/core/class-vc-base.php:466
+msgid "BACKEND EDITOR"
+msgstr "Редактор за бек-енда"
+
+#: include/./classes/core/class-vc-base.php:467
+msgid "FRONTEND EDITOR"
+msgstr "Редактор на фронт-енда"
+
+#: include/./classes/core/class-vc-base.php:468
+msgid "CLASSIC MODE"
+msgstr "Класически режим"
+
+#: include/./classes/core/class-vc-base.php:469
+msgid "Please enter template name"
+msgstr "Моля въведете име на шаблона"
+
+#: include/./classes/core/class-vc-base.php:470
+msgid ""
+"Confirm deleting \"{template_name}\" template, press Cancel to leave. This "
+"action cannot be undone."
+msgstr ""
+"Потвърдете изтриването \"{template_name}\" на шаблона, натиснете отказ за да "
+"го оставите. Това действие не може да бъде върнато."
+
+#: include/./classes/core/class-vc-base.php:471
+msgid "Press OK to delete section, Cancel to leave"
+msgstr "Натиснете ОК за да изтриете раздела, Отказ за да го оставите"
+
+#: include/./classes/core/class-vc-base.php:472
+msgid "Drag and drop me in the column"
+msgstr "Превлачете ме и ме пуснете в колоната"
+
+#: include/./classes/core/class-vc-base.php:473
+msgid "Press OK to delete \"{tab_name}\" tab, Cancel to leave"
+msgstr ""
+"Натиснете ОК за да изтриете \"{tab_name}\" раздела, Отказ за да го оставите"
+
+#: include/./classes/core/class-vc-base.php:474
+#: include/./classes/shortcodes/vc-tour.php:4
+msgid "Slide"
+msgstr "Слайд"
+
+#: include/./classes/core/class-vc-base.php:477
+msgid "Please enter new tab title"
+msgstr "Моля въведете ново заглавие на раздела"
+
+#: include/./classes/core/class-vc-base.php:478
+msgid "Press OK to delete \"{tab_name}\" section, Cancel to leave"
+msgstr ""
+"Натиснете OK за да изтриете \"{tab_name}\" раздела, Отказ за да го оставите"
+
+#: include/./classes/core/class-vc-base.php:480
+msgid "Please enter new section title"
+msgstr "Моля въведете заглавието на новия раздел"
+
+#: include/./classes/core/class-vc-base.php:481
+msgid "Error. Please try again."
+msgstr "Грешка. Моля опитайте отново."
+
+#: include/./classes/core/class-vc-base.php:482
+msgid ""
+"If you close this window all shortcode settings will be lost. Close this "
+"window?"
+msgstr ""
+"Ако затворите този прозорец настройките на всичките кратки кодове ще бъдат "
+"загубени. Затворете този прозорец?"
+
+#: include/./classes/core/class-vc-base.php:483
+msgid "Select element type"
+msgstr "Изберете тип на елемента"
+
+#: include/./classes/core/class-vc-base.php:484
+msgid "Media gallery"
+msgstr "Медия галерия"
+
+#: include/./classes/core/class-vc-base.php:485
+msgid "Element settings"
+msgstr "Настройки на елемента"
+
+#: include/./classes/core/class-vc-base.php:486
+msgid "Add tab"
+msgstr "Добавете раздел"
+
+#: include/./classes/core/class-vc-base.php:487
+msgid "Are you sure you want to convert to new version?"
+msgstr "Сигурни ли сте, че искате да конвертирате до новата версия?"
+
+#: include/./classes/core/class-vc-base.php:488
+msgid "Loading..."
+msgstr "Зареждане..."
+
+#: include/./classes/core/class-vc-base.php:490
+msgid "Set Image"
+msgstr "Задайте изображение"
+
+#: include/./classes/core/class-vc-base.php:491
+msgid "Are you sure that you want to remove all your data?"
+msgstr "Сигурни ли сте, че искате да премахнете всичките Ваши данни?"
+
+#: include/./classes/core/class-vc-base.php:492
+msgid "Loop settings"
+msgstr "Настройки на Loop"
+
+#: include/./classes/core/class-vc-base.php:493
+msgid "Enter custom layout for your row:"
+msgstr "Въведете потребителско оформление за Вашият ред:"
+
+#: include/./classes/core/class-vc-base.php:494
+msgid "Wrong row layout format! Example: 1/2 + 1/2 or span6 + span6."
+msgstr ""
+"Грешен формат на оформлението за реда! Пример: 1/2 + 1/2 or span6 + span6."
+
+#: include/./classes/core/class-vc-base.php:495
+msgid "Row background color"
+msgstr "Цвят на фона за реда"
+
+#: include/./classes/core/class-vc-base.php:496
+msgid "Row background image"
+msgstr "Изображение на фона за реда"
+
+#: include/./classes/core/class-vc-base.php:497
+msgid "Column background color"
+msgstr "Цвят на фона за колоната"
+
+#: include/./classes/core/class-vc-base.php:498
+msgid "Column background image"
+msgstr "Изображение на фона за колоната"
+
+#: include/./classes/core/class-vc-base.php:499
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:22
+msgid "Guides ON"
+msgstr "Включено ръководство"
+
+#: include/./classes/core/class-vc-base.php:500
+msgid "Guides OFF"
+msgstr "Изключено ръководство"
+
+#: include/./classes/core/class-vc-base.php:501
+msgid "New template successfully saved!"
+msgstr "Успешно е запаметено новото оформление!"
+
+#: include/./classes/core/class-vc-base.php:502
+msgid "Template added to the page."
+msgstr "Оформлението е добавено към страницата."
+
+#: include/./classes/core/class-vc-base.php:503
+msgid "Nothing to save. Template is empty."
+msgstr "Няма нищо за запаметяване. Оформлението е празно."
+
+#: include/./classes/core/class-vc-base.php:504
+msgid "Page settings updated!"
+msgstr "Настройките на страница са обновени!"
+
+#: include/./classes/core/class-vc-base.php:505
+msgid "Update all"
+msgstr "Обновете всички"
+
+#: include/./classes/core/class-vc-base.php:506
+msgid "The changes you made will be lost if you navigate away from this page."
+msgstr ""
+"Промените, който сте направили ще бъдат изгубени, ако смените тази страница."
+
+#: include/./classes/core/class-vc-base.php:507
+#, php-format
+msgid "%s saved!"
+msgstr "%s запаметени!"
+
+#: include/./classes/core/class-vc-base.php:508
+#, php-format
+msgid "%s deleted!"
+msgstr "%s изтрити!"
+
+#: include/./classes/core/class-vc-base.php:509
+#, php-format
+msgid ""
+"%s cloned. <a href=\"#\" class=\"vc_edit-cloned\" data-model-id=\"%s\">Edit "
+"now?</a>"
+msgstr ""
+"%s клонирани. <a href=\"#\" class=\"vc_edit-cloned\" data-model-id=\"%s"
+"\">Редактиране сега?</a>"
+
+#: include/./classes/core/class-vc-base.php:510
+msgid "Loading Google Font failed"
+msgstr "Зареждането на Google шрифт е провалено"
+
+#: include/./classes/core/class-vc-base.php:511
+msgid "Loading Font..."
+msgstr "Зареждане на шрифта..."
+
+#: include/./classes/core/class-vc-base.php:512
+msgid "Unable to load Google Fonts"
+msgstr "Не е възможно зареждането на Google шрифтове"
+
+#: include/./classes/core/class-vc-base.php:548
+#: include/./classes/settings/class-vc-settings.php:99
+#: include/./classes/settings/class-vc-settings.php:105
+#: include/./classes/settings/class-vc-settings.php:983
+msgid "Visual Composer Settings"
+msgstr "Настройки на визуалния редактор"
+
+#: include/./classes/core/class-wpb-map.php:104
+#: include/./classes/core/class-wpb-map.php:121
+#: include/./classes/core/class-wpb-map.php:288
+#: include/./classes/core/class-wpb-map.php:316
+#: include/./classes/core/class-wpb-map.php:357
+#: include/./classes/core/class-wpb-map.php:423
+#, php-format
+msgid "Wrong name for shortcode:%s. Name required"
+msgstr "Грешно име за краткия код:%s. Името е задължително"
+
+#: include/./classes/core/class-wpb-map.php:106
+#: include/./classes/core/class-wpb-map.php:123
+#, php-format
+msgid "Wrong base for shortcode:%s. Base required"
+msgstr "Грешна база за краткия код:%s. Базата е задължителна"
+
+#: include/./classes/core/class-wpb-map.php:318
+#: include/./classes/core/class-wpb-map.php:359
+#, php-format
+msgid "Wrong attribute for '%s' shortcode. Attribute 'param_name' required"
+msgstr ""
+"Грешен атрибут за %s' краткия код. Атрибутът 'param_name' е задължителен"
+
+#: include/./classes/core/class-wpb-map.php:425
+#, php-format
+msgid "Wrong setting_name for shortcode:%s. Base can't be modified."
+msgstr ""
+"Грешни setting_name за краткия код:%s. Базата не може да се модифицира."
+
+#: include/./classes/editors/class-vc-edit-form-fields.php:136
+msgid "General"
+msgstr "Общи"
+
+#: include/./classes/editors/class-vc-edit-form-fields.php:167
+#: include/./classes/settings/class-vc-automapper.php:314
+msgid "Edit"
+msgstr "Редактиране"
+
+#: include/./classes/editors/class-vc-frontend-editor.php:312
+#, php-format
+msgid "Edit %s with Visual Composer"
+msgstr "Редактиране на %s с визуалния редактор"
+
+#: include/./classes/editors/class-vc-frontend-editor.php:316
+#, fuzzy
+msgid "(no title)"
+msgstr "Заглавие на формата"
+
+#: include/./classes/editors/class-vc-frontend-editor.php:325
+#: include/./classes/editors/class-vc-frontend-editor.php:335
+#: include/./classes/editors/class-vc-frontend-editor.php:374
+msgid "Edit with Visual Composer"
+msgstr "Редактиране с визуалния редактор"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:21
+msgid "Toggle editor's guides"
+msgstr ""
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:31
+msgid "Desktop"
+msgstr "Десктоп"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:37
+msgid "Tablet landscape mode"
+msgstr "Таблет в пейзажен режим"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:42
+msgid "Tablet portrait mode"
+msgstr "Портретен режим за таблет"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:47
+msgid "Smartphone landscape mode"
+msgstr "Пейзажен режим за смартфон"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:52
+msgid "Smartphone portrait mode"
+msgstr "Портретен режим за смартфон"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:60
+msgid "Responsive preview"
+msgstr "Респонзив преглед"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:84
+msgid "Cancel all changes and return to WP dashboard"
+msgstr "Откажете всичките промени и се върнете към Таблото на WP"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:84
+msgid "Backend editor"
+msgstr "Редактор на административната част"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:89
+msgid "Save draft"
+msgstr "Запазете като чернова"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:93
+msgid "Save as Pending"
+msgstr "Запазете като чакащо"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:98
+msgid "Publish"
+msgstr "Публикуване"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:102
+msgid "Submit for Review"
+msgstr "Подайте за преглед"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:106
+#: include/./classes/editors/navbar/class-vc-navbar.php:96
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:28
+msgid "Update"
+msgstr "Актуализирайте"
+
+#: include/./classes/editors/navbar/class-vc-navbar-frontend.php:117
+msgid "Exit Visual Composer edit mode"
+msgstr "Излезте от режима на редактиране за Визуалния редактор"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:67
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:8
+msgid "Page settings"
+msgstr "Настройки на страница"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:68
+msgid "CSS"
+msgstr "CSS"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:74
+msgid "Add new element"
+msgstr "Добавете нов елемент"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:80
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:8
+msgid "Templates"
+msgstr "Шаблони"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:85
+msgid "Frontend"
+msgstr "Потребителска част"
+
+#: include/./classes/editors/navbar/class-vc-navbar.php:95
+msgid "Preview"
+msgstr "Превю"
+
+#: include/./classes/editors/popups/class-vc-add-element-box.php:82
+msgid "Other"
+msgstr "Други"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:223
+msgid "Delete template"
+msgstr "Изтрийте шаблона"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:232
+msgid "Save current page as a Template"
+msgstr "Запазете моментната страница, като шаблон"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:234
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:34
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:46
+msgid "Load Template"
+msgstr "Заредете шаблон"
+
+#: include/./classes/editors/popups/class-vc-templates-editor.php:240
+msgid "No custom templates yet."
+msgstr "Няма потребителски шаблони все още."
+
+#: include/./classes/settings/class-vc-automapper.php:110
+#: include/./classes/settings/class-vc-automapper.php:123
+msgid "My shortcodes"
+msgstr "Моите кратки кодове"
+
+#: include/./classes/settings/class-vc-automapper.php:121
+msgid "Are you sure you want to delete this shortcode?"
+msgstr "Сигурни ли сте, че искате да изтриете този кратък код?"
+
+#: include/./classes/settings/class-vc-automapper.php:122
+msgid "Are you sure you want to delete the shortcode's param?"
+msgstr "Сигурни ли сте, че искате да изтриете параметъра на краткия код?"
+
+#: include/./classes/settings/class-vc-automapper.php:124
+msgid "Shortcode name is required."
+msgstr "Името на краткия код е задължително."
+
+#: include/./classes/settings/class-vc-automapper.php:125
+msgid "Please enter valid shortcode tag."
+msgstr "Моля въведете валиден етикет за кратък код."
+
+#: include/./classes/settings/class-vc-automapper.php:126
+msgid "Please enter all required fields for params."
+msgstr "Моля въведете всичките задължителни полета за параметрите."
+
+#: include/./classes/settings/class-vc-automapper.php:127
+msgid "New shortcode mapped from string!"
+msgstr "Нов кратък код е нанесен от стринга!"
+
+#: include/./classes/settings/class-vc-automapper.php:128
+msgid "Shortcode updated!"
+msgstr "Краткия код е актуализиран!"
+
+#: include/./classes/settings/class-vc-automapper.php:129
+msgid "Content param can not be added manually, please use checkbox."
+msgstr ""
+"Параметъра за съдържанието не може да бъде добавен ръчно, моля използвайте "
+"квадратчето за маркиране."
+
+#: include/./classes/settings/class-vc-automapper.php:130
+#, php-format
+msgid "Param %s already exists. Param names must be unique."
+msgstr ""
+"Параметъра %s вече съществува. Имената на параметрите трябва да са уникални."
+
+#: include/./classes/settings/class-vc-automapper.php:131
+msgid "Please use only letters, numbers and underscore for param name"
+msgstr "Моля използвайте само букви, цифри и долни черти за име на параметъра"
+
+#: include/./classes/settings/class-vc-automapper.php:132
+msgid "Please enter valid shortcode to parse!"
+msgstr "Моля въведете валиден кратък код за анализиране!"
+
+#: include/./classes/settings/class-vc-automapper.php:147
+msgid ""
+"Use Visual Composer Shortcode Mapper in order to add your custom or 3rd "
+"party vendors shortcodes to the list of Visual Composer elements menu. In "
+"order to map shortcode you need it to be already installed on your WordPress "
+"site."
+msgstr ""
+"Използвайте мапъра на кратки кодове на Визуалния редактор за да добавите "
+"вашите потребителски или кратки кодове на вендори от 3-та страна в списъка "
+"на менюто с елементи за визуалния редактор. За да нанесете кратък код Вие "
+"трябва вече да сте го инсталирали на вашия WordPress сайт."
+
+#: include/./classes/settings/class-vc-automapper.php:150
+msgid "Map shortcode"
+msgstr "Внасяне на кратък код"
+
+#: include/./classes/settings/class-vc-automapper.php:172
+msgid "Please enter shortcode string"
+msgstr "Моля въведете стринга на краткия код"
+
+#: include/./classes/settings/class-vc-automapper.php:176
+msgid "Please enter valid shortcode"
+msgstr "Моля въведете валиден кратък код"
+
+#: include/./classes/settings/class-vc-automapper.php:181
+msgid "Parse shortcode"
+msgstr "Анализиране на кратък код"
+
+#: include/./classes/settings/class-vc-automapper.php:182
+#: include/./classes/settings/class-vc-automapper.php:243
+msgid "Cancel"
+msgstr "Отказ"
+
+#: include/./classes/settings/class-vc-automapper.php:186
+msgid ""
+"Please enter valid shortcode like [my_shortcode first_param="
+"\"first_param_value\"]My shortcode content[/my_shortcode]"
+msgstr ""
+"Моля въведете валиден кратък код като [my_shortcode first_param="
+"\"first_param_value\"]Съдържание на моя кратък код[/my_shortcode]"
+
+#: include/./classes/settings/class-vc-automapper.php:212
+msgid "General information"
+msgstr "Обща информация"
+
+#: include/./classes/settings/class-vc-automapper.php:215
+msgid "Tag:"
+msgstr "Етикет:"
+
+#: include/./classes/settings/class-vc-automapper.php:219
+msgid "Description:"
+msgstr "Описание:"
+
+#: include/./classes/settings/class-vc-automapper.php:223
+msgid "Category:"
+msgstr "Категория:"
+
+#: include/./classes/settings/class-vc-automapper.php:225
+msgid "Comma separated categories names"
+msgstr "Имена на категории разделени със запетая"
+
+#: include/./classes/settings/class-vc-automapper.php:229
+msgid "Include content param into shortcode"
+msgstr "Включва параметри на съдържанието в краткия код"
+
+#: include/./classes/settings/class-vc-automapper.php:235
+msgid "Shortcode parameters"
+msgstr "Параметри на краткия код"
+
+#: include/./classes/settings/class-vc-automapper.php:242
+#: include/./templates/editors/popups/modal_edit_element.tpl.php:13
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:16
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:36
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:16
+msgid "Save changes"
+msgstr "Запазване на промените"
+
+#: include/./classes/settings/class-vc-automapper.php:244
+#: include/./classes/settings/class-vc-automapper.php:313
+msgid "Delete"
+msgstr "Изтриване"
+
+#: include/./classes/settings/class-vc-automapper.php:254
+msgid "Param name"
+msgstr "Име на параметъра"
+
+#: include/./classes/settings/class-vc-automapper.php:258
+#: include/./classes/settings/class-vc-automapper.php:264
+#: include/./classes/settings/class-vc-automapper.php:272
+msgid "Required value"
+msgstr "Изисквана стойност"
+
+#: include/./classes/settings/class-vc-automapper.php:261
+#: include/./classes/settings/class-vc-automapper.php:266
+msgid "Please use only letters, numbers and underscore."
+msgstr "Моля използвайте само букви, числа и долна черта."
+
+#: include/./classes/settings/class-vc-automapper.php:270
+msgid "Heading"
+msgstr "Заглавие"
+
+#: include/./classes/settings/class-vc-automapper.php:274
+msgid "Heading for field in shortcode edit form."
+msgstr "Заглавие за полето във формата за редактиране на краткия."
+
+#: include/./classes/settings/class-vc-automapper.php:277
+msgid "Field type"
+msgstr "Тип на полето"
+
+#: include/./classes/settings/class-vc-automapper.php:279
+msgid "Select field type"
+msgstr "Изберете тип на полето"
+
+#: include/./classes/settings/class-vc-automapper.php:281
+msgid "Textfield"
+msgstr "Текстово поле"
+
+#: include/./classes/settings/class-vc-automapper.php:285
+msgid "Textarea"
+msgstr "Текстова област"
+
+#: include/./classes/settings/class-vc-automapper.php:287
+msgid "Textarea HTML"
+msgstr "HTML за текстовата област"
+
+#: include/./classes/settings/class-vc-automapper.php:290
+msgid "Field type for shortcode edit form."
+msgstr "Тип на полето за формата за редактиране на краткия код."
+
+#: include/./classes/settings/class-vc-automapper.php:293
+msgid "Default value"
+msgstr "Стойност по подразбиране"
+
+#: include/./classes/settings/class-vc-automapper.php:296
+msgid "Default value or list of values for dropdown type(separate by comma)."
+msgstr ""
+"Стойност по подразбиране на списъците със стойности за типа на падащото "
+"меню(разделено със запетая)."
+
+#: include/./classes/settings/class-vc-automapper.php:301
+msgid "Explain param."
+msgstr "Обясняване на параметъра."
+
+#: include/./classes/settings/class-vc-license.php:97
+#, php-format
+msgid ""
+"Hola! Please <a href=\"%s\">activate your copy</a> of Visual Composer to "
+"receive automatic updates."
+msgstr ""
+"Здравейте! Моля <a href=\"%s\">активирайте Вашето копие</a> на визуалния "
+"редактор за да получавате автоматични ъпдейти."
+
+#: include/./classes/settings/class-vc-settings.php:74
+msgid "General Settings"
+msgstr "Основни настройки"
+
+#: include/./classes/settings/class-vc-settings.php:78
+msgid "Design Options"
+msgstr "Опции за дизайна"
+
+#: include/./classes/settings/class-vc-settings.php:80
+msgid "Custom CSS"
+msgstr "Потребителски CSS"
+
+#: include/./classes/settings/class-vc-settings.php:84
+msgid "Product License"
+msgstr "Лиценз за продукта"
+
+#: include/./classes/settings/class-vc-settings.php:136
+msgid "Main accent color"
+msgstr "Цвят на основния акцент"
+
+#: include/./classes/settings/class-vc-settings.php:137
+msgid "Hover color"
+msgstr "Цвят при покриване с мишката"
+
+#: include/./classes/settings/class-vc-settings.php:138
+msgid "Call to action background color"
+msgstr "Фонов цвят за извикване на действие"
+
+#: include/./classes/settings/class-vc-settings.php:140
+msgid "Google maps background color"
+msgstr "Фонов цвят на Google карти"
+
+#: include/./classes/settings/class-vc-settings.php:141
+msgid "Post slider caption background color"
+msgstr "Фонов цвят на описанието за слайдера за публикации"
+
+#: include/./classes/settings/class-vc-settings.php:142
+msgid "Progress bar background color"
+msgstr "Фонов цвят за прогрес бара"
+
+#: include/./classes/settings/class-vc-settings.php:143
+msgid "Separator border color"
+msgstr "Цвят на рамката на разделителя"
+
+#: include/./classes/settings/class-vc-settings.php:144
+msgid "Tabs navigation background color"
+msgstr "Фонов цвят на навигацията на разделите"
+
+#: include/./classes/settings/class-vc-settings.php:145
+msgid "Active tab background color"
+msgstr "Фонов цвят на активния раздел"
+
+#: include/./classes/settings/class-vc-settings.php:188
+msgid "Content types"
+msgstr "Типове съдържание"
+
+#: include/./classes/settings/class-vc-settings.php:193
+msgid "User groups access rules"
+msgstr "Права за достъп за потребителските групи"
+
+#: include/./classes/settings/class-vc-settings.php:197
+msgid "Disable responsive content elements"
+msgstr "Забраняване на респонзив елементите на съдържанието"
+
+#: include/./classes/settings/class-vc-settings.php:201
+msgid "Google fonts subsets"
+msgstr "Подгрупи на Google шрифтове"
+
+#: include/./classes/settings/class-vc-settings.php:214
+msgid "Use custom design options"
+msgstr "Използвайте опциите на потребителския дизайн"
+
+#: include/./classes/settings/class-vc-settings.php:239
+msgid "Elements bottom margin"
+msgstr "Долен отстъп на елементите"
+
+#: include/./classes/settings/class-vc-settings.php:249
+msgid "Grid gutter width"
+msgstr "Ширина на улея на мрежата"
+
+#: include/./classes/settings/class-vc-settings.php:259
+msgid "Mobile screen width"
+msgstr "Ширина на мобилен екран"
+
+#: include/./classes/settings/class-vc-settings.php:305
+msgid "Paste your CSS code"
+msgstr "Поставете Вашият CSS код"
+
+#: include/./classes/settings/class-vc-settings.php:314
+msgid "Envato Username"
+msgstr "Envato потребителско име"
+
+#: include/./classes/settings/class-vc-settings.php:318
+msgid "Secret API Key"
+msgstr "Секретен API ключ"
+
+#: include/./classes/settings/class-vc-settings.php:322
+msgid "Visual Composer License Key"
+msgstr "Лицензен ключ за визуалния редактор"
+
+#: include/./classes/settings/class-vc-settings.php:405
+#: include/./classes/settings/class-vc-settings.php:406
+msgid "Are you sure you want to reset to defaults?"
+msgstr "Сигурни ли сте, че искате да възстановите настройките по подразбиране?"
+
+#: include/./classes/settings/class-vc-settings.php:407
+msgid "Something went wrong! Please try again later."
+msgstr "Нещо се обърка! Моля опитайте отново."
+
+#: include/./classes/settings/class-vc-settings.php:408
+msgid "License successfully activated. Thank you!"
+msgstr "Лиценза успешно е активиран. Благодарим Ви!"
+
+#: include/./classes/settings/class-vc-settings.php:409
+msgid "Your license key is deactivated."
+msgstr "Вашият лицензен ключ е деактивиран."
+
+#: include/./classes/settings/class-vc-settings.php:410
+msgid "Envato username and license key are required."
+msgstr "Envato потребителско име и лицензен ключ са задължителни."
+
+#: include/./classes/settings/class-vc-settings.php:411
+msgid "Invalid liense key. Please check information in your envato profile."
+msgstr ""
+"Невалиден лицензен ключ. Моля проверете информацията във Вашият envato "
+"профил."
+
+#: include/./classes/settings/class-vc-settings.php:412
+msgid "Wrong data. Please check your information or ask support for help."
+msgstr ""
+"Грешни данни, Моля проверете Вашата информация или попитайте поддръжката за "
+"помощ."
+
+#: include/./classes/settings/class-vc-settings.php:413
+msgid "License successfully activated. Thank you! (401)"
+msgstr "Лицензът е успешно активиран. Благодарим Ви! (401)"
+
+#: include/./classes/settings/class-vc-settings.php:414
+#, php-format
+msgid ""
+"Your license key is already activated on another website ({site}), you "
+"should deactivate it first or <a href=\"%s\" target=\"_blank\">obtain new "
+"license key</a>."
+msgstr ""
+"Вашият лицензен ключ е вече активиран за друг уеб сайт ({site}), Вие трябва "
+"го деактивирате първо или да <a href=\"%s\" target=\"_blank\">вземете нов "
+"лицензен ключ</a>."
+
+#: include/./classes/settings/class-vc-settings.php:415
+#: include/./classes/settings/class-vc-settings.php:1109
+msgid "Activate license"
+msgstr "Активирайте лиценза"
+
+#: include/./classes/settings/class-vc-settings.php:416
+#: include/./classes/settings/class-vc-settings.php:1109
+msgid "Deactivate license"
+msgstr "Деактивирайте лиценза"
+
+#: include/./classes/settings/class-vc-settings.php:431
+msgid "Show Visual Composer & default editor"
+msgstr "Покажете Визуалният редактор и редактора по подразбиране"
+
+#: include/./classes/settings/class-vc-settings.php:432
+msgid "Show only Visual Composer"
+msgstr "Покажете само Визуалният редактор"
+
+#: include/./classes/settings/class-vc-settings.php:433
+msgid "Don't allow to use Visual Composer"
+msgstr "Не позволявайте използването на Визуалният редактор"
+
+#: include/./classes/settings/class-vc-settings.php:454
+msgid "Visual Composer access"
+msgstr "Достъп до Визуалния редактор"
+
+#: include/./classes/settings/class-vc-settings.php:464
+msgid "Enabled shortcodes"
+msgstr "Разрешени кратки кодове"
+
+#: include/./classes/settings/class-vc-settings.php:491
+msgid "Select All"
+msgstr "Изберете всичко"
+
+#: include/./classes/settings/class-vc-settings.php:493
+msgid "Select none"
+msgstr "Изберете нищо"
+
+#: include/./classes/settings/class-vc-settings.php:526
+#: include/./classes/settings/class-vc-settings.php:551
+msgid ""
+"Select for which content types Visual Composer should be available during "
+"post creation/editing."
+msgstr ""
+"Изберете за кой тип съдържание за Визуалния редактор трябва да бъде достъпно "
+"по време на създаването/редактирането на публикация."
+
+#: include/./classes/settings/class-vc-settings.php:559
+msgid ""
+"If you want to add some custom CSS code to the plugin and don't want to "
+"modify any files, then it's a good place to enter your code at this field."
+msgstr ""
+"Ако искате да добавите някой потребителски CSS код в плъгина и не искате да "
+"модифицирате файлове, тогава е добре да поставите Вашият код в това поле."
+
+#: include/./classes/settings/class-vc-settings.php:574
+msgid ""
+"Check this checkbox to prevent content elements from \"stacking\" one on top "
+"other (on small media screens, eg. mobile)."
+msgstr ""
+"Маркирайте тази кутия за да се предотврати \"натрупването\" едно върху друго "
+"на съдържанието на елемента  (на малки екрани, напр. мобилно у-во)."
+
+#: include/./classes/settings/class-vc-settings.php:599
+msgid "Select subsets for google fonts."
+msgstr "Изберете подгрупи за google шрифтове."
+
+#: include/./classes/settings/class-vc-settings.php:647
+#: include/./classes/settings/class-vc-settings.php:662
+msgid "Empty value"
+msgstr "Празна стойност"
+
+#: include/./classes/settings/class-vc-settings.php:685
+msgid "Enable"
+msgstr "Разрешаване"
+
+#: include/./classes/settings/class-vc-settings.php:688
+msgid ""
+"Enable the use of custom design options for your site. When checked, custom "
+"css file will be used."
+msgstr ""
+"Разрешаване на използването на потребителски опции за дизайна за Вашият "
+"сайт. Когато е маркирано, ще се използва потребителския CSS файл."
+
+#: include/./classes/settings/class-vc-settings.php:701
+msgid ""
+"To change default vertical spacing between content elements, enter new value "
+"here. Example: 20px"
+msgstr ""
+"За да промените вертикалното разстояние по подразбиране между съдържанието "
+"на елементите, въведете нова стойност тук. Например: 20px"
+
+#: include/./classes/settings/class-vc-settings.php:707
+msgid ""
+"To change default horizontal spacing between columns, enter new value in "
+"pixels here."
+msgstr ""
+"За да промените хоризонталното място по подразбиране между колоните, "
+"въведете нова стойност в пиксели тук."
+
+#: include/./classes/settings/class-vc-settings.php:713
+msgid ""
+"By default content elements \"stack\" one on top other when screen size is "
+"smaller then 768px. Here you can change that value if needed."
+msgstr ""
+"Съдържание на елементите по подразбиране за \"натрупване\" едно върху друго, "
+"когато размера на екрана е по-малък от 768px. Тук можете да смените тази "
+"стойност, ако е нужно."
+
+#: include/./classes/settings/class-vc-settings.php:720
+msgid "Your Envato username."
+msgstr "Вашето Envato потребителско име."
+
+#: include/./classes/settings/class-vc-settings.php:728
+#, php-format
+msgid ""
+"Please enter your CodeCanyon Visual Composer license key, you can find your "
+"key by following the instructions on <a href=\"%s\" target=\"_blank\">this "
+"page</a>. License key looks similar to this: bjg759fk-"
+"kvta-6584-94h6-75jg8vblatftq."
+msgstr ""
+"Моля въведете Вашият CodeCanyon лицензен ключ за Визуалния редактор, Вие "
+"можете да намерите Вашият ключ, като последвате инструкциите на <a href=\"%s"
+"\" target=\"_blank\">тази страница</a>. Лицензния ключ изглежда подобно на "
+"този: bjg759fk-kvta-6584-94h6-75jg8vblatftq."
+
+#: include/./classes/settings/class-vc-settings.php:735
+#, php-format
+msgid ""
+"You can find API key by visiting your Envato Account page, then clicking the "
+"My Settings tab. At the bottom of the page you'll find your account's API "
+"key. <a href='%s' target='_blank'>Need help?</a>"
+msgstr ""
+"Вие можете да намерите API ключ, като посетите Вашата Envato акаунт "
+"страница, и тогава да натиснете на My Settings раздела. Най-отгоре на "
+"страницата Вие ще намерите Вашият API ключ за акаунта. <a href='%s' "
+"target='_blank'>Имате нужда от помощ?</a>"
+
+#: include/./classes/settings/class-vc-settings.php:759
+msgid ""
+"Here you can tweak default Visual Composer content elements visual "
+"appearance. By default Visual Composer is using neutral light-grey theme. "
+"Changing \"Main accent color\" will affect all content elements if no "
+"specific \"content block\" related color is set."
+msgstr ""
+"Тук можете да подобрите външния вид на съдържанието на елементите за "
+"Визуалния редактор по подразбиране. По подразбиране Визуалния редактор "
+"използва неутрална светло-сива тема. Чрез променянето на \"Основния "
+"акцентиращ цвят\" ще има ефект за цялото съдържание на елементите, ако не е "
+"няма специфичен зададен свързан цвят с \"блока за съдържание\"."
+
+#: include/./classes/settings/class-vc-settings.php:767
+msgid "Please activate your license in Product License tab!"
+msgstr "Моля активирайте Вашият лиценз в раздела за лиценз на продукта!"
+
+#: include/./classes/settings/class-vc-settings.php:773
+#, php-format
+msgid ""
+"A valid license key qualifies you for support and enables automatic updates. "
+"<strong>A license key may only be used for one Visual Composer installation "
+"on one WordPress site at a time.</strong> If you previosly activated your "
+"license key on another site, then you should deactivate it first or <a href="
+"\"%s\" target=\"_blank\">obtain new license key</a>."
+msgstr ""
+"Валиден лицензен ключ валидира Вашата поддръжка и разрешава автоматичните "
+"актуализации. <strong>Лицензния ключ може само да бъде използван за една "
+"инсталация на Визуалния редактор на един WordPress сайт по всяко време.</"
+"strong> Ако преди сте активирали лицензния ключ на друг сайт, тогава трябва "
+"първо да го деактивирате или <a href=\"%s\" target=\"_blank\">да вземете нов "
+"лицензен ключ</a>."
+
+#: include/./classes/settings/class-vc-settings.php:877
+msgid "Invalid Margin value."
+msgstr "Не валидна стойност за отстъпа."
+
+#: include/./classes/settings/class-vc-settings.php:886
+msgid "Invalid Gutter value."
+msgstr "Не валидна стойност за улея."
+
+#: include/./classes/settings/class-vc-settings.php:895
+msgid "Invalid \"Responsive max\" value."
+msgstr "Не валидна стойност за \"Респонзив макс\"."
+
+#: include/./classes/settings/class-vc-settings.php:945
+#, php-format
+msgid ""
+"Visual Composer: Your css class names settings are deprecated. <a href=\"%s"
+"\">Click here to resolve</a>."
+msgstr ""
+"Визуалния редактор: Вашите настройки на css имената на класовете са "
+"остарели. <a href=\"%s\">Натиснете тук за да го разрешите</a>."
+
+#: include/./classes/settings/class-vc-settings.php:999
+msgid ""
+"<strong>Deprecated:</strong> To override class names that are applied to "
+"Visual Composer content elements you should use WordPress "
+"add_filter('vc_shortcodes_css_class') function. <a "
+"class='vc_show_example'>See Example</a>."
+msgstr ""
+"<strong>Не препоръчително:</strong> За да презапишете имената, които се "
+"прилагат към съдържанието на елементите за Визуалния редактор Вие трябва да "
+"използвате add_filter('vc_shortcodes_css_class') функция. <a "
+"class='vc_show_example'>Вижте пример</a>."
+
+#: include/./classes/settings/class-vc-settings.php:1007
+msgid ""
+"You have used element class names settings to replace row and column css "
+"classes."
+msgstr ""
+"Вие трябва да използвате настройките за имената на класовете за елемента за "
+"да заместите css класовете на реда и колоната."
+
+#: include/./classes/settings/class-vc-settings.php:1008
+msgid ""
+"Below is code snippet which you should add to your functions.php file in "
+"your theme, to replace row and column classes with custom classes saved by "
+"you earlier."
+msgstr ""
+"По-долу е част от кода, който Вие трябва да използвате във Вашият functions."
+"php файл във Вашата тема. за да заместите класовете на реда и колоната с "
+"потребителски класове запаметени от Вас по-рано."
+
+#: include/./classes/settings/class-vc-settings.php:1077
+msgid "Remove all saved"
+msgstr "Премахнете всичко запаметено"
+
+#: include/./classes/settings/class-vc-settings.php:1098
+msgid "Save Changes"
+msgstr "Запазете промените"
+
+#: include/./classes/settings/class-vc-settings.php:1103
+msgid "Restore to defaults"
+msgstr "Възстановете настройките по подразбиране"
+
+#: include/./classes/settings/class-vc-settings.php:1263
+msgid ""
+"Something went wrong: js_composer_front_custom.css could not be created."
+msgstr ""
+"Нещо се обърка: js_composer_front_custom.css не можеше да бъде създаден."
+
+#: include/./classes/settings/class-vc-settings.php:1265
+msgid "js_composer_front_custom.css could not be created. Connection error."
+msgstr ""
+"js_composer_front_custom.CSS не можеше да бъде създаден. Грешка при "
+"свързването."
+
+#: include/./classes/settings/class-vc-settings.php:1267
+#, php-format
+msgid ""
+"js_composer_front_custom.css could not be created. Cannot write custom css "
+"to \"%s\"."
+msgstr ""
+"js_composer_front_custom.CSS не можеше да бъде създаден. Не може да се "
+"записва потребителски css \"%s\"."
+
+#: include/./classes/settings/class-vc-settings.php:1269
+msgid "js_composer_front_custom.css could not be created. Problem with access."
+msgstr ""
+"js_composer_front_custom.CSS не можеше да бъде създаден. Проблем с достъпа."
+
+#: include/./classes/settings/class-vc-settings.php:1304
+msgid "Something went wrong: custom.css could not be created."
+msgstr "Нещо се обърка: custom.css не можеше да бъде създаден."
+
+#: include/./classes/settings/class-vc-settings.php:1306
+msgid "custom.css could not be created. Connection error."
+msgstr "custom.css не можеше да бъде създаден. Грешка при свързването."
+
+#: include/./classes/settings/class-vc-settings.php:1308
+msgid "custom.css could not be created. Cannot write custom css to \""
+msgstr ""
+"custom.css не можеше да бъде създаден. Не може да се пише потребителски css в"
+"\""
+
+#: include/./classes/settings/class-vc-settings.php:1310
+msgid "custom.css could not be created. Problem with access."
+msgstr "Custom.CSS не можеше да бъде създаден. Проблем с достъпа."
+
+#: include/./classes/settings/class-vc-settings.php:1350
+#: include/./classes/settings/class-vc-settings.php:1356
+msgid "This is required to enable file writing for js_composer"
+msgstr "Това е необходимо за да се разреши писането във файл за js_composer"
+
+#: include/./classes/shortcodes/example.php:94
+msgid "Hello World"
+msgstr "Здравей, свят"
+
+#: include/./classes/shortcodes/example.php:102
+msgid "Foo attribute"
+msgstr "Foo атрибут"
+
+#: include/./classes/shortcodes/example.php:104
+msgid "I'm foo attribute"
+msgstr "Аз съм foo атрибут"
+
+#: include/./classes/shortcodes/example.php:105
+msgid "Enter foo value."
+msgstr "Въведете стойност за foo."
+
+#: include/./classes/shortcodes/example.php:113
+msgid "I'm hello world"
+msgstr "Из съм здравей свят"
+
+#: include/./classes/shortcodes/example.php:118
+msgid "Drop down example"
+msgstr "Пример за падащо меню"
+
+#: include/./classes/shortcodes/example.php:121
+msgid "One, two or three?"
+msgstr "Едно, две или три?"
+
+#: include/./classes/shortcodes/paginator/class-vc-pageable.php:55
+#, fuzzy
+msgid "Load more"
+msgstr "Прочетете повече"
+
+#: include/./classes/shortcodes/shortcodes.php:236
+#, php-format
+msgid ""
+"Template file is missing for `%s` shortcode. Make sure you have `%s` file in "
+"your theme folder."
+msgstr ""
+"Шаблонния файл липсва за '%s' кратък код. Уверете се, че имате '%s' файл във "
+"Вашата папка на темата."
+
+#: include/./classes/shortcodes/shortcodes.php:458
+#: include/./templates/editors/partials/backend_controls.tpl.php:14
+#: include/./templates/editors/partials/backend_controls_tab.tpl.php:13
+#: include/./templates/editors/partials/frontend_controls.tpl.php:10
+#: include/./templates/editors/partials/frontend_controls.tpl.php:29
+#: include/./templates/editors/partials/frontend_controls.tpl.php:59
+#: include/./templates/editors/partials/frontend_controls.tpl.php:81
+#: include/./templates/editors/partials/frontend_controls.tpl.php:109
+#: include/./templates/editors/partials/frontend_controls.tpl.php:134
+#: include/./templates/editors/partials/frontend_controls.tpl.php:165
+#: include/./templates/editors/partials/frontend_controls.tpl.php:187
+#, php-format
+msgid "Edit %s"
+msgstr "Редактиране на %s"
+
+#: include/./classes/shortcodes/shortcodes.php:459
+#: include/./templates/editors/partials/backend_controls.tpl.php:18
+#: include/./templates/editors/partials/backend_controls_tab.tpl.php:17
+#: include/./templates/editors/partials/frontend_controls.tpl.php:13
+#: include/./templates/editors/partials/frontend_controls.tpl.php:35
+#: include/./templates/editors/partials/frontend_controls.tpl.php:65
+#: include/./templates/editors/partials/frontend_controls.tpl.php:118
+#: include/./templates/editors/partials/frontend_controls.tpl.php:171
+#: include/./templates/editors/partials/frontend_controls.tpl.php:193
+#, php-format
+msgid "Clone %s"
+msgstr "Клониране на %s"
+
+#: include/./classes/shortcodes/shortcodes.php:459
+#: include/./templates/editors/partials/backend_controls.tpl.php:22
+#: include/./templates/editors/partials/backend_controls_tab.tpl.php:21
+#: include/./templates/editors/partials/frontend_controls.tpl.php:16
+#: include/./templates/editors/partials/frontend_controls.tpl.php:38
+#: include/./templates/editors/partials/frontend_controls.tpl.php:68
+#: include/./templates/editors/partials/frontend_controls.tpl.php:121
+#: include/./templates/editors/partials/frontend_controls.tpl.php:140
+#: include/./templates/editors/partials/frontend_controls.tpl.php:174
+#: include/./templates/editors/partials/frontend_controls.tpl.php:196
+#, php-format
+msgid "Delete %s"
+msgstr "Изтриване на %s"
+
+#: include/./classes/shortcodes/shortcodes.php:594
+#, php-format
+msgid "Append to this %s"
+msgstr "Добавяне към този %s"
+
+#: include/./classes/shortcodes/shortcodes.php:595
+#, php-format
+msgid "Prepend to this %s"
+msgstr "Прикрепяне към този %s"
+
+#: include/./classes/shortcodes/shortcodes.php:598
+#, php-format
+msgid "Edit this %s"
+msgstr "Редактиране на този %s"
+
+#: include/./classes/shortcodes/shortcodes.php:599
+#, php-format
+msgid "Clone this %s"
+msgstr "Клониране на този %s"
+
+#: include/./classes/shortcodes/shortcodes.php:601
+#, php-format
+msgid "Delete this %s"
+msgstr "Изтриване на този %s"
+
+#: include/./classes/shortcodes/vc-basic-grid.php:84
+#: include/./classes/shortcodes/vc-basic-grid_old.php:81
+msgid "next"
+msgstr ""
+
+#: include/./classes/shortcodes/vc-basic-grid.php:85
+#: include/./classes/shortcodes/vc-basic-grid_old.php:82
+msgid "prev"
+msgstr ""
+
+#: include/./classes/shortcodes/vc-basic-grid.php:86
+#: include/./classes/shortcodes/vc-basic-grid_old.php:83
+msgid "last"
+msgstr ""
+
+#: include/./classes/shortcodes/vc-basic-grid.php:87
+#: include/./classes/shortcodes/vc-basic-grid_old.php:84
+msgid "first"
+msgstr ""
+
+#: include/./classes/shortcodes/vc-column.php:21
+msgid "Append to this column"
+msgstr "Добавяне към тази колона"
+
+#: include/./classes/shortcodes/vc-column.php:22
+#: include/./params/vc_grid_element/vc_grid_element.php:192
+msgid "Prepend to this column"
+msgstr "Прикрепяне към тази колона"
+
+#: include/./classes/shortcodes/vc-column.php:25
+msgid "Edit this column"
+msgstr "Редактиране на тази колона"
+
+#: include/./classes/shortcodes/vc-column.php:26
+msgid "Delete this column"
+msgstr "Изтриване на тази колона"
+
+#: include/./classes/shortcodes/vc-flickr.php:21
+#: include/./templates/shortcodes/vc_flickr.php:19
+msgid "View stream on flickr"
+msgstr "Преглед на стрийминга на flickr"
+
+#: include/./classes/shortcodes/vc-gallery.php:27
+#: include/./params/default_params.php:242
+msgid "Add images"
+msgstr "Добавете изображения"
+
+#: include/./classes/shortcodes/vc-posts-grid.php:22
+#: include/./params/sorted_list/sorted_list.php:30
+msgid "VC: Custom Teaser"
+msgstr "ВР: Потрекитеско закачване"
+
+#: include/./classes/shortcodes/vc-posts-grid.php:123
+#: include/./templates/shortcodes/post_block/_item.php:20
+#: include/./templates/shortcodes/vc_posts_slider.php:152
+#: include/./templates/shortcodes/vc_teaser_grid.php:181
+#: include/./templates/shortcodes/vc_teaser_grid.php:202
+#: include/./templates/shortcodes/vc_teaser_grid.php:203
+#: include/./templates/shortcodes/vc_teaser_grid.php:219
+#, php-format
+msgid "Permalink to %s"
+msgstr "Постоянни връзки към %s"
+
+#: include/./classes/shortcodes/vc-row.php:31
+msgid "Custom layout"
+msgstr "Потребителско оформление"
+
+#: include/./classes/shortcodes/vc-row.php:31
+#: include/./params/sorted_list/sorted_list.php:63
+#: include/./params/sorted_list/sorted_list.php:65
+#: include/./templates/teaser.html.php:30
+#: include/./templates/teaser.html.php:54
+msgid "Custom"
+msgstr "Потребителско"
+
+#: include/./classes/shortcodes/vc-row.php:34
+#: include/./params/vc_grid_element/vc_grid_element.php:148
+msgid "Drag row to reorder"
+msgstr "Превлачете реда за пренареждане"
+
+#: include/./classes/shortcodes/vc-row.php:35
+msgid "Add column"
+msgstr "Добавете колона"
+
+#: include/./classes/shortcodes/vc-row.php:36
+#: include/./params/vc_grid_element/vc_grid_element.php:167
+msgid "Delete this row"
+msgstr "Изтрийте този ред"
+
+#: include/./classes/shortcodes/vc-row.php:37
+msgid "Edit this row"
+msgstr "Редактирайте този ред"
+
+#: include/./classes/shortcodes/vc-row.php:38
+msgid "Clone this row"
+msgstr "Клонирайте този ред"
+
+#: include/./classes/shortcodes/vc-row.php:39
+msgid "Toggle row"
+msgstr "Сгъваем ред"
+
+#: include/./classes/shortcodes/vc-single-image.php:22
+#: include/./params/css_editor/css_editor.php:73
+#: include/./params/default_params.php:239
+msgid "Add image"
+msgstr "Добавете изображение"
+
+#: include/./classes/shortcodes/vc-teaser-grid.php:14
+#, php-format
+msgid "View all posts filed under %s"
+msgstr "Прегледайте всичките публикации попълнени от %s"
+
+#: include/./classes/shortcodes/vc-teaser-grid.php:31
+#, php-format
+msgid "Feed for all posts filed under %s"
+msgstr "Хранилище за всичките публикации попълнени от %s"
+
+#: include/./classes/updaters/class-vc-updater.php:63
+msgid "Downloading package from envato market..."
+msgstr "Сваляне на пакет от envato магазина..."
+
+#: include/./classes/updaters/class-vc-updater.php:68
+msgid "Error! Can't connect to filesystem"
+msgstr "Грешка! Не може да се свържем с файловата система"
+
+#: include/./classes/updaters/class-vc-updater.php:74
+msgid ""
+"To receive automatic updates license activation is required. Please visit <a "
+"href=\""
+msgstr ""
+"За да получавате автоматични обновления е необходим лицензна активация. Моля "
+"посетете <a href=\""
+
+#: include/./classes/updaters/class-vc-updater.php:79
+msgid "Error! Envato API error"
+msgstr "Грешка! Envato API грешка"
+
+#: include/./classes/updaters/class-vc-updater.php:94
+msgid "Error on unzipping package"
+msgstr "Грешка при разархивирането на пакета"
+
+#: include/./classes/updaters/class-vc-updating-manager.php:166
+msgid "Download new version from CodeCanyon."
+msgstr "Сваляне на нова версия от CodeCanyon."
+
+#: include/./classes/updaters/class-vc-updating-manager.php:170
+msgid "Update Visual Composer now."
+msgstr "Актуализирайте визуалния редактор сега."
+
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:31
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:29
+msgid "No sliders found"
+msgstr "Няма намерени слайдери"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:35
+msgid "Layer Slider"
+msgstr "Layer Slaider"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:38
+msgid "Place LayerSlider"
+msgstr "Поставете LayerSlider"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:48
+msgid "LayerSlider ID"
+msgstr "ID на LayerSlider"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-layerslider.php:52
+msgid "Select your LayerSlider."
+msgstr "Изберете Вашият LayerSlider."
+
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:33
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:46
+msgid "Revolution Slider"
+msgstr "Revolution Slider"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:36
+msgid "Place Revolution slider"
+msgstr "Поставете Revolution Slider"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-revslider.php:50
+msgid "Select your Revolution Slider."
+msgstr "Изберете Вашият Revolution Slider."
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:102
+msgid "Cart"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:105
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:122
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:138
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:156
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:184
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:231
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:278
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:323
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:391
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:438
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:480
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:526
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:595
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:667
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:712
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:745
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:799
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:892
+msgid "WooCommerce"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:106
+#, fuzzy
+msgid "Displays the cart contents"
+msgstr "Показване на съдържанието на елемента?"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:119
+msgid "Checkout"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:123
+#, fuzzy
+msgid "Displays the checkout"
+msgstr "Показване на съдържанието на елемента?"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:135
+msgid "Order Tracking Form"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:139
+msgid "Lets a user see the status of an order"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:153
+#, fuzzy
+msgid "My Account"
+msgstr "Няма брой"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:157
+msgid "Shows the \"my account\" section"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:161
+#, fuzzy
+msgid "Order count"
+msgstr "Брояч на слайдовете"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:164
+msgid ""
+"You can specify the number or order to show, it's set by default to 15 (use "
+"-1 to display all orders.)"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:181
+#, fuzzy
+msgid "Recent products"
+msgstr "Последни публикации"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:185
+msgid "Lists recent products"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:189
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:236
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:531
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:672
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:717
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:750
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:804
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:897
+msgid "Per page"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:192
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:239
+msgid ""
+"The \"per_page\" shortcode determines how many products to show on the page"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:196
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:243
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:328
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:538
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:620
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:679
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:724
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:757
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:811
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:904
+#, fuzzy
+msgid "Columns"
+msgstr "Колона"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:199
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:246
+msgid ""
+"The columns attribute controls how many columns wide the products should be "
+"before wrapping."
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:206
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:253
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:337
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:548
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:609
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:689
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:767
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:821
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:914
+#, fuzzy, php-format
+msgid "Select how to sort retrieved products. More at %s."
+msgstr "Изберете как да се сортират извлечените публикации. Повече на %s."
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:228
+#, fuzzy
+msgid "Featured products"
+msgstr "Препоръчани"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:232
+#, fuzzy
+msgid "Display products set as \"featured\""
+msgstr "Показване датата на публикациите?"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:275
+#, fuzzy
+msgid "Product"
+msgstr "Страница на продукта"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:279
+msgid "Show a single product by ID or SKU"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:283
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:396
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:443
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:485
+#, fuzzy
+msgid "Select identificator"
+msgstr "Изберете форма за контакт"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:285
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:398
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:445
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:487
+msgid "Input product ID or product SKU or product title to see suggestions"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:320
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:348
+#, fuzzy
+msgid "Products"
+msgstr "Страница на продукта"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:324
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:392
+msgid "Show multiple products by ID or SKU"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:354
+msgid "Enter List of Products"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:388
+#, fuzzy
+msgid "Add to cart"
+msgstr "Добавете раздел"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:406
+msgid "Wrapper inline style"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:435
+msgid "Add to cart URL"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:439
+msgid "Show URL on the add to cart button"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:477
+#, fuzzy
+msgid "Product page"
+msgstr "Страница на продукта"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:481
+msgid "Show single product by ID or SKU"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:523
+#, fuzzy
+msgid "Product category"
+msgstr "Страница на продукта"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:527
+msgid "Show multiple products in a category"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:534
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:675
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:720
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:753
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:807
+msgid "How much items per page to show"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:541
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:623
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:682
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:727
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:760
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:814
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:907
+msgid "How much columns grid"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:559
+#, fuzzy
+msgid "Category"
+msgstr "Категория:"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:562
+#, fuzzy
+msgid "Product category list"
+msgstr "Лиценз за продукта"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:592
+#, fuzzy
+msgid "Product categories"
+msgstr "Страница на продукта"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:596
+#, fuzzy
+msgid "Display product categories loop"
+msgstr "Показване датата на публикациите?"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:600
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:627
+msgid "Number"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:602
+msgid "The `number` field is used to display the number of products."
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:629
+#, fuzzy
+msgid "Hide empty"
+msgstr "Скрийте панела"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:639
+#, fuzzy
+msgid "List of product categories"
+msgstr "Списък или падащо меню с категории"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:664
+msgid "Sale products"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:668
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:746
+msgid "List all products on sale"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:709
+msgid "Best Selling Products"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:713
+msgid "List best selling products on sale"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:742
+msgid "Top Rated Products"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:796
+#, fuzzy
+msgid "Product Attribute"
+msgstr "Foo атрибут"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:800
+msgid "List products with an attribute shortcode"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:832
+#, fuzzy
+msgid "Attribute"
+msgstr "Foo атрибут"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:835
+msgid "List of product taxonomy attribute"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:842
+#, fuzzy
+msgid "Taxonomy values"
+msgstr "Класификации"
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:887
+msgid "Related Products"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:893
+msgid "List related products"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:900
+msgid ""
+"Please note: the \"per_page\" shortcode argument will determine how many "
+"products are shown on a page. This will not add pagination to the shortcode. "
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1030
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1058
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1092
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1121
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1150
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1185
+msgid "Id"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1034
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1062
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1096
+msgid "Sku"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1123
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1152
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1187
+msgid "Name"
+msgstr ""
+
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1125
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1154
+#: include/./classes/vendors/plugins/class-vc-vendor-woocommerce.php:1189
+msgid "Slug"
+msgstr ""
+
+#: include/./helpers/helpers.php:265
+msgid "Added"
+msgstr "Добавено"
+
+#: include/./helpers/helpers_api.php:4
+msgid "Wrong wpb_map object. Base attribute is required"
+msgstr "Грешен wpb_map обект. Основния атрибут е задължителен"
+
+#: include/./params/animation_style/animation_style.php:36
+msgid "Attention Seekers"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:39
+msgid "bounce"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:43
+msgid "flash"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:47
+msgid "pulse"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:51
+msgid "rubberBand"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:55
+msgid "shake"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:59
+msgid "swing"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:63
+msgid "tada"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:67
+#, fuzzy
+msgid "wobble"
+msgstr "Балон"
+
+#: include/./params/animation_style/animation_style.php:74
+msgid "Bouncing Entrances"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:77
+msgid "bounceIn"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:81
+msgid "bounceInDown"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:85
+msgid "bounceInLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:89
+msgid "bounceInRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:93
+msgid "bounceInUp"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:100
+msgid "Bouncing Exits"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:103
+msgid "bounceOut"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:107
+msgid "bounceOutDown"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:111
+msgid "bounceOutLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:115
+msgid "bounceOutRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:119
+msgid "bounceOutUp"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:126
+msgid "Fading Entrances"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:129
+msgid "fadeIn"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:133
+msgid "fadeInDown"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:137
+msgid "fadeInDownBig"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:141
+msgid "fadeInLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:145
+msgid "fadeInLeftBig"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:149
+msgid "fadeInRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:153
+msgid "fadeInRightBig"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:157
+msgid "fadeInUp"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:161
+msgid "fadeInUpBig"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:168
+msgid "Fading Exits"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:170
+msgid "fadeOut"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:174
+msgid "fadeOutDown"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:178
+msgid "fadeOutDownBig"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:182
+msgid "fadeOutLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:186
+msgid "fadeOutLeftBig"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:190
+msgid "fadeOutRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:194
+msgid "fadeOutRightBig"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:198
+msgid "fadeOutUp"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:202
+msgid "fadeOutUpBig"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:209
+msgid "Flippers"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:211
+msgid "flip"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:215
+msgid "flipInX"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:219
+msgid "flipInY"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:223
+msgid "flipOutX"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:227
+msgid "flipOutY"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:234
+msgid "Lightspeed"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:236
+msgid "lightSpeedIn"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:240
+msgid "lightSpeedOut"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:247
+msgid "Rotating Entrances"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:249
+msgid "rotateIn"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:253
+msgid "rotateInDownLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:257
+msgid "rotateInDownRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:261
+msgid "rotateInUpLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:265
+msgid "rotateInUpRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:272
+msgid "Rotating Exits"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:274
+msgid "rotateOut"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:278
+msgid "rotateOutDownLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:282
+msgid "rotateOutDownRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:286
+msgid "rotateOutUpLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:290
+msgid "rotateOutUpRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:297
+#, fuzzy
+msgid "Specials"
+msgstr "Социална"
+
+#: include/./params/animation_style/animation_style.php:299
+msgid "hinge"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:303
+msgid "rollIn"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:307
+msgid "rollOut"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:314
+msgid "Zoom Entrances"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:316
+msgid "zoomIn"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:320
+msgid "zoomInDown"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:324
+msgid "zoomInLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:328
+msgid "zoomInRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:332
+msgid "zoomInUp"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:339
+msgid "Zoom Exits"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:341
+msgid "zoomOut"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:345
+msgid "zoomOutDown"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:349
+msgid "zoomOutLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:353
+msgid "zoomOutRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:357
+msgid "zoomOutUp"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:364
+#, fuzzy
+msgid "Slide Entrances"
+msgstr "Тип на слайдера"
+
+#: include/./params/animation_style/animation_style.php:366
+msgid "slideInDown"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:370
+msgid "slideInLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:374
+#, fuzzy
+msgid "slideInRight"
+msgstr "Подравни на дясно"
+
+#: include/./params/animation_style/animation_style.php:378
+msgid "slideInUp"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:385
+#, fuzzy
+msgid "Slide Exits"
+msgstr "Тип на слайдера"
+
+#: include/./params/animation_style/animation_style.php:387
+msgid "slideOutDown"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:391
+msgid "slideOutLeft"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:395
+msgid "slideOutRight"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:399
+msgid "slideOutUp"
+msgstr ""
+
+#: include/./params/animation_style/animation_style.php:479
+#, fuzzy
+msgid "Animate it"
+msgstr "Анимирана кръгова диаграма"
+
+#: include/./params/column_offset/column_offset.php:55
+msgid "Default value from width attribute"
+msgstr "Стойност по подразбиране от ширината на атрибута"
+
+#: include/./params/column_offset/column_offset.php:57
+#: include/./params/column_offset/column_offset.php:69
+msgid "Inherit from smaller"
+msgstr "Наследяване от по-малки"
+
+#: include/./params/column_offset/column_offset.php:69
+#: include/./params/column_offset/column_offset.php:73
+msgid "No offset"
+msgstr "Няма остъп"
+
+#: include/./params/css_editor/css_editor.php:46
+msgid "Background"
+msgstr "Фон"
+
+#: include/./params/css_editor/css_editor.php:50
+msgid "Box controls"
+msgstr "Контроли на кутията"
+
+#: include/./params/css_editor/css_editor.php:51
+msgid "Simplify controls"
+msgstr "Опростяване на контролите"
+
+#: include/./params/css_editor/css_editor.php:77
+#: include/./params/css_editor/css_editor.php:86
+msgid "Theme defaults"
+msgstr "Тема по подразбиране"
+
+#: include/./params/css_editor/css_editor.php:88
+msgid "Cover"
+msgstr "Обложка"
+
+#: include/./params/css_editor/css_editor.php:89
+msgid "Contain"
+msgstr "Съдържат"
+
+#: include/./params/css_editor/css_editor.php:90
+msgid "No Repeat"
+msgstr "Без повторение"
+
+#: include/./params/css_editor/css_editor.php:91
+msgid "Repeat"
+msgstr "Повторение"
+
+#: include/./params/font_container/font_container.php:57
+msgid "Element tag"
+msgstr "Етикет на елемента"
+
+#: include/./params/font_container/font_container.php:78
+msgid "Font size"
+msgstr "Размер на шрифта"
+
+#: include/./params/font_container/font_container.php:96
+msgid "left"
+msgstr "Ляво"
+
+#: include/./params/font_container/font_container.php:97
+msgid "right"
+msgstr "Дясно"
+
+#: include/./params/font_container/font_container.php:98
+msgid "center"
+msgstr "център"
+
+#: include/./params/font_container/font_container.php:99
+msgid "justify"
+msgstr "Оправдава"
+
+#: include/./params/font_container/font_container.php:112
+msgid "Line height"
+msgstr "Височина на реда"
+
+#: include/./params/font_container/font_container.php:126
+msgid "Text color"
+msgstr "Цвят на текста"
+
+#: include/./params/font_container/font_container.php:142
+#: include/./templates/params/google_fonts/template.php:2
+msgid "Font Family"
+msgstr "Семейство на шрифта"
+
+#: include/./params/font_container/font_container.php:162
+#: include/./templates/params/google_fonts/template.php:19
+msgid "Font style"
+msgstr "Стил на шрифта"
+
+#: include/./params/font_container/font_container.php:165
+msgid "italic"
+msgstr "наклонен"
+
+#: include/./params/font_container/font_container.php:169
+msgid "bold"
+msgstr "удебелен"
+
+#: include/./params/loop/loop.php:15
+msgid "Build query"
+msgstr "Изграждане на заявка"
+
+#: include/./params/loop/loop.php:175
+msgid "Post Count"
+msgstr "Брояч на публикации"
+
+#: include/./params/loop/loop.php:176
+msgid "Order By"
+msgstr "Подреди по"
+
+#: include/./params/loop/loop.php:177
+msgid "Order"
+msgstr "Подредба"
+
+#: include/./params/loop/loop.php:181
+#: include/./templates/shortcodes/vc_wp_tagcloud.php:4
+msgid "Tags"
+msgstr "Етикети"
+
+#: include/./params/loop/loop.php:183
+msgid "Individual Posts/Pages"
+msgstr "Индивидуални Публикации/Страници"
+
+#: include/./params/options/options.php:5
+msgid "Manage options"
+msgstr "Управляване на опциите"
+
+#: include/./params/options/options.php:6
+#: include/./templates/editors/popups/modal_edit_element.tpl.php:12
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:14
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:34
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:14
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:62
+msgid "Close"
+msgstr "Затворете"
+
+#: include/./params/sorted_list/sorted_list.php:56
+msgid "Empty title"
+msgstr "Изпразнете заглавието"
+
+#: include/./params/sorted_list/sorted_list.php:62
+#: include/./templates/teaser.html.php:50
+msgid "Excerpt"
+msgstr "Откъс"
+
+#: include/./params/sorted_list/sorted_list.php:64
+msgid "Featered"
+msgstr "Препоръчано"
+
+#: include/./params/sorted_list/sorted_list.php:66
+msgid "Link text"
+msgstr "Текст за връзката"
+
+#: include/./params/sorted_list/sorted_list.php:69
+msgid "Link to big image"
+msgstr "Връзка към голямо изображение"
+
+#: include/./params/sorted_list/sorted_list.php:70
+#: include/./templates/teaser.html.php:72
+msgid "Add custom image"
+msgstr "Добавете потребителско изображение"
+
+#: include/./params/sorted_list/sorted_list.php:72
+msgid "Enable custom teaser"
+msgstr "Разрешете потребителско закачване"
+
+#: include/./params/sorted_list/sorted_list.php:75
+msgid ""
+"Here you can customize teaser block design. It will be used instead of "
+"default settings in \"Posts Grid\" or \"Carousel\" content elements."
+msgstr ""
+"Тук можете да персонализирате дизайна на блокчето. Ще се използва вместо "
+"настройките по подразбиране в съдържанието на елементите \"Мрежа на "
+"публикациите\" или \"Въртележка\"."
+
+#: include/./params/textarea_html/textarea_html.php:14
+msgid ""
+"Field type is changed from `textarea_html` to `textarea`, because it is "
+"already used by `"
+msgstr ""
+"Типът на полето е сменено от 'текстоваобласт_html' на 'текстоваобласт', "
+"защото вече се използва от `"
+
+#: include/./params/vc_grid_element/vc_grid_element.php:63
+msgid "Add row"
+msgstr ""
+
+#: include/./params/vc_grid_element/vc_grid_element.php:153
+msgid "1/1"
+msgstr ""
+
+#: include/./params/vc_grid_element/vc_grid_element.php:157
+msgid "1/2 + 1/2"
+msgstr ""
+
+#: include/./params/vc_grid_element/vc_grid_element.php:161
+msgid "1/3 + 1/3 + 1/3"
+msgstr ""
+
+#: include/./params/vc_grid_element/vc_grid_element.php:233
+#, fuzzy
+msgid "Drag to reorder"
+msgstr "Превлачете реда за пренареждане"
+
+#: include/./params/vc_link/vc_link.php:6
+msgid "Select URL"
+msgstr "Изберете URL"
+
+#: include/./params/vc_link/vc_link.php:6
+msgid "URL"
+msgstr "URL"
+
+#: include/./templates/editors/backend_editor.tpl.php:24
+msgid "Loading, please wait..."
+msgstr "Зареждане, моля изчакайте..."
+
+#: include/./templates/editors/backend_editor.tpl.php:25
+msgid "Crunching..."
+msgstr "Схрусква..."
+
+#: include/./templates/editors/partials/backend_controls.tpl.php:5
+#: include/./templates/editors/partials/frontend_controls.tpl.php:7
+#: include/./templates/editors/partials/frontend_controls.tpl.php:26
+#: include/./templates/editors/partials/frontend_controls.tpl.php:55
+#: include/./templates/editors/partials/frontend_controls.tpl.php:77
+#: include/./templates/editors/partials/frontend_controls.tpl.php:105
+#: include/./templates/editors/partials/frontend_controls.tpl.php:130
+#: include/./templates/editors/partials/frontend_controls.tpl.php:161
+#: include/./templates/editors/partials/frontend_controls.tpl.php:183
+#, php-format
+msgid "Drag to move %s"
+msgstr "Превлачете, за да преместите %s"
+
+#: include/./templates/editors/partials/backend_controls.tpl.php:10
+#: include/./templates/editors/partials/backend_controls_tab.tpl.php:9
+#: include/./templates/editors/partials/frontend_controls.tpl.php:32
+#: include/./templates/editors/partials/frontend_controls.tpl.php:62
+#: include/./templates/editors/partials/frontend_controls.tpl.php:84
+#: include/./templates/editors/partials/frontend_controls.tpl.php:137
+#: include/./templates/editors/partials/frontend_controls.tpl.php:190
+#, php-format
+msgid "Prepend to %s"
+msgstr "Присвояване от %s"
+
+#: include/./templates/editors/partials/frontend_controls.tpl.php:44
+#: include/./templates/editors/partials/frontend_controls.tpl.php:94
+#: include/./templates/editors/partials/frontend_controls.tpl.php:150
+#: include/./templates/editors/partials/frontend_controls.tpl.php:206
+#, php-format
+msgid "Append to %s"
+msgstr "Добави към %s"
+
+#: include/./templates/editors/partials/frontend_controls.tpl.php:72
+#: include/./templates/editors/partials/frontend_controls.tpl.php:88
+#: include/./templates/editors/partials/frontend_controls.tpl.php:125
+#: include/./templates/editors/partials/frontend_controls.tpl.php:144
+#: include/./templates/editors/partials/frontend_controls.tpl.php:178
+#: include/./templates/editors/partials/frontend_controls.tpl.php:200
+#, php-format
+msgid "Show %s controls"
+msgstr "Показване на контролите за %s"
+
+#: include/./templates/editors/partials/frontend_controls.tpl.php:112
+msgid "Change layout"
+msgstr "Промяна на оформлението"
+
+#: include/./templates/editors/partials/frontend_controls.tpl.php:115
+#: include/./templates/editors/partials/frontend_controls.tpl.php:168
+#, php-format
+msgid "Add new %s"
+msgstr "Добавяне на нов %s"
+
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:3
+msgid "Welcome to Blank Page, You Have No Content Yet!"
+msgstr ""
+"Добре дошли в празната страница, вие нямате никакво съдържание все още!"
+
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:5
+msgid " Add Some Content or Use Predefined Layouts..."
+msgstr ""
+" Добавете част от съдържанието или използвайте предварително дефинирани "
+"оформления..."
+
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:8
+#: include/./templates/editors/popups/modal_add_element.tpl.php:11
+msgid "Add element"
+msgstr "Добавяне на елемент"
+
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:8
+msgid "Add text block"
+msgstr "Добавяне на текстов блок"
+
+#: include/./templates/editors/partials/vc_welcome_block.tpl.php:14
+msgid "Choose Your Layout"
+msgstr "Изберете Вашето оформление"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:3
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:3
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:3
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:3
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:3
+msgid "Close panel"
+msgstr "Затворете панел"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:5
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:5
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:5
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:5
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:5
+msgid "Hide panel"
+msgstr "Скрийте панела"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:8
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:13
+msgid "Row layout"
+msgstr "Оформление на ред"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:21
+msgid "Choose row layout from predefined options."
+msgstr "Изберете оформление на ред от предварително дефинирани опции."
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:24
+msgid "Enter custom layout for your row"
+msgstr "Въведете потребителско оформление за Вашият ред"
+
+#: include/./templates/editors/popups/panel_edit_layout.tpl.php:30
+msgid ""
+"Change particular row layout manually by specifying number of columns and "
+"their size value."
+msgstr ""
+"Промяна на оформление на конкретен ред ръчно чрез задаване на броя на "
+"колоните и стойността на размера им."
+
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:7
+msgid "Edit elements"
+msgstr "Редактиране на елементи"
+
+#: include/./templates/editors/popups/panel_multi_shortcode_edit_form.tpl.php:10
+#: include/./templates/editors/popups/panel_shortcode_edit_form.tpl.php:10
+msgid "Select content element to edit properties."
+msgstr "Изберете елемент със съдържание, за да редактирате свойствата."
+
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:17
+msgid "Please enter page title"
+msgstr "Моля, въведете заглавие на страницата"
+
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:18
+msgid "Here you can change title of the current "
+msgstr ""
+
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:23
+msgid "Custom CSS settings"
+msgstr "Потребителски CSS настройки"
+
+#: include/./templates/editors/popups/panel_post_settings.tpl.php:27
+msgid ""
+"Enter custom CSS code here. Your custom CSS will be outputted only on this "
+"particular page."
+msgstr ""
+"Въведете потребителски CSS код тук. Потребителския CSS ще бъде изпълнен само "
+"на тази страница."
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:16
+msgid "My templates"
+msgstr "Моите шаблони"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:18
+msgid "Default templates"
+msgstr "Шаблоните по подразбиране"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:23
+msgid "Save current layout as a template"
+msgstr "Записване на текущото оформление като шаблон"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:26
+msgid "Template name"
+msgstr "Име на шаблон"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:28
+msgid "Save template"
+msgstr "Записване на шаблон"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:31
+msgid "Save your layout and reuse it on different sections of your website"
+msgstr ""
+"Запишете оформлението и отпечатването на различни раздели за Вашият сайт"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:36
+msgid "Append previosly saved template to the current layout"
+msgstr "Добавяне на маркираните записани шаблон към текущото оформление"
+
+#: include/./templates/editors/popups/panel_templates_editor.tpl.php:47
+msgid "Append default template to the current layout"
+msgstr "Добавяне на шаблон по подразбиране към текущото оформление"
+
+#: include/./templates/params/column_offset/template.tpl.php:5
+#, php-format
+msgid ""
+"Responsive design settings are currently disabled. You can enable them in "
+"Visual Composer <a href=\"%s\">settings page</a> by unchecking \"Disable "
+"responsive content elements\"."
+msgstr ""
+"Настройките на респонзив дизайна са забранени. Можете да ги разрешите във "
+"визуалния редактор <a href=\"%s\">Настройки на страницата</a> чрез де "
+"маркирането на \"Забраняване на респонзив елементи със съдържание\"."
+
+#: include/./templates/params/column_offset/template.tpl.php:14
+msgid "Device"
+msgstr "Устройство"
+
+#: include/./templates/params/column_offset/template.tpl.php:23
+msgid "Hide on device?"
+msgstr "Скриване на устройството?"
+
+#: include/./templates/params/column_offset/template.tpl.php:40
+msgid "Hide"
+msgstr "Скрий"
+
+#: include/./templates/params/column_offset/template.tpl.php:49
+msgid "Inherit: "
+msgstr "Наследяване: "
+
+#: include/./templates/params/column_offset/template.tpl.php:50
+msgid "Inherit from default"
+msgstr "Наследяване от настройките по подразбиране"
+
+#: include/./templates/params/google_fonts/template.php:30
+msgid "Google Fonts preview"
+msgstr "Преглед на Google шрифтове"
+
+#: include/./templates/params/google_fonts/template.php:32
+msgid "Grumpy wizards make toxic brew for the evil Queen and Jack."
+msgstr "Разсърден магьосник направи токсична отвара за злата кралица и джак."
+
+#: include/./templates/shortcodes/post_block/_item.php:20
+#: include/./templates/shortcodes/vc_teaser_grid.php:181
+#: include/./templates/teaser.html.php:63
+msgid "Read more"
+msgstr "Прочетете повече"
+
+#: include/./templates/shortcodes/vc_accordion_tab.php:12
+msgid "Empty section. Edit page to add content here."
+msgstr "Празен раздел. Редактирайте страницата, за да добавите съдържание тук."
+
+#: include/./templates/shortcodes/vc_basic_grid_filter.php:8
+#: include/./templates/shortcodes/vc_basic_grid_filter.php:14
+#: include/./templates/shortcodes/vc_posts_grid.php:130
+#: include/./templates/shortcodes/vc_teaser_grid.php:313
+msgid "All"
+msgstr "Всички"
+
+#: include/./templates/shortcodes/vc_item.php:9
+msgid "Item"
+msgstr "Елемент"
+
+#: include/./templates/shortcodes/vc_posts_grid.php:164
+#: include/./templates/shortcodes/vc_posts_slider.php:192
+#: include/./templates/shortcodes/vc_teaser_grid.php:327
+msgid "Nothing found."
+msgstr "Нищо не е намерено."
+
+#: include/./templates/shortcodes/vc_tab.php:9
+msgid "Empty tab. Edit page to add content here."
+msgstr "Празен раздел. Редактирайте страницата за да добавите съдържание тук."
+
+#: include/./templates/shortcodes/vc_tabs.php:44
+msgid "Previous tab"
+msgstr "Предишен раздел"
+
+#: include/./templates/shortcodes/vc_tabs.php:44
+msgid "Next tab"
+msgstr "Следващ раздел"
+
+#: include/./templates/shortcodes/vc_toggle.php:4
+msgid "Click to toggle"
+msgstr "Натиснете за да сгънете"
+
+#: include/./templates/shortcodes/vc_tweetmeme.php:9
+msgid "Tweet"
+msgstr "Tweet-нете"
+
+#: include/./templates/shortcodes/vc_twitter.php:20
+msgid "Follow us on twitter"
+msgstr "Последвайте ни в twitter"
+
+#: include/./templates/teaser.html.php:14
+#: include/./templates/teaser.html.php:35
+msgid "Link to"
+msgstr "Насочване към"
+
+#: include/./templates/teaser.html.php:18
+#: include/./templates/teaser.html.php:39
+msgid "On post"
+msgstr "На публикация"
+
+#: include/./templates/teaser.html.php:20
+#: include/./templates/teaser.html.php:41
+msgid "Big image"
+msgstr "Голямо изображение"
+
+#: include/./templates/teaser.html.php:29
+msgid "Featured"
+msgstr "Препоръчани"
+
+#~ msgid "Save"
+#~ msgstr "Запаметяване"

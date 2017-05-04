@@ -1,0 +1,285 @@
+// For clearing floats like a boss h5bp.com/q
+.vc_clearfix {
+    *zoom: 1;
+    &:before,
+    &:after {
+        display: table;
+        content: "";
+    }
+    &:after {
+        clear: both;
+    }
+}
+
+// Mixins 4.0
+//Button variants mixin
+.vc_btn_variants(@color, @txt_color) {
+    //border-color: @color;
+    background-color: @color;
+    color: @txt_color !important; //TODO: WTF? why it is not rendering?
+    .transition(all 0.5s);
+    &:hover {
+        background-color: darken(@color, 6%);
+        color: darken(@txt_color, 3%) !important;
+    }
+    &.vc_btn_outlined,
+    &.vc_btn_square_outlined {
+        color: @color !important;
+        &:hover {
+            border-color: darken(@color, 6%);
+        }
+    }
+    &.vc_btn_3d {
+        .box-shadow(0 5px 0 darken(@color, 11%));
+        margin-bottom: 5px;
+        &.vc_btn_xs {
+        //border-bottom-width: 3px;
+            .box-shadow(0 3px 0 darken(@color, 11%));
+            margin-bottom: 3px;
+        }
+        &.vc_btn_sm {
+        //border-bottom-width: 4px;
+            .box-shadow(0 4px 0 darken(@color, 11%));
+            margin-bottom: 4px;
+        }
+    }
+}
+.vc_heading(@font_size) {
+    font-weight: normal;
+    font-size: @font_size;
+    color: inherit;
+}
+.vc_box-heading {
+    .border-top-radius(1px);
+    background: @vc_modal_header_bg_color;
+    color: @vc_modal_header_color;
+    padding: 10px 15px;
+    .vc_icon {
+        width: 15px;
+        height: 18px;
+        display: block;
+    }
+    // TODO: refactor with SMCSS
+    .vc_close {
+        margin-top: 2px;
+        float: right;
+        display: block;
+        &:focus {
+            -webkit-box-shadow: none;
+            -moz-box-shadow: none;
+            box-shadow: none;
+        }
+        .vc_icon {
+            background: transparent url(../vc/fe/close_panel.png) center center;
+        }
+    }
+    .vc_minimize {
+        margin-top: 2px;
+        margin-right: 2px;
+        float: right;
+        display: block;
+        .vc_icon {
+            background: transparent url(../vc/fe/modal_minimize.png) center center;
+        }
+    }
+    .vc_transparent {
+        margin-top: 2px;
+        margin-right: 8px;
+        float: right;
+        display: block;
+        .vc_icon {
+            background: transparent url(../vc/fe/eye_ico.png) center center no-repeat;
+        }
+    }
+}
+
+.vc_edit_color_option_variants(@selector, @color, @txt_color) {
+    .@{selector} {
+        background-color: @color !important;
+        color: @txt_color !important;
+    };
+}
+.greyGradient() {
+    background: #f1f1f1;
+    background-image: -webkit-gradient(linear, left bottom, left top, from(#ececec), to(#f9f9f9));
+    background-image: -webkit-linear-gradient(bottom, #ececec, #f9f9f9);
+    background-image:    -moz-linear-gradient(bottom, #ececec, #f9f9f9);
+    background-image:      -o-linear-gradient(bottom, #ececec, #f9f9f9);
+    background-image: linear-gradient(to top, #ececec, #f9f9f9);
+
+    border: 1px solid #dfdfdf !important;
+    -webkit-box-shadow: inset 0 1px 0 #fff;
+    box-shadow: inset 0 1px 0 #fff;
+}
+
+// CSS3 PROPERTIES
+// --------------------------------------------------
+
+// Border Radius
+.border-radius(@radius) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+// IE7 inline-block
+// ----------------
+.ie7-inline-block() {
+    *display: inline; /* IE7 inline-block hack */
+    *zoom: 1;
+}
+
+// IE7 likes to collapse whitespace on either side of the inline-block elements.
+// Ems because we're attempting to match the width of a space character. Left
+// version is for form buttons, which typically come after other elements, and
+// right version is for icons, which come before. Applying both is ok, but it will
+// mean that space between those elements will be .6em (~2 space characters) in IE7,
+// instead of the 1 space in other browsers.
+.ie7-restore-left-whitespace() {
+    *margin-left: .3em;
+
+    &:first-child {
+        *margin-left: 0;
+    }
+}
+
+.ie7-restore-right-whitespace() {
+    *margin-right: .3em;
+
+    &:last-child {
+        *margin-left: 0;
+    }
+}
+// COMPONENT MIXINS
+// --------------------------------------------------
+
+// Button backgrounds
+// ------------------
+.buttonBackground(@startColor, @endColor) {
+// gradientBar will set the background to a pleasing blend of these, to support IE<=9
+//.gradientBar(@startColor, @endColor);
+    background-color: @startColor;
+//*background-color: @endColor; /* Darken IE7 buttons by default so they stand out more given they won't have borders */
+//.reset-filter();
+
+// in these cases the gradient won't cover the background, so we override
+    &:hover, &:active, &.active, &.disabled, &[disabled] {
+        background-color: @endColor;
+    //*background-color: darken(@endColor, 5%);
+    }
+
+// IE 7 + 8 can't handle box-shadow to show active, so we darken a bit ourselves
+    &:active,
+    &.active {
+        background-color: darken(@endColor, 10%) e("\9");
+    }
+}
+.no_bullet_fix() {
+    background-image: none;
+    list-style: none !important;
+    &:after,
+    &:before {
+        display: none !important;
+    }
+}
+//Transition
+.wpb_transition(@param: all, @time: 0.2s, @easing: linear) {
+    transition: @param @time @easing;
+    -moz-transition: @param @time @easing;
+    -webkit-transition: @param @time @easing;
+    -o-transition: @param @time @easing;
+}
+
+.wpb_transform(@param) {
+    -webkit-transform: @param;
+    -moz-transform: @param;
+    -ms-transform: @param;
+    -o-transform: @param;
+    transform: @param;
+}
+
+.wpb_border_radius(@radius: 5px) {
+    -webkit-border-radius: @radius;
+    -moz-border-radius: @radius;
+    border-radius: @radius;
+}
+
+// Mixins 4.0
+//Button variants mixin
+.vc_btn_variants(@selector, @color, @txt_color) {
+    &@{selector} {
+        //border-color: @color;
+        background-color: @color;
+        color: @txt_color !important; //TODO: WTF? why it is not rendering?
+        .transition(all 0.5s);
+        &:hover {
+            background-color: darken(@color, 6%);
+            color: darken(@txt_color, 3%) !important;
+        }
+        &.vc_btn_outlined,
+        &.vc_btn_square_outlined {
+            color: @color !important;
+            &:hover {
+                border-color: darken(@color, 6%);
+            }
+        }
+        &.vc_btn_3d {
+            .box-shadow(0 5px 0 darken(@color, 11%));
+            margin-bottom: 5px;
+            &.vc_btn_xs {
+            //border-bottom-width: 3px;
+                .box-shadow(0 3px 0 darken(@color, 11%));
+                margin-bottom: 3px;
+            }
+            &.vc_btn_sm {
+            //border-bottom-width: 4px;
+                .box-shadow(0 4px 0 darken(@color, 11%));
+                margin-bottom: 4px;
+            }
+        }
+    }
+}
+.vc_frontend-editor-invisibility-settings {
+    display: block !important;
+    .vc_controls {
+        .vc_btn-content {
+            background-color: #CCC !important;
+            border-color: #CCC !important;
+            &:hover {
+                background-color: #b3b3b3 !important;
+                border-color: #b3b3b3 !important;
+            }
+        }
+    }
+    > :first-child {
+        .opacity(.5);
+    }
+}
+.vc_backend-editor-invisibility-settings {
+    display: block !important;
+    .vc_controls {
+        .vc_btn-content {
+            background-color: #CCC !important;
+            border-color: #CCC !important;
+            &:hover {
+                background-color: #b3b3b3 !important;
+                border-color: #b3b3b3 !important;
+            }
+        }
+    }
+    > * {
+        .opacity(.5) !important;
+    }
+}
+.vc-empty {
+    outline: 1px dotted @vc_border_color;
+    background: transparent url('../vc/empty_row.png') no-repeat center center;
+    min-height: 50px;
+    cursor: pointer;
+    .box-sizing(border-box);
+}
+.vc_bg_color_variants(@color) {
+    .vc_bg-@{color} {
+      background-color:  @@color;
+    }
+}
+// End Mixins

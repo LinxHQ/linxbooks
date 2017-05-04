@@ -1,0 +1,155 @@
+/* clearfix */
+.clearfix:after {
+    content: " ";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+.clearfix {
+    display: inline-block;
+}
+/* Hide from IE Mac \*/
+.clearfix {
+    display: block;
+}
+table.repeat {
+    width: 100%;
+    margin-top: 20px;
+}
+
+.field-box input[type=text], .field-box textarea, .field-box select {
+    padding: 5px 10px !important;
+    font-family: 'Droid Sans';
+    font-size: 13px;
+    line-height: 18px;
+    color: #555;
+    background-color: #eee;
+    border: 1px solid #ddd;
+    transition: all 0.2s linear;
+    -moz-transition: all 0.2s linear;
+    -webkit-transition: all 0.2s linear;
+    -o-transition: all 0.2s linear;
+}
+.field-box input[type=text]:focus, .field-box textarea:focus {
+    background-color: #e1e1e1;
+}
+input.add, input.remove {
+    font-size: 12px;
+    padding: 8px 10px;
+    margin: 20px 20px 0;
+    border: none;
+    color: #fff;
+    background-color: #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    -moz-border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -o-border-radius: 2px;
+    opacity: 0.8;
+    -webkit-transition: opacity 0.3s linear 0s;
+    -moz-transition: opacity 0.3s linear 0s;
+    -o-transition: opacity 0.3s linear 0s;
+    transition: opacity 0.3s linear 0s;  
+    background-color: #78D18B;  
+}
+input.remove {
+    background-color: #d13f39;
+}
+input.add:hover, input.remove:hover {
+    opacity: 1;
+}
+input.color {
+   border: 1px solid #ebebeb !important; 
+}
+.field-box label {
+    color: #636363;
+    display: block;
+    margin-bottom: 5px;
+}
+td.field-box {
+    padding: 10px 20px;
+} 
+hr {
+    height: 1px;
+    background-color: #ccc;
+    margin: 15px 20px;
+    text-align: left;
+    border: none;
+}
+.panel_wrapper label {font-weight: bold}
+.panel_wrapper span.desc {display: block; color: #888; margin-bottom: 5px;}
+
+
+/* Tab */
+.tab-set ul.tab-titles {
+    clear: both;
+    margin-bottom: 0;
+    float: left;
+    margin-left: 0;
+}
+.tab-horizontal.tab-right ul.tab-titles {
+    float: right;
+}
+.tab-set .tab-titles li {
+    float: left;
+    display: inline-block;
+    list-style-type: none;
+    border: 1px solid #eee;
+    margin: 0 -1px 0 0;
+    border-bottom: none;
+    padding: 13px 10px;
+    cursor: pointer;
+    background-color: #fff;
+    position: relative;
+    top: 1px;
+    z-index: 1;
+    color: #777;
+    text-align: center;
+}
+.tab-set .tab-titles li i {
+    padding-right: 10px;
+}
+.tab-set .tab-titles li.current {
+    position: relative;
+    z-index: 3;
+    font-weight: bold;
+    color: #444;
+    background-color: #f7f7f7; 
+
+}    
+.tab-content {
+    padding: 20px !important;
+    border: 1px solid #eee; 
+    position: relative;
+    z-index: 2;
+    background-color: #fff;
+    clear: both;
+    color: #444;   
+    background-color: #f7f7f7; 
+}
+.tab-content p {
+    color: #444 !important; 
+}
+
+#shortcode-content label {
+    display: block;
+    float: left;
+    width: 175px;
+    padding: 15px 0;
+    font-weight: bold;
+    line-height: 27px;
+    clear: left;
+}
+#shortcode-content .field-content {
+    float: left;
+    padding: 15px 0;
+    width: 390px;
+    overflow: hidden;
+}
+#shortcode-content .form-element {
+    overflow: hidden;
+    border-bottom: 1px solid #eee;
+    padding: 5px 0;
+
+}

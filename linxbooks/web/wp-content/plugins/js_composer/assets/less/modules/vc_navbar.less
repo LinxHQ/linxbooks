@@ -1,0 +1,245 @@
+.vc_navbar {
+    .box-sizing(border-box);
+    min-height: @vc_navbar_height; // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
+    margin: @vc_navbar_margin;
+    border: 0;
+    // Prevent floats from breaking the navbar
+    &:extend(.clearfix all);
+    * {
+        .box-sizing(border-box);
+    }
+    .vc_navbar-collapse {
+        padding: 0;
+    }
+    background-color: @vc_navbar_background_color;
+    border-bottom: none;
+    .vc_navbar-nav {
+        display: block;
+        margin: 0;
+        > li {
+            float: left;
+            margin: 0;
+            a {
+            }
+            border-left: 1px solid @vc_navbar_border_color;
+            height: 56px;
+        }
+    }
+
+    .vc_navbar-brand {
+        .navbar-brand();
+        font-size: 0;
+        background: transparent url(../vc/fe/visual_composer_32.png) center center no-repeat;
+        display: block;
+        width: 42px;
+        height: 42px;
+        padding: 27px 30px 27px 35px;
+        &.vc_ajax-loading {
+            background-image: url(@vc_navbar_spinner);
+        }
+    }
+    .vc_last {
+        padding-right: 25px;
+    }
+    .vc_right-space {
+        padding-right: 5px;
+    }
+    .vc_icon-btn {
+        display: block;
+        width: 60px;
+        height: @vc_navbar_height;
+        padding: 28px 30px;
+        cursor: pointer;
+        outline: 0;
+        background: transparent url(@vc_navbar_sprite) @vc_navbar_sprite_left_position 0;
+        &:hover {
+            background-color: @vc_navbar_icon_btn_color;
+        }
+        &:focus {
+            background-color: transparent;
+        }
+    }
+    .vc_open {
+        > a, > a:focus {
+            background-color: @vc_navbar_background_color;// #0B273E;
+        }
+    }
+    .vc_btn-backend-editor {
+        margin-right: 2px;
+    }
+    .vc_btn-save {
+        margin-left: 2px;
+        &-draft {
+            margin-right: 2px;
+        }
+    }
+    .vc_back-button {
+        background-position: @vc_navbar_sprite_left_position -165px;
+    }
+    .vc_templates-button {
+        background-position: @vc_navbar_sprite_left_position -55px;
+    }
+    .vc_post-settings {
+        position: relative;
+        background-position: @vc_navbar_sprite_left_position -110px;
+    }
+    .vc_badge-custom-css {
+        display: block;
+        background-color: #fcb714;
+        position: absolute;
+        top: 9px;
+        left: 31px;
+        font-size: 9px;
+        font-weight: normal;
+        border-radius: 4px;
+        padding: 2px 3px;
+    }
+    .vc_save-backend {
+        display: none;
+        .vc_control-preview {
+          margin-right: 0;
+        }
+        .vc_control-save {
+          margin-left: 5px;
+        }
+    }
+    .vc_dropdown {
+        position: relative;
+        .vc_dropdown-toggle {
+            cursor: default;
+            display: block;
+            width: 68px;
+            height: 56px;
+            line-height: 16px;
+            padding: 19px;
+            .vc_icon {
+                display: inline-block;
+                vertical-align: middle;
+                width: 20px;
+                height: 16px;
+                background-color: transparent;
+                background-position: left center;
+                background-repeat: no-repeat;
+            }
+            .vc_caret {
+                .caret();
+                vertical-align: middle;
+            }
+        }
+        .vc_dropdown-list {
+            display: none;
+            position: absolute;
+            z-index: 1000;
+            top: 55px;
+            left: -1px;
+            background: #0B273E;
+            border: 1px solid #1e5072;
+            border-width: 0 1px 1px 1px;
+            padding-top: 1px;
+            .border-bottom-radius(3px);
+            > li {
+                margin: 0;
+            }
+            a {
+                display:block;
+                background-color: transparent;
+                background-position: center center;
+                background-repeat: no-repeat;
+                width: 68px;
+                height: 37px;
+                &:hover {
+                    background-color: #124979;
+                }
+                &.active {
+                    background-color: #00aef0;
+                }
+            }
+        }
+        &:hover {
+            .vc_dropdown-toggle {
+                background-color: #0B273E;
+            }
+            .vc_dropdown-list {
+                display: block;
+            }
+        }
+        .default {
+            background-image: url(../vc/fe/screen_sizes/laptop.png);
+        }
+        .landscape-tablets {
+            background-image: url(../vc/fe/screen_sizes/ipad_h.png);
+        }
+        .portrait-tablets {
+            background-image: url(../vc/fe/screen_sizes/ipad_v.png);
+        }
+        .landscape-smartphones {
+            background-image: url(../vc/fe/screen_sizes/iphone_h.png);
+        }
+        .portrait-smartphones {
+            background-image: url(../vc/fe/screen_sizes/iphone_v.png);
+        }
+    }
+}
+// Buttons in navbars
+//
+// Vertically center a button within a navbar (when *not* in a form).
+
+.vc_navbar-btn {
+    .navbar-vertical-align(@input-height-base);
+    margin-left: 21px;
+    margin-right: 21px;
+    &.vc_btn-sm {
+        .navbar-vertical-align(@input-height-small);
+    }
+    &.vc_btn-xs {
+        .navbar-vertical-align(22);
+    }
+}
+.vc_subnav-fixed {
+    position: fixed;
+    top: 32px;
+    left: 0;
+    z-index: 9998;
+    width: 100%;
+    padding-left: @vc_navbar_fixed_right_padding;
+    .vc_save-backend {
+        display: block;
+    }
+}
+@media screen and (max-width: @screen-sm-min) {
+    .vc_navbar li, .navbar-header {
+        display: none;
+    }
+    .vc_navbar li.vc_show-mobile {
+        display: block;
+        float: left;
+    }
+    .vc_navbar-nav {
+        float: left;
+        margin: 0;
+        &.navbar-right {
+            float: right;
+        }
+    }
+    .vc_navbar-header {
+        float: left;
+    }
+}
+
+.vc_navbar-border-right {
+    border-right: 1px solid @vc_navbar_border_color;
+}
+.vc_dropdown-menu {
+    background-color: #000000;
+}
+.vc_navbar-header {
+    .navbar-header();
+    float: left;
+}
+.vc_navbar-collapse {
+    .navbar-collapse();
+}
+
+.vc_select-navbar {
+    margin: 12.5px 21px;
+}

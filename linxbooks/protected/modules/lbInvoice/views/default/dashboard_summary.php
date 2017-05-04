@@ -5,14 +5,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-$financial = UserList::model()->getItemsList('financial_year');  
-	$financial_day = 0;
-	$financial_month = 0;
-if (count($financial)>0){
-      	$financial_day = $financial[0]['system_list_item_day'];
-		$financial_month = $financial[0]['system_list_item_month'];
-      }      
-
+$financial = UserList::model()->getItemsList('financial_year');        
+$financial_day = $financial[0]['system_list_item_day'];
+$financial_month = $financial[0]['system_list_item_month'];
 $now = getdate();       
 $year_prev = $now["year"]-1;
 

@@ -1,0 +1,47 @@
+/*** Pie chart **/
+.vc_pie_chart {
+    z-index: 0;
+    text-align: center;
+    opacity: 0;
+    &.vc_ready {
+        opacity: 1;
+    }
+    .vc_pie_wrapper {
+        position: relative;
+        margin: 0 auto;
+    }
+    canvas {
+        position: relative;
+        z-index: 1;
+    }
+    .vc_pie_chart_value {
+        font-size: 200%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    &[data-pie-color="wpb_button"] {	.vc_pie_chart_back { border-color: @vc_btnBackground; } }
+    &[data-pie-color="btn-primary"] {	.vc_pie_chart_back { border-color: @vc_btnPrimaryBackground; } }
+    &[data-pie-color="btn-info"] {	    .vc_pie_chart_back { border-color: @vc_btnInfoBackground; } }
+    &[data-pie-color="btn-success"] {	.vc_pie_chart_back { border-color: @vc_btnSuccessBackground; } }
+    &[data-pie-color="btn-warning"] {	.vc_pie_chart_back { border-color: @vc_btnWarningBackground; } }
+    &[data-pie-color="btn-danger"] {	.vc_pie_chart_back { border-color: @vc_btnDangerBackground; } }
+    &[data-pie-color="btn-inverse"] {	.vc_pie_chart_back { border-color: @vc_btnInverseBackground; } }
+}
+.vc_pie_chart_back {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border: 6px solid @vc_btnBackground;
+    border-radius: 999px;
+    border-radius: 50%;
+    .opacity(0.3);
+    .box-sizing(border-box);
+}

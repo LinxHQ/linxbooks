@@ -1,0 +1,91 @@
+//@import "utils/_variables_common.less";
+// Base alert styles
+.wpb_alert {
+    padding: 1em 35px 1em 25px;
+//margin-bottom: @baseLineHeight;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5);
+    background-color: @state-warning-bg;
+    border: 1px solid @state-warning-border;
+    border-radius: 5px;
+    color: @state-warning-text;
+    clear: both;
+    .messagebox_text *:last-child {
+        margin-bottom: 0;
+    }
+    &.vc_alert_rounded {
+    //default style
+    }
+    &.vc_alert_square {
+        border-radius: 0;
+    }
+    &.vc_alert_square_outlined {
+        border-radius: 0;
+        background: none !important;
+        border-width: 2px;
+    }
+    &.vc_alert_round {
+        border-radius: 50px;
+    }
+    &.vc_alert_outlined {
+        background: none !important;
+        border-width: 2px;
+    }
+    &.vc_alert_3d {
+    //border-width: 1px 1px 5px 1px;
+        border-width: 1px 1px 1px 1px;
+    }
+}
+// Alternate styles
+// ----------------
+.vc_alert_variants(@bg, @border, @text) {
+    border-color: @border;
+    background-color: @bg;
+    &.vc_alert_outlined,
+    &.vc_alert_square_outlined {
+        color: @text; //TODO: WTF? why it is not rendering?
+    }
+    &.vc_alert_3d {
+    //border-bottom-color: darken(@bg, 10%);
+        .box-shadow(0 5px 0 darken(@bg, 10%));
+    }
+}
+.wpb_alert-success {
+    background-color: @state-success-bg;
+    border-color: @state-success-border;
+    color: @state-success-text;
+    .vc_alert_variants(@state-success-bg, @state-success-border, @state-success-text);
+}
+.wpb_alert-error,
+.wpb_alert-danger {
+    background-color: @state-danger-bg;
+    border-color: @state-danger-border;
+    color: @state-danger-text;
+    .vc_alert_variants(@state-danger-bg, @state-danger-border, @state-danger-text);
+}
+.wpb_alert-info {
+    background-color: @state-info-bg;
+    border-color: @state-info-border;
+    color: @state-info-text;
+    .vc_alert_variants(@state-info-bg, @state-info-border, @state-info-text);
+}
+.wpb_alert-warning {
+    background-color: @state-warning-bg;
+    border-color: @state-warning-border;
+    color: @state-warning-text;
+    .vc_alert_variants(@state-warning-bg, @state-warning-border, @state-warning-text);
+}
+.wpb_alert .messagebox_text,
+.wpb_alert-warning .messagebox_text {
+    padding-left: 40px;
+    background: url(../vc/alert.png) no-repeat left center;
+}
+.wpb_alert-info .messagebox_text {
+    background: url(../vc/info.png) no-repeat left center;
+}
+.wpb_alert-success .messagebox_text {
+    background: url(../vc/tick.png) no-repeat left center;
+}
+.wpb_alert-error .messagebox_text,
+.wpb_alert-danger .messagebox_text {
+    background: url(../vc/exclamation.png) no-repeat left center;
+}

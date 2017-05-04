@@ -1,0 +1,43 @@
+@import "../config/variables.less";
+@import "responsive-utilities.less";
+@import "grid.less";
+@import "../modules/vc_buttons.less";
+@import "../modules/vc_modals.less";
+@import "../modules/vc_panels.less";
+@import "../modules/vc_messages.less";
+@import "../modules/vc_preloader.less";
+@import "utils.less";
+@import "../modules/vc_table.less";
+.vc_badge {
+    .badge();
+}
+.vc_nav {
+    .nav();
+}
+.vc_inappropriate {
+    display: none !important;
+}
+.vc_off {
+    .opacity(.7);
+}
+
+.vc_colored-dropdown {
+    .vc_edit_color_option_variants(~'blue', @blue, #ffffff);
+    .vc_edit_color_option_variants(~'turquoise', @turquoise, #ffffff);
+    .vc_edit_color_option_variants(~'pink', @pink, #ffffff);
+    .vc_edit_color_option_variants(~'violet', @violet, #ffffff);
+    .vc_edit_color_option_variants(~'peacoc', @peacoc, #ffffff);
+    .vc_edit_color_option_variants(~'chino', @chino, #ffffff);
+    .vc_edit_color_option_variants(~'mulled_wine', @mulled_wine, #ffffff);
+    .vc_edit_color_option_variants(~'vista_blue', @vista_blue, #ffffff);
+    .vc_edit_color_option_variants(~'black', @black, #ffffff);
+    .vc_edit_color_option_variants(~'grey', @grey, #666666);
+    .vc_edit_color_option_variants(~'orange', @orange, #ffffff);
+    .vc_edit_color_option_variants(~'sky', @sky, #ffffff);
+    .vc_edit_color_option_variants(~'green', @green, #ffffff);
+    .vc_edit_color_option_variants(~'juicy_pink', @juicy_pink, #ffffff);
+    .vc_edit_color_option_variants(~'sandy_brown', @sandy_brown, #ffffff);
+    .vc_edit_color_option_variants(~'purple', @purple, #ffffff);
+    .vc_edit_color_option_variants(~'white', @white, #666666);
+
+}

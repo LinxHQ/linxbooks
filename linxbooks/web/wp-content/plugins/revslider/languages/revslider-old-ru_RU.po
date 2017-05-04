@@ -1,0 +1,3210 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Revolution Slider v4.1.4\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: 2013-12-23 12:26:30+0000\n"
+"Last-Translator: admin <vvvmax@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=n%100/10==1 ? 2 : n%10==1 ? 0 : (n+9)%10>3 ? 2 : 1;\n"
+"X-Generator: CSL v1.x\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIA\n"
+"X-Poedit-SourceCharset: utf-8\n"
+"X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;\n"
+"X-Poedit-Basepath: ../\n"
+"X-Poedit-Bookmarks: \n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Textdomain-Support: yes"
+
+#: inc_php/revslider_widget.class.php:8
+#@ revslider
+msgid "Displays a revolution slider on the page"
+msgstr ""
+
+#: inc_php/revslider_widget.class.php:9
+#@ revslider
+msgid "Revolution Slider"
+msgstr ""
+
+#: inc_php/revslider_widget.class.php:22
+#@ revslider
+msgid "No sliders found, Please create a slider"
+msgstr ""
+
+#: views/templates/sliders.php:14
+#@ revslider
+msgid "Revolution Sliders"
+msgstr "Revolution Слайдеры"
+
+#: views/templates/sliders.php:50
+#@ revslider
+msgid "How To Use"
+msgstr "Как использовать"
+
+#: settings/slide_settings.php:70
+#: settings/slider_settings_xml_lang.php:10
+#@ revslider
+msgid "Delay"
+msgstr "Задержка"
+
+#: settings/slider_settings_xml_lang.php:11
+#@ revslider
+msgid "The time one slide stays on the screen in Milliseconds"
+msgstr "Время которое один слайд остается на экране в миллисекундах"
+
+#: settings/slider_settings_xml_lang.php:64
+#@ revslider
+msgid "Touch Enabled"
+msgstr "Режим нажатия пальца включен"
+
+#: settings/slider_settings_xml_lang.php:65
+#@ revslider
+msgid "Enable Swipe Function on touch devices"
+msgstr "Включить функцию Swipe на сенсорных устройствах"
+
+#: settings/slider_settings_xml_lang.php:66
+#@ revslider
+msgid "Stop On Hover"
+msgstr "Остановка на наведение мыши"
+
+#: settings/slider_settings_xml_lang.php:67
+#@ revslider
+msgid "Stop the Timer when hovering the slider"
+msgstr "Остановить таймер при наведении мыши на слайдер"
+
+#: settings/slider_settings_xml_lang.php:12
+#@ revslider
+msgid "Shuffle Mode"
+msgstr "Режим Перемешивания"
+
+#: settings/slider_settings_xml_lang.php:13
+#@ revslider
+msgid "Turn Shuffle Mode on and off! Will be randomized only once at the start."
+msgstr "Включить / выключать режим случайного воспроизведения. Будет рандомизирован только один раз в самом начале."
+
+#: settings/slider_settings_xml_lang.php:18
+#@ revslider
+msgid "Load Google Font"
+msgstr "Загрузить Google Font"
+
+#: settings/slider_settings_xml_lang.php:19
+#@ revslider
+msgid "yes / no to load google font"
+msgstr "Да / Нет загрузить Google Font"
+
+#: settings/slider_settings_xml_lang.php:22
+#@ revslider
+msgid "Google Font"
+msgstr "Google Font"
+
+#: settings/slider_settings_xml_lang.php:23
+#@ revslider
+msgid "The google font family to load"
+msgstr "Tип Google Font для загрузки"
+
+#: settings/slider_settings_xml_lang.php:25
+#@ revslider
+msgid "Stop Slider"
+msgstr "Остановка слайдера"
+
+#: settings/slider_settings_xml_lang.php:26
+#@ revslider
+msgid "On / Off to stop slider after some amount of loops / slides"
+msgstr "Вкл. / Выкл. остановку слайдера после нескольких пробегов."
+
+#: settings/slider_settings_xml_lang.php:27
+#@ revslider
+msgid "Stop After Loops"
+msgstr "Остановка после пробегов"
+
+#: settings/slider_settings_xml_lang.php:28
+#@ revslider
+msgid "Stop the slider after certain amount of loops. 0 related to the first loop."
+msgstr "Остановите слайдер после некотого количества пробегов. 0 для первого пробега."
+
+#: settings/slider_settings_xml_lang.php:29
+#@ revslider
+msgid "Stop At Slide"
+msgstr "Остановится на слайде"
+
+#: settings/slider_settings_xml_lang.php:30
+#@ revslider
+msgid "Stop the slider at the given slide"
+msgstr "Остановить слайдер на какомто слайде."
+
+#: settings/slider_settings_xml_lang.php:31
+#@ revslider
+msgid "Position on the page"
+msgstr "Позиция на странице"
+
+#: settings/slider_settings_xml_lang.php:32
+#@ revslider
+msgid "The position of the slider on the page, (float:left, float:right, margin:0px auto;)"
+msgstr "Позиция слайдера на странице, (float:left, float:right, margin:0px auto;)"
+
+#: settings/slider_settings_xml_lang.php:36
+#@ revslider
+msgid "Margin Top"
+msgstr "Верхний Margin"
+
+#: settings/slider_settings_xml_lang.php:37
+#@ revslider
+msgid "The top margin of the slider wrapper div"
+msgstr "Верхний margin обертывающиво Div слайдера"
+
+#: settings/layer_settings.php:71
+#: settings/slider_settings_xml_lang.php:38
+#@ revslider
+msgid "px"
+msgstr "px"
+
+#: settings/slider_settings_xml_lang.php:39
+#@ revslider
+msgid "Margin Bottom"
+msgstr "Нижний Margin"
+
+#: settings/slider_settings_xml_lang.php:40
+#@ revslider
+msgid "The bottom margin of the slider wrapper div"
+msgstr "Нижний margin обертывающиво Div слайдера"
+
+#: settings/slider_settings_xml_lang.php:41
+#@ revslider
+msgid "Margin Left"
+msgstr "Левый Margin"
+
+#: settings/slider_settings_xml_lang.php:42
+#@ revslider
+msgid "The left margin of the slider wrapper div"
+msgstr "Левый margin обертывающиво Div слайдера"
+
+#: settings/slider_settings_xml_lang.php:43
+#@ revslider
+msgid "Margin Right"
+msgstr "Правый Margin"
+
+#: settings/slider_settings_xml_lang.php:44
+#@ revslider
+msgid "The right margin of the slider wrapper div"
+msgstr "Правый margin обертывающиво Div слайдера"
+
+#: settings/slider_settings_xml_lang.php:45
+#@ revslider
+msgid "Shadow Type"
+msgstr "Тип тени"
+
+#: settings/slider_settings_xml_lang.php:46
+#@ revslider
+msgid "The Shadow display underneath the banner. The shadow apply to fixed and responsive modes only, the full width slider don't have a shadow."
+msgstr "Тип отображение теней под слайдером."
+
+#: settings/slider_settings_xml_lang.php:51
+#@ revslider
+msgid "Show Timer Line"
+msgstr "Показать полоску таймера"
+
+#: settings/slider_settings_xml_lang.php:52
+#@ revslider
+msgid "Show the top running timer line"
+msgstr "Показать верхнию или нижнию движещиюся полоску таймера"
+
+#: settings/slider_settings_xml_lang.php:56
+#@ revslider
+msgid "Background color"
+msgstr "Цвет Фона"
+
+#: settings/slider_settings_xml_lang.php:57
+#@ revslider
+msgid "Slider wrapper div background color, for transparent slider, leave empty."
+msgstr "Цвет фона слайдера. Для прозрачности оставить пустым."
+
+#: settings/slider_settings_xml_lang.php:58
+#@ revslider
+msgid "Padding (border)"
+msgstr "Padding (border)"
+
+#: settings/slider_settings_xml_lang.php:59
+#@ revslider
+msgid "The wrapper div padding, if it has value, then together with background color it it will make border around the slider."
+msgstr "Padding слайдера. Если имеется значение, то вместе с цветом фона создает border вокруг слайдера."
+
+#: settings/slider_settings_xml_lang.php:60
+#@ revslider
+msgid "Show Background Image"
+msgstr "Показать фоновое изображение"
+
+#: settings/slider_settings_xml_lang.php:61
+#@ revslider
+msgid "yes / no to put background image to the main slider wrapper."
+msgstr "Поставить фоновое изображение на слайдер."
+
+#: settings/slider_settings_xml_lang.php:62
+#@ revslider
+msgid "Background Image Url"
+msgstr "Адрес фонового изображения"
+
+#: settings/slider_settings_xml_lang.php:63
+#@ revslider
+msgid "The background image that will be on the slider wrapper. Will be shown at slider preloading."
+msgstr "Фоновое изображение, которое будет на слайдере. Будет показана на этапе предварительной загрузки"
+
+#: settings/slider_settings_xml_lang.php:68
+#@ revslider
+msgid "Navigation Type"
+msgstr "Тип навигации"
+
+#: settings/slider_settings_xml_lang.php:69
+#@ revslider
+msgid "Display type of the navigation bar (Default:none"
+msgstr "Выбераем тип навигационного региона"
+
+#: settings/slider_settings_xml_lang.php:74
+#@ revslider
+msgid "Navigation Arrows"
+msgstr "Навигационные стрекли"
+
+#: settings/slider_settings_xml_lang.php:75
+#@ revslider
+msgid "Display position of the Navigation Arrows (** By navigation Type Thumb arrows always centered or none visible)"
+msgstr "Показать положение стрелки (** Если выбран навигационный тип:  Thumb навигационные стрелки всегда находится в центре или спрятанны)"
+
+#: settings/slider_settings_xml_lang.php:78
+#@ revslider
+msgid "Navigation Style"
+msgstr "Стиль навигации"
+
+#: settings/slider_settings_xml_lang.php:79
+#@ revslider
+msgid "Look of the navigation bullets  ** If you choose navbar, we recommend to choose Navigation Arrows to nexttobullets"
+msgstr "Вид  булетов. ** Если вы выбираете Navbar, мы рекомендуем выбирать стрелки возле булетов."
+
+#: settings/slider_settings_xml_lang.php:85
+#@ revslider
+msgid "Always Show Navigation"
+msgstr "Всегда показать навигацию"
+
+#: settings/slider_settings_xml_lang.php:86
+#@ revslider
+msgid "Always show the navigation and the thumbnails."
+msgstr "Всегда показывать навигацию и миниотюры"
+
+#: settings/slider_settings_xml_lang.php:87
+#@ revslider
+msgid "Hide Navitagion After"
+msgstr "Скрыть Навигацию После"
+
+#: settings/slider_settings_xml_lang.php:88
+#@ revslider
+msgid "Time after that the Navigation and the Thumbs will be hidden(Default: 200 ms)"
+msgstr "После этого времяни  навигация и миниотюры будут скрыты (по умолчанию: 200 мс)"
+
+#: settings/layer_settings.php:37
+#: settings/layer_settings.php:80
+#: settings/layer_settings.php:85
+#: settings/slider_settings_xml_lang.php:89
+#@ revslider
+msgid "ms"
+msgstr "мс"
+
+#: settings/slider_settings_xml_lang.php:90
+#@ revslider
+msgid "Navigation Horizontal Align"
+msgstr "Выравнивание Нав. по горизонтали"
+
+#: settings/slider_settings_xml_lang.php:91
+#@ revslider
+msgid "Horizontal Align of Bullets / Thumbnails"
+msgstr "Выравнивание по горизонтали Булеты / Mиниотюры"
+
+#: settings/slider_settings_xml_lang.php:92
+#@ revslider
+msgid "Navigation Vertical Align"
+msgstr "Выравнивание Нав. по вертикали"
+
+#: settings/slider_settings_xml_lang.php:93
+#@ revslider
+msgid "Vertical Align of Bullets / Thumbnails"
+msgstr "Выравнивание по вертикали булетов / миниотюр"
+
+#: settings/slider_settings_xml_lang.php:94
+#@ revslider
+msgid "Navigation Horizontal Offset"
+msgstr "Смещение Нав. по горизонтали "
+
+#: settings/slider_settings_xml_lang.php:95
+#@ revslider
+msgid "Offset from current Horizontal position of Bullets / Thumbnails negative and positive direction"
+msgstr "Смещение по горизонтали от текущего положения Буллета / Миниатюры отрицательным и положительным направлением"
+
+#: settings/slider_settings_xml_lang.php:96
+#@ revslider
+msgid "Navigation Vertical Offset"
+msgstr "смещение Нав. по вертики"
+
+#: settings/slider_settings_xml_lang.php:97
+#@ revslider
+msgid "Offset from current Vertical  position of Bullets / Thumbnails negative and positive direction"
+msgstr "Вертикальное смещение от текущей позиции Буллета / Миниатюры отрицательным и положительным направлением"
+
+#: settings/slider_settings_xml_lang.php:98
+#@ revslider
+msgid "Left Arrow Horizontal Align"
+msgstr "Выравнивание левой стрелки по горизонтали"
+
+#: settings/slider_settings_xml_lang.php:99
+#@ revslider
+msgid "Horizontal Align of left Arrow (only if arrow is not next to bullets)"
+msgstr "Выравнивание левой стрелки по горизонтали (Только если стрелка находится не рядом с буллетами)"
+
+#: settings/slider_settings_xml_lang.php:100
+#@ revslider
+msgid "Left Arrow Vertical Align"
+msgstr "Выравнивание левой стрелки по вертикали"
+
+#: settings/slider_settings_xml_lang.php:101
+#@ revslider
+msgid "Vertical Align of left Arrow (only if arrow is not next to bullets)"
+msgstr "Выравнивание левой стрелки по вертикали (Только если стрелка находится не рядом с буллетами)"
+
+#: settings/slider_settings_xml_lang.php:102
+#@ revslider
+msgid "Left Arrow Horizontal Offset"
+msgstr "Смещение левой стрелки по горизонтали"
+
+#: settings/slider_settings_xml_lang.php:103
+#@ revslider
+msgid "Offset from current Horizontal position of of left Arrow  negative and positive direction"
+msgstr "Смещение по горизонтали от текущего положения левой стрелки отрицательного и положительного направления"
+
+#: settings/slider_settings_xml_lang.php:104
+#@ revslider
+msgid "Left Arrow Vertical Offset"
+msgstr "Смещение левой стрелки по вертикали"
+
+#: settings/slider_settings_xml_lang.php:105
+#@ revslider
+msgid "Offset from current Vertical position of of left Arrow negative and positive direction"
+msgstr "Смещение по вертикали от текущего положения левой стрелки отрицательного и положительного направления"
+
+#: settings/slider_settings_xml_lang.php:106
+#@ revslider
+msgid "Right Arrow Horizontal Align"
+msgstr "Выравнивание правой стрелки по горизонтали"
+
+#: settings/slider_settings_xml_lang.php:107
+#@ revslider
+msgid "Horizontal Align of right Arrow (only if arrow is not next to bullets)"
+msgstr "Выравнивание правой стрелки по горизонтали (Только если стрелка находится не рядом с буллетами)"
+
+#: settings/slider_settings_xml_lang.php:108
+#@ revslider
+msgid "Right Arrow Vertical Align"
+msgstr "Выравнивание правой стрелки по вертикали"
+
+#: settings/slider_settings_xml_lang.php:109
+#@ revslider
+msgid "Vertical Align of right Arrow (only if arrow is not next to bullets)"
+msgstr "Выравнивание правой стрелки по вертикали (Только если стрелка находится не рядом с буллетами)"
+
+#: settings/slider_settings_xml_lang.php:110
+#@ revslider
+msgid "Right Arrow Horizontal Offset"
+msgstr "Смещение правой стрелки по горизонтали"
+
+#: settings/slider_settings_xml_lang.php:111
+#@ revslider
+msgid "Offset from current Horizontal position of of right Arrow negative and positive direction"
+msgstr "Смещение по горизонтали от текущего положения правой стрелки отрицательного и положительного направления"
+
+#: settings/slider_settings_xml_lang.php:112
+#@ revslider
+msgid "Right Arrow Vertical Offset"
+msgstr "Смещение правой стрелки по вертикали"
+
+#: settings/slider_settings_xml_lang.php:113
+#@ revslider
+msgid "Offset from current Vertical position of of right Arrow negative and positive direction"
+msgstr "Смещение по вертикали от текущего положения правой стрелки отрицательного и положительного направления"
+
+#: settings/slider_settings_xml_lang.php:114
+#@ revslider
+msgid "Thumb Width"
+msgstr "Ширина миниотюр"
+
+#: settings/slider_settings_xml_lang.php:115
+#@ revslider
+msgid "The basic Width of one Thumbnail (only if thumb is selected)"
+msgstr "Базовая ширина одного thumbnail (только если выбран тип миниотюр)"
+
+#: settings/slider_settings_xml_lang.php:116
+#@ revslider
+msgid "Thumb Height"
+msgstr "Высота миниотюр"
+
+#: settings/slider_settings_xml_lang.php:117
+#@ revslider
+msgid "the basic Height of one Thumbnail (only if thumb is selected)"
+msgstr "Базовая высота одного thumbnail (только если выбран тип миниотюр)"
+
+#: settings/slider_settings_xml_lang.php:118
+#@ revslider
+msgid "Thumb Amount"
+msgstr "Количество миниотюр"
+
+#: settings/slider_settings_xml_lang.php:119
+#@ revslider
+msgid "the amount of the Thumbs visible same time (only if thumb is selected)"
+msgstr "Количество видимых thumbnails в то же время (только если выбран тип thumbnails)"
+
+#: settings/slider_settings_xml_lang.php:120
+#@ revslider
+msgid "Hide Slider Under Width"
+msgstr "Скрыть слайдер ниже ширины"
+
+#: settings/slider_settings_xml_lang.php:121
+#@ revslider
+msgid "Hide the slider under some slider width. Works only in Responsive Style. Not available for Fullwidth."
+msgstr "Скрыть слайдер под указанной шириной. Работает только при типе - отзывчевый . Не действителен для типа - полная ширина"
+
+#: settings/slider_settings_xml_lang.php:122
+#@ revslider
+msgid "Hide Defined Layers Under Width"
+msgstr "Скрыть указанные слои под шириной"
+
+#: settings/slider_settings_xml_lang.php:123
+#@ revslider
+msgid "Hide some defined layers in the layer properties under some slider width."
+msgstr "Скрыть отмеченные слои в свойствах слоя под опеределенной ширине слайдера."
+
+#: settings/slider_settings_xml_lang.php:124
+#@ revslider
+msgid "Hide All Layers Under Width"
+msgstr "Скрыть все слои под указанной шириной"
+
+#: settings/slider_settings_xml_lang.php:125
+#@ revslider
+msgid "Hide all layers under some slider width"
+msgstr "Скрыть все слои под указанной шириной"
+
+#: settings/slider_settings_xml_lang.php:126
+#@ revslider
+msgid "Start With Slide"
+msgstr "Начать со слайда"
+
+#: settings/slider_settings_xml_lang.php:127
+#@ revslider
+msgid "Change it if you want to start from a different slide then 1"
+msgstr "Укажите значение если хотите чтоб слайдер начанался не с первого слайда"
+
+#: settings/slider_settings_xml_lang.php:128
+#@ revslider
+msgid "First Transition Active"
+msgstr "Изменение первой transition"
+
+#: settings/slider_settings_xml_lang.php:129
+#@ revslider
+msgid "If active, it will overwrite the first slide transition. Use it when you want a special transition for the first slide only."
+msgstr "Если активно, то будет изменен transition первого слайда. Используйте ето, когда вы хотите специального transition только для первого слайда"
+
+#: settings/slider_settings_xml_lang.php:130
+#@ revslider
+msgid "First Transition Type"
+msgstr "Тип первого transition"
+
+#: settings/slider_settings_xml_lang.php:131
+#@ revslider
+msgid "First slide transition type"
+msgstr "Тип transition первого слайда"
+
+#: settings/slider_settings_xml_lang.php:133
+#@ revslider
+msgid "First Transition Duration"
+msgstr "Продолжительность первого transition"
+
+#: settings/slider_settings_xml_lang.php:134
+#@ revslider
+msgid "First slide transition duration (Default:300, min: 100 max 2000)"
+msgstr "Продолжительность первого transition между слайдами (по умолчанию: 300 мин: 100 Макс 2000)"
+
+#: settings/slider_settings_xml_lang.php:135
+#@ revslider
+msgid "First Transition Slot Amount"
+msgstr "Количество слотов первой transition"
+
+#: settings/slider_settings_xml_lang.php:136
+#@ revslider
+msgid "The number of slots or boxes the slide is divided into. If you use boxfade, over 7 slots can be juggy"
+msgstr "Количество слотов на которые разделен на слайд при transition. Если вы используете boxfade, более семи слотов может быть Juggy"
+
+#: settings/slider_settings_xml_lang.php:137
+#@ revslider
+msgid "JQuery No Conflict Mode"
+msgstr "JQuery No Conflict Mode"
+
+#: settings/slider_settings_xml_lang.php:138
+#@ revslider
+msgid "Turns on / off jquery noconflict mode. You can play with this option when you have some javascript conflicts."
+msgstr "Включение / выключение режима noconflict JQuery. Вы можете играть с этой опцией, когда у вас есть JavaScript конфликты."
+
+#: settings/slider_settings_xml_lang.php:139
+#@ revslider
+msgid "Put JS Includes To Body"
+msgstr "Вставить JS Includes в Body"
+
+#: settings/slider_settings_xml_lang.php:140
+#@ revslider
+msgid "Putting the js to body (in addition to head) is good for fixing some javascript conflicts of type: TypeError: tpj('#rev_slider_1_1').show().revolution is not a function"
+msgstr "Ввод JS к Body (в дополнение к head) хороша для фиксации некоторых JavaScript конфликты типа: Ошибка типа:  TypeError: tpj('#rev_slider_1_1').show().revolution is not a function"
+
+#: settings/slider_settings_xml_lang.php:143
+#@ revslider
+msgid "Output Filters Protection"
+msgstr "Защита от Output Filters"
+
+#: settings/slider_settings_xml_lang.php:144
+#@ revslider
+msgid "Activate a protection against wordpress output filters that adds html blocks to the shortcode output like P and BR"
+msgstr "Включить защиту от выходных фильтров WordPress блоки HTML, который добавляет к shortcode  вывода, как и P BR"
+
+#: inc_php/framework/settings_product_sidebar.class.php:474
+#@ revslider
+msgid "text"
+msgstr "Текст"
+
+#: settings/general_settings.php:14
+#: settings/general_settings.php:23
+#: settings/slider_settings.php:91
+#: settings/slider_settings.php:95
+#: settings/slider_settings.php:96
+#: settings/slider_settings_xml_lang.php:14
+#: views/templates/edit_layers.php:95
+#@ revslider
+msgid "On"
+msgstr "Вкл."
+
+#: settings/general_settings.php:14
+#: settings/general_settings.php:23
+#: settings/slider_settings.php:91
+#: settings/slider_settings.php:95
+#: settings/slider_settings.php:96
+#: settings/slider_settings_xml_lang.php:15
+#: views/templates/edit_layers.php:95
+#@ revslider
+msgid "Off"
+msgstr "Выкл."
+
+#: settings/slider_settings_xml_lang.php:20
+#@ revslider
+msgid "Yes"
+msgstr "Да"
+
+#: settings/slider_settings_xml_lang.php:21
+#@ revslider
+msgid "No"
+msgstr "Нет"
+
+#: settings/slider_settings_xml_lang.php:33
+#@ revslider
+msgid "Left"
+msgstr "Лево"
+
+#: settings/slider_settings_xml_lang.php:34
+#@ revslider
+msgid "Center"
+msgstr "Центр"
+
+#: settings/slider_settings_xml_lang.php:35
+#@ revslider
+msgid "Right"
+msgstr "Право"
+
+#: settings/slider_settings_xml_lang.php:47
+#@ revslider
+msgid "No Shadow"
+msgstr "Нет тени"
+
+#: settings/slider_settings_xml_lang.php:48
+#@ revslider
+msgid "1"
+msgstr "1"
+
+#: settings/slider_settings_xml_lang.php:49
+#@ revslider
+msgid "2"
+msgstr "2"
+
+#: settings/slider_settings_xml_lang.php:50
+#@ revslider
+msgid "3"
+msgstr "3"
+
+#: settings/slider_settings_xml_lang.php:55
+#@ revslider
+msgid "Hide"
+msgstr "Скрыть"
+
+#: settings/slider_settings_xml_lang.php:53
+#@ revslider
+msgid "Top"
+msgstr "Верх"
+
+#: settings/slider_settings_xml_lang.php:54
+#@ revslider
+msgid "Bottom"
+msgstr "Низ"
+
+#: settings/slider_settings_xml_lang.php:70
+#@ revslider
+msgid "None"
+msgstr "Отсутсвует"
+
+#: settings/slider_settings_xml_lang.php:71
+#@ revslider
+msgid "Bullet"
+msgstr "Булет"
+
+#: settings/slider_settings_xml_lang.php:72
+#@ revslider
+msgid "Thumb"
+msgstr "Thumb"
+
+#: settings/slider_settings_xml_lang.php:73
+#@ revslider
+msgid "Both"
+msgstr "Оба"
+
+#: settings/slider_settings_xml_lang.php:76
+#@ revslider
+msgid "With Bullets"
+msgstr "С булеттами"
+
+#: settings/slider_settings_xml_lang.php:77
+#@ revslider
+msgid "Solo"
+msgstr "Отдельные"
+
+#: settings/slider_settings_xml_lang.php:80
+#@ revslider
+msgid "Round"
+msgstr "Округленные"
+
+#: settings/slider_settings_xml_lang.php:81
+#@ revslider
+msgid "Navbar"
+msgstr "Navbar"
+
+#: settings/slider_settings_xml_lang.php:82
+#@ revslider
+msgid "Old Round"
+msgstr "Округленные старого типа"
+
+#: settings/slider_settings_xml_lang.php:83
+#@ revslider
+msgid "Old Square"
+msgstr "Квадратные старого типа"
+
+#: settings/slider_settings_xml_lang.php:84
+#@ revslider
+msgid "Old Navbar"
+msgstr "Navbar старого типа"
+
+#: settings/slider_settings_xml_lang.php:132
+#@ revslider
+msgid "Replace me!"
+msgstr "Поменяй меня!"
+
+#: settings/slider_settings_xml_lang.php:141
+#@ revslider
+msgid "True"
+msgstr "Да"
+
+#: settings/slider_settings_xml_lang.php:142
+#@ revslider
+msgid "False"
+msgstr "Нет"
+
+#: settings/slider_settings_xml_lang.php:145
+#@ revslider
+msgid "By Compressing Output"
+msgstr "Компресс вывода"
+
+#: settings/slider_settings_xml_lang.php:146
+#@ revslider
+msgid "By Echo Output"
+msgstr "выводя с помощью echo"
+
+#: views/master_view.php:44
+#@ revslider
+msgid "Update Plugin"
+msgstr "Обновить плагин"
+
+#: views/system/update_dialog.php:1
+#@ revslider
+msgid "Update Slider Plugin"
+msgstr "Обновить плагин слайдера"
+
+#: views/system/update_dialog.php:1
+#@ revslider
+msgid "Update Revolution Slider Plugin"
+msgstr "Обновить плагин Revolution Slider"
+
+#: views/system/update_dialog.php:1
+#@ revslider
+msgid "To update the slider please show the slider install package. The files will be overwriten."
+msgstr "Чтобы обновить слайдер пожалуйста выбрать упаковку установки. Файлы будут перезаписаны."
+
+#: views/system/update_dialog.php:1
+#@ revslider
+msgid "File example: revslider.zip"
+msgstr ""
+
+#: views/system/update_dialog.php:1
+#@ revslider
+msgid "Choose the update file:"
+msgstr "Выберите файл обновления:"
+
+#: views/system/update_dialog.php:1
+#@ revslider
+msgid "Update Slider"
+msgstr "Сохранить"
+
+#: views/system/video_dialog.php:9
+#@ revslider
+msgid "Choose video type"
+msgstr "Выбор типа видео"
+
+#: views/system/video_dialog.php:37
+#@ revslider
+msgid "Enter Vimeo ID or URL"
+msgstr "Введите ID Vimeo или адресс"
+
+#: views/system/video_dialog.php:47
+#@ revslider
+msgid "example:  30300114"
+msgstr "пример:  30300114"
+
+#: views/templates/edit_layers.php:16
+#@ revslider
+msgid "Image BG"
+msgstr "фон изображения"
+
+#: views/templates/edit_layers.php:212
+#@ revslider
+msgid "Add Layer"
+msgstr "Добавить слой"
+
+#: views/templates/edit_layers.php:213
+#@ revslider
+msgid "Add Layer: Image"
+msgstr "Добавить слой: Изображение"
+
+#: views/templates/edit_layers.php:214
+#@ revslider
+msgid "Add Layer: Video"
+msgstr "Добавить слой: видео"
+
+#: views/templates/edit_layers.php:218
+#@ revslider
+msgid "Delete Layer"
+msgstr "Стереть слой"
+
+#: views/templates/edit_layers.php:219
+#@ revslider
+msgid "Delete All Layers"
+msgstr "Стереть все слои"
+
+#: views/templates/edit_layers.php:215
+#@ revslider
+msgid "Duplicate Layer"
+msgstr ""
+
+#: settings/layer_settings.php:21
+#: settings/layer_settings.php:22
+#@ revslider
+msgid "Layer Params"
+msgstr "Параметрй Слоев"
+
+#: views/templates/edit_layers.php:663
+#@ revslider
+msgid "By Time"
+msgstr "По времени"
+
+#: views/templates/edit_layers.php:664
+#@ revslider
+msgid "By Depth"
+msgstr "По глубине"
+
+#: views/slides.php:55
+#: views/templates/slide.php:30
+#: views/templates/slides_list.php:99
+#@ revslider
+msgid "Edit Slide"
+msgstr "Редактировать"
+
+#: views/templates/slide.php:137
+#@ revslider
+msgid "Update Slide"
+msgstr "Сохронить"
+
+#: views/templates/slide.php:138
+#@ revslider
+msgid "updating"
+msgstr "сохроняется"
+
+#: views/system/general_settings_dialog.php:22
+#: views/templates/slider_edit.php:58
+#: views/templates/slider_new.php:49
+#: views/templates/slides.php:21
+#: views/templates/slides.php:41
+#: views/templates/slides.php:48
+#: views/templates/slides_gallery.php:21
+#: views/templates/slides_gallery.php:39
+#: views/templates/slides_gallery.php:45
+#: views/templates/slides_posts.php:1
+#@ revslider
+msgid "Close"
+msgstr "Закрыть"
+
+#: views/templates/slider_api.php:8
+#@ revslider
+msgid "API Methods"
+msgstr "Методы API"
+
+#: views/templates/slider_api.php:10
+#@ revslider
+msgid "Please copy / paste those functions into your functions js file"
+msgstr "Пожалуйста, копировaйте / вставте ети функции в ваш фаил JS."
+
+#: views/templates/slider_api.php:14
+#@ revslider
+msgid "Pause Slider"
+msgstr "Приостановить слайдер"
+
+#: views/templates/slider_api.php:18
+#@ revslider
+msgid "Resume Slider"
+msgstr "Продолжить слайдер"
+
+#: views/templates/slider_api.php:22
+#@ revslider
+msgid "Previous Slide"
+msgstr "Предидущий слайд"
+
+#: views/templates/slider_api.php:26
+#@ revslider
+msgid "Next Slide"
+msgstr "Следуещий слайд"
+
+#: views/templates/slider_api.php:30
+#@ revslider
+msgid "Go To Slide"
+msgstr "Перейти на слайд"
+
+#: views/templates/slider_api.php:34
+#@ revslider
+msgid "Get Num Slides"
+msgstr "Узнать количество слайдов"
+
+#: views/templates/slider_api.php:38
+#@ revslider
+msgid "Get Current Slide Number"
+msgstr "Узнать текуший номер слайда"
+
+#: views/templates/slider_api.php:42
+#@ revslider
+msgid "Get Last Playing Slide Number"
+msgstr "Узнать номер прошедшего слайда"
+
+#: views/templates/slider_api.php:58
+#@ revslider
+msgid "API Events"
+msgstr "События API"
+
+#: views/templates/slider_edit.php:15
+#@ revslider
+msgid "Edit Slider"
+msgstr "Редактировать слайдер"
+
+#: views/templates/slider_edit.php:55
+#@ revslider
+msgid "updating..."
+msgstr "сохроняется..."
+
+#: views/templates/slider_edit.php:57
+#@ revslider
+msgid "Delete Slider"
+msgstr "Удалить слайдер"
+
+#: views/templates/slider_edit.php:59
+#: views/templates/sliders_list.php:84
+#: views/templates/slides.php:8
+#: views/templates/slides_gallery.php:8
+#: views/templates/slides_posts.php:1
+#@ revslider
+msgid "Edit Slides"
+msgstr "Редактировать слайды"
+
+#: views/templates/slider_edit.php:60
+#@ revslider
+msgid "Preview Slider"
+msgstr "Простмотр слайдера"
+
+#: views/templates/slider_new.php:12
+#@ revslider
+msgid "New Slider"
+msgstr "Новый слайдер"
+
+#: views/templates/slider_new.php:46
+#@ revslider
+msgid "Create Slider"
+msgstr "Создать слайдер"
+
+#: views/templates/slider_toolbox.php:33
+#@ revslider
+msgid "Note, that when you importing slider, it delete all the current slider settings and slides, then replace it with the new ones"
+msgstr "Отметим, что когда вы импортируете слайдер, это удалит все текущие настройки слайдера и слайды, а затем заменит его на новые"
+
+#: views/templates/sliders.php:81
+#@ revslider
+msgid "Choose the import file"
+msgstr "Выберите файл импорта"
+
+#: views/templates/sliders.php:24
+#@ revslider
+msgid "No Sliders Found"
+msgstr "слайдеры не найдены"
+
+#: views/templates/sliders.php:31
+#@ revslider
+msgid "Create New Slider"
+msgstr "Создать новый слайдер"
+
+#: views/templates/sliders.php:54
+#: views/templates/sliders.php:59
+#: views/templates/sliders.php:60
+#@ revslider
+msgid "* From the"
+msgstr "* Из"
+
+#: views/templates/sliders.php:54
+#@ revslider
+msgid "theme html"
+msgstr "html темы"
+
+#: views/templates/sliders.php:54
+#@ revslider
+msgid "use"
+msgstr "изпользовать"
+
+#: views/system/video_dialog.php:67
+#: views/templates/sliders.php:54
+#@ revslider
+msgid "example"
+msgstr "пример"
+
+#: views/templates/sliders.php:56
+#@ revslider
+msgid "For show only on homepage use"
+msgstr "Для  использования только на домашней странице"
+
+#: views/templates/sliders.php:57
+#@ revslider
+msgid "For show on certain pages use"
+msgstr ""
+
+#: views/templates/sliders.php:59
+#@ revslider
+msgid "widgets panel"
+msgstr "Панеле виджетов"
+
+#: views/templates/sliders.php:59
+#@ revslider
+msgid "drag the \"Revolution Slider\" widget to the desired sidebar"
+msgstr "Перетащите \"Revolution Slider \" виджет в боковое меню"
+
+#: views/templates/sliders.php:60
+#@ revslider
+msgid "post editor"
+msgstr "редактора записей"
+
+#: views/templates/sliders.php:60
+#@ revslider
+msgid "insert the shortcode from the sliders table"
+msgstr "Вставьте shortcode  из таблицы слайдеров"
+
+#: settings/layer_settings.php:97
+#: views/templates/sliders_list.php:5
+#@ revslider
+msgid "ID"
+msgstr "ID"
+
+#: views/templates/sliders_list.php:6
+#@ revslider
+msgid "Name"
+msgstr "Название"
+
+#: views/templates/sliders_list.php:15
+#@ revslider
+msgid "N. Slides"
+msgstr "Колич. Слайдов"
+
+#: views/templates/sliders_list.php:16
+#@ revslider
+msgid "Actions"
+msgstr "Действиа"
+
+#: views/templates/sliders_list.php:10
+#@ revslider
+msgid "Shortcode"
+msgstr "Shortcode"
+
+#: views/templates/slider_edit.php:60
+#: views/templates/sliders_list.php:88
+#@ revslider
+msgid "Preview"
+msgstr "Просмотр"
+
+#: views/templates/sliders_list.php:86
+#: views/templates/slides_list.php:124
+#: views/templates/slides_list_posts.php:1
+#@ revslider
+msgid "Delete"
+msgstr "Удалить"
+
+#: views/templates/sliders_list.php:87
+#: views/templates/slides_list.php:126
+#@ revslider
+msgid "Duplicate"
+msgstr "Дублировать"
+
+#: views/templates/slides.php:16
+#: views/templates/slides.php:36
+#: views/templates/slides_gallery.php:16
+#: views/templates/slides_gallery.php:36
+#@ revslider
+msgid "New Slide"
+msgstr "Новый Слайд"
+
+#: views/templates/slide.php:140
+#: views/templates/slides.php:44
+#@ revslider
+msgid "To Slider Settings"
+msgstr "Перейти к установкам слайдера"
+
+#: views/templates/slides_list.php:4
+#: views/templates/slides_list_posts.php:1
+#@ revslider
+msgid "Slides List"
+msgstr "Список слайдов"
+
+#: views/templates/slides_list.php:5
+#: views/templates/slides_list_posts.php:1
+#@ revslider
+msgid "Saving Order"
+msgstr ""
+
+#: views/templates/slides_list.php:9
+#: views/templates/slides_list_posts.php:1
+#@ revslider
+msgid "No Slides Found"
+msgstr "Слайды не найденны"
+
+#: views/templates/slides_list.php:88
+#@ revslider
+msgid "Unpublish Slide"
+msgstr "Отменить публикацию слайдов"
+
+#: views/templates/slides_list.php:90
+#@ revslider
+msgid "Publish Slide"
+msgstr "Публикация слайда"
+
+#: inc_php/revslider_settings_product.class.php:118
+#: inc_php/revslider_settings_product.class.php:132
+#: inc_php/revslider_settings_product.class.php:146
+#: inc_php/revslider_settings_product.class.php:160
+#: inc_php/revslider_settings_product.class.php:174
+#: inc_php/revslider_settings_product.class.php:188
+#@ revslider
+msgid "Screen Width"
+msgstr "Ширина экрана"
+
+#: inc_php/revslider_settings_product.class.php:124
+#: inc_php/revslider_settings_product.class.php:138
+#: inc_php/revslider_settings_product.class.php:152
+#: inc_php/revslider_settings_product.class.php:166
+#: inc_php/revslider_settings_product.class.php:180
+#: inc_php/revslider_settings_product.class.php:194
+#@ revslider
+msgid "Slider Width"
+msgstr "Ширина слайдера"
+
+#: settings/slider_settings.php:6
+#@ revslider
+msgid "The title of the slider. Example: Slider1"
+msgstr "Название слайдера. Пример: Slider1"
+
+#: settings/slider_settings.php:7
+#@ revslider
+msgid "The alias that will be used for embedding the slider. Example: slider1"
+msgstr "Это будет псевдонимом, используемым для встраивания слайдера. Пример: slider1"
+
+#: settings/slider_settings.php:8
+#@ revslider
+msgid "Slider Shortcode"
+msgstr "Shortcode слайдера"
+
+#: settings/slider_settings.php:74
+#@ revslider
+msgid "Fixed"
+msgstr "Неизминяемый"
+
+#: settings/slider_settings.php:6
+#@ revslider
+msgid "Slider Title"
+msgstr "Название слайдера"
+
+#: settings/slider_settings.php:7
+#@ revslider
+msgid "Slider Alias"
+msgstr "Псевдоним слайдера"
+
+#: settings/slider_settings_xml_lang.php:2
+#: views/system/general_settings_dialog.php:10
+#@ revslider
+msgid "General Settings"
+msgstr "Общие параметры"
+
+#: settings/slider_settings_xml_lang.php:3
+#@ revslider
+msgid "Position"
+msgstr "Позиция"
+
+#: settings/slider_settings_xml_lang.php:4
+#@ revslider
+msgid "Appearance"
+msgstr "Внешний вид"
+
+#: settings/slider_settings_xml_lang.php:5
+#@ revslider
+msgid "Navigation"
+msgstr "Навигация"
+
+#: settings/slider_settings_xml_lang.php:6
+#@ revslider
+msgid "Thumbnails"
+msgstr "Миниотюры"
+
+#: settings/slider_settings_xml_lang.php:7
+#@ revslider
+msgid "Mobile Visibility"
+msgstr "Мобильная видимость"
+
+#: settings/slider_settings_xml_lang.php:9
+#@ revslider
+msgid "Troubleshooting"
+msgstr "Устранение неисправностей"
+
+#: revslider_admin.php:399
+#@ revslider
+msgid "The slider successfully created"
+msgstr "Слайдер был успешно создан"
+
+#: revslider_admin.php:411
+#@ revslider
+msgid "Slider updated"
+msgstr "Слайдер обновился"
+
+#: revslider_admin.php:423
+#@ revslider
+msgid "The slider deleted"
+msgstr "Слайдер успешно стерся"
+
+#: revslider_admin.php:432
+#@ revslider
+msgid "The duplicate successfully, refreshing page..."
+msgstr "Дублированно успешно, рефрешим страницу..."
+
+#: revslider_admin.php:440
+#@ revslider
+msgid "Slide Created"
+msgstr "Слайдер создан"
+
+#: revslider_admin.php:459
+#@ revslider
+msgid "Slide updated"
+msgstr "Слайдер обновлен"
+
+#: revslider_admin.php:466
+#@ revslider
+msgid "Slide Deleted Successfully"
+msgstr "Слайд успешно удален"
+
+#: revslider_admin.php:476
+#@ revslider
+msgid "Slide Duplicated Successfully"
+msgstr "Слайд дублирован успешно"
+
+#: revslider_admin.php:524
+#@ revslider
+msgid "Order updated successfully"
+msgstr "Порядок успешно сохранен"
+
+#: revslider_admin.php:530
+#@ revslider
+msgid "Slide Changed Successfully"
+msgstr "Слайд успешно изменен"
+
+#: views/templates/slider_toolbox.php:37
+#: views/templates/slider_toolbox.php:40
+#: views/templates/sliders_list.php:85
+#@ revslider
+msgid "Export Slider"
+msgstr "Экспорт слайдера"
+
+#: settings/layer_settings.php:21
+#: settings/layer_settings.php:22
+#@ revslider
+msgid "layer_params"
+msgstr ""
+
+#: settings/layer_settings.php:23
+#@ revslider
+msgid "layer_caption"
+msgstr ""
+
+#: settings/layer_settings.php:23
+#@ revslider
+msgid "caption_green"
+msgstr ""
+
+#: settings/layer_settings.php:23
+#@ revslider
+msgid "Style"
+msgstr ""
+
+#: settings/layer_settings.php:31
+#@ revslider
+msgid "Text / Html"
+msgstr ""
+
+#: settings/layer_settings.php:32
+#@ revslider
+msgid "Image Link"
+msgstr ""
+
+#: settings/layer_settings.php:33
+#: settings/slide_settings.php:88
+#@ revslider
+msgid "Same Window"
+msgstr ""
+
+#: settings/layer_settings.php:33
+#: settings/slide_settings.php:88
+#@ revslider
+#@ default
+msgid "New Window"
+msgstr ""
+
+#: settings/layer_settings.php:33
+#: settings/slide_settings.php:88
+#@ revslider
+msgid "Link Open In"
+msgstr ""
+
+#: settings/layer_settings.php:39
+#@ revslider
+msgid "Hide Under Width"
+msgstr ""
+
+#: settings/layer_settings.php:57
+#: settings/layer_settings.php:59
+#@ revslider
+msgid "X"
+msgstr ""
+
+#: settings/layer_settings.php:62
+#: settings/layer_settings.php:64
+#@ revslider
+msgid "Y"
+msgstr ""
+
+#: settings/layer_settings.php:69
+#@ revslider
+msgid "Link To Slide"
+msgstr ""
+
+#: settings/layer_settings.php:76
+#@ revslider
+msgid "Edit Video"
+msgstr ""
+
+#: settings/layer_settings.php:74
+#@ revslider
+msgid "Change Image Source"
+msgstr ""
+
+#: settings/layer_settings.php:81
+#@ revslider
+msgid "End Time"
+msgstr ""
+
+#: settings/layer_settings.php:82
+#@ revslider
+msgid "End Speed"
+msgstr ""
+
+#: settings/layer_settings.php:83
+#@ revslider
+msgid "End Animation"
+msgstr ""
+
+#: settings/slide_settings.php:15
+#@ revslider
+msgid "The title of the slide, will be shown in the slides list."
+msgstr ""
+
+#: settings/slide_settings.php:16
+#@ revslider
+msgid "Slide"
+msgstr ""
+
+#: settings/slide_settings.php:16
+#@ revslider
+msgid "Slide Title"
+msgstr ""
+
+#: settings/slide_settings.php:19
+#@ revslider
+msgid "The state of the slide. The unpublished slide will be excluded from the slider."
+msgstr ""
+
+#: settings/slide_settings.php:20
+#@ revslider
+msgid "Published"
+msgstr ""
+
+#: settings/slide_settings.php:20
+#@ revslider
+msgid "Unpublished"
+msgstr ""
+
+#: settings/slide_settings.php:20
+#@ revslider
+msgid "State"
+msgstr ""
+
+#: settings/slide_settings.php:46
+#@ revslider
+msgid "The number of slots or boxes the slide is divided into. If you use boxfade, over 7 slots can be juggy."
+msgstr ""
+
+#: settings/slide_settings.php:49
+#@ revslider
+msgid "Slot Amount"
+msgstr ""
+
+#: settings/slide_settings.php:52
+#@ revslider
+msgid "Rotation (-720 -> 720, 999 = random) Only for Simple Transitions."
+msgstr ""
+
+#: settings/slide_settings.php:55
+#: views/templates/edit_layers.php:475
+#@ revslider
+msgid "Rotation"
+msgstr ""
+
+#: settings/slide_settings.php:58
+#@ revslider
+msgid "The duration of the transition (Default:300, min: 100 max 2000). "
+msgstr ""
+
+#: settings/slide_settings.php:61
+#@ revslider
+msgid "Transition Duration"
+msgstr ""
+
+#: settings/slide_settings.php:67
+#@ revslider
+msgid "A new delay value for the Slide. If no delay defined per slide, the delay defined via Options ("
+msgstr ""
+
+#: settings/slide_settings.php:67
+#@ revslider
+msgid "ms) will be used"
+msgstr ""
+
+#: settings/slide_settings.php:75
+#@ revslider
+msgid "Enable Link"
+msgstr ""
+
+#: settings/slide_settings.php:75
+#@ revslider
+msgid "Enable"
+msgstr ""
+
+#: settings/slide_settings.php:75
+#@ revslider
+msgid "Disable"
+msgstr ""
+
+#: settings/slide_settings.php:80
+#@ revslider
+msgid "Regular"
+msgstr ""
+
+#: settings/slide_settings.php:80
+#@ revslider
+msgid "To Slide"
+msgstr ""
+
+#: settings/slide_settings.php:80
+#@ revslider
+msgid "Link Type"
+msgstr ""
+
+#: settings/slide_settings.php:84
+#@ revslider
+msgid "Slide Link"
+msgstr ""
+
+#: settings/slide_settings.php:87
+#@ revslider
+msgid "The target of the slide link"
+msgstr ""
+
+#: settings/slide_settings.php:92
+#@ revslider
+msgid "-- Not Chosen --"
+msgstr ""
+
+#: settings/slide_settings.php:93
+#@ revslider
+msgid "-- Next Slide --"
+msgstr ""
+
+#: settings/slide_settings.php:94
+#@ revslider
+msgid "-- Previous Slide --"
+msgstr ""
+
+#: settings/slide_settings.php:120
+#@ revslider
+msgid "Slide Thumbnail. If not set - it will be taken from the slide image."
+msgstr ""
+
+#: settings/slide_settings.php:121
+#@ revslider
+msgid "Thumbnail"
+msgstr ""
+
+#: settings/slide_settings.php:128
+#@ revslider
+msgid "Background Type"
+msgstr ""
+
+#: inc_php/revslider_output.class.php:1221
+#@ revslider
+msgid "Revolution Slider Error"
+msgstr ""
+
+#: inc_php/revslider_settings_product.class.php:217
+#: inc_php/revslider_settings_product.class.php:220
+#: inc_php/revslider_settings_product.class.php:223
+#@ revslider
+msgid "Grid Width:"
+msgstr ""
+
+#: inc_php/revslider_settings_product.class.php:218
+#: inc_php/revslider_settings_product.class.php:221
+#: inc_php/revslider_settings_product.class.php:224
+#@ revslider
+msgid "Grid Height:"
+msgstr ""
+
+#: revslider.php:102
+#@ revslider
+msgid "If you want to use the PHP function \"putRevSlider\" in your code please make sure to check \" "
+msgstr ""
+
+#: revslider.php:102
+#@ revslider
+msgid " \" in the backend's \"General Settings\" (top right panel). <br> <br> Or add the current page to the \""
+msgstr ""
+
+#: revslider.php:102
+#@ default
+msgid "\" option box."
+msgstr ""
+
+#: revslider.php:117
+#@ revslider
+msgid "Revolution Slider Error:"
+msgstr ""
+
+#: revslider_admin.php:322
+#@ revslider
+msgid "importing slider setings and data..."
+msgstr ""
+
+#: revslider_admin.php:338
+#@ revslider
+msgid "Go Back"
+msgstr ""
+
+#: revslider_admin.php:341
+#@ revslider
+msgid "Slider Import Success, redirecting..."
+msgstr ""
+
+#: revslider_admin.php:443
+#@ revslider
+msgid "Slides Created"
+msgstr ""
+
+#: revslider_admin.php:452
+#@ revslider
+msgid "Slide Created, redirecting..."
+msgstr ""
+
+#: revslider_admin.php:483
+#@ revslider
+msgid "The operation successfully, refreshing page..."
+msgstr ""
+
+#: revslider_admin.php:557
+#@ revslider
+msgid "General settings updated"
+msgstr ""
+
+#: settings/general_settings.php:6
+#@ revslider
+msgid "To Admin"
+msgstr ""
+
+#: settings/general_settings.php:7
+#@ revslider
+msgid "To Editor, Admin"
+msgstr ""
+
+#: settings/general_settings.php:8
+#@ revslider
+msgid "Author, Editor, Admin"
+msgstr ""
+
+#: settings/general_settings.php:9
+#@ revslider
+msgid "View Plugin Permission"
+msgstr ""
+
+#: settings/general_settings.php:11
+#@ revslider
+msgid "The role of user that can view and edit the plugin"
+msgstr ""
+
+#: settings/general_settings.php:15
+#@ revslider
+msgid "Include RevSlider libraries globally"
+msgstr ""
+
+#: settings/general_settings.php:17
+#@ revslider
+msgid "Add css and js includes only on all pages. Id turned to off they will added to pages where the rev_slider shortcode exists only. This will work only when the slider added by a shortcode."
+msgstr ""
+
+#: settings/general_settings.php:19
+#@ revslider
+msgid "Pages to include RevSlider libraries"
+msgstr ""
+
+#: settings/general_settings.php:20
+#@ revslider
+msgid "Specify the page id's that the front end includes will be included in. Example: 2,3,5 also: homepage,3,4"
+msgstr ""
+
+#: settings/layer_settings.php:56
+#@ revslider
+msgid "OffsetX"
+msgstr ""
+
+#: settings/layer_settings.php:61
+#@ revslider
+msgid "OffsetY"
+msgstr ""
+
+#: settings/layer_settings.php:72
+#@ revslider
+msgid "Scroll Under Slider Offset"
+msgstr ""
+
+#: settings/layer_settings.php:88
+#@ revslider
+msgid "No Corner"
+msgstr ""
+
+#: settings/layer_settings.php:89
+#@ revslider
+msgid "Sharp"
+msgstr ""
+
+#: settings/layer_settings.php:90
+#@ revslider
+msgid "Sharp Reversed"
+msgstr ""
+
+#: settings/layer_settings.php:92
+#@ revslider
+msgid "Left Corner"
+msgstr ""
+
+#: settings/layer_settings.php:93
+#@ revslider
+msgid "Right Corner"
+msgstr ""
+
+#: settings/layer_settings.php:94
+#@ revslider
+msgid "Responsive Through All Levels"
+msgstr ""
+
+#: settings/slide_settings.php:42
+#@ revslider
+msgid "The appearance transitions of this slide."
+msgstr ""
+
+#: settings/slide_settings.php:43
+#@ revslider
+msgid "Transitions"
+msgstr ""
+
+#: settings/slide_settings.php:97
+#@ revslider
+msgid "-- Scroll Below Slider --"
+msgstr ""
+
+#: settings/slider_settings.php:75
+#@ revslider
+msgid "Custom"
+msgstr ""
+
+#: settings/slider_settings.php:76
+#@ revslider
+msgid "Auto Responsive"
+msgstr ""
+
+#: settings/slider_settings.php:77
+#@ revslider
+msgid "Full Screen"
+msgstr ""
+
+#: settings/slider_settings.php:78
+#@ revslider
+msgid "Slider Layout"
+msgstr ""
+
+#: settings/slider_settings.php:99
+#@ revslider
+msgid "Grid Settings"
+msgstr ""
+
+#: settings/slider_settings_xml_lang.php:8
+#@ revslider
+msgid "Alternative First Slide"
+msgstr ""
+
+#: settings/slider_settings_xml_lang.php:16
+#@ revslider
+msgid "Lazy Load"
+msgstr ""
+
+#: settings/slider_settings_xml_lang.php:17
+#@ revslider
+msgid "The lazy load means that the images will be loaded by demand, it speeds the loading of the slider."
+msgstr ""
+
+#: inc_php/framework/functions_wordpress.class.php:891
+#: temp/functions_wordpress.class.php:703
+#: temp/functions_wordpress.class.php:706
+#: temp/functions_wordpress.class.php:713
+#, php-format
+#@ revslider
+msgid "View all posts in %s"
+msgstr ""
+
+#: views/system/general_settings_dialog.php:17
+#@ revslider
+msgid "Update"
+msgstr ""
+
+#: views/system/video_dialog.php:12
+#@ revslider
+msgid "Youtube"
+msgstr ""
+
+#: views/system/video_dialog.php:15
+#@ revslider
+msgid "Vimeo"
+msgstr ""
+
+#: views/system/video_dialog.php:18
+#@ revslider
+msgid "HTML5"
+msgstr ""
+
+#: views/system/video_dialog.php:57
+#@ revslider
+msgid "Enter Youtube ID or URL"
+msgstr ""
+
+#: views/system/video_dialog.php:79
+#@ revslider
+msgid "Poster Image Url"
+msgstr ""
+
+#: views/system/video_dialog.php:82
+#: views/system/video_dialog.php:89
+#: views/system/video_dialog.php:96
+#: views/system/video_dialog.php:103
+#@ revslider
+msgid "Example"
+msgstr ""
+
+#: views/system/video_dialog.php:86
+#@ revslider
+msgid "Video MP4 Url"
+msgstr ""
+
+#: views/system/video_dialog.php:93
+#@ revslider
+msgid "Video WEBM Url"
+msgstr ""
+
+#: views/system/video_dialog.php:100
+#@ revslider
+msgid "Video OGV Url"
+msgstr ""
+
+#: settings/layer_settings.php:48
+#: settings/layer_settings.php:51
+#: views/system/video_dialog.php:126
+#@ revslider
+msgid "Width"
+msgstr ""
+
+#: settings/layer_settings.php:52
+#: views/system/video_dialog.php:129
+#@ revslider
+msgid "Height"
+msgstr ""
+
+#: views/system/video_dialog.php:122
+#@ revslider
+msgid "Full Width:"
+msgstr ""
+
+#: views/system/video_dialog.php:231
+#@ revslider
+msgid "Arguments:"
+msgstr ""
+
+#: views/system/video_dialog.php:193
+#@ revslider
+msgid "Next Slide On End:"
+msgstr ""
+
+#: views/system/video_dialog.php:243
+#@ revslider
+msgid "Add This Video"
+msgstr ""
+
+#: views/system/video_dialog.php:243
+#@ revslider
+msgid "Update Video"
+msgstr ""
+
+#: views/templates/edit_layers.php:245
+#@ revslider
+msgid "Layer General Parameters"
+msgstr ""
+
+#: views/templates/edit_layers.php:266
+#@ revslider
+msgid "Align & Position"
+msgstr ""
+
+#: views/templates/edit_layers.php:314
+#@ revslider
+msgid "Layer Animation"
+msgstr ""
+
+#: views/templates/edit_layers.php:337
+#@ revslider
+msgid "Start Transition"
+msgstr ""
+
+#: views/templates/edit_layers.php:353
+#@ revslider
+msgid "End Transition (optional)"
+msgstr ""
+
+#: views/templates/edit_layers.php:599
+#@ revslider
+msgid "Layer Links & Advanced Params"
+msgstr ""
+
+#: views/templates/edit_layers.php:661
+#@ revslider
+msgid "Layers Timing & Sorting"
+msgstr ""
+
+#: views/templates/slide.php:68
+#@ revslider
+msgid "Add Slide"
+msgstr ""
+
+#: views/templates/slide.php:116
+#@ revslider
+msgid "General Slide Settings"
+msgstr ""
+
+#: views/templates/slider_api.php:6
+#@ revslider
+msgid "API Functions"
+msgstr ""
+
+#: views/templates/slider_api.php:46
+#@ revslider
+msgid "External Scroll"
+msgstr ""
+
+#: views/templates/slider_api.php:60
+#@ revslider
+msgid "Copy and Paste the Below listed API Functions into your jQuery Functions for Revslider Event Listening"
+msgstr ""
+
+#: views/templates/slider_edit.php:29
+#: views/templates/slider_new.php:24
+#@ revslider
+msgid "Main Slider Settings"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:3
+#@ revslider
+msgid "Import / Export"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:6
+#: views/templates/sliders.php:32
+#: views/templates/sliders.php:75
+#: views/templates/sliders.php:99
+#@ revslider
+msgid "Import Slider"
+msgstr ""
+
+#: views/templates/sliders.php:19
+#@ revslider
+msgid "Global Settings"
+msgstr ""
+
+#: views/templates/slides.php:18
+#: views/templates/slides.php:38
+#: views/templates/slides_gallery.php:18
+#: views/templates/slides_gallery.php:37
+#@ revslider
+msgid "New Transparent Slide"
+msgstr ""
+
+#: views/templates/slides.php:19
+#: views/templates/slides.php:39
+#: views/templates/slides_gallery.php:19
+#: views/templates/slides_gallery.php:38
+#@ revslider
+msgid "Adding Slide..."
+msgstr ""
+
+#: views/templates/slides.php:36
+#: views/templates/slides_gallery.php:36
+#@ revslider
+msgid "Select image or multiple images to add slide or slides"
+msgstr ""
+
+#: views/templates/slides.php:48
+#: views/templates/slides_gallery.php:45
+#@ revslider
+msgid "Do It!"
+msgstr ""
+
+#: views/templates/slides.php:48
+#: views/templates/slides_gallery.php:45
+#@ revslider
+msgid "Copy / move slide"
+msgstr ""
+
+#: inc_php/revslider_widget.class.php:58
+#: views/templates/slides.php:52
+#: views/templates/slides_gallery.php:49
+#@ revslider
+msgid "Choose Slider"
+msgstr ""
+
+#: views/templates/slides.php:57
+#: views/templates/slides_gallery.php:54
+#@ revslider
+msgid "Choose Operation"
+msgstr ""
+
+#: views/templates/slides.php:60
+#: views/templates/slides_gallery.php:57
+#@ revslider
+msgid "Copy"
+msgstr ""
+
+#: views/templates/slides.php:63
+#: views/templates/slides_gallery.php:60
+#@ revslider
+msgid "Move"
+msgstr ""
+
+#: views/templates/slides_list.php:125
+#@ revslider
+msgid "Deleting Slide..."
+msgstr ""
+
+#: views/templates/slides_list.php:129
+#@ revslider
+msgid "Open copy / move dialog"
+msgstr ""
+
+#: views/templates/slides_list.php:136
+#@ revslider
+msgid "Copy / Move"
+msgstr ""
+
+#: views/templates/slides_list.php:137
+#@ revslider
+msgid "Working..."
+msgstr ""
+
+#: inc_php/framework/em_integration.class.php:25
+#@ revslider
+msgid "All Events"
+msgstr ""
+
+#: inc_php/framework/em_integration.class.php:26
+#@ revslider
+msgid "Today"
+msgstr ""
+
+#: inc_php/framework/em_integration.class.php:27
+#@ revslider
+msgid "Tomorrow"
+msgstr ""
+
+#: inc_php/framework/em_integration.class.php:28
+#@ revslider
+msgid "Future"
+msgstr ""
+
+#: inc_php/framework/em_integration.class.php:29
+#@ revslider
+msgid "Past"
+msgstr ""
+
+#: inc_php/framework/em_integration.class.php:30
+#@ revslider
+msgid "This Month"
+msgstr ""
+
+#: inc_php/framework/em_integration.class.php:31
+#@ revslider
+msgid "Next Month"
+msgstr ""
+
+#: inc_php/framework/em_integration.class.php:156
+#@ revslider
+msgid "Event Start Date"
+msgstr ""
+
+#: inc_php/framework/em_integration.class.php:157
+#@ revslider
+msgid "Event End Date"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:845
+#@ revslider
+msgid "Style Editor"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:854
+#@ revslider
+msgid "Simple Editor:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:857
+#@ revslider
+msgid "enable "
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:861
+#@ revslider
+msgid "Family:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:866
+#@ revslider
+msgid "Size:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:873
+#: inc_php/framework/settings_product_sidebar.class.php:916
+#: inc_php/framework/settings_product_sidebar.class.php:930
+#@ revslider
+msgid "Color:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:876
+#@ revslider
+msgid "Line-Height:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:883
+#@ revslider
+msgid "Padding:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:893
+#@ revslider
+msgid "Weight:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:900
+#: inc_php/framework/settings_product_sidebar.class.php:943
+#@ revslider
+msgid "Style:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:901
+#@ revslider
+msgid "italic"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:903
+#@ revslider
+msgid "Decoration:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:921
+#@ revslider
+msgid "Transparency:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:936
+#@ revslider
+msgid "Width:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:953
+#@ revslider
+msgid "Radius:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:967
+#@ revslider
+msgid "Advanced Editor:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:974
+#@ revslider
+msgid "Save Styles"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:976
+#@ revslider
+msgid "Overwrite the current selected class "
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:978
+#@ revslider
+msgid " or save the styles as a new class?"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:981
+#@ revslider
+msgid "Save As"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:983
+#@ revslider
+msgid "Save as class:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:998
+#@ revslider
+msgid "Global Style Editor"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:1000
+#@ revslider
+msgid "Dynamic Styles (Not Editable):"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:1004
+#: views/templates/slider_toolbox.php:24
+#: views/templates/sliders.php:93
+#@ revslider
+msgid "Static Styles:"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:1011
+#@ revslider
+msgid "Save Static Styles"
+msgstr ""
+
+#: inc_php/framework/settings_product_sidebar.class.php:1012
+#@ revslider
+msgid "Overwrite current static styles?"
+msgstr ""
+
+#: inc_php/framework/wpml.class.php:38
+#: inc_php/framework/wpml.class.php:154
+#@ revslider
+msgid "All Languages"
+msgstr ""
+
+#: inc_php/revslider_operations.class.php:22
+#@ revslider
+msgid "Choose Slide Template"
+msgstr ""
+
+#: inc_php/revslider_operations.class.php:952
+#@ revslider
+msgid "Choose language"
+msgstr ""
+
+#: inc_php/revslider_operations.class.php:982
+#@ revslider
+msgid "Loading Preview..."
+msgstr ""
+
+#: inc_php/revslider_slider.class.php:702
+#@ revslider
+msgid "animations imported!"
+msgstr ""
+
+#: inc_php/revslider_slider.class.php:704
+#@ revslider
+msgid "no custom animations found, if slider uses custom animations, the provided export may be broken..."
+msgstr ""
+
+#: inc_php/revslider_slider.class.php:754
+#@ revslider
+msgid "dynamic styles imported!"
+msgstr ""
+
+#: inc_php/revslider_slider.class.php:756
+#@ revslider
+msgid "no dynamic styles found, if slider uses dynamic styles, the provided export may be broken..."
+msgstr ""
+
+#: inc_php/revslider_widget.class.php:53
+#: settings/layer_settings.php:99
+#@ revslider
+msgid "Title"
+msgstr ""
+
+#: inc_php/revslider_widget.class.php:61
+#@ revslider
+msgid "Home Page Only"
+msgstr ""
+
+#: inc_php/revslider_widget.class.php:64
+#@ revslider
+msgid "Pages: (example: 2,10)"
+msgstr ""
+
+#: revslider_admin.php:464
+#@ revslider
+msgid "Post Deleted Successfully"
+msgstr ""
+
+#: revslider_admin.php:496
+#: revslider_admin.php:500
+#: revslider_admin.php:508
+#@ revslider
+msgid "CSS saved succesfully!"
+msgstr ""
+
+#: revslider_admin.php:504
+#@ revslider
+msgid "Style deleted succesfully!"
+msgstr ""
+
+#: revslider_admin.php:512
+#: revslider_admin.php:516
+#: revslider_admin.php:520
+#@ revslider
+msgid "Animation saved succesfully!"
+msgstr ""
+
+#: revslider_admin.php:553
+#@ revslider
+msgid "All files successfully updated"
+msgstr ""
+
+#: revslider_admin.php:561
+#@ revslider
+msgid "Sortby updated"
+msgstr ""
+
+#: revslider_admin.php:565
+#@ revslider
+msgid "Image urls replaced"
+msgstr ""
+
+#: revslider_admin.php:569
+#@ revslider
+msgid "Settings in all Slides changed"
+msgstr ""
+
+#: settings/general_settings.php:24
+#@ revslider
+msgid "Put JS Includes To Footer"
+msgstr ""
+
+#: settings/general_settings.php:26
+#@ revslider
+msgid "Putting the js to footer (instead of the head) is good for fixing some javascript conflicts."
+msgstr ""
+
+#: settings/layer_settings.php:35
+#@ revslider
+msgid "Start Animation"
+msgstr ""
+
+#: settings/layer_settings.php:36
+#@ revslider
+msgid "Start Easing"
+msgstr ""
+
+#: settings/layer_settings.php:42
+#@ revslider
+msgid "Link ID"
+msgstr ""
+
+#: settings/layer_settings.php:43
+#@ revslider
+msgid "Link Classes"
+msgstr ""
+
+#: settings/layer_settings.php:44
+#@ revslider
+msgid "Link Title"
+msgstr ""
+
+#: settings/layer_settings.php:45
+#@ revslider
+msgid "Link Rel"
+msgstr ""
+
+#: settings/layer_settings.php:49
+#@ revslider
+msgid "Width/Height"
+msgstr ""
+
+#: settings/layer_settings.php:53
+#@ revslider
+msgid "Scale Proportional"
+msgstr ""
+
+#: settings/layer_settings.php:84
+#@ revslider
+msgid "End Easing"
+msgstr ""
+
+#: settings/layer_settings.php:98
+#@ revslider
+msgid "Classes"
+msgstr ""
+
+#: settings/layer_settings.php:100
+#@ revslider
+msgid "Rel"
+msgstr ""
+
+#: settings/slide_settings.php:28
+#@ revslider
+msgid "The language of the slide (uses WPML plugin)."
+msgstr ""
+
+#: settings/slide_settings.php:29
+#@ revslider
+msgid "Language"
+msgstr ""
+
+#: settings/slide_settings.php:33
+#@ revslider
+msgid "If set, slide will be visible after the date is reached"
+msgstr ""
+
+#: settings/slide_settings.php:34
+#@ revslider
+msgid "Visible from"
+msgstr ""
+
+#: settings/slide_settings.php:36
+#@ revslider
+msgid "If set, slide will be visible till the date is reached"
+msgstr ""
+
+#: settings/slide_settings.php:37
+#@ revslider
+msgid "Visible until"
+msgstr ""
+
+#: settings/slide_settings.php:83
+#, php-format
+#@ revslider
+msgid "A link on the whole slide pic (use %link% or %meta:somemegatag% in template sliders to link to a post or some other meta)"
+msgstr ""
+
+#: settings/slider_settings.php:12
+#: views/templates/sliders_list.php:42
+#@ revslider
+msgid "Posts"
+msgstr ""
+
+#: settings/slider_settings.php:13
+#@ revslider
+msgid "Specific Posts"
+msgstr ""
+
+#: settings/slider_settings.php:14
+#: views/templates/sliders_list.php:34
+#@ revslider
+msgid "Gallery"
+msgstr ""
+
+#: settings/slider_settings.php:16
+#@ revslider
+msgid "Source Type"
+msgstr ""
+
+#: settings/slider_settings.php:23
+#@ revslider
+msgid "Post Types"
+msgstr ""
+
+#: settings/slider_settings.php:27
+#@ revslider
+msgid "Post Categories"
+msgstr ""
+
+#: settings/slider_settings.php:36
+#@ revslider
+msgid "Filter Events By"
+msgstr ""
+
+#: settings/slider_settings.php:44
+#@ revslider
+msgid "Sort Posts By"
+msgstr ""
+
+#: settings/slider_settings.php:48
+#@ revslider
+msgid "Sort Direction"
+msgstr ""
+
+#: settings/slider_settings.php:52
+#@ revslider
+msgid "Max Posts Per Slider"
+msgstr ""
+
+#: settings/slider_settings.php:56
+#@ revslider
+msgid "Limit The Excerpt To"
+msgstr ""
+
+#: settings/slider_settings.php:63
+#@ revslider
+msgid "Template Slider"
+msgstr ""
+
+#: settings/slider_settings.php:67
+#@ revslider
+msgid "Type here the post IDs you want to use separated by coma. ex: 23,24,25"
+msgstr ""
+
+#: settings/slider_settings.php:68
+#@ revslider
+msgid "Specific Posts List"
+msgstr ""
+
+#: settings/slider_settings.php:81
+#@ revslider
+msgid "Example: #header or .header, .footer, #somecontainer | The height of fullscreen slider will be decreased with the height of these Containers to fit perfect in the screen"
+msgstr ""
+
+#: settings/slider_settings.php:82
+#@ revslider
+msgid "Offset Containers"
+msgstr ""
+
+#: settings/slider_settings.php:87
+#@ revslider
+msgid "Min. Fullscreen Height"
+msgstr ""
+
+#: settings/slider_settings.php:91
+#@ revslider
+msgid "FullScreen Align"
+msgstr ""
+
+#: settings/slider_settings.php:95
+#@ revslider
+msgid "Unlimited Height"
+msgstr ""
+
+#: settings/slider_settings.php:96
+#@ revslider
+msgid "Force Full Width"
+msgstr ""
+
+#: settings/slider_settings.php:102
+#@ revslider
+msgid "Responsive Sizes"
+msgstr ""
+
+#: settings/slider_settings_xml_lang.php:24
+#@ revslider
+msgid "To add more google fonts please read <a target=\"_blank\" href=\"http://codecanyon.net/item/slider-revolution-responsive-wordpress-plugin/2751380/faqs/15268\"> this tutorial </a> "
+msgstr ""
+
+#: views/slides.php:54
+#: views/templates/slide.php:142
+#@ revslider
+msgid "Delete Slide"
+msgstr ""
+
+#: views/slides.php:56
+#: views/templates/edit_layers.php:47
+#@ revslider
+msgid "Preview Slide"
+msgstr ""
+
+#: views/slides.php:89
+#@ revslider
+msgid "<i class='revicon-pencil-1'></i>New Post"
+msgstr ""
+
+#: views/system/video_dialog.php:3
+#@ revslider
+msgid "Add Video Layout"
+msgstr ""
+
+#: views/system/video_dialog.php:116
+#@ revslider
+msgid "Video Size"
+msgstr ""
+
+#: views/system/video_dialog.php:136
+#@ revslider
+msgid "Cover:"
+msgstr ""
+
+#: views/system/video_dialog.php:142
+#@ revslider
+msgid "Dotted Overlay:"
+msgstr ""
+
+#: views/system/video_dialog.php:145
+#@ revslider
+msgid "none"
+msgstr ""
+
+#: views/system/video_dialog.php:146
+#@ revslider
+msgid "2 x 2 Black"
+msgstr ""
+
+#: views/system/video_dialog.php:147
+#@ revslider
+msgid "2 x 2 White"
+msgstr ""
+
+#: views/system/video_dialog.php:148
+#@ revslider
+msgid "3 x 3 Black"
+msgstr ""
+
+#: views/system/video_dialog.php:149
+#@ revslider
+msgid "3 x 3 White"
+msgstr ""
+
+#: views/system/video_dialog.php:153
+#@ revslider
+msgid "Aspect Ratio:"
+msgstr ""
+
+#: views/system/video_dialog.php:156
+#@ revslider
+msgid "16:9"
+msgstr ""
+
+#: views/system/video_dialog.php:157
+#@ revslider
+msgid "4:3"
+msgstr ""
+
+#: views/system/video_dialog.php:168
+#@ revslider
+msgid "Video Settings"
+msgstr ""
+
+#: views/system/video_dialog.php:174
+#@ revslider
+msgid "Loop Video:"
+msgstr ""
+
+#: views/system/video_dialog.php:179
+#@ revslider
+msgid "Autoplay:"
+msgstr ""
+
+#: views/system/video_dialog.php:185
+#@ revslider
+msgid "Only 1st Time:"
+msgstr ""
+
+#: views/system/video_dialog.php:198
+#@ revslider
+msgid "Force Rewind:"
+msgstr ""
+
+#: views/system/video_dialog.php:205
+#@ revslider
+msgid "Hide Controls:"
+msgstr ""
+
+#: views/system/video_dialog.php:210
+#@ revslider
+msgid "Mute:"
+msgstr ""
+
+#: views/system/video_dialog.php:219
+#@ revslider
+msgid "Preview Image"
+msgstr ""
+
+#: views/system/video_dialog.php:222
+#@ revslider
+msgid "Set"
+msgstr ""
+
+#: views/system/video_dialog.php:223
+#@ revslider
+msgid "Remove"
+msgstr ""
+
+#: views/templates/edit_layers.php:6
+#@ revslider
+msgid "Slider Main Image / Background"
+msgstr ""
+
+#: views/templates/edit_layers.php:11
+#@ revslider
+msgid "Background Source:"
+msgstr ""
+
+#: views/templates/edit_layers.php:19
+#@ revslider
+msgid "Change Image"
+msgstr ""
+
+#: views/templates/edit_layers.php:25
+#@ revslider
+msgid "External URL"
+msgstr ""
+
+#: views/templates/edit_layers.php:29
+#@ revslider
+msgid "Get External"
+msgstr ""
+
+#: views/templates/edit_layers.php:35
+#@ revslider
+msgid "Transparent"
+msgstr ""
+
+#: views/templates/edit_layers.php:40
+#@ revslider
+msgid "Solid Colored"
+msgstr ""
+
+#: views/templates/edit_layers.php:56
+#@ revslider
+msgid "Background Settings:"
+msgstr ""
+
+#: views/templates/edit_layers.php:57
+#@ revslider
+msgid "Background Fit:"
+msgstr ""
+
+#: views/templates/edit_layers.php:67
+#@ revslider
+msgid "Background Repeat:"
+msgstr ""
+
+#: views/templates/edit_layers.php:74
+#@ revslider
+msgid "Background Position:"
+msgstr ""
+
+#: views/templates/edit_layers.php:92
+#@ revslider
+msgid "Ken Burns / Pan Zoom Settings:"
+msgstr ""
+
+#: views/templates/edit_layers.php:101
+#@ revslider
+msgid "Background"
+msgstr ""
+
+#: views/templates/edit_layers.php:112
+#@ revslider
+msgid "Start Position:"
+msgstr ""
+
+#: views/templates/edit_layers.php:117
+#@ revslider
+msgid "Start Fit: (in %)"
+msgstr ""
+
+#: views/templates/edit_layers.php:120
+#@ revslider
+msgid "Easing:"
+msgstr ""
+
+#: views/templates/edit_layers.php:162
+#@ revslider
+msgid "End Position:"
+msgstr ""
+
+#: views/templates/edit_layers.php:179
+#@ revslider
+msgid "End Fit: (in %)"
+msgstr ""
+
+#: views/templates/edit_layers.php:185
+#@ revslider
+msgid "Duration (in ms):"
+msgstr ""
+
+#: views/templates/edit_layers.php:250
+#@ revslider
+msgid "Layer Content"
+msgstr ""
+
+#: views/templates/edit_layers.php:296
+#@ revslider
+msgid "Image Scale (dimensions in pixel)"
+msgstr ""
+
+#: views/templates/edit_layers.php:296
+#@ revslider
+msgid "reset"
+msgstr ""
+
+#: views/templates/edit_layers.php:321
+#@ revslider
+msgid "Preview Transition (Star end Endtime is Ignored during Demo)"
+msgstr ""
+
+#: views/templates/edit_layers.php:345
+#: views/templates/edit_layers.php:361
+#@ revslider
+msgid "Custom Animation"
+msgstr ""
+
+#: views/templates/edit_layers.php:432
+#@ revslider
+msgid "Transition Direction"
+msgstr ""
+
+#: views/templates/edit_layers.php:435
+#@ revslider
+msgid "*Easing, Direction and Speed only for Preview"
+msgstr ""
+
+#: views/templates/edit_layers.php:442
+#@ revslider
+msgid "Layer Animation Settings Panel"
+msgstr ""
+
+#: views/templates/edit_layers.php:443
+#@ revslider
+msgid "random"
+msgstr ""
+
+#: views/templates/edit_layers.php:450
+#@ revslider
+msgid "Transition"
+msgstr ""
+
+#: views/templates/edit_layers.php:453
+#: views/templates/edit_layers.php:477
+#: views/templates/edit_layers.php:508
+#: views/templates/edit_layers.php:519
+#: views/templates/edit_layers.php:560
+#@ revslider
+msgid "X:"
+msgstr ""
+
+#: views/templates/edit_layers.php:459
+#: views/templates/edit_layers.php:483
+#: views/templates/edit_layers.php:514
+#: views/templates/edit_layers.php:526
+#: views/templates/edit_layers.php:566
+#@ revslider
+msgid "Y:"
+msgstr ""
+
+#: views/templates/edit_layers.php:465
+#: views/templates/edit_layers.php:489
+#@ revslider
+msgid "Z:"
+msgstr ""
+
+#: views/templates/edit_layers.php:502
+#@ revslider
+msgid "Scale"
+msgstr ""
+
+#: views/templates/edit_layers.php:503
+#@ revslider
+msgid "Skew"
+msgstr ""
+
+#: views/templates/edit_layers.php:541
+#@ revslider
+msgid "Opacity"
+msgstr ""
+
+#: views/templates/edit_layers.php:542
+#@ revslider
+msgid "Perspective"
+msgstr ""
+
+#: views/templates/edit_layers.php:543
+#@ revslider
+msgid "Origin"
+msgstr ""
+
+#: views/templates/edit_layers.php:581
+#@ revslider
+msgid "Overwrite the current selected Animation "
+msgstr ""
+
+#: views/templates/edit_layers.php:583
+#@ revslider
+msgid " or save as a new Animation?"
+msgstr ""
+
+#: views/templates/edit_layers.php:588
+#@ revslider
+msgid "Save as Animation:"
+msgstr ""
+
+#: views/templates/edit_layers.php:605
+#@ revslider
+msgid "Links (optional)"
+msgstr ""
+
+#: views/templates/edit_layers.php:616
+#@ revslider
+msgid "Caption Sharp Corners (optional only with BG color)"
+msgstr ""
+
+#: views/templates/edit_layers.php:627
+#@ revslider
+msgid "Advanced Responsive Settings"
+msgstr ""
+
+#: views/templates/edit_layers.php:639
+#@ revslider
+msgid "Attributes (optional)"
+msgstr ""
+
+#: views/templates/edit_layers.php:699
+#@ revslider
+msgid "Template Insertions"
+msgstr ""
+
+#: views/templates/edit_layers.php:700
+#@ revslider
+msgid "Post Replace Placeholders:"
+msgstr ""
+
+#: views/templates/edit_layers.php:702
+#@ revslider
+msgid "Any custom meta tag"
+msgstr ""
+
+#: views/templates/edit_layers.php:703
+#@ revslider
+msgid "Post Title"
+msgstr ""
+
+#: views/templates/edit_layers.php:704
+#@ revslider
+msgid "Post Excerpt"
+msgstr ""
+
+#: views/templates/edit_layers.php:705
+#@ revslider
+msgid "Post Alias"
+msgstr ""
+
+#: views/templates/edit_layers.php:706
+#@ revslider
+msgid "Post content"
+msgstr ""
+
+#: views/templates/edit_layers.php:707
+#@ revslider
+msgid "The link to the post"
+msgstr ""
+
+#: views/templates/edit_layers.php:708
+#@ revslider
+msgid "Date created"
+msgstr ""
+
+#: views/templates/edit_layers.php:709
+#@ revslider
+msgid "Date modified"
+msgstr ""
+
+#: views/templates/edit_layers.php:710
+#@ revslider
+msgid "Author name"
+msgstr ""
+
+#: views/templates/edit_layers.php:711
+#@ revslider
+msgid "Number of comments"
+msgstr ""
+
+#: views/templates/edit_layers.php:712
+#@ revslider
+msgid "List of categories with links"
+msgstr ""
+
+#: views/templates/edit_layers.php:713
+#@ revslider
+msgid "List of tags with links"
+msgstr ""
+
+#: views/templates/edit_layers.php:719
+#@ revslider
+msgid "Events Placeholders:"
+msgstr ""
+
+#: views/templates/edit_layers.php:721
+#@ revslider
+msgid "Event start date"
+msgstr ""
+
+#: views/templates/edit_layers.php:722
+#@ revslider
+msgid "Event end date"
+msgstr ""
+
+#: views/templates/edit_layers.php:723
+#@ revslider
+msgid "Event start time"
+msgstr ""
+
+#: views/templates/edit_layers.php:724
+#@ revslider
+msgid "Event end time"
+msgstr ""
+
+#: views/templates/edit_layers.php:725
+#@ revslider
+msgid "Event ID"
+msgstr ""
+
+#: views/templates/edit_layers.php:726
+#@ revslider
+msgid "Event location name"
+msgstr ""
+
+#: views/templates/edit_layers.php:727
+#@ revslider
+msgid "Event location slug"
+msgstr ""
+
+#: views/templates/edit_layers.php:728
+#@ revslider
+msgid "Event location address"
+msgstr ""
+
+#: views/templates/edit_layers.php:729
+#@ revslider
+msgid "Event location town"
+msgstr ""
+
+#: views/templates/edit_layers.php:730
+#@ revslider
+msgid "Event location state"
+msgstr ""
+
+#: views/templates/edit_layers.php:731
+#@ revslider
+msgid "Event location postcode"
+msgstr ""
+
+#: views/templates/edit_layers.php:732
+#@ revslider
+msgid "Event location region"
+msgstr ""
+
+#: views/templates/edit_layers.php:733
+#@ revslider
+msgid "Event location country"
+msgstr ""
+
+#: views/templates/slide.php:28
+#@ revslider
+msgid "Edit Template Slide"
+msgstr ""
+
+#: views/templates/slide.php:35
+#: views/templates/slider_edit.php:20
+#: views/templates/slider_new.php:18
+#: views/templates/sliders.php:17
+#: views/templates/slides.php:10
+#: views/templates/slides_gallery.php:10
+#@ revslider
+msgid "Help"
+msgstr ""
+
+#: views/templates/slide.php:83
+#@ revslider
+msgid "Choose slide language"
+msgstr ""
+
+#: views/templates/slide.php:106
+#@ revslider
+msgid "All the language related operations are from"
+msgstr ""
+
+#: views/templates/slide.php:106
+#@ revslider
+msgid "slides view"
+msgstr ""
+
+#: views/templates/slide.php:141
+#@ revslider
+msgid "To Slide List"
+msgstr ""
+
+#: views/templates/slide.php:160
+#: views/templates/slides_gallery.php:73
+#@ revslider
+msgid "Delete this slide?"
+msgstr ""
+
+#: views/templates/slider_api.php:50
+#@ revslider
+msgid "Redraw Slider"
+msgstr ""
+
+#: views/templates/slider_edit.php:11
+#@ revslider
+msgid "Edit Slider Template"
+msgstr ""
+
+#: views/templates/slider_edit.php:36
+#@ revslider
+msgid " Can be different based on Theme Style"
+msgstr ""
+
+#: views/templates/slider_edit.php:54
+#@ revslider
+msgid "Save Settings"
+msgstr ""
+
+#: views/templates/slider_new.php:8
+#@ revslider
+msgid "New Slider Template"
+msgstr ""
+
+#: views/templates/slider_new.php:29
+#@ revslider
+msgid "(Can be different based on Theme Style)"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:16
+#: views/templates/sliders.php:85
+#@ revslider
+msgid "Note: custom styles will be updated if they exist!"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:19
+#: views/templates/sliders.php:88
+#@ revslider
+msgid "Custom Animations:"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:20
+#: views/templates/slider_toolbox.php:25
+#: views/templates/sliders.php:89
+#: views/templates/sliders.php:94
+#@ revslider
+msgid "overwrite"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:21
+#: views/templates/slider_toolbox.php:26
+#: views/templates/sliders.php:90
+#: views/templates/sliders.php:95
+#@ revslider
+msgid "append"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:40
+#@ revslider
+msgid "Export with Dummy Images"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:46
+#@ revslider
+msgid "Replace Image Url's"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:48
+#@ revslider
+msgid "Replace all layer and background image url's. Example: http://localhost/ to http://yourwbsite.com/. <br> Note, the replace is not reversible"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:52
+#@ revslider
+msgid "Replace From (example - http://localhost)"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:58
+#@ revslider
+msgid "Replace To (example - http://yoursite.com)"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:64
+#@ revslider
+msgid "Replace"
+msgstr ""
+
+#: views/templates/slider_toolbox.php:65
+#@ revslider
+msgid "Replacing..."
+msgstr ""
+
+#: views/templates/sliders.php:36
+#@ revslider
+msgid "Revolution Slider Templates"
+msgstr ""
+
+#: views/templates/sliders.php:38
+#@ revslider
+msgid "No Template Sliders Found"
+msgstr ""
+
+#: views/templates/sliders.php:47
+#@ revslider
+msgid "Create New Template Slider"
+msgstr ""
+
+#: views/templates/sliders.php:64
+#@ revslider
+msgid "If you have some support issue:"
+msgstr ""
+
+#: views/templates/sliders.php:65
+#@ revslider
+msgid "- In case the Slider came bundled with your theme, please contact your theme author"
+msgstr ""
+
+#: views/templates/sliders.php:66
+#@ revslider
+msgid "- If the Slider has been purchased at CodeCanyon, visit"
+msgstr ""
+
+#: views/templates/sliders.php:66
+#@ revslider
+msgid "Discussion Page"
+msgstr ""
+
+#: views/templates/sliders_list.php:14
+#@ revslider
+msgid "Source"
+msgstr ""
+
+#: views/templates/sliders_list.php:83
+#@ revslider
+msgid "Settings"
+msgstr ""
+
+#: views/templates/slides_gallery.php:40
+#: views/templates/slides_posts.php:1
+#@ revslider
+msgid "Slider Settings"
+msgstr ""
+
+#: views/templates/slides_gallery.php:70
+#: views/templates/slides_posts.php:1
+#@ revslider
+msgid "Select Slide Image"
+msgstr ""
+
+#: views/templates/slides_list_posts.php:1
+#@ revslider
+msgid "Unpublish Post"
+msgstr ""
+
+#: views/templates/slides_list_posts.php:1
+#@ revslider
+msgid "Publish Post"
+msgstr ""
+
+#: views/templates/slides_list_posts.php:1
+#@ revslider
+msgid "Edit Post"
+msgstr ""
+
+#: views/templates/slides_posts.php:1
+#@ revslider
+msgid "The slides are posts that taken from multiple sources."
+msgstr ""
+
+#: views/templates/slides_posts.php:1
+#@ revslider
+msgid "Sort by"
+msgstr ""
+
+#: views/templates/slides_posts.php:1
+#@ revslider
+msgid "Updating Sorting..."
+msgstr ""
+
+#: views/templates/slides_posts.php:1
+#@ revslider
+msgid "Warning! Removing this entry will cause the original wordpress post to be deleted."
+msgstr ""
+

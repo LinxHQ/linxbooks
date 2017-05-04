@@ -1,0 +1,83 @@
+@import "../lib/bootstrap3/less/component-animations.less";
+@import "lib/editor.less";
+// Navbar
+@import "modules/vc_navbar.less";
+.vc_navbar {
+    .navbar-fixed-top();
+}
+@import "lib/elements_icons.less";
+// Add element box
+@import "popups/modal_add_element.less";
+// Add template modal box
+@import "popups/panel_add_templates.less";
+// Edit form for shortcode
+@import "popups/panel_edit_form.less";
+// For param group and other controls
+@import "lib/controls.less";
+@import "lib/backend_controls.less";
+@import "backend_shortcodes/empty_containers.less";
+// Templates
+@import "popups/panel_templates.less";
+// Post settings
+@import "popups/panel_post_settings.less";
+// Vc Button
+@import (reference) "backend_shortcodes/vc_button.less";
+// Edit row layout
+@import "popups/panel_edit_layout.less";
+
+@import "modules/vc_default_templates.less";
+
+
+.vc_editor {
+    // Fix admin page
+    #adminmenuback {
+        display: none;
+    }
+    #wpbody {
+        padding-top: 10px;
+    }
+    #wpcontent, #wpfooter {
+        margin-left: 0 !important;
+    }
+    #wpcontent {
+        padding-left: 0 !important;
+    }
+    #adminmenuback, #adminmenuwrap {
+        display: none;
+    }
+    #wpbody-content {
+        padding-bottom: 0;
+    }
+    #wpfooter,
+    #local-storage-notice,
+    #setting-error-tgmpa {
+        display: none !important;
+    }
+    // Frame settings
+    #vc_inline-frame-wrapper {
+        position: absolute;
+        width: 100%;
+    }
+    #vc_inline-frame {
+        margin: 0 auto;
+        display: block;
+        position: initial !important;
+    }
+    #wpb_csseditor { border: 1px solid #BABABA; }
+}
+// Vendors
+@import "vendor/contact_form_7.less";
+@import "vendor/gravity_form.less";
+@import "vendor/layerslider.less";
+@import "vendor/rev_slider.less";
+@import "vendor/jwplayer.less";
+
+.vc_shortcode-param[data-param_name="icon_pixelicons"] {
+    .vc-icons-selector .selected-icon {
+        line-height: 40px;
+        i.vc_pixel_icon {
+            position: relative;
+            top: 3px;
+        }
+    }
+}
