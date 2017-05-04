@@ -6,8 +6,6 @@ Product Website: http://www.linxbooks.com
 Contact:
 Joseph Pham, joseph.pnc@linxhq.com
 
-*Note*: Github version may be old. As at this moment, 03 May 2017, you can download from this link https://drive.google.com/open?id=0B0FXaLvmrtbUal8tNldQZml0djA, Import the following sql into the database: sql/linxbooks20170503.sql. DB info can be edited at protected/config/db.php. Username is admin, pass is admin123
-
 ## Features
 * Create and manage multiple users and their permissions
 * Manage customers and vendors
@@ -19,7 +17,12 @@ Joseph Pham, joseph.pnc@linxhq.com
 * Send email reminder
 
 ## How to install
-* Download the source code and run file /install.php from your browser.
+* Download the code and put it in your web server (a folder of your choice in your web folder)
+* Create a Mysql databaes for your installation
+* Import the following sql into the database: sql/linxbooks20170503.sql. 
+* DB info can be edited at protected/config/db.php. 
+* Email server settings (for notification) can also be edited at protected/config/main.php
+* Username is admin, pass is admin123
 
 ## Demo
 * http://linxbooks.com/demo (user: admin, password: admin123)
@@ -34,6 +37,7 @@ We use the following:
 * Bootstrap
 * JQuery
 * 
+
 ## Change Log
 
 For weekly/regular updates, please refer to CHANGELOG
