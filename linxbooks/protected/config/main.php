@@ -212,10 +212,10 @@ return array(
 				'transportType' => 'smtp', // php
 				
 				'transportOptions' => array( // only if use smtp
-						'host' => 'mail.lionsoftwaresolutions.com',
+						'host' => 'mail.yoursite.com',
 						//'encryption' => 'ssl',
-						'username' => 'postmaster@lionsoftwaresolutions.com',
-						'password' => 'LssExpress',
+						'username' => 'postmaster@yoursite.com',
+						'password' => 'Express',
 						'port' => 25,
 				),
 //				'transportOptions' => array( // only if use smtp 
