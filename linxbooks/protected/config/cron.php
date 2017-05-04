@@ -44,10 +44,10 @@ return array(
 						'transportType' => 'smtp', // smtp or php
 						
 						'transportOptions' => array( // only if use smtp
-								'host' => 'mail.linxcircle.com',
+								'host' => 'yourserver',
 								//'encryption' => 'ssl',
-								'username' => 'notifications@linxcircle.com',
-								'password' => '@[mk9s!3e-z4',
+								'username' => 'uremail@linxbooks.com',
+								'password' => 'yourpass',
 								'port' => 25,
 						),
 						//'viewPath' => 'application.views.mails',
