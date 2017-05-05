@@ -101,7 +101,7 @@ class SiteController extends Controller
 					"MIME-Version: 1.0\r\n".
 					"Content-type: text/plain; charset=UTF-8";
 
-				mail('LinxCircle Contact <contact@linxcircle.com>',$subject,$model->body,$headers);
+				mail('LinxBooks Contact <contact@linxhq.com>',$subject,$model->body,$headers);
 				Yii::app()->user->setFlash('contact','Thank you for contacting us. We will respond to you as soon as possible.');
 				$this->refresh();
 			}
@@ -134,9 +134,9 @@ class SiteController extends Controller
 			$message = new YiiMailMessage();
 			$message->setBody($contactMessage, 'text/html');
 			$message->setSubject($subject);
-			$message->setTo(array('contact@linxcircle.com' => 'LinxCircle Contact'));
-			$message->setFrom(array($emailAddr => $name . " (LinxCircle)"));
-			$message->setReplyTo(array($emailAddr => $name . " (LinxCircle)"));
+			$message->setTo(array('contact@linxhq.com' => 'LinxBooks Contact'));
+			$message->setFrom(array($emailAddr => $name . " (LinxBooks)"));
+			$message->setReplyTo(array($emailAddr => $name . " (LinxBooks)"));
 			$result = Yii::app()->mail->send($message);
 			
 			$response = ($result) ? "success" : "failure" ;

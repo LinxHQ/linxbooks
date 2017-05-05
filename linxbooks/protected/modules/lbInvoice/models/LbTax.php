@@ -35,7 +35,7 @@ class LbTax extends CLBActiveRecord
 			array('lb_tax_name, lb_tax_value, lb_tax_is_default', 'required'),
 			array('lb_tax_is_default', 'numerical', 'integerOnly'=>true),
 			array('lb_tax_name', 'length', 'max'=>60),
-			array('lb_tax_value', 'length', 'max'=>3),
+			array('lb_tax_value', 'length', 'max'=>10),
 //                        array('lb_tax_name','unique','message'=>'Tax Name exist'),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.

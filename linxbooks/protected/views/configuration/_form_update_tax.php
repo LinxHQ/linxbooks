@@ -24,7 +24,7 @@ if($error!="")
     echo '</div>';
 }
 echo $form->textFieldRow($model,'lb_tax_name');
-echo $form->textFieldRow($model, 'lb_tax_value',array('value'=>  number_format($model->lb_tax_value,0)));
+echo $form->textFieldRow($model, 'lb_tax_value',array('value'=>  number_format($model->lb_tax_value,2)));
 echo $form->checkBoxRow($model,'lb_tax_is_default');
 
     LBApplicationUI::submitButton('Save', array(

@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: May 03, 2017 at 09:18 AM
+-- Generation Time: May 05, 2017 at 11:18 AM
 -- Server version: 5.5.38
 -- PHP Version: 5.5.14
 
@@ -203,7 +203,7 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (13, 'lbInvoice', 1, 1, '2015-09-04 22:58:32', 1, '2015-09-04 22:58:32', 1, 0),
 (14, 'lbInvoiceItem', 1, 1, '2015-09-04 22:58:33', 1, '2015-09-04 22:58:33', 1, 0),
 (15, 'lbInvoiceItem', 2, 1, '2015-09-04 22:58:33', 1, '2015-09-04 22:58:33', 1, 0),
-(16, 'lbInvoiceTotal', 1, 1, '2015-09-04 22:58:33', 1, '2017-05-03 09:16:56', 1, 0),
+(16, 'lbInvoiceTotal', 1, 1, '2015-09-04 22:58:33', 1, '2017-05-05 11:12:25', 1, 0),
 (17, 'lbInvoice', 2, 1, '2015-09-04 22:59:24', 1, '2015-09-04 22:59:24', 1, 0),
 (18, 'lbInvoiceItem', 3, 1, '2015-09-04 22:59:24', 1, '2015-09-04 22:59:24', 1, 0),
 (19, 'lbInvoiceItem', 4, 1, '2015-09-04 22:59:24', 1, '2015-09-04 22:59:24', 1, 0),
@@ -285,8 +285,7 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (95, 'lbCustomer', 8, 1, '2015-09-09 12:00:37', 1, '2015-10-13 11:12:59', 1, 0),
 (96, 'lbTax', 1, 1, '2015-09-10 03:46:51', 1, '2015-09-10 03:46:51', 1, 0),
 (97, 'lbInvoiceItem', 25, 1, '2015-09-10 03:46:52', 1, '2015-09-10 03:46:52', 1, 0),
-(98, 'lbTax', 2, 1, '2015-09-10 05:05:49', 1, '2015-09-10 05:05:49', 1, 0),
-(100, 'lbTax', 3, 1, '2015-09-10 06:33:52', 1, '2015-09-10 06:33:52', 1, 0),
+(98, 'lbTax', 2, 1, '2015-09-10 05:05:49', 1, '2017-05-05 11:12:20', 1, 0),
 (102, 'lbCustomer', 9, 1, '2015-09-10 06:48:22', 1, '2015-10-03 04:23:06', 1, 0),
 (103, 'lbCustomer', 10, 1, '2015-09-10 07:09:04', 1, '2015-09-21 09:10:17', 1, 0),
 (104, 'lbCustomer', 11, 1, '2015-09-10 07:09:07', 1, '2015-09-21 09:10:18', 1, 0),
@@ -320,8 +319,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (139, 'lbCustomer', 39, 1, '2015-09-11 08:24:19', 1, '2015-09-21 09:10:21', 1, 0),
 (141, 'lbCustomer', 40, 1, '2015-09-11 08:26:08', 1, '2015-09-21 09:10:21', 1, 0),
 (143, 'lbCustomer', 41, 1, '2015-09-11 08:33:11', 1, '2015-09-21 09:10:21', 1, 0),
-(145, 'lbTax', 4, 1, '2015-09-11 08:34:16', 1, '2015-09-11 08:34:16', 1, 0),
-(147, 'lbTax', 5, 1, '2015-09-11 08:34:49', 1, '2015-09-11 08:34:49', 1, 0),
 (149, 'lbCustomer', 42, 1, '2015-09-11 08:41:09', 1, '2015-09-21 09:10:22', 1, 0),
 (151, 'lbCustomer', 43, 1, '2015-09-11 08:41:49', 1, '2015-09-21 09:10:22', 1, 0),
 (153, 'lbCustomer', 44, 1, '2015-09-11 08:42:45', 1, '2015-09-21 09:10:22', 1, 0),
@@ -331,7 +328,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (160, 'lbCustomer', 48, 1, '2015-09-11 08:55:35', 1, '2015-09-21 09:10:22', 1, 0),
 (162, 'lbCustomer', 49, 1, '2015-09-11 09:06:50', 1, '2015-09-21 09:10:23', 1, 0),
 (164, 'lbCustomer', 50, 1, '2015-09-11 09:09:53', 1, '2015-09-21 09:10:23', 1, 0),
-(166, 'lbTax', 6, 1, '2015-09-11 09:17:47', 1, '2015-09-11 09:17:47', 1, 0),
 (167, 'lbInvoiceItem', 30, 1, '2015-09-11 09:17:48', 1, '2015-09-11 09:17:48', 1, 0),
 (168, 'lbCustomer', 51, 1, '2015-09-11 09:22:33', 1, '2015-09-21 09:10:23', 1, 0),
 (170, 'lbCustomer', 52, 1, '2015-09-11 09:22:37', 1, '2015-09-21 09:10:23', 1, 0),
@@ -788,12 +784,12 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (673, 'lbInvoiceItem', 213, 1, '2015-09-21 06:45:27', 1, '2015-09-21 06:46:03', 1, 0),
 (674, 'lbInvoiceItem', 214, 1, '2015-09-21 06:45:28', 1, '2015-09-21 06:46:04', 1, 0),
 (675, 'lbInvoiceTotal', 99, 1, '2015-09-21 06:45:29', 1, '2015-09-21 06:46:04', 1, 0),
-(677, 'lbInvoice', 117, 1, '2015-09-21 06:49:16', 1, '2015-09-21 06:49:44', 1, 0);
-INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
+(677, 'lbInvoice', 117, 1, '2015-09-21 06:49:16', 1, '2015-09-21 06:49:44', 1, 0),
 (678, 'lbInvoiceItem', 215, 1, '2015-09-21 06:49:16', 1, '2015-09-21 06:50:00', 1, 0),
 (679, 'lbInvoiceItem', 216, 1, '2015-09-21 06:49:16', 1, '2015-09-21 06:50:01', 1, 0),
 (680, 'lbInvoiceTotal', 100, 1, '2015-09-21 06:49:16', 1, '2015-09-21 06:50:01', 1, 0),
-(681, 'lbCustomer', 90, 1, '2015-09-21 06:49:44', 1, '2015-09-21 09:10:28', 1, 0),
+(681, 'lbCustomer', 90, 1, '2015-09-21 06:49:44', 1, '2015-09-21 09:10:28', 1, 0);
+INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
 (682, 'lbInvoice', 118, 1, '2015-09-21 06:53:03', 1, '2015-09-21 06:53:46', 1, 0),
 (683, 'lbInvoiceItem', 217, 1, '2015-09-21 06:53:03', 1, '2015-09-21 06:53:38', 1, 0),
 (684, 'lbInvoiceItem', 218, 1, '2015-09-21 06:53:03', 1, '2015-09-21 06:53:39', 1, 0),
@@ -1327,7 +1323,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (1338, 'lbInvoiceItem', 454, 1, '2015-10-26 03:37:27', 1, '2015-10-26 03:39:48', 1, 0),
 (1339, 'lbInvoiceTotal', 196, 1, '2015-10-26 03:37:28', 1, '2015-10-26 04:20:01', 1, 0),
 (1340, 'lbInvoiceItem', 455, 1, '2015-10-26 03:39:47', 1, '2015-10-26 03:39:48', 1, 0),
-(1341, 'lbTax', 7, 1, '2015-10-26 04:19:59', 1, '2015-10-26 04:19:59', 1, 0),
 (1342, 'lbInvoiceItem', 456, 1, '2015-10-26 04:20:00', 1, '2015-10-26 04:20:00', 1, 0),
 (1348, 'lbInvoice', 214, 1, '2015-10-26 09:45:02', 1, '2015-10-26 09:45:02', 1, 0),
 (1349, 'lbInvoiceItem', 457, 1, '2015-10-26 09:45:03', 1, '2015-10-26 09:45:03', 1, 0),
@@ -1370,13 +1365,13 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (1396, 'lbEmployeeBenefits', 15, 1, '2015-10-28 10:24:11', 1, '2015-10-29 02:20:13', 1, 0),
 (1408, 'lbEmployeeSalary', 54, 1, '2015-10-28 11:42:00', 1, '2015-10-29 02:20:13', 1, 0),
 (1409, 'lbEmployeeSalary', 55, 1, '2015-10-28 11:44:01', 1, '2015-10-29 02:20:13', 1, 0),
-(1410, 'lbEmployeeBenefits', 16, 1, '2015-10-29 02:20:13', 1, '2015-10-29 02:20:13', 1, 0);
-INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
+(1410, 'lbEmployeeBenefits', 16, 1, '2015-10-29 02:20:13', 1, '2015-10-29 02:20:13', 1, 0),
 (1411, 'lbEmployeePayment', 66, 1, '2015-10-29 02:46:27', 1, '2015-10-29 02:46:28', 1, 0),
 (1412, 'lbEmployeePayment', 67, 1, '2015-10-29 02:46:28', 1, '2015-10-29 02:46:28', 1, 0),
 (1413, 'lbEmployeePayment', 68, 1, '2015-10-29 02:48:10', 1, '2015-10-29 02:48:10', 1, 0),
 (1414, 'lbEmployee', 24, 1, '2015-12-08 08:06:31', 1, '2015-12-08 08:06:32', 1, 0),
-(1415, 'lbEmployeeSalary', 56, 1, '2015-12-08 08:06:31', 1, '2015-12-08 08:06:31', 1, 0),
+(1415, 'lbEmployeeSalary', 56, 1, '2015-12-08 08:06:31', 1, '2015-12-08 08:06:31', 1, 0);
+INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
 (1416, 'lbEmployeeSalary', 57, 1, '2015-12-08 08:06:31', 1, '2015-12-08 08:06:31', 1, 0),
 (1417, 'lbEmployeeBenefits', 17, 1, '2015-12-08 08:06:32', 1, '2015-12-08 08:06:32', 1, 0),
 (1418, 'lbEmployeeBenefits', 18, 1, '2015-12-08 08:06:32', 1, '2015-12-08 08:06:32', 1, 0),
@@ -1932,13 +1927,13 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (2011, 'lbInvoiceTotal', 224, 1, '2016-01-18 03:37:49', 1, '2016-01-21 09:33:10', 1, 0),
 (2012, 'lbPayment', 11, 1, '2016-01-18 04:40:01', 1, '2016-01-18 04:40:01', 1, 0),
 (2013, 'lbPaymentItem', 11, 1, '2016-01-18 04:40:01', 1, '2016-01-18 04:40:01', 1, 0),
-(2014, 'lbInvoice', 158, 1, '2016-01-18 08:01:38', 1, '2016-01-18 08:01:38', 1, 0);
-INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
+(2014, 'lbInvoice', 158, 1, '2016-01-18 08:01:38', 1, '2016-01-18 08:01:38', 1, 0),
 (2017, 'lbInvoiceTotal', 225, 1, '2016-01-18 08:01:40', 1, '2016-01-21 10:23:18', 1, 0),
 (2018, 'lbVendor', 9, 1, '2016-01-18 08:14:32', 1, '2016-01-18 08:14:32', 1, 0),
 (2019, 'lbInvoice', 159, 1, '2016-01-18 10:42:40', 1, '2016-01-18 10:42:40', 1, 0),
 (2022, 'lbInvoiceTotal', 226, 1, '2016-01-18 10:42:42', 1, '2016-01-23 07:54:49', 1, 0),
-(2023, 'lbInvoice', 160, 1, '2016-01-18 11:33:24', 1, '2016-01-18 11:33:24', 1, 0),
+(2023, 'lbInvoice', 160, 1, '2016-01-18 11:33:24', 1, '2016-01-18 11:33:24', 1, 0);
+INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
 (2026, 'lbInvoiceTotal', 227, 1, '2016-01-18 11:33:26', 1, '2016-01-23 08:14:42', 1, 0),
 (2027, 'lbQuotation', 32, 1, '2016-01-18 11:38:16', 1, '2016-01-18 11:38:16', 1, 0),
 (2028, 'lbQuotationItem', 32, 1, '2016-01-18 11:38:16', 1, '2016-01-18 11:38:16', 1, 0),
@@ -2758,7 +2753,7 @@ CREATE TABLE `lb_modules` (
   `modules_description` varchar(255) NOT NULL,
   `module_hidden` int(1) NOT NULL,
   `module_order` int(11) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=8 ;
 
 --
 -- Dumping data for table `lb_modules`
@@ -3096,14 +3091,7 @@ CREATE TABLE `lb_sys_accounts` (
 --
 
 INSERT INTO `lb_sys_accounts` (`account_id`, `account_email`, `account_password`, `account_created_date`, `account_timezone`, `account_language`, `account_status`) VALUES
-(1, 'admin', '$2a$13$QYHbE/G.3O7TBZ4QStbj6.WNCXKnI9XHVfBF3glFC1ZIYGqNztzOq', '2015-09-04 20:42:28', NULL, NULL, 1),
-(2, 'nhungpt@linxhq.com', '$2a$13$L3iah/qFtabnsSQVCgyNuOBFn6vWkkpfJso.zhGnaeRlP8m1lV9pS', '2016-01-22 05:32:22', NULL, NULL, 1),
-(3, 'nhungpt@linxhq.com', '$2a$13$BbJYFCizBgdctxApOg5/D.THU2.Z/K4I1K59q0s5VJg.PtuEzLJsy', '2016-01-22 07:30:02', NULL, NULL, 1),
-(4, 'nhungpt@linxhq.com', '$2a$13$K954Rcv/znU9dFdbxnHZP.ZmRJ0iIBkrCiA/Ri5AMlQBE.V.TP8R6', '2016-01-22 07:41:00', NULL, NULL, 1),
-(5, 'nhungpt@linxhq.com', '$2a$13$GhvDxqpQ7Ai4aG4vhooljeE4Qz.bBsb5Jy47BspGOhNWMpcTCG87K', '2016-01-22 07:46:47', NULL, NULL, 1),
-(6, 'nhungpt@linxhq.com', '$2a$13$7dc.e/O5nhHuWmEwX/pFZe0vvS1B7Ll2Zi7U3xZaSCTFj.Ct0uuLy', '2016-01-22 07:47:25', NULL, NULL, 1),
-(7, 'nhungpt@linxhq.com', '$2a$13$ci7qJZ8VoAfobZo4YafIYO0MngpK/KCikwhrCMs81LsDksRqdzTg6', '2016-01-22 08:01:40', NULL, NULL, 1),
-(8, 'nhungpt@linxhq.com', '$2a$13$sSs9IiF2W6echzAq.bONJu3Ec1cG9INfQvXRkTe2DEB.E3UD8uhrO', '2016-02-22 11:25:40', NULL, NULL, 1);
+(1, 'admin', '$2a$13$QYHbE/G.3O7TBZ4QStbj6.WNCXKnI9XHVfBF3glFC1ZIYGqNztzOq', '2015-09-04 20:42:28', NULL, NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -3192,14 +3180,7 @@ CREATE TABLE `lb_sys_account_subscriptions` (
 --
 
 INSERT INTO `lb_sys_account_subscriptions` (`account_subscription_id`, `account_id`, `subscription_name`, `account_subscription_package_id`, `account_subscription_start_date`, `account_subscription_end_date`, `account_subscription_status_id`) VALUES
-(1, 1, 'My Company', 0, '2015-09-04 20:42:28', NULL, 1),
-(2, 1, 'My Company', 0, '2016-01-22 05:32:22', NULL, 1),
-(3, 1, 'My Company', 0, '2016-01-22 07:30:02', NULL, 1),
-(4, 1, 'My Company', 0, '2016-01-22 07:41:00', NULL, 1),
-(5, 1, 'My Company', 0, '2016-01-22 07:46:48', NULL, 1),
-(6, 1, 'My Company', 0, '2016-01-22 07:47:25', NULL, 1),
-(7, 1, 'My Company', 0, '2016-01-22 08:01:40', NULL, 1),
-(8, 1, 'My Company', 0, '2016-02-22 11:25:40', NULL, 1);
+(1, 1, 'My Company', 0, '2015-09-04 20:42:28', NULL, 1);
 
 -- --------------------------------------------------------
 
@@ -3414,12 +3395,7 @@ CREATE TABLE `lb_taxes` (
 
 INSERT INTO `lb_taxes` (`lb_record_primary_key`, `lb_tax_name`, `lb_tax_value`, `lb_tax_is_default`) VALUES
 (1, 'GST', 7.00, 0),
-(2, 'Thuế Sản Phẩm', 10.00, 0),
-(3, 'Nhap khau', 5.00, 0),
-(4, 'gtt', 10.00, 0),
-(5, 'mmhh', 5.00, 0),
-(6, 'trr', 1.00, 0),
-(7, 'nhập khẩu 1', 5.00, 0),
+(2, 'VAT', 10.00, 0),
 (8, 'GST', 10.00, 0);
 
 -- --------------------------------------------------------
@@ -3829,6 +3805,7 @@ INSERT INTO `yiisession` (`id`, `expire`, `data`) VALUES
 ('c2n5mivnibr2di8h5nhoeqokp7', 1465057235, ''),
 ('ce7gk4n9ntthf09no6bvimqjf5', 1465780352, ''),
 ('d25apk8e6q0nksva59anbp6nb6', 1467853944, ''),
+('d2f22248386be3a8f9e2d8469369914b', 1515920580, ''),
 ('dbksrah6976rtoju0eunulj1b7', 1463545419, ''),
 ('dceu523mc95nkiogaul6ml0p16', 1467527775, ''),
 ('dg80qh9h7p4udjufnh2hsfnvh4', 1464139087, ''),
@@ -4475,7 +4452,7 @@ MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
 -- AUTO_INCREMENT for table `lb_modules`
 --
 ALTER TABLE `lb_modules`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `lb_next_ids`
 --

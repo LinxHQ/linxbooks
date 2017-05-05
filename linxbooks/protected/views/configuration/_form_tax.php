@@ -37,7 +37,7 @@
 //                        'placement' => 'right',
 //                   )
 //            ),
-  /*          array(
+           array(
                 'class'=>'CButtonColumn',
                     'template'=>'{update}{delete}',
                     'buttons'=>array(
@@ -50,7 +50,7 @@
                            'visible'=>'LbTax::model()->IsTaxExistInvoiceORQuotation($data->lb_record_primary_key)==false',
                        )
                     ),
-            ),*/
+            ),
         ),
     ));
 ?>
