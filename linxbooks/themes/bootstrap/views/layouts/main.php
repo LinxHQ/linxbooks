@@ -295,7 +295,7 @@ $report_canView = BasicPermission::model()->checkModules('lbReport', 'view');
                                                                                                             array('label'=>Yii::t('lang','Employee Report'),
                                                                                                                     'url'=>array('/lbReport/default/index?tab=employee_report'),
                                                                                                                     'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
-                                                                                                                    'visible' => $report_canView,
+                                                                                                                    'visible' => $report_canView && !Yii::app()->user->isGuest && Modules::model()->checkHiddenModule('lbVendor'),
                                                                                                                     ),
                                                                                                             array('label'=>Yii::t('lang','Payment Report'),
                                                                                                                     'url'=>array('/lbReport/default/index?tab=payment_report'),
