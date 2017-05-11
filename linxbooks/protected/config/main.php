@@ -218,14 +218,6 @@ return array(
 						'password' => 'Express',
 						'port' => 25,
 				),
-//				'transportOptions' => array( // only if use smtp 
-//						'host' => 'mail.linxbooks.com',
-//						//'encryption' => 'ssl',
-//						'username' => 'admin@linxbooks.com',
-//						'password' => 'KJNh#$POq[-&ebIH2ane;]',
-//						'port' => 25,
-//				),
-//				//'viewPath' => 'application.views.mails',
 		),
 		
 		'bootstrap'=>array(
