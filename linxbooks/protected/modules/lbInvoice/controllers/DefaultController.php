@@ -1164,6 +1164,9 @@ class DefaultController extends CLBController
             $html2pdf->WriteHTML($this->renderPartial('pdf', array('model'=>$model),true));
             $html2pdf->WriteHTML($this->renderPartial('_pdf_footer', array(), true));
 //            $html2pdf->SetHtmlFooter(false);
+            
+            ob_start();
+            
             if($email)
                 return $html2pdf->Output('',true);
             else {

@@ -1,4 +1,6 @@
 <?php
+ob_start();
+
 /* @var $this LbInvoiceController */
 /* @var $model LbInvoice */
 /* @var $ownCompany LbCustomer */
