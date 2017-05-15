@@ -33,7 +33,7 @@ $('.search-form form').submit(function(){
 echo '<div id="lb-container-header">';
             echo '<div class="lb-header-right" ><h3>Contracts</h3></div>';
             echo '<div class="lb-header-left" style="width:400px;">';
-            LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
+            //LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(
                 'type' => '',
@@ -47,14 +47,16 @@ echo '</div>';
 echo '<br>';
 ?>
 <div style="width: 100%;text-align: center;">
-<?php $this->widget('bootstrap.widgets.TbButtonGroup', array(
+<?php 
+/**$this->widget('bootstrap.widgets.TbButtonGroup', array(
     'buttons' => array(
         array('label'=>'Active','url'=>$this->createUrl('admin')),
         array('label'=>'No Active','url'=>$this->createUrl('admin',array('status'=>LbContracts::LB_CONTRACT_STATUS_NO_ACTIVE))),
         array('label'=>'Has Renew','url'=>$this->createUrl('admin',array('status'=>LbContracts::LB_CONTRACT_STATUS_HAS_RENEWED))),
         array('label'=>'End Contract','url'=>$this->createUrl('admin',array('status'=>LbContracts::LB_CONTRACT_STATUS_END)))
     ),
-)); ?>
+)); **/
+?>
 </div>
 <?php $this->widget('bootstrap.widgets.TbGridView', array(
 	'id'=>'lb-contracts-grid',
@@ -116,6 +118,7 @@ echo '<br>';
 		*/
 		array(
 			'class'=>'CButtonColumn',
+                        'template'=>'{delete}'
 		),
 	),
 )); ?>

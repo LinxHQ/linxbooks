@@ -30,7 +30,7 @@ if(!$canView)
 echo '<div id="lb-container-header">';
             echo '<div class="lb-header-right" style="margin-left:-11px"><h3>Contracts</h3></div>';
             echo '<div class="lb-header-left">';
-            LBApplicationUI::backButton(LbContracts::model()->getActionURLNormalized("dashboard"));
+            LBApplicationUI::backButton(LbContracts::model()->getActionURL("admin"));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(
                 'type' => '',
@@ -48,7 +48,7 @@ echo '</div><Br>';
 </div>
 <?php
     if($canEdit)
-    {
+    {   /**
         echo '<div class="btn-toolbar">';
 
             $this->widget('bootstrap.widgets.TbButton', array(
@@ -84,7 +84,7 @@ echo '</div><Br>';
                                     }'
                             ),
                             array('class'=>'btn','id'=>'ajax_contract_update_end_contract_'.$model->lb_record_primary_key));
-        echo '</div>';
+        echo '</div>';**/
     }
 ?>
 <br>

@@ -10,7 +10,7 @@
                     'encodeLabel'=>false,
                     'tabs'=> 
                     array(
-                                array('id'=>'tab1','label'=>'<strong>'.Yii::t('lang','Genera').'</strong>',
+                                array('id'=>'tab1','label'=>'<strong>'.Yii::t('lang','General').'</strong>',
                                                     'content'=>$this->renderPartial('_form_genera',array(
                                                     ),true),'active'=>true,
                                                 ),

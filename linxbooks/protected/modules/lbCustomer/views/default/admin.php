@@ -42,14 +42,17 @@ echo '<div id="lb-container-header">';
             echo '</div>';
 echo '</div>';
 
-?>
+// show add customer link
+$customer_canAdd = BasicPermission::model()->checkModules('lbCustomer', 'add');
+if ($customer_canAdd) {
+    echo '<div class="btn-toolbar">';
+    echo CHtml::link(Yii::t('lang','<i class="icon-plus"></i> New Customer'),
+        LbCustomer::model()->getCreateURL(),
+        array('data-workspace' => '1', 'id' => uniqid(), 'live' => false, 'style' => 'font-size: 10pt;'));
+    echo '</div>';
+} // show add new customer link
 
-
-<?php
-//echo LbContracts::model()->getContractCustomer(5);
-?>
-<?php 
-echo '<br/>';
+//echo '<br/>';
 echo '<div id="show_customer" style="display: inline; top:-100px;">';
 // NEW BUTTON
 //if($canAdd)

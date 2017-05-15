@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost:8889
--- Generation Time: May 05, 2017 at 11:18 AM
+-- Generation Time: May 15, 2017 at 11:54 AM
 -- Server version: 5.5.38
 -- PHP Version: 5.5.14
 
@@ -26,7 +26,6 @@ SET time_zone = "+00:00";
 -- Table structure for table `lb_account_basic_permission`
 --
 
-DROP TABLE IF EXISTS `lb_account_basic_permission`;
 CREATE TABLE `lb_account_basic_permission` (
 `lb_record_primary_key` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
@@ -41,7 +40,6 @@ CREATE TABLE `lb_account_basic_permission` (
 -- Table structure for table `lb_account_define_permission`
 --
 
-DROP TABLE IF EXISTS `lb_account_define_permission`;
 CREATE TABLE `lb_account_define_permission` (
 `lb_record_primary_key` int(11) NOT NULL,
   `define_permission_id` int(11) NOT NULL,
@@ -55,7 +53,6 @@ CREATE TABLE `lb_account_define_permission` (
 -- Table structure for table `lb_account_roles`
 --
 
-DROP TABLE IF EXISTS `lb_account_roles`;
 CREATE TABLE `lb_account_roles` (
 `lb_record_primary_key` int(11) NOT NULL,
   `accout_id` int(11) NOT NULL,
@@ -68,7 +65,6 @@ CREATE TABLE `lb_account_roles` (
 -- Table structure for table `lb_bank_account`
 --
 
-DROP TABLE IF EXISTS `lb_bank_account`;
 CREATE TABLE `lb_bank_account` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_account_id` int(11) NOT NULL,
@@ -81,7 +77,6 @@ CREATE TABLE `lb_bank_account` (
 -- Table structure for table `lb_basic_permission`
 --
 
-DROP TABLE IF EXISTS `lb_basic_permission`;
 CREATE TABLE `lb_basic_permission` (
 `basic_permission_id` int(11) NOT NULL,
   `basic_permission_name` varchar(100) NOT NULL,
@@ -95,7 +90,6 @@ CREATE TABLE `lb_basic_permission` (
 -- Table structure for table `lb_comment`
 --
 
-DROP TABLE IF EXISTS `lb_comment`;
 CREATE TABLE `lb_comment` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_module_name` varchar(100) NOT NULL,
@@ -121,7 +115,6 @@ INSERT INTO `lb_comment` (`lb_record_primary_key`, `lb_module_name`, `lb_comment
 -- Table structure for table `lb_contracts`
 --
 
-DROP TABLE IF EXISTS `lb_contracts`;
 CREATE TABLE `lb_contracts` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_customer_id` int(11) NOT NULL,
@@ -135,7 +128,14 @@ CREATE TABLE `lb_contracts` (
   `lb_contract_amount` decimal(10,2) NOT NULL,
   `lb_contract_parent` int(11) NOT NULL,
   `lb_contract_status` varchar(50) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `lb_contracts`
+--
+
+INSERT INTO `lb_contracts` (`lb_record_primary_key`, `lb_customer_id`, `lb_address_id`, `lb_contact_id`, `lb_contract_no`, `lb_contract_notes`, `lb_contract_date_start`, `lb_contract_date_end`, `lb_contract_type`, `lb_contract_amount`, `lb_contract_parent`, `lb_contract_status`) VALUES
+(1, 1, 0, 0, 'C-20170000001', '', '2017-05-15', '2017-11-30', '', 1500.00, 0, 'Active');
 
 -- --------------------------------------------------------
 
@@ -143,14 +143,13 @@ CREATE TABLE `lb_contracts` (
 -- Table structure for table `lb_contract_document`
 --
 
-DROP TABLE IF EXISTS `lb_contract_document`;
 CREATE TABLE `lb_contract_document` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_contract_id` int(11) NOT NULL,
   `lb_document_url` varchar(255) NOT NULL,
   `lb_document_name` varchar(255) NOT NULL,
   `lb_document_url_icon` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
 
 -- --------------------------------------------------------
 
@@ -158,7 +157,6 @@ CREATE TABLE `lb_contract_document` (
 -- Table structure for table `lb_contract_invoice`
 --
 
-DROP TABLE IF EXISTS `lb_contract_invoice`;
 CREATE TABLE `lb_contract_invoice` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_contract_id` int(11) NOT NULL,
@@ -171,7 +169,6 @@ CREATE TABLE `lb_contract_invoice` (
 -- Table structure for table `lb_core_entities`
 --
 
-DROP TABLE IF EXISTS `lb_core_entities`;
 CREATE TABLE `lb_core_entities` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_entity_type` char(100) COLLATE utf8_unicode_ci NOT NULL COMMENT 'INVOICE, QUOTATION, CUSTOMER,...',
@@ -182,7 +179,7 @@ CREATE TABLE `lb_core_entities` (
   `lb_last_update` datetime NOT NULL,
   `lb_subscription_id` int(11) NOT NULL,
   `lb_locked_from_deletion` tinyint(1) NOT NULL COMMENT 'e.g. already paid or written-off invoices'
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='attributes that almost all important models should have' AUTO_INCREMENT=2191 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci COMMENT='attributes that almost all important models should have' AUTO_INCREMENT=2197 ;
 
 --
 -- Dumping data for table `lb_core_entities`
@@ -190,7 +187,7 @@ CREATE TABLE `lb_core_entities` (
 
 INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
 (1, 'lbGenera', 1, 1, '2015-06-15 04:15:38', 1, '2015-06-15 04:15:38', 1, 0),
-(2, 'lbNextId', 1, 1, '2015-06-15 04:15:38', 1, '2016-02-20 02:46:16', 1, 0),
+(2, 'lbNextId', 1, 1, '2015-06-15 04:15:38', 1, '2017-05-15 11:41:36', 1, 0),
 (3, 'lbDefaultNote', 1, 1, '2015-06-15 04:15:38', 1, '2015-06-15 04:15:38', 1, 0),
 (4, 'modules', 1, 1, '2015-06-15 04:15:45', 1, '2015-06-15 04:16:36', 1, 0),
 (5, 'modules', 2, 1, '2015-06-15 04:15:49', 1, '2015-06-15 04:16:32', 1, 0),
@@ -200,10 +197,10 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (9, 'modules', 6, 1, '2015-06-15 04:16:01', 1, '2015-06-15 04:16:18', 1, 0),
 (10, 'modules', 7, 1, '2015-06-15 04:16:06', 1, '2015-06-15 04:16:15', 1, 0),
 (12, 'lbCustomer', 6, 1, '2015-09-04 22:56:48', 1, '2015-10-13 10:30:55', 1, 0),
-(13, 'lbInvoice', 1, 1, '2015-09-04 22:58:32', 1, '2015-09-04 22:58:32', 1, 0),
+(13, 'lbInvoice', 1, 1, '2015-09-04 22:58:32', 1, '2017-05-11 07:46:46', 1, 0),
 (14, 'lbInvoiceItem', 1, 1, '2015-09-04 22:58:33', 1, '2015-09-04 22:58:33', 1, 0),
 (15, 'lbInvoiceItem', 2, 1, '2015-09-04 22:58:33', 1, '2015-09-04 22:58:33', 1, 0),
-(16, 'lbInvoiceTotal', 1, 1, '2015-09-04 22:58:33', 1, '2017-05-05 11:12:25', 1, 0),
+(16, 'lbInvoiceTotal', 1, 1, '2015-09-04 22:58:33', 1, '2017-05-15 10:42:10', 1, 0),
 (17, 'lbInvoice', 2, 1, '2015-09-04 22:59:24', 1, '2015-09-04 22:59:24', 1, 0),
 (18, 'lbInvoiceItem', 3, 1, '2015-09-04 22:59:24', 1, '2015-09-04 22:59:24', 1, 0),
 (19, 'lbInvoiceItem', 4, 1, '2015-09-04 22:59:24', 1, '2015-09-04 22:59:24', 1, 0),
@@ -798,7 +795,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (688, 'lbInvoiceItem', 219, 1, '2015-09-21 06:55:54', 1, '2016-01-30 07:57:21', 1, 0),
 (689, 'lbInvoiceItem', 220, 1, '2015-09-21 06:55:54', 1, '2016-02-02 04:02:40', 1, 0),
 (690, 'lbInvoiceTotal', 102, 1, '2015-09-21 06:55:54', 1, '2016-02-20 02:54:08', 1, 0),
-(692, 'lbExpenses', 2, 1, '2015-09-21 06:58:41', 1, '2015-09-21 06:58:41', 1, 0),
 (695, 'lbInvoice', 120, 1, '2015-09-21 06:59:03', 1, '2016-01-18 04:40:01', 1, 0),
 (696, 'lbInvoiceItem', 221, 1, '2015-09-21 06:59:03', 1, '2015-09-21 06:59:27', 1, 0),
 (697, 'lbInvoiceItem', 222, 1, '2015-09-21 06:59:03', 1, '2015-09-21 06:59:28', 1, 0),
@@ -894,7 +890,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (804, 'lbInvoiceItem', 267, 1, '2015-09-21 10:02:29', 1, '2015-09-21 10:02:54', 1, 0),
 (805, 'lbInvoiceItem', 268, 1, '2015-09-21 10:02:29', 1, '2015-09-21 10:03:07', 1, 0),
 (806, 'lbInvoiceTotal', 126, 1, '2015-09-21 10:02:29', 1, '2015-09-21 10:03:07', 1, 0),
-(808, 'lbExpenses', 3, 1, '2015-09-21 10:14:51', 1, '2015-09-21 10:14:51', 1, 0),
 (819, 'lbVendor', 1, 1, '2015-09-21 10:29:43', 1, '2015-09-21 10:29:43', 1, 0),
 (820, 'lbInvoice', 144, 1, '2015-09-21 10:47:08', 1, '2015-09-21 11:06:19', 1, 0),
 (821, 'lbInvoiceItem', 269, 1, '2015-09-21 10:47:08', 1, '2015-09-21 10:47:40', 1, 0),
@@ -981,12 +976,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (924, 'lbExpensesCustomer', 85, 1, '2015-09-29 06:39:08', 1, '2015-09-29 06:39:08', 1, 0),
 (925, 'lbExpensesCustomer', 86, 1, '2015-09-29 06:39:08', 1, '2015-09-29 06:39:08', 1, 0),
 (926, 'lbExpensesCustomer', 87, 1, '2015-09-29 06:39:09', 1, '2015-09-29 06:39:09', 1, 0),
-(930, 'lbExpensesCustomer', 91, 1, '2015-09-29 09:39:57', 1, '2015-09-29 09:39:57', 1, 0),
-(931, 'lbExpensesCustomer', 92, 1, '2015-09-29 09:39:57', 1, '2015-09-29 09:39:57', 1, 0),
-(932, 'lbExpensesCustomer', 93, 1, '2015-09-29 09:39:57', 1, '2015-09-29 09:39:57', 1, 0),
-(935, 'lbExpensesCustomer', 96, 1, '2015-09-29 09:40:42', 1, '2015-09-29 09:40:42', 1, 0),
-(936, 'lbExpensesCustomer', 97, 1, '2015-09-29 09:41:05', 1, '2015-09-29 09:41:05', 1, 0),
-(944, 'lbExpensesInvoice', 43, 1, '2015-09-29 12:31:21', 1, '2015-09-29 12:31:21', 1, 0),
 (948, 'lbCustomer', 96, 1, '2015-09-30 03:40:20', 1, '2015-09-30 03:40:20', 1, 0),
 (952, 'lbExpensesCustomer', 103, 1, '2015-09-30 03:49:57', 1, '2015-09-30 03:49:57', 1, 0),
 (953, 'lbExpensesCustomer', 104, 1, '2015-09-30 03:49:57', 1, '2015-09-30 03:49:57', 1, 0),
@@ -994,7 +983,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (955, 'lbExpensesCustomer', 105, 1, '2015-09-30 11:04:51', 1, '2015-09-30 11:04:51', 1, 0),
 (956, 'lbExpensesCustomer', 106, 1, '2015-09-30 11:05:02', 1, '2015-09-30 11:05:02', 1, 0),
 (957, 'lbExpensesCustomer', 107, 1, '2015-09-30 11:05:02', 1, '2015-09-30 11:05:02', 1, 0),
-(962, 'lbExpensesInvoice', 47, 1, '2015-09-30 11:10:26', 1, '2015-09-30 11:10:26', 1, 0),
 (963, 'lbVendorTax', 3, 1, '2015-10-01 15:09:26', 1, '2016-01-18 05:47:58', 1, 0),
 (964, 'lbVendorInvoice', 1, 1, '2015-10-01 15:09:55', 1, '2015-10-01 15:09:55', 1, 0),
 (965, 'lbVendorInvoice', 2, 1, '2015-10-01 15:11:40', 1, '2015-10-01 15:11:40', 1, 0),
@@ -1173,7 +1161,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (1154, 'lbInvoiceTotal', 180, 1, '2015-10-07 06:50:04', 1, '2015-10-13 11:10:14', 1, 0),
 (1155, 'lbInvoiceItem', 399, 1, '2015-10-07 06:50:30', 1, '2015-10-07 06:50:31', 1, 0),
 (1156, 'lbInvoiceItem', 400, 1, '2015-10-07 06:50:37', 1, '2015-10-07 06:50:46', 1, 0),
-(1157, 'lbExpensesInvoice', 55, 1, '2015-10-07 06:50:54', 1, '2015-10-07 06:50:54', 1, 0),
 (1158, 'lbInvoice', 198, 1, '2015-10-07 06:51:54', 1, '2015-10-07 06:52:42', 1, 0),
 (1159, 'lbInvoiceItem', 401, 1, '2015-10-07 06:51:55', 1, '2015-10-07 06:52:24', 1, 0),
 (1160, 'lbInvoiceItem', 402, 1, '2015-10-07 06:51:55', 1, '2015-10-07 06:52:33', 1, 0),
@@ -1205,7 +1192,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (1190, 'lbInvoiceTotal', 185, 1, '2015-10-13 03:31:20', 1, '2015-12-17 03:36:43', 1, 0),
 (1191, 'lbInvoiceItem', 417, 1, '2015-10-13 03:31:46', 1, '2015-10-13 03:31:47', 1, 0),
 (1192, 'lbInvoiceItem', 418, 1, '2015-10-13 03:31:51', 1, '2015-10-13 03:32:00', 1, 0),
-(1193, 'lbExpensesInvoice', 57, 1, '2015-10-13 03:32:08', 1, '2015-10-13 03:32:08', 1, 0),
 (1196, 'lbInvoice', 203, 1, '2015-10-13 03:32:48', 1, '2015-10-13 03:34:09', 1, 0),
 (1197, 'lbInvoiceItem', 419, 1, '2015-10-13 03:32:48', 1, '2015-10-13 03:33:20', 1, 0),
 (1198, 'lbInvoiceItem', 420, 1, '2015-10-13 03:32:48', 1, '2015-10-13 03:33:42', 1, 0),
@@ -1254,39 +1240,18 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (1243, 'lbPaymentItem', 8, 1, '2015-10-13 06:43:29', 1, '2015-10-13 06:43:52', 1, 0),
 (1244, 'lbCustomer', 100, 1, '2015-10-13 09:50:59', 1, '2015-10-13 09:50:59', 1, 0),
 (1246, 'lbCustomer', 101, 1, '2015-10-13 09:51:41', 1, '2015-10-13 09:51:41', 1, 0),
-(1249, 'lbExpensesCustomer', 119, 1, '2015-10-13 09:53:32', 1, '2015-10-13 09:53:32', 1, 0),
-(1250, 'lbExpensesCustomer', 120, 1, '2015-10-13 09:53:32', 1, '2015-10-13 09:53:32', 1, 0),
-(1251, 'lbExpensesCustomer', 121, 1, '2015-10-13 09:54:14', 1, '2015-10-13 09:54:14', 1, 0),
-(1252, 'lbExpensesCustomer', 122, 1, '2015-10-13 09:54:37', 1, '2015-10-13 09:54:37', 1, 0),
-(1253, 'lbExpensesCustomer', 123, 1, '2015-10-13 09:54:37', 1, '2015-10-13 09:54:37', 1, 0),
 (1257, 'lbCustomer', 102, 1, '2015-10-13 10:00:30', 1, '2015-10-13 10:00:30', 1, 0),
-(1258, 'lbExpensesCustomer', 127, 1, '2015-10-13 10:00:30', 1, '2015-10-13 10:00:30', 1, 0),
-(1260, 'lbExpensesCustomer', 129, 1, '2015-10-13 10:00:58', 1, '2015-10-13 10:00:58', 1, 0),
 (1264, 'lbInvoice', 210, 1, '2015-10-13 10:02:02', 1, '2015-10-13 10:02:02', 1, 0),
 (1265, 'lbInvoiceItem', 443, 1, '2015-10-13 10:02:02', 1, '2015-10-13 10:02:02', 1, 0),
 (1266, 'lbInvoiceItem', 444, 1, '2015-10-13 10:02:03', 1, '2015-10-13 10:02:03', 1, 0),
 (1267, 'lbInvoiceTotal', 193, 1, '2015-10-13 10:02:03', 1, '2015-10-13 10:02:04', 1, 0),
 (1268, 'lbCustomer', 103, 1, '2015-10-13 10:19:53', 1, '2015-10-13 10:19:53', 1, 0),
-(1269, 'lbExpensesCustomer', 131, 1, '2015-10-13 10:19:53', 1, '2015-10-13 10:19:53', 1, 0),
-(1270, 'lbExpensesCustomer', 132, 1, '2015-10-13 10:20:21', 1, '2015-10-13 10:20:21', 1, 0),
-(1271, 'lbExpensesCustomer', 133, 1, '2015-10-13 10:20:21', 1, '2015-10-13 10:20:21', 1, 0),
-(1272, 'lbExpensesCustomer', 134, 1, '2015-10-13 10:21:02', 1, '2015-10-13 10:21:02', 1, 0),
-(1278, 'lbExpensesCustomer', 140, 1, '2015-10-13 10:21:36', 1, '2015-10-13 10:21:36', 1, 0),
-(1279, 'lbExpensesInvoice', 64, 1, '2015-10-13 10:22:58', 1, '2015-10-13 10:22:58', 1, 0),
-(1281, 'lbExpensesInvoice', 66, 1, '2015-10-13 10:24:38', 1, '2015-10-13 10:24:38', 1, 0),
-(1282, 'lbExpensesInvoice', 67, 1, '2015-10-13 10:24:55', 1, '2015-10-13 10:24:55', 1, 0),
-(1283, 'lbExpensesInvoice', 68, 1, '2015-10-13 10:24:55', 1, '2015-10-13 10:24:55', 1, 0),
-(1284, 'lbExpensesInvoice', 69, 1, '2015-10-13 10:25:21', 1, '2015-10-13 10:25:21', 1, 0),
 (1285, 'lbInvoice', 211, 1, '2015-10-13 10:25:56', 1, '2015-10-13 10:26:52', 1, 0),
 (1286, 'lbInvoiceItem', 445, 1, '2015-10-13 10:25:57', 1, '2015-10-13 10:26:30', 1, 0),
 (1287, 'lbInvoiceItem', 446, 1, '2015-10-13 10:25:57', 1, '2015-10-13 10:26:43', 1, 0),
 (1288, 'lbInvoiceTotal', 194, 1, '2015-10-13 10:25:57', 1, '2015-10-13 10:26:45', 1, 0),
 (1289, 'lbInvoiceItem', 447, 1, '2015-10-13 10:26:31', 1, '2015-10-13 10:26:32', 1, 0),
 (1290, 'lbInvoiceItem', 448, 1, '2015-10-13 10:26:36', 1, '2015-10-13 10:26:44', 1, 0),
-(1291, 'lbExpensesInvoice', 70, 1, '2015-10-13 10:26:52', 1, '2015-10-13 10:26:52', 1, 0),
-(1299, 'lbExpensesInvoice', 78, 1, '2015-10-13 10:33:22', 1, '2015-10-13 10:33:22', 1, 0),
-(1300, 'lbExpensesInvoice', 79, 1, '2015-10-13 10:39:02', 1, '2015-10-13 10:39:02', 1, 0),
-(1301, 'lbExpensesInvoice', 80, 1, '2015-10-13 10:40:01', 1, '2015-10-13 10:40:01', 1, 0),
 (1302, 'lbCustomer', 104, 1, '2015-10-13 11:13:22', 1, '2015-10-13 11:13:22', 1, 0),
 (1303, 'lbExpensesCustomer', 141, 1, '2015-10-13 11:13:23', 1, '2015-10-13 11:13:23', 1, 0),
 (1304, 'lbExpensesCustomer', 142, 1, '2015-10-13 11:13:37', 1, '2015-10-13 11:13:37', 1, 0),
@@ -1370,8 +1335,7 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (1412, 'lbEmployeePayment', 67, 1, '2015-10-29 02:46:28', 1, '2015-10-29 02:46:28', 1, 0),
 (1413, 'lbEmployeePayment', 68, 1, '2015-10-29 02:48:10', 1, '2015-10-29 02:48:10', 1, 0),
 (1414, 'lbEmployee', 24, 1, '2015-12-08 08:06:31', 1, '2015-12-08 08:06:32', 1, 0),
-(1415, 'lbEmployeeSalary', 56, 1, '2015-12-08 08:06:31', 1, '2015-12-08 08:06:31', 1, 0);
-INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
+(1415, 'lbEmployeeSalary', 56, 1, '2015-12-08 08:06:31', 1, '2015-12-08 08:06:31', 1, 0),
 (1416, 'lbEmployeeSalary', 57, 1, '2015-12-08 08:06:31', 1, '2015-12-08 08:06:31', 1, 0),
 (1417, 'lbEmployeeBenefits', 17, 1, '2015-12-08 08:06:32', 1, '2015-12-08 08:06:32', 1, 0),
 (1418, 'lbEmployeeBenefits', 18, 1, '2015-12-08 08:06:32', 1, '2015-12-08 08:06:32', 1, 0),
@@ -1403,7 +1367,8 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (1459, 'lbEmployeeBenefits', 32, 1, '2015-12-10 09:07:43', 1, '2015-12-10 09:07:43', 1, 0),
 (1461, 'lbEmployeeBenefits', 33, 1, '2015-12-10 09:07:59', 1, '2015-12-10 09:07:59', 1, 0),
 (1463, 'lbEmployeeBenefits', 34, 1, '2015-12-10 09:08:21', 1, '2015-12-10 09:08:21', 1, 0),
-(1465, 'lbEmployeeBenefits', 35, 1, '2015-12-10 09:08:33', 1, '2015-12-10 09:08:33', 1, 0),
+(1465, 'lbEmployeeBenefits', 35, 1, '2015-12-10 09:08:33', 1, '2015-12-10 09:08:33', 1, 0);
+INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
 (1467, 'lbEmployeeBenefits', 36, 1, '2015-12-10 09:09:06', 1, '2015-12-10 09:09:06', 1, 0),
 (1469, 'lbEmployeeBenefits', 37, 1, '2015-12-10 09:09:50', 1, '2015-12-10 09:09:50', 1, 0),
 (1471, 'lbEmployeeBenefits', 38, 1, '2015-12-10 09:10:22', 1, '2015-12-10 09:18:21', 1, 0),
@@ -1603,8 +1568,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (1683, 'lbEmployeePayment', 234, 1, '2015-12-15 11:32:19', 1, '2015-12-15 11:32:20', 1, 0),
 (1684, 'lbEmployeePayment', 235, 1, '2015-12-15 11:33:17', 1, '2015-12-15 11:33:17', 1, 0),
 (1685, 'lbEmployeePayment', 236, 1, '2015-12-15 11:33:17', 1, '2015-12-15 11:33:17', 1, 0),
-(1686, 'lbExpensesCustomer', 149, 1, '2015-12-15 11:38:58', 1, '2015-12-15 11:38:58', 1, 0),
-(1687, 'lbExpensesCustomer', 150, 1, '2015-12-15 11:38:59', 1, '2015-12-15 11:38:59', 1, 0),
 (1688, 'lbEmployeePayment', 237, 1, '2015-12-15 11:39:53', 1, '2015-12-15 11:39:54', 1, 0),
 (1689, 'lbEmployeePayment', 238, 1, '2015-12-15 11:39:54', 1, '2015-12-15 11:39:54', 1, 0),
 (1690, 'lbEmployeePayment', 239, 1, '2015-12-17 03:38:58', 1, '2015-12-17 03:38:58', 1, 0),
@@ -1932,8 +1895,7 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (2018, 'lbVendor', 9, 1, '2016-01-18 08:14:32', 1, '2016-01-18 08:14:32', 1, 0),
 (2019, 'lbInvoice', 159, 1, '2016-01-18 10:42:40', 1, '2016-01-18 10:42:40', 1, 0),
 (2022, 'lbInvoiceTotal', 226, 1, '2016-01-18 10:42:42', 1, '2016-01-23 07:54:49', 1, 0),
-(2023, 'lbInvoice', 160, 1, '2016-01-18 11:33:24', 1, '2016-01-18 11:33:24', 1, 0);
-INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
+(2023, 'lbInvoice', 160, 1, '2016-01-18 11:33:24', 1, '2016-01-18 11:33:24', 1, 0),
 (2026, 'lbInvoiceTotal', 227, 1, '2016-01-18 11:33:26', 1, '2016-01-23 08:14:42', 1, 0),
 (2027, 'lbQuotation', 32, 1, '2016-01-18 11:38:16', 1, '2016-01-18 11:38:16', 1, 0),
 (2028, 'lbQuotationItem', 32, 1, '2016-01-18 11:38:16', 1, '2016-01-18 11:38:16', 1, 0),
@@ -1969,7 +1931,8 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (2058, 'lbInvoiceItem', 528, 1, '2016-01-28 05:04:05', 1, '2016-01-28 10:13:08', 1, 0),
 (2059, 'lbInvoiceTotal', 233, 1, '2016-01-28 05:04:05', 1, '2016-01-28 05:04:05', 1, 0),
 (2060, 'lbInvoice', 163, 1, '2016-01-28 05:22:50', 1, '2016-01-28 05:22:50', 1, 0),
-(2061, 'lbInvoiceItem', 529, 1, '2016-01-28 05:22:50', 1, '2016-01-28 05:23:47', 1, 0),
+(2061, 'lbInvoiceItem', 529, 1, '2016-01-28 05:22:50', 1, '2016-01-28 05:23:47', 1, 0);
+INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_entity_primary_key`, `lb_created_by`, `lb_created_date`, `lb_last_updated_by`, `lb_last_update`, `lb_subscription_id`, `lb_locked_from_deletion`) VALUES
 (2062, 'lbInvoiceItem', 530, 1, '2016-01-28 05:22:52', 1, '2016-01-28 05:23:54', 1, 0),
 (2063, 'lbInvoiceTotal', 234, 1, '2016-01-28 05:22:52', 1, '2016-01-28 05:22:52', 1, 0),
 (2065, 'lbInvoice', 164, 1, '2016-01-28 10:22:31', 1, '2016-01-28 10:22:31', 1, 0),
@@ -2093,7 +2056,10 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 (2187, 'lbInvoice', 1, 1, '2017-05-03 09:16:47', 1, '2017-05-03 09:16:47', 1, 0),
 (2188, 'lbInvoiceItem', 1, 1, '2017-05-03 09:16:47', 1, '2017-05-03 09:16:47', 1, 0),
 (2189, 'lbInvoiceItem', 2, 1, '2017-05-03 09:16:47', 1, '2017-05-03 09:16:47', 1, 0),
-(2190, 'lbInvoiceTotal', 1, 1, '2017-05-03 09:16:47', 1, '2017-05-03 09:16:47', 1, 0);
+(2190, 'lbInvoiceTotal', 1, 1, '2017-05-03 09:16:47', 1, '2017-05-03 09:16:47', 1, 0),
+(2191, 'lbCustomer', 1, 1, '2017-05-15 10:43:55', 1, '2017-05-15 11:46:47', 1, 0),
+(2192, 'lbContracts', 1, 1, '2017-05-15 11:34:23', 1, '2017-05-15 11:54:28', 1, 0),
+(2196, 'lbCustomer', 2, 1, '2017-05-15 11:46:47', 1, '2017-05-15 11:46:47', 1, 0);
 
 -- --------------------------------------------------------
 
@@ -2101,7 +2067,6 @@ INSERT INTO `lb_core_entities` (`lb_record_primary_key`, `lb_entity_type`, `lb_e
 -- Table structure for table `lb_customers`
 --
 
-DROP TABLE IF EXISTS `lb_customers`;
 CREATE TABLE `lb_customers` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_customer_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -2109,7 +2074,15 @@ CREATE TABLE `lb_customers` (
   `lb_customer_tax_id` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lb_customer_website_url` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
   `lb_customer_is_own_company` tinyint(1) NOT NULL COMMENT 'only allow ONE per subscription'
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=3 ;
+
+--
+-- Dumping data for table `lb_customers`
+--
+
+INSERT INTO `lb_customers` (`lb_record_primary_key`, `lb_customer_name`, `lb_customer_registration`, `lb_customer_tax_id`, `lb_customer_website_url`, `lb_customer_is_own_company`) VALUES
+(1, 'Newlife World Ltd', '', NULL, '', 0),
+(2, 'My company', '', NULL, '', 1);
 
 -- --------------------------------------------------------
 
@@ -2117,7 +2090,6 @@ CREATE TABLE `lb_customers` (
 -- Table structure for table `lb_customer_addresses`
 --
 
-DROP TABLE IF EXISTS `lb_customer_addresses`;
 CREATE TABLE `lb_customer_addresses` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_customer_id` int(11) NOT NULL,
@@ -2143,7 +2115,6 @@ CREATE TABLE `lb_customer_addresses` (
 -- Table structure for table `lb_customer_address_contacts`
 --
 
-DROP TABLE IF EXISTS `lb_customer_address_contacts`;
 CREATE TABLE `lb_customer_address_contacts` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_customer_address_id` int(11) NOT NULL,
@@ -2156,7 +2127,6 @@ CREATE TABLE `lb_customer_address_contacts` (
 -- Table structure for table `lb_customer_contacts`
 --
 
-DROP TABLE IF EXISTS `lb_customer_contacts`;
 CREATE TABLE `lb_customer_contacts` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_customer_id` int(11) DEFAULT NULL,
@@ -2177,7 +2147,6 @@ CREATE TABLE `lb_customer_contacts` (
 -- Table structure for table `lb_default_note`
 --
 
-DROP TABLE IF EXISTS `lb_default_note`;
 CREATE TABLE `lb_default_note` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_default_note_quotation` longtext NOT NULL,
@@ -2197,7 +2166,6 @@ INSERT INTO `lb_default_note` (`lb_record_primary_key`, `lb_default_note_quotati
 -- Table structure for table `lb_define_permission`
 --
 
-DROP TABLE IF EXISTS `lb_define_permission`;
 CREATE TABLE `lb_define_permission` (
 `define_permission_id` int(11) NOT NULL,
   `module_id` int(11) NOT NULL,
@@ -2212,7 +2180,6 @@ CREATE TABLE `lb_define_permission` (
 -- Table structure for table `lb_documents`
 --
 
-DROP TABLE IF EXISTS `lb_documents`;
 CREATE TABLE `lb_documents` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_document_parent_type` varchar(255) NOT NULL,
@@ -2230,7 +2197,6 @@ CREATE TABLE `lb_documents` (
 -- Table structure for table `lb_employee`
 --
 
-DROP TABLE IF EXISTS `lb_employee`;
 CREATE TABLE `lb_employee` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lowest_salary` decimal(10,2) NOT NULL,
@@ -2270,7 +2236,6 @@ INSERT INTO `lb_employee` (`lb_record_primary_key`, `lowest_salary`, `employee_n
 -- Table structure for table `lb_employee_benefits`
 --
 
-DROP TABLE IF EXISTS `lb_employee_benefits`;
 CREATE TABLE `lb_employee_benefits` (
 `lb_record_primary_key` int(11) NOT NULL,
   `employee_id` int(11) NOT NULL,
@@ -2307,7 +2272,6 @@ INSERT INTO `lb_employee_benefits` (`lb_record_primary_key`, `employee_id`, `ben
 -- Table structure for table `lb_employee_payment`
 --
 
-DROP TABLE IF EXISTS `lb_employee_payment`;
 CREATE TABLE `lb_employee_payment` (
 `lb_record_primary_key` int(11) NOT NULL,
   `employee_id` int(11) NOT NULL,
@@ -2378,7 +2342,6 @@ INSERT INTO `lb_employee_payment` (`lb_record_primary_key`, `employee_id`, `paym
 -- Table structure for table `lb_employee_salary`
 --
 
-DROP TABLE IF EXISTS `lb_employee_salary`;
 CREATE TABLE `lb_employee_salary` (
 `lb_record_primary_key` int(11) NOT NULL,
   `employee_id` int(11) NOT NULL,
@@ -2431,7 +2394,6 @@ INSERT INTO `lb_employee_salary` (`lb_record_primary_key`, `employee_id`, `salar
 -- Table structure for table `lb_expenses`
 --
 
-DROP TABLE IF EXISTS `lb_expenses`;
 CREATE TABLE `lb_expenses` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_category_id` int(11) NOT NULL,
@@ -2448,9 +2410,7 @@ CREATE TABLE `lb_expenses` (
 --
 
 INSERT INTO `lb_expenses` (`lb_record_primary_key`, `lb_category_id`, `lb_expenses_no`, `lb_expenses_amount`, `lb_expenses_date`, `lb_expenses_recurring_id`, `lb_expenses_bank_account_id`, `lb_expenses_note`) VALUES
-(1, 1, 'E-20150000001', 100.00, '2015-09-05', NULL, NULL, 'test'),
-(2, 1, 'E-20150000002', 500.00, '2015-09-21', NULL, NULL, ''),
-(3, 1, 'E-20150000003', 500.00, '2015-09-21', NULL, NULL, '');
+(1, 1, 'E-20150000001', 100.00, '2015-09-05', NULL, NULL, 'test');
 
 -- --------------------------------------------------------
 
@@ -2458,7 +2418,6 @@ INSERT INTO `lb_expenses` (`lb_record_primary_key`, `lb_category_id`, `lb_expens
 -- Table structure for table `lb_expenses_customer`
 --
 
-DROP TABLE IF EXISTS `lb_expenses_customer`;
 CREATE TABLE `lb_expenses_customer` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_expenses_id` int(11) NOT NULL,
@@ -2474,30 +2433,13 @@ INSERT INTO `lb_expenses_customer` (`lb_record_primary_key`, `lb_expenses_id`, `
 (106, 1, 8),
 (105, 1, 97),
 (104, 1, 38),
-(140, 3, 37),
-(134, 3, 8),
-(133, 3, 88),
-(127, 3, 102),
-(132, 3, 83),
 (108, 1, 98),
 (109, 1, 11),
 (110, 1, 13),
 (111, 1, 15),
 (103, 1, 36),
-(129, 3, 39),
 (67, 1, 95),
-(123, 2, 66),
-(122, 2, 58),
-(121, 2, 6),
-(120, 2, 88),
-(119, 2, 83),
-(97, 2, 8),
-(96, 2, 26),
-(131, 3, 103),
 (141, 1, 104),
-(93, 2, 95),
-(92, 2, 93),
-(91, 2, 89),
 (142, 1, 10),
 (143, 1, 11),
 (144, 1, 12),
@@ -2505,9 +2447,7 @@ INSERT INTO `lb_expenses_customer` (`lb_record_primary_key`, `lb_expenses_id`, `
 (145, 1, 13),
 (146, 1, 15),
 (147, 1, 6),
-(148, 1, 24),
-(149, 3, 6),
-(150, 3, 8);
+(148, 1, 24);
 
 -- --------------------------------------------------------
 
@@ -2515,7 +2455,6 @@ INSERT INTO `lb_expenses_customer` (`lb_record_primary_key`, `lb_expenses_id`, `
 -- Table structure for table `lb_expenses_invoice`
 --
 
-DROP TABLE IF EXISTS `lb_expenses_invoice`;
 CREATE TABLE `lb_expenses_invoice` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_expenses_id` int(11) NOT NULL,
@@ -2527,11 +2466,6 @@ CREATE TABLE `lb_expenses_invoice` (
 --
 
 INSERT INTO `lb_expenses_invoice` (`lb_record_primary_key`, `lb_expenses_id`, `lb_invoice_id`) VALUES
-(57, 3, 202),
-(47, 3, 159),
-(64, 3, 206),
-(66, 3, 208),
-(67, 3, 157),
 (91, 1, 154),
 (90, 1, 153),
 (89, 1, 150),
@@ -2541,16 +2475,8 @@ INSERT INTO `lb_expenses_invoice` (`lb_record_primary_key`, `lb_expenses_id`, `l
 (82, 1, 146),
 (53, 1, 177),
 (81, 1, 212),
-(43, 2, 154),
-(68, 3, 97),
-(69, 3, 181),
 (52, 1, 173),
-(70, 3, 211),
-(78, 2, 114),
-(79, 2, 211),
-(54, 1, 181),
-(55, 2, 197),
-(80, 2, 160);
+(54, 1, 181);
 
 -- --------------------------------------------------------
 
@@ -2558,7 +2484,6 @@ INSERT INTO `lb_expenses_invoice` (`lb_record_primary_key`, `lb_expenses_id`, `l
 -- Table structure for table `lb_expenses_tax`
 --
 
-DROP TABLE IF EXISTS `lb_expenses_tax`;
 CREATE TABLE `lb_expenses_tax` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_expenses_id` int(11) NOT NULL,
@@ -2572,7 +2497,6 @@ CREATE TABLE `lb_expenses_tax` (
 -- Table structure for table `lb_genera`
 --
 
-DROP TABLE IF EXISTS `lb_genera`;
 CREATE TABLE `lb_genera` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_genera_currency_symbol` varchar(100) NOT NULL,
@@ -2609,7 +2533,6 @@ INSERT INTO `lb_genera` (`lb_record_primary_key`, `lb_genera_currency_symbol`, `
 -- Table structure for table `lb_invoices`
 --
 
-DROP TABLE IF EXISTS `lb_invoices`;
 CREATE TABLE `lb_invoices` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_invoice_group` char(60) COLLATE utf8_unicode_ci NOT NULL COMMENT 'INVOICE, QUOTATION',
@@ -2637,7 +2560,7 @@ CREATE TABLE `lb_invoices` (
 --
 
 INSERT INTO `lb_invoices` (`lb_record_primary_key`, `lb_invoice_group`, `lb_generated_from_quotation_id`, `lb_invoice_no`, `lb_invoice_date`, `lb_invoice_due_date`, `lb_invoice_company_id`, `lb_invoice_company_address_id`, `lb_invoice_customer_id`, `lb_invoice_customer_address_id`, `lb_invoice_attention_contact_id`, `lb_invoice_subject`, `lb_invoice_note`, `lb_invoice_status_code`, `lb_invoice_encode`, `lb_quotation_id`, `lb_invoice_internal_note`, `lb_invoice_term_id`, `lb_invoice_currency`) VALUES
-(1, 'INVOICE', NULL, 'Draft', '2017-05-03', '2017-05-03', 91, NULL, NULL, NULL, NULL, NULL, '', 'I_DRAFT', 'OWM0RHNRbDg3RDI=', 0, '', 0, 0);
+(1, 'INVOICE', NULL, 'Draft', '2017-05-03', '2017-05-03', 91, NULL, NULL, NULL, NULL, NULL, '', 'I_DRAFT', 'OWM0RHNRbDg3RDI=', 0, '', 12, 0);
 
 -- --------------------------------------------------------
 
@@ -2645,7 +2568,6 @@ INSERT INTO `lb_invoices` (`lb_record_primary_key`, `lb_invoice_group`, `lb_gene
 -- Table structure for table `lb_invoice_items`
 --
 
-DROP TABLE IF EXISTS `lb_invoice_items`;
 CREATE TABLE `lb_invoice_items` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_invoice_id` int(11) NOT NULL,
@@ -2670,7 +2592,6 @@ INSERT INTO `lb_invoice_items` (`lb_record_primary_key`, `lb_invoice_id`, `lb_in
 -- Table structure for table `lb_invoice_item_templates`
 --
 
-DROP TABLE IF EXISTS `lb_invoice_item_templates`;
 CREATE TABLE `lb_invoice_item_templates` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_item_title` varchar(255) DEFAULT NULL,
@@ -2691,7 +2612,6 @@ INSERT INTO `lb_invoice_item_templates` (`lb_record_primary_key`, `lb_item_title
 -- Table structure for table `lb_invoice_totals`
 --
 
-DROP TABLE IF EXISTS `lb_invoice_totals`;
 CREATE TABLE `lb_invoice_totals` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_invoice_id` int(11) NOT NULL,
@@ -2716,7 +2636,6 @@ INSERT INTO `lb_invoice_totals` (`lb_record_primary_key`, `lb_invoice_id`, `lb_i
 -- Table structure for table `lb_language_user`
 --
 
-DROP TABLE IF EXISTS `lb_language_user`;
 CREATE TABLE `lb_language_user` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_language_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -2744,7 +2663,6 @@ INSERT INTO `lb_language_user` (`lb_record_primary_key`, `lb_language_name`, `lb
 -- Table structure for table `lb_modules`
 --
 
-DROP TABLE IF EXISTS `lb_modules`;
 CREATE TABLE `lb_modules` (
 `lb_record_primary_key` int(11) NOT NULL,
   `module_directory` varchar(100) NOT NULL,
@@ -2774,7 +2692,6 @@ INSERT INTO `lb_modules` (`lb_record_primary_key`, `module_directory`, `module_n
 -- Table structure for table `lb_next_ids`
 --
 
-DROP TABLE IF EXISTS `lb_next_ids`;
 CREATE TABLE `lb_next_ids` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_next_invoice_number` int(11) NOT NULL,
@@ -2795,7 +2712,7 @@ CREATE TABLE `lb_next_ids` (
 --
 
 INSERT INTO `lb_next_ids` (`lb_record_primary_key`, `lb_next_invoice_number`, `lb_next_quotation_number`, `lb_next_payment_number`, `lb_next_contract_number`, `lb_next_expenses_number`, `lb_next_po_number`, `lb_next_supplier_invoice_number`, `	lb_next_supplier_payment_number`, `lb_next_supplier_payment_number`, `lb_next_pv_number`, `lb_payment_vendor_number`) VALUES
-(1, 64, 2, 1, 1, 4, 1, 1, 0, 1, 35, 0);
+(1, 64, 2, 1, 3, 4, 1, 1, 0, 1, 36, 0);
 
 -- --------------------------------------------------------
 
@@ -2803,7 +2720,6 @@ INSERT INTO `lb_next_ids` (`lb_record_primary_key`, `lb_next_invoice_number`, `l
 -- Table structure for table `lb_payment`
 --
 
-DROP TABLE IF EXISTS `lb_payment`;
 CREATE TABLE `lb_payment` (
 `lb_record_primary_key` int(11) unsigned NOT NULL,
   `lb_payment_customer_id` int(10) unsigned NOT NULL,
@@ -2820,7 +2736,6 @@ CREATE TABLE `lb_payment` (
 -- Table structure for table `lb_payments`
 --
 
-DROP TABLE IF EXISTS `lb_payments`;
 CREATE TABLE `lb_payments` (
 `id` int(11) NOT NULL,
   `txn_id` varchar(200) NOT NULL,
@@ -2835,7 +2750,6 @@ CREATE TABLE `lb_payments` (
 -- Table structure for table `lb_payment_item`
 --
 
-DROP TABLE IF EXISTS `lb_payment_item`;
 CREATE TABLE `lb_payment_item` (
 `lb_record_primary_key` int(11) unsigned NOT NULL,
   `lb_payment_id` int(11) unsigned NOT NULL,
@@ -2850,7 +2764,6 @@ CREATE TABLE `lb_payment_item` (
 -- Table structure for table `lb_payment_vendor`
 --
 
-DROP TABLE IF EXISTS `lb_payment_vendor`;
 CREATE TABLE `lb_payment_vendor` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_payment_vendor_customer_id` int(11) NOT NULL,
@@ -2867,7 +2780,6 @@ CREATE TABLE `lb_payment_vendor` (
 -- Table structure for table `lb_payment_vendor_invoice`
 --
 
-DROP TABLE IF EXISTS `lb_payment_vendor_invoice`;
 CREATE TABLE `lb_payment_vendor_invoice` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_payment_id` int(11) NOT NULL,
@@ -2882,7 +2794,6 @@ CREATE TABLE `lb_payment_vendor_invoice` (
 -- Table structure for table `lb_payment_voucher`
 --
 
-DROP TABLE IF EXISTS `lb_payment_voucher`;
 CREATE TABLE `lb_payment_voucher` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_pv_company_id` int(11) NOT NULL,
@@ -2908,7 +2819,6 @@ INSERT INTO `lb_payment_voucher` (`lb_record_primary_key`, `lb_pv_company_id`, `
 -- Table structure for table `lb_pv_expenses`
 --
 
-DROP TABLE IF EXISTS `lb_pv_expenses`;
 CREATE TABLE `lb_pv_expenses` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_payment_voucher_id` int(11) NOT NULL,
@@ -2930,7 +2840,6 @@ INSERT INTO `lb_pv_expenses` (`lb_record_primary_key`, `lb_payment_voucher_id`, 
 -- Table structure for table `lb_quotation`
 --
 
-DROP TABLE IF EXISTS `lb_quotation`;
 CREATE TABLE `lb_quotation` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_company_id` int(11) DEFAULT NULL,
@@ -2956,7 +2865,6 @@ CREATE TABLE `lb_quotation` (
 -- Table structure for table `lb_quotation_discount`
 --
 
-DROP TABLE IF EXISTS `lb_quotation_discount`;
 CREATE TABLE `lb_quotation_discount` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_quotation_id` int(11) NOT NULL,
@@ -2971,7 +2879,6 @@ CREATE TABLE `lb_quotation_discount` (
 -- Table structure for table `lb_quotation_item`
 --
 
-DROP TABLE IF EXISTS `lb_quotation_item`;
 CREATE TABLE `lb_quotation_item` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_quotation_id` int(11) NOT NULL,
@@ -2987,7 +2894,6 @@ CREATE TABLE `lb_quotation_item` (
 -- Table structure for table `lb_quotation_tax`
 --
 
-DROP TABLE IF EXISTS `lb_quotation_tax`;
 CREATE TABLE `lb_quotation_tax` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_quotation_id` int(11) NOT NULL,
@@ -3002,7 +2908,6 @@ CREATE TABLE `lb_quotation_tax` (
 -- Table structure for table `lb_quotation_total`
 --
 
-DROP TABLE IF EXISTS `lb_quotation_total`;
 CREATE TABLE `lb_quotation_total` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_quotation_id` int(11) NOT NULL,
@@ -3018,7 +2923,6 @@ CREATE TABLE `lb_quotation_total` (
 -- Table structure for table `lb_roles`
 --
 
-DROP TABLE IF EXISTS `lb_roles`;
 CREATE TABLE `lb_roles` (
 `lb_record_primary_key` int(11) NOT NULL,
   `role_name` varchar(100) NOT NULL,
@@ -3031,7 +2935,6 @@ CREATE TABLE `lb_roles` (
 -- Table structure for table `lb_roles_basic_permission`
 --
 
-DROP TABLE IF EXISTS `lb_roles_basic_permission`;
 CREATE TABLE `lb_roles_basic_permission` (
 `role_basic_permission_id` int(11) NOT NULL,
   `role_id` int(11) NOT NULL,
@@ -3046,7 +2949,6 @@ CREATE TABLE `lb_roles_basic_permission` (
 -- Table structure for table `lb_roles_define_permission`
 --
 
-DROP TABLE IF EXISTS `lb_roles_define_permission`;
 CREATE TABLE `lb_roles_define_permission` (
 `role_define_permission_id` int(11) NOT NULL,
   `define_permission_id` int(11) NOT NULL,
@@ -3061,7 +2963,6 @@ CREATE TABLE `lb_roles_define_permission` (
 -- Table structure for table `lb_subscription`
 --
 
-DROP TABLE IF EXISTS `lb_subscription`;
 CREATE TABLE `lb_subscription` (
 `subscription_id` int(11) NOT NULL,
   `subscription_name` varchar(255) NOT NULL,
@@ -3075,7 +2976,6 @@ CREATE TABLE `lb_subscription` (
 -- Table structure for table `lb_sys_accounts`
 --
 
-DROP TABLE IF EXISTS `lb_sys_accounts`;
 CREATE TABLE `lb_sys_accounts` (
 `account_id` int(11) NOT NULL,
   `account_email` char(255) NOT NULL,
@@ -3084,7 +2984,7 @@ CREATE TABLE `lb_sys_accounts` (
   `account_timezone` varchar(255) DEFAULT NULL,
   `account_language` varchar(255) DEFAULT NULL,
   `account_status` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `lb_sys_accounts`
@@ -3099,7 +2999,6 @@ INSERT INTO `lb_sys_accounts` (`account_id`, `account_email`, `account_password`
 -- Table structure for table `lb_sys_account_invitations`
 --
 
-DROP TABLE IF EXISTS `lb_sys_account_invitations`;
 CREATE TABLE `lb_sys_account_invitations` (
 `account_invitation_id` int(11) NOT NULL,
   `account_invitation_master_id` int(11) NOT NULL,
@@ -3118,7 +3017,6 @@ CREATE TABLE `lb_sys_account_invitations` (
 -- Table structure for table `lb_sys_account_password_reset`
 --
 
-DROP TABLE IF EXISTS `lb_sys_account_password_reset`;
 CREATE TABLE `lb_sys_account_password_reset` (
 `account_password_reset_id` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
@@ -3141,7 +3039,6 @@ INSERT INTO `lb_sys_account_password_reset` (`account_password_reset_id`, `accou
 -- Table structure for table `lb_sys_account_profiles`
 --
 
-DROP TABLE IF EXISTS `lb_sys_account_profiles`;
 CREATE TABLE `lb_sys_account_profiles` (
 `account_profile_id` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
@@ -3164,7 +3061,6 @@ INSERT INTO `lb_sys_account_profiles` (`account_profile_id`, `account_id`, `acco
 -- Table structure for table `lb_sys_account_subscriptions`
 --
 
-DROP TABLE IF EXISTS `lb_sys_account_subscriptions`;
 CREATE TABLE `lb_sys_account_subscriptions` (
 `account_subscription_id` int(11) NOT NULL,
   `account_id` int(11) NOT NULL,
@@ -3173,7 +3069,7 @@ CREATE TABLE `lb_sys_account_subscriptions` (
   `account_subscription_start_date` datetime NOT NULL,
   `account_subscription_end_date` datetime DEFAULT NULL,
   `account_subscription_status_id` tinyint(1) NOT NULL
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 AUTO_INCREMENT=2 ;
 
 --
 -- Dumping data for table `lb_sys_account_subscriptions`
@@ -3188,7 +3084,6 @@ INSERT INTO `lb_sys_account_subscriptions` (`account_subscription_id`, `account_
 -- Table structure for table `lb_sys_account_team_members`
 --
 
-DROP TABLE IF EXISTS `lb_sys_account_team_members`;
 CREATE TABLE `lb_sys_account_team_members` (
 `account_team_member_id` int(11) NOT NULL,
   `member_account_id` int(11) NOT NULL,
@@ -3204,7 +3099,6 @@ CREATE TABLE `lb_sys_account_team_members` (
 -- Table structure for table `lb_sys_lists`
 --
 
-DROP TABLE IF EXISTS `lb_sys_lists`;
 CREATE TABLE `lb_sys_lists` (
 `system_list_item_id` int(11) NOT NULL,
   `system_list_name` varchar(255) NOT NULL,
@@ -3222,7 +3116,6 @@ CREATE TABLE `lb_sys_lists` (
 -- Table structure for table `lb_sys_subscription_packages`
 --
 
-DROP TABLE IF EXISTS `lb_sys_subscription_packages`;
 CREATE TABLE `lb_sys_subscription_packages` (
 `subscription_package_id` int(11) NOT NULL,
   `subscription_package_name` varchar(255) NOT NULL,
@@ -3235,7 +3128,6 @@ CREATE TABLE `lb_sys_subscription_packages` (
 -- Table structure for table `lb_sys_translate`
 --
 
-DROP TABLE IF EXISTS `lb_sys_translate`;
 CREATE TABLE `lb_sys_translate` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_tranlate_en` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
@@ -3381,7 +3273,6 @@ INSERT INTO `lb_sys_translate` (`lb_record_primary_key`, `lb_tranlate_en`, `lb_t
 -- Table structure for table `lb_taxes`
 --
 
-DROP TABLE IF EXISTS `lb_taxes`;
 CREATE TABLE `lb_taxes` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_tax_name` varchar(60) COLLATE utf8_unicode_ci NOT NULL,
@@ -3404,7 +3295,6 @@ INSERT INTO `lb_taxes` (`lb_record_primary_key`, `lb_tax_name`, `lb_tax_value`, 
 -- Table structure for table `lb_user_credit_card`
 --
 
-DROP TABLE IF EXISTS `lb_user_credit_card`;
 CREATE TABLE `lb_user_credit_card` (
 `user_credit_card_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -3417,7 +3307,6 @@ CREATE TABLE `lb_user_credit_card` (
 -- Table structure for table `lb_user_list`
 --
 
-DROP TABLE IF EXISTS `lb_user_list`;
 CREATE TABLE `lb_user_list` (
 `system_list_item_id` int(11) NOT NULL,
   `system_list_name` varchar(255) CHARACTER SET utf8 NOT NULL,
@@ -3444,12 +3333,11 @@ INSERT INTO `lb_user_list` (`system_list_item_id`, `system_list_name`, `system_l
 (6, '', 'salary', 'salary_hỗ trợ ăn trưa', 'hỗ trợ ăn trưa', 0, 0, 1, 0, 0),
 (7, '', 'benefit', 'benefit_Bao hiem', 'Bao hiem', 0, 0, 1, 0, 0),
 (8, '', 'benefit', 'benefit_bao hiem nhan tho', 'bao hiem nhan tho', 0, 0, 1, 0, 0),
-(11, '', 'financial_year', 'financial_year', 'Financial Year', 0, 0, 1, 1, 1),
+(11, '', 'financial_year', 'financial_year', 'Financial Year', 0, 0, 1, 30, 4),
 (12, '', 'term', 'term_Immediate', 'Immediate', 0, 0, 1, 0, 0),
 (13, '', 'term', 'term_7 days', '7 days', 0, 0, 1, 0, 0),
 (14, '', 'term', 'term_14 days', '14 days', 0, 0, 1, 0, 0),
-(15, '', 'term', 'term_30 days', '30 days', 0, 0, 1, 0, 0),
-(16, '', 'financial year', '', '', 0, 0, 0, 22, 2);
+(15, '', 'term', 'term_30 days', '30 days', 0, 0, 1, 0, 0);
 
 -- --------------------------------------------------------
 
@@ -3457,7 +3345,6 @@ INSERT INTO `lb_user_list` (`system_list_item_id`, `system_list_name`, `system_l
 -- Table structure for table `lb_user_payment`
 --
 
-DROP TABLE IF EXISTS `lb_user_payment`;
 CREATE TABLE `lb_user_payment` (
 `user_payment_id` int(11) NOT NULL,
   `user_subscription_id` int(11) NOT NULL,
@@ -3470,7 +3357,6 @@ CREATE TABLE `lb_user_payment` (
 -- Table structure for table `lb_user_subscription`
 --
 
-DROP TABLE IF EXISTS `lb_user_subscription`;
 CREATE TABLE `lb_user_subscription` (
 `user_subscription_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
@@ -3484,7 +3370,6 @@ CREATE TABLE `lb_user_subscription` (
 -- Table structure for table `lb_vendor`
 --
 
-DROP TABLE IF EXISTS `lb_vendor`;
 CREATE TABLE `lb_vendor` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_vendor_company_id` int(11) NOT NULL,
@@ -3524,7 +3409,6 @@ INSERT INTO `lb_vendor` (`lb_record_primary_key`, `lb_vendor_company_id`, `lb_ve
 -- Table structure for table `lb_vendor_discount`
 --
 
-DROP TABLE IF EXISTS `lb_vendor_discount`;
 CREATE TABLE `lb_vendor_discount` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_vendor_type` varchar(100) NOT NULL,
@@ -3558,7 +3442,6 @@ INSERT INTO `lb_vendor_discount` (`lb_record_primary_key`, `lb_vendor_type`, `lb
 -- Table structure for table `lb_vendor_invoice`
 --
 
-DROP TABLE IF EXISTS `lb_vendor_invoice`;
 CREATE TABLE `lb_vendor_invoice` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_vd_invoice_company_id` int(11) NOT NULL,
@@ -3593,7 +3476,6 @@ INSERT INTO `lb_vendor_invoice` (`lb_record_primary_key`, `lb_vd_invoice_company
 -- Table structure for table `lb_vendor_item`
 --
 
-DROP TABLE IF EXISTS `lb_vendor_item`;
 CREATE TABLE `lb_vendor_item` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_vendor_type` varchar(100) NOT NULL,
@@ -3631,7 +3513,6 @@ INSERT INTO `lb_vendor_item` (`lb_record_primary_key`, `lb_vendor_type`, `lb_ven
 -- Table structure for table `lb_vendor_tax`
 --
 
-DROP TABLE IF EXISTS `lb_vendor_tax`;
 CREATE TABLE `lb_vendor_tax` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_vendor_id` int(11) NOT NULL,
@@ -3666,7 +3547,6 @@ INSERT INTO `lb_vendor_tax` (`lb_record_primary_key`, `lb_vendor_id`, `lb_vendor
 -- Table structure for table `lb_vendor_total`
 --
 
-DROP TABLE IF EXISTS `lb_vendor_total`;
 CREATE TABLE `lb_vendor_total` (
 `lb_record_primary_key` int(11) NOT NULL,
   `lb_vendor_id` int(11) NOT NULL,
@@ -3705,7 +3585,6 @@ INSERT INTO `lb_vendor_total` (`lb_record_primary_key`, `lb_vendor_id`, `lb_vend
 -- Table structure for table `process_checklist`
 --
 
-DROP TABLE IF EXISTS `process_checklist`;
 CREATE TABLE `process_checklist` (
 `pc_id` int(11) NOT NULL,
   `subcription_id` int(11) NOT NULL,
@@ -3722,7 +3601,6 @@ CREATE TABLE `process_checklist` (
 -- Table structure for table `process_checklist_default`
 --
 
-DROP TABLE IF EXISTS `process_checklist_default`;
 CREATE TABLE `process_checklist_default` (
 `pcdi_id` int(11) NOT NULL,
   `pc_id` int(11) NOT NULL,
@@ -3736,7 +3614,6 @@ CREATE TABLE `process_checklist_default` (
 -- Table structure for table `process_checklist_item_rel`
 --
 
-DROP TABLE IF EXISTS `process_checklist_item_rel`;
 CREATE TABLE `process_checklist_item_rel` (
 `pcir_id` int(11) NOT NULL,
   `pc_id` int(11) NOT NULL,
@@ -3755,7 +3632,6 @@ CREATE TABLE `process_checklist_item_rel` (
 -- Table structure for table `yiisession`
 --
 
-DROP TABLE IF EXISTS `yiisession`;
 CREATE TABLE `yiisession` (
   `id` char(32) NOT NULL,
   `expire` int(11) DEFAULT NULL,
@@ -3799,6 +3675,7 @@ INSERT INTO `yiisession` (`id`, `expire`, `data`) VALUES
 ('ab323cd908ibn2fl5ikpj18bt2', 1465003109, ''),
 ('af70r8qadnm2v0s696rrp64vl7', 1474512010, ''),
 ('b7v7plj5khdq1t6mr3f2su2r24', 1468026246, ''),
+('be3d1b836f4ebb645fdf470126ff856f', 1516353558, ''),
 ('bl2mhq0of16ru4rnsmvrci9km1', 1467422222, ''),
 ('bpkvrl861oinf7ukbe2bvkn2t7', 1478136059, ''),
 ('c002ndsoacajnvg21426butce6', 1467163009, ''),
@@ -4327,12 +4204,12 @@ MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=4;
 -- AUTO_INCREMENT for table `lb_contracts`
 --
 ALTER TABLE `lb_contracts`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `lb_contract_document`
 --
 ALTER TABLE `lb_contract_document`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `lb_contract_invoice`
 --
@@ -4342,12 +4219,12 @@ MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `lb_core_entities`
 --
 ALTER TABLE `lb_core_entities`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2191;
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2197;
 --
 -- AUTO_INCREMENT for table `lb_customers`
 --
 ALTER TABLE `lb_customers`
-MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT;
+MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `lb_customer_addresses`
 --
@@ -4542,7 +4419,7 @@ MODIFY `subscription_id` int(11) NOT NULL AUTO_INCREMENT;
 -- AUTO_INCREMENT for table `lb_sys_accounts`
 --
 ALTER TABLE `lb_sys_accounts`
-MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `account_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `lb_sys_account_invitations`
 --
@@ -4562,7 +4439,7 @@ MODIFY `account_profile_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 -- AUTO_INCREMENT for table `lb_sys_account_subscriptions`
 --
 ALTER TABLE `lb_sys_account_subscriptions`
-MODIFY `account_subscription_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=9;
+MODIFY `account_subscription_id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `lb_sys_account_team_members`
 --
