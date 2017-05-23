@@ -79,7 +79,8 @@ class ConfigurationController extends Controller
         
         public function actionList()
         {
-            $this->renderPartial($this, '_list_item', array(),true);
+            LBApplication::renderPartial($this, '_list_item', array(),true);
+            //$this->renderPartial($this, '_list_item', array(),true);
         }
         
         public function actionDeleteTax($id)
@@ -219,7 +220,7 @@ class ConfigurationController extends Controller
                 }
 //                else
                     $list_item = UserList::model()->getItemsListName($list);
-		$this->render('list_item', array('list'=>$list_item,'list_name'=>$list,'taxModel'=>$taxModel));
+		LBApplication::render($this, 'list_item', array('list'=>$list_item,'list_name'=>$list,'taxModel'=>$taxModel));
                 
 		
        }

@@ -46,7 +46,7 @@ echo '<div id="lb-container-header">';
                 'buttons' => array(
                     array('label' => '<i class="icon-plus"></i> '.Yii::t('lang','New'), 'items'=>array(
                         array('label'=>Yii::t('lang','New Expenses'),'url'=>  LbExpenses::model()->getActionURLNormalized('create')),
-                        array('label'=>Yii::t('lang','New Payment Voucher'),'url'=> LbExpenses::model()->getActionURLNormalized('createPaymentVoucher')),
+                        //array('label'=>Yii::t('lang','New Payment Voucher'),'url'=> LbExpenses::model()->getActionURLNormalized('createPaymentVoucher')),
                      )),
                 ),
                 'encodeLabel'=>false,

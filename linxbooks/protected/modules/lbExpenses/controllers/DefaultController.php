@@ -60,7 +60,7 @@ class DefaultController extends CLBController
                                      'deleteCustomerExpenses',
                                      'deleteInvoiceExpenses',
                                      'loadAjaxTabInvoice',
-                                     'loadAjaxTabCustomer','expenses','paymentVoucher','SearchExpenses'
+                                     'loadAjaxTabCustomer','expenses','paymentVoucher','SearchExpenses','excelExpenses'
                             ),
                             'users'=>array('@'),
                         ),
@@ -233,7 +233,7 @@ class DefaultController extends CLBController
 //                    ));
 //                    return;
 //                }
-		$this->render('create',array(
+		LBApplication::render($this, 'create',array(
 			'model'=>$model,
                         'customerModel'=>$customerModel,
                         'invoiceModel'=>$invoiceModel,
@@ -396,6 +396,25 @@ class DefaultController extends CLBController
             
         }
         
+        public function actionExcelExpenses(){
+            $date_from = false;
+            $date_to = false;
+            $category_id=0;
+            if(isset($_GET['category_id']))
+                    $category_id = $_GET['category_id'];
+            if(isset($_GET['date_from']))
+                $date_from = $_GET['date_from'];
+            if(isset($_GET['date_to']))
+                $date_to = $_GET['date_to'];
+            $model = new LbExpenses();
+            $model->from_date = $date_from;
+            $model->to_date = $date_to;
+            $model->lb_category_id = $category_id;
+           
+            
+            LBApplication::renderPartial($this,'excel_expenses',  array('model'=>$model,'category_id'=>$category_id,'date_from'=>$date_from,'date_to'=>$date_to));  
+        }
+        
         public function actionSearchExpenses()
         {
             $date_from = false;
@@ -408,7 +427,7 @@ class DefaultController extends CLBController
             if(isset ($_POST['date_to']))
                 $date_to = $_POST['date_to'];
             $model = new LbExpenses();
-          
+            
             LBApplication::renderPartial($this,'view_expenses',  array('model'=>$model,'category_id'=>$category_id,'date_from'=>$date_from,'date_to'=>$date_to));  
         }
         

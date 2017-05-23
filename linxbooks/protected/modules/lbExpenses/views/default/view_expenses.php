@@ -34,16 +34,21 @@ $canList = BasicPermission::model()->checkModules($m, 'list');
 
 
             echo '&nbsp;';
-            $this->widget('bootstrap.widgets.TbButtonGroup', array(
-                'type' => '',
-                'buttons' => array(
-                    array('label' => '<i class="icon-plus"></i> '.Yii::t('lang','New'), 'items'=>array(
-                        array('label'=>Yii::t('lang','New Expenses'),'url'=>  LbExpenses::model()->getActionURLNormalized('create')),
-                        array('label'=>Yii::t('lang','New Payment Voucher'),'url'=> LbExpenses::model()->getActionURLNormalized('createPaymentVoucher')),
-                     )),
-                ),
-                'encodeLabel'=>false,
-            ));
+            echo LBApplication::workspaceLink('<i class="icon-plus icon-white"></i> ', LbExpenses::model()->getCreateURL('create'), array('live'=>'false'));
+	    echo '&nbsp;';
+            echo CHtml::link('<i class="icon-download-alt icon-white"></i> ', 
+                    '#', array('live'=>'false', 'onclick'=>'export_excel(); return false;'));
+            
+            //$this->widget('bootstrap.widgets.TbButtonGroup', array(
+            //    'type' => '',
+            //    'buttons' => array(           
+                        //array('label'=>'<i class="icon-plus"></i> New Expenses','url'=>  LbExpenses::model()->getActionURLNormalized('create')),
+                        //array('label'=>'<i class="icon-plus"></i> New Payment Voucher','url'=> LbExpenses::model()->getActionURLNormalized('createPaymentVoucher')),
+                        //array('label'=>Yii::t('lang','Export Excel'),'htmlOptions'=>array('onclick'=>'export_excel()'),'url'=>'#'),
+                                          
+            //    ),
+            //    'encodeLabel'=>false,
+            //));
             echo '</div>';
 echo '</div><br>';
     echo '<div style="margin-left:0px;margin-top:0px;margin-bottom:-22px;">';
@@ -70,7 +75,6 @@ echo '</div><br>';
         echo '</div><br/>';
     }
        
-
 //$this->renderPartial('index', array('model'=>$model));
 echo '<div id="list_payment_voucher"> ';
 $this->Widget('bootstrap.widgets.TbGridView',array(
@@ -79,16 +83,7 @@ $this->Widget('bootstrap.widgets.TbGridView',array(
           //  'type'=>'striped bordered condensed',
             //'template' => "{items}",
             'template' => "{items}\n{pager}\n{summary}", 
-            'columns'=>array(
-                array(
-			'class'=>'CButtonColumn',
-                        'template'=>'{delete}',
-                        'deleteButtonUrl'=>'CHtml::normalizeUrl(array("/lbExpenses/default/delete", "id"=>$data->lb_record_primary_key))',
-                        'afterDelete'=>'function(){
-                            location.reload(true);
-                        } ',
-                        'htmlOptions'=>array('width'=>'30','height'=>'40px'),
-		),
+            'columns'=>array(              
                 array(
                     'header'=>Yii::t('lang','Date'),
                     'name'=>'lb_customer_id',
@@ -123,6 +118,15 @@ $this->Widget('bootstrap.widgets.TbGridView',array(
                     'value'=>'"$".number_format($data->lb_expenses_amount,2)',
                     'htmlOptions'=>array('align'=>'right','height'=>'40px'),
                 ),
+                array(
+			'class'=>'CButtonColumn',
+                        'template'=>'{delete}',
+                        'deleteButtonUrl'=>'CHtml::normalizeUrl(array("/lbExpenses/default/delete", "id"=>$data->lb_record_primary_key))',
+                        'afterDelete'=>'function(){
+                            location.reload(true);
+                        } ',
+                        'htmlOptions'=>array('width'=>'30','height'=>'40px'),
+		),
             )
         ));
 echo '</div>';
@@ -154,6 +158,12 @@ echo '</div>';
       
         $('#list_payment_voucher').load('SearchExpenses',{category_id:category_id,date_from:date_from,date_to:date_to});
       
+    }
+    function export_excel(){
+        var date_from = $('#LbExpenses_from_date').val();
+        var date_to =$('#LbExpenses_to_date').val();
+        var category_id=$('#lb_category_id option:selected').val();
+        location.href = 'ExcelExpenses?category_id='+category_id+'&date_from='+date_from+'&date_to='+date_to;
     }
     
 </script>

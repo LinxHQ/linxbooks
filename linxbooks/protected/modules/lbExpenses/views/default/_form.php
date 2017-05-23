@@ -15,7 +15,7 @@ echo '<div id="lb-container-header">';
             LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
 
 
-            echo '&nbsp;';
+            /**echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(
                 'type' => '',
                 'buttons' => array(
@@ -25,7 +25,7 @@ echo '<div id="lb-container-header">';
                      )),
                 ),
                 'encodeLabel'=>false,
-            ));
+            ));**/
             echo '</div>';
 echo '</div><br>';
 ?>
@@ -33,8 +33,8 @@ echo '</div><br>';
 <div class="form">
 
 <?php $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
-	'id'=>'lb-expenses-form',
-        'enableAjaxValidation'=>true,
+	'id'=>'lb-expenses-form' . uniqid(),
+        'enableAjaxValidation'=>false,
 
         'type'=>'horizontal',
         'htmlOptions' => array('enctype' => 'multipart/form-data','onsubmit'=>"validation();"), // ADD THIS
@@ -48,58 +48,117 @@ echo '</div><br>';
         <?php echo $form->hiddenField($model,'lb_record_primary_key'); ?>
         
         <?php 
-        
+        echo '<div class="accordion" id="accordion2">';
+		/**
+		 * ============= BASIC INFORMATION
+		 */
+		
+		// accordion group starts
+		echo '<div class="accordion-group">';
+		
+		// heading
+		echo '<div class="accordion-heading lb_accordion_heading">';
+		echo '<a class="accordion-toggle lb_accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-basic-info-collapse">';
+        echo YII::t('lang','Basic Information');
+	    echo  '</a></div>'; // end heading
+		
+	    // body
+	    echo '<div id="form-new-customer-basic-info-collapse" class="accordion-body collapse in">
+      			<div class="accordion-inner">';
+            
             $ExpensesNo = LbExpenses::model()->FormatExpensesNo(LbExpenses::model()->getExpensesNextNum());
             echo $form->textFieldRow($model, 'lb_expenses_no', array('class'=>'span3', 'value'=>$ExpensesNo));
-            
-            $recurring = UserList::model()->getItemsForListCode('recurring');
+
             $category_arr = UserList::model()->getItemsForListCode('expenses_category');
-            echo $form->dropDownListRow($model, 'lb_category_id', CHtml::listData($category_arr, 'system_list_item_id', 'system_list_item_name'));
-         
+            echo $form->dropDownListRow(
+                    $model, 
+                    'lb_category_id', 
+                    CHtml::listData($category_arr, 'system_list_item_id', 'system_list_item_name'),
+                    array('hint'=>LBApplication::workspaceLink(Yii::t('expenses', 'Add Category'), 
+                            Yii::app()->createUrl('/configuration/list_item/list/expenses_category')))
+            );
             
             echo $form->textFieldRow($model, 'lb_expenses_date', 
-                    array('hint'=>'Format: dd-mm-yyyy, e.g. 31-12-2013', 'value'=>$model->lb_expenses_date ? date('d-m-Y', strtotime($model->lb_expenses_date)) : date('d-m-Y')));
+                    array('value'=>$model->lb_expenses_date ? date('d-m-Y', strtotime($model->lb_expenses_date)) : date('d-m-Y')));
      
             echo $form->textFieldRow($model, 'lb_expenses_amount',array('class'=>'span3', 'value'=>'0.00'));
+            echo $form->textAreaRow($model,'lb_expenses_note',array('rows'=>'3','cols'=>'40','style'=>'width:210px;'));
+            ?>
+                    <div class="control-group">
+            <?php echo CHtml::label('Attachments', 'LbExpenses_lb_expenses_document',array('class'=>'control-label required')); ?>
+            <div class="controls">
+                <?php
+                    $this->widget('CMultiFileUpload', array(
+                                    'name' => 'documents',
+                                    'accept' => 'jpeg|jpg|gif|png|pdf|odt|docx|doc|dia', // useful for verifying files
+                                    'duplicate' => 'Duplicate file!', // useful, i think
+                                    'denied' => 'Invalid file type', // useful, i think
+                                    'htmlOptions'=>array('class'=>'multi'),
+                                ));
+                ?>
+            </div>
+        </div>
+        <?php
             echo '<span id="vacation"></span>';
             echo '<hr/>';
-            
-            $customer_arr = LbCustomer::model()->getCompanies($sort = 'lb_customer_name ASC', LbCustomer::LB_QUERY_RETURN_TYPE_DROPDOWN_ARRAY);
-            $option_customer = $customer_arr;
+            echo '</div></div>'; // end body
+		echo '</div>';// end accordion-group
+		/** END BASIC INFORMATION **/
+                /**
+		 * ============= ADDRESS SECTION
+		 */
+		// accordion group starts
+		echo '<div class="accordion-group">';
+		
+		// heading
+		echo '<div class="accordion-heading lb_accordion_heading">';
+		echo '<a class="accordion-toggle lb_accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#form-new-customer-address-collapse">';
+		echo Yii::t('lang','Optional Information');
+		echo  '</a></div>'; // end heading
+		
+		// body
+		echo '<div id="form-new-customer-address-collapse" class="accordion-body collapse">
+      			<div class="accordion-inner">';
+
+            $customer_arr = LbCustomer::model()->getCompanies("", LbCustomer::LB_QUERY_RETURN_TYPE_MODELS_ARRAY);
+            $option_customer = '<option value="0">---</option>';
+            foreach ($customer_arr as $data)
+            {
+                $option_customer .='<option value="'.$data['lb_record_primary_key'].'">'.$data['lb_customer_name'].'</option>';
+            }           
             echo '<div class="control-group">';
             echo CHtml::label('Customer', 'LbExpenses_lb_customer_id',array('class'=>'control-label'));
-            echo '<div class="controls">';
-            echo CHtml::dropDownList('LbExpensesCustomer[lb_customer_id][]', '', $option_customer, array('multiple'=>true));
-//            echo Chosen::activeMultiSelect($model,'lb_expenses_amount', $option_customer, array('class'=>'span6'));
+            echo '<div class="controls">';            
+            echo '<select name="LbExpensesCustomer[lb_customer_id][]">'.$option_customer.'</select>';echo '&nbsp;&nbsp;&nbsp;';
             echo '</div>';
             echo '</div>';
-//            echo $form->dropDownListRow($customerModel, 'lb_customer_id', $option_customer, array('multiple'=>true));
             
             $status='("'.LbInvoice::LB_INVOICE_STATUS_CODE_OPEN.'","'.LbInvoice::LB_INVOICE_STATUS_CODE_OVERDUE.'")';
             $invoices = LbInvoice::model()->getInvoiceByStatus($status);
             $invoice_arr = array();
+//            $option_invoice = '<option value="0">---</option>';
             if (count($invoices) > 0) {
                 foreach ($invoices->data as $data) {
                     $invoice_arr[$data->lb_record_primary_key] = $data->lb_invoice_no;
                 }
+                $option_invoice = $invoice_arr;
             }
-            if (count($invoice_arr) <= 0)
-                $option_invoice = array(''=>'Choose Invoice');
-            else $option_invoice = $invoice_arr;
+   
+                
             echo '<div class="control-group">';
             echo CHtml::label('Invoices', 'LbExpenses_lb_invoice_id',array('class'=>'control-label'));
             echo '<div class="controls">';
-            echo CHtml::dropDownList('LbExpensesInvoice[lb_invoice_id][]', '', $option_invoice, array('multiple'=>true));
-//            echo Chosen::activeMultiSelect($model,'lb_expenses_amount', $option_customer, array('class'=>'span6'));
+            //echo CHtml::dropDownList('LbExpensesInvoice[lb_invoice_id][]', '', $option_invoice, array('multiple'=>true));
+            echo CHtml::dropDownList('Choose Invoice', '0', $option_invoice);
+//            echo '<select name="LbExpensesInvoice[lb_invoice_id][]">'.$option_invoice.'</select>';echo '&nbsp;&nbsp;&nbsp;';
             echo '</div>';
             echo '</div>';
-//            echo $form->dropDownListRow($invoiceModel, 'lb_invoice_id', $option_invoice, array('multiple'=>true));
             
-            echo $form->textAreaRow($model,'lb_expenses_note',array('rows'=>'3','cols'=>'40','style'=>'width:210px;'));
             
-            $recurring = UserList::model()->getItemsForListCode('recurring');
-            $option_recurring = array(''=>'Choose Recurring')+$recurring;
-            echo $form->dropDownListRow($model, 'lb_expenses_recurring_id', CHtml::listData($option_recurring, 'system_list_item_id', 'system_list_item_name'));
+            
+//            $recurring = UserList::model()->getItemsForListCode('term');
+//            $option_recurring = array(''=>'Choose Recurring')+$recurring;
+//            echo $form->dropDownListRow($model, 'lb_expenses_recurring_id', CHtml::listData($option_recurring, 'system_list_item_id', 'system_list_item_name'));
 
 //            foreach ($recurring_arr as $data){
 //                $recurring .='<option value="'.$data->lb_record_primary_key.'">'.$data['system_list_item_name'].'</option>';
@@ -119,6 +178,8 @@ echo '</div><br>';
                 $option_bank_acc +=UserList::model()->getItemsForListCode('BankAcount');
             
             echo $form->dropDownListRow($model, 'lb_expenses_bank_account_id', CHtml::listData($option_bank_acc, 'system_list_item_id', 'system_list_item_name'));
+            
+            
             $arr_tax=LbTax::model()->getTaxes("",LbTax::LB_QUERY_RETURN_TYPE_MODELS_ARRAY);
 //            echo '<pre>';
 //            print_r($arr_tax);
@@ -139,26 +200,19 @@ echo '</div><br>';
             echo '</div>';
             echo '</div>';
             
+            
         ?>
         
-        <div class="control-group">
-            <?php echo CHtml::label('Attachments', 'LbExpenses_lb_expenses_document',array('class'=>'control-label required')); ?>
-            <div class="controls">
-                <?php
-                    $this->widget('CMultiFileUpload', array(
-                                    'name' => 'documents',
-                                    'accept' => 'jpeg|jpg|gif|png|pdf|odt|docx|doc|dia', // useful for verifying files
-                                    'duplicate' => 'Duplicate file!', // useful, i think
-                                    'denied' => 'Invalid file type', // useful, i think
-                                    'htmlOptions'=>array('class'=>'multi'),
-                                ));
-                ?>
-            </div>
-        </div>
-
+       
+        <?php
+        echo '</div></div>'; // end body
+		echo '</div>';// end accordion-group
+		/** END ADDRESS **/
+		
+        ?>
 	<div style="padding-left: 200px;">
 		<?php  
-            LBApplicationUI::submitButton('Save', array(
+            LBApplicationUI::submitButton('Save?', array(
                         'htmlOptions'=>array(
                             'onclick'=>'return validation()',
                             'style'=>'margin-left: auto; margin-right: auto; background:#fff,',

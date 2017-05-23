@@ -19,6 +19,7 @@ class LbExpenses extends CLBActiveRecord
 {
         public $from_date;
         public $to_date;
+        public $lb_category_id;
 
         const LB_EXPENSES_NUMBER_MAX = 11;
     
@@ -75,7 +76,7 @@ class LbExpenses extends CLBActiveRecord
 			'lb_record_primary_key' => 'Lb Record Primary Key',
 			'lb_category_id' => Yii::t('lang','Category'),
 			'lb_expenses_no' => Yii::t('lang','Expenses No'),
-			'lb_expenses_amount' => Yii::t('lang','Amount'),
+			'lb_expenses_amount' => Yii::t('lang','Amount (incl. Tax)'),
 			'lb_expenses_date' => Yii::t('lang','Date'),
 			'lb_expenses_recurring_id' => Yii::t('lang','Recurring'),
 			'lb_expenses_bank_account_id' => Yii::t('lang','Bank Account'),
@@ -97,7 +98,7 @@ class LbExpenses extends CLBActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search($user_id=false)
+	public function search($user_id=false,$pageSize=false)
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
@@ -107,14 +108,14 @@ class LbExpenses extends CLBActiveRecord
 //		$criteria->compare('lb_record_primary_key',$this->lb_record_primary_key);
                 if ($this->lb_category_id)
                 {
-                    
-                    $conditions[] = '(lb_category_id = '.intval($this->lb_category_id).')';
+                    $conditions[] = '(lb_category_id = "'.intval($this->lb_category_id).'")';
 //                    $criteria->compare('lb_category_id', $this->lb_category_id, true);
                 }
                 
                 if ($this->from_date && $this->to_date)
                 {
-                  
+//                    $date_from = $this->from_date ? date("Y-m-d", strtotime($this->from_date)) : "";
+//                    $date_to= $this->to_date ? date("Y-m-d", strtotime($this->to_date)) : "";
                     $conditions[] = '(lb_expenses_date >= "'.$this->from_date.'") AND (lb_expenses_date <= "'.$this->to_date.'")';
                 }
                 if (count($conditions) > 0)
@@ -130,7 +131,7 @@ class LbExpenses extends CLBActiveRecord
 //                return new CActiveDataProvider($this, array(
 //			'criteria'=>$criteria,
 //		));
-		$dataProvider = $this->getFullRecordsDataProvider($criteria,null,10,$user_id);
+		$dataProvider = $this->getFullRecordsDataProvider($criteria,null,$pageSize,$user_id);
                 
                 return $dataProvider;
 	}
