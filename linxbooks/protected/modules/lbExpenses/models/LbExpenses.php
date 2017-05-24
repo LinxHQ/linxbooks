@@ -114,9 +114,9 @@ class LbExpenses extends CLBActiveRecord
                 
                 if ($this->from_date && $this->to_date)
                 {
-//                    $date_from = $this->from_date ? date("Y-m-d", strtotime($this->from_date)) : "";
-//                    $date_to= $this->to_date ? date("Y-m-d", strtotime($this->to_date)) : "";
-                    $conditions[] = '(lb_expenses_date >= "'.$this->from_date.'") AND (lb_expenses_date <= "'.$this->to_date.'")';
+                    $date_from = $this->from_date ? date("Y-m-d", strtotime($this->from_date)) : "";
+                    $date_to= $this->to_date ? date("Y-m-d", strtotime($this->to_date)) : "";
+                    $conditions[] = '(lb_expenses_date >= "'.$date_from.'") AND (lb_expenses_date <= "'.$date_to.'")';
                 }
                 if (count($conditions) > 0)
                     $criteria->condition = implode (' AND ', $conditions);
