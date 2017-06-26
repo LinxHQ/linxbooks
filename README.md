@@ -25,7 +25,7 @@ Joseph Pham, joseph.pnc@linxhq.com
 * Username is admin, pass is admin123
 
 ## Demo
-* http://linxbooks.com/demo (user: admin, password: admin123)
+* http://demo.office4c.com/ (user: admin, password: admin123)
 
 ## Technical details
 
