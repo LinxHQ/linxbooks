@@ -1,4 +1,0 @@
-deny from all
-php5_value upload_max_filesize 10M
-php5_value post_max_size 10M
-
