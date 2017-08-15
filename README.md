@@ -1,7 +1,5 @@
-# Linxbooks
-Open-source accounting software (customers, invoices, quotations, bills, expenses, payrolls and reports). LinxBooks is a product of LinxHQ Pte Ltd, actively developed and maintained by a Vietnamese Team at LinxHQ.
-
-Product Website: http://www.linxbooks.com
+# LinxOne (formerly LinxBooks)
+Open-source accounting software (customers, invoices, quotations, bills, expenses, payrolls and reports). LinxOne is a product of LinxHQ Pte Ltd, actively developed and maintained by a Vietnamese Team at LinxHQ.
 
 Contact:
 Joseph Pham, joseph.pnc@linxhq.com
@@ -23,6 +21,7 @@ Joseph Pham, joseph.pnc@linxhq.com
 * DB info can be edited at protected/config/db.php. 
 * Email server settings (for notification) can also be edited at protected/config/main.php
 * Username is admin, pass is admin123
+* Grant write permission to assets, profile photos, and protected/runtime folders.
 
 ## Demo
 * http://demo.office4c.com/ (user: admin, password: admin123)
