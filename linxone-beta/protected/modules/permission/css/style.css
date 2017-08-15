@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Dec 19, 2014, 8:54:24 AM
+    Author     : lss
+*/
+
+.icon-module{
+    background-image: url(../icon/icon-module.png);
+    background-position: 5px 0;
+    height: 15px;
+    width: 20px;
+}
+.icon-role{
+    background-image: url(../icon/icon-role.png);
+    background-position: 5px 0;
+    height: 16px;
+    width: 26px;
+}
+
+fieldset{
+    border: 1px solid #999;
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+legend{
+    border-style: none;
+    width: auto;
+    margin-bottom: 0px;
+}
+
+.grid-header td{
+    background-color: #dcecbd;
+    font-weight: bold;
+}

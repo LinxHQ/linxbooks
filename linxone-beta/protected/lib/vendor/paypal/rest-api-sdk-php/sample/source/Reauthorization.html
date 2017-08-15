@@ -1,0 +1,39 @@
+<!DOCTYPE html><html lang="en"><head><title>Reauthorization</title></head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0"><meta name="groc-relative-root" content=""><meta name="groc-document-path" content="Reauthorization"><meta name="groc-project-path" content="Reauthorization.php"><link rel="stylesheet" type="text/css" media="all" href="assets/style.css"><body></body></html><a href="../">Back<div id="document"><div class="segment"><a id="segment-0" name="segment-0" class="section_anchor"></a><div class="code"><div class="wrapper"><span class="cp">&lt;?php</span></div></div></div><div class="segment"><a id="segment-1" name="segment-1" class="section_anchor"></a><div class="comments"><div class="pilwrap"><a href="#segment-1" class="pilcrow">¶</a></div><div class="wrapper"><h2 id="reauthorization-sample">Reauthorization Sample</h2>
+
+<p>Sample showing how to do a reauthorization
+API used: v1/payments/authorization/{authorization_id}/reauthorize</p></div></div><div class="code"><div class="wrapper"><span class="k">require</span> <span class="nx">__DIR__</span> <span class="o">.</span> <span class="s1">&#39;/../bootstrap.php&#39;</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PayPal\Api\Authorization</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PayPal\Api\Amount</span><span class="p">;</span>
+<span class="k">use</span> <span class="nx">PayPal\Exception\PPConnectionException</span><span class="p">;</span></div></div></div><div class="segment"><a id="segment-2" name="segment-2" class="section_anchor"></a><div class="comments"><div class="pilwrap"><a href="#segment-2" class="pilcrow">¶</a></div><div class="wrapper"><h3 id="reauthorization">Reauthorization</h3>
+
+<p>Retrieve a authorization id from authorization object
+by making a <code>Payment Using PayPal</code> with intent
+as <code>authorize</code>. You can reauthorize a payment only once 4 to 29
+days after 3-day honor period for the original authorization
+expires.</p></div></div><div class="code"><div class="wrapper"><span class="nv">$authorization</span> <span class="o">=</span> <span class="nx">Authorization</span><span class="o">::</span><span class="na">get</span><span class="p">(</span><span class="s1">&#39;7GH53639GA425732B&#39;</span><span class="p">,</span> <span class="nv">$apiContext</span><span class="p">);</span>
+
+<span class="nv">$amount</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Amount</span><span class="p">();</span>
+<span class="nv">$amount</span><span class="o">-&gt;</span><span class="na">setCurrency</span><span class="p">(</span><span class="s2">&quot;USD&quot;</span><span class="p">);</span>
+<span class="nv">$amount</span><span class="o">-&gt;</span><span class="na">setTotal</span><span class="p">(</span><span class="s2">&quot;1.00&quot;</span><span class="p">);</span>
+
+<span class="nv">$authorization</span><span class="o">-&gt;</span><span class="na">setAmount</span><span class="p">(</span><span class="nv">$amount</span><span class="p">);</span>
+<span class="k">try</span><span class="p">{</span>
+  <span class="nv">$reauthorization</span> <span class="o">=</span> <span class="nv">$authorization</span><span class="o">-&gt;</span><span class="na">reauthorize</span><span class="p">(</span><span class="nv">$apiContext</span><span class="p">);</span>
+<span class="p">}</span><span class="k">catch</span> <span class="p">(</span><span class="nx">\PPConnectionException</span> <span class="nv">$ex</span><span class="p">){</span>
+  <span class="k">echo</span> <span class="s2">&quot;Exception: &quot;</span> <span class="o">.</span> <span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getMessage</span><span class="p">()</span> <span class="o">.</span> <span class="nx">PHP_EOL</span><span class="p">;</span>
+  <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$ex</span><span class="o">-&gt;</span><span class="na">getData</span><span class="p">());</span>
+  <span class="k">exit</span><span class="p">(</span><span class="mi">1</span><span class="p">);</span>
+<span class="p">}</span>
+<span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">&lt;html&gt;</span>
+<span class="x">&lt;body&gt;</span>
+<span class="x">  &lt;div&gt;</span>
+<span class="x">    Reauthorize:</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="k">echo</span> <span class="nv">$reauthorization</span><span class="o">-&gt;</span><span class="na">getId</span><span class="p">();</span><span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">  &lt;/div&gt;</span>
+<span class="x">  &lt;pre&gt;</span>
+<span class="x">    </span><span class="cp">&lt;?php</span> <span class="nb">var_dump</span><span class="p">(</span><span class="nv">$reauthorization</span><span class="o">-&gt;</span><span class="na">toArray</span><span class="p">());</span><span class="cp">?&gt;</span><span class="x"></span>
+<span class="x">  &lt;/pre&gt;</span>
+<span class="x">  &lt;a href=&#39;../index.html&#39;&gt;Back&lt;/a&gt;</span>
+<span class="x">&lt;/body&gt;</span>
+<span class="x">&lt;/html&gt;</span></div></div></div><div class="segment"><div class="comments"><a href="../">Back</a></div></div></div><script type="text/javascript" src="assets/jquery.min.js"></script><script type="text/javascript" src="assets/docs.js"></script></a>
