@@ -15,5 +15,5 @@ Since you already have an account with us, simply log on and navigate to My Acco
 <br/>
 <p>
 Please DO NOT reply to this email.<br/>
-LinxCircle.com (c) <?php echo date('Y'); ?>, Lion and Lamb Soft Pte Ltd.
+(c) <?php echo date('Y'); ?>, LinxHQ Pte Ltd, www.linxhq.com.
 </p>

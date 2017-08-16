@@ -15,5 +15,5 @@ by <?php echo Yii::app()->user->account_profile_short_name . ' (' . Yii::app()->
 <br/>
 <p>
 Please DO NOT reply to this email.<br/>
-LinxCircle.com (c) <?php echo date('Y'); ?>, Lion and Lamb Soft Pte Ltd.
+(c) <?php echo date('Y'); ?>, LinxHQ Pte Ltd www.linxhq.com.
 </p>

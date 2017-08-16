@@ -15,5 +15,5 @@ In order to reset your password, click the link below and type in your new passw
 
 <br/>
 <p>
-LinxCircle.com (c) <?php echo date('Y'); ?>, Lion and Lamb Soft Pte Ltd.
+(c) <?php echo date('Y'); ?>, LinxHQ Pte Ltd, www.linxhq.com.
 </p>
