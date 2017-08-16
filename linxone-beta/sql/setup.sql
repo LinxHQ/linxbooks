@@ -533,13 +533,13 @@ CREATE TABLE `lb_invoices` (
   `lb_invoice_customer_address_id` int(11) DEFAULT NULL,
   `lb_invoice_attention_contact_id` int(11) DEFAULT NULL,
   `lb_invoice_subject` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lb_invoice_note` longtext COLLATE utf8_unicode_ci,
+  `lb_invoice_note` longtext COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `lb_invoice_status_code` char(60) COLLATE utf8_unicode_ci DEFAULT NULL,
-  `lb_invoice_encode` varchar(300) COLLATE utf8_unicode_ci NOT NULL,
+  `lb_invoice_encode` varchar(300) COLLATE utf8_unicode_ci NULL DEFAULT NULL,
   `lb_quotation_id` int(11) NULL DEFAULT NULL,
-  `lb_invoice_internal_note` longtext COLLATE utf8_unicode_ci NOT NULL,
-  `lb_invoice_term_id` int(11) NOT NULL,
-  `lb_invoice_currency` int(11) NOT NULL
+  `lb_invoice_internal_note` longtext COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `lb_invoice_term_id` int(11) NULL DEFAULT NULL,
+  `lb_invoice_currency` int(11) NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------

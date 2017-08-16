@@ -133,7 +133,7 @@ class AccountPasswordReset extends CActiveRecord
 			
 			$message->setSubject("[" . Yii::app()->name . "] Password Reset");
 			$message->addTo($this->account_email);
-			$message->setFrom(array(Yii::app()->params['adminEmail'] => 'Admin (LinxCircle)'));
+			$message->setFrom(array(Yii::app()->params['adminEmail'] => 'Admin (' .Yii::app()->name . ')') );
 			Yii::app()->mail->send($message);
 		}
 		
