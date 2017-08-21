@@ -148,7 +148,7 @@ class LbInvoice extends LbInvoiceGeneric
 	}
 
     /**
-     * Confirm an invoice
+     * Confirm an invoice if its status is draft or its number is draft
      * Assign a unique invoice number to it,
      * Change its status
      * Save to the database
@@ -159,10 +159,18 @@ class LbInvoice extends LbInvoiceGeneric
     {
         // don't do anything if invoice is already confirmed, to avoid
         // increasing invoice number by mistake
-        if ($this->lb_invoice_status_code == self::LB_INVOICE_STATUS_CODE_DRAFT)
+        $arr_invoice_statuses = $this->getArrayStatusInvoice();
+        if ($this->lb_invoice_status_code == self::LB_INVOICE_STATUS_CODE_DRAFT
+                || $this->lb_invoice_no == $arr_invoice_statuses[$this::LB_INVOICE_STATUS_CODE_DRAFT])
         {
             $this->lb_invoice_no = $this->formatInvoiceNextNumFormatted($this->getInvoiceNextNum());
-            $this->lb_invoice_status_code = $this::LB_INVOICE_STATUS_CODE_OPEN;
+            // update invoice status code to open only IF:
+            // - its current status is draft.
+            // otherwise, keep as-is because this invoice could've been entered in draft status, at the same time payment was applied (previous workflow bug)
+            if ($this->lb_invoice_status_code == self::LB_INVOICE_STATUS_CODE_DRAFT)
+            {
+                $this->lb_invoice_status_code = $this::LB_INVOICE_STATUS_CODE_OPEN;
+            }
             return $this->save();
             return $this->getInvoiceNextNum();
         }

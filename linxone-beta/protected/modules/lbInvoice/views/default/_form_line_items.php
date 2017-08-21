@@ -491,10 +491,11 @@ echo '</div>';
 echo '</div>';
 
 
-//Payment
+// *********************
+// Payment section start
+// *********************
+
 $PaymentInvoice=  LbPaymentItem::model()->getAllPaymentByInvoice($model->lb_record_primary_key);
-
-
 
 echo '<div id="container-invoice-line-items-section" style="margin-top: 30px;clear:both;">';
 
@@ -530,8 +531,11 @@ $method = LBPayment::model()->method;
 //echo '<pre>';
 //print_r($test);
 
-$grid_payment_id = 'invoice-line-payment-grid-'.$model->lb_record_primary_key;
-$this->widget('bootstrap.widgets.TbGridView', array(
+// Only show payment grid if invoice status is not draft
+//if ($model->lb_invoice_status_code != $model::LB_INVOICE_STATUS_CODE_DRAFT)
+//{
+    $grid_payment_id = 'invoice-line-payment-grid-'.$model->lb_record_primary_key;
+    $this->widget('bootstrap.widgets.TbGridView', array(
 		'id' => $grid_payment_id,
                 'htmlOptions'=>array('class'=>'items table '),
         'type'=>'bordered',
@@ -668,13 +672,18 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 		),
                     
 	),
-));
-echo '</br>';
-echo CHtml::link(Yii::t('lang','Add Payment'), '#', array(
-	'onclick'=>'addItemPayment('.$model->lb_record_primary_key.'); return false;'
-));
+    ));
+    echo '</br>';
+    echo CHtml::link(Yii::t('lang','Add Payment'), '#', array(
+            'onclick'=>'addItemPayment('.$model->lb_record_primary_key.'); return false;'
+    ));
 
-echo '<button onclick="printPdfPayment()" class="btn" style="margin-left:20px;">Print PDF</button>';
+    echo '<button onclick="printPdfPayment()" class="btn" style="margin-left:20px;">Print PDF</button>';
+//} // ENDIF showing payment grid
+
+//
+// END PAYMENT SECTION
+//
 
 // hidden line item submit button
 if($canEdit)
@@ -834,8 +843,13 @@ if($canEdit)
         ),
     ));
 
-    //// SHOW CONFIRM BUTTON IF INVOICE IS A DRAFT
-    if ($model->lb_invoice_status_code == $model::LB_INVOICE_STATUS_CODE_DRAFT)
+    //
+    //// SHOW CONFIRM BUTTON IF INVOICE STATUS CODE IS A DRAFT
+    // Or if invoice number is draft
+    //
+    $arr_invoice_statuses = $model->getArrayStatusInvoice();
+    if ($model->lb_invoice_status_code == $model::LB_INVOICE_STATUS_CODE_DRAFT
+            || $model->lb_invoice_no == $arr_invoice_statuses[$model::LB_INVOICE_STATUS_CODE_DRAFT])
     {
         echo '&nbsp;';
         LBApplicationUI::ajaxButton(Yii::t('lang','Confirm Invoice'),
