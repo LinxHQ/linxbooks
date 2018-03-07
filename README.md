@@ -1,6 +1,9 @@
 # LinxOne (formerly LinxBooks)
 Open-source accounting software (customers, invoices, quotations, bills, expenses, payrolls and reports). LinxOne is a product of LinxHQ Pte Ltd, actively developed and maintained by a Vietnamese Team at LinxHQ.
 
+![Dashboard](/invoicedashboard.png?raw=true "Dashboard")
+
+
 Contact:
 Joseph Pham, joseph.pnc@linxhq.com
 
