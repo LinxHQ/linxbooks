@@ -34,16 +34,11 @@ I have to be honest the demo version might work more smoothly than the version w
 
 We use the following:
 * PHP
-* MySQL as database server
-* Apache Web server is recommended
-* Yii framework 1.1.14
+* MySQL database server
+* Apache Web server
+* Yii MVC framework
 * Bootstrap
 * JQuery
-* 
+* and you know, the basic html/css stuff...
 
-## Change Log
-
-For weekly/regular updates, please refer to CHANGELOG
-
-
-'' Copyright (c) 2015. LinxHQ Pte Ltd ''
+'' Copyright (c) 2013-2018. LinxHQ Pte Ltd ''
