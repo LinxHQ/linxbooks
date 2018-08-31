@@ -7,6 +7,10 @@ Open-source accounting software (customers, invoices, quotations, bills, expense
 Contact:
 Joseph Pham, joseph.pnc@linxhq.com
 
+Checkout out demo at: http://sit.linxhq.com/linxone using username: admin, password: admin123
+
+I have to be honest the demo version might work more smoothly than the version we have here on github. For that we apologize, we'll try to get the setup process more solid as soon as possible.
+
 ## Features
 * Create and manage multiple users and their permissions
 * Manage customers and vendors
@@ -25,9 +29,6 @@ Joseph Pham, joseph.pnc@linxhq.com
 * Email server settings (for notification) can also be edited at protected/config/main.php
 * Username is admin, pass is admin123
 * Grant write permission to assets, profile photos, and protected/runtime folders.
-
-## Demo
-* http://demo.office4c.com/ (user: admin, password: admin123)
 
 ## Technical details
 
