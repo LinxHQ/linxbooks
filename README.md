@@ -24,7 +24,7 @@ I have to be honest the demo version might work more smoothly than the version w
 ## How to install
 * Download the code and put it in your web server (a folder of your choice in your web folder)
 * Create a Mysql database for your installation
-* Import the following sql into the database: sql/setup.sql. 
+* Import the following sql into the database: sql/setup.sql. Please make sure your MySQL allows case-**insensitive** table names. Otherwise you'll get error when reading yiisession table.
 * DB info can be edited at protected/config/db.php. 
 * Email server settings (for notification) can also be edited at protected/config/main.php
 * Username is admin, pass is admin123
