@@ -8,7 +8,7 @@
 
 <div id="add_column" hidden>
 	<?php echo Yii::t('lang','Column Name') ?> : <input type="text" name="column_name" id="column_name"> <br>
-	<?php echo Yii::t('lang','Chosse Color') ?> : <input type='text' id="color_picker" /> <br> <br><br>
+	<?php echo Yii::t('lang','Chosse Color') ?> : <br> <input type='text' id="color_picker" /> <br> <br><br>
 	<!-- <button onclick="save_add_column();" type="button" class="btn btn-info">New Column</button> -->
 	<!-- <button   type="button" onclick="save_add_column();">New Column</button> -->
 	<a href="#" class="btn btn-success" onclick="save_add_columns();"><?php echo Yii::t('lang','New Column') ?></a>
@@ -65,11 +65,12 @@
 	    }
 	});
 	$("#color_picker").spectrum({
-            preferredFormat: "rgb",
-            showInput: true,
-            showPalette: true,
-            palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]]
-        });
+        preferredFormat: "rgb",
+        showInput: true,
+        showPalette: true,
+        flat: true,
+        palette: [["red", "rgba(0, 255, 0, .5)", "rgb(0, 0, 255)"]]
+    });
 	function hide_show_add_column(){
 		$("#add_column").toggle(1000);
 	}

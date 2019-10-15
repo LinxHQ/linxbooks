@@ -107,7 +107,7 @@ class WikiPage extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($limit=false, $project_id = false)
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
@@ -116,7 +116,11 @@ class WikiPage extends CActiveRecord
 
 		$criteria->compare('wiki_page_id',$this->wiki_page_id);
 		$criteria->compare('account_subscription_id',$this->account_subscription_id);
-		$criteria->compare('project_id',$this->project_id);
+		if(isset($project_id)){
+			$criteria->compare('project_id',$project_id);
+		} else {
+			$criteria->compare('project_id',$this->project_id);
+		}
 		$criteria->compare('wiki_page_title',$this->wiki_page_title,true);
 		$criteria->compare('wiki_page_parent_id',$this->wiki_page_parent_id);
 		$criteria->compare('wiki_page_content',$this->wiki_page_content,true);
@@ -128,10 +132,8 @@ class WikiPage extends CActiveRecord
         $criteria->compare('wiki_page_is_home', $this->wiki_page_is_home);
 
 		return new CActiveDataProvider($this, array(
+			'pagination'=> array('pageSize' => $limit),
 			'criteria'=>$criteria,
-                        'pagination'=>array(
-                            'pageSize'=>50,
-                        ),
 		));
 	}
 	

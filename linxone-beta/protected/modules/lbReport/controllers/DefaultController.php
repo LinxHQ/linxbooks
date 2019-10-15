@@ -119,11 +119,11 @@ class DefaultController extends Controller
         {
              LBApplication::renderPartial($this,'_form_view_customer_statement',  array());
         }
-        public function actionpdfAgingReport($customer,$search_date_from)
+        public function actionpdfAgingReport($customer)
         {
             $html2pdf = Yii::app()->ePdf->HTML2PDF();
             $lbInvoiceModel = new LbInvoice();
-            $html2pdf->WriteHTML($this->renderPartial('pdf_agingReport', array('model'=>$lbInvoiceModel,'customer'=>$customer,'search_date_from'=>$search_date_from),true));
+            $html2pdf->WriteHTML($this->renderPartial('pdf_agingReport', array('model'=>$lbInvoiceModel,'customer'=>$customer),true));
             $html2pdf->Output('AgingReport.pdf','I');
         }
         

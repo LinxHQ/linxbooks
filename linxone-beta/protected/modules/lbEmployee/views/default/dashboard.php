@@ -11,7 +11,7 @@ $canView = BasicPermission::model()->checkModules($m, 'view');
 //date
 echo '<div id="lb-container-header">';
             
-            echo '<div style="margin-left: -10px" class="lb-header-right"><h3>Employees</h3></div>';
+            echo '<div class="lb-header-right"><h3>Employees</h3></div>';
             echo '<div class="lb-header-left">';
 //            LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
 

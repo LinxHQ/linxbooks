@@ -36,9 +36,9 @@ $('.search-form form').submit(function(){
 ");
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;" ><h3> '.Yii::t('lang','Customers').'</h3></div>';
-            echo '<div class="lb_customer_header_left">&nbsp;';
-                echo'<input type="search" onKeyup="search_name(this.value);" id="search_invoice" value="" class="lb_input_search" value="" placeholder="Search" />';
+            echo '<div class="lb-header-right"><h3> '.Yii::t('lang','Customers').'</h3></div>';
+            echo '<div class="lb-header-left">&nbsp;';
+                echo'<input style="margin-top: 12px !important;" type="search" onKeyup="search_name(this.value);" id="search_invoice" value="" class="lb_input_search" value="" placeholder="Search" />';
             echo '</div>';
 echo '</div>';
 

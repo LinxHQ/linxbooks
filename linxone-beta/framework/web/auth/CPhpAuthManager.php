@@ -70,7 +70,7 @@ class CPhpAuthManager extends CAuthManager
 		$item=$this->_items[$itemName];
 		Yii::trace('Checking permission "'.$item->getName().'"','system.web.auth.CPhpAuthManager');
 		if(!isset($params['userId']))
-		    $params['userId'] = $userId;
+			$params['userId'] = $userId;
 		if($this->executeBizRule($item->getBizRule(),$params,$item->getData()))
 		{
 			if(in_array($itemName,$this->defaultRoles))
@@ -100,7 +100,7 @@ class CPhpAuthManager extends CAuthManager
 	public function addItemChild($itemName,$childName)
 	{
 		if(!isset($this->_items[$childName],$this->_items[$itemName]))
-			throw new CException(Yii::t('yii','Either "{parent}" or "{child}" does not exist.',array('{child}'=>$childName,'{name}'=>$itemName)));
+			throw new CException(Yii::t('yii','Either "{parent}" or "{child}" does not exist.',array('{child}'=>$childName,'{parent}'=>$itemName)));
 		$child=$this->_items[$childName];
 		$item=$this->_items[$itemName];
 		$this->checkItemChildType($item->getType(),$child->getType());
@@ -272,7 +272,7 @@ class CPhpAuthManager extends CAuthManager
 	 * Creates an authorization item.
 	 * An authorization item represents an action permission (e.g. creating a post).
 	 * It has three types: operation, task and role.
-	 * Authorization items form a hierarchy. Higher level items inheirt permissions representing
+	 * Authorization items form a hierarchy. Higher level items inherit permissions representing
 	 * by lower level items.
 	 * @param string $name the item name. This must be a unique identifier.
 	 * @param integer $type the item type (0: operation, 1: task, 2: role).
@@ -324,6 +324,7 @@ class CPhpAuthManager extends CAuthManager
 	 * Saves an authorization item to persistent storage.
 	 * @param CAuthItem $item the item to be saved.
 	 * @param string $oldName the old item name. If null, it means the item name is not changed.
+	 * @throws CException
 	 */
 	public function saveAuthItem($item,$oldName=null)
 	{

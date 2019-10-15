@@ -147,8 +147,10 @@ class ProjectMemberController extends Controller
 		$model = new ProjectMember();
 		if(isset($_POST['ProjectMember']))
 		{
+
 			$model->attributes=$_POST['ProjectMember'];
-			
+			// update PManager và PMembers
+			ProjectMember::model()->deleteAll('project_id IN ('.$model->project_id.')');
 			// invalid submission
 			if ($model->project_id <= 0)
 			{
@@ -160,11 +162,15 @@ class ProjectMemberController extends Controller
 			$manager = new ProjectMember();
 			if($model->manager)
 			{
-				$manager->project_id = $model->project_id;
-				$manager->account_id = $model->manager;
-				$manager->project_member_start_date = date('Y-m-d H:i:s');
-				$manager->project_member_is_manager = PROJECT_MEMBER_IS_MANAGER;
-				$manager->save();
+				$required_mManager_exist = ProjectMember::model()->findAll('account_id IN ('.$model->manager.') AND project_id IN ('.$model->project_id.')');
+				// kiểm tra xem người này đã thành manager của dự án này chưa, nếu chưa thì gán
+				if(count($required_mManager_exist) == 0){
+					$manager->project_id = $model->project_id;
+					$manager->account_id = $model->manager;
+					$manager->project_member_start_date = date('Y-m-d H:i:s');
+					$manager->project_member_is_manager = PROJECT_MEMBER_IS_MANAGER;
+					$manager->save();
+				}
 			}
 			
 			// add members if any
@@ -176,12 +182,15 @@ class ProjectMemberController extends Controller
 					if ($mem_acc_id == $manager->account_id)
 						continue;
 					
-					$member = new ProjectMember();
-					$member->project_id = $model->project_id;
-					$member->account_id = $mem_acc_id;
-					$member->project_member_start_date = date('Y-m-d H:i:s');
-					$member->project_member_is_manager = PROJECT_MEMBER_IS_NOT_MANAGER;
-					$member->save();
+					$required_mMembers_exist = ProjectMember::model()->findAll('account_id IN ('.$mem_acc_id.') AND project_id IN ('.$model->project_id.')');
+					if(count($required_mManager_exist) == 0){
+						$member = new ProjectMember();
+						$member->project_id = $model->project_id;
+						$member->account_id = $mem_acc_id;
+						$member->project_member_start_date = date('Y-m-d H:i:s');
+						$member->project_member_is_manager = PROJECT_MEMBER_IS_NOT_MANAGER;
+						$member->save();
+					}
 				}
 			}
 			

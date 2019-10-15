@@ -32,7 +32,8 @@ class DefaultController extends CLBController
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update','ajaxUpdateField','createAddress','deleteAddress','loadAjaxTabAddress','loadAjaxTabContract','deleteContact','_search_customer'),
+				'actions'=>array('create','update','ajaxUpdateField','createAddress','deleteAddress','loadAjaxTabAddress','loadAjaxTabContract','deleteContact','_search_customer'
+                                    ,'loadAjaxTabQuotation'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -393,5 +394,18 @@ class DefaultController extends CLBController
             LBApplication::renderPartial($this, '_search_customer', array(
                 'name'=>$name,
             ));
+        }
+        
+        function ActionLoadAjaxTabQuotation()
+        {
+            if(isset($_POST['id'])){
+                $id = $_POST['id'];
+            $model=new LbQuotation('search');
+            $model->unsetAttributes();  // clear any default values
+            $model->lb_quotation_customer_id = $id;
+                LBApplication::renderPartial($this, '_view_quotation', array(
+                                'model'=>$model,
+                              ));
+            }
         }
 }

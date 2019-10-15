@@ -311,7 +311,7 @@ class CWebApplication extends CApplication
 	{
 		if($owner===null)
 			$owner=$this;
-		if(($route=trim($route,'/'))==='')
+		if((array)$route===$route || ($route=trim($route,'/'))==='')
 			$route=$owner->defaultController;
 		$caseSensitive=$this->getUrlManager()->caseSensitive;
 
@@ -346,7 +346,7 @@ class CWebApplication extends CApplication
 			$classFile=$basePath.DIRECTORY_SEPARATOR.$className.'.php';
 
 			if($owner->controllerNamespace!==null)
-				$className=$owner->controllerNamespace.'\\'.$className;
+				$className=$owner->controllerNamespace.'\\'.str_replace('/','\\',$controllerID).$className;
 
 			if(is_file($classFile))
 			{

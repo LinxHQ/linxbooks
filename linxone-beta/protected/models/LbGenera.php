@@ -100,72 +100,39 @@ class LbGenera extends CLBActiveRecord
       
         public function getGeneraSubscription()
         {
-          //  $lastGenera = $this->getFullRecords();
-          //  if(count($lastGenera)<=0)
-          //  {
-          //      $genera = new LbGenera();
-          //      $genera->lb_genera_currency_symbol = "";
-          //      $genera->save();
-          //      
-          //      $lastGenera = $this->getFullRecords();
-          //  }
-           $lastGenera = LbGenera::model()->findAll();  
-            $generaID = $lastGenera[0]->lb_record_primary_key;
-            $dataProvider = LbGenera::model()->findByPk($generaID);
-            return $dataProvider;
-        }
-        public function getGeneraCurrency()
-        {
             $lastGenera = $this->getFullRecords();
             if(count($lastGenera)<=0)
             {
                 $genera = new LbGenera();
                 $genera->lb_genera_currency_symbol = "";
+                $genera->lb_thousand_separator = "";
+                $genera->lb_decimal_symbol="";
                 $genera->save();
                 
                 $lastGenera = $this->getFullRecords();
-            }
-            
-            $generaID = $lastGenera[0]->lb_record_primary_key;
-            $dataProvider = LbGenera::model()->findByPk($generaID)->lb_genera_currency_symbol;
-            return $dataProvider;
+            } 
+            return $lastGenera[0];
         }
+        public function getGeneraCurrency()
+        {
+            $lastGenera = $this->getGeneraSubscription();
+            return $lastGenera->lb_genera_currency_symbol;
+        }
+        public function getGeneraThousandSeparator()
+        {
+            $lastGenera = $this->getGeneraSubscription();
+            return $lastGenera->lb_thousand_separator;
+        }
+        public function getGeneraDecimalSymbol()
+        {
+            $lastGenera = $this->getGeneraSubscription();
+            return $lastGenera->lb_decimal_symbol;
+        }
+        
         public function getCurrency($sort="",$return_type = self::LB_QUERY_RETURN_TYPE_ACTIVE_DATA_PROVIDER){    
         $criteria=new CDbCriteria;
         $criteria->order = $sort;
         $dataProvider = $this->getFullRecordsDataProvider($criteria);
         return $this->getResultsBasedForReturnType($dataProvider,$return_type);    
-        }
-        
-        public function getThousandSeparator(){
-            $lastGenera = $this->getFullRecords();
-            if(count($lastGenera)<=0)
-            {
-                $genera = new LbGenera();
-                $genera->lb_thousand_separator = "";
-                $genera->save();
-                
-                $lastGenera = $this->getFullRecords();
-            }
-            
-            $generaID = $lastGenera[0]->lb_record_primary_key;
-            $dataProvider = LbGenera::model()->findByPk($generaID)->lb_thousand_separator;
-            return $dataProvider;
-        }
-        
-        public function getDecimalSymbol(){
-            $lastGenera = $this->getFullRecords();
-            if(count($lastGenera)<=0)
-            {
-                $genera = new LbGenera();
-                $genera->lb_decimal_symbol = "";
-                $genera->save();
-                
-                $lastGenera = $this->getFullRecords();
-            }
-            
-            $generaID = $lastGenera[0]->lb_record_primary_key;
-            $dataProvider = LbGenera::model()->findByPk($generaID)->lb_decimal_symbol;
-            return $dataProvider;
         }
 }

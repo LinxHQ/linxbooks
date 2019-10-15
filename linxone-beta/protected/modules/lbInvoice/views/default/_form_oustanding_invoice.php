@@ -53,46 +53,32 @@ if(!$canView)
                             'htmlOptions'=>array('width'=>'20'),
                         ),*/
                         array(
-                          //  'header'=>Yii::t('lang','Invoice No'),
                             'type'=>'raw',
                             'value'=>function($data){
-                                if($data->lb_invoice_status_code == "I_OPEN"){                                   
-                                   return "<a href='#' onclick='ajaxCheckStatus($data->lb_record_primary_key); return false;'>$data->lb_invoice_no</a>"."<br/>".LBApplicationUI::getStatusBadge($data->lb_invoice_status_code);
-                                 
-                                }else{
-                                    return LBApplication::workspaceLink($data->lb_invoice_no,
-                                        $data->customer ? $data->getViewURL($data->customer->lb_customer_name) : $data->getViewURL("No customer")) . "<br/>".
-                                        LBApplicationUI::getStatusBadge($data->lb_invoice_status_code);
-                                }
+                                //return "<a href='#' onclick='ajaxCheckStatus($data->lb_record_primary_key); return false;'>$data->lb_invoice_no</a>"."<br/>".LBApplicationUI::getStatusBadge($data->lb_invoice_status_code);
+                                return "<div class='".LBApplicationUI::getStatusBadgeClass($data->lb_invoice_status_code)."'>$data->lb_invoice_no</div>";
                             },
-                          //  'value'=>'LBApplication::workspaceLink($data->lb_invoice_no,
-                          //              $data->customer ? $data->getViewURL($data->customer->lb_customer_name) : $data->getViewURL("No customer")) . "<br/>".
-                          //              LBApplicationUI::getStatusBadge($data->lb_invoice_status_code)',
                             'htmlOptions'=>array('width'=>'130'),
                         ),
                         array(
                           //  'header'=>Yii::t('lang','Customer'),
                             'type'=>'raw',
-                            'value'=>'$data->customer ? $data->customer->lb_customer_name."<br><span style=\'color:#666;\'>". $data->lb_invoice_subject."</span>" : "No customer"
-                                    ."<br><span style=\'color:#666;\'>". $data->lb_invoice_subject."</span>"',
+                            'value'=> 'LBApplication::workspaceLink(
+                                $data->customer ? $data->customer->lb_customer_name : Yii::t("core","No customer"),
+                                $data->customer ? $data->getViewURL($data->customer->lb_customer_name) : $data->getViewURL("No customer"))'
+                                . ' . "<br/><span class=\'grey-sub\'>". $data->lb_invoice_subject . "</span>"',
                             'htmlOptions'=>array('width'=>''),
                         ),
                         array(
-                          //  'header'=>Yii::t('lang','Due Date'),
                             'type'=>'raw',
                             'value'=>'date("d M Y",strtotime($data->lb_invoice_due_date))',
                             'htmlOptions'=>array('width'=>'100'),
                         ),
                         array(
-                          //  'header'=>Yii::t('lang','Amount'),
                             'type'=>'raw',
-                            
                             'value'=>'LbInvoice::model()->getStatusAmount($data->lb_invoice_status_code,$data->total_invoice ? $data->total_invoice->lb_invoice_total_outstanding : "0.00")',
-                           // 'value'=>'($data->total_invoice ? number_format($data->total_invoice->lb_invoice_total_outstanding,2,LbGenera::model()->getGeneraSubscription()->lb_decimal_symbol,LbGenera::model()->getGeneraSubscription()->lb_thousand_separator) : "0.00")',
                             'htmlOptions'=>array(
                                 'width'=>'120',
-                               // 'class'=>'lb_grid_amount_draft',
-                             //   'class'=>'LbInvoice::model()->getStatusAmount($data->lb_invoice_status_code)',
                                 ),
                         ),
                         /**

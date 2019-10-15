@@ -38,7 +38,7 @@ echo '<div id="lb-container-header">';
             
 
             <?php
-            echo '<div class="lb-header-left" style="width:400px;">';
+            echo '<div class="lb-header-left lb-header-left-view-contract">';
             //LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(

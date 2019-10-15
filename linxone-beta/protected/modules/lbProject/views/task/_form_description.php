@@ -2,7 +2,7 @@
 /* @var $model Task */
 $form_id = 'task-description-form-' . $model->task_id;
 $container_id = "form-container-" . $form_id ;
-$form_action = Yii::app()->createUrl('task/ajaxUpdateDescription', array('id' => $model->task_id, 'ajax' => 1));
+$form_action = Yii::app()->createUrl('lbProject/task/ajaxUpdateDescription', array('id' => $model->task_id, 'ajax' => 1));
 $form = $this->beginWidget('CActiveForm', array(
 	'id' => $form_id,
 	'action' => $form_action,

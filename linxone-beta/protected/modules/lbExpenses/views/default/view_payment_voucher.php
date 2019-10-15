@@ -10,8 +10,8 @@ $canAdd = BasicPermission::model()->checkModules($m, 'add');
 $canList = BasicPermission::model()->checkModules($m, 'list');
 
 echo '<div id="lb-container-header">';
-            echo '<div style="margin-left: -10px" class="lb-header-right"><h3>Expenses</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div class="lb-header-right"><h3>Expenses</h3></div>';
+            echo '<div class="lb-header-left lb-header-left-payment-voucher">';
 //            LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(

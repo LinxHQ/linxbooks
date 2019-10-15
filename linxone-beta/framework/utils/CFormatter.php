@@ -168,7 +168,7 @@ class CFormatter extends CApplicationComponent
 		{
 			$value='<p>'.str_replace(array("\r\n", "\n", "\r"), '</p><p>',$value).'</p>';
 			if($removeEmptyParagraphs)
-     			$value=preg_replace('/(<\/p><p>){2,}/i','</p><p>',$value);
+				$value=preg_replace('/(<\/p><p>){2,}/i','</p><p>',$value);
 			return $value;
 		}
 		else
@@ -234,7 +234,10 @@ class CFormatter extends CApplicationComponent
 			else
 				return strtotime($time);
 		}
-		return (int)$time;
+		elseif (class_exists('DateTime', false) && $time instanceof DateTime)
+			return $time->getTimestamp();
+		else
+			return (int)$time;
 	}
 
 	/**

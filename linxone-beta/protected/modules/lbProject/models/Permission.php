@@ -133,9 +133,10 @@ class Permission
 	
 	private static function checkPermission_project_create($model)
 	{
-		if(AccountTeamMember::model()->isAcountAdmin(false, YII::app()->user->id))
-                    return true;
-		return false;
+		// if(AccountTeamMember::model()->isAcountAdmin(false, YII::app()->user->id))
+  //                   return true;
+		// return false;
+		return true;
 	}
 	
 	private static function checkPermission_project_view($model)

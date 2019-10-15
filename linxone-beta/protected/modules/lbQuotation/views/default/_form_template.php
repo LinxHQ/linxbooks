@@ -36,7 +36,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
         array(
             'header'=>'',
             'type'=>'raw',
-            'value'=>'"<a href=\"#\"
+            'value'=>'"<a href=\"javascript:void(0)\"
                 onclick=\"updateItemWithTemplate('.$quotationItem->lb_record_primary_key.',
                     ".$data->lb_record_primary_key.")\">Insert</a>"',
         ),

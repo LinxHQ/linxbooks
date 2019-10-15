@@ -10,12 +10,6 @@
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
 --
 -- Database: `linxbooks_2017`
 --
@@ -674,16 +668,16 @@ INSERT INTO `lb_next_ids` (`lb_record_primary_key`, `lb_next_invoice_number`, `l
 CREATE TABLE `lb_opportunity` (
   `opportunity_id` int(11) NOT NULL,
   `opportunity_name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
-  `customer_id` int(11) NOT NULL,
+  `customer_id` int(11) NULL DEFAULT 0,
   `opportunity_status_id` int(11) NOT NULL,
-  `value` int(11) NOT NULL,
-  `deadline` date NOT NULL,
-  `note` text COLLATE utf8_unicode_ci NOT NULL,
-  `opportunity_document_id` int(11) NOT NULL,
+  `value` int(11) NULL DEFAULT 0,
+  `deadline` date NULL DEFAULT NULL,
+  `note` text COLLATE utf8_unicode_ci NULL DEFAULT NULL,
+  `opportunity_document_id` int(11) NULL DEFAULT NULL,
   `created_by` int(11) NOT NULL,
   `created_date` date NOT NULL,
-  `industry` int(11) NOT NULL,
-  `star_rating` decimal(2,1) NOT NULL
+  `industry` int(11) NULL DEFAULT 0,
+  `star_rating` decimal(2,1) NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 -- --------------------------------------------------------
@@ -1171,7 +1165,7 @@ ALTER TABLE `lb_sys_translate`
   ADD PRIMARY KEY (`lb_record_primary_key`);
 
 ALTER TABLE `lb_sys_translate`
-  MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=290;
+  MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=342;
 
 --
 -- Dumping data for table `lb_sys_translate`
@@ -1460,17 +1454,58 @@ INSERT INTO `lb_sys_translate` (`lb_record_primary_key`, `lb_tranlate_en`, `lb_t
 (289, 'Page Home', 'Trang chủ');
 
 INSERT INTO `lb_sys_translate` (`lb_record_primary_key`, `lb_tranlate_en`, `lb_translate_vn`) VALUES
-(null, 'Full day', 'Cả ngày'),
-(null, 'Half day leave (morning)', 'Buổi sáng'),
-(null, 'Half day leave (afternoon)', 'Buổi chiều'),
-(null, 'Employee', 'Nhân viên'),
-(null, 'Update Application', 'Chỉnh sửa đơn xin nghỉ'),
-(null, 'View Application', 'Xem đơn xin nghỉ'),
-(null, 'List Day Leave', 'Chi tiết ngày nghỉ'),
-(null, 'Sum day leave', 'Tổng số ngày nghỉ'),
-(null, 'Date submit', 'Ngày nộp'),
-(null, 'Add CC-Receiver', 'Thêm người nhận'),
-(null, 'leave_application_style_date', 'Trạng thái nghỉ');
+(290, 'Full day', 'Cả ngày'),
+(291, 'Half day leave (morning)', 'Buổi sáng'),
+(292, 'Half day leave (afternoon)', 'Buổi chiều'),
+(293, 'Employee', 'Nhân viên'),
+(294, 'Update Application', 'Chỉnh sửa đơn xin nghỉ'),
+(295, 'View Application', 'Xem đơn xin nghỉ'),
+(296, 'List Day Leave', 'Chi tiết ngày nghỉ'),
+(297, 'Sum day leave', 'Tổng số ngày nghỉ'),
+(298, 'Date submit', 'Ngày nộp'),
+(299, 'Add CC-Receiver', 'Thêm người nhận'),
+(300, 'leave_application_style_date', 'Trạng thái nghỉ'),
+(301,'Project', 'Dự án'),
+(302,'Task', 'Công việc'),
+(303,'Documents', 'Văn bản'),
+(304,'Issue', 'Vấn đề'),
+(305,'Task', 'Công việc'),
+(306,'Implementations', 'Hoàn thành'),
+(307,'Create Project', 'Tạo dự án'),
+(308,'Create Wiki Page', 'Tạo wiki'),
+(309,'Create Task', 'Tạo công việc'),
+(310,'Documents uploaded to your tasks, issues, implementations, etc. will be listed here', 'Tài liệu được tải lên các tác vụ, vấn đề, triển khai của bạn, v.v ... sẽ được liệt kê ở đây'),
+(311,'Upload document', 'Tải lên tài liệu'),
+(312,'Comment or upload document', 'Nhận xét hoặc tải lên tài liệu'),
+(313,'Open', 'Mở'),
+(314,'Done', 'Đã xong'),
+(315,'Feature', 'Tính năng'),
+(316,'Issue', 'Vấn đề'),
+(317,'Forum', 'Diễn đàn'),
+(318,'Other', 'Khác'),
+(319,'Description', 'Mô tả'),
+(320,'by', 'bởi'),
+(321,'People', 'Thành viên'),
+(322,'Update', 'Cập nhật'),
+(323,'Schedule', 'Lịch'),
+(324,'Milestone', 'Mốc'),
+(325,'Posted on', 'Được đăng vào'),
+(326,'Reply', 'Trả lời'),
+(327,'not completed', 'chưa hoàn thành'),
+(328,'completed', 'đã hoàn thành'),
+(329,'To-do', 'Cần làm'),
+(330,'Click to Reply', 'Ấn để phản hồi'),
+(331,'Archive & Lock Project', 'Dự án lưu trữ và khóa'),
+(332,'Unlock from Archive', 'Mở khóa từ lưu trữ'),
+(333,'Delete Project', 'Xóa dự án'),
+(334,'Check', 'Kiểm tra'),
+(335,'Last updated by', 'Cập nhật lần cuối bởi'),
+(336,'History', 'Lịch sử'),
+(337,'Edit', 'Sửa'),
+(338,'Tags', 'Thẻ'),
+(339,'Attachments', 'File đính kèm'),
+(340,'Add Sub Page', 'Thêm trang con'),
+(341,'Table of Contents', 'Mục lục');
 
 -- --------------------------------------------------------
 
@@ -1529,7 +1564,7 @@ ALTER TABLE `lb_user_list`
   ADD PRIMARY KEY (`system_list_item_id`);
 
 ALTER TABLE `lb_user_list`
-  MODIFY `system_list_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+  MODIFY `system_list_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- Dumping data for table `lb_user_list`
@@ -1596,13 +1631,19 @@ INSERT INTO `lb_user_list` (`system_list_item_id`, `system_list_name`, `system_l
 (66, '', 'leave_application_minutestart', 'leave_application_minutestart_00', '00', 0, 0, 1, 0, 0),
 (67, '', 'leave_application_minutestart', 'leave_application_minutestart_30', '30', 0, 0, 1, 0, 0),
 (68, '', 'custom_type', 'custom_type_Customer', 'Customer', 0, 0, 1, 0, 0),
-(69, '', 'custom_type', 'custom_type_Vendor', 'Vendor', 0, 0, 1, 0, 0);
-
-INSERT INTO `lb_user_list` (`system_list_name`, `system_list_code`, `system_list_item_code`, `system_list_item_name`, `system_list_parent_item_id`, `system_list_item_order`, `system_list_item_active`, `system_list_item_day`, `system_list_item_month`) VALUES
-
-('', 'leave_application_style_date', 'leave_application_style_date_Full day', 'Full day', 0, 0, 1, 0, 0),
-('', 'leave_application_style_date', 'leave_application_style_date_Half day leave (morni', 'Half day leave (morning)', 0, 0, 1, 0, 0),
-('', 'leave_application_style_date', 'leave_application_style_date_Half day leave (after', 'Half day leave (afternoon)', 0, 0, 1, 0, 0);
+(69, '', 'custom_type', 'custom_type_Vendor', 'Vendor', 0, 0, 1, 0, 0),
+(70, NULL, 'status_product', 'status_product_Enabled', 'Enabled', NULL, NULL, 1, NULL, NULL),
+(71, NULL, 'status_product', 'status_product_Disabled', 'Disabled', NULL, NULL, 1, NULL, NULL),
+(72, NULL, 'catalog_available_colors', 'catalog_available_colors_Light grey', 'Light grey', NULL, NULL, 1, NULL, NULL),
+(73, NULL, 'catalog_available_colors', 'catalog_available_colors_Dark red', 'Dark red', NULL, NULL, 1, NULL, NULL),
+(74, NULL, 'catalog_available_colors', 'catalog_available_colors_Ocean blue', 'Ocean blue', NULL, NULL, 1, NULL, NULL),
+(75, NULL, 'catalog_stock_availability', 'catalog_stock_availability_In stock', 'In stock', NULL, NULL, 1, NULL, NULL),
+(76, NULL, 'catalog_stock_availability', 'catalog_stock_availability_Out of stock', 'Out of stock', NULL, NULL, 1, NULL, NULL),
+(77, NULL, 'status', 'status_Active', 'Active', NULL, NULL, 1, NULL, NULL),
+(78, NULL, 'status', 'status_Inactive', 'Inactive', NULL, NULL, 1, NULL, NULL),
+(79, 'leave_application_style_date', 'leave_application_style_date_Full day', 'Full day', 0, 0, 1, 0, 0, NULL),
+(80, 'leave_application_style_date', 'leave_application_style_date_Half day leave (morni', 'Half day leave (morning)', 0, 0, 1, 0, 0, NULL),
+(81, 'leave_application_style_date', 'leave_application_style_date_Half day leave (after', 'Half day leave (afternoon)', 0, 0, 1, 0, 0, NULL);
 
 -- --------------------------------------------------------
 
@@ -2750,7 +2791,7 @@ ALTER TABLE `lb_user_credit_card`
 -- AUTO_INCREMENT for table `lb_user_list`
 --
 -- ALTER TABLE `lb_user_list`
---  MODIFY `system_list_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=70;
+--  MODIFY `system_list_item_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=79;
 --
 -- AUTO_INCREMENT for table `lb_user_payment`
 --
@@ -2831,6 +2872,106 @@ ALTER TABLE `process_checklist_default`
 --
 ALTER TABLE `process_checklist_item_rel`
   MODIFY `pcir_id` int(11) NOT NULL AUTO_INCREMENT;
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+  
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_catalog_categories`
+--
+
+CREATE TABLE `lb_catalog_categories` (
+  `lb_record_primary_key` int(11) NOT NULL,
+  `lb_category_name` varchar(100) NOT NULL,
+  `lb_category_description` varchar(255) NOT NULL,
+  `lb_category_status` int(1) NOT NULL,
+  `lb_category_created_date` datetime NOT NULL,
+  `lb_category_created_by` int(11) NOT NULL,
+  `lb_category_parent` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_catalog_category_product`
+--
+
+CREATE TABLE `lb_catalog_category_product` (
+  `lb_record_primary_key` int(11) NOT NULL,
+  `lb_category_id` int(11) NOT NULL,
+  `lb_product_id` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `lb_catalog_products`
+--
+
+CREATE TABLE `lb_catalog_products` (
+  `lb_record_primary_key` int(11) NOT NULL,
+  `lb_product_name` varchar(100) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `lb_product_sku` varchar(30) NOT NULL,
+  `lb_product_status` int(1) NOT NULL,
+  `lb_product_description` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  `lb_product_price` decimal(14,2) NOT NULL,
+  `lb_product_special_price` decimal(14,2) DEFAULT NULL,
+  `lb_product_special_price_from_date` date DEFAULT NULL,
+  `lb_product_special_price_to_date` date DEFAULT NULL,
+  `lb_product_tax` decimal(4,2) NOT NULL,
+  `lb_product_qty` int(5) NOT NULL,
+  `lb_product_qty_out_of_stock` int(5) DEFAULT NULL,
+  `lb_product_qty_min_order` int(5) DEFAULT NULL,
+  `lb_product_qty_max_order` int(5) DEFAULT NULL,
+  `lb_product_qty_notify` int(5) DEFAULT NULL,
+  `lb_product_stock_availability` int(1) DEFAULT NULL,
+  `lb_product_created_date` datetime NOT NULL,
+  `lb_product_updated_date` datetime NOT NULL,
+  `lb_product_create_by` int(11) NOT NULL,
+  `lb_product_available_color` varchar(50) NOT NULL,
+  `lb_product_dimension` varchar(50) NOT NULL,
+  `lb_product_weight` decimal(5,2) NOT NULL,
+  `lb_product_sort_description` varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `lb_catalog_categories`
+--
+ALTER TABLE `lb_catalog_categories`
+  ADD PRIMARY KEY (`lb_record_primary_key`);
+
+--
+-- Indexes for table `lb_catalog_category_product`
+--
+ALTER TABLE `lb_catalog_category_product`
+  ADD PRIMARY KEY (`lb_record_primary_key`);
+
+--
+-- Indexes for table `lb_catalog_products`
+--
+ALTER TABLE `lb_catalog_products`
+  ADD PRIMARY KEY (`lb_record_primary_key`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `lb_catalog_categories`
+--
+ALTER TABLE `lb_catalog_categories`
+  MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT for table `lb_catalog_category_product`
+--
+ALTER TABLE `lb_catalog_category_product`
+  MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+--
+-- AUTO_INCREMENT for table `lb_catalog_products`
+--
+ALTER TABLE `lb_catalog_products`
+  MODIFY `lb_record_primary_key` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1;
+
+ALTER TABLE `lb_documents` ADD `lb_document_type` VARCHAR(50) NOT NULL AFTER `lb_document_encoded_name`;

@@ -22,7 +22,7 @@ body {
 Yii::app()->clientScript->registerScriptFile(Yii::app()->baseUrl.'/js/utilities.js');
 
 $this->widget('xupload.XUpload', array(
-		'url' => Yii::app()->createUrl("wikiPage/upload", array(
+		'url' => Yii::app()->createUrl("lbProject/wikiPage/upload", array(
 			'project_id' => $project_id,
 			'wiki_page_id' => $wikiPage->wiki_page_id)),
 		'model' => $model,
@@ -35,7 +35,7 @@ $this->widget('xupload.XUpload', array(
 				var jsonData = result[0];
 				//alert(jsonData);
 				
-				$.post("' . Yii::app()->createUrl("document/ajaxCreate") . '", {
+				$.post("' . Yii::app()->createUrl("lbProject/document/ajaxCreate") . '", {
 					"Documents[document_real_name]": sanitizeFileName(jsonData.name),
 					"Documents[document_temp_name]": jsonData.secure_name,
 					"Documents[document_is_temp]": 1,
@@ -49,7 +49,7 @@ $this->widget('xupload.XUpload', array(
 						$("#" + jsonData.secure_name)
 							.prop("href", "' . Yii::app()->createUrl("document/download") . '/" + data.document_id);
 						$("#" + jsonData.secure_name + "-delete-url")
-							.attr("onclick", "$.post(\'' . Yii::app()->createUrl('document/ajaxDelete') .'/" + data.document_id + "\');");
+							.attr("onclick", "$.post(\'' . Yii::app()->createUrl('lbProject/document/ajaxdeletes/id') .'/" + data.document_id + "\');");
 					}
 					else 
 						alert("Upload not fully completed. Please delete and try again.");

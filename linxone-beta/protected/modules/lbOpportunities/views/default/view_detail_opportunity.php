@@ -5,8 +5,8 @@
 	$customer_id = $list_opportunity[0]['customer_id'];
  ?>
 <div id="lb-container-header">
-            <div class="lb-header-right" style="margin-left:-11px;"><h3><?php echo $list_opportunity[0]['opportunity_name']; ?></h3></div>
-            <div class="lb-header-left">
+            <div class="lb-header-right"><h3><?php echo $list_opportunity[0]['opportunity_name']; ?></h3></div>
+            <div class="lb-header-left lb-header-left-view-detail-opp">
                 &nbsp;
                 <a data-workspace="1" class="btn" href="#" onclick="delete_opportunity(<?php echo $opportunity_id ?>);">Delete</a>
             </div>
@@ -36,7 +36,7 @@
 							<!-- left -->
 							<table style="margin-left: 30px;">
 								<tbody>
-									<tr hidden>
+									<tr>
 										<td>Name:</td>
 										<td><input type="text" name="name" id="name" value="<?php echo $list_opportunity[0]['opportunity_name']; ?>"></td>
 									</tr>
@@ -237,7 +237,25 @@
 					</tr>
 				</tbody>
 			</table>
-			<button id="button_update_opportunity" onclick="save_all_update_opportunity();" type="button" class="btn btn-success">Save</button>
+			<?php 
+				if(Yii::app()->user->hasFlash('update_opp_success')){
+		            echo
+		            '<div class="alert alert-success fade in alert-dismissable">
+					    <a href="#" class="close" data-dismiss="alert" aria-label="close" title="close">×</a>
+					    '.Yii::app()->user->getFlash('update_opp_success').' 
+					</div>';
+		        }
+			?>
+			<div style="text-align: center;">
+				<?php 
+					$this->widget('bootstrap.widgets.TbButton', array(
+						'label'=> Yii::t('lang','Save'),
+						'type'=>'success', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+						'size'=>'medium', // null, 'large', 'small' or 'mini'
+						'htmlOptions'=> array('onclick' => 'save_all_update_opportunity()'),
+					));
+				?>
+			</div>
         </div>
     </div>
 </div>
@@ -332,9 +350,10 @@
 	        'success':function(data)
 	        {
 //	            alert(data);
-	             alert('Update Column Successfully');
+	             // alert('Update Column Successfully');
 	            // $('#myModal').modal('toggle');
 	            // window.location.assign('board');
+	            window.location.assign("<?php echo $this->createUrl('/lbOpportunities/default/viewdetailopportunity/id/'.$list_opportunity[0]['opportunity_id'].''); ?>");
 	        }
 	    });
 	}

@@ -390,7 +390,7 @@ class Utilities
 		$toc .= '</ul>'."\n";
 	
 		// wrap toc in styled div
-		$toc = '<a id="wiki-toc-top"><br/><div class="wiki-toc"><h4></a>'.YII::t('core','Table of Contents').'</h4>' . $toc . '</div>';
+		$toc = '<a id="wiki-toc-top"><br/><div class="wiki-toc"><h4></a>'.YII::t('lang','Table of Contents').'</h4>' . $toc . '</div>';
 		
 		return array(
 				'toc' => $toc,

@@ -16,6 +16,14 @@ class SiteController extends Controller
 		parent::__construct($id, $module);
 	}**/
 
+	public function filters()
+	{
+		return array(
+			'accessControl', // perform access control for CRUD operations
+			//'postOnly + delete', // we only allow deletion via POST request
+		);
+	}
+
 	/**
 	 * Specifies the access control rules.
 	 * This method is used by the 'accessControl' filter.
@@ -29,7 +37,7 @@ class SiteController extends Controller
 						'users'=>array('*'),
 				),
 				array('allow', // allow authenticated user to perform 'create' and 'update' actions
-						'actions'=>array('logout','search','subscription'),
+						'actions'=>array('logout','search','subscription', 'dashboardchurchone', 'languares'),
 						'users'=>array('@'),
 				),
 				array('deny',  // deny all users
@@ -239,7 +247,10 @@ class SiteController extends Controller
         // 
 	public function actionLogin()
 	{
-                $serviceName = Yii::app()->request->getQuery('service');
+		$modelCheckServer = new LbCheckServer();
+		$checkServer = $modelCheckServer->checkServer();
+
+        $serviceName = Yii::app()->request->getQuery('service');
 		if (isset($serviceName)) {
 			/** @var $eauth EAuthServiceBase */
 			$eauth = Yii::app()->eauth->getIdentity($serviceName);
@@ -263,7 +274,11 @@ class SiteController extends Controller
                                             $login->rememberMe=1;
     //                                        echo $login->loginSocial(); exit;
                                             if($login->loginSocialGoogle()){
-                                                $this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
+                                            	if($checkServer == 'church-one') {
+													$this->redirect(array("site/dashboardchurchone"));
+												} else if($checkServer == "linxone"){
+													$this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
+												}
                                             }
                                         } else if (isset($list_account[0]['account_check_social_login_id_google'])) {
                                             Yii::app()->user->setFlash('success', Yii::t('lang','You are not assigned to any module yet. Please contact the Administrator to access the system'));
@@ -288,7 +303,11 @@ class SiteController extends Controller
                                             $login->rememberMe=1;
     //                                        echo $login->loginSocial(); exit;
                                             if($login->loginSocialFacebook()){
-                                                $this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
+                                                if($checkServer == 'church-one') {
+													$this->redirect(array("site/dashboardchurchone"));
+												} else if($checkServer == "linxone"){
+													$this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
+												}
                                             }
                                         } else if (isset($list_account[0]['account_check_social_login_id_facebook'])) {
                                             Yii::app()->user->setFlash('success', Yii::t('lang','You are not assigned to any module yet. Please contact the Administrator to access the system'));
@@ -344,8 +363,13 @@ class SiteController extends Controller
                         $model->rememberMe=1;
 //                        print_r($_POST['LoginForm']);
 			// validate user input and redirect to the previous page if valid
-			if($model->validate() && $model->login())
-				$this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
+			if($model->validate() && $model->login()){
+				if($checkServer == 'church-one') {
+					$this->redirect(array("site/dashboardchurchone"));
+				} else if($checkServer == "linxone"){
+					$this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
+				}
+			}
 				//$this->redirect(array("project/index"));
 					// display the login form
                         //LBApplication::renderPartial($this, 'login', array('model'=>$model));
@@ -356,13 +380,22 @@ class SiteController extends Controller
 		{
                        
                         
-			$this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
+			if($checkServer == 'church-one') {
+				$this->redirect(array("site/dashboardchurchone"));
+			} else if($checkServer == "linxone"){
+				$this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
+			}
 			//$this->redirect(array("project/index"));
 		}
 		
-		// display the login form
-		LBApplication::renderPartial($this, 'login', array('model'=>$model));
-		
+		if($checkServer == 'church-one') {
+			// display the login form
+			LBApplication::renderPartial($this, 'login_church_one', array('model'=>$model));
+		} else if($checkServer == "linxone"){
+			// display the login form
+			LBApplication::renderPartial($this, 'login', array('model'=>$model));
+		}
+
 		//$this->render('login',array('model'=>$model));
             
             /* CODE TICH HOP */
@@ -447,23 +480,36 @@ class SiteController extends Controller
 		$this->redirect(Yii::app()->baseUrl."/index.php/".$id."/lbInvoice/dashboard");
 	}
         
-        /**
-         * Setting Useing languares
-         * 
-         */
-        
-        public function actionLanguares($typelang = NULL)
+    /**
+     * Setting Useing languares
+     * 
+     */
+    
+    public function actionLanguares($typelang = NULL)
+    {
+        if(!empty($typelang))
         {
-            if(!empty($typelang))
-            {
 //                Yii::app()->session['sess_lang'] = strtolower($typelang);
-                $_SESSION["sess_lang"] = strtolower($typelang);
-                lbLangUser::model()->updateLang(Yii::app()->user->id,$typelang);
-                $this->redirect(Yii::app()->request->urlReferrer);
-                
-            }
-            else
-                $this->render('languages');
+            $_SESSION["sess_lang"] = strtolower($typelang);
+            lbLangUser::model()->updateLang(Yii::app()->user->id,$typelang);
+            $this->redirect(Yii::app()->request->urlReferrer);
             
         }
+        else
+            $this->render('languages');
+        
+    }
+
+    public function actionDashboardchurchone()
+    {
+    	$modelCheckServer = new LbCheckServer();
+		$checkServer = $modelCheckServer->checkServer();
+
+		if($checkServer == 'church-one') {
+			$this->render('dashboard_church_one');
+		} else if($checkServer == "linxone"){
+			$this->redirect(array('/'.LBApplication::getCurrentlySelectedSubscription() . "/lbInvoice/dashboard"));
+		}
+		return "You do not have access";
+    }
 }

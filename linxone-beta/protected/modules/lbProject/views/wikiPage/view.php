@@ -1,3 +1,5 @@
+
+
 <style type="text/css" media="screen">
      /* Dropdown Button */
 .dropbtn {
@@ -63,24 +65,25 @@ if ($model->project_id > 0)
 	
 	// echo '<br/><br/>';
 }
-
 $creator_profile = AccountProfile::model()->find('account_id = ?', array($model->wiki_page_creator_id));
 $last_updater = AccountProfile::model()->find('account_id = ?', array($model->wiki_page_updated_by));
-echo '<div id="lb-container-header">
-            <div class="lb-header-right" style="margin-left:-11px;"><h3>Dự án</h3></div>
-            <div class="lb-header-left">
-                &nbsp;
-                 <div class="dropdown">
-                  <button onclick="myFunction()" class="dropbtn"><i class="icon-plus icon-white"></i></button>
-                  <div id="myDropdown" class="dropdown-content">
-                    <a href="create">Create Project</a>
-                    <a href="'.Yii::app()->getBaseUrl().'/index.php/lbProject/wikiPage/create">Create Wiki Page</a>
-                  </div>
-                </div> 
-                
-                <input placeholder="Search" value="" style="border-radius: 15px; margin-top: 3px;" onkeyup="search_name_invoice(this.value);" type="text">
-            </div>
-</div><br>';
+if(isset($para) && $para == "wikiall"){
+	echo '<div id="lb-container-header">
+	            <div class="lb-header-right" style="margin-left:-11px;"><h3>Dự án</h3></div>
+	            <div class="lb-header-left">
+	                &nbsp;
+	                 <div class="dropdown">
+	                  <button onclick="myFunction()" class="dropbtn"><i class="icon-plus icon-white"></i></button>
+	                  <div id="myDropdown" class="dropdown-content">
+	                    <a href="create">Create Project</a>
+	                    <a href="'.Yii::app()->getBaseUrl().'/index.php/lbProject/wikiPage/create/project_id/'.$model->project_id.'">Create Wiki Page</a>
+	                  </div>
+	                </div> 
+	                
+	                <input placeholder="Search" value="" style="border-radius: 15px; margin-top: 3px;" onkeyup="search_name_invoice(this.value);" type="text">
+	            </div>
+	</div><br>';
+}
 $count_project = " <span class='badge'>".count(Project::model()->findAll())."</span>";
     $count_task = " <span class='badge badge badge-warning'>".count(Task::model()->findAll())."</span>";
     $count_document = " <span class='badge badge badge-success'>".count(Documents::model()->findAll())."</span>";
@@ -112,23 +115,24 @@ if(isset($_GET['Documents']))
     $documentModel->attributes=$_GET['Documents'];
     //echo $documentModel->document_real_name; return;
 }
+if(isset($para) && $para == "wikiall"){
 $this->widget('bootstrap.widgets.TbTabs', array(
                     'type'=>'tabs', // 'tabs' or 'pills'
                     'encodeLabel'=>false,
                     'tabs'=> 
                     array(
-                               array('id'=>'tab1','label'=>Yii::t('lang','Dự án'). ' <span class="badge">'.count(Project::model()->findAll()).'</span>',
+                               array('id'=>'tab1','label'=>YII::t('lang', 'Project'). ' <span class="badge">'.count(Project::model()->findAll()).'</span>',
                                     'content'=>$this->renderPartial('application.modules.lbProject.views.default.project_all',array(
 
                                     ),true),'active'=>false,
                                 ),
-                                array('id'=>'tab2','label'=>Yii::t('lang','Công việc'). ' <span class="badge badge-warning">'.count(Task::model()->findAll('project_id IN ('.$model->project_id.')')).'</span>',
+                                array('id'=>'tab2','label'=>YII::t('lang', 'Task'). ' <span class="badge badge-warning">'.count(Task::model()->findAll('project_id IN ('.$model->project_id.')')).'</span>',
                                     'content'=>$this->renderPartial('application.modules.lbProject.views.default._index_tasks',array(
                                             'model' => $model,
                                             'taskModel' => $taskModel
                                     ),true),'active'=>false,
                                 ),
-                                array('id'=>'tab3','label'=>Yii::t('lang','Văn bản'). ' <span class="badge badge-success">'.count(Documents::model()->findAll('document_parent_id IN ('.$model->project_id.')')).'</span>',
+                                array('id'=>'tab3','label'=>YII::t('lang', 'Documents'). ' <span class="badge badge-success">'.count(Documents::model()->findAll('document_parent_id IN ('.$model->project_id.')')).'</span>',
                                     'content'=>$this->renderPartial('application.modules.lbProject.views.default._index_documents',array(
                                         'model' => $model,
                                         'documentModel'=>$documentModel,
@@ -138,24 +142,26 @@ $this->widget('bootstrap.widgets.TbTabs', array(
                                     'content'=>$this->renderPartial('application.modules.lbProject.views.default.wiki_all',array(
                                             'model' => $model,
                                             'documentModel' => $documentModel,
+                                            'project_id' => $model->project_id,
                                     ),true),'active'=>false,
                                 ),
                                 array('id'=>'tab5','label'=>$wiki_name, 
                                                 'active'=>true),
                             )
     ));
+}
 ?>
 <div class="wiki-header-container">
 	<h4 class="wiki-title"><?php echo $model->wiki_page_title; ?></h4>
 	<div class="wiki-action-submenu">
 	<?php 
 	echo Utilities::workspaceLink(
-			'<i class="icon-road"></i>History',
+			'<i class="icon-road"></i>'.YII::t('lang', 'History'),
 			array('wikiPageRevision/view', 'id' => 0, 'page' => $model->wiki_page_id)
 	) . '&nbsp;';
 	
 	echo Utilities::workspaceLink(
-		'<i class="icon-pencil"></i>Edit', 
+		'<i class="icon-pencil"></i>'.YII::t('lang', 'Edit'), 
 		array('wikiPage/update',
 			'id' => $model->wiki_page_id ,
 			'project_id' => $model->project_id,
@@ -175,36 +181,37 @@ $this->widget('bootstrap.widgets.TbTabs', array(
 	
 	if (Permission::checkPermission($model, PERMISSION_WIKI_PAGE_DELETE))
 	{
-		echo CHtml::ajaxLink(
-				'<i class="icon-trash"></i>Delete',
-				array('wikiPage/delete', 'id' => $model->wiki_page_id), // Yii URL
-				array('success' => 
-                                        $model->project_id > 0 ? 
-                                        'function(data){
-						if (data == "success")
-						{
-							var url = "' . Yii::app()->createUrl('project/view', array('id' => $model->project_id, 'tab' => 'wiki')) . '";
-							workspaceLoadContent(url);
-							workspacePushState(url);
-						}
-					}' : 
-                                        'function(data){
-						if (data == "success")
-						{
-							var url = "' . CHtml::normalizeUrl(Utilities::getAppLinkiWiki()) . '";
-							workspaceLoadContent(url);
-							workspacePushState(url);
-						}
-					}', // end success param 
-					'type' => 'POST'), // jQuery selector
-				array('id' => 'ajax-id-'.uniqid(), 'confirm' => 'Are you sure to delete this wiki page and its sub page(s)?')
-		);
+		// DELETE WIKI
+		// echo CHtml::ajaxLink(
+		// 		'<i class="icon-trash"></i>Delete',
+		// 		array('wikiPage/delete', 'id' => $model->wiki_page_id), // Yii URL
+		// 		array('success' => 
+  //                                       $model->project_id > 0 ? 
+  //                                       'function(data){
+		// 				if (data == "success")
+		// 				{
+		// 					var url = "' . Yii::app()->createUrl('project/view', array('id' => $model->project_id, 'tab' => 'wiki')) . '";
+		// 					workspaceLoadContent(url);
+		// 					workspacePushState(url);
+		// 				}
+		// 			}' : 
+  //                                       'function(data){
+		// 				if (data == "success")
+		// 				{
+		// 					var url = "' . CHtml::normalizeUrl(Utilities::getAppLinkiWiki()) . '";
+		// 					workspaceLoadContent(url);
+		// 					workspacePushState(url);
+		// 				}
+		// 			}', // end success param 
+		// 			'type' => 'POST'), // jQuery selector
+		// 		array('id' => 'ajax-id-'.uniqid(), 'confirm' => 'Are you sure to delete this wiki page and its sub page(s)?')
+		// );
 	}
 	?>
 	</div>
 </div>
 <div class="wiki-editing-info">
-	Created by <?php echo $creator_profile->account_profile_preferred_display_name; ?>. Last updated by <?php echo $last_updater->account_profile_preferred_display_name; ?> on <?php echo $model->wiki_page_date; ?>
+	<?php echo YII::t('lang', 'Created By') ?> <?php echo $creator_profile->account_profile_preferred_display_name; ?>. <?php echo YII::t('lang', 'Last updated by') ?> <?php echo $last_updater->account_profile_preferred_display_name; ?> on <?php echo $model->wiki_page_date; ?>
 </div>
 <?php
 /** $this->widget('zii.widgets.CDetailView', array(
@@ -236,11 +243,11 @@ echo '<div id="wiki-page-content">'
 				. $formated_cotnent['toc']
 				. $formated_cotnent['content']
 				. '</div><br/>';
-echo "<span class='blur-summary'><b>Tags:</b> {$model->wiki_page_tags}</span>";
+echo "<span class='blur-summary'><b>".YII::t('lang', 'Tags').":</b> {$model->wiki_page_tags}</span>";
 // Attachments
 if (isset($attachments))
 {
-	echo '<br/><span class="blur-summary"><b>Attachments:</b></span><br/>';
+	echo '<br/><span class="blur-summary"><b>'.YII::t('lang', 'Attachments').':</b></span><br/>';
 	foreach ($attachments as $doc)
 	{
 		// generate ajax delete link
@@ -258,8 +265,10 @@ if (isset($attachments))
 		);
 
 		echo '<div id="container-document-' . $doc->document_id . '">';
+
 		echo CHtml::link($doc->document_real_name,
-				Yii::app()->createUrl("document/download", array('id' => $doc->document_id)));
+				Yii::app()->createUrl("lbProject/document/download", array('id' => $doc->document_id)));
+
 		echo '<div class="blur-summary" style="display: inline"> - ' . Utilities::formatDisplayDate($doc->document_date) . '</div>';
 		echo '&nbsp;' . $doc_delete_ajax_link;
 		echo '</div>';
@@ -289,7 +298,7 @@ echo '<center>';
 	}
 	
 	echo CHtml::link(
-			'Add Sub Page',
+			YII::t('lang', 'Add Sub Page'),
 			array('create',
 					'project_id' => (isset($model->project_id) && $model->project_id > 0) ? $model->project_id : 0,
 					//'project_name' => $project_name,
@@ -367,7 +376,12 @@ echo '</div>'; // end div for side bar
 
 echo '</div>'; // end div for MAIN CONTENT
 ?>
+<?php 
+	if(isset($creator_profile)){
+?>
+<?php } ?>
 <script type="text/javascript">
+// $("#lb-top-menu").hide();
 	function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }

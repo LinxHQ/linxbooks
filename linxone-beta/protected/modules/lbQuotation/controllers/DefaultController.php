@@ -947,7 +947,7 @@ class DefaultController extends CLBController
             $quo_total_new->save();
             
             //Add thong tin item
-            $quotation_item_arr = LbQuotationItem::model()->getquotationItems($quo_new->lb_record_primary_key);
+            $quotation_item_arr = LbQuotationItem::model()->getquotationItems($quotation->lb_record_primary_key);
             foreach ($quotation_item_arr->data as $item) {
                 $quo_item_new = new LbQuotationItem();
                 

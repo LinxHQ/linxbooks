@@ -116,22 +116,22 @@ class Task extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'task_id' => YII::t('core','Task'),
-			'project_id' => YII::t('core','Task Project'),
-			'task_name' => YII::t('core','Task Name'),
-			'task_start_date' => YII::t('core','Task Start Date'),
-			'task_end_date' => YII::t('core','Task End Date'),
-			'task_owner_id' => YII::t('core','Task Owner'),
-			'task_created_date' => YII::t('core','Task Created Date'),
-			'task_public_viewable' => YII::t('core','Task Public Viewable'),
-			'task_status' => YII::t('core','Task Status'),
-			'task_description' => YII::t('core','Description'),
-			'task_assignees' => YII::t('core','Assignees'),
-                        'task_milestones' => YII::t('core','Milestones'),
-                        'task_is_sticky' => YII::t('core','Sticky'),
-                        'task_type' => YII::t('core','Type'),
-                        'task_no'=>YII::t('core','id'),
-                        'task_priority'=>YII::t('core','Priority')
+			'task_id' => YII::t('lang','Task'),
+			'project_id' => YII::t('lang','Task Project'),
+			'task_name' => YII::t('lang','Task Name'),
+			'task_start_date' => YII::t('lang','ngày bắt đầu nhiệm vụ'),
+			'task_end_date' => YII::t('lang','ngày kết thúc nhiệm vụ'),
+			'task_owner_id' => YII::t('lang','Task Owner'),
+			'task_created_date' => YII::t('lang','Task Created Date'),
+			'task_public_viewable' => YII::t('lang','Task Public Viewable'),
+			'task_status' => YII::t('lang','Task Status'),
+			'task_description' => YII::t('lang','Description'),
+			'task_assignees' => YII::t('lang','người nhận'),
+                        'task_milestones' => YII::t('lang','Milestones'),
+                        'task_is_sticky' => YII::t('lang','Sticky'),
+                        'task_type' => YII::t('lang','Type'),
+                        'task_no'=>YII::t('lang','id'),
+                        'task_priority'=>YII::t('lang','Priority')
 		);
 	}
 
@@ -173,23 +173,23 @@ class Task extends CActiveRecord
 //				Yii::app()->user->id . ' AND project_member_is_manager = ' . PROJECT_MEMBER_IS_MANAGER . ')'; 
 		}
 //                
-                // task type filtering
-                if (is_numeric($task_type))
-                {
-                    $criteria->compare('task_type', $task_type);
-                } else {
-                    switch ($task_type):
-                        case 'all':
-                            // do nothing
-                            break;
-                        case 'all_but_issues':
-                            if (strlen($criteria->condition) > 1) $criteria->condition.= ' AND ';
-                            $criteria->condition .= ' t.task_type != ' . Task::TASK_TYPE_ISSUE;
-                            break;
-                        default:
-                            break;
-                    endswitch;
-                } // end task type filtering
+                // // task type filtering
+                // if (is_numeric($task_type))
+                // {
+                //     $criteria->compare('task_type', $task_type);
+                // } else {
+                //     switch ($task_type):
+                //         case 'all':
+                //             // do nothing
+                //             break;
+                //         case 'all_but_issues':
+                //             if (strlen($criteria->condition) > 1) $criteria->condition.= ' AND ';
+                //             $criteria->condition .= ' t.task_type != ' . Task::TASK_TYPE_ISSUE;
+                //             break;
+                //         default:
+                //             break;
+                //     endswitch;
+                // } // end task type filtering
 //		$criteria->join = 'INNER JOIN task_comments tc ON tc.task_id = t.task_id AND ' .
 //				'tc.task_comment_last_update = (SELECT MAX(task_comment_last_update) FROM task_comments WHERE task_id = t.task_id)';
 		

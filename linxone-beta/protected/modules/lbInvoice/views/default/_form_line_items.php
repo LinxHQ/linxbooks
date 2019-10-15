@@ -30,7 +30,7 @@ $lb_decimal_symbol = LbGenera::model()->getGeneraSubscription()->lb_decimal_symb
  * ============================= LINE ITEMS SECTION =============================
  *******************************************************************************/
 
-echo '<div id="container-invoice-line-items-section" style="margin-top: 30px">';
+echo '<div id="container-invoice-line-items-section" style="">';
 
 $form=$this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 		'id'=>'lb-invoice-items-form',
@@ -78,7 +78,7 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 				array(
 						'header' => '#',
 						'type' => 'raw',
-						'value' => '1',
+						'value' => '$row+1',
 						'htmlOptions'=>array('style'=>'width: 10px; '),
                         'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
 				),

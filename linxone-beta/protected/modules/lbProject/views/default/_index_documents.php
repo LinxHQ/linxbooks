@@ -3,7 +3,7 @@
 /* @var $model Project model */
 /* @var $documentModel Documents */
         
-echo '<p class="blur" style="text-align: center">'.YII::t('core','Documents uploaded to your tasks, issues, implementations, etc. will be listed here').'</p>';
+echo '<p class="blur" style="text-align: center">'.YII::t('lang','Documents uploaded to your tasks, issues, implementations, etc. will be listed here').'</p>';
 if(isset($model->project_id)) {
     $this->widget('ext.EAjaxUpload.EAjaxUpload',
                 array(
@@ -16,7 +16,7 @@ if(isset($model->project_id)) {
                                 'onComplete'=>"js:function(id, fileName, responseJSON){ linxcirclePostProjectUpload(id, fileName, responseJSON); }",
                                                             'template'=>'<div class="qq-uploader">
                                                                             <div class="qq-upload-drop-area"><span>Drop files here to upload</span></div>
-                                                                            <div class="qq-upload-button"><i class="icon-upload"></i>'.YII::t('core','Upload document').'</div>
+                                                                            <div class="qq-upload-button"><i class="icon-upload"></i>'.YII::t('lang','Upload document').'</div>
                                                                             <ul class="qq-upload-list"></ul>
                                                                          </div>',
                         //'messages'=>array(

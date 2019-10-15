@@ -5,7 +5,7 @@
 ?>
 <?php // echo $model->lb_record_primary_key; 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;" ><h3>Team Members</h3></div>';
+            echo '<div class="lb-header-right"><h3>Team Members</h3></div>';
             echo '<div class="lb-header-left">';
             echo '&nbsp;';
             echo '</div>';
@@ -75,6 +75,10 @@ if (count($subscriptions))
 	));
 	
 	// show invite button for master account
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
 	$this->widget('bootstrap.widgets.TbButton',
 			array('buttonType'=>'link',
 					//'ajaxOptions' => array('update' => '#wiki-content', 'id' => 'ajax-link' . uniqid()),

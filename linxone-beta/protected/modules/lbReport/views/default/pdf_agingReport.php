@@ -10,7 +10,8 @@ $m = $this->module->id;
 //$canAdd = BasicPermission::model()->checkModules($m, 'add');
 $canList = BasicPermission::model()->checkModules($m, 'list'); 
 $now = getdate();
-$currentDate = $now["year"] . "-0" . $now["mon"] . "-" . $now["mday"];
+// $currentDate = $now["year"] . "-0" . $now["mon"] . "-" . $now["mday"];
+$currentDate = date("Y-m-d");
 
 function dateNumber($first,$second)
 {
@@ -31,7 +32,7 @@ if(isset($_GET['Time_Range_search']))
 $customer_id = false;
 if(isset($_GET['customer']))
     $customer_id = $_GET['customer'];
-$invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date_from);
+$invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,false);
 
 ?>
 <?php
@@ -48,7 +49,7 @@ $PDFAging = '<table border="0" style="margin:auto;width:100%;" cellpadding="0" c
         . '<tr><td>
             <table border="0" style="margin:auto;width:100%;" cellpadding="0" cellspacing="0">
             <tr><td >
-             <span style="margin-top:10px;">From: '.$date_from.'</span>
+             
              <span style="margin-top:20px;"> </span>
              
             </td></tr>
@@ -71,7 +72,7 @@ $PDFAging = '<table border="0" style="margin:auto;width:100%;" cellpadding="0" c
            if($customer_id > 0)
             {
 
-            $invoice_arr = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date_from);
+            $invoice_arr = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,false);
             $customer_name ='';
             $total = 0;
             $i = count($invoice_arr);
@@ -405,7 +406,7 @@ $PDFAging = '<table border="0" style="margin:auto;width:100%;" cellpadding="0" c
 
     <?php
             
-            $invoice_arr = LbInvoice::model()->getInvoiceByCustomerDate($data->lb_record_primary_key,$date_from);
+            $invoice_arr = LbInvoice::model()->getInvoiceByCustomerDate($data->lb_record_primary_key,false);
             //$payment = $invoice_arr->customerAddress;
             $customer_name = $data->lb_customer_name;
 //                            echo $customer_name.'<br>'; 

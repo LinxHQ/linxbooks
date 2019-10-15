@@ -375,8 +375,8 @@ CREATE TABLE IF NOT EXISTS `lb_genera` (
 -- Dumping data for table `lb_genera`
 --
 
---INSERT INTO `lb_genera` (`lb_record_primary_key`, `lb_genera_currency_symbol`, `lb_thousand_separator`, `lb_decimal_symbol`) VALUES
---(1, '', '', '');
+-- INSERT INTO `lb_genera` (`lb_record_primary_key`, `lb_genera_currency_symbol`, `lb_thousand_separator`, `lb_decimal_symbol`) VALUES
+-- (1, '', '', '');
 
 -- --------------------------------------------------------
 
@@ -2032,8 +2032,3 @@ CREATE TABLE IF NOT EXISTS `lb_language_user` (
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
---ALTER TABLE `lb_invoices` ADD `lb_invoice_term_id` int(11), ADD `lb_invoice_currency` int(11);
-
---ALTER TABLE `lb_quotation` ADD `lb_quotation_term` int(11), ADD `lb_quotation_currency` int(11);
-
---ALTER TABLE `lb_user_list` ADD `system_list_item_day` int(11), ADD `system_list_item_month` int(11);

@@ -26,7 +26,7 @@ return array(
 	'name'=>'LinxOne',
 	'behaviors' => array('AppConfigBehavior'),
          'defaultController' => isset(Yii::app()->user)? LbInvoice::model()->getActionURL('dashboard'):'site/login',
-	'theme' => 'bootstrap',
+	'theme' => 'theme2018',
         'language'=>(isset($_SESSION["sess_lang"])) ? $_SESSION["sess_lang"] : "en",
 
 	// preloading 'log' component
@@ -62,6 +62,14 @@ return array(
                 'application.modules.lbLeave.models.*',
 				'application.modules.lbOpportunities.models.*',
 				'application.modules.lbProject.models.*',
+				'application.modules.lbCatalog.models.*',
+				'application.modules.lbDepartments.models.*',
+				'application.modules.lbTalent.models.*',
+				'application.modules.lbPeople.models.*',
+				'application.modules.lbSmallgroups.models.*',
+				'application.modules.lbEvents.models.*',
+				'application.modules.lbVolunteers.models.*',
+				'application.modules.lbPastoralcare.models.*',
 				//'ext.ajaxmenu.AjaxMenu',
                 //update by tuchido
                 'ext.eoauth.*',
@@ -72,17 +80,17 @@ return array(
                 'ext.eauth.EAuthWidget',
                 'ext.select2.Select2'
 	),
-
+		
 	'aliases' => array(
             //If you used composer your path should be
             'xupload' => 'ext.vendor.asgaroth.xupload',
             //If you manually installed it
             'xupload' => 'ext.xupload'
 	),
-
+		
 	'modules'=>array(
 		// uncomment the following to enable the Gii tool
-
+		
 		'gii'=>array(
 			'class'=>'system.gii.GiiModule',
 			'password'=>'woUiMustFail2013',
@@ -113,6 +121,14 @@ return array(
                 'lbLeave',
 				'lbOpportunities',
 				'lbProject',
+				'lbCatalog',
+				'lbDepartments',
+				'lbTalent',
+				'lbPeople',
+				'lbSmallgroups',
+				'lbEvents',
+				'lbVolunteers',
+				'lbPastoralcare',
 	),
 
 	// application components
@@ -123,15 +139,15 @@ return array(
 			'class' => 'WebUser',
 //                       'authTimeout' => 10
 		),
-
+		
 		'session' => array(
 			'class' => 'system.web.CDbHttpSession',
 			'timeout' => 60*60*24*254, // never timeout
 			'connectionID' => 'db',
 		),
-
+			
 		// uncomment the following to enable URLs in path-format
-
+		
 		'urlManager'=>array(
 			'urlFormat'=>'path',
 			//'caseSensitive'=>false,
@@ -154,27 +170,27 @@ return array(
 				array('api/update', 'pattern'=>'api/<model:\w+>/<id:\d+>', 'verb'=>'PUT'),
 				array('api/delete', 'pattern'=>'api/<model:\w+>/<id:\d+>', 'verb'=>'DELETE'),
 				array('api/create', 'pattern'=>'api/<model:\w+>', 'verb'=>'POST'),
-
-
-				/**
+				
+                                
+				/** 
 				 * Friendly URLs
 				 */
                                  // format get public url
                                 "<module:\w+>/p/<encode>"=>"/<module>/default/GetPublicPDF/p/<encode>",
                                 //"pdf/<encode>"=>"lbInvoice/default/PublicPDF/p/<encode>",
-
-
+                               
+                                 
 				// home
 				'<subscription_id:\d+>'
 					=>'invoice/index/subscription/<subscription_id>',
-
+				
 				// generic view: subscription/controller/id-title
 				'<subscription_id:\d+>/<module:\w+>/<id:\d+><sep:\-*><title:[\pL\d-()$?%`~!@#^&*-+=]*>'
 					=>'<module>/default/view/id/<id>/subscription/<subscription_id>',
 				// generic action for a module: subscription/mod/controller/action
 				'<subscription_id:\d+>/<module:\w+>/<action:\w+>'
 					=>'<module>/default/<action>',
-
+				
 				'<subscription_id:\d+>/invoice/<invoice_id:\d+><sep:\-*><customer_name:[\pL\d-()$?%`~!@#^&*-+=]*>'
 					=>'invoice/view/id/<invoice_id>/subscription/<subscription_id>',
 				'<subscription_id:\d+>/quotation/<quotation_id:\d+><sep:\-*><customer_name:[\pL\d-()$?%`~!@#^&*-+=]*>/task/<task_id:\d+><sep1:\-+><task_name:[\pL\d-()$?%`~!@#^&*-+=]*>'
@@ -187,10 +203,11 @@ return array(
 					=>'wikiPage/view/id/<wiki_id>/subscription/<subscription_id>',
 				'<subscription_id:\d+>/wiki/<wiki_id:\d+><sep1:\-+><wiki_name:[\pL\d-()$?%`~!@#^&*-+=]*>'
 					=>'wikiPage/view/id/<wiki_id>/subscription/<subscription_id>',
-
+					
+					
 				'<subscription_id:\d+>/configuration/'=>'configuration/index',
-
-
+					
+                            
 				'<subscription_id:\d+>/wiki'=>'wikiPage/index',
 				'<subscription_id:\d+>/resource/go'=>'resource/go',
 				'<subscription_id:\d+>/progress'=>'project/progress',
@@ -199,24 +216,27 @@ return array(
 				'<subscription_id:\d+>/contact'=>'site/contact',
 				'<subscription_id:\d+>/logout'=>'site/logout',
 				'<subscription_id:\d+>/subscription/<id:\d+>'=>'site/subscription/<id>',
-
+                            
 				'<subscription_id:\d+>/<module:\w+>/<controller:\w+>/<action:\w+>'
 					=>'<module>/<controller>/<action>',
                                 '<subscription_id:\d+>/<module:\w+>/<controller:\w+>/<id:\d+><sep:\-*><name:[\pL\d-()$?%`~!@#^&*-+=]*>'
                                                                 =>'<module>/<controller>/view/id/<id>',
+																
+                                '<subscription_id:\d+>/<module:\w+>/<controller:\w+>/<action:\w+>/<param:[\pL\d-()$?%`~!@#^&*-+=]*>/<id:\d+>'
+					=>'<module>/<controller>/<action>/<id:\d+>',   
                             // tu dong
 				'<controller:\w+>/<id:\d+>'=>'<controller>/view',
 				'<controller:\w+>/<action:\w+>/<id:\d+>'=>'<controller>/<action>',
 				//'<controller:\w+>/<action:\w+>'=>'<controller>/<action>',
-
+                            
 			),
 		),
-
+		
 		//'db'=>array(
 		//	'connectionString' => 'sqlite:'.dirname(__FILE__).'/../data/testdrive.db',
 		//),
 		// uncomment the following to use a MySQL database
-
+		
 		'db'=>array(
 			'connectionString' => $dbConfig['connectionString'],
 			'emulatePrepare' => true,
@@ -224,11 +244,11 @@ return array(
 			'password' => $dbConfig['password'],
 			'charset' => 'utf8',
 		),
-
+		
 		'mail' => array(
 				'class' => 'ext.yii-mail.YiiMail',
 				'transportType' => 'smtp', // php
-
+				
 				'transportOptions' => array( // only if use smtp
 						'host' => $mailConfig['host'],
 						'encryption' => $mailConfig['encryption'],
@@ -238,11 +258,11 @@ return array(
 				),
 //				//'viewPath' => 'application.views.mails',
 		),
-
+		
 		'bootstrap'=>array(
 			'class'=>'bootstrap.components.Bootstrap',
 		),
-
+		
 		//X-editable config
 		'editable' => array(
 				'class'     => 'editable.EditableConfig',
@@ -252,7 +272,7 @@ return array(
 					'emptytext' => 'Click to edit'
 				)
 		),
-
+			
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
@@ -327,7 +347,7 @@ return array(
 		'profilePhotosDir' => 'profile_photos/',
 		'enableMobileWeb'=>0,
                 'languages'=>array('en_us'=>'English', 'fr'=>'French', 'fa_ir'=>'فارسی'),
-            //'LINXHQ_SSO_URL'=>'',
-            'LINXHQ_SSO_URL'=>'http://localhost:8080/LinxHQ/',
+            'LINXHQ_SSO_URL'=>'http://accounts.linxenterprisedemo.com/',
+            //'LINXHQ_SSO_URL'=>'http://localhost:8080/LinxHQ/',
 	),
 );

@@ -618,7 +618,7 @@ class LbInvoice extends LbInvoiceGeneric
         return $dataProvider;
    }
        
-   function getInvoiceByCustomerDate($customer_id,$date_form)
+   function getInvoiceByCustomerDate($customer_id,$date_form=false)
     {
         $criteria = new CDbCriteria();
         $criteria->join='INNER JOIN lb_invoice_totals i ON i.lb_invoice_id = t.lb_record_primary_key';

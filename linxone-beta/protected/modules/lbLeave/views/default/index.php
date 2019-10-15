@@ -17,7 +17,7 @@ $canviewOwn = BasicPermission::model()->checkModules($m, 'view',Yii::app()->user
 <?php 
 
     echo '<div id="lb-container-header">';
-                echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>'.Yii::t('lang','Leave').'</h3></div>';
+                echo '<div class="lb-header-right"><h3>'.Yii::t('lang','Leave').'</h3></div>';
     echo '</div>';
 
 ?>

@@ -14,11 +14,11 @@
 <script type="text/javascript" src="<?php echo Yii::app()->baseUrl; ?>/css/style_js_modules_lbOpportunities/js/script.js"></script>
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.2.1/jquery.form.js"></script>
 <div id="lb-container-header">
-            <div class="lb-header-right" style="margin-left:-11px;"><h3>List Opportunities</h3></div>
-            <div class="lb-header-left">
-                <a href="#" onclick="add_opportunity();"><i class="icon-plus icon-white"></i></a>&nbsp;
-                <a href="board?tab=board" onclick=""><i class="icon-th-large icon-white"></i></a>&nbsp;
-                <a href="#" onclick="export_excel_view();"><i class="icon-download-alt icon-white"></i></a>&nbsp;
+            <div class="lb-header-right"><h3>List Opportunities</h3></div>
+            <div class="lb-header-left lb-header-left-board-list">
+                <a href="#" onclick="add_opportunity();"><i class="icon-plus"></i></a>&nbsp;
+                <a href="board?tab=board" onclick=""><i class="icon-th-large"></i></a>&nbsp;
+                <a href="#" onclick="export_excel_view();"><i class="icon-download-alt"></i></a>&nbsp;
             </div>
 </div><br>
 <!-- Popup new task -->

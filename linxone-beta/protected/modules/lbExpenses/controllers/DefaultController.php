@@ -61,7 +61,7 @@ class DefaultController extends CLBController
                                      'deleteCustomerExpenses',
                                      'deleteInvoiceExpenses',
                                      'loadAjaxTabInvoice',
-                                     'loadAjaxTabCustomer','expenses','paymentVoucher','SearchExpenses','excelExpenses','PdfExpenses'
+                                     'loadAjaxTabCustomer','expenses','paymentVoucher','SearchExpenses','excelExpenses','PdfExpenses','PdfExpensesEn','CompareExpenses'
                             ),
                             'users'=>array('@'),
                         ),
@@ -111,7 +111,7 @@ class DefaultController extends CLBController
                         $LbExpenses = $_POST['LbExpenses'];
                         $model->attributes = $LbExpenses;
                         $model->lb_expenses_date = date('Y-m-d', strtotime($_POST['LbExpenses']['lb_expenses_date']));
-                        $model->lb_expenses_amount = str_replace(LbGenera::model()->getThousandSeparator(),'',$_POST['LbExpenses']['lb_expenses_amount']);
+                        $model->lb_expenses_amount = str_replace(LbGenera::model()->getGeneraThousandSeparator(),'',$_POST['LbExpenses']['lb_expenses_amount']);
                         if ($model->save())
                         {
                             LbExpenses::model()->setExpensesNextNum(LbExpenses::model()->getExpensesNextNum());
@@ -856,7 +856,40 @@ class DefaultController extends CLBController
             $html2pdf->setDefaultFont('dejavusans');
             $model = new LbExpenses();
             $html2pdf->WriteHTML($this->renderPartial('pdf_expenses', array('model'=>$model,'lb_record_primary_key'=>$lb_record_primary_key),true));
-            $html2pdf->Output('Expenses.pdf','I');
-        }
+            $html2pdf->Output('Expenses.pdf','I');           
+             }
+        
+        public function actionPdfExpensesEn($lb_record_primary_key){
+            $html2pdf = Yii::app()->ePdf->HTML2PDF();
 
+            $html2pdf->setDefaultFont('dejavusans');
+            $model = new LbExpenses();
+            $html2pdf->WriteHTML($this->renderPartial('pdf_expenses_en', array('model'=>$model,'lb_record_primary_key'=>$lb_record_primary_key),true));
+            $html2pdf->Output('Expenses_en.pdf','I');
+        }
+        public function actionCompareExpenses()
+        {
+            $my_category = false;
+            $my_amount= -1;
+            $my_date=false;
+            if(isset ($_POST['my_category']))
+                    $my_category = $_POST['my_category'];
+            if(isset($_POST['my_amount']) && $_POST['my_amount'] != "")
+                $my_amount = $_POST['my_amount'];
+            if(isset ($_POST['my_date']))
+                $my_date = date('Y-m-d', strtotime($_POST['my_date']));
+            $action = $_POST['change'];
+            
+//            $arr = array();
+		$model=new LbExpenses;
+		$model->unsetAttributes();  // clear any default values
+                $model->lb_category_id=$my_category;
+                $model->lb_expenses_amount=$my_amount;
+                $model->lb_expenses_date= $my_date;
+                $model->search();
+                if($action==1)
+                    echo $count= count($model->search()->data);
+                else
+                    LBApplication::renderPartial($this,'_coincide_expenses',  array('model'=>$model));  
+        }
 }

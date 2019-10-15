@@ -13,8 +13,8 @@ $canAdd = BasicPermission::model()->checkModules('lbPayment', 'add');
 <?php 
 
     echo '<div id="lb-container-header">';
-                echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>'.Yii::t('lang','Payment').'</h3></div>';
-                echo '<div class="lb-header-left">';
+                echo '<div class="lb-header-right"><h3>'.Yii::t('lang','Payment').'</h3></div>';
+                echo '<div class="lb-header-left lb-header-left-create-payment">';
                         LBApplicationUI::backButton(LbInvoice::model()->getAdminURLNormalized());
                         echo '&nbsp;';
                 echo '</div>';

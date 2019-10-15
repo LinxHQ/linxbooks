@@ -123,7 +123,7 @@ class BasicPermission extends CActiveRecord
                                                                         ' AND module_id = '.  intval($modules->lb_record_primary_key).
                                                                         ' AND basic_permission_id = '.  intval($permission->basic_permission_id).
                                                                         ' AND basic_permission_status = 1');
-                        if(count($check_permisson_roles)>0)
+                        if($check_permisson_roles && count($check_permisson_roles)>0)
                             $result_per = true;
                     }
                 // END Roles

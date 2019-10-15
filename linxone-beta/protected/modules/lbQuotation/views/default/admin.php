@@ -9,7 +9,7 @@ $canAdd = BasicPermission::model()->checkModules($m, 'add');
 
 echo '<div id="lb-container-header">';
             echo '<div class="lb-header-right" ><h3>'.Yii::t('lang','Quotation').'</h3></div>';
-            echo '<div style="margin-top: 15px;margin-right:10px;">';
+            echo '<div class="lb-header-left lb-header-left-all-quotation">';
             LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(

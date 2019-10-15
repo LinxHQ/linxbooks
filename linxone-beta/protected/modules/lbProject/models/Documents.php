@@ -104,7 +104,7 @@ class Documents extends CActiveRecord
 	 * Retrieves a list of models based on the current search/filter conditions.
 	 * @return CActiveDataProvider the data provider that can return the models based on the search/filter conditions.
 	 */
-	public function search()
+	public function search($limit=false)
 	{
 		// Warning: Please modify the following code to remove attributes that
 		// should not be searched.
@@ -124,6 +124,7 @@ class Documents extends CActiveRecord
 		$criteria->compare('document_type',$this->document_parent_type,true);
 		
 		return new CActiveDataProvider($this, array(
+			'pagination'=> array('pageSize' => $limit),
 			'criteria'=>$criteria,
 		));
 	}

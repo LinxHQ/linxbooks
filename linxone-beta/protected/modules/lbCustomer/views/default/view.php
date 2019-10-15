@@ -16,8 +16,8 @@ if(!$canView)
 }
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>'.Yii::t('lang','Customers').'</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div class="lb-header-right"><h3>'.Yii::t('lang','Customers').'</h3></div>';
+            echo '<div class="lb-header-left lb-header-left-view-customer">';
                 LBApplicationUI::backButton($model->getHomeURLNormalized());
                 echo '&nbsp;';
                 // new
@@ -112,6 +112,11 @@ $tab_contacts = LBApplication::renderPartial($this, '_customer_contacts', array(
                 'customer_id'=>$model->lb_record_primary_key,
 		),true);
 
+$tab_contacts = LBApplication::renderPartial($this, '_customer_contacts', array(
+		'customer_contacts'=>$customer_contacts,
+                'customer_id'=>$model->lb_record_primary_key,
+		),true);
+
 $this->widget('bootstrap.widgets.TbTabs', array(
 		'type'=>'tabs', // 'tabs' or 'pills'
 		'encodeLabel'=>false,
@@ -128,6 +133,18 @@ $this->widget('bootstrap.widgets.TbTabs', array(
                                                                     'model'=>$model,
                                                                 ),true),
 						'active'=>false),
-				)
+				array('id'=>'tab4','label'=>'<i class="icon-file"></i> <strong>'.Yii::t('lang','Quotations').'</strong>',
+						'content'=> '<div id="content-quotation"></div>',
+						'active'=>false),
+                    ),
+				
 ));
 ?>
+<script type="text/javascript">
+$( document ).ready(function() {
+    loadQuotation();
+});
+function loadQuotation(){
+    $('#content-quotation').load('<?php echo LbCustomer::model()->getActionURLNormalized('loadAjaxTabQuotation'); ?>',{id:'<?php echo $model->lb_record_primary_key; ?>'});
+}
+</script>

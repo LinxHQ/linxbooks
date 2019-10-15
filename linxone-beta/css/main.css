@@ -5,7 +5,7 @@ body
 	color: #555;
 	font: normal 10pt Arial,Helvetica,sans-serif;
 	/**background: #EFEFEF;**/
-	//background: #cce9d5 url("../images/bg.jpg");
+/*	background: #cce9d5 url("../images/bg.jpg");*/
         background: #fff;
 	/**background-color: #cce9d5;**/
 	min-height: 1000px;
@@ -173,7 +173,7 @@ body
 
 #inpagetopmenu
 {
-	//float: left;
+/*	float: left;*/
 	width: 100%;
 }
 
@@ -402,7 +402,7 @@ div.container-header h5
 .lb-grid-header
 {
     /**background: url('../images/grid_header_bg.png') repeat;**/
-    //background-color: #f5f5f5;
+/*    background-color: #f5f5f5;*/
      background-color: rgb(91, 183, 91);
     color: #fff;
 }
@@ -602,23 +602,23 @@ div.search-form
     margin-top: 17px;
 }
 #lb-view-header .lb-header-right{
-    //width:96px;
+/*    width:96px;*/
     margin-top:10px;
     width: 50%;
 }
 #lb-view-header .lb-right-header{
-  //  width:96px;
+/*    width:96px;*/
     margin-top:5px;
     float: left;
 }
 #lb-view-header .lb-right-header h3 a{
-    //color: #5da028;
+/*    color: #5da028;*/
     color:#fff;
     margin-left:9px;
     margin-top:2px;
 }
 #lb-view-header .lb-header-right h3 a{
-    //color: #5da028;
+/*    color: #5da028;*/
     color:#fff;
     margin-left:9px;
     margin-top:2px;
@@ -674,3 +674,20 @@ div.search-form
 .lb_install_button{
     text-align:center;margin-bottom:30px;margin-top:20px;
 }
+.errorSummary{
+    background: #f2dede;
+    padding: 10px;
+}
+.errorMessage{
+    font-size: 13px;
+    color: #8a1f11;
+}
+.input-prepend.input-append .dropdown-menu{
+    padding-left: 10px;
+}
+
+/* class để hiện 1 empty line với độ cao nhất định */
+.lb-empty-15{
+	clear: both; height: 15px; 
+}
+/* End class để hiện 1 empty line với độ cao nhất định */

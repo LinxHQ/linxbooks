@@ -76,7 +76,7 @@ if ($comment->task_comment_parent_id == 0)
 	<?php 
 	if ($task->task_status != TASK_STATUS_COMPLETED && !$project->isArchived())
 	{
-		echo $new_reply_ajax_link;
+		echo '<a id="ajax-id-'.uniqid().'" class="blur-summary" href="#" onclick="replay_comment('.$comment->task_id.' ,'.$comment->task_comment_id.',1); return false;">Click to Reply</a>';
 	}
 	?>
 	</div>
@@ -88,10 +88,26 @@ if ($comment->task_comment_parent_id == 0)
 	echo '<div id="comment-thread-reply-form-'. $comment->task_comment_id .'" class="" style="margin-left: 40px;">';
 	if (isset($replies) && count($replies))
 	{
-		echo $new_reply_ajax_link;
+		echo '<a id="ajax-id-'.uniqid().'" class="blur-summary" href="#" onclick="replay_comment('.$comment->task_id.' ,'.$comment->task_comment_id.',1); return false;">'.YII::t('lang','Click to Reply').'</a>';
 		
 	} // end if showing reply AT THE BOTTOM OF THREAD, if this parent comment has replies
 	echo '</div>'; // #comment-thread-reply-form-<task_comment_id>
 } // end if this is a parent
 ?>
 </div> <!-- End div #comment -->
+
+<script type="text/javascript">
+	function replay_comment(task_id, comment_id, is_reply){
+		$("#comment-thread-reply-form-"+comment_id).html("Loading...");
+		var replay = "replay";
+		$.ajax({
+            'type':'POST',
+            'url':'<?php echo $this->createUrl('taskComment/create'); ?>',
+            data:{replay:replay,task_id:task_id,comment_id:comment_id, is_reply:is_reply},
+            success:function(data){
+                $("#comment-thread-reply-form-"+comment_id).html(data);
+            }
+                    
+        });
+	}
+</script>

@@ -176,7 +176,7 @@ echo $form->hiddenField($taskComment_, 'task_id', array('value' => $task_id));
 			array(
 					'id'=>'uploadFile',
 					'config' => array(
-							'action' => Yii::app()->createUrl('document/ajaxTempUpload'),
+							'action' => Yii::app()->createUrl('lbProject/document/ajaxTempUpload'),
 							'allowedExtensions' => Documents::model()->supportedTypes(), //array("jpg","jpeg","gif","exe","mov" and etc...
 							'sizeLimit' => 10*1024*1024, // maximum file size in bytes
                                                         'label'=>YII::t('core','Upload a file'),
@@ -205,9 +205,9 @@ echo $form->hiddenField($taskComment_, 'task_id', array('value' => $task_id));
 			} else {
 				// this NOT a reply. this is a new comment added from top form
 				// prepend new parent comment to comment thread
-				$success_new_parent = '$("#comments-thread").prepend(data);';
+				$success_new_parent = '$("#comments-thread-'.$task_id.'").prepend(data);';
 				// reset new parent comment area to ajax link
-				$success_new_parent .= '$("#form-comment").html($("#new-comment-form-link-holder").html());';
+				$success_new_parent .= '$("#form-comment-'.$task_id.'").html($("#new-comment-form-link-holder-'.$task_id.'").html());';
 			}
 		} else {
 			$success_new_parent = '';
@@ -268,7 +268,7 @@ echo $form->hiddenField($taskComment_, 'task_id', array('value' => $task_id));
 			else {
 				// CANCEL ADD NEW
 				// resset new comment form 
-				$cancel_ajax_option = array('update' => '#form-comment'); // update new comment form on top
+				$cancel_ajax_option = array('update' => '#form-comment-'.$task_id.''); // update new comment form on top
 			}
 			$is_reply = 0;
 		}

@@ -37,10 +37,10 @@ $count_quotation=$count_quotation->totalItemCount;
 // Buttons
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left: -10px"><h3>'.Yii::t("lang","Dashboard").'</h3></div>';
+            echo '<div class="lb-header-right"><h3>'.Yii::t("lang","Dashboard").'</h3></div>';
             echo '<div class="lb-header-left">';
-            echo '<div id="lb_invoice" class="btn-toolbar" style="margin-top:2px;" >';
-                echo ' <input type="text" placeholder="Search" value="" style="border-radius: 15px;" onKeyup="search_name_invoice(this.value);">';
+            echo '<div id="lb_invoice" class="btn-toolbar" style="" >';
+                echo ' <input type="text" placeholder="Search" value="" class="header-search" onKeyup="search_name_invoice(this.value);">';
 //            if($canAdd)
 //                echo '<button id="btn_invoice" class = "btn" onclick="view_oustanding_invoice()">Outstanding Invoice<span class="notification-badge">'.$count_invoice.'</span></button>';
 //            if($canAddQuotation)
@@ -58,7 +58,8 @@ echo '<div id="lb_dashboard_summary">';
     //echo '<div style="width:15%;"></div>';
     LBApplication::renderPartial($this,'dashboard_summary',  array('model'=>$model));                   
 echo '</div>';
-echo '</br>';
+
+/**
 echo '<div id="lb_dashboard_submenu">';
     echo '<div class="lb_submenu_left">';
         echo '<img id="img_invoice" class="lb_img_submenu_left" src='.Yii::app()->baseUrl.'/images/icons/invoice-green.png onclick="view_oustanding_invoice()"><br/>';
@@ -74,24 +75,12 @@ echo '<div id="lb_dashboard_submenu">';
         echo '<img id="img_chart" class="lb_img_submenu_left_opacity" src='.Yii::app()->baseUrl.'/images/icons/chart.png onclick="view_chart()"><br/>';
         echo '<label class="submenu_label" id="btn_graph"  style="margin-left:16px;" onclick="view_chart()">Charts</label>';
     echo '</div>';
-    
-    
 echo '</div>';
 echo '<br />';
 echo '<div style="border-bottom:3px solid #e8e8e8;margin-top:107px"></div>';
+**/
+
 echo '<div id="lb_submenu_right_invoice" class="lb_submenu_right">';
-
-            
-  
-       
-    ?>
-    
-
-
-
-        
-        
-    <?php
     echo '<div class="dropdown" style="display:inline-flex;color:rgb(91,183,91); float:right;">';
 //                echo 'Invoice Status:&nbsp;';
                 echo'<label data-toggle="dropdown">All Status
@@ -110,8 +99,6 @@ echo '<div id="lb_submenu_right_invoice" class="lb_submenu_right">';
     echo '</div>';
 echo '<div id="lb_submenu_right_quotation" class="lb_submenu_right">';
         ?>
-        
-
         <!-- &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp
          <a style="margin-left:-17px" href="<?php echo $model->getCreateURLNormalized(array('group'=>strtolower(LbInvoice::LB_INVOICE_GROUP_INVOICE))); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Invoice'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <a href="<?php echo LbQuotation::model()->getCreateURLNormalized(); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Quotation'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -150,11 +137,14 @@ echo '<div id="lb_submenu_right_quotation" class="lb_submenu_right">';
 ?>
 <div class="form-modal-up-payment">
        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-        <a style="margin-left:-17px" href="<?php echo $model->getCreateURLNormalized(array('group'=>strtolower(LbInvoice::LB_INVOICE_GROUP_INVOICE))); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Invoice'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <a href="<?php echo LbQuotation::model()->getCreateURLNormalized(); ?>"><i class="icon-plus"></i> <?php echo Yii::t('lang','New Quotation'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <a style="margin-left:-17px" href="<?php echo $model->getCreateURLNormalized(array('group'=>strtolower(LbInvoice::LB_INVOICE_GROUP_INVOICE))); ?>"><i class="icon-file"></i> <?php echo Yii::t('lang','New Invoice'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+         <a href="<?php echo LbQuotation::model()->getCreateURLNormalized(); ?>"><i class="icon-th-large"></i> <?php echo Yii::t('lang','New Quotation'); ?></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
          <!-- <a href="<?php echo Yii::app()->createAbsoluteUrl('lbPayment/default/create'); ?>"><img width="16" src="<?php echo Yii::app()->baseUrl.'/images/icons/dolar.png' ?>" /> <?php echo Yii::t('lang','New Payment'); ?></a> -->
 
-         <a href="#" data-toggle="modal" data-target="#myModal" onclick="load_ajax();"><img width="16" src="<?php echo Yii::app()->baseUrl.'/images/icons/dolar.png' ?>" /><?php echo Yii::t('lang','New Payment'); ?></a>
+         <a href="#" data-toggle="modal" data-target="#myModal" onclick="load_ajax();">
+            <i class="icon-leaf"></i> 
+            <?php echo Yii::t('lang','New Payment'); ?>
+        </a>
 
          <!-- Modal -->
         <div class="modal fade" id="myModal" style="position: absolute; left: 5%; width: 90%; margin-left: 0px;     overflow: hidden;" role="dialog">

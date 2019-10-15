@@ -194,6 +194,7 @@ class CActiveFinder extends CComponent
 	 * @param CJoinElement $parent the parent tree node
 	 * @param mixed $with the names of the related objects relative to the parent tree node
 	 * @param array $options additional query options to be merged with the relation
+	 * @return CJoinElement|mixed
 	 * @throws CDbException if given parent tree node is an instance of {@link CStatElement}
 	 * or relation is not defined in the given parent's tree node model class
 	 */
@@ -245,6 +246,9 @@ class CActiveFinder extends CComponent
 
 			if(!empty($options['scopes']))
 				$scopes=array_merge($scopes,(array)$options['scopes']); // no need for complex merging
+
+			if(!empty($options['joinOptions']))
+				$relation->joinOptions=$options['joinOptions'];
 
 			$model->resetScope(false);
 			$criteria=$model->getDbCriteria();
@@ -482,7 +486,6 @@ class CJoinElement
 		$query=new CJoinQuery($child);
 		$query->selects=array($child->getColumnSelect($child->relation->select));
 		$query->conditions=array(
-			$child->relation->condition,
 			$child->relation->on,
 		);
 		$query->groups[]=$child->relation->group;
@@ -537,6 +540,9 @@ class CJoinElement
 		$parent=$this->_parent;
 		if($this->relation instanceof CManyManyRelation)
 		{
+			$query->conditions=array(
+				$this->relation->condition,
+			);
 			$joinTableName=$this->relation->getJunctionTableName();
 			if(($joinTable=$schema->getTable($joinTableName))===null)
 				throw new CDbException(Yii::t('yii','The relation "{relation}" in active record class "{class}" is not specified correctly: the join table "{joinTable}" given in the foreign key cannot be found in the database.',
@@ -582,9 +588,10 @@ class CJoinElement
 				$childCondition=array();
 				$count=0;
 				$params=array();
+				$pkCount=is_array($parent->_table->primaryKey)?count($parent->_table->primaryKey):1;
 				foreach($fks as $i=>$fk)
 				{
-					if($i<count($parent->_table->primaryKey))
+					if($i<$pkCount)
 					{
 						$pk=is_array($parent->_table->primaryKey) ? $parent->_table->primaryKey[$i] : $parent->_table->primaryKey;
 						$parentCondition[$pk]=$joinAlias.'.'.$schema->quoteColumnName($fk).'=:ypl'.$count;
@@ -593,7 +600,7 @@ class CJoinElement
 					}
 					else
 					{
-						$j=$i-count($parent->_table->primaryKey);
+						$j=$i-$pkCount;
 						$pk=is_array($this->_table->primaryKey) ? $this->_table->primaryKey[$j] : $this->_table->primaryKey;
 						$childCondition[$pk]=$this->getColumnPrefix().$schema->quoteColumnName($pk).'='.$joinAlias.'.'.$schema->quoteColumnName($fk);
 					}
@@ -742,7 +749,7 @@ class CJoinElement
 		else
 		{
 			$select=is_array($criteria->select) ? implode(',',$criteria->select) : $criteria->select;
-			if($select!=='*' && !strncasecmp($select,'count',5))
+			if($select!=='*' && preg_match('/^count\s*\(/i',trim($select)))
 				$query->selects=array($select);
 			elseif(is_string($this->_table->primaryKey))
 			{
@@ -965,9 +972,9 @@ class CJoinElement
 				$columns[]=$prefix.$schema->quoteColumnName($this->_table->primaryKey).' AS '.$schema->quoteColumnName($this->_pkAlias);
 			elseif(is_array($this->_pkAlias))
 			{
-				foreach($this->_table->primaryKey as $name)
-					if(!isset($selected[$name]))
-						$columns[]=$prefix.$schema->quoteColumnName($name).' AS '.$schema->quoteColumnName($this->_pkAlias[$name]);
+				foreach($this->_pkAlias as $name=>$alias)
+					if(!isset($selected[$alias]))
+						$columns[]=$prefix.$schema->quoteColumnName($name).' AS '.$schema->quoteColumnName($alias);
 			}
 		}
 
@@ -1113,7 +1120,12 @@ class CJoinElement
 		}
 		if(!empty($this->relation->on))
 			$joins[]=$this->relation->on;
-		return $this->relation->joinType . ' ' . $this->getTableNameWithAlias() . ' ON (' . implode(') AND (',$joins).')';
+
+		if(!empty($this->relation->joinOptions) && is_string($this->relation->joinOptions))
+			return $this->relation->joinType.' '.$this->getTableNameWithAlias().' '.$this->relation->joinOptions.
+				' ON ('.implode(') AND (',$joins).')';
+		else
+			return $this->relation->joinType.' '.$this->getTableNameWithAlias().' ON ('.implode(') AND (',$joins).')';
 	}
 
 	/**
@@ -1162,16 +1174,17 @@ class CJoinElement
 		{
 			$parentCondition=array();
 			$childCondition=array();
+			$pkCount=is_array($parent->_table->primaryKey)?count($parent->_table->primaryKey):1;
 			foreach($fks as $i=>$fk)
 			{
-				if($i<count($parent->_table->primaryKey))
+				if($i<$pkCount)
 				{
 					$pk=is_array($parent->_table->primaryKey) ? $parent->_table->primaryKey[$i] : $parent->_table->primaryKey;
 					$parentCondition[$pk]=$parent->getColumnPrefix().$schema->quoteColumnName($pk).'='.$joinAlias.'.'.$schema->quoteColumnName($fk);
 				}
 				else
 				{
-					$j=$i-count($parent->_table->primaryKey);
+					$j=$i-$pkCount;
 					$pk=is_array($this->_table->primaryKey) ? $this->_table->primaryKey[$j] : $this->_table->primaryKey;
 					$childCondition[$pk]=$this->getColumnPrefix().$schema->quoteColumnName($pk).'='.$joinAlias.'.'.$schema->quoteColumnName($fk);
 				}
@@ -1181,8 +1194,20 @@ class CJoinElement
 		if($parentCondition!==array() && $childCondition!==array())
 		{
 			$join=$this->relation->joinType.' '.$joinTable->rawName.' '.$joinAlias;
+
+			if(is_array($this->relation->joinOptions) && isset($this->relation->joinOptions[0]) &&
+				is_string($this->relation->joinOptions[0]))
+				$join.=' '.$this->relation->joinOptions[0];
+			elseif(!empty($this->relation->joinOptions) && is_string($this->relation->joinOptions))
+				$join.=' '.$this->relation->joinOptions;
+
 			$join.=' ON ('.implode(') AND (',$parentCondition).')';
 			$join.=' '.$this->relation->joinType.' '.$this->getTableNameWithAlias();
+
+			if(is_array($this->relation->joinOptions) && isset($this->relation->joinOptions[1]) &&
+				is_string($this->relation->joinOptions[1]))
+				$join.=' '.$this->relation->joinOptions[1];
+
 			$join.=' ON ('.implode(') AND (',$childCondition).')';
 			if(!empty($this->relation->on))
 				$join.=' AND ('.$this->relation->on.')';
@@ -1315,7 +1340,7 @@ class CJoinQuery
 	public function createCommand($builder)
 	{
 		$sql=($this->distinct ? 'SELECT DISTINCT ':'SELECT ') . implode(', ',$this->selects);
-		$sql.=' FROM ' . implode(' ',$this->joins);
+		$sql.=' FROM ' . implode(' ',array_unique($this->joins));
 
 		$conditions=array();
 		foreach($this->conditions as $condition)
@@ -1403,9 +1428,10 @@ class CStatElement
 		$table=$model->getTableSchema();
 		$parent=$this->_parent;
 		$pkTable=$parent->model->getTableSchema();
+		$pkCount=is_array($pkTable->primaryKey)?count($pkTable->primaryKey):1;
 
 		$fks=preg_split('/\s*,\s*/',$relation->foreignKey,-1,PREG_SPLIT_NO_EMPTY);
-		if(count($fks)!==count($pkTable->primaryKey))
+		if(count($fks)!==$pkCount)
 			throw new CDbException(Yii::t('yii','The relation "{relation}" in active record class "{class}" is specified with an invalid foreign key. The columns in the key must match the primary keys of the table "{table}".',
 						array('{class}'=>get_class($parent->model), '{relation}'=>$relation->name, '{table}'=>$pkTable->name)));
 
@@ -1501,18 +1527,21 @@ class CStatElement
 			$record->addRelatedRecord($relation->name,isset($stats[$pk])?$stats[$pk]:$relation->defaultValue,false);
 	}
 
-	/*
+	/**
 	 * @param string $joinTableName jointablename
 	 * @param string $keys keys
+	 * @throws CDbException
 	 */
 	private function queryManyMany($joinTableName,$keys)
 	{
 		$relation=$this->relation;
 		$model=$this->_finder->getModel($relation->className);
 		$table=$model->getTableSchema();
+		$pkCount=is_array($table->primaryKey)?count($table->primaryKey):1;
 		$builder=$model->getCommandBuilder();
 		$schema=$builder->getSchema();
 		$pkTable=$this->_parent->model->getTableSchema();
+		$pkCountPk=is_array($pkTable->primaryKey)?count($pkTable->primaryKey):1;
 
 		$tableAlias=$model->getTableAlias(true);
 
@@ -1521,7 +1550,7 @@ class CStatElement
 				array('{class}'=>get_class($this->_parent->model), '{relation}'=>$relation->name, '{joinTable}'=>$joinTableName)));
 
 		$fks=preg_split('/\s*,\s*/',$keys,-1,PREG_SPLIT_NO_EMPTY);
-		if(count($fks)!==count($table->primaryKey)+count($pkTable->primaryKey))
+		if(count($fks)!==$pkCount+$pkCountPk)
 			throw new CDbException(Yii::t('yii','The relation "{relation}" in active record class "{class}" is specified with an incomplete foreign key. The foreign key must consist of columns referencing both joining tables.',
 				array('{class}'=>get_class($this->_parent->model), '{relation}'=>$relation->name)));
 
@@ -1561,14 +1590,14 @@ class CStatElement
 			$map=array();
 			foreach($fks as $i=>$fk)
 			{
-				if($i<count($pkTable->primaryKey))
+				if($i<$pkCountPk)
 				{
 					$pk=is_array($pkTable->primaryKey) ? $pkTable->primaryKey[$i] : $pkTable->primaryKey;
 					$map[$pk]=$fk;
 				}
 				else
 				{
-					$j=$i-count($pkTable->primaryKey);
+					$j=$i-$pkCountPk;
 					$pk=is_array($table->primaryKey) ? $table->primaryKey[$j] : $table->primaryKey;
 					$joinCondition[$pk]=$tableAlias.'.'.$schema->quoteColumnName($pk).'='.$joinTable->rawName.'.'.$schema->quoteColumnName($fk);
 				}

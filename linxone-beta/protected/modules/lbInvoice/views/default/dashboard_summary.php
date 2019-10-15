@@ -36,11 +36,11 @@ $date_now = date('Y-m-d');
 ?>
 
     
-<div class="col-lg" >
-    <div class="panel-header-summary"><h4 >Outstanding</h4></div>
+<div class="col-lg col-lg-blue" >
+    <div class="panel-header-summary"><h4 class="heading">Outstanding</h4></div>
         <div class="panel-body">
             <div class="info_content_summary">
-                <h1>
+                <h1 class="heading">
                 <?php
                     $status = '("'.LbInvoice::LB_INVOICE_STATUS_CODE_OPEN.'","'.  LbInvoice::LB_INVOICE_STATUS_CODE_OVERDUE.'")';
                     echo LbInvoice::CURRENCY_SYMBOL.number_format($model->calculateInvoiceTotalOutstanding($status),2);
@@ -49,11 +49,11 @@ $date_now = date('Y-m-d');
             </div>
         </div>
 </div>
-<div class="col-lg" >
-        <div class="panel-header-summary"><h4 >You have earned</h4></div>
+<div class="col-lg col-lg-green" >
+        <div class="panel-header-summary"><h4 class="heading">Earned</h4></div>
         <div class="panel-body">
             <div class="info_content_summary">
-                <h1>
+                <h1 class="heading">
                 <?php
                 echo $total_Payment = LbInvoice::CURRENCY_SYMBOL.number_format(LbPayment::model()->getTotalPaymentFinancial($financial_prev_year,$financial_year),2);
                 
@@ -73,11 +73,11 @@ $date_now = date('Y-m-d');
         </div>
 </div>
 
-<div class="col-lg" >
-        <div class="panel-header-summary"><h4 >You have spent</h4></div>
+<div class="col-lg col-lg-red" >
+        <div class="panel-header-summary"><h4 class="heading">Spent</h4></div>
         <div class="panel-body">
             <div class="info_content_summary">
-                <h1 style="color: #dd3d36">
+                <h1 class="heading">
                 <?php
                     if(strtotime($date_now) > strtotime($financial_year)){
                          $total_Payment_bills = LbPaymentVendor::model()->getTotalPaymentNext($financial_year,$financial_next_year);

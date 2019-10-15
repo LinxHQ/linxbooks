@@ -12,10 +12,15 @@
  * @property string $lb_document_name
  * @property string $lb_document_uploaded_datetime
  * @property string $lb_document_encoded_name
+ * @property string $lb_document_type
  */
 class LbDocument extends CLBActiveRecord
 {
-        var $module_name = 'lbDocument';
+    const IMAGES_TYPE_BIG = 'BIG';
+    const IMAGES_TYPE_SMALL = 'SMALL';
+    const IMAGES_TYPE_THUMBNAIL = 'THUMBNAIL';
+
+    var $module_name = 'lbDocument';
         
 	const LB_DOCUMENT_PARENT_TYPE_EXPENSES = 'EXPENSES';
     
@@ -38,6 +43,7 @@ class LbDocument extends CLBActiveRecord
 			array('lb_document_parent_type, lb_document_parent_id, lb_account_id, lb_document_url, lb_document_name, lb_document_uploaded_datetime, lb_document_encoded_name', 'required'),
 			array('lb_document_parent_id, lb_account_id', 'numerical', 'integerOnly'=>true),
 			array('lb_document_parent_type, lb_document_name, lb_document_encoded_name, lb_document_url', 'length', 'max'=>255),
+                        array('lb_document_type', 'length', 'max'=>50),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('lb_record_primary_key, lb_document_parent_type, lb_document_parent_id, lb_account_id, lb_document_url, lb_document_name, lb_document_uploaded_datetime, lb_document_encoded_name', 'safe', 'on'=>'search'),
@@ -66,9 +72,10 @@ class LbDocument extends CLBActiveRecord
 			'lb_document_parent_id' => 'Lb Document Parent',
 			'lb_account_id' => 'Lb Account',
                         'lb_document_url'=>'Lb Document Url',
-			'lb_document_name' => 'Lb Document Name',
+			'lb_document_name' => Yii::t('lang', 'Image'),
 			'lb_document_uploaded_datetime' => 'Lb Document Uploaded Datetime',
 			'lb_document_encoded_name' => 'Lb Document Encoded Name',
+                        'lb_document_type'=>Yii::t('lang','Type')
 		);
 	}
 
@@ -98,6 +105,7 @@ class LbDocument extends CLBActiveRecord
 		$criteria->compare('lb_document_name',$this->lb_document_name,true);
 		$criteria->compare('lb_document_uploaded_datetime',$this->lb_document_uploaded_datetime,true);
 		$criteria->compare('lb_document_encoded_name',$this->lb_document_encoded_name,true);
+                $criteria->compare('lb_document_type',$this->lb_document_type,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
@@ -123,12 +131,14 @@ class LbDocument extends CLBActiveRecord
             return parent::save($runValidation, $attributes);
         }
         
-        public function getDocumentParentType($parent_type, $parent_id)
+        public function getDocumentParentType($parent_type, $parent_id,$data_provider = false)
         {
                 $this->lb_document_parent_type = $parent_type;
                 $this->lb_document_parent_id = $parent_id;
                 $dp = $this->search();
                 $dp->setPagination(false);
+                if($data_provider)
+                    return $dp;
                 return $dp->getData();
         }
         
@@ -143,7 +153,7 @@ class LbDocument extends CLBActiveRecord
                 ));
         }
         
-        public function addDocument($module_name,$parent_id,$fileName)
+        public function addDocument($module_name,$parent_id,$fileName,$type=NULL)
         {
                 $documentModel = new LbDocument;
                 $documentModel->lb_document_parent_type = $module_name;
@@ -151,6 +161,19 @@ class LbDocument extends CLBActiveRecord
                 $documentModel->lb_document_url = "/uploads/".$fileName; 
                 $documentModel->lb_document_name = $fileName; // this links your picture model to the main model (like your user, or profile model)
                 $documentModel->lb_document_encoded_name = $fileName;
-                $documentModel->save(); // DONE
+                $documentModel->lb_document_type = $type;
+                if($documentModel->save())
+                    return true;
+                else
+                    return print_r ($documentModel->errors);
+                // DONE
+        }
+        
+        public function getImages(){
+		$url = Yii::app()->request->baseUrl . '/uploads/images.png';
+		if (file_exists(Yii::app()->basePath . '/..' .$this->lb_document_url))
+			$url = Yii::app()->request->baseUrl . '/' . $this->lb_document_url;
+		
+		return '<img src="'.$url.'" width="150px" />';
         }
 }

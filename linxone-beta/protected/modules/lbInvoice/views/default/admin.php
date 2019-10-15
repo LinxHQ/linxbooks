@@ -23,8 +23,8 @@ $('.search-form form').submit(function(){
 ");**/
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>Invoices</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div class="lb-header-right"><h3>Invoices</h3></div>';
+            echo '<div class="lb-header-left lb-header-left-all-invoice">';
             LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(
@@ -66,6 +66,10 @@ $this->widget('bootstrap.widgets.TbGridView', array(
 	'dataProvider'=>$model->search($canList,$status_id),
     'template' => "{items}\n{pager}\n{summary}", 
 	'filter'=>$model, 
+	'rowCssClassExpression' => '((($data->lb_invoice_status_code == LbInvoice::LB_INVOICE_STATUS_CODE_OVERDUE) '
+								.'|| ($data->lb_invoice_status_code == LbInvoice::LB_INVOICE_STATUS_CODE_OPEN))'
+								.' AND (strtotime(date("Y/m/d")) >= strtotime($data->lb_invoice_due_date))) ? '
+								.'"invoice_overdue_row" : ""',
 	'columns'=>array(
 		//'lb_record_primary_key',
 		//'lb_invoice_group',

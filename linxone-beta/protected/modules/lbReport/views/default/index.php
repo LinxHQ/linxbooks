@@ -11,7 +11,7 @@ if(!$canView)
 }
     
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>Report</h3></div>';
+            echo '<div class="lb-header-right"><h3>Report</h3></div>';
             echo '<div class="lb-header-left">';
                 echo '&nbsp;';
             echo '</div>';

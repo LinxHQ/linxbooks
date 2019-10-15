@@ -40,7 +40,7 @@
                         array(
                             'header'=>'#',
                             'type'=>'raw',
-                            'value'=>'1',
+                            'value'=>'$row+1',
                             'htmlOptions'=>array('width'=>'10'),
                             'headerHtmlOptions'=>array('class'=>'lb-grid-header'),
                         ),

@@ -29,23 +29,26 @@ $Time_Range = array(0=>'All',1=>'0-30 days','31-60 days','61-90 days','90 + days
 
     <?php echo CHtml::dropDownList('select_timeRange','', $Time_Range,array('class'=>'span4','style'=>'width:150px')); ?>
 
-   <?php echo CHtml::label(Yii::t('lang','From'), "search_data_from",array('style'=>'display:inline;margin-left: 15px;'));?>
+    <?php 
+      // echo CHtml::label(Yii::t('lang','From'), "search_data_from",array('style'=>'display:inline;margin-left: 15px;'));
+    ?>
     
-    <?php $this->widget('ext.rezvan.RDatePicker',array(
-                'name'=>'search_data_from',
-                'value'=>  $current_data,
-                'options' => array(
-                    'format' => 'dd-mm-yyyy',
-                    'viewformat' => 'dd-mm-yyyy',
-                    'placement' => 'right',
-                    'todayBtn'=>true,
-                ),
-                'htmlOptions'=>array('class'=>'span2','placeholder'=>'Date','style'=>'margin-top: 8px;margin-right: 15px;'),
-            ));
+    <?php 
+      // $this->widget('ext.rezvan.RDatePicker',array(
+      //     'name'=>'search_data_from',
+      //     'value'=>  $current_data,
+      //     'options' => array(
+      //         'format' => 'dd-mm-yyyy',
+      //         'viewformat' => 'dd-mm-yyyy',
+      //         'placement' => 'right',
+      //         'todayBtn'=>true,
+      //     ),
+      //     'htmlOptions'=>array('class'=>'span2','placeholder'=>'Date','style'=>'margin-top: 8px;margin-right: 15px;'),
+      // ));
     ?>
     
     
-        <?php echo CHtml::button(Yii::t('lang','Search'), array('onclick'=>'load_search_aging_report();return false;','class'=>'btn','style'=>'margin-top:-3px;')) ?>
+        <?php echo CHtml::button(Yii::t('lang','Search'), array('onclick'=>'load_search_aging_report();return false;','class'=>'btn','style'=>'margin-top:-10px;')) ?>
 
 </div>
 

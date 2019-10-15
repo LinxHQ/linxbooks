@@ -11,8 +11,8 @@ $canView = BasicPermission::model()->checkModules($m, 'view');
 $model = new LbEmployeePayment();
 echo '<div id="lb-container-header">';
             
-            echo '<div style="margin-left: -10px" class="lb-header-right"><h3>Employees</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div class="lb-header-right"><h3>Employees</h3></div>';
+            echo '<div class="lb-header-left lb-header-left-list-payment">';
 //            LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
 
 

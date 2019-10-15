@@ -136,7 +136,7 @@ class LbQuotation extends CLBActiveRecord
 	 * @return CActiveDataProvider the data provider that can return the models
 	 * based on the search/filter conditions.
 	 */
-	public function search($user_id=false,$status_id=true)
+	public function search($user_id=false,$status_id=false)
 	{
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
@@ -598,4 +598,5 @@ class LbQuotation extends CLBActiveRecord
         //print_r($due_date);
         return $quotation_due_date;
     }
+    
 }

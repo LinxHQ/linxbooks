@@ -40,7 +40,8 @@ class LbInvoiceItem extends CLBActiveRecord
 			array('lb_invoice_id', 'numerical', 'integerOnly'=>true),
 			array('lb_invoice_item_type', 'length', 'max'=>60),
 			array('lb_invoice_item_description', 'length', 'max'=>255),
-			array('lb_invoice_item_quantity, lb_invoice_item_value, lb_invoice_item_total', 'length', 'max'=>10),
+			// array('lb_invoice_item_quantity, lb_invoice_item_value, lb_invoice_item_total', 'length', 'max'=>10),
+            array('lb_invoice_item_quantity', 'length', 'max'=>10),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('lb_record_primary_key, lb_invoice_id, lb_invoice_item_type, lb_invoice_item_description, lb_invoice_item_quantity, lb_invoice_item_value, lb_invoice_item_total', 'safe', 'on'=>'search'),
@@ -309,6 +310,7 @@ class LbInvoiceItem extends CLBActiveRecord
 		
 		$dataProvider = new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
+				'pagination'=> false,
 		));
 		
 		return $this->getResultsBasedForReturnType($dataProvider, $return_type);

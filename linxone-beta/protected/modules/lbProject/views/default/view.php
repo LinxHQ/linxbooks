@@ -1,7 +1,8 @@
+
 <style type="text/css" media="screen">
      /* Dropdown Button */
 .dropbtn {
-    background-color: rgb(91, 183, 91);
+    background-color: white;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -11,7 +12,7 @@
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: rgb(91, 183, 91);
+    background-color: white;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -43,6 +44,10 @@
 
 /* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
 .show {display:block;} 
+
+.items thead{
+        display: none;
+    }
 </style>
 <?php
 /* @var $this ProjectController */
@@ -56,16 +61,16 @@
 $selected_tab = (isset($_GET['tab']) ? $_GET['tab'] : '');
 
 $this->menu = array(
-    array('label' => YII::t('core', 'New Task'),
+    array('label' => YII::t('lang', 'New Task'),
         'url' => array('task/create', 'project_id' => $model->project_id, 'project_name' => $model->project_name),
         'ajax' => array('update' => '#content', 'id' => 'create-task-' . uniqid())),
-    array('label' => YII::t('core', 'New Issue'),
+    array('label' => YII::t('lang', 'New Issue'),
         'url' => array('issue/create', 'project_id' => $model->project_id, 'project_name' => $model->project_name),
         'ajax' => array('update' => '#content', 'id' => 'create-issue-' . uniqid())),
-    array('label' => YII::t('core', 'Wiki'),
+    array('label' => YII::t('lang', 'Wiki'),
         'url' => array('wikiPage/index', 'project_id' => $model->project_id, 'project_name' => $model->project_name),
         'ajax' => array('update' => '#content', 'id' => 'project-wiki-' . uniqid())),
-    array('label' => YII::t('core', 'Implementations'),
+    array('label' => YII::t('lang', 'Implementations'),
         'url' => array('implementation/admin', 'project_id' => $model->project_id, 'project_name' => $model->project_name),
         'ajax' => array('update' => '#content', 'id' => 'project-implementation-' . uniqid())),
 );
@@ -76,21 +81,21 @@ $master_account_id = AccountTeamMember::model()->getMasterAccountIDs(Yii::app()-
 // print project's header
 // Utilities::renderPartial($this, "_project_header", array('project_id' => $model->project_id, 'project' => $model));
 echo '<div id="lb-container-header">
-            <div class="lb-header-right" style="margin-left:-11px;"><h3>Dự án</h3></div>
+            <div class="lb-header-right"><h3 style="margin-top: 4px;">'.$model->project_name.'</h3></div>
             <div class="lb-header-left">
                 &nbsp;
                  <div class="dropdown">
-                  <button onclick="myFunction()" class="dropbtn"><i class="icon-plus icon-white"></i></button>
+                  <button onclick="myFunction()" class="dropbtn"><i class="icon-plus"></i></button>
                   <div id="myDropdown" class="dropdown-content">
-                    <a href="'.Yii::app()->getBaseUrl().'/index.php/lbProject/default/create">Create Project</a>
-                    <a href="'.Yii::app()->getBaseUrl().'/index.php/lbProject/wikiPage/create">Create Wiki Page</a>';
-                    echo Utilities::workspaceLink('Create Task', array(
+                    <a style="float: left;" href="'.Yii::app()->getBaseUrl().'/index.php/lbProject/default/create">'.Yii::t('lang','Create Project').'</a>
+                    <a style="float: left;" href="'.Yii::app()->getBaseUrl().'/index.php/lbProject/wikiPage/create/project_id/'.$model->project_id.'">'.Yii::t('lang','Create Wiki Page').'</a>';
+                    echo Utilities::workspaceLink(Yii::t('lang','Create Task'), array(
                     '/lbProject/task/create', 
                     'project_id' => $model->project_id,
                     'project_name' => $model->project_name,
                     'display' => $this::INDEX_DISPLAY_STYLE_TILE), array(
                         'live' => false, 
-                        'style' => "color: #5DA028"));
+                        'style' => "color: #5DA028; float: left;"));
                   
                 echo '</div></div> 
                 
@@ -114,7 +119,7 @@ echo '<div id="lb-container-header">
     <!-- END left column of project: linxcircle-project-left-column -->
 
     <!-- START right column of project: linxcircle-project-right-column -->
-    <div id='linxcircle-project-right-column' style='display: inline-block; float: right; width: 710px; padding-left: 20px; border-left: 1px solid #dcdcdc; '>
+    <div id='linxcircle-project-right-column' style='display: inline-block; float: right; width: 710px; padding-left: 20px;'>
         <div id="project-members-container" style="padding-top: 10px; padding-bottom: 10px; display: none" class="rounded-container">
             <?php
             $close_link = CHtml::link('(' . YII::t('core', 'Close') . ')', '#', array(
@@ -316,7 +321,7 @@ echo '<div id="lb-container-header">
             // show tasks and issues only for non-milestone-as-main view
             
             $project_tabs[$tab_index_main] = array(
-                    'label' => YII::t('core', 'Dự án') . ' ' . $this->widget('bootstrap.widgets.TbBadge', array(
+                    'label' => YII::t('lang', 'Project') . ' ' . $this->widget('bootstrap.widgets.TbBadge', array(
                         'type' => '#111',
                         'label' => count(Project::model()->findAll()),
                             ), true),
@@ -327,13 +332,14 @@ echo '<div id="lb-container-header">
                     'active' => ($selected_tab == 'documents' ? true : false));
             if (!$model->project_ms_method) {
                 $project_tabs[$tab_index_task] = array(
-                    'label' => YII::t('core', 'Công việc') . ' ' . $this->widget('bootstrap.widgets.TbBadge', array(
+                    'label' => YII::t('lang', 'Task') . ' ' . $this->widget('bootstrap.widgets.TbBadge', array(
                         'type' => 'warning',
                         'label' => count(Task::model()->findAll('project_id IN ('.$model->project_id.')'))
                             ), true),
                     'content' => $this->renderPartial('_index_tasks', array(
                         'model' => $model,
                         'taskModel' => $taskModel,
+                        'task' => 'task',
                             ), true),
                     'active' => ($selected_tab == 'tasks' || $selected_tab == '' ? true : false));
             }
@@ -348,7 +354,7 @@ echo '<div id="lb-container-header">
             
             // documents tab
             $project_tabs[$tab_index_document] = array(
-                    'label' => YII::t('core', 'Văn bản') . ' ' . $this->widget('bootstrap.widgets.TbBadge', array(
+                    'label' => YII::t('lang', 'Documents') . ' ' . $this->widget('bootstrap.widgets.TbBadge', array(
                         'type' => 'success',
                         'label' => count(Documents::model()->findAll('document_parent_id IN ('.$model->project_id.')')),
                             ), true),
@@ -360,13 +366,14 @@ echo '<div id="lb-container-header">
 
             // wiki tab
             $project_tabs[$tab_index_wiki] = array(
-                    'label' => YII::t('core', 'Wiki') . ' ' . $this->widget('bootstrap.widgets.TbBadge', array(
+                    'label' => YII::t('lang', 'Wiki') . ' ' . $this->widget('bootstrap.widgets.TbBadge', array(
                         'type' => 'info',
                         'label' => count(WikiPage::model()->findAll('project_id IN ('.$model->project_id.')')),
                             ), true),
                     'content' => $this->renderPartial('wiki_all', array(
                         'model' => $model,
                         'documentModel' => $documentModel,
+                        'project_id' => $model->project_id,
                             ), true),
                     'active' => ($selected_tab == 'documents' ? true : false));
             // calendar tab
@@ -400,10 +407,10 @@ echo '<div id="lb-container-header">
                 // if already archived, allow unlock
                 if ($model->project_status == PROJECT_STATUS_ARCHIVED) {
                     echo $form->hiddenField($model, 'project_status', array('value' => PROJECT_STATUS_ACTIVE));
-                    $label_tmp = YII::t('core', 'Unlock from Archive');
+                    $label_tmp = YII::t('lang', 'Unlock from Archive');
                 } else {
                     echo $form->hiddenField($model, 'project_status', array('value' => PROJECT_STATUS_ARCHIVED));
-                    $label_tmp = YII::t('core', 'Archive & Lock Project');
+                    $label_tmp = YII::t('lang', 'Archive & Lock Project');
                 }
                 echo CHtml::link('<i class="icon-th"></i>&nbsp;' . $label_tmp, '#', array('onclick' => 'js: $("#project-archive-form").submit(); return false;'));
 
@@ -413,22 +420,24 @@ echo '<div id="lb-container-header">
                 // echo CHtml::link('<i class="icon-share"></i>&nbsp;' . YII::t('core', 'Export Project Resouce Report'), Yii::app()->createUrl('/project/projectResourceReport', array('project_id' => $model->project_id, 'ajax' => 1)));
             }
 
-            if (Permission::checkPermission($model, PERMISSION_PROJECT_DELETE)) {
-                echo '&nbsp;&nbsp;&nbsp;&nbsp;';
+            // if (Permission::checkPermission($model, PERMISSION_PROJECT_DELETE)) {
+                // echo '&nbsp;&nbsp;&nbsp;&nbsp;';
                 // DELETE
-                echo CHtml::ajaxLink('<i class="icon-trash"></i>' . YII::t('core', 'Delete Project'), array('default/delete', 'id' => $model->project_id), array(
+                echo CHtml::ajaxLink('<i class="icon-trash"></i>' . YII::t('lang', 'Delete Project'), array('default/delete', 'id' => $model->project_id), array(
                     'success' => 'function(data){
                                         if (data == "success")
                                         {
-                                                var url = "' . Yii::app()->createUrl(Utilities::getCurrentlySelectedSubscription() . '/') . '";
-                                                workspaceLoadContent(url);
-                                                workspacePushState(url);
+                                                // var url = "' . Yii::app()->createUrl(Utilities::getCurrentlySelectedSubscription() . '/') . '";
+                                                // workspaceLoadContent(url);
+                                                // workspacePushState(url);
+                                            window.location.href = "' . $this->createUrl('/lbProject/default/index') . '";
+                                            
                                         }
                                 }',
                     'id' => 'ajax-link' . uniqid(),
                     'type' => 'POST'), array('live' => false, 'confirm' => 'Are you sure to delete this project?')
                 );
-            }
+            // }
             ?>
     </div>
     <!-- END right column of project: linxcircle-project-right-column -->
@@ -565,8 +574,8 @@ if (!$model->project_ms_method) {
     {
         // milestone tab
         $.get("<?php
-echo Yii::app()->createUrl('milestone/default/index', array('project_id' => $model->project_id,
-    'workspace' => '1'));
+// echo Yii::app()->createUrl('milestone/default/index', array('project_id' => $model->project_id,
+//     'workspace' => '1'));
 ?>",
                 function(data) {
                     var project_milestone_div = "#LC-project-tab-milestone-<?php echo $model->project_id ?>";

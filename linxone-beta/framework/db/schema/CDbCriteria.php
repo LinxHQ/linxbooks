@@ -124,19 +124,19 @@ class CDbCriteria extends CComponent
 	 */
 	public $index;
 	/**
-     * @var mixed scopes to apply
+	 * @var mixed scopes to apply
 	 *
-     * This property is effective only when passing criteria to
+	 * This property is effective only when passing criteria to
 	 * the one of the following methods:
-     * <ul>
-     * <li>{@link CActiveRecord::find()}</li>
-     * <li>{@link CActiveRecord::findAll()}</li>
-     * <li>{@link CActiveRecord::findByPk()}</li>
-     * <li>{@link CActiveRecord::findAllByPk()}</li>
-     * <li>{@link CActiveRecord::findByAttributes()}</li>
-     * <li>{@link CActiveRecord::findAllByAttributes()}</li>
-     * <li>{@link CActiveRecord::count()}</li>
-     * </ul>
+	 * <ul>
+	 * <li>{@link CActiveRecord::find()}</li>
+	 * <li>{@link CActiveRecord::findAll()}</li>
+	 * <li>{@link CActiveRecord::findByPk()}</li>
+	 * <li>{@link CActiveRecord::findAllByPk()}</li>
+	 * <li>{@link CActiveRecord::findByAttributes()}</li>
+	 * <li>{@link CActiveRecord::findAllByAttributes()}</li>
+	 * <li>{@link CActiveRecord::count()}</li>
+	 * </ul>
 	 *
 	 * Can be set to one of the following:
 	 * <ul>
@@ -213,7 +213,7 @@ class CDbCriteria extends CComponent
 	 * After calling this method, the {@link condition} property will be modified.
 	 * @param mixed $condition the new condition. It can be either a string or an array of strings.
 	 * @param string $operator the operator to join different conditions. Defaults to 'AND'.
-	 * @return CDbCriteria the criteria object itself
+	 * @return static the criteria object itself
 	 */
 	public function addCondition($condition,$operator='AND')
 	{
@@ -246,7 +246,7 @@ class CDbCriteria extends CComponent
 	 * @param string $operator the operator used to concatenate the new condition with the existing one.
 	 * Defaults to 'AND'.
 	 * @param string $like the LIKE operator. Defaults to 'LIKE'. You may also set this to be 'NOT LIKE'.
-	 * @return CDbCriteria the criteria object itself
+	 * @return static the criteria object itself
 	 */
 	public function addSearchCondition($column,$keyword,$escape=true,$operator='AND',$like='LIKE')
 	{
@@ -269,7 +269,7 @@ class CDbCriteria extends CComponent
 	 * @param array $values list of values that the column value should be in
 	 * @param string $operator the operator used to concatenate the new condition with the existing one.
 	 * Defaults to 'AND'.
-	 * @return CDbCriteria the criteria object itself
+	 * @return static the criteria object itself
 	 */
 	public function addInCondition($column,$values,$operator='AND')
 	{
@@ -309,7 +309,7 @@ class CDbCriteria extends CComponent
 	 * @param array $values list of values that the column value should not be in
 	 * @param string $operator the operator used to concatenate the new condition with the existing one.
 	 * Defaults to 'AND'.
-	 * @return CDbCriteria the criteria object itself
+	 * @return static the criteria object itself
 	 * @since 1.1.1
 	 */
 	public function addNotInCondition($column,$values,$operator='AND')
@@ -349,7 +349,7 @@ class CDbCriteria extends CComponent
 	 * @param string $columnOperator the operator to concatenate multiple column matching condition. Defaults to 'AND'.
 	 * @param string $operator the operator used to concatenate the new condition with the existing one.
 	 * Defaults to 'AND'.
-	 * @return CDbCriteria the criteria object itself
+	 * @return static the criteria object itself
 	 */
 	public function addColumnCondition($columns,$columnOperator='AND',$operator='AND')
 	{
@@ -408,7 +408,7 @@ class CDbCriteria extends CComponent
 	 * and _ (matches a single character) will be escaped, and the value will be surrounded with a %
 	 * character on both ends. When this parameter is false, the value will be directly used for
 	 * matching without any change.
-	 * @return CDbCriteria the criteria object itself
+	 * @return static the criteria object itself
 	 * @since 1.1.1
 	 */
 	public function compare($column, $value, $partialMatch=false, $operator='AND', $escape=true)
@@ -462,7 +462,7 @@ class CDbCriteria extends CComponent
 	 * @param string $valueEnd the ending value to end the between search.
 	 * @param string $operator the operator used to concatenate the new condition with the existing one.
 	 * Defaults to 'AND'.
-	 * @return CDbCriteria the criteria object itself
+	 * @return static the criteria object itself
 	 * @since 1.1.2
 	 */
 	public function addBetweenCondition($column,$valueStart,$valueEnd,$operator='AND')
@@ -499,8 +499,10 @@ class CDbCriteria extends CComponent
 			$criteria=new self($criteria);
 		if($this->select!==$criteria->select)
 		{
-			if($this->select==='*')
+			if($this->select==='*'||$this->select===false)
 				$this->select=$criteria->select;
+			elseif($criteria->select===false)
+				$this->select=false;
 			elseif($criteria->select!=='*')
 			{
 				$select1=is_string($this->select)?preg_split('/\s*,\s*/',trim($this->select),-1,PREG_SPLIT_NO_EMPTY):$this->select;
@@ -520,7 +522,7 @@ class CDbCriteria extends CComponent
 		if($this->params!==$criteria->params)
 			$this->params=array_merge($this->params,$criteria->params);
 
-		if($criteria->limit>0)
+		if($criteria->limit>=0)
 			$this->limit=$criteria->limit;
 
 		if($criteria->offset>=0)

@@ -4,7 +4,7 @@
         background: white !important;
      }
 .dropbtn {
-    background-color: rgb(91, 183, 91);
+    background-color: white;
     color: white;
     padding: 16px;
     font-size: 16px;
@@ -14,7 +14,7 @@
 
 /* Dropdown button on hover & focus */
 .dropbtn:hover, .dropbtn:focus {
-    background-color: rgb(91, 183, 91);
+    background-color: white;
 }
 
 /* The container <div> - needed to position the dropdown content */
@@ -71,20 +71,22 @@ echo '</center>';
  * */
 // LEFT MENU
   // http://localhost/linxbooks_project/index.php/lbProject/wikiPage/create
-  echo '<div id="lb-container-header">
-            <div class="lb-header-right" style="margin-left:-11px;"><h3>Dự án</h3></div>
-            <div class="lb-header-left">
-                &nbsp;
-                 <div class="dropdown">
-                  <button onclick="myFunction()" class="dropbtn"><i class="icon-plus icon-white"></i></button>
-                  <div id="myDropdown" class="dropdown-content">
-                    <a href="create">Create Project</a>
-                    <a href="'.Yii::app()->getBaseUrl().'/index.php/lbProject/wikiPage/create">Create Wiki Page</a>
-                  </div>
-                </div> 
-                
-                <input placeholder="Search" value="" style="border-radius: 15px; margin-top: 3px;" onkeyup="search_name_invoice(this.value);" type="text">
-            </div>
+// <a style="float: left;" href="'.Yii::app()->getBaseUrl().'/index.php/lbProject/wikiPage/create">Create Wiki Page</a>
+  
+echo '<div id="lb-container-header">
+    <div class="lb-header-right"><h3>'.Yii::t('lang','Project').'</h3></div>
+    <div class="lb-header-left">
+        &nbsp;
+         <div class="dropdown">
+          <button onclick="myFunction()" class="dropbtn"><i class="icon-plus"></i></button>
+          <div id="myDropdown" class="dropdown-content">
+            <a style="float: left;" href="create">Create Project</a>
+            
+          </div>
+        </div> 
+        
+        <input placeholder="Search" value="" style="border-radius: 15px; margin-top: 3px;" onkeyup="search_name_invoice(this.value);" type="text">
+    </div>
 </div><br>';
 ?>
 <?php
@@ -94,39 +96,55 @@ echo '</center>';
 <?php
     // echo ; #999
     // $count_project = " <i style='background-color: #999; color: white; padding: 4px; border-radius: 15px;'>".count(Project::model()->findAll())."</i>";
+    $taskModel = new Task();
+    $documentModel = new Documents();
+    $wikiModel = new WikiPage();
     $count_project = " <span class='badge'>".count(Project::model()->findAll())."</span>";
     $count_task = " <span class='badge badge badge-warning'>".count(Task::model()->findAll())."</span>";
     $count_document = " <span class='badge badge badge-success'>".count(Documents::model()->findAll())."</span>";
     $count_wiki = " <span class='badge badge-info'>".count(WikiPage::model()->findAll())."</span>";
     $this->widget('bootstrap.widgets.TbTabs', array(
-                    'type'=>'tabs', // 'tabs' or 'pills'
-                    'encodeLabel'=>false,
-                    'tabs'=> 
-                    array(
-                               array('id'=>'tab1','label'=>Yii::t('lang','Dự án').$count_project, 
-                                                'content'=> $this->renderPartial('project_all', array(
-                                                        // 'taxModel'=>$taxModel,
-                                                ),true),
-                                                'active'=>true),
-                                array('id'=>'tab2','label'=>Yii::t('lang','Công việc').$count_task, 
-                                                'content'=> $this->renderPartial('task_all', array(
-                                                        // 'taxModel'=>$taxModel,
-                                                ),true),
-                                                'active'=>false),
-                                array('id'=>'tab3','label'=>Yii::t('lang','Văn bản').$count_document, 
-                                                'content'=> $this->renderPartial('document_all', array(
-                                                        // 'taxModel'=>$taxModel,
-                                                ),true),
-                                                'active'=>false),
-                                array('id'=>'tab4','label'=>Yii::t('lang','Wiki').$count_wiki, 
-                                                'content'=> $this->renderPartial('wiki_all', array(
-                                                        // 'taxModel'=>$taxModel,
-                                                ),true),
-                                                'active'=>false),
+            'type' => 'tabs',
+            'encodeLabel'=>false,
+            'tabs' => array(
+                    array('id' => 'tab1', 'label' => Yii::t('lang','Project').$count_project, 'content' => $this->renderPartial('project_all', null, true), 'active' => true),
+                    array('id' => 'tab2', 'label' => Yii::t('lang','Task').$count_task, 'content' => 'Loading ....'),
+                    array('id' => 'tab3', 'label' => Yii::t('lang','Documents').$count_document, 'content' => 'Loading ....'),
+                    array('id' => 'tab4', 'label' => Yii::t('lang','Wiki').$count_wiki, 'content' => 'Loading ....'),
+            ),
+            'events'=>array('shown'=>'js:loadContent')
+        )
+    );
+    // $this->widget('bootstrap.widgets.TbTabs', array(
+    //                 'type'=>'tabs', // 'tabs' or 'pills'
+    //                 'encodeLabel'=>false,
+    //                 'tabs'=> 
+    //                 array(
+    //                            array('id'=>'tab1','label'=>Yii::t('lang','Dự án').$count_project, 
+    //                                             'content'=> $this->renderPartial('project_all', array(
+    //                                                     // 'taxModel'=>$taxModel,
+    //                                             ),true),
+    //                                             'active'=>true),
+    //                             array('id'=>'tab2','label'=>Yii::t('lang','Công việc').$count_task, 
+    //                                             'content'=> $this->renderPartial('task_all', array(
+    //                                                     // 'model' => $model,
+    //                                                     'taskModel' => $taskModel,
+    //                                             ),true),
+    //                                             'active'=>false),
+    //                             array('id'=>'tab3','label'=>Yii::t('lang','Văn bản').$count_document, 
+    //                                             'content'=> $this->renderPartial('document_all', array(
+    //                                                     'documentModel' => $documentModel,
+    //                                             ),true),
+    //                                             'active'=>false),
+    //                             array('id'=>'tab4','label'=>Yii::t('lang','Wiki').$count_wiki, 
+    //                                             'content'=> $this->renderPartial('wiki_all', array(
+    //                                                     'wikiModel'=>$wikiModel,
+    //                                             ),true),
+    //                                             'active'=>false),
                                  
                                 
-                            )
-    ));
+    //                         )
+    // ));
 ?>
 
 
@@ -520,6 +538,39 @@ if (isset($archived_projects) && count($archived_projects) > 0) {
 }
 ?>
 <script type="text/javascript">
+function loadContent(e){
+
+    var tabId = e.target.getAttribute("href");
+
+    var ctUrl = ''; 
+
+    if(tabId == '#tab2') {
+        ctUrl = 'taskall';
+    } else if(tabId == '#tab3') {
+        ctUrl = 'documentall';
+    } else if(tabId == '#tab4') {
+        ctUrl = 'wikiall';
+    }
+
+    if(ctUrl != '') {
+        $.ajax({
+            url      : ctUrl,
+            type     : 'POST',
+            dataType : 'html',
+            cache    : false,
+            success  : function(html)
+            {
+                jQuery(tabId).html(html);
+            },
+            error:function(){
+                    alert('Request failed');
+            }
+        });
+    }
+
+    preventDefault();
+    return false;
+}
     function myFunction() {
     document.getElementById("myDropdown").classList.toggle("show");
 }

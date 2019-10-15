@@ -12,6 +12,11 @@
 /**
  * CHtml is a static class that provides a collection of helper methods for creating HTML views.
  *
+ * Nearly all of the methods in this class allow setting additional html attributes for the html
+ * tags they generate. You can specify for example. 'class', 'style'  or 'id' for an html element.
+ * For example when using <code>array('class' => 'my-class', 'target' => '_blank')</code> as htmlOptions
+ * it will result in the html attributes rendered like this: <code>class="my-class" target="_blank"</code>.
+ *
  * @author Qiang Xue <qiang.xue@gmail.com>
  * @package system.web.helpers
  * @since 1.0
@@ -335,12 +340,20 @@ class CHtml
 	public static function beginForm($action='',$method='post',$htmlOptions=array())
 	{
 		$htmlOptions['action']=$url=self::normalizeUrl($action);
+		if(strcasecmp($method,'get')!==0 && strcasecmp($method,'post')!==0)
+		{
+			$customMethod=$method;
+			$method='post';
+		}
+		else
+			$customMethod=false;
+
 		$htmlOptions['method']=$method;
 		$form=self::tag('form',$htmlOptions,false,false);
 		$hiddens=array();
 		if(!strcasecmp($method,'get') && ($pos=strpos($url,'?'))!==false)
 		{
-			foreach(explode('&',substr($url,$pos+1)) as $pair)
+			foreach(explode('&',substr(preg_replace('/#.+$/','',$url),$pos+1)) as $pair)
 			{
 				if(($pos=strpos($pair,'='))!==false)
 					$hiddens[]=self::hiddenField(urldecode(substr($pair,0,$pos)),urldecode(substr($pair,$pos+1)),array('id'=>false));
@@ -351,8 +364,10 @@ class CHtml
 		$request=Yii::app()->request;
 		if($request->enableCsrfValidation && !strcasecmp($method,'post'))
 			$hiddens[]=self::hiddenField($request->csrfTokenName,$request->getCsrfToken(),array('id'=>false));
+		if($customMethod!==false)
+			$hiddens[]=self::hiddenField('_method',$customMethod);
 		if($hiddens!==array())
-			$form.="\n".self::tag('div',array('style'=>'display:none'),implode("\n",$hiddens));
+			$form.="\n".implode("\n",$hiddens);
 		return $form;
 	}
 
@@ -581,6 +596,23 @@ class CHtml
 	}
 
 	/**
+	 * Generates a color picker field input.
+	 * @param string $name the input name
+	 * @param string $value the input value
+	 * @param array $htmlOptions additional HTML attributes. Besides normal HTML attributes, a few special
+	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
+	 * @return string the generated input field
+	 * @see clientChange
+	 * @see inputField
+	 * @since 1.1.16
+	 */
+	public static function colorField($name,$value='',$htmlOptions=array())
+	{
+		self::clientChange('change',$htmlOptions);
+		return self::inputField('color',$name,$value,$htmlOptions);
+	}
+
+	/**
 	 * Generates a text field input.
 	 * @param string $name the input name
 	 * @param string $value the input value
@@ -596,6 +628,22 @@ class CHtml
 		return self::inputField('text',$name,$value,$htmlOptions);
 	}
 
+	/**
+	 * Generates a search field input.
+	 * @param string $name the input name
+	 * @param string $value the input value
+	 * @param array $htmlOptions additional HTML attributes. Besides normal HTML attributes, a few special
+	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
+	 * @return string the generated input field
+	 * @see clientChange
+	 * @see inputField
+	 * @since 1.1.16
+	 */
+	public static function searchField($name,$value='',$htmlOptions=array())
+	{
+		self::clientChange('change',$htmlOptions);
+		return self::inputField('search',$name,$value,$htmlOptions);
+	}
 	/**
 	 * Generates a number field input.
 	 * @param string $name the input name
@@ -662,6 +710,57 @@ class CHtml
 	{
 		self::clientChange('change',$htmlOptions);
 		return self::inputField('time',$name,$value,$htmlOptions);
+	}
+
+	/**
+	 * Generates a datetime field input.
+	 * @param string $name the input name
+	 * @param string $value the input value
+	 * @param array $htmlOptions additional HTML attributes. Besides normal HTML attributes, a few special
+	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
+	 * @return string the generated input field
+	 * @see clientChange
+	 * @see inputField
+	 * @since 1.1.16
+	 */
+	public static function dateTimeField($name,$value='',$htmlOptions=array())
+	{
+		self::clientChange('change',$htmlOptions);
+		return self::inputField('datetime',$name,$value,$htmlOptions);
+	}
+
+	/**
+	 * Generates a local datetime field input.
+	 * @param string $name the input name
+	 * @param string $value the input value
+	 * @param array $htmlOptions additional HTML attributes. Besides normal HTML attributes, a few special
+	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
+	 * @return string the generated input field
+	 * @see clientChange
+	 * @see inputField
+	 * @since 1.1.16
+	 */
+	public static function dateTimeLocalField($name,$value='',$htmlOptions=array())
+	{
+		self::clientChange('change',$htmlOptions);
+		return self::inputField('datetime-local',$name,$value,$htmlOptions);
+	}
+
+	/**
+	 * Generates a week field input.
+	 * @param string $name the input name
+	 * @param string $value the input value
+	 * @param array $htmlOptions additional HTML attributes. Besides normal HTML attributes, a few special
+	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
+	 * @return string the generated input field
+	 * @see clientChange
+	 * @see inputField
+	 * @since 1.1.16
+	 */
+	public static function weekField($name,$value='',$htmlOptions=array())
+	{
+		self::clientChange('change',$htmlOptions);
+		return self::inputField('week',$name,$value,$htmlOptions);
 	}
 
 	/**
@@ -819,6 +918,8 @@ class CHtml
 				$uncheckOptions=array('id'=>self::ID_PREFIX.$htmlOptions['id']);
 			else
 				$uncheckOptions=array('id'=>false);
+			if(!empty($htmlOptions['disabled']))
+				$uncheckOptions['disabled']=$htmlOptions['disabled'];
 			$hidden=self::hiddenField($name,$uncheck,$uncheckOptions);
 		}
 		else
@@ -866,6 +967,8 @@ class CHtml
 				$uncheckOptions=array('id'=>self::ID_PREFIX.$htmlOptions['id']);
 			else
 				$uncheckOptions=array('id'=>false);
+			if(!empty($htmlOptions['disabled']))
+				$uncheckOptions['disabled']=$htmlOptions['disabled'];
 			$hidden=self::hiddenField($name,$uncheck,$uncheckOptions);
 		}
 		else
@@ -893,13 +996,13 @@ class CHtml
 	 * The 'empty' option can also be an array of value-label pairs.
 	 * Each pair will be used to render a list option at the beginning. Note, the text label will NOT be HTML-encoded.</li>
 	 * <li>options: array, specifies additional attributes for each OPTION tag.
-	 *     The array keys must be the option values, and the array values are the extra
-	 *     OPTION tag attributes in the name-value pairs. For example,
+	 *	 The array keys must be the option values, and the array values are the extra
+	 *	 OPTION tag attributes in the name-value pairs. For example,
 	 * <pre>
-	 *     array(
-	 *         'value1'=>array('disabled'=>true,'label'=>'value 1'),
-	 *         'value2'=>array('label'=>'value 2'),
-	 *     );
+	 *	 array(
+	 *		 'value1'=>array('disabled'=>true,'label'=>'value 1'),
+	 *		 'value2'=>array('label'=>'value 2'),
+	 *	 );
 	 * </pre>
 	 * </li>
 	 * </ul>
@@ -933,6 +1036,8 @@ class CHtml
 			if(isset($htmlOptions['unselectValue']))
 			{
 				$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
+				if(!empty($htmlOptions['disabled']))
+					$hiddenOptions['disabled']=$htmlOptions['disabled'];
 				$hidden=self::hiddenField(substr($htmlOptions['name'],0,-2),$htmlOptions['unselectValue'],$hiddenOptions);
 				unset($htmlOptions['unselectValue']);
 			}
@@ -959,13 +1064,13 @@ class CHtml
 	 * The 'empty' option can also be an array of value-label pairs.
 	 * Each pair will be used to render a list option at the beginning. Note, the text label will NOT be HTML-encoded.</li>
 	 * <li>options: array, specifies additional attributes for each OPTION tag.
-	 *     The array keys must be the option values, and the array values are the extra
-	 *     OPTION tag attributes in the name-value pairs. For example,
+	 *	 The array keys must be the option values, and the array values are the extra
+	 *	 OPTION tag attributes in the name-value pairs. For example,
 	 * <pre>
-	 *     array(
-	 *         'value1'=>array('disabled'=>true,'label'=>'value 1'),
-	 *         'value2'=>array('label'=>'value 2'),
-	 *     );
+	 *	 array(
+	 *		 'value1'=>array('disabled'=>true,'label'=>'value 1'),
+	 *		 'value2'=>array('label'=>'value 2'),
+	 *	 );
 	 * </pre>
 	 * </li>
 	 * </ul>
@@ -1024,7 +1129,7 @@ class CHtml
 	public static function checkBoxList($name,$select,$data,$htmlOptions=array())
 	{
 		$template=isset($htmlOptions['template'])?$htmlOptions['template']:'{input} {label}';
-		$separator=isset($htmlOptions['separator'])?$htmlOptions['separator']:"<br/>\n";
+		$separator=isset($htmlOptions['separator'])?$htmlOptions['separator']:self::tag('br');
 		$container=isset($htmlOptions['container'])?$htmlOptions['container']:'span';
 		unset($htmlOptions['template'],$htmlOptions['separator'],$htmlOptions['container']);
 
@@ -1140,7 +1245,7 @@ EOD;
 	public static function radioButtonList($name,$select,$data,$htmlOptions=array())
 	{
 		$template=isset($htmlOptions['template'])?$htmlOptions['template']:'{input} {label}';
-		$separator=isset($htmlOptions['separator'])?$htmlOptions['separator']:"<br/>\n";
+		$separator=isset($htmlOptions['separator'])?$htmlOptions['separator']:self::tag('br');
 		$container=isset($htmlOptions['container'])?$htmlOptions['container']:'span';
 		unset($htmlOptions['template'],$htmlOptions['separator'],$htmlOptions['container']);
 
@@ -1151,7 +1256,7 @@ EOD;
 		{
 			if(!is_array($htmlOptions['empty']))
 				$htmlOptions['empty']=array(''=>$htmlOptions['empty']);
-			$data=array_merge($htmlOptions['empty'],$data);
+			$data=CMap::mergeArray($htmlOptions['empty'],$data);
 			unset($htmlOptions['empty']);
 		}
 
@@ -1411,7 +1516,8 @@ EOD;
 	{
 		$realAttribute=$attribute;
 		self::resolveName($model,$attribute); // strip off square brackets if any
-		$htmlOptions['required']=$model->isAttributeRequired($attribute);
+		if (!isset($htmlOptions['required']))
+			$htmlOptions['required']=$model->isAttributeRequired($attribute);
 		return self::activeLabel($model,$realAttribute,$htmlOptions);
 	}
 
@@ -1575,6 +1681,86 @@ EOD;
 	}
 
 	/**
+	 * Generates a datetime field input for a model attribute.
+	 * If the attribute has input error, the input field's CSS class will
+	 * be appended with {@link errorCss}.
+	 * @param CModel $model the data model
+	 * @param string $attribute the attribute
+	 * @param array $htmlOptions additional HTML attributes. Besides normal HTML attributes, a few special
+	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
+	 * @return string the generated input field
+	 * @see clientChange
+	 * @see activeInputField
+	 * @since 1.1.16
+	 */
+	public static function activeDateTimeField($model,$attribute,$htmlOptions=array())
+	{
+		self::resolveNameID($model,$attribute,$htmlOptions);
+		self::clientChange('change',$htmlOptions);
+		return self::activeInputField('datetime',$model,$attribute,$htmlOptions);
+	}
+
+	/**
+	 * Generates a datetime-local field input for a model attribute.
+	 * If the attribute has input error, the input field's CSS class will
+	 * be appended with {@link errorCss}.
+	 * @param CModel $model the data model
+	 * @param string $attribute the attribute
+	 * @param array $htmlOptions additional HTML attributes. Besides normal HTML attributes, a few special
+	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
+	 * @return string the generated input field
+	 * @see clientChange
+	 * @see activeInputField
+	 * @since 1.1.16
+	 */
+	public static function activeDateTimeLocalField($model,$attribute,$htmlOptions=array())
+	{
+		self::resolveNameID($model,$attribute,$htmlOptions);
+		self::clientChange('change',$htmlOptions);
+		return self::activeInputField('datetime-local',$model,$attribute,$htmlOptions);
+	}
+
+	/**
+	 * Generates a week field input for a model attribute.
+	 * If the attribute has input error, the input field's CSS class will
+	 * be appended with {@link errorCss}.
+	 * @param CModel $model the data model
+	 * @param string $attribute the attribute
+	 * @param array $htmlOptions additional HTML attributes. Besides normal HTML attributes, a few special
+	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
+	 * @return string the generated input field
+	 * @see clientChange
+	 * @see activeInputField
+	 * @since 1.1.16
+	 */
+	public static function activeWeekField($model,$attribute,$htmlOptions=array())
+	{
+		self::resolveNameID($model,$attribute,$htmlOptions);
+		self::clientChange('change',$htmlOptions);
+		return self::activeInputField('week',$model,$attribute,$htmlOptions);
+	}
+
+	/**
+	 * Generates a color picker field input for a model attribute.
+	 * If the attribute has input error, the input field's CSS class will
+	 * be appended with {@link errorCss}.
+	 * @param CModel $model the data model
+	 * @param string $attribute the attribute
+	 * @param array $htmlOptions additional HTML attributes. Besides normal HTML attributes, a few special
+	 * attributes are also recognized (see {@link clientChange} and {@link tag} for more details.)
+	 * @return string the generated input field
+	 * @see clientChange
+	 * @see activeInputField
+	 * @since 1.1.16
+	 */
+	public static function activeColorField($model,$attribute,$htmlOptions=array())
+	{
+		self::resolveNameID($model,$attribute,$htmlOptions);
+		self::clientChange('change',$htmlOptions);
+		return self::activeInputField('color',$model,$attribute,$htmlOptions);
+	}
+
+	/**
 	 * Generates a telephone field input for a model attribute.
 	 * If the attribute has input error, the input field's CSS class will
 	 * be appended with {@link errorCss}.
@@ -1672,6 +1858,8 @@ EOD;
 		// add a hidden field so that if a model only has a file field, we can
 		// still use isset($_POST[$modelClass]) to detect if the input is submitted
 		$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
+		if(!empty($htmlOptions['disabled']))
+			$hiddenOptions['disabled']=$htmlOptions['disabled'];
 		return self::hiddenField($htmlOptions['name'],'',$hiddenOptions)
 			. self::activeInputField('file',$model,$attribute,$htmlOptions);
 	}
@@ -1711,6 +1899,8 @@ EOD;
 			$uncheck='0';
 
 		$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
+		if(!empty($htmlOptions['disabled']))
+			$hiddenOptions['disabled']=$htmlOptions['disabled'];
 		$hidden=$uncheck!==null ? self::hiddenField($htmlOptions['name'],$uncheck,$hiddenOptions) : '';
 
 		// add a hidden field so that if the radio button is not selected, it still submits a value
@@ -1753,6 +1943,8 @@ EOD;
 			$uncheck='0';
 
 		$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
+		if(!empty($htmlOptions['disabled']))
+			$hiddenOptions['disabled']=$htmlOptions['disabled'];
 		$hidden=$uncheck!==null ? self::hiddenField($htmlOptions['name'],$uncheck,$hiddenOptions) : '';
 
 		return $hidden . self::activeInputField('checkbox',$model,$attribute,$htmlOptions);
@@ -1778,13 +1970,13 @@ EOD;
 	 * The 'empty' option can also be an array of value-label pairs.
 	 * Each pair will be used to render a list option at the beginning. Note, the text label will NOT be HTML-encoded.</li>
 	 * <li>options: array, specifies additional attributes for each OPTION tag.
-	 *     The array keys must be the option values, and the array values are the extra
-	 *     OPTION tag attributes in the name-value pairs. For example,
+	 *	 The array keys must be the option values, and the array values are the extra
+	 *	 OPTION tag attributes in the name-value pairs. For example,
 	 * <pre>
-	 *     array(
-	 *         'value1'=>array('disabled'=>true,'label'=>'value 1'),
-	 *         'value2'=>array('label'=>'value 2'),
-	 *     );
+	 *	 array(
+	 *		 'value1'=>array('disabled'=>true,'label'=>'value 1'),
+	 *		 'value2'=>array('label'=>'value 2'),
+	 *	 );
 	 * </pre>
 	 * </li>
 	 * </ul>
@@ -1815,6 +2007,8 @@ EOD;
 			if(isset($htmlOptions['unselectValue']))
 			{
 				$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
+				if(!empty($htmlOptions['disabled']))
+					$hiddenOptions['disabled']=$htmlOptions['disabled'];
 				$hidden=self::hiddenField(substr($htmlOptions['name'],0,-2),$htmlOptions['unselectValue'],$hiddenOptions);
 				unset($htmlOptions['unselectValue']);
 			}
@@ -1843,13 +2037,13 @@ EOD;
 	 * The 'empty' option can also be an array of value-label pairs.
 	 * Each pair will be used to render a list option at the beginning. Note, the text label will NOT be HTML-encoded.</li>
 	 * <li>options: array, specifies additional attributes for each OPTION tag.
-	 *     The array keys must be the option values, and the array values are the extra
-	 *     OPTION tag attributes in the name-value pairs. For example,
+	 *	 The array keys must be the option values, and the array values are the extra
+	 *	 OPTION tag attributes in the name-value pairs. For example,
 	 * <pre>
-	 *     array(
-	 *         'value1'=>array('disabled'=>true,'label'=>'value 1'),
-	 *         'value2'=>array('label'=>'value 2'),
-	 *     );
+	 *	 array(
+	 *		 'value1'=>array('disabled'=>true,'label'=>'value 1'),
+	 *		 'value2'=>array('label'=>'value 2'),
+	 *	 );
 	 * </pre>
 	 * </li>
 	 * </ul>
@@ -1891,6 +2085,12 @@ EOD;
 	 * or is false, the 'check all' checkbox will be displayed at the beginning of
 	 * the checkbox list.</li>
 	 * <li>encode: boolean, specifies whether to encode HTML-encode tag attributes and values. Defaults to true.</li>
+	 * <li>labelOptions: array, specifies the additional HTML attributes to be rendered
+	 * for every label tag in the list.</li>
+	 * <li>container: string, specifies the checkboxes enclosing tag. Defaults to 'span'.
+	 * If the value is an empty string, no enclosing tag will be generated</li>
+	 * <li>baseID: string, specifies the base ID prefix to be used for checkboxes in the list.
+	 * This option is available since version 1.1.13.</li>
 	 * </ul>
 	 * Since 1.1.7, a special option named 'uncheckValue' is available. It can be used to set the value
 	 * that will be returned when the checkbox is not checked. By default, this value is ''.
@@ -1917,6 +2117,8 @@ EOD;
 			$uncheck='';
 
 		$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
+		if(!empty($htmlOptions['disabled']))
+			$hiddenOptions['disabled']=$htmlOptions['disabled'];
 		$hidden=$uncheck!==null ? self::hiddenField($name,$uncheck,$hiddenOptions) : '';
 
 		return $hidden . self::checkBoxList($name,$selection,$data,$htmlOptions);
@@ -1936,9 +2138,21 @@ EOD;
 	 * <ul>
 	 * <li>template: string, specifies how each radio button is rendered. Defaults
 	 * to "{input} {label}", where "{input}" will be replaced by the generated
-	 * radio button input tag while "{label}" will be replaced by the corresponding radio button label.</li>
+	 * radio button input tag while "{label}" will be replaced by the corresponding radio button label,
+	 * {beginLabel} will be replaced by &lt;label&gt; with labelOptions, {labelTitle} will be replaced
+	 * by the corresponding radio button label title and {endLabel} will be replaced by &lt;/label&gt;</li>
 	 * <li>separator: string, specifies the string that separates the generated radio buttons. Defaults to new line (<br/>).</li>
 	 * <li>encode: boolean, specifies whether to encode HTML-encode tag attributes and values. Defaults to true.</li>
+	 * <li>labelOptions: array, specifies the additional HTML attributes to be rendered
+	 * for every label tag in the list.</li>
+	 * <li>container: string, specifies the radio buttons enclosing tag. Defaults to 'span'.
+	 * If the value is an empty string, no enclosing tag will be generated</li>
+	 * <li>baseID: string, specifies the base ID prefix to be used for radio buttons in the list.
+	 * This option is available since version 1.1.13.</li>
+	 * <li>empty: string, specifies the text corresponding to empty selection. Its value is empty.
+	 * The 'empty' option can also be an array of value-label pairs.
+	 * Each pair will be used to render a radio button at the beginning. Note, the text label will NOT be HTML-encoded.
+	 * This option is available since version 1.1.14.</li>
 	 * </ul>
 	 * Since version 1.1.7, a special option named 'uncheckValue' is available that can be used to specify the value
 	 * returned when the radio button is not checked. By default, this value is ''. Internally, a hidden field is
@@ -1965,6 +2179,8 @@ EOD;
 			$uncheck='';
 
 		$hiddenOptions=isset($htmlOptions['id']) ? array('id'=>self::ID_PREFIX.$htmlOptions['id']) : array('id'=>false);
+		if(!empty($htmlOptions['disabled']))
+			$hiddenOptions['disabled']=$htmlOptions['disabled'];
 		$hidden=$uncheck!==null ? self::hiddenField($name,$uncheck,$hiddenOptions) : '';
 
 		return $hidden . self::radioButtonList($name,$selection,$data,$htmlOptions);
@@ -2004,7 +2220,7 @@ EOD;
 				foreach($errors as $error)
 				{
 					if($error!='')
-						$content.="<li>$error</li>\n";
+						$content.= '<li>'.self::encode($error)."</li>\n";
 					if($firstError)
 						break;
 				}
@@ -2035,7 +2251,7 @@ EOD;
 	public static function error($model,$attribute,$htmlOptions=array())
 	{
 		self::resolveName($model,$attribute); // turn [a][b]attr into attr
-		$error=$model->getError($attribute);
+		$error=self::encode($model->getError($attribute));
 		if($error!='')
 		{
 			if(!isset($htmlOptions['class']))
@@ -2132,8 +2348,21 @@ EOD;
 		if(is_scalar($attribute) || $attribute===null)
 			foreach(explode('.',$attribute) as $name)
 			{
-				if(is_object($model) && isset($model->$name))
-					$model=$model->$name;
+				if(is_object($model))
+				{
+					if ((version_compare(PHP_VERSION, '7.2.0', '>=')
+						&& is_numeric($name))
+						|| !isset($model->$name)
+					)
+					{
+						return $defaultValue;
+					}
+					else
+					{
+						$model=$model->$name;
+					}
+				}
+
 				elseif(is_array($model) && isset($model[$name]))
 					$model=$model[$name];
 				else
@@ -2200,7 +2429,7 @@ EOD;
 		else
 			throw new CException(Yii::t('yii','The $converter argument must be a valid callback or null.'));
 	}
-	
+
 	/**
 	 * Generates input field name for a model attribute.
 	 * Unlike {@link resolveName}, this method does NOT modify the attribute name.
@@ -2229,7 +2458,9 @@ EOD;
 	protected static function activeInputField($type,$model,$attribute,$htmlOptions)
 	{
 		$htmlOptions['type']=$type;
-		if($type==='text' || $type==='password')
+		if($type==='text'||$type==='password'||$type==='color'||$type==='date'||$type==='datetime'||
+			$type==='datetime-local'||$type==='email'||$type==='month'||$type==='number'||$type==='range'||
+			$type==='search'||$type==='tel'||$type==='time'||$type==='url'||$type==='week')
 		{
 			if(!isset($htmlOptions['maxlength']))
 			{
@@ -2267,13 +2498,13 @@ EOD;
 	 * The 'empty' option can also be an array of value-label pairs.
 	 * Each pair will be used to render a list option at the beginning. Note, the text label will NOT be HTML-encoded.</li>
 	 * <li>options: array, specifies additional attributes for each OPTION tag.
-	 *     The array keys must be the option values, and the array values are the extra
-	 *     OPTION tag attributes in the name-value pairs. For example,
+	 *	 The array keys must be the option values, and the array values are the extra
+	 *	 OPTION tag attributes in the name-value pairs. For example,
 	 * <pre>
-	 *     array(
-	 *         'value1'=>array('disabled'=>true,'label'=>'value 1'),
-	 *         'value2'=>array('label'=>'value 2'),
-	 *     );
+	 *	 array(
+	 *		 'value1'=>array('disabled'=>true,'label'=>'value 1'),
+	 *		 'value2'=>array('label'=>'value 2'),
+	 *	 );
 	 * </pre>
 	 * </li>
 	 * <li>key: string, specifies the name of key attribute of the selection object(s).
@@ -2473,7 +2704,7 @@ EOD;
 	public static function resolveName($model,&$attribute)
 	{
 		$modelName=self::modelName($model);
-		
+
 		if(($pos=strpos($attribute,'['))!==false)
 		{
 			if($pos!==0)  // e.g. name[a][b]
@@ -2555,9 +2786,9 @@ EOD;
 	public static function renderAttributes($htmlOptions)
 	{
 		static $specialAttributes=array(
-			'async'=>1,
 			'autofocus'=>1,
 			'autoplay'=>1,
+			'async'=>1,
 			'checked'=>1,
 			'controls'=>1,
 			'declare'=>1,
@@ -2567,6 +2798,7 @@ EOD;
 			'formnovalidate'=>1,
 			'hidden'=>1,
 			'ismap'=>1,
+			'itemscope'=>1,
 			'loop'=>1,
 			'multiple'=>1,
 			'muted'=>1,
@@ -2599,7 +2831,10 @@ EOD;
 		{
 			if(isset($specialAttributes[$name]))
 			{
-				if($value)
+				if($value===false && $name==='async') {
+					$html .= ' ' . $name.'="false"';
+				}
+				elseif($value)
 				{
 					$html .= ' ' . $name;
 					if(self::$renderSpecialAttributesValue)

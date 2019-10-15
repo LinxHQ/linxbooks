@@ -129,7 +129,7 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     				'data-toggle'=>'modal',
     				'data-target'=>'#wiki-template-form-popover-' . $model->wiki_page_id,
     				'onclick' =>'$("#wiki-template-form-popover-'. $model->wiki_page_id .' .modal-body")
-						.load("'.Yii::app()->createUrl("wikiPage/popTemplates").'/subscription/" + $("#WikiPage_account_subscription_id").val());
+						.load("'.Yii::app()->createUrl("lbProject/wikiPage/popTemplates").'/subscription/" + $("#WikiPage_account_subscription_id").val());
 						return false;',
     		) // end html options
     ); // end link
@@ -214,9 +214,9 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
 	    } // end for listing existing attachments
     ?>
 	 	<iframe width="100%" frameborder="0" height="140" 
-	 		src="<?php echo Yii::app()->createUrl("wikiPage/formUploadView", array(
+	 		src="<?php echo Yii::app()->createUrl("lbProject/wikiPage/formUploadView", array(
  				'id' => $model->wiki_page_id > 0 ? $model->wiki_page_id : 0,
- 				'project_id' => isset($project_id) ? $project_id : 0 ));?>"></iframe>
+ 				'project_id' => $project_id ));?>"></iframe>
  	<?php 
     } // end if for showing TAGS and ATTACHMENTS
  	?>
@@ -238,30 +238,34 @@ $form = $this->beginWidget('bootstrap.widgets.TbActiveForm', array(
     // DELETE BUTTON
     if (Permission::checkPermission($model, PERMISSION_WIKI_PAGE_DELETE))
 	{
-		echo CHtml::ajaxLink(
-				'<i class="icon-trash"></i> Delete',
-				array('wikiPage/delete', 'id' => $model->wiki_page_id), // Yii URL
-				array('success' => 
-                                        $model->project_id > 0 ? 
-                                        'function(data){
-						if (data == "success")
-						{
-							var url = "' . Yii::app()->createUrl('project/view', array('id' => $model->project_id, 'tab' => 'wiki')) . '";
-							workspaceLoadContent(url);
-							workspacePushState(url);
-						}
-					}' : 
-                                        'function(data){
-						if (data == "success")
-						{
-							var url = "' . CHtml::normalizeUrl(Utilities::getAppLinkiWiki()) . '";
-							workspaceLoadContent(url);
-							workspacePushState(url);
-						}
-					}', // end success param 
-					'type' => 'POST'), // jQuery selector
-				array('id' => 'ajax-id-'.uniqid(), 'confirm' => 'Are you sure to delete this wiki page and its sub page(s)?')
-		);
+		// echo CHtml::ajaxLink(
+		// 		'<i class="icon-trash"></i> Delete',
+		// 		array('wikiPage/delete', 'id' => $model->wiki_page_id), // Yii URL
+		// 		array('success' => 
+  //                                       $model->project_id > 0 ? 
+  //                                       'function(data){
+		// 				if (data == "success")
+		// 				{
+		// 					var url = "' . Yii::app()->createUrl('project/view', array('id' => $model->project_id, 'tab' => 'wiki')) . '";
+		// 					workspaceLoadContent(url);
+		// 					workspacePushState(url);
+		// 				}
+		// 			}' : 
+  //                                       'function(data){
+		// 				if (data == "success")
+		// 				{
+		// 					// var url = "' . CHtml::normalizeUrl(Utilities::getAppLinkiWiki()) . '";
+		// 					// workspaceLoadContent(url);
+		// 					// workspacePushState(url);
+
+		// 					var url = "' . Yii::app()->createUrl('project/view', array('id' => $model->project_id, 'tab' => 'wiki')) . '";
+		// 					workspaceLoadContent(url);
+		// 					workspacePushState(url);
+		// 				}
+		// 			}', // end success param 
+		// 			'type' => 'POST'), // jQuery selector
+		// 		array('id' => 'ajax-id-'.uniqid(), 'confirm' => 'Are you sure to delete this wiki page and its sub page(s)?')
+		// );
 	}
     ?>
     <?php /**$this->widget('bootstrap.widgets.TbButton', 
@@ -301,7 +305,7 @@ function handlePostTempUpload(documentID, originalName, type, size, secureName)
 
 function loadWikiTree(project_id)
 {
-	$.get('<?php echo Yii::app()->createUrl('wikiPage/wikiTreeSource');?>/project_id/' + project_id, function(data){
+	$.get('<?php echo Yii::app()->createUrl('lbProject/wikiPage/wikiTreeSource');?>/project_id/' + project_id, function(data){
 		$('#wiki-page-parent').empty();
 		$('#wiki-page-parent').append('<option value="0">Select</option>');
 		var json_data = JSON.parse(data);

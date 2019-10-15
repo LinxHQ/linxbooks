@@ -122,6 +122,7 @@ class LbQuotationItem extends CLBActiveRecord
 		
 		$dataProvider = new CActiveDataProvider($this, array(
 				'criteria'=>$criteria,
+				'pagination'=> false,
 		));
 		
 		return $this->getResultsBasedForReturnType($dataProvider, $return_type);

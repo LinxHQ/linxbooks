@@ -6,11 +6,11 @@
 
 $project = Project::model()->findByPk($project_id);
 
-// check permission
-if (!Permission::checkPermission($project, PERMISSION_PROJECT_UPDATE_MEMBER) && !AccountTeamMember::model()->isAcountAdmin())
-{
-	return false;
-}
+// // check permission
+// if (!Permission::checkPermission($project, PERMISSION_PROJECT_UPDATE_MEMBER) && !AccountTeamMember::model()->isAcountAdmin())
+// {
+// 	return false;
+// }
 
 /**
  * account team members data source

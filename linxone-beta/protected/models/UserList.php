@@ -368,12 +368,12 @@ class UserList extends CActiveRecord
                 $term = $value['system_list_item_name'];
                 if($term=='Immediate')
                     return $termValue = 0;
+                if($term=='2 days')
+                    return $termValue = 2;
+                if($term=='5 days')
+                    return $termValue = 5;
                 if($term=='7 days')
                     return $termValue = 7;
-                if($term=='14 days')
-                    return $termValue = 14;
-                if($term=='30 days')
-                    return $termValue = 30;
             }
         }
         public function getTermName($list_code,$list_id){

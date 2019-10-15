@@ -5,8 +5,8 @@
 $m = $this->module->id;
 $canAdd = BasicPermission::model()->checkModules($m, 'add');
 $canList = BasicPermission::model()->checkModules($m, 'list');
-$DecimalSymbol = LbGenera::model()->getDecimalSymbol();
-$ThousandSeparator = LbGenera::model()->getThousandSeparator();
+$DecimalSymbol = LbGenera::model()->getGeneraDecimalSymbol();
+$ThousandSeparator = LbGenera::model()->getGeneraThousandSeparator();
 $GeneraCurrency = LbGenera::model()->getGeneraCurrency();
 ?>
 
@@ -31,15 +31,15 @@ $GeneraCurrency = LbGenera::model()->getGeneraCurrency();
 // NEW BUTTON
     echo '<div id="lb-container-header">';
             
-            echo '<div style="margin-left: -10px" class="lb-header-right"><h3>Expenses</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div class="lb-header-right"><h3>Expenses</h3></div>';
+            echo '<div class="lb-header-left lb-header-left-view-expenses">';
 //            LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
 
 
             echo '&nbsp;';
-            echo LBApplication::workspaceLink('<i class="icon-plus icon-white"></i> ', LbExpenses::model()->getCreateURL('create'), array('live'=>'false'));
+            echo LBApplication::workspaceLink('<i class="icon-plus"></i> ', LbExpenses::model()->getCreateURL('create'), array('live'=>'false'));
 	    echo '&nbsp;';
-            echo CHtml::link('<i class="icon-download-alt icon-white"></i> ', 
+            echo CHtml::link('<i class="icon-download-alt"></i> ', 
                     '#', array('live'=>'false', 'onclick'=>'export_excel(); return false;'));
             
             //$this->widget('bootstrap.widgets.TbButtonGroup', array(

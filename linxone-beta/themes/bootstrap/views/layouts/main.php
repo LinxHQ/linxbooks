@@ -11,6 +11,8 @@
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/mixins.less">
     <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/datepicker.css">
     <link rel="stylesheet" href="<?php echo Yii::app()->baseUrl; ?>/js/highlight/styles/default.css">
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/jquery.bootstrap.treeselect.css">
     <!--	<link href='https://fonts.googleapis.com/css?family=Fjalla+One' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Rouge+Script|Kaushan+Script' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Lobster' rel='stylesheet' type='text/css'>
@@ -36,6 +38,7 @@
     <script src="<?php echo Yii::App()->baseUrl; ?>/js/autosize/jquery.autosize.min.js"></script>
     <script src="<?php echo Yii::App()->baseUrl; ?>/js/bootstrap-hover-dropdown.js"></script>
     <script src="<?php echo Yii::App()->baseUrl; ?>/js/bootstrap-hover-dropdown.min.js"></script>
+    <script src="<?php echo Yii::App()->baseUrl; ?>/js/jquery.bootstrap.treeselect.js"></script>
 
     <script src="<?php echo Yii::App()->baseUrl; ?>/js/jquery.blockUI.js"></script>
     <script src="<?php echo Yii::App()->baseUrl; ?>/js/linxbooks.lbInvoice.js"></script>
@@ -260,8 +263,45 @@
                                                 'visible' => $bill_canView,
                                                ),
                                        );
+        # Departments
+        // $menu_item['Departments']['items']= array(
+        //         array('label'=>Yii::t('lang','Departments Manage'),
+        //             'url'=>array('/lbDepartments/default/departmentsManager'),
+        //             'visible' => $report_canView,
+        //         ),
+        // );
+        $menu_item['Departments']['url']= array('/lbDepartments/default/departmentsManager');
+
+        # Talent
+        // $menu_item['Talent']['items']= array(
+        //         array('label'=>Yii::t('lang','Training Need'),
+        //             'url'=>array('/lbTalent/default/index'),
+        //             'visible' => $report_canView,
+        //         ),
+        // );
+        $menu_item['Talent']['url']= array('/lbTalent/default/index');
+        $menu_item['People']['url']= array('/lbPeople/default/index');
+        $menu_item['Smallgroups']['url']= array('/lbSmallgroups/default/index');
+        $menu_item['Events']['url']= array('/lbEvents/default/index');
+        $menu_item['Volunteers']['url']= array('/lbVolunteers/default/index');
+        $menu_item['Pastoralcare']['url']= array('/lbPastoralcare/default/index');
+        
         # Project
         $menu_item['Project']['url']= array('/lbProject/default/index');
+
+        
+        
+        #Leave
+        $menu_item['Product Catalog']['items']= array(
+                array('label'=>Yii::t('lang','Products'),
+                        'url'=> LbCatalogProducts::model()->getActionURL('product/index'),
+                        'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+                       ),
+                array('label'=>Yii::t('lang','Categories'),
+                        'url'=> LbCatalogCategories::model()->getActionURL('category/admin'),
+                        'linkOptions' => array('data-workspace' => '1', 'id' => uniqid(), 'live' => false),
+                        ),
+        )
 #END ITEM MENU#
 
     ?>
@@ -653,7 +693,7 @@
     <?php echo $content; ?>
 
     <div id="footer">
-    Copyright &copy; <?php echo date('Y'); ?>, LinxOne. All Rights Reserved.  LinxHQ Pte Ltd<br/>
+    Copyright &copy; <?php echo date('Y'); ?>, <?php  echo Yii::app()->name; ?>. All Rights Reserved.  LinxHQ Pte Ltd<br/>
     </div><!-- footer -->
     <div id="contactable"></div>
     </div><!-- page -->

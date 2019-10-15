@@ -93,7 +93,7 @@ class LbCustomer extends CLBActiveRecord
 		// @todo Please modify the following code to remove attributes that should not be searched.
 
 		$criteria=new CDbCriteria;
-              
+		$criteria->select = 't.*';
 		$criteria->compare('t.lb_record_primary_key',$this->lb_record_primary_key);
 		$criteria->compare('lb_customer_name',$this->lb_customer_name,true);
 		$criteria->compare('lb_customer_registration',$this->lb_customer_registration,true);
@@ -101,10 +101,12 @@ class LbCustomer extends CLBActiveRecord
 		$criteria->compare('lb_customer_website_url',$this->lb_customer_website_url,true);
 		$criteria->compare('lb_customer_is_own_company',$this->lb_customer_is_own_company);
 		$criteria->compare('lb_customer_type',$this->lb_customer_type);
-                $criteria->order='lb_customer_name ASC';
-                $dataProvider = $this->getFullRecordsDataProvider($criteria,null,20,$user_id);
-                
-                return $dataProvider;
+		$criteria->group = 't.lb_record_primary_key';
+        $criteria->order ='lb_customer_name ASC';
+
+        $dataProvider = $this->getFullRecordsDataProvider($criteria,null,20,$user_id);
+        
+        return $dataProvider;
 	}
                
 	/**

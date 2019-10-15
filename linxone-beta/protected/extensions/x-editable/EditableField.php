@@ -137,8 +137,8 @@ class EditableField extends Editable
         //generate title from attribute label
         if ($this->title === null) {
             $titles = array(
-              'Select' => array('select', 'date'),
-              'Check' => array('checklist')
+              YII::t('lang','Select') => array('select', 'date'),
+              YII::t('lang','Check') => array('checklist')
             );
             $title = Yii::t('EditableField.editable', 'Enter');
             foreach($titles as $t => $types) {

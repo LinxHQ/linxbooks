@@ -13,6 +13,9 @@
         //margin-right: -178px;
         margin-top: 20px;
     }
+    #lb-employee-form{
+        width: 100%;
+    }
 </style>
 <!--<img src="/linxbooks/img/glyphicons-halflings-white.png" alt=""/>-->
 <?php
@@ -42,8 +45,8 @@ echo '<div id="lb-view-header">';
 //            }else{
 //                echo '<div class="lb-header-right"><h3><a style="color:#fff !important;" href="'.LbInvoice::model()->getActionURLNormalized("dashboard").'">Invoices</a></h3></div>';
 //            }
-echo '<div class="lb-header-right">';
-echo '<h3><a id="quotation-number-container" style="color:#fff !important;" href="' . LbInvoice::model()->getActionURLNormalized("dashboard") . '">' . $model->lb_quotation_no . '</a></h3>';
+echo '<div class="lb-header-right" style="margin-top: 30px;">';
+echo '<h3 style="margin-left: -11px;"><a id="quotation-number-container" style="" href="' . LbInvoice::model()->getActionURLNormalized("dashboard") . '">' . $model->lb_quotation_no . '</a></h3>';
 $this->widget('bootstrap.widgets.TbMenu', array(
     'htmlOptions' => array('class' => 'lb_icon_action'),
     'items' => array(
@@ -208,7 +211,7 @@ echo '</div>'; // end address info
  $term = UserList::model()->getItemsForListCode('term');  
  $option_term = CHtml::listData($term, 'system_list_item_id', 'system_list_item_name');
 echo '<div id="invoice-basic-info-container" class="lb_div_InvoiceInfo infoQuotation">';
-    echo '<table class="items table lb_table_InvoiceInfo">';
+    echo '<table class="items table lb_table_InvoiceInfo lb_table_InvoiceInfo_quotation">';
         echo '<tbody>';
             echo '<tr class="odd">';
                 echo '<th class="lb_th_InvoiceInfo">Date</th>';

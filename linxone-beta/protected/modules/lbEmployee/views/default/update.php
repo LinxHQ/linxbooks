@@ -9,8 +9,8 @@ $this->breadcrumbs=array(
 );
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>'.Yii::t('lang','Employee').'</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div class="lb-header-right"><h3>'.Yii::t('lang','Employee').'</h3></div>';
+            echo '<div class="lb-header-left lb-header-left-update-employee">';
                 LBApplicationUI::backButton($model->getActionModuleURL('default', 'Dashboard'));
                 echo '&nbsp;';
                 // new

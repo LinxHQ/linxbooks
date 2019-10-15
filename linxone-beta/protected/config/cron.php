@@ -42,7 +42,7 @@ return array(
 				'mail' => array(
 						'class' => 'ext.yii-mail.YiiMail',
 						'transportType' => 'smtp', // smtp or php
-
+						
 						'transportOptions' => array( // only if use smtp
 								'host' => 'mail.linxcircle.com',
 								//'encryption' => 'ssl',

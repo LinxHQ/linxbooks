@@ -30,7 +30,7 @@ class TaskController extends Controller
 			array('allow',  // allow all users to perform 'index' and 'view' actions
 				'actions'=>array('index','view', 'my', 'gantt',
                                     'indexImplementations','delete','popoverSchedule',
-                                    'accountTasksReport'),
+                                    'accountTasksReport', 'mutiletabs', 'loadmutiletabs'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
@@ -241,7 +241,9 @@ class TaskController extends Controller
 				// TODO: add self as assignee
 				
 				// show view
-				$this->redirect($model->getTaskURL());
+				// echo $_POST['Task']['project_id'];
+				// $this->redirect($model->getTaskURL());
+				$this->redirect(array('default/view', 'id'=>$_POST['Task']['project_id']));
 				//$this->redirect(array('view','id' => $model->task_id));
 			}
 		}
@@ -917,4 +919,93 @@ class TaskController extends Controller
 			Yii::app()->end();
 		}
 	}
+	public function actionMutiletabs($id_task){
+		$model = $this->loadModel($id_task);
+		Utilities::render($this, 'muilte_tabs', 
+	        array(
+	            'id_task' => $id_task,
+	            'model' => $model
+	        ));
+	}
+	public function actionLoadmutiletabs($id){
+		$model = $this->loadModel($id);
+
+		// check if we need to switch subscription
+		if (isset($_GET['subscription']))
+		{
+			Utilities::setCurrentlySelectedSubscription($_GET['subscription']);
+		}
+		
+		// check permission
+		if (!Permission::checkPermission($model, PERMISSION_TASK_VIEW)
+				|| !$model->matchedCurrentSubscription())
+		{
+			throw new CHttpException(401,'You are not given the permission to view this page.');
+			return;
+		}
+		
+		// init task into Backlog if not yet assigned anywhere
+                // MilestoneEntity::model()->initTaskToBacklog($model->project_id, $id);
+                
+                $data = array();
+		// get task comments
+		$task_comments = TaskComment::model()->getTaskParentComments($id);
+
+		$data['model'] = $model;
+		$data['task_comments'] = $task_comments;
+		$data['task_comment_replies'] = array();
+		$data['task_comment_documents'] = array();
+		
+		// get replies for each parent comment
+		foreach ($task_comments as $parent) 
+		{
+			$parent_documents = Documents::model()->findAllCommentDocuments($parent->task_comment_id, DOCUMENT_PARENT_TYPE_TASK_COMMENT);
+			$data['task_comment_documents'][$parent->task_comment_id] = $parent_documents;
+			
+			// if this is a  todo item, add it in
+			if ($parent->task_comment_to_do == YES) // && $parent->task_comment_to_do_completed == NO)
+			{
+				$data['outstanding_to_do'][] = $parent;
+			}
+			
+			// process replies
+			$task_replies = TaskComment::model()->getTaskCommentReplies($parent->task_comment_id);
+			if (count($task_replies))
+			{
+				$data['task_comment_replies'][$parent->task_comment_id] = $task_replies;
+				
+				// foreach each reply, find documents
+				foreach ($task_replies as $reply)
+				{
+					$reply_documents = Documents::model()->findAllCommentDocuments($reply->task_comment_id, DOCUMENT_PARENT_TYPE_TASK_COMMENT);
+					$data['task_comment_documents'][$reply->task_comment_id] = $reply_documents;
+					
+					// if this is an todo item, add it in
+					if ($reply->task_comment_to_do == YES)// && $reply->task_comment_to_do_completed == NO)
+					{
+						$data['outstanding_to_do'][] = $reply;
+					}
+				}
+			}
+		}
+		
+		/* Get task assignees for x-editable widget */
+		$task_assignees = TaskAssignee::model()->getTaskAssignees($id, true);
+		$model->task_assignees = '';
+		foreach ($task_assignees as $m)
+		{
+			$model->task_assignees .= $m->account_id . ',';
+                        
+                        // init Progress and Resource Plan
+                        // TaskProgress::model()->initTaskProgress($id, $m->account_id);
+                        // TaskResourcePlan::model()->initTaskResourcePlan($id, $m->account_id);
+                        // done init progress and resource plan
+		}
+                
+                // get milestones for x-editable widget
+                // $model->getTask_milestones(); // no need to use the return data. This call will set the var
+		
+		// Utilities::render($this, 'view', $data, false, true);
+		$this->renderPartial('view', $data, false, true);
+    }
 }

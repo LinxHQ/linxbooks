@@ -61,6 +61,9 @@ PARAMETERS
      instead of being enclosed between a pair of '@@' marks.
    - sort: sort messages by key when merging, regardless of their translation
      state (new, obsolete, translated.)
+   - fileHeader: A boolean indicating whether the file should contain a default
+     comment that explains the message file or a string representing
+     some PHP code or comment to add before the return tag in the message file.
 
 EOD;
 	}
@@ -98,6 +101,9 @@ EOD;
 		if(!isset($sort))
 			$sort = false;
 
+		if(!isset($fileHeader))
+			$fileHeader = true;
+
 		$options=array();
 		if(isset($fileTypes))
 			$options['fileTypes']=$fileTypes;
@@ -117,7 +123,7 @@ EOD;
 			foreach($messages as $category=>$msgs)
 			{
 				$msgs=array_values(array_unique($msgs));
-				$this->generateMessageFile($msgs,$dir.DIRECTORY_SEPARATOR.$category.'.php',$overwrite,$removeOld,$sort);
+				$this->generateMessageFile($msgs,$dir.DIRECTORY_SEPARATOR.$category.'.php',$overwrite,$removeOld,$sort,$fileHeader);
 			}
 		}
 	}
@@ -141,13 +147,21 @@ EOD;
 				else
 					$category=substr($matches[$i][1],1,-1);
 				$message=$matches[$i][2];
-				$messages[$category][]=eval("return $message;");  // use eval to eliminate quote escape
+				try
+				{
+					$evalResult = eval("return $message;");  // use eval to eliminate quote escape
+				}
+				catch (ParseError $e)
+				{
+					$evalResult = false;
+				}
+				$messages[$category][] = $evalResult;
 			}
 		}
 		return $messages;
 	}
 
-	protected function generateMessageFile($messages,$fileName,$overwrite,$removeOld,$sort)
+	protected function generateMessageFile($messages,$fileName,$overwrite,$removeOld,$sort,$fileHeader)
 	{
 		echo "Saving messages to $fileName...";
 		if(is_file($fileName))
@@ -201,8 +215,8 @@ EOD;
 			echo "saved.\n";
 		}
 		$array=str_replace("\r",'',var_export($merged,true));
-		$content=<<<EOD
-<?php
+		if($fileHeader===true)
+			$fileHeader=<<<EOD
 /**
  * Message translations.
  *
@@ -220,9 +234,16 @@ EOD;
  *
  * NOTE, this file must be saved in UTF-8 encoding.
  */
+EOD;
+		elseif($fileHeader===false)
+			$fileHeader='';
+
+		file_put_contents($fileName,<<<EOD
+<?php
+$fileHeader
 return $array;
 
-EOD;
-		file_put_contents($fileName, $content);
+EOD
+		);
 	}
 }

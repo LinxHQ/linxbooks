@@ -3,6 +3,18 @@ class LBApplicationUI
 {
     public static function getStatusBadge($status_code)
     {
+        $badge_class = LBApplicationUI::getStatusBadgeClass(status_code);
+        
+        $status_name = LbInvoice::model()->getDisplayInvoiceStatus($status_code);
+        
+        return '<div class="'.$badge_class.'">'.$status_name.'</div>';
+	}
+	
+	/**
+	 * Get the css class name(s) based on the status of record
+	 */
+	public static function getStatusBadgeClass($status_code)
+    {
         $badge_css = '';
         if($status_code==  LbInvoice::LB_INVOICE_STATUS_CODE_DRAFT)
             $badge_css =  '';
@@ -14,10 +26,8 @@ class LBApplicationUI
             $badge_css =  'badge-warning';
         if($status_code==LbInvoice::LB_INVOICE_STATUS_CODE_PAID)
             $badge_css = 'badge-success';
-        
-        $status_name = LbInvoice::model()->getDisplayInvoiceStatus($status_code);
-        
-        return '<div class="badge '.$badge_css.'">'.$status_name.'</div>';
+                
+        return 'badge '.$badge_css;
     }
     
 	public static function getAppUIController()

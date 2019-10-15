@@ -34,7 +34,7 @@ class DocumentController extends Controller
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('ajaxTempUpload', 
                                     'ajaxProjectUpload',
-                                    'ajaxCreate', 'ajaxDelete'),
+                                    'ajaxCreate', 'ajaxDelete', 'ajaxDeletes'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -137,7 +137,7 @@ class DocumentController extends Controller
 		
 		$folder = Documents::model()->getTempFolderPath();
 		$allowedExtensions = Documents::model()->supportedTypes();//array("jpg","jpeg","gif","exe","mov" and etc...
-		$sizeLimit = Yii::app()->params['maxUploadSize'] * 1024 * 1024;// maximum file size in bytes
+		$sizeLimit = 2 * 1024 * 1024;
 		$uploader = new qqFileUploader($allowedExtensions, $sizeLimit);
 		
 		$result = $uploader->handleUpload($folder);
@@ -251,6 +251,24 @@ class DocumentController extends Controller
 		}
 		
 		echo FAILURE;
+	}
+	public function actionAjaxDeletes()
+	{
+		if(isset($_GET['id'])){
+			$id = $_GET['id'];
+			$model = $this->loadModel($id);
+			
+			// delete from file system
+			if($model->delete())
+			{
+				//$model->delete(); // delete from database
+		
+				echo SUCCESS;
+				return;
+			}
+			
+			echo FAILURE;
+		}
 	}
 
 	/**

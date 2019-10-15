@@ -21,6 +21,7 @@ class LBApplication
 	const DATE_FORMAT_FRIENDLY_DATETIME = 'd M Y, h:i a';
 	const DATE_FORMAT_FRIENDLY_TIME_12 = 'h:i a';
 	const DATE_FORMAT_SQL_DATETIME = 'Y-m-d H:i:s';
+        const FOMAT_DATE_VIEW = 'd-m-Y';
 	
 	/**
 	 * encode string to utf8 if not already encoded.
@@ -560,6 +561,15 @@ class LBApplication
 		$date = self::getDateTimeByUserTimeZone($date_string);
 		return $date->format($format);
 	}
+        
+        public static function displayDate($date,$format=false){
+            if($date=='0000-00-00' || $date=='0000-00-00 00:00:00' || $date=='1970-01-01 00:00:00' || $date=='1970-01-01' || $date==NULL)
+                return "";
+            if($format)
+                return date($format, strtotime($date));
+            else
+                return date(ListSetup::FOMAT_DATE_VIEW,  strtotime($date));
+        }
 	
 	/**
 	 * 

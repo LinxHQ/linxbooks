@@ -63,59 +63,60 @@ $this->menu=array(
 			'size'=>'small', // null, 'large', 'small' or 'mini'
 			'url'=>array('account/update', 'id' => $model->account_id)
 	));
-        echo '<br /><br />';
-        // form connected account to social
-        $config_social = LbConfigLoginSocial::model()->findAll();
-        if($config_social[0]['action'] == 1){
-            echo Yii::t('lang','Choose a social network below to connect your account with');
-            if (Yii::app()->user->hasFlash('error')) {
-    //          echo '<div class="error">'.Yii::app()->user->getFlash('error').'</div>';
-            } else if(Yii::app()->user->hasFlash('sucs')){
-                    echo '<div style="background-color: #99FF33; padding: 5px; border-radius: 5px; width: 33%;" class="success">'.Yii::app()->user->getFlash('sucs').'</div>';
-            }
-            echo "<div id='login_social' style='margin-left: -299px;'>";
-            echo '<br />';
-            $this->widget('ext.eauth.EAuthWidget', array('action' => 'site/assignaccountsocial'));
-
-            echo "</div>";
-        }
-        $account=Account::model()->findByPk($model->account_id);
-        // status account social login
-        if($account->account_check_email_social_google == "" && $account->account_check_social_login_id_google == "") {
-        	echo Yii::t('lang','Your account is not connected to Google login')."<br />";
-        } else {
-        	echo Yii::t('lang','Your account is connected to Google login')."<br />";
-        }
-
-        if($account->account_check_email_social_facebook == "" && $account->account_check_social_login_id_facebook == "") {
-        	echo Yii::t('lang','Your account is not connected to Facebook login');
-        } else {
-        	echo Yii::t('lang','Your account is connected to Facebook login');
-        }
-        echo "<br />";
-        // end status account social login
-        // end form connected account to social
-
-		if(Yii::app()->user->hasFlash('sucs_disconnect')){
-                echo '<div style="background-color: #99FF33; padding: 5px; border-radius: 5px; width: 33%;" class="success">'.Yii::app()->user->getFlash('sucs_disconnect').'</div>';
-        }
-        echo "<br />";
-        // disconnect account to social
-        $this->widget('bootstrap.widgets.TbButton', array(
-			'label'=> Yii::t('lang','Disconnect from Google'),
-			'type'=>'', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-			'size'=>'small', // null, 'large', 'small' or 'mini'
-			'url' => array('site/disconnectaccountsocial', 'id' => $model->account_id, 'server' => 'google'),
-		));
-		echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
-		$this->widget('bootstrap.widgets.TbButton', array(
-			'label'=> Yii::t('lang','Disconnect from Facebook'),
-			'type'=>'', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
-			'size'=>'small', // null, 'large', 'small' or 'mini'
-			'url' => array('site/disconnectaccountsocial', 'id' => $model->account_id, 'server' => 'facebook'),
-		));
-        // end disconnect account to social
     }
+
+    echo '<br /><br />';
+    // form connected account to social
+    $config_social = LbConfigLoginSocial::model()->findAll();
+    if($config_social[0]['action'] == 1){
+        echo Yii::t('lang','Choose a social network below to connect your account with');
+        if (Yii::app()->user->hasFlash('error')) {
+//          echo '<div class="error">'.Yii::app()->user->getFlash('error').'</div>';
+        } else if(Yii::app()->user->hasFlash('sucs')){
+                echo '<div style="background-color: #99FF33; padding: 5px; border-radius: 5px; width: 33%;" class="success">'.Yii::app()->user->getFlash('sucs').'</div>';
+        }
+        echo "<div id='login_social' style='margin-left: -299px;'>";
+        echo '<br />';
+        $this->widget('ext.eauth.EAuthWidget', array('action' => 'site/assignaccountsocial'));
+
+        echo "</div>";
+    }
+    $account=Account::model()->findByPk($model->account_id);
+    // status account social login
+    if($account->account_check_email_social_google == "" && $account->account_check_social_login_id_google == "") {
+    	echo Yii::t('lang','Your account is not connected to Google login')."<br />";
+    } else {
+    	echo Yii::t('lang','Your account is connected to Google login')."<br />";
+    }
+
+    if($account->account_check_email_social_facebook == "" && $account->account_check_social_login_id_facebook == "") {
+    	echo Yii::t('lang','Your account is not connected to Facebook login');
+    } else {
+    	echo Yii::t('lang','Your account is connected to Facebook login');
+    }
+    echo "<br />";
+    // end status account social login
+    // end form connected account to social
+
+	if(Yii::app()->user->hasFlash('sucs_disconnect')){
+            echo '<div style="background-color: #99FF33; padding: 5px; border-radius: 5px; width: 33%;" class="success">'.Yii::app()->user->getFlash('sucs_disconnect').'</div>';
+    }
+    echo "<br />";
+    // disconnect account to social
+    $this->widget('bootstrap.widgets.TbButton', array(
+		'label'=> Yii::t('lang','Disconnect from Google'),
+		'type'=>'', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+		'size'=>'small', // null, 'large', 'small' or 'mini'
+		'url' => array('site/disconnectaccountsocial', 'id' => $model->account_id, 'server' => 'google'),
+	));
+	echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+	$this->widget('bootstrap.widgets.TbButton', array(
+		'label'=> Yii::t('lang','Disconnect from Facebook'),
+		'type'=>'', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
+		'size'=>'small', // null, 'large', 'small' or 'mini'
+		'url' => array('site/disconnectaccountsocial', 'id' => $model->account_id, 'server' => 'facebook'),
+	));
+    // end disconnect account to social
 //}
 ?>
 

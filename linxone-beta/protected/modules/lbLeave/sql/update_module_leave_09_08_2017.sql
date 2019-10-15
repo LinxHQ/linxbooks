@@ -27,8 +27,8 @@ SET time_zone = "+00:00";
 --
 
 
-ALTER TABLE `leave_application` CHANGE `leave_name` `leave_name` INT(2) NULL DEFAULT NULL;
-ALTER TABLE `leave_application` CHANGE `leave_date_submit` `leave_date_submit` INT(2) NULL DEFAULT NULL;
+-- ALTER TABLE `leave_application` CHANGE `leave_name` `leave_name` INT(2) NULL DEFAULT NULL;
+-- ALTER TABLE `leave_application` CHANGE `leave_date_submit` `leave_date_submit` INT(2) NULL DEFAULT NULL;
 ALTER TABLE `leave_application` CHANGE `leave_starthour` `leave_starthour` INT(2) NULL DEFAULT NULL;
 ALTER TABLE `leave_application` CHANGE `leave_startminute` `leave_startminute` INT(2) NULL DEFAULT NULL;
 ALTER TABLE `leave_application` CHANGE `leave_endhour` `leave_endhour` INT(2) NULL DEFAULT NULL;

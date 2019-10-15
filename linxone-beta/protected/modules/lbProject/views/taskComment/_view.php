@@ -66,14 +66,14 @@ if (isset($task_comment_documents) && isset($task_comment_documents[$comment->ta
 		echo CHtml::image($doc->getDocumentIcon(), '', array('border' => 0));
 		echo CHtml::link($doc->document_real_name, array('document/download', 'id' => $doc->document_id));
                 
-                // if doc is image, allow preview in popup
-                if ($doc->isImage())
-                {
-                    echo ' ' . LinxUI::imagePreviewLink(
-                            array('document/download', 'id' => $doc->document_id), 
-                            $doc->document_real_name, 
-                            'task_' . $comment->task_id);
-                } // end preview image
+        // if doc is image, allow preview in popup
+        if ($doc->isImage())
+        {
+            // echo ' ' . LinxUI::imagePreviewLink(
+            //         array('document/download', 'id' => $doc->document_id), 
+            //         $doc->document_real_name, 
+            //         'task_' . $comment->task_id);
+        } // end preview image
                 
 		echo " $doc_delete_ajax_link<br/>";
 		echo '</div>';
@@ -89,35 +89,39 @@ if (isset($task_comment_documents) && isset($task_comment_documents[$comment->ta
 	// check permission
 	if ($allowed_edit_comment) 
 	{
-		$edit_ajax_link = CHtml::ajaxLink(
-				'<i class="icon-pencil"></i>',
-				array('taskComment/ajaxUpdate', 'id' => $comment->task_comment_id), // Yii URL
-				array('update' => '#comment-content-' . $comment->task_comment_id), // jQuery selector
-				array('id' => 'ajax-id-'.uniqid())
-		);
+		// $edit_ajax_link = CHtml::ajaxLink(
+		// 		'<i class="icon-pencil"></i>',
+		// 		array('taskComment/ajaxUpdate', 'id' => $comment->task_comment_id), // Yii URL
+		// 		array('update' => '#comment-content-' . $comment->task_comment_id), // jQuery selector
+		// 		array('id' => 'ajax-id-'.uniqid())
+		// );
 
-		$delete_ajax_link = CHtml::ajaxLink(
-				'<i class="icon-remove"></i>',
-				array('taskComment/delete', 'id' => $comment->task_comment_id), // Yii URL
-				array(
-						'success' =>
-						// If has parent, only remove itself from screen
-						// If has child(ren), remove the whole thread
-						$comment->task_comment_parent_id > 0 ?
-						'js: function(data) {
-							if (data == "success")
-								$("#reply-container-' . $comment->task_comment_id .'").remove();
-						}' : 'js: function(data){
-							if (data == "success")
-								$("#comment-thread-' . $comment->task_comment_id .'").remove();
-						}',
-						'type' => 'POST'
-				), // jQuery selector
-				array('id' => 'ajax-id-'.uniqid())
-		);
+		$edit_ajax_link = '<a id="ajax-id-'.uniqid().'" href="#" onclick="edit_comment('.$comment->task_comment_id.'); return false;"><i class="icon-pencil"></i></a>';
+
+
+		// $delete_ajax_link = CHtml::ajaxLink(
+		// 		'<i class="icon-remove"></i>',
+		// 		array('taskComment/delete', 'id' => $comment->task_comment_id), // Yii URL
+		// 		array(
+		// 				'success' =>
+		// 				// If has parent, only remove itself from screen
+		// 				// If has child(ren), remove the whole thread
+		// 				$comment->task_comment_parent_id > 0 ?
+		// 				'js: function(data) {
+		// 					if (data == "success")
+		// 						$("#reply-container-' . $comment->task_comment_id .'").remove();
+		// 				}' : 'js: function(data){
+		// 					if (data == "success")
+		// 						$("#comment-thread-' . $comment->task_comment_id .'").remove();
+		// 				}',
+		// 				'type' => 'POST'
+		// 		), // jQuery selector
+		// 		array('id' => 'ajax-id-'.uniqid())
+		// );
+		$delete_ajax_link = '<a id="ajax-id-'.uniqid().'" href="#" onclick="delete_comment('.$comment->task_comment_id.'); return false;"><i class="icon-remove"></i></a>';
 	}
 	
-	echo YII::t('core',"Posted on")." " . Utilities::displayFriendlyDateTime($comment->task_comment_last_update);
+	echo YII::t('lang',"Posted on")." " . Utilities::displayFriendlyDateTime($comment->task_comment_last_update);
 	echo '<div style="float: right">';
 	
 	// REPLY link if this is a parent comment and there's no reply yet.
@@ -125,28 +129,29 @@ if (isset($task_comment_documents) && isset($task_comment_documents[$comment->ta
 			&& !count($replies))
 	{
 		echo '<i class="icon-comment"></i>';
-		echo CHtml::ajaxLink(
-			YII::t('core','Reply'),
-			array('taskComment/create'
-				, 'task_id' => $comment->task_id
-				, 'task_comment_id' => $comment->task_comment_id
-				, 'is_reply' => 1
-				, 'ajax' => 1), // Yii URL
-				array('update' => '#comment-thread-reply-form-' . $comment->task_comment_id), // jQuery selector
-				array('id' => 'ajax-id-'.uniqid(), 'class' => 'blur-summary')
-		);
+		echo '<a id="ajax-id-'.uniqid().'" class="blur-summary" href="#" onclick="replay_comment('.$comment->task_id.' ,'.$comment->task_comment_id.',1); return false;">'.YII::t('lang',"Reply").'</a>';
+		// echo CHtml::ajaxLink(
+		// 	YII::t('core','Reply'),
+		// 	array('taskComment/create'
+		// 		, 'task_id' => $comment->task_id
+		// 		, 'task_comment_id' => $comment->task_comment_id
+		// 		, 'is_reply' => 1
+		// 		, 'ajax' => 1), // Yii URL
+		// 		array('update' => '#comment-thread-reply-form-' . $comment->task_comment_id), // jQuery selector
+		// 		array('id' => 'ajax-id-'.uniqid(), 'class' => 'blur-summary')
+		// );
 		echo '&nbsp;&nbsp;';
 	}	
 	
 	echo '#' . $comment->task_comment_id . '&nbsp;';
 	
 	// to do item
-        $lnotcomplete = YII::t('core','not completed');
-        $lcomplete = YII::t('core','completed');
+        $lnotcomplete = YII::t('lang','not completed');
+        $lcomplete = YII::t('lang','completed');
 	if ($comment->task_comment_to_do > 0)
 	{
 		echo ($comment->task_comment_to_do_completed == NO ? '<span class="badge badge-warning">' : '');
-		echo YII::t('core','To-do').' '.YII::t('core','Item').': ';
+		echo YII::t('lang','To-do').' '.YII::t('lang','Item').': ';
 		echo ($comment->task_comment_to_do_completed == NO ? '</span>' : '');
                 echo '&nbsp;';
                 $ltodo =  ($comment->task_comment_to_do_completed==0) ? $lnotcomplete : $lcomplete;
@@ -181,6 +186,52 @@ if (isset($task_comment_documents) && isset($task_comment_documents[$comment->ta
 	?>
 </div>
 <script type="text/javascript">
+	// $edit_ajax_link = CHtml::ajaxLink(
+	// 			'<i class="icon-pencil"></i>',
+	// 			array('taskComment/ajaxUpdate', 'id' => $comment->task_comment_id), // Yii URL
+	// 			array('update' => '#comment-content-' . $comment->task_comment_id), // jQuery selector
+	// 			array('id' => 'ajax-id-'.uniqid())
+	// 	);
+	function edit_comment(task_comment_id){
+		$.ajax({
+            'type':'POST',
+            'url':'<?php echo $this->createUrl('taskComment/ajaxUpdate'); ?>',
+            data:{task_comment_id:task_comment_id},
+            success:function(data){
+                $("#comment-content-"+task_comment_id).html(data);
+            }
+                    
+        });
+	}
+
+	function delete_comment(task_comment_id){
+		$.ajax({
+            'type':'POST',
+            'url':'<?php echo $this->createUrl('taskComment/delete'); ?>',
+            data:{task_comment_id:task_comment_id},
+            success:function(data){
+                $("#reply-container-"+task_comment_id+"").remove();
+                $("#comment-thread-"+task_comment_id+"").remove();
+            }
+                    
+        });
+	}
+
+	// comment-thread-reply-form-5947
+	// $("#comment-thread-reply-form-5947").html("Loading...");
+	function replay_comment(task_id, comment_id, is_reply){
+		$("#comment-thread-reply-form-"+comment_id).html("Loading...");
+		var replay = "replay";
+		$.ajax({
+            'type':'POST',
+            'url':'<?php echo $this->createUrl('taskComment/create'); ?>',
+            data:{replay:replay,task_id:task_id,comment_id:comment_id, is_reply:is_reply},
+            success:function(data){
+                $("#comment-thread-reply-form-"+comment_id).html(data);
+            }
+                    
+        });
+	}
     function updateTodoComplete(comment_id,taskCommentTodo){
        $("#task_comment-to-do-completed-"+comment_id).html("Loading...");
        $.ajax({

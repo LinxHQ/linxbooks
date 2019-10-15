@@ -21,8 +21,8 @@ $this->breadcrumbs=array(
 	'Lb Expenses'=>array('index'),
 	$model->lb_record_primary_key,
 );
-$DecimalSymbol = LbGenera::model()->getDecimalSymbol();
-$ThousandSeparator = LbGenera::model()->getThousandSeparator();
+$DecimalSymbol = LbGenera::model()->getGeneraDecimalSymbol();
+$ThousandSeparator = LbGenera::model()->getGeneraThousandSeparator();
 $GeneraCurrency = LbGenera::model()->getGeneraCurrency();
 
 //$this->menu=array(
@@ -65,7 +65,8 @@ echo '</div><br>';
 
 <div style="width:100%;margin-bottom:3px;">
    
-<button class="ui-button ui-state-default ui-corner-all" target="_blank" onclick="printPDF_expenses(); return false;">Print PDF</button>
+<button class="ui-button ui-state-default ui-corner-all" target="_blank" onclick="printPDF_expenses(); return false;"><?php echo Yii::t('lang', 'Print PDF'); ?></button>
+<button class="ui-button ui-state-default ui-corner-all" target="_blank" onclick="printPDF_expenses_en(); return false;"><?php echo Yii::t('lang', 'Print PDF Eng'); ?></button>
 </div>
 
 <?php
@@ -211,6 +212,8 @@ $this->widget('bootstrap.widgets.TbTabs', array(
  <script>
     function printPDF_expenses() {
             window.open('PdfExpenses?lb_record_primary_key=<?php echo $model->lb_record_primary_key; ?>', '_target');
-      
+    }
+    function printPDF_expenses_en() {
+            window.open('PdfExpensesEn?lb_record_primary_key=<?php echo $model->lb_record_primary_key; ?>', '_target');  
     }
 </script>

@@ -10,13 +10,13 @@ $this->breadcrumbs=array(
 
 echo '<div id="lb-container-header">';
             ?>
-            <div class="lb-header-right" ><h3>
+            <div class="lb-header-right"><h3>
                 <?php echo Yii::t('lang','Contracts'); ?> 
             </h3></div>
             
 
             <?php
-            echo '<div class="lb-header-left" style="margin-top:-35px;">';
+            echo '<div class="lb-header-left lb-header-left-create-contract">';
             LBApplicationUI::backButton(LbInvoice::model()->getActionURLNormalized("dashboard"));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(

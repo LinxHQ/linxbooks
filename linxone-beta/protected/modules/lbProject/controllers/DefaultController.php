@@ -34,7 +34,7 @@ class DefaultController extends CLBController
 				'users'=>array('@'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update', 'ajaxUpdateField','delete','listTaskProjectHeader','prototype'),
+				'actions'=>array('create','update', 'ajaxUpdateField','delete','listTaskProjectHeader','prototype', 'taskall', 'documentall', 'wikiall', 'projectall', 'indextask', 'loadDivAddMemberProject'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -398,9 +398,8 @@ class DefaultController extends CLBController
 	 */
 	public function actionDelete($id)
 	{
-		$model = $this->loadModel($id);
-		
-		if ($model->delete())
+		$delete_project = Project::model()->deleteAll(array("condition"=>"project_id='$id'"));
+		if ($delete_project)
 		{
 			echo SUCCESS;
 			return;
@@ -408,6 +407,17 @@ class DefaultController extends CLBController
 		
 		echo FAILURE;
 		return;
+
+		// $model = $this->loadModel($id);
+		
+		// if ($model->delete())
+		// {
+		// 	echo SUCCESS;
+		// 	return;
+		// }
+		
+		// echo FAILURE;
+		// return;
 		
 		// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
 		if(!isset($_GET['ajax']))
@@ -572,5 +582,26 @@ class DefaultController extends CLBController
         function actionPrototype()
         {
             Utilities::render($this, 'prototype',array());
+        }
+        function actionTaskall(){
+        	$taskModel = new Task();
+        	Utilities::renderPartial($this, 'task_all',array(
+				'taskModel'=>$taskModel,
+			));
+        }
+        function actionDocumentall(){
+        	$documentModel = new Documents();
+        	Utilities::renderPartial($this, 'document_all',array(
+				'documentModel'=>$documentModel,
+			));
+        }
+        function actionWikiall(){
+        	$wikiModel = new WikiPage();
+        	Utilities::renderPartial($this, 'wiki_all',array(
+				'wikiModel'=>$wikiModel,
+			));
+        }
+        function actionProjectall(){
+        	Utilities::renderPartial($this, 'project_all',array());
         }
 }

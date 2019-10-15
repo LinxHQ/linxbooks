@@ -35,7 +35,7 @@ class LbInvoiceTotal extends CLBActiveRecord
 		return array(
 			array('lb_invoice_id, lb_invoice_revision_id', 'required'),
 			array('lb_invoice_id, lb_invoice_revision_id', 'numerical', 'integerOnly'=>true),
-			array('lb_invoice_subtotal, lb_invoice_total_after_discounts, lb_invoice_total_after_taxes, lb_invoice_total_paid, lb_invoice_total_outstanding', 'length', 'max'=>10),
+			array('lb_invoice_subtotal, lb_invoice_total_after_discounts, lb_invoice_total_after_taxes, lb_invoice_total_paid, lb_invoice_total_outstanding', 'length', 'max'=>12),
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('lb_record_primary_key, lb_invoice_id, lb_invoice_revision_id, lb_invoice_subtotal, lb_invoice_total_after_discounts, lb_invoice_total_after_taxes, lb_invoice_total_paid, lb_invoice_total_outstanding', 'safe', 'on'=>'search'),

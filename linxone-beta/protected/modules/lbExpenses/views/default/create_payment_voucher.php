@@ -7,8 +7,8 @@
  */
 
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>Expenses</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div class="lb-header-right"><h3 style="margin-top: 4px;">Expenses</h3></div>';
+            echo '<div class="lb-header-left" style="margin-top: 27px !important;">';
             LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('paymentVoucher'));
             echo '&nbsp;';
             $this->widget('bootstrap.widgets.TbButtonGroup', array(

@@ -11,8 +11,8 @@ if(isset($_REQUEST['idPV']))
 }
 echo '<input type="hidden" value="'.$valuePv.'"  id="idPv">';
 echo '<div id="lb-container-header">';
-            echo '<div class="lb-header-right" style="margin-left:-11px;"><h3>'.Yii::t("lang","Expenses").'</h3></div>';
-            echo '<div class="lb-header-left">';
+            echo '<div class="lb-header-right"><h3>'.Yii::t("lang","Expenses").'</h3></div>';
+            echo '<div class="lb-header-left lb-header-left-create-expenses">';
             LBApplicationUI::backButton(LbExpenses::model()->getActionURLNormalized('expenses'));
 
 
@@ -76,13 +76,16 @@ echo '</div><br>';
                     'lb_category_id', 
                     $category_arr,
                     array('hint'=>LBApplication::workspaceLink(Yii::t('lang', 'Add Category'), 
-                            Yii::app()->createUrl('/configuration/list_item/list/expenses_category')))
+                            Yii::app()->createUrl('/configuration/list_item/list/expenses_category')),'id'=>'my_category')
             );
             
             echo $form->textFieldRow($model, 'lb_expenses_date', 
-                    array('value'=>$model->lb_expenses_date ? date('d-m-Y', strtotime($model->lb_expenses_date)) : date('d-m-Y')));
+                    array('value'=>$model->lb_expenses_date ? date('d-m-Y', strtotime($model->lb_expenses_date)) : date('d-m-Y'),'id'=>'my_date'));
             
-            echo $form->textFieldRow($model, 'lb_expenses_amount',array('class'=>'span3','onkeyup'=>'splitInDots(this)','type'=>'number'));
+            echo $form->textFieldRow($model, 'lb_expenses_amount',array('class'=>'span3','onkeyup'=>'splitInDots(this)','type'=>'number','id'=>'my_amount'));
+            ?>
+                <button type="button" style ="display:none;margin-left:180px;margin-bottom: 20px;" id = "button" onclick="popup_list_expenses();"><?php echo Yii::t('lang', 'The expense could be identical'); ?></button>
+            <?php
             
             echo $form->textAreaRow($model,'lb_expenses_note',array('rows'=>'3','cols'=>'40','style'=>'width:210px;'));
             ?>
@@ -257,14 +260,29 @@ echo '</div><br>';
       </div>
       <div class="modal-footer">
           <button onclick="save_popup_new_customer();" style="margin-left: auto; margin-right: auto" class="btn btn-success" type="submit" >
-            <i class="icon-ok icon-white"></i>&nbsp;<?php Yii::t('lang','Save') ?>Save
+            <i class="icon-ok icon-white"></i>&nbsp;<?php echo Yii::t('lang','Save'); ?>
         </button>
       </div>
     </div>
 
   </div>
 </div>
-
+<!-- MODAL LIST EXPENSES -->
+    <div id="bs-model-checkin-book-list" class="modal fade bs-example-modal-lg popupCheckin" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"  style="width: 930px;margin-left:-475px;">
+        <div class="modal-dialog modal-lg" role="document" >
+            <div  class="modal-content">
+                <div class="modal-header" style="background-color: rgb(91, 183, 91);; color:#fff; text-align:center">
+                    <button class="close" type="button" data-dismiss="modal" aria-hidden="true">×</button>
+               
+               <div>
+                   <h4 class="modal-title"id = "header"><?php echo Yii::t('lang','List expense could be identical'); ?></h4>
+               </div>
+               </div>
+               <div class="modal-body" id="modal-content-checkin-list"></div>
+            </div>
+        </div>
+    </div>
+<!-- END MODAL LIST EXPENSES -->
 <script language="javascript" type="text/javascript">
     
     
@@ -282,6 +300,42 @@ echo '</div><br>';
         
     });
     var tax_id=0;
+    $("#my_category").change(function(){ 
+            compareExpenses();
+        });
+    $("input").keyup(function(){
+            compareExpenses();
+        });
+    function compareExpenses(){
+        var my_amount = $("#my_amount").val();
+            var my_date = $("#my_date").val();
+            var my_category = $("#my_category").val();
+            
+            $.ajax({
+            type:"POST",
+            url:"CompareExpenses", 
+            data: {my_amount:my_amount, my_date:my_date, my_category:my_category,change:1},
+            success:function(data){
+                
+                if(data>0){
+                    document.getElementById("button").style.display= "block";
+                }else{
+                    document.getElementById("button").style.display= "none";
+                }
+            }
+        });
+    }
+    
+    function popup_list_expenses(){
+        var my_amount = $("#my_amount").val();
+            var my_date = $("#my_date").val();
+            var my_category = $("#my_category").val();
+            
+        $('#modal-content-checkin-list').load('CompareExpenses',{"my_amount":my_amount, "my_date":my_date, "my_category":my_category,"change":2},
+            function(data){
+                $('#bs-model-checkin-book-list').modal('show'); 
+            });
+    }
     
     
     function addTaxClick()
@@ -360,7 +414,7 @@ echo '</div><br>';
       }
       
       function plainNumber(number) {
-         return number.split('<?php echo LbGenera::model()->getThousandSeparator(); ?>').join('');
+         return number.split('<?php echo LbGenera::model()->getGeneraThousandSeparator(); ?>').join('');
       }
       
       function splitInDots(input) {
@@ -368,7 +422,7 @@ echo '</div><br>';
         var value = input.value,
             plain = plainNumber(value),
             reversed = reverseNumber(plain),
-            reversedWithDots = reversed.match(/.{1,3}/g).join('<?php echo LbGenera::model()->getThousandSeparator(); ?>'),
+            reversedWithDots = reversed.match(/.{1,3}/g).join('<?php echo LbGenera::model()->getGeneraThousandSeparator(); ?>'),
             normal = reverseNumber(reversedWithDots);
         
         console.log(plain,reversed, reversedWithDots, normal);

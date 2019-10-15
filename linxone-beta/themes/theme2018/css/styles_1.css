@@ -1,0 +1,552 @@
+#page {
+    /**padding-top: 60px;**/
+}
+
+.ribbon-wrapper {
+    width: 85px;
+    height: 88px;
+    overflow: hidden;
+    position: absolute;
+    top: -3px;
+    right: -3px;
+}
+
+.ribbon-green {
+    font: bold 15px Sans-Serif;
+    color: #333;
+    text-align: center;
+    text-shadow: rgba(255,255,255,0.5) 0px 1px 0px;
+    -webkit-transform: rotate(45deg);
+    -moz-transform:    rotate(45deg);
+    -ms-transform:     rotate(45deg);
+    -o-transform:      rotate(45deg);
+    position: relative;
+    padding: 7px 0;
+    left: -5px;
+    top: 15px;
+    width: 120px;
+    background-color: #BFDC7A;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#BFDC7A), to(#8EBF45));
+    background-image: -webkit-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image:    -moz-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image:     -ms-linear-gradient(top, #BFDC7A, #8EBF45);
+    background-image:      -o-linear-gradient(top, #BFDC7A, #8EBF45);
+    color: #6a6340;
+    -webkit-box-shadow: 0px 0px 3px rgba(0,0,0,0.3);
+    -moz-box-shadow:    0px 0px 3px rgba(0,0,0,0.3);
+    box-shadow:         0px 0px 3px rgba(0,0,0,0.3);
+}
+
+.ribbon-green:before, .ribbon-green:after {
+    content: "";
+    border-top:   3px solid #6e8900;
+    border-left:  3px solid transparent;
+    border-right: 3px solid transparent;
+    position:absolute;
+    bottom: -3px;
+}
+
+.ribbon-green:before {
+    left: 0;
+}
+.ribbon-green:after {
+    right: 0;
+}
+
+.invoice-discounts-container,
+.invoice-subtotal-container,
+.invoice-total-container,
+.invoice-taxes-container
+{
+    float: right;
+    display: block;
+    clear: both;
+    width: 600px;
+    /**border: 1px solid #dcdcdc;
+    border-radius: 5px;
+    padding-top: 10px;
+    margin-top: 5px;**/
+}
+
+.invoice-subtotal-container
+{
+    padding-bottom: 10px;
+}
+
+.invoice-total-container
+{
+    padding-bottom: 10px;
+}
+
+.lb-table-condensed
+{
+    margin-bottom: 0px;
+    width: 100%;
+    background-color: transparent;
+    border: none;
+}
+
+.invoice-total-grid
+{
+    width: 450px;
+    /**clear: both;**/
+}
+
+.invoice-total-label
+{
+    display: inline-block;
+    width: 390px;
+    text-align: right;
+    font-weight: bold;
+    float: left;
+}
+
+.invoice-total-currency
+{
+    display: inline-block;
+    width: 50px;
+    text-align: right;
+}
+
+.invoice-total-value
+{
+    float: right;
+    width: 142px;
+    padding-right: 8px;
+    text-align: right;
+    display: inline-block;
+}
+
+.invoice-condensed-line
+{
+    border-top: none;
+    padding-top: 0px;
+}
+
+.invoice-tax-empty-text,
+.invoice-discount-empty-text
+{
+    float: right;
+    font-size: 9pt;
+    margin-top: -7px;
+    color: #777;
+}
+
+.input-large-textarea
+{
+    width: 500px;
+    height: 200px;
+}
+
+.field-label-left
+{
+    font-weight: bold;
+    text-align: left;
+    width: 150px;
+    display: inline-block;
+    vertical-align:top;
+}
+
+.field-label-right
+{
+    font-weight: bold;
+    text-align: right;
+    width: 150px;
+    display: inline-block;
+}
+
+.field-value-left
+{
+    padding-left: 20px;
+    font-weight: normal;
+    display: inline-block;
+}
+
+.lb-side-icon
+{
+    padding: 5px;
+    clear: both;
+    width: 28px;
+    height: 28px;
+}
+
+div[class="tooltip-inner"] {
+    min-width: 100px;
+    max-width: 200px;
+    background-color: #757758;
+    opacity: 0.6;
+}
+
+.tooltip.top .tooltip-arrow {
+    border-top-color: #757758 !important;
+}
+
+.tooltip.right .tooltip-arrow {
+    border-right-color: #757758 !important;
+}
+
+.tooltip.left .tooltip-arrow {
+    border-left-color: #757758 !important;
+}
+
+.tooltip.bottom .tooltip-arrow {
+    border-bottom-color: #757758 !important;
+}
+
+.wiki-toc {
+	border: 1px solid #DCDCDC;
+	background: #EEEEEE;
+	min-width: 100px;
+	margin-bottom: 20px;
+}
+
+.progress-day-container {
+	width: 100%; 
+	display: block; 
+	content: ''; 
+	clear: both;
+	padding-top: 30px;
+}
+
+.progress-tile-left {
+	float: left; 
+	width: 50%; 
+	border-right: solid 5px #DCDCDC; 
+	margin: -22.5px; 
+	padding: 10px;
+}
+
+.progress-tile-right {
+	float: right; 
+	width: 50%; 
+	border-left: solid 5px #DCDCDC; 
+	margin: -22.5px; 
+	padding: 10px;
+}
+
+.progress-tile-left .project-name,
+.progress-tile-right .project-name
+{
+	border-bottom: solid 5px #DCDCDC;
+}
+
+.progress-tile-right .project-name
+{
+	margin-left: -10px;
+	padding-left: 10px;
+	padding-bottom: 10px;
+}
+
+.progress-tile-left .project-name
+{
+	margin-right: -10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+}
+
+.progress-activity-container
+{
+	display: block; 
+	content: ''; 
+	clear: both;
+	width: 100%;
+}
+
+.progress-activity-description-left, .progress-activity-description-right
+{
+	width: 370px;
+	padding-bottom: 20px;
+}
+
+.progress-activity-description-left
+{
+	float: left;
+}
+
+.progress-activity-time-left
+{
+	float: right;
+	width: 80px;
+	text-align: right;
+}
+
+.progress-activity-description-right
+{
+	float: right;
+	width: 370px;
+}
+
+.progress-activity-time-right
+{
+	float: left;
+	width: 80px;
+	text-align: left;
+}
+.panel
+{
+    width: 100%;
+    overflow: hidden;
+}
+.panel-header
+{
+    background: #eee;
+    border-bottom: 1px solid #eee;
+    border-top: 1px solid #eee;
+    text-align: center;
+    padding: 5px;
+    /*margin-top: 5px;*/
+    font-weight: bold;
+}
+.panel-body
+{
+    padding: 10px;
+    text-align: center;
+}
+.col-lg-4
+{
+    width: 23%;
+    float: left;
+    border: 1px solid #eee;
+    margin: 9px;
+}
+.panel .info_title
+{
+    color: #999999;
+}
+.panel .info_content
+{
+    padding: 2px;
+    font-size: 20px;
+}
+.strong
+{
+    color: red;
+}
+.panel .table
+{
+    margin-bottom: 5px;
+}
+.more
+{
+ color: #007700;
+ text-decoration: underline;
+}
+.panel-header-title
+{
+    width: 100%;
+    overflow: hidden;
+}
+.panel-header-title-right
+{
+    float: left;
+    padding: 10px;
+    width: 35%;
+}
+.panel-header-title-left
+{
+    float: left;
+    width: 23%;
+}
+.controls.text
+{
+    padding-top: 5px; 
+}
+#form_contract_payment fieldset
+{
+    border: 1px solid #999999;
+    padding: 20px;
+}
+#form_contract_payment legend
+{
+    border-style:none;
+    width: 12%;
+    margin-bottom:0;
+    font-size:16px;
+    font-weight: bold;
+}
+#form_contract_payment .accordion-inner
+{
+    border: none;
+}
+
+#default-note-details th
+{
+    width: 30%;
+}
+
+#next-id-details th
+{
+    width: 70%;
+}
+
+#table-center tr td{
+    text-align: center;
+}
+
+#lb-top-menu .navbar .brand{
+    margin-top: 4px;
+    font-size: 36px;
+    /**font-weight: bold;**/
+    font-family: 'Lobster', cursive;
+}
+
+.navbar .nav{
+    margin: 0 0 0 -16px;
+}
+
+#lb-top-menu{
+    margin-top: 10px;
+}
+
+#content {
+    background: none repeat scroll 0 0 #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 0 0 1px #d3d3d3;
+    display: inline-block;
+    margin: 10px auto 0;
+    min-height: 500px;
+    padding: 20px;
+}
+
+#page{
+     width: 1045px;
+}
+
+#lb-top-menu .navbar .nav
+{
+    position: relative;
+    margin: 0 0 0 11px;
+}
+
+#lb-top-shortcuts .navbar .brand{
+    margin-top: 0;
+}
+
+#lb-container-header{
+    background-color: #eeeeee;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px 10px 0 0;
+    height: 38px;
+    margin: -20px -20px 0;
+    padding: 6px 10px 0 30px;
+    text-align: right;
+    width: 100%;
+}
+
+#lb-view-header{
+    background-color: #eeeeee;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px 10px 0 0;
+    height: 38px;
+    margin: -10px -20px 0;
+    padding: 7px 10px 4px;
+    text-align: right;
+    width: 100%;
+}
+
+#lb-container-header .btn-group,#lb-view-header .btn-group{
+    text-align: left;
+}
+
+#lb-container-header .btn,#lb-view-header .btn{
+  background-image: none;
+}
+
+#lb-top-menu .navbar .nav > li > a
+{
+    font-size: 14px;
+    /**font-weight: bold;**/
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+}
+
+#lb-container-footer
+{
+    background: none repeat scroll 0 0 #eeeeee;
+    border-radius: 0 0 10px 10px;
+    left: -20px;
+    padding: 8px 20px;
+    position: relative;
+    top: 20px;
+    width: 100%;
+}
+
+.icon-module{
+    background-image: url(../img/icon-module.png);
+    background-position: 5px 0;
+    height: 15px;
+    width: 20px;
+}
+.icon-role{
+    background-image: url(../img/icon-role.png);
+    background-position: 5px 0;
+    height: 16px;
+    width: 26px;
+}
+
+#permission-account fieldset{
+    border: 1px solid #999;
+    margin-top: 25px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+legend{
+    border-style: none;
+    width: auto;
+    margin-bottom: 0px;
+}
+
+.grid-header td{
+    background-color: #eee;
+    font-weight: bold;
+}
+
+
+.linx-change-app{  
+    color: #666;
+    float: left;
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 9px 9px 9px 0px;
+    width: 20%;
+}
+.linx-menu-top{  
+    background: #eee none repeat scroll 0 0;
+    border-bottom: 1px solid #9d9d9d;
+    height: 45px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+#page{
+    position: relative;
+    top: 60px;
+    width: 1045px;
+}
+#contactable-inner{
+    z-index: 1;	
+}
+#linx-account-app{
+	margin-top: 6px;
+}
+.linx-account-app .btn{
+	background-color:transparent;
+	border-width:0px;
+	padding:4px 0px;
+	background-image:none;
+	box-shadow:none;
+}
+.linx-account-app .btn:hover{
+	background-color:none;
+}
+.btn-group.open .btn.dropdown-toggle{
+    background-color:transparent;
+    box-shadow:none;
+}
+@media only screen and (max-width: 1110px) {
+    .linx-menu-top{
+        width: 1110px;
+    }
+}

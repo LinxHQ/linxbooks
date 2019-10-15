@@ -16,8 +16,12 @@ class DefaultController extends CLBController
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
 				'actions'=>array('create','update','SortingColumn', 'AddColumn', 'Board', 'List', 'SwitchOpportunity','LoadListContact',
 					'LoadListStaff','SaveAllOpportunities', 'SaveAllFiles','FileSizeConvert','SearchList','ViewDetailOpportunity','LoadComment','SaveAllUpdateOpportunity','SaveComment','ExportExcelView','ExportExcelSearch','PostComment', 'SearchOpportunities', 'DeleteOpportunity', 'SaveCustomerPopup',
-                                    'LoadCustomers'),
+                                    'LoadCustomers', 'deletecolumn', 'ajaxUpdateField'),
 				'users'=>array('@'),
+			),
+			// ko cho phep truy cap vao module Opp khi chua login
+			array('deny',  // deny all users
+				'users'=>array('*'),
 			),
 		);
 	}
@@ -236,10 +240,13 @@ class DefaultController extends CLBController
 	public function actionDeleteColumn(){
 		// para truyen tu view sang, su dung ajax jquery
 		$column_id = $_REQUEST['column_id'];
-		// find record dua vao $column_id
-		$delete_column=LbOpportunityStatus::model()->findByPk($column_id);
 		// delete the row from the database table
-		$delete_column->delete();
+		LbOpportunityStatus::model()->deleteAll(array("condition"=>"id='$column_id'"));
+
+		// // find record dua vao $column_id
+		// $delete_column=LbOpportunityStatus::model()->findByPk($column_id);
+		// // delete the row from the database table
+		// $delete_column->delete();
 	}
 	// view detail Opportunities
 	public function actionViewDetailOpportunity(){
@@ -254,12 +261,18 @@ class DefaultController extends CLBController
 		// $opportunity_id = Yii::app()->db->getLastInsertID();
 		if($_REQUEST['opportunity_id'] != ""){
 			$opportunity_id = $_REQUEST['opportunity_id'];
+		} else {
+			$opportunity_id = 0;
 		}
 		if($_REQUEST['name'] != ""){
 			$name = $_REQUEST['name'];
+		} else {
+			return;
 		}
 		if($_REQUEST['customer_id'] != ""){
 			$customer_id = $_REQUEST['customer_id'];
+		} else {
+			$customer_id = 0;
 		}
 		if($_REQUEST['industry'] != ""){
 			$industry = $_REQUEST['industry'];
@@ -268,13 +281,19 @@ class DefaultController extends CLBController
         }
 		if($_REQUEST['value'] != ""){
 			$values = $_REQUEST['value'];
+		} else {
+			$values = 0;
 		}
 		if($_REQUEST['deadline'] != ""){
 			$deadline = $_REQUEST['deadline'];
             $deadline = date("Y-m-d", strtotime($deadline));
+		} else {
+            $deadline = '0000-00-00';
 		}
 		if($_REQUEST['status'] != ""){
 			$status = $_REQUEST['status'];
+		} else {
+			$status = 0;
 		}
 		if($_REQUEST['note'] != ""){
 			$note = $_REQUEST['note'];
@@ -345,7 +364,9 @@ class DefaultController extends CLBController
 		$opportunity->deadline=$deadline;
 		$opportunity->note=$note;
 		$opportunity->industry=$industry;
-		$opportunity->update(); // save the change to databases
+		if($opportunity->update()){ // save the change to databases
+			Yii::app()->user->setFlash('update_opp_success', Yii::t('lang','Updated successfully !'));
+		}
 	}
 	// export excel list Opportunities
 	public function actionExportExcelView()
@@ -394,5 +415,22 @@ class DefaultController extends CLBController
         // xoa document thuoc opportunity
         LbDocument::model()->deleteAll('lb_document_parent_id IN ('.$opportunity_id.')');
         LbOpportunity::model()->deleteAll(array("condition"=>"opportunity_id='$opportunity_id'"));
+    }
+    public function actionAjaxUpdateField(){
+    	if (isset($_POST['pk']) && isset($_POST['name']) && isset($_POST['value']))
+		{
+			$id = $_POST['pk'];
+			$attribute = $_POST['name'];
+			$value = $_POST['value'];
+	
+			// get model
+			$model = LbOpportunityComment::model()->findByPk($id);
+			// update
+			$model->$attribute = $value;
+            $model -> save();
+			return true;
+		}
+	
+		return false;
     }
 }

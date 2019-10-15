@@ -1,3 +1,4 @@
+
 <?php
 /* @var $this TaskController */
 /* @var $model Task */
@@ -9,7 +10,7 @@ $count_project = " <span class='badge'>".count(Project::model()->findAll())."</s
     $count_document = " <span class='badge badge badge-success'>".count(Documents::model()->findAll('   document_parent_id IN ('.$model->project_id.')'))."</span>";
 
 $new_comment_ajax_link = CHtml::ajaxLink(
-                YII::t('core','Comment or upload document'), array('taskComment/create', 'task_id' => $model->task_id, 'ajax' => 1), // Yii URL
+                YII::t('lang','Comment or upload document'), array('taskComment/create', 'task_id' => $model->task_id, 'ajax' => 1), // Yii URL
                 array('update' => '#form-comment'), // jQuery selector
                 array('id' => 'ajax-id-' . uniqid())
 );
@@ -25,12 +26,15 @@ $new_comment_ajax_link = CHtml::ajaxLink(
   ));* */
 // end test
 // print project header
-
-Utilities::renderPartial($this, "/default/_project_header", array(
-    'project_id' => $model->project_id,
-    'return_tab' => ($model->task_type == Task::TASK_TYPE_ISSUE ? 'issues' : 'tasks')
-));
-echo "<div style='margin-top: -60px;'>";
+echo "<div class='hidden_navbar' hidden>";
+if(!isset($request_mutile_tabs)){
+    Utilities::renderPartial($this, "/default/_project_header", array(
+        'project_id' => $model->project_id,
+        'return_tab' => ($model->task_type == Task::TASK_TYPE_ISSUE ? 'issues' : 'tasks')
+    ));
+}
+echo "</div>";
+echo "<div style='margin-top: -22px;'>";
 $count_task_name = strlen($model->task_name);
 if($count_task_name > 20){
     $result_task_name = mb_substr($model->task_name,  0, 20);
@@ -55,48 +59,48 @@ if(isset($_GET['Documents']))
     $documentModel->attributes=$_GET['Documents'];
     //echo $documentModel->document_real_name; return;
 }
-$this->widget('bootstrap.widgets.TbTabs', array(
-                    'type'=>'tabs', // 'tabs' or 'pills'
-                    'encodeLabel'=>false,
-                    'tabs'=> 
-                    array(
-                               array('id'=>'tab1','label'=>Yii::t('lang','Dự án'). ' <span class="badge">'.count(Project::model()->findAll()).'</span>',
-                                    'content'=>$this->renderPartial('application.modules.lbProject.views.default.project_all',array(
+// $this->widget('bootstrap.widgets.TbTabs', array(
+//                     'type'=>'tabs', // 'tabs' or 'pills'
+//                     'encodeLabel'=>false,
+//                     'tabs'=> 
+//                     array(
+//                                array('id'=>'tab1','label'=>Yii::t('lang','Dự án'). ' <span class="badge">'.count(Project::model()->findAll()).'</span>',
+//                                     'content'=>$this->renderPartial('application.modules.lbProject.views.default.project_all',array(
 
-                                    ),true),'active'=>false,
-                                ),
-                                // array('id'=>'tab2','label'=>Yii::t('lang','Công việc').$count_task, 
+//                                     ),true),'active'=>false,
+//                                 ),
+//                                 // array('id'=>'tab2','label'=>Yii::t('lang','Công việc').$count_task, 
                                                 
-                                //                 'active'=>false),
-                                array('id'=>'tab2','label'=>Yii::t('lang','Công việc'). ' <span class="badge badge-warning">'.count(Task::model()->findAll('project_id IN ('.$model->project_id.')')).'</span>',
-                                    'content'=>$this->renderPartial('application.modules.lbProject.views.default._index_tasks',array(
-                                            'model' => $model,
-                                            'taskModel' => $taskModel
-                                    ),true),'active'=>false,
-                                ),
-                                // array('id'=>'tab3','label'=>Yii::t('lang','Văn bản').$count_document, 
+//                                 //                 'active'=>false),
+//                                 array('id'=>'tab2','label'=>Yii::t('lang','Công việc'). ' <span class="badge badge-warning">'.count(Task::model()->findAll('project_id IN ('.$model->project_id.')')).'</span>',
+//                                     'content'=>$this->renderPartial('application.modules.lbProject.views.default._index_tasks',array(
+//                                             'model' => $model,
+//                                             'taskModel' => $taskModel
+//                                     ),true),'active'=>false,
+//                                 ),
+//                                 // array('id'=>'tab3','label'=>Yii::t('lang','Văn bản').$count_document, 
                                                 
-                                //                 'active'=>false),
-                                array('id'=>'tab3','label'=>Yii::t('lang','Văn bản'). ' <span class="badge badge-success">'.count(Documents::model()->findAll('document_parent_id IN ('.$model->project_id.')')).'</span>',
-                                    'content'=>$this->renderPartial('application.modules.lbProject.views.default._index_documents',array(
-                                        'model' => $model,
-                                        'documentModel'=>$documentModel,
-                                    ),true),'active'=>false,
-                                ),
-                                array('id'=>'tab4','label'=>Yii::t('lang','Wiki'). ' <span class="badge badge-info">'.count(WikiPage::model()->findAll('project_id IN ('.$model->project_id.')')).'</span>',
-                                    'content'=>$this->renderPartial('application.modules.lbProject.views.default.wiki_all',array(
-                                            'model' => $model,
-                                            'documentModel' => $documentModel,
-                                    ),true),'active'=>false,
-                                ),
-                                // array('id'=>'tab4','label'=>Yii::t('lang','Wiki'), 
+//                                 //                 'active'=>false),
+//                                 array('id'=>'tab3','label'=>Yii::t('lang','Văn bản'). ' <span class="badge badge-success">'.count(Documents::model()->findAll('document_parent_id IN ('.$model->project_id.')')).'</span>',
+//                                     'content'=>$this->renderPartial('application.modules.lbProject.views.default._index_documents',array(
+//                                         'model' => $model,
+//                                         'documentModel'=>$documentModel,
+//                                     ),true),'active'=>false,
+//                                 ),
+//                                 array('id'=>'tab4','label'=>Yii::t('lang','Wiki'). ' <span class="badge badge-info">'.count(WikiPage::model()->findAll('project_id IN ('.$model->project_id.')')).'</span>',
+//                                     'content'=>$this->renderPartial('application.modules.lbProject.views.default.wiki_all',array(
+//                                             'model' => $model,
+//                                             'documentModel' => $documentModel,
+//                                     ),true),'active'=>false,
+//                                 ),
+//                                 // array('id'=>'tab4','label'=>Yii::t('lang','Wiki'), 
                                                 
-                                //                 'active'=>false),
-                                array('id'=>'tab5','label'=>$task_name, 
+//                                 //                 'active'=>false),
+//                                 array('id'=>'tab5','label'=>$task_name.'<button style="margin-left: 3px;" class="close closeTab" type="button" >×</button>', 
                                                 
-                                                'active'=>true),
-                            )
-    ));
+//                                                 'active'=>true),
+//                             )
+//     ));
     
 ?>
 <br/>
@@ -125,8 +129,8 @@ echo '<div style="clear: both"></div>';
 
 // mark as done, re-open button
 // MARK AS DONE BUTTON
-$lopen = YII::t('core','Open');
-$ldone = YII::t('core','Done');
+$lopen = YII::t('lang','Open');
+$ldone = YII::t('lang','Done');
 $lstatus = $model->task_status == TASK_STATUS_COMPLETED ? $ldone : $lopen;
 if (Permission::checkPermission($model, PERMISSION_TASK_UPDATE_STATUS)) {
  
@@ -174,7 +178,7 @@ if (Permission::checkPermission($model, PERMISSION_TASK_UPDATE_STATUS)) {
 //        'type' => '', // null, 'primary', 'info', 'success', 'warning', 'danger' or 'inverse'
 //      ));
 } else {
-    echo YII::t('core',"Status").": " . ($model->task_status == TASK_STATUS_ACTIVE ? YII::t('core','Open') : YII::t('core','Done')) . '<br/>';
+    echo YII::t('core',"Status").": " . ($model->task_status == TASK_STATUS_ACTIVE ? YII::t('core','Open') : YII::t('lang','Done')) . '<br/>';
 }
 //echo "&nbsp;";
 // show overdue/in-progress label
@@ -196,10 +200,10 @@ echo '</span>';
 
 
 // Task type
-$lfeature = YII::t('core','Feature');
-$lissue = YII::t('core','Issue');
-$lforum = YII::t('core','Forum');
-$lother = YII::t('core','Other');
+$lfeature = YII::t('lang','Feature');
+$lissue = YII::t('lang','Issue');
+$lforum = YII::t('lang','Forum');
+$lother = YII::t('lang','Other');
 $label_type = $lfeature;
 if($model->task_type==Task::TASK_TYPE_ISSUE)
     $label_type = $lissue;
@@ -271,7 +275,7 @@ echo '&nbsp;';
     <div class="comment-container">
         <div id="task-description-container-<?php echo $model->task_id; ?>">
             <br/>
-            <?php echo YII::t('core','Description'); ?> : 
+            <?php echo YII::t('lang','Description'); ?> : 
         <?php
         if (Permission::checkPermission($model, PERMISSION_TASK_UPDATE_GENERAL_INFO)) {
             // link to show inline-editable form
@@ -294,7 +298,7 @@ echo '&nbsp;';
         <div class="footer-container">
             <?php
             echo Utilities::displayFriendlyDate($model->task_created_date);
-            echo '&nbsp;'.YII::t('core','by').'&nbsp;' . AccountProfile::model()->getShortFullName($model->task_owner_id, true);
+            echo '&nbsp;'.YII::t('lang','by').'&nbsp;' . AccountProfile::model()->getShortFullName($model->task_owner_id, true);
             ?>&nbsp;-&nbsp;
                 <?php
                 if (!Permission::checkPermission($model, PERMISSION_TASK_UPDATE_MEMBER)) {
@@ -306,13 +310,13 @@ echo '&nbsp;';
                         }
                     }
                 } else {
-                    echo '<strong>'.YII::t('core','People').':</strong> <div id="assignees-list" style="display: inline"></div>';
+                    echo '<strong>'.YII::t('lang','People').':</strong> <div id="assignees-list" style="display: inline"></div>';
                     $this->widget('editable.EditableField', array(
                         'type' => 'checklist',
                         'model' => $model,
                         'attribute' => 'task_assignees',
                         'placement' => 'right',
-                        'emptytext' => YII::t('core','Update'),
+                        'emptytext' => YII::t('lang','Update'),
                         'params' => array('ajax_id' => 'bootstrap-x-editable'),
                         'url' => $this->createUrl('taskAssignee/create'),
                         'source' => $this->createUrl('projectMember/dropdownSource', array('id' => $model->project_id)),
@@ -338,7 +342,7 @@ echo '&nbsp;';
 		// task start date and time
                 //
 		echo '&nbsp;&nbsp;';
-                echo '<strong>'.YII::t('core','Schedule').':</strong> ';
+                echo '<strong>'.YII::t('lang','Schedule').':</strong> ';
                 if (Permission::checkPermission($model, PERMISSION_TASK_UPDATE_STATUS)) {
                     echo '<div style="display: inline">';
                     $this->widget('editable.EditableField', array(
@@ -377,7 +381,7 @@ echo '&nbsp;';
 		// task milestones
                 //
 		echo '&nbsp;&nbsp;';
-                echo '<strong>'.YII::t('core','Milestone').':</strong> <div id="lc-task-milestones-list" style="display: inline"></div>';
+                echo '<strong>'.YII::t('lang','Milestone').':</strong> <div id="lc-task-milestones-list" style="display: inline"></div>';
                 //echo '<span class="badge badge-success" style="font-size: 7pt">SIT</span>'
                 //. '&nbsp;<span class="badge" style="font-size: 7pt">UAT 2</span>'
                 //        . '&nbsp;<a href="#" data-value="" class="editable editable-click">Update?</a>'; // demo
@@ -387,7 +391,7 @@ echo '&nbsp;';
                     'model' => $model,
                     'attribute' => 'task_milestones',
                     'placement' => 'right',
-                    'emptytext' => YII::t('core','Update'),
+                    'emptytext' => YII::t('lang','Update'),
                     'params' => array('ajax_id' => 'bootstrap-x-editable'),
                     'url' => $this->createUrl('milestone/milestoneEntity/multiUpdate?entity_type=TASK'),
                     'source' => $this->createUrl('milestone/default/jsonIndex', array('project_id' => $model->project_id, 'milestone_status' => 1)),
@@ -415,19 +419,29 @@ echo '&nbsp;';
 
     </div> <!-- end infor-container div -->
 
-    <div id="form-comment" class="top-new-form well form" style='width: 760px; margin-top: 20px; margin-bottom: 40px'>
+    <div id="form-comment-<?php echo $model->task_id ?>" class="top-new-form well form" style='width: 760px; margin-top: 20px; margin-bottom: 40px'>
             <?php
             if (Permission::checkPermission($model, PERMISSION_TASK_COMMENT_ADD)) {
-                echo $new_comment_ajax_link;
+                // echo $new_comment_ajax_link;
+                echo '<a id="ajax-id-'.uniqid().'" href="#" onclick="create_comment_task('.$model->task_id.'); return false;">'.YII::t('lang','Comment or upload document').'</a>';
+
+                // $new_comment_ajax_link = CHtml::ajaxLink(
+                //     YII::t('core','Comment or upload document'), array('taskComment/create', 'task_id' => $model->task_id, 'ajax' => 1), // Yii URL
+                //     array('update' => '#form-comment'), // jQuery selector
+                //     array('id' => 'ajax-id-' . uniqid())
+                // );
             }
             ?>
     </div>
 
-    <div id="new-comment-form-link-holder" style="display: none">
-            <?php echo $new_comment_ajax_link; ?>
+    <div id="new-comment-form-link-holder-<?php echo $model->task_id ?>" style="display: none">
+            <?php 
+                // echo $new_comment_ajax_link; 
+                echo '<a id="ajax-id-'.uniqid().'" href="#" onclick="create_comment_task('.$model->task_id.'); return false;">'.YII::t('lang','Comment or upload document').'</a>';
+            ?>
     </div>
     
-    <div id="comments-thread" class="comments-thread">
+    <div id="comments-thread-<?php echo $model->task_id ?>" class="comments-thread">
             <?php
     // existing comments
             $project = Project::model()->findByPk($model->project_id);
@@ -449,12 +463,16 @@ echo '&nbsp;';
 
 <div id="side-menu" class="" style="width: 260px; float: right; border-top: none;">
     <div style="text-align: left; display: block; width: 100%">
+<!-- <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.min.js"></script> -->
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.min.js"></script>    
 <script type="text/javascript">
     $(document).ready(function() {
+        // $("#task-main-body").show(); //remove respective tab content
         $("#task-main-body").css('visibility','visible');
         var task_id = '<?php echo $model->task_id; ?>'; 
+         
         $('#lc-process-checklist').load('<?php echo $this->createUrl('/process_checklist/default/index', array('entity_type' => 'task', 'entity_id' => $model->task_id));
-    ?>');
+        ?>');
 
         $('#task-progress').load('<?php echo $this->createUrl('/task_progress/default/index', array('task_id' => $model->task_id, 'ajax' => 1));
     ?>');
@@ -471,6 +489,72 @@ echo '&nbsp;';
         
         $("#btn-issue-priority-action-"+task_id).removeClass('btn dropdown-toggle btn-group badge badge').addClass('btn-group badge task_bage');;
     });
+    $(".closeTab").click(function () {
+      var tabContentId = $(this).parent().attr("href");
+      $(this).parent().parent().remove(); //remove li of tab
+      var project_id = '<?php echo $model->project_id; ?>';
+      window.location.href = '<?php echo $this->createUrl("/lbProject/default/view/id/".$model->project_id.""); ?>';///'.$model->project_id.
+      // alert(project_id);
+      // $('a[href$="#tab2"]').tab('show'); // Select first tab
+      // $("#task-main-body").remove(); //remove respective tab content
+
+    });
+    function create_comment_task(task_id){
+        // alert(task_id);
+        $("#form-comment-"+task_id+"").html("Loading...");
+        var replay = "replay";
+        $.ajax({
+            'type':'POST',
+            'url':'<?php echo $this->createUrl('taskComment/create'); ?>',
+            data:{replay:replay,task_id:task_id},
+            success:function(data){
+                // alert(data);
+                $("#form-comment-"+task_id+"").html(data);
+            }
+        });
+    }
+    function loadContent(e){
+
+        var tabId = e.target.getAttribute("href");
+
+        var ctUrl = ''; 
+
+        if(tabId == '#tab1') {
+            $("#task-main-body").hide();
+            ctUrl = '<?php echo $this->createUrl("/lbProject/default/projectall"); ?>';
+        } else if(tabId == '#tab2') {
+            $("#task-main-body").hide();
+            ctUrl = '<?php echo $this->createUrl("/lbProject/default/taskall"); ?>';
+        } else if(tabId == '#tab3') {
+            $("#task-main-body").hide();
+            ctUrl = '<?php echo $this->createUrl("/lbProject/default/documentall"); ?>';
+        } else if (tabId == '#tab4') {
+            $("#task-main-body").hide();
+            ctUrl = '<?php echo $this->createUrl("/lbProject/default/wikiall"); ?>';
+        } else if (tabId == '#tab5') {
+            $("#task-main-body").show();
+        }
+
+        if(ctUrl != '') {
+            // $("#task-main-body").hide(); //remove respective tab content
+            $.ajax({
+                url      : ctUrl,
+                type     : 'POST',
+                dataType : 'html',
+                cache    : false,
+                success  : function(html)
+                {
+                    jQuery(tabId).html(html);
+                },
+                error:function(){
+                        alert('Request failed');
+                }
+            });
+        }
+
+        preventDefault();
+        return false;
+    }
     function linxcircleTaskUpdateTodoStatus(el)
     {
         var value = 0;

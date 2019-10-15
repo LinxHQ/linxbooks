@@ -1,0 +1,248 @@
+/* reset */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,dl,dt,dd,ol,nav ul,nav li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+article, aside, details, figcaption, figure,footer, header, hgroup, menu, nav, section {display: block;}
+ol,ul{list-style:none;margin:0px;padding:0px;}
+blockquote,q{quotes:none;}
+blockquote:before,blockquote:after,q:before,q:after{content:'';content:none;}
+table{border-collapse:collapse;border-spacing:0;}
+/* start editing from here */
+a{text-decoration:none;}
+.txt-rt{text-align:right;}/* text align right */
+.txt-lt{text-align:left;}/* text align left */
+.txt-center{text-align:center;}/* text align center */
+.float-rt{float:right;}/* float right */
+.float-lt{float:left;}/* float left */
+.clear{clear:both;}/* clear float */
+.pos-relative{position:relative;}/* Position Relative */
+.pos-absolute{position:absolute;}/* Position Absolute */
+.vertical-base{	vertical-align:baseline;}/* vertical align baseline */
+.vertical-top{	vertical-align:top;}/* vertical align top */
+nav.vertical ul li{	display:block;}/* vertical menu */
+nav.horizontal ul li{	display: inline-block;}/* horizontal menu */
+img{max-width:100%;}
+/*end reset*/
+/****-----start-body----****/
+html {
+    /* set up image here */
+    background:url(images_login/bg.png);
+    background-size: 100% 70%;
+    background-repeat: no-repeat;
+    background-position: right top;
+    background-attachment: fixed;
+}
+    
+header {
+    /*ChurchOne styling */
+    padding-top: 60px;
+    padding-bottom: 0px;
+    text-align: center;
+    color: rgb(253,181,10);
+    text-shadow:2px 2px 10px black;
+}
+
+/* all the fonts */
+header.sansserif {  
+    font-family: 'Latin Modern Mono Light Cond', arial;
+}
+section {
+    font-family: Calibri, Monospace, sans-serif;
+}
+
+/*underlines for inputs*/
+label[id="usern"] {
+    border-bottom: 3px solid rgb(253, 181, 10); 
+}
+label[id="passw"]{
+    border-bottom: 3px solid rgb(108, 108, 108);
+}
+
+/*transparent input box*/
+input[id="LoginForm_username"] {
+    background: transparent;
+    border: none; 
+    font-size: 17px;
+}
+input[id="LoginForm_password"] {
+    background: transparent;
+    border: none; 
+    font-size: 17px;
+}
+
+.box {
+    text-align: center;
+    height: 250px;
+    position: relative;   
+    padding-top: 40px;
+    padding-bottom: 40px;
+    border: 7px solid rgb(253,181,10);
+    margin: auto;
+    width: 26%;
+}
+/* Tried to pseudo element but this did not work out 
+box:after {
+    top: 0px;
+    bottom: 0px;
+    width: 7px; 
+    linear-gradient(to bottom, rgb(253,181,10) 50%, rgb(108,108,108)50% );
+    background-image: -webkit-linear-gradient(0deg, red 20px, blue 20px, blue 40px, yellow 40px, yellow 60px, green 60px, green 80px);
+    background-image: -ms-linear-gradient(0deg, red 20px, blue 20px, blue 40px, yellow 40px, yellow 60px, green 60px, green 80px);
+    background-size: 80px;
+    
+    background-image: -webkit-linear-gradient(0deg, rgb(253, 181, 10)50%, rgb (108,108,108)50%);
+    background-image: -ms-linear-gradient(0deg, rgb(253, 181, 10)50%, rgb(108,108,108)50%);
+    background-size: 286px;
+    position: absolute;
+    content: ''; 
+}  */
+
+/* style login button*/
+.button {
+    background-color: rgb(253, 181, 10);
+    border: none;
+    color: rgb(108,108,108);
+    padding: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 20px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    width: 45%;
+}
+
+/****************/
+.copy-right {
+    margin: auto;
+    text-align: center;
+    width: 100%;
+}
+.copy-right p {
+	color: #7F7F7F;
+	font-size: 1em;
+	font-family: 'Open Sans', sans-serif;	
+	font-weight: 400;
+}
+.copy-right p a {
+	font-family: 'Open Sans', sans-serif;	
+	font-size: 1em;
+	color:#FF8E03;
+	-webkit-transition: all 0.3s ease-out;
+	-moz-transition: all 0.3s ease-out;
+	-ms-transition: all 0.3s ease-out;
+	-o-transition: all 0.3s ease-out;
+	transition: all 0.3s ease-out;
+}
+.copy-right p a:hover {
+	color:#7F7F7F;
+}
+/*-----start-responsive-design------*/
+@media (max-width:1024px){
+.login-form  {
+		margin:8% auto 0;
+		width:45%;
+	}
+	.copy-right {
+	left: 41%;
+	bottom:-18%;
+	}
+}
+@media (max-width:768px){
+	.login-form  {
+		margin:12% auto 0;
+		width:57%;
+	}
+	.head{
+		top:1%;
+		left:18.5%;
+	}
+	.copy-right {
+	left:38%;
+	bottom:-14%;
+	}
+}
+@media (max-width:640px){                                  
+	.login-form  {
+		margin:13% auto 0;
+		width:70%;
+	}
+	.head{
+		top:1%;
+		left:25.5%;
+	}
+	.copy-right {
+	left:36%;
+	bottom:-18%;
+	}
+}
+@media (max-width:480px){                                  
+	.login-form  {
+		margin:20% auto 0;
+		width:90%;
+	}
+	.head{
+		top:1%;
+		left:25.5%;
+	}
+	.copy-right {
+	left:30%;
+	bottom:-17%;
+	}
+	
+}
+@media (max-width:320px){                                  
+	.login-form  {
+		margin:20% auto 0;
+		width:95%;
+	}
+	form{
+		padding:19% 1.5em; 
+	}
+	form li{
+		margin-top:10px;
+	}
+	
+	input[type="text"], input[type="password"]{
+		font-size:15px;
+		padding: 0.5em 1em 0.5em 1em;
+	}
+	input[type="submit"]{
+		float:none;
+		font-size: 15px;
+		padding: 10px 10px;
+		width: 40%;
+		margin-left: 28%;
+	}
+	.head{
+		top:-10%;
+		left:25.5%;
+	}
+	.head img {
+	width:69%;
+	}
+	.user {
+		background: url(images_login/icons.png) no-repeat 12px 4px;
+	}
+	.lock {
+		background: url(images_login/icons.png) no-repeat -20px 3px;
+	}
+	.p-container .checkbox {
+	float: none;
+	text-align: center;
+	}
+	.p-container{
+		margin-top: 0;
+	}
+	.icon{
+		margin:6px -11px 0px 0px;
+	}
+	.p-container .checkbox i {
+	position: absolute;
+	top: 18px;
+	left: 43px;
+	}
+	.copy-right {
+	left:20%;
+	bottom:-10%;
+	}
+}

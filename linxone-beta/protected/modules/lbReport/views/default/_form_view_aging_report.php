@@ -10,7 +10,8 @@ $m = $this->module->id;
 //$canAdd = BasicPermission::model()->checkModules($m, 'add');
 $canList = BasicPermission::model()->checkModules($m, 'list'); 
 $now = getdate();
-$currentDate = $now["year"] . "-0" . $now["mon"] . "-" . $now["mday"];
+//$currentDate = $now["year"] . "-0" . $now["mon"] . "-" . $now["mday"];
+$currentDate = date("Y-m-d");
 
 function dateNumber($first,$second)
 {
@@ -31,7 +32,7 @@ if(isset($_POST['select_timeRange']))
 $customer_id = false;
 if(isset($_POST['customer_id']))
     $customer_id = $_POST['customer_id'];
-$invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date_from);
+$invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,false);
 
 ?>
 <!--<button class="ui-button ui-state-default ui-corner-all" target="_blank" onclick="printPDF_agingReport(); return false;">Print PDF</button>-->
@@ -63,7 +64,7 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
     if($customer_id > 0)
     {
 
-            $invoice_arr = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date_from);
+            $invoice_arr = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,false);
             $customer_name ='';
             $total = 0;
             $i = count($invoice_arr);
@@ -100,7 +101,7 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                             
                                     if($dateNumber >= 0 && $dateNumber <= 30)
                                     {
-                                          echo '$'.$invoice_total->lb_invoice_total_outstanding;
+                                          echo '$'.number_format($invoice_total->lb_invoice_total_outstanding,2);
                                           $total1 = $total1 + $invoice_total->lb_invoice_total_outstanding;
         //                                echo $lb_invoice->lb_invoice_date; 
                                     }
@@ -111,7 +112,7 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                 <?php
                                     if($dateNumber > 30 && $dateNumber <= 60)
                                     {
-                                         echo '$'.$invoice_total->lb_invoice_total_outstanding;;
+                                         echo '$'.number_format($invoice_total->lb_invoice_total_outstanding,2);
                                          $total2 = $total2 + $invoice_total->lb_invoice_total_outstanding;
 
 
@@ -124,7 +125,7 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                     if($dateNumber > 60 && $dateNumber <= 90)
                                     {
                                         $total3 = $total3 + $invoice_total->lb_invoice_total_outstanding;
-                                        echo '$'.$invoice_total->lb_invoice_total_outstanding;
+                                        echo '$'.number_format($invoice_total->lb_invoice_total_outstanding,2);
                                     }
                                     else
                                         echo '$0.00';
@@ -134,13 +135,13 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                     if($dateNumber > 90)
                                     {
                                      $total4 = $total4 + $invoice_total->lb_invoice_total_outstanding;
-                                        echo '$'.$invoice_total->lb_invoice_total_outstanding;
+                                        echo '$'.number_format($invoice_total->lb_invoice_total_outstanding,2);
                                         
                                     }
                                     else
                                         echo '$0.00';
                                 ?></td>
-                                <td style="text-align: left;width:150"><?php echo '$'.$invoice_total->lb_invoice_total_outstanding;?></td>
+                                <td style="text-align: left;width:150"><?php echo '$'.number_format($invoice_total->lb_invoice_total_outstanding,2);?></td>
 
 
                             </tr>
@@ -154,14 +155,14 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                              if($i == $j)
                              {
                              ?>
-                             
+                                
                                 <td colspan="2"><b><?php echo $customer_name; ?></b></td>
                                
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total1.'</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total2.'</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total3.'</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total4.'</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.$total ?></b></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total1,2).'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total2,2).'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total3,2).'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total4,2).'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.number_format($total,2); ?></b></td>
                             </tr>
                         
                         <?php
@@ -184,11 +185,11 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                         {
                                           echo '<td width="250">'. $lb_invoice->lb_invoice_no.'</td>
                                              <td style="text-align: left;width:150">'. $lb_invoice->lb_invoice_date.'</td>';
-                                          echo '<td style="text-align: left;width:150"> $'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150"> $'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150">$'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150">$'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
                                           
                                           $total1 = $total1 + $invoice_total->lb_invoice_total_outstanding;
         
@@ -210,7 +211,7 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                              
                                 <td colspan="2"><b><?php echo $customer_name; ?></b></td>
                                
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total1.'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total1,2).'</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
@@ -239,11 +240,11 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                           echo '<td width="250">'. $lb_invoice->lb_invoice_no.'</td>
                                              <td style="text-align: left;width:150">'. $lb_invoice->lb_invoice_date.'</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150"> $'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150"> $'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
                                           
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150">$'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150">$'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
                                           
                                           $total1 = $total1 + $invoice_total->lb_invoice_total_outstanding;
         
@@ -274,9 +275,9 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                           <td style="text-align: left;width:150">'. $lb_invoice->lb_invoice_date.'</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150"> $'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150"> $'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150">$'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150">$'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
                                           
                                           $total1 = $total1 + $invoice_total->lb_invoice_total_outstanding;
         
@@ -300,9 +301,9 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total1.'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total1,2).'</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.$total1 ?></b></td>
+                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.number_format($total1,2) ?></b></td>
                             </tr>
                         
                         <?php
@@ -330,9 +331,9 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150"> $'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150"> $'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
 
-                                          echo '<td style="text-align: left;width:150">$'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150">$'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
 
                                           
                                           
@@ -359,8 +360,8 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total1.'</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total1.'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total1,2).'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total1,2).'</b>' ;?></td>
                                
                             </tr>
                         
@@ -387,11 +388,11 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
     foreach ($customer_arr as $data) { ?>
 
     <?php
-            
-            $invoice_arr = LbInvoice::model()->getInvoiceByCustomerDate($data->lb_record_primary_key,$date_from);
+
+            $invoice_arr = LbInvoice::model()->getInvoiceByCustomerDate($data->lb_record_primary_key,false);
             //$payment = $invoice_arr->customerAddress;
             $customer_name = $data->lb_customer_name;
-//                            echo $customer_name.'<br>'; 
+//                            echo $customer_name.'<br>';
 
             $total = 0;
             $i = count($invoice_arr);
@@ -400,16 +401,16 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
            $total2 = 0;
             $total3 = 0;
             $total4 = 0;
-            foreach ($invoice_arr as $data_invocie) 
+            foreach ($invoice_arr as $data_invocie)
             {
                 $j++;
-                
+
                 ?>
-             <?php    
+             <?php
                 $invoice_total = LbInvoiceTotal::model()->find('lb_invoice_id='.  intval($data_invocie->lb_record_primary_key));
                 $lb_invoice = LbInvoice::model()->find('lb_record_primary_key='.  intval($data_invocie->lb_record_primary_key));
                 $total = $invoice_total->getTotalInvoiceByCustomer($data->lb_record_primary_key);
-                
+
                 if($total > 0)
                 {
                     if($Time_Range_search == 0)
@@ -419,14 +420,14 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                         <tr>
                             <td width="250"><?php echo LBApplication::workspaceLink($data_invocie->lb_invoice_no,  LbInvoice::model()->getViewInvoiceURL($data_invocie->lb_record_primary_key,$data->lb_customer_name)); ?></td>
                             <td style="text-align: left;width:150"> <?php echo $lb_invoice->lb_invoice_date; ?></td>
-                            <td style="text-align: left;width:150"> <?php 
+                            <td style="text-align: left;width:150"> <?php
                              $dateNumber = dateNumber($currentDate,$lb_invoice->lb_invoice_date);
-                               
+
                                 if($dateNumber >= 0 && $dateNumber <= 30)
                                 {
-                                      echo '$'.$invoice_total->lb_invoice_total_outstanding;
+                                      echo '$'.number_format($invoice_total->lb_invoice_total_outstanding,2);
                                       $total1 = $total1 + $invoice_total->lb_invoice_total_outstanding;
-    //                                echo $lb_invoice->lb_invoice_date; 
+    //                                echo $lb_invoice->lb_invoice_date;
                                 }
                                 else
                                     echo '$0.00';
@@ -435,10 +436,10 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                             <?php
                                 if($dateNumber > 30 && $dateNumber <= 60)
                                 {
-                                     echo '$'.$invoice_total->lb_invoice_total_outstanding;;
+                                     echo '$'.number_format($invoice_total->lb_invoice_total_outstanding,2);
                                      $total2 = $total2 + $invoice_total->lb_invoice_total_outstanding;
 
-                                     
+
                                 }
                                 else
                                     echo '$0.00';
@@ -448,102 +449,102 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                 if($dateNumber > 60 && $dateNumber <= 90)
                                 {
                                     $total3 = $total3 + $invoice_total->lb_invoice_total_outstanding;
-                                    echo '$'.$invoice_total->lb_invoice_total_outstanding;
+                                    echo '$'.number_format($invoice_total->lb_invoice_total_outstanding,2);
                                 }
                                 else
                                     echo '$0.00';
                             ?></td>
-                            
-                            <td style="text-align: left;width:150"> 
+
+                            <td style="text-align: left;width:150">
                             <?php
                                 if($dateNumber > 90)
                                 {
                                  $total4 = $total4 + $invoice_total->lb_invoice_total_outstanding;
-                                    echo '$'.$invoice_total->lb_invoice_total_outstanding;;  
+                                    echo '$'.number_format($invoice_total->lb_invoice_total_outstanding,2);
                                 }
                                 else
                                     echo '$0.00';
                             ?></td>
-                            <td style="text-align: left;width:150"><?php echo '$'.$invoice_total->lb_invoice_total_outstanding;?></td>
-                            
-
+                            <td style="text-align: left;width:150;"><?php echo '$'.number_format($invoice_total->lb_invoice_total_outstanding,2);?></td>
                         </tr>
-                     </tbody>  
+                     </tbody>
                      <tfoot>
-                        <?php 
-                        
+                        <?php
+
                              if($i == $j)
                              {
                              ?>
                          <tr>
+                            
                                 <td colspan="2"><b><?php echo $customer_name; ?></b></td>
-                               
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total1.'</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total2.'</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total3.'</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total4.'</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.$total ?></b></td>
-                       
+    
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total1,2).'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total2,2).'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total3,2).'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total4,2).'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.number_format($total,2); ?></b></td>
+
                          </tr>
-                        
+
                         <?php
                              }
                         ?>
                      </tfoot>
-                         
+
                 <?php }
                 else if($Time_Range_search == 1)
                      {
-                    ?> 
+                    ?>
                      <tbody>
                         <tr>
-                            
-                             <?php 
+
+                             <?php
                              $dateNumber = dateNumber($currentDate,$lb_invoice->lb_invoice_date);
-                            
+
                                     if($dateNumber >= 0 && $dateNumber <= 30)
                                     {
-                                       
+
                                         if($invoice_total->lb_invoice_total_outstanding > 0)
                                         {
                                           echo '<td width="250">'. $lb_invoice->lb_invoice_no.'</td>
                                           <td style="text-align: left;width:150">'. $lb_invoice->lb_invoice_date.'</td>';
-                                          echo '<td style="text-align: left;width:150"> $'.$invoice_total->lb_invoice_total_outstanding.'</td>';
-                                          echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          
 
-                                          echo '<td style="text-align: left;width:150">$'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150"> $'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
+                                          echo '<td style="text-align: left;width:150">$0.00</td>';
+                                          echo '<td style="text-align: left;width:150">$0.00</td>';
+                                          echo '<td style="text-align: left;width:150">$0.00</td>';
 
-                                          
-                                          
+
+                                          echo '<td style="text-align: left;width:150">$'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
+
+
+
                                           $total1 = $total1 + $invoice_total->lb_invoice_total_outstanding;
-        
+
                                         }
                                     }
 
                                     ?>
-                            
+
                         </tr>
                      </tbody>
                      <tfoot>
-                        <?php 
-                        
+                        <?php
+
                              if($i == $j)
                              {
                              ?>
                          <tr>
                                 <td colspan="2"><b><?php echo $customer_name; ?></b></td>
-                               
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>'.$total1.'</b>' ;?></td>
+                                
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>'.number_format($total1,2).'</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.$total1 ?></b></td>
-                       
+                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.number_format($total1,2); ?></b></td>
+
                          </tr>
-                        
+
                         <?php
                              }
                         ?>
@@ -552,13 +553,13 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                  }
                                  else if($Time_Range_search == 2)
                  {
-                    ?> 
+                    ?>
                      <tbody>
                         <tr>
-                            
-                             <?php 
+
+                             <?php
                              $dateNumber = dateNumber($currentDate,$lb_invoice->lb_invoice_date);
-                            
+
                                     if($dateNumber > 30 && $dateNumber <= 60)
                                     {
                                         if($invoice_total->lb_invoice_total_outstanding > 0)
@@ -566,38 +567,38 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                           echo '<td width="250">'. $lb_invoice->lb_invoice_no.'</td>
                                              <td style="text-align: left;width:150">'. $lb_invoice->lb_invoice_date.'</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150"> $'.$invoice_total->lb_invoice_total_outstanding.'</td>';
-                                          
+                                          echo '<td style="text-align: left;width:150"> $'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
+
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150">$'.$invoice_total->lb_invoice_total_outstanding.'</td>';
-                                          
+                                          echo '<td style="text-align: left;width:150">$'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
+
                                           $total1 = $total1 + $invoice_total->lb_invoice_total_outstanding;
-        
+
                                         }
                                     }
 
                                     ?>
-                            
+
                         </tr>
                      </tbody>
                      <tfoot>
-                        <?php 
-                        
+                        <?php
+
                              if($i == $j)
                              {
                              ?>
                          <tr>
                                 <td colspan="2"><b><?php echo $customer_name; ?></b></td>
-                               
+
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.$total1.'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>$'.number_format($total1,2).'</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.$total1 ?></b></td>
-                       
+                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.number_format($total1,2); ?></b></td>
+
                          </tr>
-                        
+
                         <?php
                              }
                         ?>
@@ -606,52 +607,53 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                  }
                  else if($Time_Range_search == 3)
                   {
-                    ?> 
+                    ?>
                      <tbody>
                         <tr>
-                            
-                             <?php 
+
+                             <?php
                              $dateNumber = dateNumber($currentDate,$lb_invoice->lb_invoice_date);
-                            
+
                                     if($dateNumber > 60 && $dateNumber <= 90)
                                     {
-                                       
+
                                         if($invoice_total->lb_invoice_total_outstanding > 0)
                                         {
                                           echo '<td width="250">'. $lb_invoice->lb_invoice_no.'</td>
                                           <td style="text-align: left;width:150">'. $lb_invoice->lb_invoice_date.'</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150"> $'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150"> $'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
+
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150">$'.$invoice_total->lb_invoice_total_outstanding.'</td>';
-                                          
+                                          echo '<td style="text-align: left;width:150">$'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
+
                                           $total1 = $total1 + $invoice_total->lb_invoice_total_outstanding;
-        
+
                                         }
                                     }
 
                                     ?>
-                            
+
                         </tr>
                      </tbody>
                      <tfoot>
-                        <?php 
-                        
+                        <?php
+
                              if($i == $j)
                              {
                              ?>
                          <tr>
                                 <td colspan="2"><b><?php echo $customer_name; ?></b></td>
-                               
+
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>'.$total1.'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>'.number_format($total1,2).'</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.$total1 ?></b></td>
-                       
+                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.number_format($total1,2); ?></b></td>
+
                          </tr>
-                        
+
                         <?php
                              }
                         ?>
@@ -660,16 +662,16 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                  }
                  else if($Time_Range_search == 4)
                      {
-                    ?> 
+                    ?>
                      <tbody>
                         <tr>
-                            
-                             <?php 
+
+                             <?php
                              $dateNumber = dateNumber($currentDate,$lb_invoice->lb_invoice_date);
-                            
+
                                     if($dateNumber > 90)
                                     {
-                                       
+
                                         if($invoice_total->lb_invoice_total_outstanding > 0)
                                         {
                                           echo '<td width="250">'. $lb_invoice->lb_invoice_no.'</td>
@@ -677,49 +679,48 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
                                           echo '<td style="text-align: left;width:150">$0.00</td>';
-                                          echo '<td style="text-align: left;width:150"> $'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150"> $'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
 
-                                          echo '<td style="text-align: left;width:150">$'.$invoice_total->lb_invoice_total_outstanding.'</td>';
+                                          echo '<td style="text-align: left;width:150">$'.number_format($invoice_total->lb_invoice_total_outstanding,2).'</td>';
 
-                                          
-                                          
+
                                           $total1 = $total1 + $invoice_total->lb_invoice_total_outstanding;
-        
+
                                         }
                                     }
 
                                     ?>
-                            
+
                         </tr>
                      </tbody>
                      <tfoot>
-                        <?php 
-                        
+                        <?php
+
                              if($i == $j)
                              {
                              ?>
                          <tr>
                                 <td colspan="2"><b><?php echo $customer_name; ?></b></td>
-                               
+
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
                                <td align="right" style="border-top:1px solid #000"><?php echo '<b>$0.00</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>'.$total1.'</b>' ;?></td>
-                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.$total1 ?></b></td>
-                       
+                               <td align="right" style="border-top:1px solid #000"><?php echo '<b>'.number_format($total1,2).'</b>' ;?></td>
+                               <td align="right" style="border-top:1px solid #000"><b><?php echo '$'.number_format($total1,2) ?></b></td>
+
                          </tr>
-                        
+
                         <?php
                              }
                         ?>
                      </tfoot>
                                 <?php
                  }
-                    
+
                 ?>
 
-                
-                    
+
+
                 <?php
                 }
             }
@@ -746,7 +747,7 @@ $invoiceSearch = LbInvoice::model()->getInvoiceByCustomerDate($customer_id,$date
                 customer_id = $('#customer_id').val();
             if($('#Time_Range_search').val() > 0)
                 Time_Range_search = $('#Time_Range_search').val();
-            window.open('pdfAgingReport?customer='+customer_id+'&Time_Range_search='+Time_Range_search+'&search_date_from=<?php echo $date_from; ?>', '_target');
+            window.open('pdfAgingReport?customer='+customer_id+'&Time_Range_search='+Time_Range_search, '_target');
         
     }
 </script>

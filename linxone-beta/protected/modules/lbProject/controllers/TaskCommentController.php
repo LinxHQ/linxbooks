@@ -202,6 +202,18 @@ class TaskCommentController extends Controller
 			);
 			Utilities::render($this, '_form', $data, false, true);
 		}
+
+		if(isset($_REQUEST['task_id']) && isset($_REQUEST['replay'])){
+			$task_assignees = TaskAssignee::model()->getTaskAssignees($_REQUEST['task_id'], true);
+
+			$data = array(
+				'comment' => (isset($_REQUEST['comment_id']) && $_REQUEST['comment_id'] != null)? TaskComment::model()->findByPk($_REQUEST['comment_id']) : new TaskComment(),
+				'task_id' => isset($_REQUEST['task_id']) ? 	$_REQUEST['task_id'] : 0,
+				'is_reply' => isset($_REQUEST['is_reply']) ? $_REQUEST['is_reply'] : 0,
+				'task_assignees' => $task_assignees,
+			);
+			Utilities::render($this, '_form', $data, false, true);
+		}
 		//$this->renderPartial('_form', $data , false, true);
 	}
 	
@@ -234,15 +246,19 @@ class TaskCommentController extends Controller
 	 * 
 	 * @param unknown $id
 	 */
-	public function actionAjaxUpdate($id)
+	public function actionAjaxUpdate()
 	{
-		$model = $this->loadModel($id);
+		if(isset($_REQUEST['task_comment_id'])){
+			$model = $this->loadModel($_REQUEST['task_comment_id']);
+		}
+		
 		
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 		
 		if(isset($_POST['TaskComment']))
 		{
+			$model = new TaskComment();
 			$model->attributes = $_POST['TaskComment'];
 			
 			if($model->save())
@@ -385,16 +401,18 @@ class TaskCommentController extends Controller
 			$ajax_options = array('update' => '#form-comment');
 		}
 
-		$link = CHtml::ajaxLink(
-			( $is_reply == NO ? YII::t('core','Comment or upload document') : YII::t('core','Click to Reply')),
-			array('taskComment/create', 
-					'task_id' => $task_id, 
-					'is_reply' => $is_reply, 
-					'task_comment_id' => $comment_id,
-					'ajax' => 1), // Yii URL
-			$ajax_options,
-			array('id' => 'ajax-id-'.uniqid(),'live'=>false)
-		);
+		// $link = CHtml::ajaxLink(
+		// 	( $is_reply == NO ? YII::t('core','Comment or upload document') : YII::t('core','Click to Reply')),
+		// 	array('taskComment/create', 
+		// 			'task_id' => $task_id, 
+		// 			'is_reply' => $is_reply, 
+		// 			'task_comment_id' => $comment_id,
+		// 			'ajax' => 1), // Yii URL
+		// 	$ajax_options,
+		// 	array('id' => 'ajax-id-'.uniqid(),'live'=>false)
+		// );
+
+		$link = '<a id="ajax-id-'.uniqid().'" href="#" onclick="create_comment_task('.$task_id.'); return false;">'.YII::t('core','Comment or upload document').'</a>';;
 		
 		Utilities::render($this, '//layouts/plain_ajax_content', array('content' => $link ), false, true);
 		//$this->renderPartial('//layouts/plain_ajax_content', 
@@ -430,9 +448,9 @@ class TaskCommentController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete()
 	{
-		$model = $this->loadModel($id);
+		$model = $this->loadModel($_REQUEST['task_comment_id']);
 		if ($model->delete())
 		{
 			echo SUCCESS;

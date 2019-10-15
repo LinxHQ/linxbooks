@@ -107,48 +107,48 @@ class ProjectMember extends CActiveRecord
 	
 	public function save($runValidation=true, $attributes=NULL)
 	{
-            // only account that can update project manager is allowed to update project member
-            // unless this is an invitation
-            if ($this->accepting_invitation == false && AccountTeamMember::model()->isAcountAdmin()==false) {
-                // if user is trying to update the PM of this project
-                // but she is not given permission to update PM of the project
-                // reject
-		if ($this->project_member_is_manager == PROJECT_MEMBER_IS_MANAGER 
-                        && !Permission::checkPermission($this, PERMISSION_PROJECT_UPDATE_MANAGER))
-		{
-			return false;
-		}
+  //           // only account that can update project manager is allowed to update project member
+  //           // unless this is an invitation
+  //           if ($this->accepting_invitation == false && AccountTeamMember::model()->isAcountAdmin()==false) {
+  //               // if user is trying to update the PM of this project
+  //               // but she is not given permission to update PM of the project
+  //               // reject
+		// if ($this->project_member_is_manager == PROJECT_MEMBER_IS_MANAGER 
+  //                       && !Permission::checkPermission($this, PERMISSION_PROJECT_UPDATE_MANAGER))
+		// {
+		// 	return false;
+		// }
                 
-                // if user is trying to update a normal member
-                // but she's not the PM of the project
-                // reject
-                if ($this->project_member_is_manager != PROJECT_MEMBER_IS_MANAGER // updating normal member
-                        && !ProjectMember::model()->isProjectManager($this->project_id, Yii::app()->user->id) // not manager
-                        && !Permission::checkPermission($this, PERMISSION_PROJECT_UPDATE_MANAGER)) // includes not master acc
-                {
-                    return false;
-                }
-            }
+  //               // if user is trying to update a normal member
+  //               // but she's not the PM of the project
+  //               // reject
+  //               if ($this->project_member_is_manager != PROJECT_MEMBER_IS_MANAGER // updating normal member
+  //                       && !ProjectMember::model()->isProjectManager($this->project_id, Yii::app()->user->id) // not manager
+  //                       && !Permission::checkPermission($this, PERMISSION_PROJECT_UPDATE_MANAGER)) // includes not master acc
+  //               {
+  //                   return false;
+  //               }
+  //           }
                     
                 
-                // NOTE: if this is in invitation
-                // this project, and the invitation are already the same.
-                // because project id was taken from invitation record in the database
-                // not by form submission
+  //               // NOTE: if this is in invitation
+  //               // this project, and the invitation are already the same.
+  //               // because project id was taken from invitation record in the database
+  //               // not by form submission
                 
-                // If not by invitation
-                // check if this user is part of the team of the master account of this project
-                if ($this->accepting_invitation == false && AccountTeamMember::model()->isAcountAdmin()==false)
-                {
-                    // get master account
-                    $project = Project::model()->findByPk($this->project_id);
-                    $account_subscription_id = $project->account_subscription_id;
-                    $master_account_id = AccountSubscription::model()->getSubscriptionOwnerID($account_subscription_id);
-                    if (!AccountTeamMember::model()->isValidMember($master_account_id, $this->account_id))
-                    {
-                        return false;
-                    }
-                }
+  //               // If not by invitation
+  //               // check if this user is part of the team of the master account of this project
+  //               if ($this->accepting_invitation == false && AccountTeamMember::model()->isAcountAdmin()==false)
+  //               {
+  //                   // get master account
+  //                   $project = Project::model()->findByPk($this->project_id);
+  //                   $account_subscription_id = $project->account_subscription_id;
+  //                   $master_account_id = AccountSubscription::model()->getSubscriptionOwnerID($account_subscription_id);
+  //                   if (!AccountTeamMember::model()->isValidMember($master_account_id, $this->account_id))
+  //                   {
+  //                       return false;
+  //                   }
+  //               }
 		
 		return parent::save($runValidation=true, $attributes=NULL);
 	}

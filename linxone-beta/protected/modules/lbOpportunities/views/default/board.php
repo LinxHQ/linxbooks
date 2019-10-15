@@ -1,9 +1,9 @@
 <div id="lb-container-header">
-            <div class="lb-header-right" style="margin-left:-11px;"><h3>Opportunities</h3></div>
-            <div class="lb-header-left">
-                <a href="#" onclick="add_opportunity();"><i class="icon-plus icon-white"></i></a>&nbsp;
-                <a href="list?tab=list"><i class="icon-th-list icon-white"></i></i></a>&nbsp;
-                <a href="<?php echo Yii::app()->baseUrl ?>/1/configuration?tab7" onclick=""><i class="icon-wrench icon-white"></i></i></a>
+            <div class="lb-header-right"><h3>Opportunities</h3></div>
+            <div class="lb-header-left lb-header-left-board">
+                <a href="#" onclick="add_opportunity();"><i class="icon-plus"></i></a>&nbsp;
+                <a href="list?tab=list"><i class="icon-th-list"></i></i></a>&nbsp;
+                <a href="<?php echo Yii::app()->baseUrl ?>/1/configuration?tab7" onclick=""><i class="icon-wrench"></i></i></a>
             </div>
 </div><br> 
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->baseUrl; ?>/css/style_js_modules_lbOpportunities/css/style.css">
@@ -214,7 +214,7 @@
 	        <div class="panel panel-primary kanban-col" id="<?php echo $result_list_column['id']; ?>">
 	            <div class="panel-heading">
 	                <h4><?php echo $result_list_column['column_name'] ?></h4>
-	                <i class="fa fa-2x fa-plus-circle pull-right"></i>
+	                <!-- <i class="fa fa-2x fa-plus-circle pull-right"></i> -->
 	            </div>
               <div id="color_line" style="background-color: <?php echo $result_list_column['column_color'] ?>;"></div>
 	            <div class="panel-body opp">

@@ -170,9 +170,9 @@ class Modules extends CLBActiveRecord
             }
             // Kiem tra user co dc xem modules nay ko
 //            $assignModulesUser = AccountBasicPermission::model()->findAll('account_id = '.intval($user_id).' AND module_id='.intval($dataProvider->data->module_id));
-            if(count($module)>0 && $ownSub)
+            if(!empty($module) && $ownSub)
                 return true;
-            else if(count($module)>0 && ($checkModule==true || $checkModuleRole==true))
+            else if(!empty($module) && ($checkModule==true || $checkModuleRole==true))
                 return true;
             return false;
             
