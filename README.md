@@ -7,7 +7,9 @@ Open-source accounting software (customers, invoices, quotations, bills, expense
 Contact:
 Joseph Pham, joseph.pnc@linxhq.com
 
-Checkout out demo at: http://sit3.linxhq.com/linxone using username: admin@admin.com, password: Admin123
+For latest Version 2's demo (not yet open-source), please visit: http://demo-linxone2.1.linxhq.com (user: admin, pass: admin123). Version 2 supports up to PHP 7.3 and Bootstrap4 with a brandnew GUI.
+
+This repo is for Version 1. Checkout out demo at: http://sit3.linxhq.com/linxone using username: admin@admin.com, password: Admin123
 
 I have to be honest the demo version might work more smoothly than the version we have here on github. For that we apologize, we'll try to get the setup process more solid as soon as possible.
 
